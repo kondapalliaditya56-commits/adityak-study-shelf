@@ -1,0 +1,481 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Ch 2 · Inequality: Measures, Causes and Growth Models</title><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style><style>:root{--bg:#FBFAF6;--surface:#fff;--surface2:#F3F1EA;--ink:#1F2A2A;--muted:#5D6A68;--line:#DAD6C8;--acc:#0E6B5C;--acc-ink:#fff;--acc-soft:#DDF0EA;--saf:#B85C00;--saf-soft:#FFF0DB;--red:#B3261E;--red-soft:#FDE7E4;--blue:#1F5FA8;--blue-soft:#E3EEFA;--good:#2E7D32;--good-soft:#E3F3E4;--hl:#FFE9A6;
+--c0:#0E6B5C;--c1:#B85C00;--c2:#1F5FA8;--c3:#8E3B8E;--c4:#B3261E;--c5:#5C7A1F;--c6:#8A6D00;--c7:#37607A;
+--serif:Literata,Spectral,Georgia,'Times New Roman',serif;--sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:17px/1.65 var(--serif);margin:0}
+a{color:var(--acc)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;margin:0}
+.bar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.barin{display:flex;align-items:center;gap:8px;padding:8px 16px;max-width:1200px;margin:0 auto;font:600 14px var(--sans);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.barin::-webkit-scrollbar{display:none}
+.bar a.home,.nbtn,.themebtn{color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 10px;font:600 13px var(--sans);cursor:pointer;flex:none}
+.nbtn{padding:5px 12px;font-size:16px;line-height:1}.nbtn.off{opacity:.35}
+.bartitle{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-weight:500}.bartitle b{color:var(--acc)}
+.done{display:flex;align-items:center;gap:5px;flex:none;font:600 13px var(--sans);cursor:pointer}.done input{width:18px;height:18px;accent-color:var(--acc)}
+.layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px;padding:0 16px}
+.sidetoc{position:sticky;top:58px;align-self:start;max-height:calc(100vh - 70px);overflow:auto;padding:18px 0;font:14px/1.4 var(--sans)}
+.sth{font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;color:var(--muted);margin-bottom:8px}
+.sidetoc ol{list-style:none;margin:0;padding:0}.sidetoc li{margin:0}.sidetoc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--ink);text-decoration:none}.sidetoc a:hover,.sidetoc a.on{border-color:var(--acc);color:var(--acc);background:var(--acc-soft)}
+.page{max-width:780px;margin:0 auto;padding:24px 16px 60px;width:100%;min-width:0}
+.home-page{max-width:900px}
+.chead{margin-bottom:22px}
+.eyebrow{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font-size:clamp(28px,5vw,40px);margin:6px 0 10px;font-weight:700}
+.lede{font-size:18px;color:var(--muted);margin:10px 0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:600 12px var(--sans);padding:3px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--line);color:var(--muted)}
+.pill.cls{background:var(--acc-soft);color:var(--acc);border-color:transparent}.pill.hb{background:var(--saf-soft);color:var(--saf);border-color:transparent}
+h2{font-size:clamp(22px,3.6vw,28px);margin:40px 0 12px;padding-top:14px;border-top:2px solid var(--acc);font-weight:700}
+h3{font-size:19px;margin:24px 0 8px;color:var(--acc)}
+h4{font-size:16px;margin-bottom:10px}
+.anchor{margin-left:8px;font-size:.7em;color:var(--muted);opacity:0;text-decoration:none}h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 12px}
+mark{background:var(--hl);color:inherit;padding:0 3px;border-radius:3px}
+.lst{margin:0 0 14px;padding-left:22px}.lst li{margin:5px 0}.lst li.sub{margin-left:18px;list-style:circle;color:var(--ink)}
+.gdesc{color:var(--muted);font:15px var(--sans);margin:-4px 0 12px}
+.xref{font:600 .92em var(--sans);white-space:nowrap}
+.callout{border-left:4px solid var(--acc);background:var(--acc-soft);border-radius:0 10px 10px 0;padding:10px 14px 4px;margin:14px 0}
+.callout .tag{display:inline-block;font:700 11px var(--sans);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;color:var(--acc)}
+.callout.teacher{border-color:var(--saf);background:var(--saf-soft)}.callout.teacher .tag{color:var(--saf)}
+.callout.alert{border-color:var(--red);background:var(--red-soft)}.callout.alert .tag{color:var(--red)}
+.callout.note{border-color:var(--blue);background:var(--blue-soft)}.callout.note .tag{color:var(--blue)}
+.callout.example{border-color:var(--good);background:var(--good-soft)}.callout.example .tag{color:var(--good)}
+.callout.source{background:var(--surface2);border-color:var(--line)}.callout.source .tag{color:var(--muted)}
+figure{margin:18px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure img{display:block;width:100%;height:auto;background:#fff}
+figure a.zoom{display:block;cursor:zoom-in}
+figcaption{padding:8px 12px;font:14px/1.45 var(--sans);color:var(--muted)}.figsrc{font:700 11px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--acc);margin-right:6px}
+.tblock{margin:16px 0}.tcap{font:700 14px var(--sans);margin-bottom:6px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font:15px/1.45 var(--sans);min-width:480px}
+th,td{padding:8px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--acc);color:var(--acc-ink);font-weight:700}
+tbody th{background:var(--surface2);font-weight:700}tbody tr:last-child>*{border-bottom:0}tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface2) 55%,transparent)}
+.stepsblock{margin:16px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}.stepsblock ol{margin:0;padding-left:22px}.stepsblock li{margin:4px 0}
+.flow{margin:20px 0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.chain{display:flex;flex-direction:column;align-items:stretch}
+.step{border:1.5px solid var(--acc);background:var(--acc-soft);border-radius:10px;padding:8px 12px;font:15px/1.4 var(--sans)}
+.step .sl{font-weight:700}.step .ss{color:var(--muted);font-size:14px;margin-top:2px}
+.step.warn{border-color:var(--saf);background:var(--saf-soft)}.step.bad{border-color:var(--red);background:var(--red-soft)}.step.good{border-color:var(--good);background:var(--good-soft)}
+.arr{height:20px;position:relative;flex:none}.arr:before{content:"";position:absolute;left:50%;top:0;bottom:6px;border-left:2px solid var(--muted)}.arr:after{content:"";position:absolute;left:calc(50% - 5px);bottom:0;border:5px solid transparent;border-top:7px solid var(--muted);border-bottom:0}
+.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.lane{display:flex;flex-direction:column}.lane-h{font:700 12px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;text-align:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:10px}.seg button{font:600 13px var(--sans);padding:6px 14px;border:0;background:var(--surface);color:var(--ink);cursor:pointer}.seg button[aria-pressed=true]{background:var(--acc);color:var(--acc-ink)}
+.mapblock h2{margin-top:10px}
+.mmframe{overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:8px;-webkit-overflow-scrolling:touch}
+svg.mm{display:block;font-family:var(--sans)}
+.mm-root{fill:var(--acc)}.mm-root-t{fill:var(--acc-ink);font:700 14px var(--sans)}
+.mm-link{fill:none;stroke-width:2;opacity:.7}.mm-branch-t{font:700 13px var(--sans);fill:#fff}.mm-leaf-t{font:13px var(--sans);fill:var(--ink)}.mm-leaf-n{font:11.5px var(--sans);fill:var(--muted)}
+.mm-leaf{fill:var(--surface2);stroke-width:1.5}
+.mm-branch.c0{fill:var(--c0)}.mm-branch.c1{fill:var(--c1)}.mm-branch.c2{fill:var(--c2)}.mm-branch.c3{fill:var(--c3)}.mm-branch.c4{fill:var(--c4)}.mm-branch.c5{fill:var(--c5)}.mm-branch.c6{fill:var(--c6)}.mm-branch.c7{fill:var(--c7)}
+.mm-link.c0,.mm-leaf.c0{stroke:var(--c0)}.mm-link.c1,.mm-leaf.c1{stroke:var(--c1)}.mm-link.c2,.mm-leaf.c2{stroke:var(--c2)}.mm-link.c3,.mm-leaf.c3{stroke:var(--c3)}.mm-link.c4,.mm-leaf.c4{stroke:var(--c4)}.mm-link.c5,.mm-leaf.c5{stroke:var(--c5)}.mm-link.c6,.mm-leaf.c6{stroke:var(--c6)}.mm-link.c7,.mm-leaf.c7{stroke:var(--c7)}
+:root:not([data-theme="dark"]) .mm-branch-t{fill:#fff}
+.outline,.outline ul{list-style:none;padding-left:18px;margin:4px 0}.outline>li{padding-left:0}.outline summary{cursor:pointer;font:700 15px var(--sans)}
+.outline li.c0>details>summary{color:var(--c0)}.outline li.c1>details>summary{color:var(--c1)}.outline li.c2>details>summary{color:var(--c2)}.outline li.c3>details>summary{color:var(--c3)}.outline li.c4>details>summary{color:var(--c4)}.outline li.c5>details>summary{color:var(--c5)}.outline li.c6>details>summary{color:var(--c6)}.outline li.c7>details>summary{color:var(--c7)}
+.ol-note{color:var(--muted);font-size:.9em}
+.timeline{list-style:none;margin:10px 0;padding:0;position:relative}
+.timeline:before{content:"";position:absolute;left:94px;top:0;bottom:0;border-left:2px solid var(--line)}
+.tl{display:grid;grid-template-columns:86px 18px 1fr;gap:0 6px;margin:0 0 12px;align-items:start}
+.yr{font:700 14px var(--mono);text-align:right;color:var(--acc);padding-top:2px}
+.pin{width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--acc);margin:7px 0 0 2px;position:relative;z-index:1}
+.tl.high .pin{background:var(--saf);border-color:var(--saf)}
+.tlbody{font:16px/1.5 var(--sans);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px}
+.tl.high .tlbody{border-color:var(--saf)}.star{color:var(--saf);margin-left:6px}.sref{float:right;margin-left:10px;font:600 12px var(--sans);text-decoration:none}
+.lkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.link{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:15px/1.45 var(--sans)}.link p{margin:4px 0 0;color:var(--muted)}.lk-line{font-weight:700}
+.recall{font:16px/1.55 var(--sans);padding-left:24px}.recall li{margin:6px 0}
+.count{font:600 13px var(--sans);color:var(--muted);margin:8px 0}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;font:16px/1.5 var(--sans)}
+.q .qt{font-weight:700;margin-bottom:8px}.q .opt{display:block;width:100%;text-align:left;padding:8px 12px;margin:6px 0;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.q .opt:hover{border-color:var(--acc)}.q .opt.right{border-color:var(--good);background:var(--good-soft)}.q .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.q .ex{margin-top:8px;color:var(--muted)}
+.deck{margin:10px 0}
+.fc{min-height:150px;background:var(--surface);border:2px solid var(--acc);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:center;text-align:center;font:18px/1.5 var(--serif);cursor:pointer;user-select:none}
+.fc.back{background:var(--acc-soft)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.btn{font:600 14px var(--sans);padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.pri{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:40px 0 20px}.pager a{display:block;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--ink);font:600 15px var(--sans)}.pager a.nx{text-align:right}.pager small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+footer{color:var(--muted);font:13px/1.5 var(--sans);border-top:1px solid var(--line);padding-top:14px;margin-top:30px}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:flex;align-items:center;justify-content:center;padding:10px;overflow:auto}#lightbox img{max-width:none;width:min(1600px,100%);height:auto;background:#fff;cursor:zoom-out}
+.part{margin:34px 0}.part h2{margin-top:0}
+.chlist{display:flex;flex-direction:column;gap:8px}
+.chcard{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+a.chcard:hover{border-color:var(--acc)}.chcard.pending{opacity:.5}
+.chn{font:700 18px var(--mono);color:var(--acc);text-align:center}.cht b{font:700 16px var(--serif);display:block}.cht small{font:13px/1.4 var(--sans);color:var(--muted);display:block;margin-top:2px}
+.chb{display:flex;flex-direction:column;gap:4px;align-items:flex-end;font:600 11px var(--sans)}.chb em{font-style:normal;background:var(--acc-soft);color:var(--acc);padding:2px 8px;border-radius:99px}.chb i.tick{font-style:normal;background:var(--good);color:#fff;padding:2px 8px;border-radius:99px}
+.prog{font:600 14px var(--sans);color:var(--muted)}
+.sbox{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:17px var(--sans);margin:6px 0 14px}
+.results .hit{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0;font:15px/1.5 var(--sans)}.results .hit a{font-weight:700}.results .hit small{color:var(--muted)}
+.chips{display:flex;gap:8px;margin-bottom:8px}.chip{font:600 13px var(--sans);padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}.chip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+@media (max-width:900px){.layout{display:block}.sidetoc{display:none}}
+@media (max-width:560px){body{font-size:16.5px}.tl{grid-template-columns:62px 16px 1fr}.timeline:before{left:70px}.yr{font-size:12px}.chcard{grid-template-columns:34px 1fr}.chb{display:none}.lanes{grid-template-columns:1fr}}
+
+code{font:.88em var(--mono);background:var(--surface2);padding:1px 5px;border-radius:4px}
+
+/* ---- reader app ---- */
+:root{--zoom:1;--lh:1.65;--pw:780px}
+:root[data-theme="sepia"]{--bg:#F4ECD8;--surface:#FBF5E6;--surface2:#EADFC4;--ink:#3B3022;--muted:#7A6A52;--line:#D8C9A6;--acc:#7A4A12;--acc-ink:#fff;--acc-soft:#EFDDB8;--saf:#A4470A;--saf-soft:#F6E2BE;--red:#9C2A1C;--red-soft:#F3D9CB;--blue:#2F5C8A;--blue-soft:#DDE6E4;--good:#3E6B2A;--good-soft:#DDE8C8;--hl:#F2D98A;color-scheme:light}
+:root[data-font="sans"] body{font-family:var(--sans)}
+:root[data-font="sans"] .notes p,:root[data-font="sans"] .notes li{font-family:var(--sans)}
+.page{zoom:var(--zoom);max-width:var(--pw)}
+.notes p,.notes li{line-height:var(--lh)}
+.rbar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--acc);z-index:40;transition:width .15s}
+.aabtn{color:var(--ink);border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 12px;font:700 14px var(--serif);cursor:pointer;flex:none}
+.h2read{float:right;margin:2px 0 0 10px;font:600 12px var(--sans);border:1px solid var(--line);background:var(--surface2);color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer;min-height:30px}
+.h2read[aria-pressed="true"]{background:var(--acc-soft);color:var(--acc);border-color:var(--acc)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding:6px 10px calc(6px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:center;justify-content:center}
+.dock button{font:600 14px var(--sans);min-height:44px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;padding:0 14px;cursor:pointer}
+.dock .mid{flex:1;max-width:520px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dock .mid b{color:var(--acc)}
+body.has-dock .page{padding-bottom:110px}
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.sheetin{background:var(--surface);color:var(--ink);width:100%;max-width:560px;max-height:82vh;overflow:auto;border-radius:16px 16px 0 0;padding:16px 18px calc(18px + env(safe-area-inset-bottom,0px));font:15px/1.4 var(--sans)}
+.sheetin h3{margin:0 0 10px;font:700 17px var(--sans)}
+.srow{display:flex;align-items:center;gap:10px;margin:12px 0;flex-wrap:wrap}
+.srow label{flex:0 0 92px;color:var(--muted);font-weight:600}
+.srow .grp{display:flex;gap:6px;flex-wrap:wrap}
+.srow button{font:600 14px var(--sans);min-height:42px;min-width:48px;padding:0 12px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;cursor:pointer}
+.srow button[aria-pressed="true"]{border-color:var(--acc);background:var(--acc-soft);color:var(--acc)}
+.secl a{display:flex;gap:10px;align-items:center;padding:12px 6px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;min-height:44px}
+.secl a .tk{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;color:var(--acc-ink)}
+.secl a.rd .tk{background:var(--acc);border-color:var(--acc)}
+.secl a.cur{background:var(--acc-soft)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:50;background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 14px;display:flex;gap:12px;align-items:center;font:600 14px var(--sans);max-width:92vw;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.toast button{font:700 14px var(--sans);background:transparent;border:0;color:var(--bg);text-decoration:underline;cursor:pointer;min-height:36px}
+body.focus .bar{display:none}body.focus .sidetoc{display:none}
+figcaption.clamp{max-height:3.3em;overflow:hidden;position:relative;cursor:pointer}
+figcaption.clamp.open{max-height:none}
+figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bottom:0;background:var(--bg);color:var(--acc);font:700 12px var(--sans);padding-left:14px}
+.cbar{display:block;height:4px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}.cbar i{display:block;height:100%;width:0;background:var(--acc)}
+.nbcard h2{border:0;padding:0}.nbcard{border-top:1px solid var(--line)}
+</style></head><body><header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="eco-home.html">Contents</a><a class="nbtn" href="eco-ch01.html" title="Poverty: Meaning, Measurement and India's Progress" aria-label="Previous chapter">‹</a><span class="bartitle"><b>Ch 2</b> Inequality: Measures, Causes and Growth Models</span><span class="nbtn off">›</span><a class="home" href="eco-search.html">Search</a><a class="home" href="eco-timeline.html">Timeline</a><label class="done"><input type="checkbox" id="donebox" data-ch="2"><span>Done</span></label><button class="aabtn" id="aabtn" type="button" aria-label="Reading settings">Aa</button></div></header><div class="layout"><aside class="sidetoc"><div class="sth">In this chapter</div><ol><li><a href="#chapter-map">Chapter map</a></li><li><a href="#exam-lens-priority-and-pyqs">Exam lens: priority and PYQs</a></li><li><a href="#1-what-is-inequality">1 · What is inequality?</a></li><li><a href="#2-kuznets-curve-a-theory">2 · Kuznets curve: a theory</a></li><li><a href="#3-lorenz-curve-a-data-based-picture">3 · Lorenz curve: a data-based picture</a></li><li><a href="#4-gini-coefficient-and-its-four-shortcomings">4 · Gini coefficient and its four shortcomings</a></li><li><a href="#5-why-does-inequality-exist">5 · Why does inequality exist?</a></li><li><a href="#6-growth-and-inequality">6 · Growth and inequality</a></li><li><a href="#7-trickle-down-approach">7 · Trickle-down approach</a></li><li><a href="#8-inclusive-growth">8 · Inclusive growth</a></li><li><a href="#chapter-timeline">Timeline and numbers</a></li><li><a href="#connects">Connects to</a></li><li><a href="#recall">Recall sheet</a></li><li><a href="#practice">Test yourself</a></li></ol></aside><main class="page"><div class="chead"><div class="eyebrow">Economy · GS Foundation · Chapter 2</div><h1>Inequality: Measures, Causes and Growth Models</h1><div class="pills"><span class="pill hb">Handout only: no class slides</span><span class="pill ">Handout pages 27-35</span><span class="pill ">No PYQs quoted</span></div><p class="lede">What inequality is and why consumption is used, the Kuznets curve, the Lorenz curve and Gini coefficient (with four shortcomings), the reasons for inequality (natural advantages, Marx, modern reasoning and the rule of law), why growth causes inequality, and the two policy approaches: trickle-down and inclusive growth.</p></div><section class="mapblock"><h2 id="chapter-map">Chapter map<a class="anchor" href="#chapter-map">#</a></h2><div class="seg" role="group" aria-label="Map view"><button type="button" data-v="map" aria-pressed="true">Map</button><button type="button" data-v="outline" aria-pressed="false">Outline</button></div><div id="mm-map" class="mmframe"><svg class="mm" viewBox="0 0 671 860" width="671" height="860" role="img" aria-label="Mind map: Inequality: Measures, Causes and Growth Models"><rect class="mm-root" x="8" y="416.0" width="104.0" height="28.0" rx="6"/><text class="mm-root-t" x="60.0" y="436.0" text-anchor="middle">Inequality</text><path class="mm-link c0" d="M112.0,430.0 C144.0,430.0 144.0,64.0 176.0,64.0"/><rect class="mm-branch c0" x="176.0" y="50.0" width="100.0" height="28" rx="5"/><text class="mm-branch-t" x="226.0" y="68.5" text-anchor="middle">What it is</text><path class="mm-link c0" d="M276.0,64.0 C304.0,64.0 326.8,28.0 354.8,28.0"/><rect class="mm-leaf c0" x="354.8" y="8.0" width="202.0" height="40" rx="4"/><text class="mm-leaf-t" x="364.8" y="23.0">Differences in attainment</text><text class="mm-leaf-n" x="364.8" y="38.0">hospital per 5 km2 example</text><path class="mm-link c0" d="M276.0,64.0 C304.0,64.0 326.8,70.0 354.8,70.0"/><rect class="mm-leaf c0" x="354.8" y="56.0" width="230.0" height="28" rx="4"/><text class="mm-leaf-t" x="364.8" y="75.0">Measured by income, CE, wealth</text><path class="mm-link c0" d="M276.0,64.0 C304.0,64.0 326.8,106.0 354.8,106.0"/><rect class="mm-leaf c0" x="354.8" y="92.0" width="160.0" height="28" rx="4"/><text class="mm-leaf-t" x="364.8" y="111.0">CE is most objective</text><path class="mm-link c1" d="M112.0,430.0 C144.0,430.0 144.0,194.0 176.0,194.0"/><rect class="mm-branch c1" x="176.0" y="180.0" width="122.8" height="28" rx="5"/><text class="mm-branch-t" x="237.4" y="198.5" text-anchor="middle">Kuznets curve</text><path class="mm-link c1" d="M298.8,194.0 C326.8,194.0 326.8,152.0 354.8,152.0"/><rect class="mm-leaf c1" x="354.8" y="138.0" width="132.0" height="28" rx="4"/><text class="mm-leaf-t" x="364.8" y="157.0">Theory, not data</text><path class="mm-link c1" d="M298.8,194.0 C326.8,194.0 326.8,194.0 354.8,194.0"/><rect class="mm-leaf c1" x="354.8" y="174.0" width="223.0" height="40" rx="4"/><text class="mm-leaf-t" x="364.8" y="189.0">Inequality rises, stabilises,</text><text class="mm-leaf-t" x="364.8" y="204.0">corrects</text><path class="mm-link c1" d="M298.8,194.0 C326.8,194.0 326.8,236.0 354.8,236.0"/><rect class="mm-leaf c1" x="354.8" y="222.0" width="174.0" height="28" rx="4"/><text class="mm-leaf-t" x="364.8" y="241.0">Phases A, B, C unequal</text><path class="mm-link c2" d="M112.0,430.0 C144.0,430.0 144.0,324.0 176.0,324.0"/><rect class="mm-branch c2" x="176.0" y="310.0" width="115.2" height="28" rx="5"/><text class="mm-branch-t" x="233.6" y="328.5" text-anchor="middle">Lorenz curve</text><path class="mm-link c2" d="M291.2,324.0 C319.2,324.0 326.8,282.0 354.8,282.0"/><rect class="mm-leaf c2" x="354.8" y="268.0" width="90.0" height="28" rx="4"/><text class="mm-leaf-t" x="364.8" y="287.0">Data-based</text><path class="mm-link c2" d="M291.2,324.0 C319.2,324.0 326.8,318.0 354.8,318.0"/><rect class="mm-leaf c2" x="354.8" y="304.0" width="216.0" height="28" rx="4"/><text class="mm-leaf-t" x="364.8" y="323.0">Sort, group, share, cumulate</text><path class="mm-link c2" d="M291.2,324.0 C319.2,324.0 326.8,360.0 354.8,360.0"/><rect class="mm-leaf c2" x="354.8" y="340.0" width="209.0" height="40" rx="4"/><text class="mm-leaf-t" x="364.8" y="355.0">OP = equality, QP = perfect</text><text class="mm-leaf-t" x="364.8" y="370.0">inequality</text><path class="mm-link c3" d="M112.0,430.0 C144.0,430.0 144.0,460.0 176.0,460.0"/><rect class="mm-branch c3" x="176.0" y="446.0" width="54.4" height="28" rx="5"/><text class="mm-branch-t" x="203.2" y="464.5" text-anchor="middle">Gini</text><path class="mm-link c3" d="M230.4,460.0 C258.4,460.0 326.8,412.0 354.8,412.0"/><rect class="mm-leaf c3" x="354.8" y="398.0" width="97.0" height="28" rx="4"/><text class="mm-leaf-t" x="364.8" y="417.0">A / (A + B)</text><path class="mm-link c3" d="M230.4,460.0 C258.4,460.0 326.8,454.0 354.8,454.0"/><rect class="mm-leaf c3" x="354.8" y="434.0" width="167.0" height="40" rx="4"/><text class="mm-leaf-t" x="364.8" y="449.0">0 to 1</text><text class="mm-leaf-n" x="364.8" y="464.0">higher = more unequal</text><path class="mm-link c3" d="M230.4,460.0 C258.4,460.0 326.8,502.0 354.8,502.0"/><rect class="mm-leaf c3" x="354.8" y="482.0" width="307.0" height="40" rx="4"/><text class="mm-leaf-t" x="364.8" y="497.0">Four shortcomings</text><text class="mm-leaf-n" x="364.8" y="512.0">not additive, same Gini, tails, subgroups</text><path class="mm-link c4" d="M112.0,430.0 C144.0,430.0 144.0,626.0 176.0,626.0"/><rect class="mm-branch c4" x="176.0" y="612.0" width="69.6" height="28" rx="5"/><text class="mm-branch-t" x="210.8" y="630.5" text-anchor="middle">Causes</text><path class="mm-link c4" d="M245.6,626.0 C273.6,626.0 326.8,560.0 354.8,560.0"/><rect class="mm-leaf c4" x="354.8" y="540.0" width="195.0" height="40" rx="4"/><text class="mm-leaf-t" x="364.8" y="555.0">Natural advantages</text><text class="mm-leaf-n" x="364.8" y="570.0">birth, place, comparative</text><path class="mm-link c4" d="M245.6,626.0 C273.6,626.0 326.8,602.0 354.8,602.0"/><rect class="mm-leaf c4" x="354.8" y="588.0" width="181.0" height="28" rx="4"/><text class="mm-leaf-t" x="364.8" y="607.0">Marx: capital vs labour</text><path class="mm-link c4" d="M245.6,626.0 C273.6,626.0 326.8,644.0 354.8,644.0"/><rect class="mm-leaf c4" x="354.8" y="624.0" width="202.0" height="40" rx="4"/><text class="mm-leaf-t" x="364.8" y="639.0">Modern: survivorship, firm</text><text class="mm-leaf-t" x="364.8" y="654.0">survival</text><path class="mm-link c4" d="M245.6,626.0 C273.6,626.0 326.8,692.0 354.8,692.0"/><rect class="mm-leaf c4" x="354.8" y="672.0" width="251.0" height="40" rx="4"/><text class="mm-leaf-t" x="364.8" y="687.0">Rule of law: fair vs unfair means</text><text class="mm-leaf-n" x="364.8" y="702.0">Competition Act 2002</text><path class="mm-link c5" d="M112.0,430.0 C144.0,430.0 144.0,786.0 176.0,786.0"/><rect class="mm-branch c5" x="176.0" y="772.0" width="122.8" height="28" rx="5"/><text class="mm-branch-t" x="237.4" y="790.5" text-anchor="middle">Growth models</text><path class="mm-link c5" d="M298.8,786.0 C326.8,786.0 326.8,744.0 354.8,744.0"/><rect class="mm-leaf c5" x="354.8" y="730.0" width="188.0" height="28" rx="4"/><text class="mm-leaf-t" x="364.8" y="749.0">Growth causes inequality</text><path class="mm-link c5" d="M298.8,786.0 C326.8,786.0 326.8,780.0 354.8,780.0"/><rect class="mm-leaf c5" x="354.8" y="766.0" width="202.0" height="28" rx="4"/><text class="mm-leaf-t" x="364.8" y="785.0">Trickle-down: 4 conditions</text><path class="mm-link c5" d="M298.8,786.0 C326.8,786.0 326.8,822.0 354.8,822.0"/><rect class="mm-leaf c5" x="354.8" y="802.0" width="181.0" height="40" rx="4"/><text class="mm-leaf-t" x="364.8" y="817.0">Inclusive: capability +</text><text class="mm-leaf-t" x="364.8" y="832.0">opportunity</text></svg></div><div id="mm-outline" hidden><ul class="outline"><li><strong>Inequality</strong><ul><li class="c0"><details open><summary>What it is</summary><ul><li>Differences in attainment <span class="ol-note">hospital per 5 km2 example</span></li><li>Measured by income, CE, wealth</li><li>CE is most objective</li></ul></details></li><li class="c1"><details open><summary>Kuznets curve</summary><ul><li>Theory, not data</li><li>Inequality rises, stabilises, corrects</li><li>Phases A, B, C unequal</li></ul></details></li><li class="c2"><details open><summary>Lorenz curve</summary><ul><li>Data-based</li><li>Sort, group, share, cumulate</li><li>OP = equality, QP = perfect inequality</li></ul></details></li><li class="c3"><details open><summary>Gini</summary><ul><li>A / (A + B)</li><li>0 to 1 <span class="ol-note">higher = more unequal</span></li><li>Four shortcomings <span class="ol-note">not additive, same Gini, tails, subgroups</span></li></ul></details></li><li class="c4"><details open><summary>Causes</summary><ul><li>Natural advantages <span class="ol-note">birth, place, comparative</span></li><li>Marx: capital vs labour</li><li>Modern: survivorship, firm survival</li><li>Rule of law: fair vs unfair means <span class="ol-note">Competition Act 2002</span></li></ul></details></li><li class="c5"><details open><summary>Growth models</summary><ul><li>Growth causes inequality</li><li>Trickle-down: 4 conditions</li><li>Inclusive: capability + opportunity</li></ul></details></li></ul></li></ul></div></section><div class="notes"><h2 id="exam-lens-priority-and-pyqs">Exam lens: priority and PYQs<a class="anchor" href="#exam-lens-priority-and-pyqs" aria-label="Link to this section">#</a></h2>
+<aside class="callout alert"><span class="tag">Source note</span><p><strong>This chapter comes from the handout only.</strong> No class slides, no teacher ink and no PYQ section came with it. PYQs quoted in the material: <strong>none quoted in the material.</strong></p></aside>
+<div class="tblock"><div class="tcap">What the handout itself stresses</div><div class="tablewrap"><table><thead><tr><th>Signal in the handout</th><th>Where</th><th>Why it matters</th></tr></thead><tbody><tr><th scope='row'>Kuznets curve is "<strong>not a data-based curve,</strong> merely a theoretical expectation"; Lorenz curve <strong>is</strong> data-based</th><td>Section 2</td><td>A clean statement trap: theory versus data.</td></tr><tr><th scope='row'>Gini ranges 0 (perfect equality) to 1 (perfect inequality); a higher Gini means more inequality. <strong>Four shortcomings</strong> listed</th><td>Section 4</td><td>The handout gives each with "The Concept" and "The Explanation".</td></tr><tr><th scope='row'>Modern reasoning: it is about the <strong>nature</strong> of inequality, and the <strong>rule of law</strong> decides it</th><td>Section 5</td><td>A Mains theme. The handout stresses that rule of law is more than a law.</td></tr><tr><th scope='row'><strong>Trickle-down works only if four conditions hold;</strong> inclusive growth rests on <strong>capability and opportunity</strong></th><td>Sections 7-8</td><td>A compare-and-contrast Mains question. The handout says the two are "essentially the same" with different emphasis.</td></tr><tr><th scope='row'>Skill and inclusion readings named: National Skill Development Programme, PMKVY, Jan Dhan, Mudra, Economic Survey 2025-26</th><td>Section 8</td><td>The handout points to these for further reading.</td></tr></tbody></table></div></div>
+<aside class="callout key"><span class="tag">What to prepare</span><p><strong>Prelims hooks:</strong> Kuznets versus Lorenz; the Lorenz plotting steps and what the equality line OP and the line QP mean; the Gini formula and range; the four Gini shortcomings; the four conditions for trickle-down; the two pillars of inclusive growth.</p><p><strong>Mains hooks:</strong> causes of inequality (natural, Marxist, modern); why growth causes inequality; why trickle-down fails; why inclusive growth is about claim, not charity; the rule-of-law argument.</p><p><strong>Closing idea:</strong> some inequality comes with growth, but its kind decides the outcome. Good inequality (earned by fair means under rule of law) is tolerable; bad inequality (from connections and weak law) hurts everyone.</p></aside>
+<h2 id="1-what-is-inequality">1 · What is inequality?<a class="anchor" href="#1-what-is-inequality" aria-label="Link to this section">#</a></h2>
+<p><strong>Inequality is differences in the degree of attainment on various aspects of well-being.</strong> Example: one person lives where there is one hospital per 5 km² and another where there are two. Neither is probably facing pronounced deprivation, but the second's attainment is better than the first's. That is inequality. (Poverty is about a floor; inequality is about differences above it.)</p>
+<ul class='lst'>
+<li>It can be economic, social or political, but it is generally <strong>measured through economic differences:</strong> income, expenditure and wealth.</li>
+<li>Like poverty, the preferred method is <strong>consumption expenditure (CE).</strong></li>
+<li>Inequality measured through <strong>wealth</strong> is generally higher. But wealth and income are less truthfully revealed and highly volatile, so <strong>CE-based inequality, even though lower, is generally the most objective.</strong></li>
+<li>The government generally measures <strong>consumption inequality</strong> because it lacks verifiable, regularly collected data on other measures.</li>
+</ul>
+<h2 id="2-kuznets-curve-a-theory">2 · Kuznets curve: a theory<a class="anchor" href="#2-kuznets-curve-a-theory" aria-label="Link to this section">#</a></h2>
+<p>The Kuznets curve is a <strong>theoretical prediction</strong> about how inequality relates to incomes in a society over time. Kuznets predicts that <strong>as incomes rise, inequality first rises</strong> (incomes of some grow faster than others), then <strong>stabilises,</strong> and eventually <strong>corrects.</strong></p>
+<figure><a class="zoom" href="img/eco-kuznets.jpg"><img src="img/eco-kuznets.jpg" alt="Hand-drawn Kuznets curve: inequality on the vertical axis, income on the horizontal axis. An inverted U with three phases marked A, B and C." loading="lazy"></a><figcaption><span class="figsrc">Handout figure</span> Hand-drawn Kuznets curve: inequality on the vertical axis, income on the horizontal axis. An inverted U with three phases marked A, B and C.</figcaption></figure>
+<ul class='lst'>
+<li>It is <strong>not a data-based curve,</strong> only a theoretical expectation.</li>
+<li>The phases <strong>A, B, C are not necessarily of equal or proportional lengths.</strong></li>
+</ul>
+<aside class="callout alert"><span class="tag">Handout alert: what the curve shows</span><p>The handout gives the shape as rise, stabilise, correct. It labels the phases A, B, C on the sketch but does not define each one separately. <strong>Rule for the exam hall:</strong> call it a theoretical, inverted-U expectation, never a measured curve.</p></aside>
+<h2 id="3-lorenz-curve-a-data-based-picture">3 · Lorenz curve: a data-based picture<a class="anchor" href="#3-lorenz-curve-a-data-based-picture" aria-label="Link to this section">#</a></h2>
+<p>The Lorenz curve (LC) is a <strong>data-based representation</strong> of existing inequality in income, CE or wealth.</p>
+<div class="flow"><div class="tcap">How to plot the Lorenz curve</div><div class="chain"><div class="step"><div class="sl">1 · Collect data</div><div class="ss">Income, CE or wealth, from the population or a sample</div></div><div class="arr"></div><div class="step"><div class="sl">2 · Sort it</div><div class="ss">Generally in descending order (the handout's wording)</div></div><div class="arr"></div><div class="step"><div class="sl">3 · Divide into equal-sized groups</div><div class="ss">For example 5 groups of 20% of the population</div></div><div class="arr"></div><div class="step"><div class="sl">4 · Find each group's share</div><div class="ss">Total income of the group, hence its share in total income</div></div><div class="arr"></div><div class="step good"><div class="sl">5 · Plot cumulative shares</div><div class="ss">Example: bottom 20% have 3%, next 20% have 7%, so bottom 40% have a cumulative 10%. Join the points</div></div></div></div>
+<figure><a class="zoom" href="img/eco-lorenz-chart.jpg"><img src="img/eco-lorenz-chart.jpg" alt="Lorenz curve of income distribution. The diagonal is the line of perfect equality. Points: bottom 20% earn 3% cumulative, bottom 40% earn 10%, bottom 60% earn 25%, bottom 80% earn 50% (in this chart the last point shown is 50%)." loading="lazy"></a><figcaption><span class="figsrc">Handout figure</span> Lorenz curve of income distribution. The diagonal is the line of perfect equality. Points: bottom 20% earn 3% cumulative, bottom 40% earn 10%, bottom 60% earn 25%, bottom 80% earn 50% (in this chart the last point shown is 50%).</figcaption></figure>
+<figure><a class="zoom" href="img/eco-lorenz-sketch.jpg"><img src="img/eco-lorenz-sketch.jpg" alt="Hand-drawn sketch from the handout: the equality line OP, the Lorenz curve, and the right-angle line OQP for perfect inequality. Example: the bottom 80% have a share of 40% of total income." loading="lazy"></a><figcaption><span class="figsrc">Handout figure</span> Hand-drawn sketch from the handout: the equality line OP, the Lorenz curve, and the right-angle line OQP for perfect inequality. Example: the bottom 80% have a share of 40% of total income.</figcaption></figure>
+<aside class="callout alert"><span class="tag">Handout alert: two examples, different numbers</span><p>The text example says bottom 20% have 3%, bottom 40% have 10%. The chart printed beside it labels bottom 80% as 50% cumulative, while the written example beneath the sketch says bottom 80% have <strong>40%.</strong> They are two different illustrations. <strong>Rule for the exam hall:</strong> do not quote a number from these pictures; explain the method and the two extreme lines.</p></aside>
+<div class="tblock"><div class="tcap">Reading the curve</div><div class="tablewrap"><table><thead><tr><th>Case</th><th>What the LC looks like</th></tr></thead><tbody><tr><th scope='row'><strong>Perfect equality</strong></th><td>Every group has the same share as any other group of the same size. The LC is the <strong>x = y line, OP:</strong> the <strong>line of perfect equality</strong></td></tr><tr><th scope='row'><strong>Perfect inequality</strong></th><td>One person has all the income, so the rest have zero. The LC runs along the <strong>x-axis</strong> until the very last point, then rises vertically: <strong>OQP, or simply QP</strong></td></tr><tr><th scope='row'><strong>A real country</strong></th><td>Lies between the two. <strong>The closer to the equality line, the more equal;</strong> the farther away, the less equal</td></tr></tbody></table></div></div>
+<h2 id="4-gini-coefficient-and-its-four-shortcomings">4 · Gini coefficient and its four shortcomings<a class="anchor" href="#4-gini-coefficient-and-its-four-shortcomings" aria-label="Link to this section">#</a></h2>
+<p>The Gini coefficient is a statistical measure of inequality calculated using the Lorenz curve. Let <strong>A</strong> be the area between the line of equality and the Lorenz curve, and <strong>B</strong> the area below the Lorenz curve.</p>
+<figure><a class="zoom" href="img/eco-lorenz-gini.jpg"><img src="img/eco-lorenz-gini.jpg" alt="Lorenz curve with areas A (between the equality line and the curve) and B (below the curve). Gini = A / (A + B)." loading="lazy"></a><figcaption><span class="figsrc">Handout figure</span> Lorenz curve with areas A (between the equality line and the curve) and B (below the curve). Gini = A / (A + B).</figcaption></figure>
+<aside class="callout teacher"><span class="tag">Formula</span><p><strong>Gini (GC) = Area between equality line and Lorenz curve / Area between equality line and inequality line = A / (A + B).</strong></p></aside>
+<ul class='lst'>
+<li><strong>Range:</strong> 0 when A = 0 (perfect equality) to 1 when B = 0 (perfect inequality).</li>
+<li><strong>An increase in Gini means an increase in inequality.</strong></li>
+</ul>
+<div class="tblock"><div class="tcap">Shortcomings of the Gini (the handout's four)</div><div class="tablewrap"><table><thead><tr><th>Shortcoming</th><th>The concept</th><th>The handout's explanation</th></tr></thead><tbody><tr><th scope='row'><strong>1 · Not easily decomposable or additive</strong></th><td>You cannot do simple maths with Ginis to see the bigger picture</td><td>Average incomes of two states combine easily into one average. Ginis do not: State A at 0.3 and State B at 0.4 do <strong>not</strong> combine to 0.35. The maths is complex, so policymakers cannot easily say which region or sector drives overall inequality</td></tr><tr><th scope='row'><strong>2 · Different distributions can give the same Gini</strong></th><td>One number hides the <strong>shape</strong> of society</td><td>Society A: starving lower class, wealthy middle class, no billionaires. Society B: comfortable lower and middle class, but a few trillionaires hoarding half the wealth. Both could score <strong>0.40,</strong> yet feel completely different</td></tr><tr><th scope='row'><strong>3 · Reacts differently to transfers at the tails than in the middle</strong></th><td>Over-sensitive to the middle class, somewhat <strong>blind to the extremes</strong></td><td>A ₹10,000 gift between two middle-class people visibly improves the Gini. A multi-billionaire taking ₹10,000 from a destitute beggar (a transfer at the tails) barely moves it. It misses rising concentration at the very top</td></tr><tr><th scope='row'><strong>4 · Hides demographic variation among subgroups</strong></th><td>Blind to <strong>who</strong> the rich and poor are</td><td>A "low" Gini cannot show whether the old hold 90% of the wealth while youth face poverty, or whether one racial group or caste earns far less. It throws everyone into one pot</td></tr></tbody></table></div></div>
+<h2 id="5-why-does-inequality-exist">5 · Why does inequality exist?<a class="anchor" href="#5-why-does-inequality-exist" aria-label="Link to this section">#</a></h2>
+<h3>(1) Natural advantages</h3>
+<p>These are <strong>accidents of birth or location</strong> that give some people a better chance at well-being: birth in a family of means or higher social status, better networks, inherited wealth. A place with better geography and fewer adverse events has better access to health, education and livelihood. <strong>Most inequalities can be explained by natural advantages or disadvantages,</strong> and they cannot be wished away.</p>
+<p>But they cannot explain everything. Siblings in the same household can have very different outcomes. That is explained by <strong>comparative advantages and disadvantages:</strong> also natural, but not apparent at first. Example: an elder sibling is given responsibility earlier and is better prepared for such roles; a younger sibling may lean toward artistic or talent-based pursuits.</p>
+<h3>(2) Economic reasons: the Marxist view</h3>
+<ul class='lst'>
+<li>Marx: inequality results from <strong>differences in the ability of different groups to enforce their interests.</strong> The groups are those with <strong>capital</strong> and those with <strong>labour,</strong> and the interest is to take a larger share of revenue as <strong>profits versus wages.</strong></li>
+<li>A firm gets factors of production as capital (entrepreneurship, capital, land) and labour. Revenue is split into wages and the retained profit. Both sides want a larger share.</li>
+<li><strong>Capital is scarce and labour abundant,</strong> so labour's ability to bargain is low. Capital is concentrated in few hands, so providers keep a larger share as profit.</li>
+<li>To some extent this is fair: capital takes greater risk and deserves higher reward. But as revenue rises, <strong>profit's share keeps increasing while wages rise slowly,</strong> so initial inequalities <strong>compound</strong> over time. That growing inequality is the problem, according to Marx.</li>
+</ul>
+<h3>(3) Modern reasoning</h3>
+<p><strong>a. A critique of the Marxist view.</strong> The handout says Marxist reasoning has <strong>survivorship bias:</strong> it uses only the information that is visible.</p>
+<ul class='lst'>
+<li>Profits do rise faster than wages at a broad level. But adjust profits for the <strong>losses of firms that shut down</strong> and the growth rate is not very different.</li>
+<li><strong>Most firms that start today shut down within 10 years.</strong> Marxist reasoning considers only profit, which belongs to the firm that survives.</li>
+<li>There are periods when profits decline but wages do not. Over a longer term, <strong>profits and wages grow at a similar rate.</strong></li>
+<li>Why do profits still rise quickly? Surviving firms grow because of market growth <strong>and</strong> because of <strong>larger market share after other firms close.</strong> Wages grow only with market size, since the number of workers stays mostly stable.</li>
+<li>Marxism is "obviously not wrong" (it rightly points to unequal ability to enforce interests) but it underplays the <strong>low survival rate of firms</strong> versus a stable worker count.</li>
+<li>So firms see that the key to exceptional profit is <strong>survival and market share.</strong> The <strong>means</strong> they choose decide the kind of inequality a society has.</li>
+</ul>
+<p><strong>b. The political-legal system: the rule of law.</strong> Every firm wants to survive and to monopolise; when market share rises, profits rise sharply. There are two routes to more share:</p>
+<div class="tblock"><div class="tablewrap"><table><thead><tr><th></th><th>Fair means</th><th>Unfair means</th></tr></thead><tbody><tr><th scope='row'>What firms do</th><td>Better goods and services through <strong>R&amp;D,</strong> risk-taking, innovation, hiring skilled workers and paying them well</td><td>Exploit position and <strong>connections with lawmakers and enforcers,</strong> making it hard for others to compete</td></tr><tr><th scope='row'>Under a <strong>strong</strong> rule of law</th><td>Firms are pushed to this route, since connections are not exploited and violators are punished</td><td>Strong disincentive</td></tr><tr><th scope='row'>Under a <strong>weak</strong> rule of law</th><td>Fair players fall; wrongdoers get away</td><td>Firms lack integrity and ignore workers, consumers, minority shareholders and society</td></tr><tr><th scope='row'>Outcome</th><td>They still monopolise and inequalities emerge, but society benefits. Such inequality is tolerable and "<strong>good</strong>"</td><td>Everyone loses except the owners (and only briefly). Inequality gives <strong>bad</strong> outcomes</td></tr></tbody></table></div></div>
+<aside class="callout teacher"><span class="tag">The modern point</span><p><strong>Modern reasoning is less about why inequality exists anywhere and more about why a certain kind of inequality exists in some places that gives the worst outcomes for everyone. It is about its nature.</strong></p></aside>
+<aside class="callout note"><span class="tag">What is "rule of law"?</span><p>It is <strong>not merely a law or some laws.</strong> It is a <strong>collective environment of institutions</strong> that frame, execute and adjudicate the laws. The people and institutions must be competent <strong>and</strong> act fairly and without bias.</p><p>Example: the <strong>Competition Act, 2002</strong> aims to prevent monopolies through unfair practices. But many entities decide what a monopoly is, what is fair, and what to do about it. The Act is <strong>one aspect</strong> of the rule of law; how it is applied decides whether the rule of law exists.</p></aside>
+<h2 id="6-growth-and-inequality">6 · Growth and inequality<a class="anchor" href="#6-growth-and-inequality" aria-label="Link to this section">#</a></h2>
+<ul class='lst'>
+<li><strong>Growth, by its design, is inequality-causing.</strong> Faster growth happens when limited resources go where growth potential is higher, in sectors or places that can use them more efficiently.</li>
+<li>Faster growth means <strong>more employment and a faster fall in poverty,</strong> which is desirable.</li>
+<li>But if resources are focused on certain sectors, regions or industries, the incomes of those grow faster, so <strong>inequality rises.</strong> Growth is "not without its costs".</li>
+<li>To correct this, governments have tried models of growth that aim for <strong>faster growth with less inequality.</strong> The handout stresses these are <strong>not mathematical models</strong> but <strong>general policy approaches,</strong> and by the end you see both are <strong>essentially the same,</strong> differing in emphasis.</li>
+</ul>
+<h2 id="7-trickle-down-approach">7 · Trickle-down approach<a class="anchor" href="#7-trickle-down-approach" aria-label="Link to this section">#</a></h2>
+<p>The intent is <strong>focus:</strong> maximum output in least time. The government focuses scarce economic, technological, human and natural resources, through policy, on sectors or regions with potential for faster growth. The expectation is a <strong>multiplier effect:</strong> one sector grows and pulls the whole economy up, while evenly spread resources would give only an average rate.</p>
+<ul class='lst'>
+<li>Benefits <strong>can trickle down</strong> naturally to nearby areas, sectors and people, but it may take a long time, and those left out just keep waiting.</li>
+<li>So the government <strong>accelerates</strong> it by <strong>redistributing</strong> benefits to those at the bottom.</li>
+</ul>
+<div class="tblock"><div class="tcap">Four conditions for trickle-down to work</div><div class="tablewrap"><table><thead><tr><th>#</th><th>Condition</th></tr></thead><tbody><tr><th scope='row'>1</th><td><strong>The chosen sector grows</strong></td></tr><tr><th scope='row'>2</th><td>The government is able to collect more <strong>taxes</strong> from that growth (<strong>high taxation efficiency</strong>)</td></tr><tr><th scope='row'>3</th><td>The government <strong>decides to redistribute,</strong> i.e. spends on those left out instead of reinvesting in the same or a related sector</td></tr><tr><th scope='row'>4</th><td><strong>Efficiency of redistribution is high:</strong> benefits reach the intended beneficiaries</td></tr></tbody></table></div></div>
+<aside class="callout alert"><span class="tag">Why it often fails</span><p>If any condition fails, trickle-down does not happen and the inequalities created <strong>become permanent.</strong> More often than not these assumptions fail, so inequalities persist and are even <strong>created by the approach.</strong> It is <strong>not an anti-poor model,</strong> but a well-meant pursuit of growth ends up creating more inequality. This leads to the inclusive approach.</p></aside>
+<h2 id="8-inclusive-growth">8 · Inclusive growth<a class="anchor" href="#8-inclusive-growth" aria-label="Link to this section">#</a></h2>
+<p>The handout calls trickle-down a <strong>pro-poor</strong> model that relies on the government moving the benefits of growth to the bottom. Being "brutally honest": the benefits do not <strong>rightfully</strong> belong to the bottom, since they did not contribute to growth, which is driven largely by those at the top. The top contributes and so <strong>keeps most of the benefits.</strong> The bottom's only "sacrifice" was not getting special policy focus, and schemes for the poor are a payment for it. So the poor get benefits only at the <strong>government's discretion,</strong> transfers often fail and inequality stays.</p>
+<p><strong>Inclusive growth</strong> is based on the premise that growth should be <strong>broad-based:</strong> it must include as many sections of society and the economy as possible, driven not only by the top but also by the bottom. The aim is to move those at the bottom from <strong>passive recipients</strong> of growth's benefits to <strong>active contributors,</strong> with a rightful claim on its fruits. It has <strong>two pillars:</strong></p>
+<div class="flow"><div class="tcap">The two pillars of inclusive growth</div><div class="lanes"><div class="lane"><div class="lane-h">Pillar 1 · Capability</div><div class="chain"><div class="step"><div class="sl">Identify the poor and vulnerable</div></div><div class="arr"></div><div class="step"><div class="sl">Identify backward regions</div></div><div class="arr"></div><div class="step"><div class="sl">Find key reasons for backwardness or vulnerability</div><div class="ss">Disasters, poor health and nutrition, weak institutions including economic ones like agricultural markets, youth migration</div></div><div class="arr"></div><div class="step"><div class="sl">Focused interventions based on those reasons</div></div><div class="arr"></div><div class="step"><div class="sl">Skills, basic healthcare, quality education for all</div><div class="ss">Skills are dynamic, so link them to evolving industry needs, with incentives and hand-holding</div></div></div></div><div class="lane"><div class="lane-h">Pillar 2 · Opportunity</div><div class="chain"><div class="step"><div class="sl">Job creation through industrial development</div><div class="ss">Especially labour-intensive industry</div></div><div class="arr"></div><div class="step"><div class="sl">Shift from job-seeking to job-creating</div><div class="ss">An entrepreneurship culture</div></div><div class="arr"></div><div class="step"><div class="sl">Improve ease of doing business (EoDB)</div><div class="ss">Contract enforcement (judicial reforms), easier registration, land acquisition</div></div><div class="arr"></div><div class="step"><div class="sl">Reduce or share entrepreneurial risk</div></div><div class="arr"></div><div class="step"><div class="sl">Access to capital</div><div class="ss">For example guarantees to banks on the borrower's behalf; this needs <strong>financial inclusion</strong></div></div></div></div></div></div>
+<aside class="callout teacher"><span class="tag">Behavioural point</span><p>Interventions must recognise <strong>behaviour.</strong> "The government should build more schools" is not enough. Ask why children are not going to school. Are teachers skilled and qualified? Are there separate girls' washrooms? Can poor families afford the incidental costs?</p><p>Skills are dynamic, so link them to evolving industry requirements and recognise the need for <strong>incentives and hand-holding.</strong></p></aside>
+<div class="tblock"><div class="tcap">Trickle-down versus inclusive growth</div><div class="tablewrap"><table><thead><tr><th></th><th>Trickle-down</th><th>Inclusive growth</th></tr></thead><tbody><tr><th scope='row'>Idea</th><td>Focus resources on high-growth sectors; let benefits reach the bottom</td><td>Broad-based growth that includes the bottom as <strong>contributors</strong></td></tr><tr><th scope='row'>Bottom's position</th><td>Passive recipient of benefits</td><td>Active contributor with a rightful claim</td></tr><tr><th scope='row'>Role of government</th><td>Redistributes benefits (at its discretion)</td><td>Builds <strong>capability</strong> and provides <strong>opportunity</strong></td></tr><tr><th scope='row'>Weakness</th><td>Fails if any of four conditions fails; inequality becomes permanent</td><td>Takes effort on skills, institutions, credit and enterprise</td></tr></tbody></table></div></div>
+<aside class="callout note"><span class="tag">Reading named in the handout</span><p>Students may refer to the <strong>National Skill Development Programme, PMKVY</strong> and the <strong>Economic Survey 2025-26</strong> discussion on skill development, health and education.</p><p>For opportunities, refer to <strong>Jan Dhan Yojana, Mudra Yojana</strong> and Economic Survey 2025-26 on support to industry.</p><p><strong>Important note:</strong> the handout says it will return to inequality when it turns to different kinds of economies, and will discuss inclusive growth much more in later chapters. "This is just the beginning."</p></aside>
+</div><section><h2 id="chapter-timeline">Timeline and numbers<a class="anchor" href="#chapter-timeline">#</a></h2><ol class="timeline"><li class="tl "><time class="yr">2002</time><span class="pin"></span><div class="tlbody">Competition Act: the handout's example of a law that is only one part of the rule of law</div></li><li class="tl "><time class="yr">2011-12</time><span class="pin"></span><div class="tlbody">Consumption-based Gini 28.8 (from the handout's summary in Chapter 1)</div></li><li class="tl "><time class="yr">2022-23</time><span class="pin"></span><div class="tlbody">Consumption-based Gini 25.5</div></li><li class="tl high"><time class="yr">2023-24</time><span class="pin"></span><div class="tlbody">Median earnings of the top 10% are 13 times those of the bottom 10%<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">2025-26</time><span class="pin"></span><div class="tlbody">Economic Survey 2025-26: the handout's pointer for skills, health, education and support to industry</div></li></ol></section><section><h2 id="connects">Connects to<a class="anchor" href="#connects">#</a></h2><div class="lkgrid"><article class="link"><div class="lk-line"><a class="xref" href="eco-ch01.html">Chapter 1: Poverty</a></div><p>Relative poverty reflects inequality; the PGI ignores inequality among the poor; the Gini fell from 28.8 to 25.5 (2011-12 to 2022-23) in the Chapter 1 summary.</p></article><article class="link"><div class="lk-line">Unemployment handout (next in your PDF)</div><p>Refers back to "our discussion on inclusive growth" and to the same schemes. The capability pillar (skills) and opportunity pillar (jobs) are the structure behind youth unemployment.</p></article><article class="link"><div class="lk-line">National Income Accounting handout</div><p>Covers the Inequality-adjusted HDI (IHDI), which discounts HDI for inequality in health, education and income: the Gini and Lorenz ideas at work in a development index.</p></article><article class="link"><div class="lk-line">Banking and NBFCs handout</div><p>Financial inclusion (PM Jan Dhan Yojana, 2014) is the "access to capital" requirement of the opportunity pillar.</p></article><article class="link"><div class="lk-line">Budget and Fiscal Policy handout</div><p>Redistribution, taxation and who should receive free foodgrains are the fiscal side of trickle-down conditions 2 to 4.</p></article></div></section><section><h2 id="recall">Recall sheet<a class="anchor" href="#recall">#</a></h2><p class="gdesc">Read once, hide it, then rebuild the chapter from memory.</p><ol class="recall"><li>Inequality = differences in attainment on aspects of well-being. Measured through consumption expenditure (most objective); wealth inequality is higher but less reliable.</li><li>Kuznets curve: theory, not data. Inequality rises, stabilises, then corrects as incomes rise. Phases A, B, C unequal.</li><li>Lorenz curve: data-based. Sort, group, find shares, plot cumulative. OP = equality line; QP (OQP) = perfect inequality.</li><li>Gini = A/(A+B); 0 to 1; up = more inequality.</li><li>Four Gini shortcomings: not decomposable; same Gini for different distributions (0.40 example); tails versus middle transfers; no demographic detail.</li><li>Causes: natural advantages (birth, place, comparative); Marx (capital versus labour, compounding); modern (survivorship bias, firm survival, market share); rule of law (fair versus unfair means, Competition Act 2002, good versus bad inequality).</li><li>Growth causes inequality by focusing resources; models try to keep growth with less inequality.</li><li>Trickle-down: four conditions (sector grows, tax efficiency, decision to redistribute, redistribution efficiency). Fails often; inequality becomes permanent.</li><li>Inclusive growth: capability (identify poor and regions, reasons, focused interventions, skills, health, education) and opportunity (jobs, entrepreneurship, EoDB, risk sharing, capital with financial inclusion).</li><li>Blank page: draw Lorenz with OP and QP, shade A and B, then write the four shortcomings.</li></ol></section><section><h2 id="practice">Test yourself<a class="anchor" href="#practice">#</a></h2><p class="gdesc">Practice questions below are written from the handout. They are not past-year questions.</p><h3>Quick quiz</h3><div class="count" id="score">0 / 0 correct</div><div id="quiz"></div><h3>Mains practice: answer skeletons</h3><p class="gdesc">Try the answer on a blank page first, then open the skeleton.</p><details class="q"><summary class="qt">Distinguish the Kuznets curve from the Lorenz curve. How is the Gini coefficient derived from the latter?</summary><p><strong>Intro:</strong> One is a theory about how inequality moves with income, the other is a picture of inequality at a point in time.</p><ul class="lst"><li>Kuznets: theoretical, not data-based; inequality rises, stabilises, corrects; phases unequal.</li><li>Lorenz: data-based; sort, group, find shares, plot cumulative shares.</li><li>Equality line OP; perfect inequality QP.</li><li>Gini = A/(A+B), range 0 to 1.</li></ul><p><strong>Closing line:</strong> Kuznets tells a story, Lorenz shows the facts, and Gini compresses the facts into a number.</p></details><details class="q"><summary class="qt">"The Gini coefficient alone cannot describe inequality." Discuss.</summary><p><strong>Intro:</strong> A single number can hide the shape and the people behind it.</p><ul class="lst"><li>Not decomposable: states' Ginis cannot be simply averaged.</li><li>Same Gini, different societies (0.40 example).</li><li>Insensitive to transfers at the tails; sensitive in the middle.</li><li>Blind to age, race, caste and other subgroups.</li><li>So use Lorenz, subgroup data and wealth concentration along with it.</li></ul><p><strong>Closing line:</strong> Use Gini as a thermometer, not a diagnosis.</p></details><details class="q"><summary class="qt">Why does inequality exist? Compare the Marxist and modern explanations.</summary><p><strong>Intro:</strong> Inequality has natural, economic and institutional roots.</p><ul class="lst"><li>Natural advantages: birth, place, comparative advantages between siblings.</li><li>Marx: capital versus labour bargaining; profits compound.</li><li>Modern: survivorship bias; firms seek survival and market share.</li><li>Means chosen decide the nature of inequality: fair versus unfair, set by rule of law (Competition Act 2002 is one part only).</li></ul><p><strong>Closing line:</strong> The question is not whether inequality exists but what kind.</p></details><details class="q"><summary class="qt">Why does growth cause inequality? Why does trickle-down often fail?</summary><p><strong>Intro:</strong> Growth concentrates scarce resources where returns are highest.</p><ul class="lst"><li>Focus on high-potential sectors raises their incomes faster.</li><li>Trickle-down needs four conditions: sector grows, tax efficiency, decision to redistribute, redistribution efficiency.</li><li>When one fails, inequality becomes permanent.</li><li>Benefits reach the poor only at government discretion.</li></ul><p><strong>Closing line:</strong> Trickle-down hopes the benefit flows down; it has no way to make it.</p></details><details class="q"><summary class="qt">Explain inclusive growth. How does it improve on the trickle-down approach?</summary><p><strong>Intro:</strong> Inclusive growth makes the poor contributors to growth, not recipients of charity.</p><ul class="lst"><li>Premise: broad-based growth with a rightful claim for all.</li><li>Capability: identify poor and regions, causes, focused interventions, skills, health, education, recognising behaviour.</li><li>Opportunity: labour-intensive jobs, entrepreneurship, EoDB, risk sharing, access to capital (financial inclusion).</li><li>Both approaches are essentially the same with different emphasis.</li></ul><p><strong>Closing line:</strong> Growth is inclusive when the bottom helps make it and so rightfully shares it.</p></details><h3>Flashcards</h3><p class="gdesc">Tap the card to flip.</p><div class="deck"><div class="fc" id="fc" tabindex="0" role="button" aria-label="Flashcard, press to flip"></div><div class="count" id="fccount"></div><div class="row"><button class="btn" id="fcprev" type="button">Back</button><button class="btn pri" id="fcnext" type="button">Next</button><button class="btn" id="fcmiss" type="button">Missed it</button><button class="btn" id="fcshuf" type="button">Shuffle</button><button class="btn" id="fconlymiss" type="button">Only missed</button><button class="btn" id="fcall" type="button">All cards</button></div></div></section><nav class="pager"><a href="eco-ch01.html"><small>Previous</small>Poverty: Meaning, Measurement and India's Progress</a><span></span></nav><footer>Personal study notes built from the Sarrthi IAS GS Foundation Economy handout (Aditya Kalia). Handout only: no class slides or teacher ink for this chapter. Copyright belongs to the teacher; keep this private.</footer></main></div><div id="lightbox" hidden><img alt=""></div><script type="application/json" id="data">{"mcq": [{"q": "Which statement about the Kuznets curve is correct, according to the handout?", "options": ["It is plotted from survey data", "It is a theoretical expectation, not a data-based curve", "It shows the share of income of each population group", "It is a measure of the gap between the rich and the poor"], "answer": 1, "explain": "Kuznets predicts rising, then stabilising, then falling inequality as incomes rise. It is theory."}, {"q": "The Lorenz curve is...", "options": ["a theoretical prediction", "a data-based representation of existing inequality", "a measure of poverty depth", "a price index"], "answer": 1, "explain": "It is built from data on income, CE or wealth."}, {"q": "In a Lorenz diagram, perfect equality is shown by...", "options": ["the x-axis", "the x = y line OP", "the vertical line at 100%", "any curve below OP"], "answer": 1, "explain": "Every group has the same share as any other group of the same size."}, {"q": "Perfect inequality (one person has everything) makes the Lorenz curve...", "options": ["run along the x-axis and then rise vertically (QP)", "coincide with the diagonal", "run along the y-axis", "become a straight line with slope 2"], "answer": 0, "explain": "The remaining population has zero share, so the curve stays at zero until the very last point."}, {"q": "Gini coefficient is calculated as...", "options": ["B / (A + B)", "A / (A + B)", "A x B", "A - B"], "answer": 1, "explain": "A is the area between the equality line and the Lorenz curve; A + B is the area under the equality line."}, {"q": "The Gini coefficient varies between...", "options": ["-1 and 1", "0 and 100", "0 (perfect equality) and 1 (perfect inequality)", "1 and 10"], "answer": 2, "explain": "0 when A = 0; 1 when B = 0."}, {"q": "State A has Gini 0.3 and State B has 0.4. Combined, the Gini is...", "options": ["exactly 0.35", "not simply an average: Gini is not easily decomposable", "always 0.4", "always 0.3"], "answer": 1, "explain": "The handout's first shortcoming: Gini is not additive."}, {"q": "A multi-billionaire takes ₹10,000 from a destitute person. The Gini will...", "options": ["rise sharply", "fall sharply", "barely change", "become zero"], "answer": 2, "explain": "Gini is sensitive to the middle of the distribution and nearly blind to the tails."}, {"q": "Which is NOT one of the handout's Gini shortcomings?", "options": ["It is not easily decomposable", "Different distributions can give the same value", "It cannot be computed from a Lorenz curve", "It hides demographic variation among subgroups"], "answer": 2, "explain": "Gini is calculated from the Lorenz curve. The other three are listed shortcomings."}, {"q": "Why does the government generally measure consumption inequality?", "options": ["Consumption is more equal than wealth and verifiable data exists", "Wealth data is published every month", "The law forbids measuring wealth", "Consumption is always higher"], "answer": 0, "explain": "Wealth and income are less truthfully revealed and volatile; CE-based inequality is the most objective."}, {"q": "According to Marx, inequality arises from...", "options": ["differences in ability to enforce interests between capital and labour", "differences in climate", "government subsidies", "inflation"], "answer": 0, "explain": "Capital is scarce and concentrated; labour is abundant, so labour bargains poorly and profit share compounds."}, {"q": "The handout's critique of Marxist reasoning is that it suffers from...", "options": ["sampling error", "survivorship bias", "inflation bias", "selection of wrong currency"], "answer": 1, "explain": "It counts only profits of surviving firms; most firms shut down within 10 years."}, {"q": "In the modern reasoning, what decides whether firms use fair or unfair means?", "options": ["Strength of the rule of law", "The size of the labour force", "The exchange rate", "The tax rate alone"], "answer": 0, "explain": "Strong rule of law discourages unfair means; weak rule of law rewards connections."}, {"q": "Which of the following is NOT a condition for trickle-down to succeed?", "options": ["The chosen sector grows", "The government collects more tax from the growth", "Benefits are kept within the same sector", "Redistribution efficiency is high"], "answer": 2, "explain": "The government must decide to redistribute, not reinvest in the same or a related sector."}, {"q": "The two pillars of inclusive growth are...", "options": ["Taxation and subsidy", "Capability and opportunity", "Savings and investment", "Trade and aid"], "answer": 1, "explain": "Give people capability to contribute and opportunities in which to contribute."}, {"q": "In inclusive growth the bottom of society moves from...", "options": ["active contributor to passive recipient", "passive recipient to active contributor", "employer to employee", "saver to borrower"], "answer": 1, "explain": "The aim is a rightful claim on the fruits of growth, not discretionary transfers."}], "cards": [{"q": "Define inequality.", "a": "Differences in the degree of attainment on various aspects of well-being."}, {"q": "Why is CE used to measure inequality?", "a": "Wealth and income are less truthfully revealed and volatile; CE is the most objective and verifiable."}, {"q": "Is inequality higher on wealth or consumption?", "a": "Higher on wealth; CE-based inequality is lower but most objective."}, {"q": "Kuznets curve in one line?", "a": "Theory: as incomes rise, inequality rises, stabilises, then corrects. Not data-based."}, {"q": "Kuznets phases A, B, C?", "a": "Not necessarily equal or proportional in length."}, {"q": "Lorenz curve: data or theory?", "a": "Data-based."}, {"q": "Steps to plot a Lorenz curve?", "a": "Collect data, sort, divide into equal groups, find each group's share, plot cumulative shares."}, {"q": "Line OP in the Lorenz diagram?", "a": "Line of perfect equality (x = y)."}, {"q": "Line QP (OQP)?", "a": "Perfect inequality: zero share until the last point, then vertical."}, {"q": "Gini formula?", "a": "A / (A + B): area between equality line and Lorenz curve over area under the equality line."}, {"q": "Gini range and direction?", "a": "0 (perfect equality) to 1 (perfect inequality); higher means more inequality."}, {"q": "Gini shortcoming 1?", "a": "Not easily decomposable or additive."}, {"q": "Gini shortcoming 2?", "a": "Different distributions can have the same Gini (0.40 example)."}, {"q": "Gini shortcoming 3?", "a": "Responds differently to transfers in the middle than at the tails."}, {"q": "Gini shortcoming 4?", "a": "Does not show demographic variations among subgroups."}, {"q": "Natural advantages?", "a": "Accidents of birth or location giving better outcomes; comparative advantages explain sibling differences."}, {"q": "Marxist explanation?", "a": "Capital versus labour ability to enforce interests; scarce concentrated capital keeps profit; inequality compounds."}, {"q": "Survivorship bias in the Marx critique?", "a": "Uses only profits of surviving firms; most firms shut in 10 years; adjusted for losses, growth is similar."}, {"q": "Why do profits rise fast?", "a": "Market growth plus more market share after rivals close; wages grow only with market size."}, {"q": "Two routes to market share?", "a": "Fair means (R&D, risk, skilled pay) and unfair means (connections with lawmakers and enforcers)."}, {"q": "What decides which route firms take?", "a": "The strength of the rule of law."}, {"q": "Good versus bad inequality?", "a": "Good: society benefits (fair means, strong rule of law). Bad: weak rule of law, everyone loses except owners briefly."}, {"q": "Is rule of law just a law?", "a": "No: a collective environment of institutions that frame, execute and adjudicate laws, acting fairly and without bias."}, {"q": "Competition Act 2002 in this chapter?", "a": "Example of one aspect of rule of law; application decides whether rule of law exists."}, {"q": "Why does growth cause inequality?", "a": "Resources focus on high-potential sectors or regions, whose incomes rise faster."}, {"q": "Trickle-down: the intent?", "a": "Focus resources for maximum output in least time; multiplier effect."}, {"q": "Four conditions for trickle-down?", "a": "Sector grows; tax efficiency high; government decides to redistribute; redistribution efficient."}, {"q": "Why does inclusive growth reject discretionary benefits?", "a": "The bottom did not contribute, so benefits depend on government discretion and often fail."}, {"q": "Inclusive growth premise?", "a": "Broad-based growth; move the bottom from passive recipients to active contributors with a rightful claim."}, {"q": "Two pillars of inclusive growth?", "a": "Capability and opportunity."}, {"q": "Capability includes?", "a": "Identify poor and regions, find reasons, focused interventions, skills, healthcare, education."}, {"q": "Opportunity includes?", "a": "Labour-intensive jobs, job creators not job seekers, EoDB, risk sharing, access to capital (financial inclusion)."}, {"q": "Readings named for inclusive growth?", "a": "National Skill Development Programme, PMKVY, Jan Dhan, Mudra, Economic Survey 2025-26."}]}</script><script>window.__NB={"id": "economy", "ch": 2, "title": "Inequality: Measures, Causes and Growth Models"};/* Shared store: reading progress, preferences, optional cross-device sync. */
+(function(){
+var KEY='nbapp:v1',root=document.documentElement;
+function today(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function fresh(){return{v:1,prefs:{fs:1,lh:1.65,w:780,font:'serif',theme:'auto',pt:0},last:null,nb:{},days:{}}}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+var S;
+try{S=JSON.parse(lsGet(KEY))}catch(e){S=null}
+if(!S||!S.v)S=fresh();
+S.prefs=Object.assign(fresh().prefs,S.prefs||{});
+// one-time import of the older done list and theme
+if(!S.migrated){
+  try{var od=JSON.parse(lsGet('nb-done')||'[]');od.forEach(function(n){var c=chap('modern-india',n);c.done=1;c.dt=1})}catch(e){}
+  var ot=lsGet('nb-theme');if(ot&&!S.prefs.pt){S.prefs.theme=ot;S.prefs.pt=1}
+  S.migrated=1;
+}
+function chap(nb,n){var b=S.nb[nb]||(S.nb[nb]={});return b[n]||(b[n]={read:{},done:0,dt:0,pos:null,t:0})}
+var listeners=[],dirty=false,saveT=null,syncT=null;
+function save(){
+  dirty=true;clearTimeout(saveT);
+  saveT=setTimeout(function(){lsSet(KEY,JSON.stringify(S));listeners.forEach(function(f){try{f()}catch(e){}});scheduleSync()},250);
+}
+function flush(){lsSet(KEY,JSON.stringify(S))}
+function merge(a,b){ // a local, b remote; returns merged
+  var o=fresh();
+  o.prefs=((b.prefs&&b.prefs.pt||0)>(a.prefs&&a.prefs.pt||0))?Object.assign({},a.prefs,b.prefs):Object.assign({},b.prefs,a.prefs);
+  o.last=(!a.last||(b.last&&b.last.ts>a.last.ts))?b.last:a.last;
+  o.migrated=1;
+  var ids={};Object.keys(a.nb||{}).concat(Object.keys(b.nb||{})).forEach(function(k){ids[k]=1});
+  Object.keys(ids).forEach(function(id){
+    o.nb[id]={};var ca=(a.nb||{})[id]||{},cb=(b.nb||{})[id]||{},ks={};
+    Object.keys(ca).concat(Object.keys(cb)).forEach(function(k){ks[k]=1});
+    Object.keys(ks).forEach(function(k){
+      var x=ca[k],y=cb[k];if(!x||!y){o.nb[id][k]=x||y;return}
+      var r=Object.assign({},x.read,y.read),done=(y.dt||0)>(x.dt||0)?y:x,pos=(y.t||0)>(x.t||0)?y.pos:x.pos;
+      o.nb[id][k]={read:r,done:done.done,dt:done.dt||0,pos:pos,t:Math.max(x.t||0,y.t||0)};
+    });
+  });
+  var dk={};Object.keys(a.days||{}).concat(Object.keys(b.days||{})).forEach(function(k){dk[k]=1});
+  Object.keys(dk).forEach(function(k){o.days[k]=Math.max((a.days||{})[k]||0,(b.days||{})[k]||0)});
+  return o;
+}
+var syncState='off';
+function scheduleSync(){clearTimeout(syncT);syncT=setTimeout(function(){sync()},4000)}
+var dbp=null;
+function getRef(){
+  if(dbp)return dbp;
+  dbp=(async function(){
+    if(!window.claude||!claude.use)return null;
+    var db=await claude.use('db'),u=await claude.use('user');
+    if(!db||!u||!u.id)return null;
+    var id=await u.id();if(!id)return null;
+    return db.doc('data/users/'+id+'/nbapp');
+  })().catch(function(){return null});
+  return dbp;
+}
+var busy=false;
+async function sync(){
+  if(busy)return;busy=true;
+  try{
+    var ref=await getRef();if(!ref){syncState='local';return}
+    var snap=await ref.get(),rem=null;
+    if(snap.exists){var d=snap.data();try{rem=JSON.parse(d.state)}catch(e){}}
+    var m=rem?merge(S,rem):S;
+    var changed=JSON.stringify(m)!==JSON.stringify(S);
+    S=m;
+    if(changed){flush();listeners.forEach(function(f){try{f()}catch(e){}})}
+    var out=JSON.stringify(S);
+    if(!rem||JSON.stringify(rem)!==out)await ref.set({v:1,updated:Date.now(),state:out});
+    syncState='synced';
+  }catch(e){syncState='local'}
+  finally{busy=false}
+}
+var API={
+  get:function(){return S},
+  chap:chap,
+  save:save,flush:flush,sync:sync,
+  onChange:function(f){listeners.push(f)},
+  syncState:function(){return syncState},
+  setPref:function(k,v){S.prefs[k]=v;S.prefs.pt=Date.now();applyPrefs();save()},
+  reset:function(){S=fresh();S.migrated=1;flush();save()},
+  today:today,
+  pct:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c||!total)return 0;var r=0;Object.keys(c.read||{}).forEach(function(k){if(c.read[k])r++});return Math.min(1,r/total)},
+  isDone:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c)return false;if(c.dt)return !!c.done;return false}
+};
+window.NBS=API;
+function applyPrefs(){
+  var p=S.prefs;
+  var th=p.theme;
+  if(th==='auto')root.removeAttribute('data-theme');else root.setAttribute('data-theme',th);
+  root.style.setProperty('--zoom',p.fs);root.style.setProperty('--lh',p.lh);root.style.setProperty('--pw',p.w+'px');
+  root.setAttribute('data-font',p.font);
+}
+API.applyPrefs=applyPrefs;applyPrefs();
+// studied time, counted while the page is visible and touched in the last minute
+var lastAct=Date.now();
+['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){lastAct=Date.now()},{passive:true})});
+setInterval(function(){
+  if(document.hidden||Date.now()-lastAct>60000||!window.__NB)return;
+  var t=today();S.days[t]=(S.days[t]||0)+15;save();
+},15000);
+document.addEventListener('visibilitychange',function(){if(document.hidden){flush();sync()}else{sync()}});
+addEventListener('pagehide',flush);
+setTimeout(sync,800);
+})();
+(function(){var b=document.getElementById('themebtn');if(!b)return;var o=['auto','light','sepia','dark'];b.addEventListener('click',function(){var t=NBS.get().prefs.theme,i=(o.indexOf(t)+1)%o.length;NBS.setPref('theme',o[i]);b.textContent='Theme: '+o[i]})})();
+(function(){
+var D=JSON.parse(document.getElementById('data').textContent);
+// map/outline toggle
+document.querySelectorAll('.seg button').forEach(function(bt){bt.addEventListener('click',function(){var v=bt.dataset.v;document.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===bt)});document.getElementById('mm-map').hidden=v!=='map';document.getElementById('mm-outline').hidden=v!=='outline'})});
+if(window.innerWidth<640){var ob=document.querySelector('.seg button[data-v="outline"]');if(ob)ob.click()}
+// lightbox
+var lb=document.getElementById('lightbox'),li=lb.querySelector('img');
+document.querySelectorAll('a.zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();li.src=a.getAttribute('href');lb.hidden=false})});
+lb.addEventListener('click',function(){lb.hidden=true});document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true});
+// quiz
+var qz=document.getElementById('quiz'),score=document.getElementById('score'),right=0,answered=0;
+if(qz)D.mcq.forEach(function(m,i){var d=document.createElement('div');d.className='q';var t=document.createElement('div');t.className='qt';t.textContent=(i+1)+'. '+m.q;d.appendChild(t);var ex=document.createElement('div');ex.className='ex';ex.hidden=true;ex.textContent=m.explain;var btns=[];
+m.options.forEach(function(o,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent='ABCD'[j]+'. '+o;b.addEventListener('click',function(){if(d.dataset.done)return;d.dataset.done=1;answered++;if(j===m.answer){right++;b.classList.add('right')}else{b.classList.add('wrong');btns[m.answer].classList.add('right')}ex.hidden=false;score.textContent=right+' / '+answered+' correct'});btns.push(b);d.appendChild(b)});d.appendChild(ex);qz.appendChild(d)});
+// flashcards
+var fc=document.getElementById('fc');
+if(fc){var all=D.cards.map(function(c,i){return{q:c.q,a:c.a,i:i}}),deck=all.slice(),pos=0,back=false,missed={};
+function show(){if(!deck.length){fc.textContent='No cards in this deck.';document.getElementById('fccount').textContent='';return}var c=deck[pos];fc.textContent=back?c.a:c.q;fc.classList.toggle('back',back);document.getElementById('fccount').textContent='Card '+(pos+1)+' of '+deck.length+(back?' (answer)':' (question)')}
+function go(d){if(!deck.length)return;pos=(pos+d+deck.length)%deck.length;back=false;show()}
+fc.addEventListener('click',function(){back=!back;show()});fc.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();back=!back;show()}});
+document.getElementById('fcnext').onclick=function(){go(1)};document.getElementById('fcprev').onclick=function(){go(-1)};
+document.getElementById('fcmiss').onclick=function(){if(deck.length){missed[deck[pos].i]=1;go(1)}};
+document.getElementById('fcshuf').onclick=function(){for(var i=deck.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=deck[i];deck[i]=deck[j];deck[j]=t}pos=0;back=false;show()};
+document.getElementById('fconlymiss').onclick=function(){deck=all.filter(function(c){return missed[c.i]});pos=0;back=false;show()};
+document.getElementById('fcall').onclick=function(){deck=all.slice();pos=0;back=false;show()};show()}
+// side toc highlight
+var links=[].slice.call(document.querySelectorAll('.sidetoc a'));
+if('IntersectionObserver' in window&&links.length){var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on')}})},{rootMargin:'-70px 0px -70% 0px'});Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)})}
+})();
+(function(){
+var N=window.__NB,S=window.NBS;if(!N||!S)return;
+var root=document.documentElement,body=document.body;
+var rec=function(){return S.chap(N.id,N.ch)};
+var heads=[].slice.call(document.querySelectorAll('.page h2[id]'));
+var titles=heads.map(function(h){return h.firstChild?h.firstChild.textContent.trim():h.id});
+var ids=heads.map(function(h){return h.id});
+var seen={},manual={};
+// Done box
+var box=document.getElementById('donebox');
+if(box){box.checked=!!(rec().done);box.addEventListener('change',function(){var r=rec();r.done=box.checked?1:0;r.dt=Date.now();S.save()})}
+// progress bar
+var bar=document.createElement('div');bar.className='rbar';body.appendChild(bar);
+// per-section read buttons
+heads.forEach(function(h,i){
+  var b=document.createElement('button');b.type='button';b.className='h2read';
+  function paint(){var on=!!rec().read[h.id];b.setAttribute('aria-pressed',on);b.textContent=on?'Read ✓':'Mark read'}
+  b.addEventListener('click',function(){var r=rec();manual[h.id]=1;if(r.read[h.id])delete r.read[h.id];else r.read[h.id]=1;r.t=Date.now();S.save();paint();refresh()});
+  h.insertBefore(b,h.firstChild);paint();b._paint=paint;h._b=b;
+});
+function repaint(){heads.forEach(function(h){h._b._paint()});refresh()}
+// caption clamp
+document.querySelectorAll('figcaption').forEach(function(c){if(c.textContent.length>170){c.classList.add('clamp');c.addEventListener('click',function(){c.classList.toggle('open')})}});
+// dock
+var dock=document.createElement('div');dock.className='dock';
+dock.innerHTML='<button type="button" id="dprev" aria-label="Previous section">‹ Prev</button><button type="button" class="mid" id="dmid"></button><button type="button" id="dnext" aria-label="Next section">Next ›</button>';
+body.appendChild(dock);body.classList.add('has-dock');
+var dmid=dock.querySelector('#dmid');
+function curIdx(){var y=innerHeight*0.25,c=-1;for(var i=0;i<heads.length;i++){if(heads[i].getBoundingClientRect().top<=y)c=i;else break}return c}
+function goto(i){if(i<0||i>=heads.length)return;heads[i].scrollIntoView({behavior:'smooth',block:'start'})}
+dock.querySelector('#dprev').onclick=function(){var c=curIdx(),h=heads[c];goto(h&&h.getBoundingClientRect().top<-40?c:c-1)};
+dock.querySelector('#dnext').onclick=function(){goto(curIdx()+1)};
+function refresh(){
+  var c=curIdx(),r=rec().read,n=0;ids.forEach(function(id){if(r[id])n++});
+  dmid.innerHTML='<b>'+(c<0?'Top':(c+1)+'/'+heads.length)+'</b> · '+(c<0?'Start of chapter':esc(titles[c]))+' · '+n+' read';
+}
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+// sheets
+function sheet(html){var s=document.createElement('div');s.className='sheet';s.hidden=true;s.innerHTML='<div class="sheetin">'+html+'</div>';s.addEventListener('click',function(e){if(e.target===s)s.hidden=true});body.appendChild(s);return s}
+var cs=sheet('<h3>Sections</h3><div class="secl" id="secl"></div>');
+dmid.onclick=function(){
+  var r=rec().read,c=curIdx(),h='';
+  ids.forEach(function(id,i){h+='<a href="#'+id+'" data-i="'+i+'" class="'+(r[id]?'rd ':'')+(i===c?'cur':'')+'"><span class="tk">'+(r[id]?'✓':'')+'</span><span>'+esc(titles[i])+'</span></a>'});
+  cs.querySelector('#secl').innerHTML=h;cs.hidden=false;
+  var cur=cs.querySelector('.cur');if(cur)cur.scrollIntoView({block:'center'});
+};
+cs.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-i]');if(a){e.preventDefault();cs.hidden=true;goto(+a.dataset.i)}});
+var ps=sheet('<h3>Reading settings</h3><div id="pbody"></div>');
+function grp(key,label,opts){var p=S.get().prefs;return '<div class="srow"><label>'+label+'</label><div class="grp">'+opts.map(function(o){return '<button type="button" data-k="'+key+'" data-v="'+o[0]+'" aria-pressed="'+(String(p[key])===String(o[0]))+'">'+o[1]+'</button>'}).join('')+'</div></div>'}
+function drawPrefs(){
+  ps.querySelector('#pbody').innerHTML=
+    grp('fs','Text size',[[0.88,"A−"],[1,"A"],[1.12,"A+"],[1.25,"A++"],[1.4,"A+++"]])+
+    grp('lh','Spacing',[[1.45,'Tight'],[1.65,'Normal'],[1.85,'Roomy']])+
+    grp('w','Width',[[640,'Narrow'],[780,'Medium'],[980,'Wide']])+
+    grp('font','Font',[['serif','Serif'],['sans','Sans']])+
+    grp('theme','Theme',[['auto','Auto'],['light','Light'],['sepia','Sepia'],['dark','Dark']])+
+    '<div class="srow"><label>Extras</label><div class="grp"><button type="button" id="pfocus" aria-pressed="'+body.classList.contains('focus')+'">Focus mode</button>'+('wakeLock' in navigator?'<button type="button" id="pwake" aria-pressed="'+!!wl+'">Keep screen on</button>':'')+'</div></div>';
+}
+var wl=null;
+ps.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('button');if(!b)return;
+  if(b.dataset.k){var v=b.dataset.v;S.setPref(b.dataset.k,b.dataset.k==='font'||b.dataset.k==='theme'?v:+v);drawPrefs();return}
+  if(b.id==='pfocus'){body.classList.toggle('focus');drawPrefs();return}
+  if(b.id==='pwake'){
+    if(wl){wl.release();wl=null;drawPrefs()}else{navigator.wakeLock.request('screen').then(function(l){wl=l;l.addEventListener('release',function(){wl=null});drawPrefs()}).catch(function(){})}
+  }
+});
+function openPrefs(){drawPrefs();ps.hidden=false}
+var aa=document.getElementById('aabtn');if(aa)aa.onclick=openPrefs;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){ps.hidden=true;cs.hidden=true;body.classList.remove('focus')}});
+// focus-mode exit: tap the top edge area
+var fx=document.createElement('button');fx.type='button';fx.textContent='Exit focus';fx.className='h2read';fx.style.cssText='position:fixed;right:10px;top:10px;z-index:45;float:none;display:none';fx.onclick=function(){body.classList.remove('focus')};body.appendChild(fx);
+new MutationObserver(function(){fx.style.display=body.classList.contains('focus')?'block':'none'}).observe(body,{attributes:true,attributeFilter:['class']});
+// scroll handling
+var tick=false,saveAt=0;
+function onScroll(){
+  if(tick)return;tick=true;requestAnimationFrame(function(){
+    tick=false;
+    var doc=document.documentElement,max=doc.scrollHeight-innerHeight;
+    bar.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';
+    var vh=innerHeight,r=rec(),ch=false;
+    heads.forEach(function(h,i){
+      var t=h.getBoundingClientRect().top;
+      if(t<vh&&t>-40)seen[h.id]=1;
+      var nt=i+1<heads.length?heads[i+1].getBoundingClientRect().top:(scrollY>=max-160?-1:1e9);
+      if(seen[h.id]&&nt<vh*0.35&&!r.read[h.id]&&!manual[h.id]){r.read[h.id]=1;ch=true;h._b._paint()}
+    });
+    if(ch){r.t=Date.now();S.save()}
+    refresh();
+    var now=Date.now();
+    if(now-saveAt>1500){saveAt=now;var c=curIdx(),rr=rec();
+      if(c>=0){var hh=heads[c].getBoundingClientRect().top;rr.pos={s:ids[c],o:Math.round(-hh)};rr.t=now}
+      S.get().last={nb:N.id,ch:N.ch,s:c>=0?ids[c]:'',st:c>=0?titles[c]:'',ts:now};S.save()}
+  })}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
+S.onChange(function(){if(box)box.checked=!!rec().done;repaint()});
+refresh();onScroll();
+// resume offer
+var p=rec().pos;
+if(!location.hash&&p&&p.s&&ids.indexOf(p.s)>0){
+  var el=document.getElementById(p.s);
+  var t=document.createElement('div');t.className='toast';t.innerHTML='<span>Resume at “'+esc(titles[ids.indexOf(p.s)])+'”?</span><button type="button" id="tgo">Resume</button><button type="button" id="tx">Dismiss</button>';
+  body.appendChild(t);
+  t.querySelector('#tgo').onclick=function(){if(el){el.scrollIntoView({block:'start'});scrollBy(0,(p.o||0))}t.remove()};
+  t.querySelector('#tx').onclick=function(){t.remove()};
+  setTimeout(function(){if(t.parentNode)t.remove()},12000);
+}
+})();
+</script></body></html>
