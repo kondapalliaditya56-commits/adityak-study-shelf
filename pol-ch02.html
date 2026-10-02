@@ -1,0 +1,469 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Ch 2 · Salient Features and Critique of the Constitution</title><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style><style>:root{--bg:#FBFAF6;--surface:#fff;--surface2:#F3F1EA;--ink:#1F2A2A;--muted:#5D6A68;--line:#DAD6C8;--acc:#0E6B5C;--acc-ink:#fff;--acc-soft:#DDF0EA;--saf:#B85C00;--saf-soft:#FFF0DB;--red:#B3261E;--red-soft:#FDE7E4;--blue:#1F5FA8;--blue-soft:#E3EEFA;--good:#2E7D32;--good-soft:#E3F3E4;--hl:#FFE9A6;
+--c0:#0E6B5C;--c1:#B85C00;--c2:#1F5FA8;--c3:#8E3B8E;--c4:#B3261E;--c5:#5C7A1F;--c6:#8A6D00;--c7:#37607A;
+--serif:Literata,Spectral,Georgia,'Times New Roman',serif;--sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:17px/1.65 var(--serif);margin:0}
+a{color:var(--acc)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;margin:0}
+.bar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.barin{display:flex;align-items:center;gap:8px;padding:8px 16px;max-width:1200px;margin:0 auto;font:600 14px var(--sans);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.barin::-webkit-scrollbar{display:none}
+.bar a.home,.nbtn,.themebtn{color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 10px;font:600 13px var(--sans);cursor:pointer;flex:none}
+.nbtn{padding:5px 12px;font-size:16px;line-height:1}.nbtn.off{opacity:.35}
+.bartitle{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-weight:500}.bartitle b{color:var(--acc)}
+.done{display:flex;align-items:center;gap:5px;flex:none;font:600 13px var(--sans);cursor:pointer}.done input{width:18px;height:18px;accent-color:var(--acc)}
+.layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px;padding:0 16px}
+.sidetoc{position:sticky;top:58px;align-self:start;max-height:calc(100vh - 70px);overflow:auto;padding:18px 0;font:14px/1.4 var(--sans)}
+.sth{font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;color:var(--muted);margin-bottom:8px}
+.sidetoc ol{list-style:none;margin:0;padding:0}.sidetoc li{margin:0}.sidetoc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--ink);text-decoration:none}.sidetoc a:hover,.sidetoc a.on{border-color:var(--acc);color:var(--acc);background:var(--acc-soft)}
+.page{max-width:780px;margin:0 auto;padding:24px 16px 60px;width:100%;min-width:0}
+.home-page{max-width:900px}
+.chead{margin-bottom:22px}
+.eyebrow{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font-size:clamp(28px,5vw,40px);margin:6px 0 10px;font-weight:700}
+.lede{font-size:18px;color:var(--muted);margin:10px 0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:600 12px var(--sans);padding:3px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--line);color:var(--muted)}
+.pill.cls{background:var(--acc-soft);color:var(--acc);border-color:transparent}.pill.hb{background:var(--saf-soft);color:var(--saf);border-color:transparent}
+h2{font-size:clamp(22px,3.6vw,28px);margin:40px 0 12px;padding-top:14px;border-top:2px solid var(--acc);font-weight:700}
+h3{font-size:19px;margin:24px 0 8px;color:var(--acc)}
+h4{font-size:16px;margin-bottom:10px}
+.anchor{margin-left:8px;font-size:.7em;color:var(--muted);opacity:0;text-decoration:none}h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 12px}
+mark{background:var(--hl);color:inherit;padding:0 3px;border-radius:3px}
+.lst{margin:0 0 14px;padding-left:22px}.lst li{margin:5px 0}.lst li.sub{margin-left:18px;list-style:circle;color:var(--ink)}
+.gdesc{color:var(--muted);font:15px var(--sans);margin:-4px 0 12px}
+.xref{font:600 .92em var(--sans);white-space:nowrap}
+.callout{border-left:4px solid var(--acc);background:var(--acc-soft);border-radius:0 10px 10px 0;padding:10px 14px 4px;margin:14px 0}
+.callout .tag{display:inline-block;font:700 11px var(--sans);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;color:var(--acc)}
+.callout.teacher{border-color:var(--saf);background:var(--saf-soft)}.callout.teacher .tag{color:var(--saf)}
+.callout.alert{border-color:var(--red);background:var(--red-soft)}.callout.alert .tag{color:var(--red)}
+.callout.note{border-color:var(--blue);background:var(--blue-soft)}.callout.note .tag{color:var(--blue)}
+.callout.example{border-color:var(--good);background:var(--good-soft)}.callout.example .tag{color:var(--good)}
+.callout.source{background:var(--surface2);border-color:var(--line)}.callout.source .tag{color:var(--muted)}
+figure{margin:18px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure img{display:block;width:100%;height:auto;background:#fff}
+figure a.zoom{display:block;cursor:zoom-in}
+figcaption{padding:8px 12px;font:14px/1.45 var(--sans);color:var(--muted)}.figsrc{font:700 11px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--acc);margin-right:6px}
+.tblock{margin:16px 0}.tcap{font:700 14px var(--sans);margin-bottom:6px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font:15px/1.45 var(--sans);min-width:480px}
+th,td{padding:8px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--acc);color:var(--acc-ink);font-weight:700}
+tbody th{background:var(--surface2);font-weight:700}tbody tr:last-child>*{border-bottom:0}tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface2) 55%,transparent)}
+.stepsblock{margin:16px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}.stepsblock ol{margin:0;padding-left:22px}.stepsblock li{margin:4px 0}
+.flow{margin:20px 0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.chain{display:flex;flex-direction:column;align-items:stretch}
+.step{border:1.5px solid var(--acc);background:var(--acc-soft);border-radius:10px;padding:8px 12px;font:15px/1.4 var(--sans)}
+.step .sl{font-weight:700}.step .ss{color:var(--muted);font-size:14px;margin-top:2px}
+.step.warn{border-color:var(--saf);background:var(--saf-soft)}.step.bad{border-color:var(--red);background:var(--red-soft)}.step.good{border-color:var(--good);background:var(--good-soft)}
+.arr{height:20px;position:relative;flex:none}.arr:before{content:"";position:absolute;left:50%;top:0;bottom:6px;border-left:2px solid var(--muted)}.arr:after{content:"";position:absolute;left:calc(50% - 5px);bottom:0;border:5px solid transparent;border-top:7px solid var(--muted);border-bottom:0}
+.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.lane{display:flex;flex-direction:column}.lane-h{font:700 12px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;text-align:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:10px}.seg button{font:600 13px var(--sans);padding:6px 14px;border:0;background:var(--surface);color:var(--ink);cursor:pointer}.seg button[aria-pressed=true]{background:var(--acc);color:var(--acc-ink)}
+.mapblock h2{margin-top:10px}
+.mmframe{overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:8px;-webkit-overflow-scrolling:touch}
+svg.mm{display:block;font-family:var(--sans)}
+.mm-root{fill:var(--acc)}.mm-root-t{fill:var(--acc-ink);font:700 14px var(--sans)}
+.mm-link{fill:none;stroke-width:2;opacity:.7}.mm-branch-t{font:700 13px var(--sans);fill:#fff}.mm-leaf-t{font:13px var(--sans);fill:var(--ink)}.mm-leaf-n{font:11.5px var(--sans);fill:var(--muted)}
+.mm-leaf{fill:var(--surface2);stroke-width:1.5}
+.mm-branch.c0{fill:var(--c0)}.mm-branch.c1{fill:var(--c1)}.mm-branch.c2{fill:var(--c2)}.mm-branch.c3{fill:var(--c3)}.mm-branch.c4{fill:var(--c4)}.mm-branch.c5{fill:var(--c5)}.mm-branch.c6{fill:var(--c6)}.mm-branch.c7{fill:var(--c7)}
+.mm-link.c0,.mm-leaf.c0{stroke:var(--c0)}.mm-link.c1,.mm-leaf.c1{stroke:var(--c1)}.mm-link.c2,.mm-leaf.c2{stroke:var(--c2)}.mm-link.c3,.mm-leaf.c3{stroke:var(--c3)}.mm-link.c4,.mm-leaf.c4{stroke:var(--c4)}.mm-link.c5,.mm-leaf.c5{stroke:var(--c5)}.mm-link.c6,.mm-leaf.c6{stroke:var(--c6)}.mm-link.c7,.mm-leaf.c7{stroke:var(--c7)}
+:root:not([data-theme="dark"]) .mm-branch-t{fill:#fff}
+.outline,.outline ul{list-style:none;padding-left:18px;margin:4px 0}.outline>li{padding-left:0}.outline summary{cursor:pointer;font:700 15px var(--sans)}
+.outline li.c0>details>summary{color:var(--c0)}.outline li.c1>details>summary{color:var(--c1)}.outline li.c2>details>summary{color:var(--c2)}.outline li.c3>details>summary{color:var(--c3)}.outline li.c4>details>summary{color:var(--c4)}.outline li.c5>details>summary{color:var(--c5)}.outline li.c6>details>summary{color:var(--c6)}.outline li.c7>details>summary{color:var(--c7)}
+.ol-note{color:var(--muted);font-size:.9em}
+.timeline{list-style:none;margin:10px 0;padding:0;position:relative}
+.timeline:before{content:"";position:absolute;left:94px;top:0;bottom:0;border-left:2px solid var(--line)}
+.tl{display:grid;grid-template-columns:86px 18px 1fr;gap:0 6px;margin:0 0 12px;align-items:start}
+.yr{font:700 14px var(--mono);text-align:right;color:var(--acc);padding-top:2px}
+.pin{width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--acc);margin:7px 0 0 2px;position:relative;z-index:1}
+.tl.high .pin{background:var(--saf);border-color:var(--saf)}
+.tlbody{font:16px/1.5 var(--sans);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px}
+.tl.high .tlbody{border-color:var(--saf)}.star{color:var(--saf);margin-left:6px}.sref{float:right;margin-left:10px;font:600 12px var(--sans);text-decoration:none}
+.lkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.link{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:15px/1.45 var(--sans)}.link p{margin:4px 0 0;color:var(--muted)}.lk-line{font-weight:700}
+.recall{font:16px/1.55 var(--sans);padding-left:24px}.recall li{margin:6px 0}
+.count{font:600 13px var(--sans);color:var(--muted);margin:8px 0}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;font:16px/1.5 var(--sans)}
+.q .qt{font-weight:700;margin-bottom:8px}.q .opt{display:block;width:100%;text-align:left;padding:8px 12px;margin:6px 0;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.q .opt:hover{border-color:var(--acc)}.q .opt.right{border-color:var(--good);background:var(--good-soft)}.q .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.q .ex{margin-top:8px;color:var(--muted)}
+.deck{margin:10px 0}
+.fc{min-height:150px;background:var(--surface);border:2px solid var(--acc);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:center;text-align:center;font:18px/1.5 var(--serif);cursor:pointer;user-select:none}
+.fc.back{background:var(--acc-soft)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.btn{font:600 14px var(--sans);padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.pri{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:40px 0 20px}.pager a{display:block;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--ink);font:600 15px var(--sans)}.pager a.nx{text-align:right}.pager small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+footer{color:var(--muted);font:13px/1.5 var(--sans);border-top:1px solid var(--line);padding-top:14px;margin-top:30px}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:flex;align-items:center;justify-content:center;padding:10px;overflow:auto}#lightbox img{max-width:none;width:min(1600px,100%);height:auto;background:#fff;cursor:zoom-out}
+.part{margin:34px 0}.part h2{margin-top:0}
+.chlist{display:flex;flex-direction:column;gap:8px}
+.chcard{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+a.chcard:hover{border-color:var(--acc)}.chcard.pending{opacity:.5}
+.chn{font:700 18px var(--mono);color:var(--acc);text-align:center}.cht b{font:700 16px var(--serif);display:block}.cht small{font:13px/1.4 var(--sans);color:var(--muted);display:block;margin-top:2px}
+.chb{display:flex;flex-direction:column;gap:4px;align-items:flex-end;font:600 11px var(--sans)}.chb em{font-style:normal;background:var(--acc-soft);color:var(--acc);padding:2px 8px;border-radius:99px}.chb i.tick{font-style:normal;background:var(--good);color:#fff;padding:2px 8px;border-radius:99px}
+.prog{font:600 14px var(--sans);color:var(--muted)}
+.sbox{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:17px var(--sans);margin:6px 0 14px}
+.results .hit{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0;font:15px/1.5 var(--sans)}.results .hit a{font-weight:700}.results .hit small{color:var(--muted)}
+.chips{display:flex;gap:8px;margin-bottom:8px}.chip{font:600 13px var(--sans);padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}.chip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+@media (max-width:900px){.layout{display:block}.sidetoc{display:none}}
+@media (max-width:560px){body{font-size:16.5px}.tl{grid-template-columns:62px 16px 1fr}.timeline:before{left:70px}.yr{font-size:12px}.chcard{grid-template-columns:34px 1fr}.chb{display:none}.lanes{grid-template-columns:1fr}}
+
+code{font:.88em var(--mono);background:var(--surface2);padding:1px 5px;border-radius:4px}
+
+/* ---- reader app ---- */
+:root{--zoom:1;--lh:1.65;--pw:780px}
+:root[data-theme="sepia"]{--bg:#F4ECD8;--surface:#FBF5E6;--surface2:#EADFC4;--ink:#3B3022;--muted:#7A6A52;--line:#D8C9A6;--acc:#7A4A12;--acc-ink:#fff;--acc-soft:#EFDDB8;--saf:#A4470A;--saf-soft:#F6E2BE;--red:#9C2A1C;--red-soft:#F3D9CB;--blue:#2F5C8A;--blue-soft:#DDE6E4;--good:#3E6B2A;--good-soft:#DDE8C8;--hl:#F2D98A;color-scheme:light}
+:root[data-font="sans"] body{font-family:var(--sans)}
+:root[data-font="sans"] .notes p,:root[data-font="sans"] .notes li{font-family:var(--sans)}
+.page{zoom:var(--zoom);max-width:var(--pw)}
+.notes p,.notes li{line-height:var(--lh)}
+.rbar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--acc);z-index:40;transition:width .15s}
+.aabtn{color:var(--ink);border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 12px;font:700 14px var(--serif);cursor:pointer;flex:none}
+.h2read{float:right;margin:2px 0 0 10px;font:600 12px var(--sans);border:1px solid var(--line);background:var(--surface2);color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer;min-height:30px}
+.h2read[aria-pressed="true"]{background:var(--acc-soft);color:var(--acc);border-color:var(--acc)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding:6px 10px calc(6px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:center;justify-content:center}
+.dock button{font:600 14px var(--sans);min-height:44px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;padding:0 14px;cursor:pointer}
+.dock .mid{flex:1;max-width:520px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dock .mid b{color:var(--acc)}
+body.has-dock .page{padding-bottom:110px}
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.sheetin{background:var(--surface);color:var(--ink);width:100%;max-width:560px;max-height:82vh;overflow:auto;border-radius:16px 16px 0 0;padding:16px 18px calc(18px + env(safe-area-inset-bottom,0px));font:15px/1.4 var(--sans)}
+.sheetin h3{margin:0 0 10px;font:700 17px var(--sans)}
+.srow{display:flex;align-items:center;gap:10px;margin:12px 0;flex-wrap:wrap}
+.srow label{flex:0 0 92px;color:var(--muted);font-weight:600}
+.srow .grp{display:flex;gap:6px;flex-wrap:wrap}
+.srow button{font:600 14px var(--sans);min-height:42px;min-width:48px;padding:0 12px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;cursor:pointer}
+.srow button[aria-pressed="true"]{border-color:var(--acc);background:var(--acc-soft);color:var(--acc)}
+.secl a{display:flex;gap:10px;align-items:center;padding:12px 6px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;min-height:44px}
+.secl a .tk{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;color:var(--acc-ink)}
+.secl a.rd .tk{background:var(--acc);border-color:var(--acc)}
+.secl a.cur{background:var(--acc-soft)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:50;background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 14px;display:flex;gap:12px;align-items:center;font:600 14px var(--sans);max-width:92vw;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.toast button{font:700 14px var(--sans);background:transparent;border:0;color:var(--bg);text-decoration:underline;cursor:pointer;min-height:36px}
+body.focus .bar{display:none}body.focus .sidetoc{display:none}
+figcaption.clamp{max-height:3.3em;overflow:hidden;position:relative;cursor:pointer}
+figcaption.clamp.open{max-height:none}
+figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bottom:0;background:var(--bg);color:var(--acc);font:700 12px var(--sans);padding-left:14px}
+.cbar{display:block;height:4px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}.cbar i{display:block;height:100%;width:0;background:var(--acc)}
+.nbcard h2{border:0;padding:0}.nbcard{border-top:1px solid var(--line)}
+</style><style>
+.mn{display:inline-flex;gap:4px;flex-wrap:wrap;margin:2px 0 6px}.mn b{font:700 15px var(--mono);background:var(--acc);color:var(--acc-ink);border-radius:6px;padding:1px 8px}
+.callout.shortcut{border-color:var(--saf);background:var(--saf-soft)}.callout.shortcut .tag{color:var(--saf)}
+.callout.mnemo{border-color:var(--c3);background:var(--surface2)}.callout.mnemo .tag{color:var(--c3)}
+.callout p,.callout li{font-family:var(--sans)}
+.art{font-family:var(--mono);font-size:.86em;background:var(--acc-soft);padding:0 .28em;border-radius:4px;white-space:nowrap}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin:14px 0}
+.two .col{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:10px 14px;font:15px/1.5 var(--sans)}
+.two .col h4{margin:0 0 4px;font:700 13px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--acc)}
+.two .col ul{margin:4px 0;padding-left:18px}
+.ptag{display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:2px 9px;margin-left:8px;vertical-align:middle}
+.ptag.high{background:var(--red-soft);color:var(--red)}.ptag.med{background:var(--saf-soft);color:var(--saf)}.ptag.low{background:var(--surface2);color:var(--muted)}
+</style></head><body><header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="pol-home.html">Contents</a><a class="nbtn" href="pol-ch01.html" title="Preamble" aria-label="Previous chapter">‹</a><span class="bartitle"><b>Ch 2</b> Salient Features and Critique of the Constitution</span><a class="nbtn" href="pol-ch03.html" title="Sources of the Constitution" aria-label="Next chapter">›</a><a class="home" href="pol-search.html">Search</a><a class="home" href="pol-timeline.html">Timeline</a><label class="done"><input type="checkbox" id="donebox" data-ch="2"><span>Done</span></label><button class="aabtn" id="aabtn" type="button" aria-label="Reading settings">Aa</button></div></header><div class="layout"><aside class="sidetoc"><div class="sth">In this chapter</div><ol><li><a href="#chapter-map">Chapter map</a></li><li><a href="#exam-lens-priority-and-pyqs">Exam lens: priority and PYQs</a></li><li><a href="#1-the-twelve-features-at-a-glance">1 · The twelve features at a glance</a></li><li><a href="#2-1-the-lengthiest-written-constitution">2 · 1. The lengthiest written Constitution</a></li><li><a href="#3-2-parliamentary-form-of-government">3 · 2. Parliamentary form of government</a></li><li><a href="#4-3-blend-of-rigidity-and-flexibility">4 · 3. Blend of rigidity and flexibility</a></li><li><a href="#5-4-fundamental-rights">5 · 4. Fundamental Rights</a></li><li><a href="#6-5-directive-principles-of-state-policy">6 · 5. Directive Principles of State Policy</a></li><li><a href="#7-6-fundamental-duties">7 · 6. Fundamental Duties</a></li><li><a href="#8-7-federation-with-a-strong-centralising-tenden">8 · 7. Federation with a strong centralising tendency</a></li><li><a href="#9-8-universal-adult-suffrage">9 · 8. Universal adult suffrage</a></li><li><a href="#10-9-independent-judiciary">10 · 9. Independent judiciary</a></li><li><a href="#11-10-secular-state">11 · 10. Secular State</a></li><li><a href="#12-11-single-citizenship">12 · 11. Single citizenship</a></li><li><a href="#13-12-separation-of-powers">13 · 12. Separation of powers</a></li><li><a href="#14-critique-the-eight-charges-and-the-replies">14 · Critique: the eight charges and the replies</a></li><li><a href="#chapter-timeline">Timeline</a></li><li><a href="#connects">Connects to</a></li><li><a href="#recall">Recall sheet</a></li><li><a href="#practice">Test yourself</a></li></ol></aside><main class="page"><div class="chead"><div class="eyebrow">Polity · Part 1 · Constitution and Rights · Chapter 2</div><h1>Salient Features and Critique of the Constitution<span class="ptag high">High priority</span></h1><div class="pills"><span class="pill hb">Handout only: no class slides</span><span class="pill ">Handout pages 11-17</span><span class="pill ">10 Prelims · 1 Mains PYQs quoted</span></div><p class="lede">The twelve features that define the Constitution (with the majorities table redrawn), then the eight criticisms it faced and the answer the framers gave to each.</p></div><section class="mapblock"><h2 id="chapter-map">Chapter map<a class="anchor" href="#chapter-map">#</a></h2><div class="seg" role="group" aria-label="Map view"><button type="button" data-v="map" aria-pressed="true">Map</button><button type="button" data-v="outline" aria-pressed="false">Outline</button></div><div id="mm-map" class="mmframe"><svg class="mm" viewBox="0 0 751 898" width="751" height="898" role="img" aria-label="Mind map: Salient Features and Critique of the Constitution"><rect class="mm-root" x="8" y="410.0" width="155.2" height="28" rx="6"/><text class="mm-root-t" x="85.6" y="429.0" text-anchor="middle">Salient Features</text><path class="mm-link c0" d="M163.2,424.0 C195.2,424.0 195.2,76.0 227.2,76.0"/><rect class="mm-branch c0" x="227.2" y="62.0" width="130.0" height="28" rx="5"/><text class="mm-branch-t" x="292.2" y="80.5" text-anchor="middle">Size and form</text><path class="mm-link c0" d="M357.2,76.0 C385.2,76.0 485.2,28.0 513.2,28.0"/><rect class="mm-leaf c0" x="513.2" y="8" width="175.8" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="23.5">Lengthiest written</text><text class="mm-leaf-n" x="523.2" y="38.5">395 Arts. to 470 Arts.</text><path class="mm-link c0" d="M357.2,76.0 C385.2,76.0 485.2,76.0 513.2,76.0"/><rect class="mm-leaf c0" x="513.2" y="56" width="146.0" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="71.5">Parliamentary form</text><text class="mm-leaf-n" x="523.2" y="86.5">Westminster model</text><path class="mm-link c0" d="M357.2,76.0 C385.2,76.0 485.2,124.0 513.2,124.0"/><rect class="mm-leaf c0" x="513.2" y="104" width="132.0" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="119.5">Rigid + flexible</text><text class="mm-leaf-n" x="523.2" y="134.5">Art. 368</text><path class="mm-link c1" d="M163.2,424.0 C195.2,424.0 195.2,226.0 227.2,226.0"/><rect class="mm-branch c1" x="227.2" y="212.0" width="162.0" height="28" rx="5"/><text class="mm-branch-t" x="308.2" y="230.5" text-anchor="middle">Rights and duties</text><path class="mm-link c1" d="M389.2,226.0 C417.2,226.0 485.2,178.0 513.2,178.0"/><rect class="mm-leaf c1" x="513.2" y="158" width="168.9" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="173.5">Fundamental Rights</text><text class="mm-leaf-n" x="523.2" y="188.5">Part III; justiciable</text><path class="mm-link c1" d="M389.2,226.0 C417.2,226.0 485.2,226.0 513.2,226.0"/><rect class="mm-leaf c1" x="513.2" y="206" width="189.6" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="221.5">DPSP</text><text class="mm-leaf-n" x="523.2" y="236.5">Part IV; non-justiciable</text><path class="mm-link c1" d="M389.2,226.0 C417.2,226.0 485.2,274.0 513.2,274.0"/><rect class="mm-leaf c1" x="513.2" y="254" width="182.7" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="269.5">Fundamental Duties</text><text class="mm-leaf-n" x="523.2" y="284.5">Part IVA; 42nd Am. 1976</text><path class="mm-link c2" d="M163.2,424.0 C195.2,424.0 195.2,376.0 227.2,376.0"/><rect class="mm-branch c2" x="227.2" y="362.0" width="178.0" height="28" rx="5"/><text class="mm-branch-t" x="316.2" y="380.5" text-anchor="middle">Federal and unitary</text><path class="mm-link c2" d="M405.2,376.0 C433.2,376.0 485.2,328.0 513.2,328.0"/><rect class="mm-leaf c2" x="513.2" y="308" width="182.7" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="323.5">Strong Centre</text><text class="mm-leaf-n" x="523.2" y="338.5">Union of States, Art. 1</text><path class="mm-link c2" d="M405.2,376.0 C433.2,376.0 485.2,376.0 513.2,376.0"/><rect class="mm-leaf c2" x="513.2" y="356" width="111.0" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="371.5">Quasi-federal</text><text class="mm-leaf-n" x="523.2" y="386.5">K.C. Wheare</text><path class="mm-link c2" d="M405.2,376.0 C433.2,376.0 485.2,424.0 513.2,424.0"/><rect class="mm-leaf c2" x="513.2" y="404" width="155.1" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="419.5">Single citizenship</text><text class="mm-leaf-n" x="523.2" y="434.5">no dual citizenship</text><path class="mm-link c3" d="M163.2,424.0 C195.2,424.0 195.2,550.0 227.2,550.0"/><rect class="mm-branch c3" x="227.2" y="536.0" width="138.0" height="28" rx="5"/><text class="mm-branch-t" x="296.2" y="554.5" text-anchor="middle">People and law</text><path class="mm-link c3" d="M365.2,550.0 C393.2,550.0 485.2,478.0 513.2,478.0"/><rect class="mm-leaf c3" x="513.2" y="458" width="217.2" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="473.5">Universal suffrage</text><text class="mm-leaf-n" x="523.2" y="488.5">18 years since 61st Am. 1988</text><path class="mm-link c3" d="M365.2,550.0 C393.2,550.0 485.2,526.0 513.2,526.0"/><rect class="mm-leaf c3" x="513.2" y="506" width="167.0" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="521.5">Independent judiciary</text><text class="mm-leaf-n" x="523.2" y="536.5">Arts. 13, 32, 226</text><path class="mm-link c3" d="M365.2,550.0 C393.2,550.0 485.2,574.0 513.2,574.0"/><rect class="mm-leaf c3" x="513.2" y="554" width="111.0" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="569.5">Secular State</text><text class="mm-leaf-n" x="523.2" y="584.5">Arts. 25-28</text><path class="mm-link c3" d="M365.2,550.0 C393.2,550.0 485.2,622.0 513.2,622.0"/><rect class="mm-leaf c3" x="513.2" y="602" width="168.9" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="617.5">Separation of powers</text><text class="mm-leaf-n" x="523.2" y="632.5">functional, not rigid</text><path class="mm-link c4" d="M163.2,424.0 C195.2,424.0 195.2,772.0 227.2,772.0"/><rect class="mm-branch c4" x="227.2" y="758.0" width="90.0" height="28" rx="5"/><text class="mm-branch-t" x="272.2" y="776.5" text-anchor="middle">Critique</text><path class="mm-link c4" d="M317.2,772.0 C345.2,772.0 485.2,676.0 513.2,676.0"/><rect class="mm-leaf c4" x="513.2" y="656" width="189.6" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="671.5">Borrowed</text><text class="mm-leaf-n" x="523.2" y="686.5">Ivor Jennings: patchwork</text><path class="mm-link c4" d="M317.2,772.0 C345.2,772.0 485.2,724.0 513.2,724.0"/><rect class="mm-leaf c4" x="513.2" y="704" width="162.0" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="719.5">Carbon copy of 1935</text><text class="mm-leaf-n" x="523.2" y="734.5">Srinivasan, Deshmukh</text><path class="mm-link c4" d="M317.2,772.0 C345.2,772.0 485.2,772.0 513.2,772.0"/><rect class="mm-leaf c4" x="513.2" y="752" width="174.0" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="767.5">Un-Indian, Un-Gandhian</text><text class="mm-leaf-n" x="523.2" y="782.5">Hanumanthaiya</text><path class="mm-link c4" d="M317.2,772.0 C345.2,772.0 485.2,820.0 513.2,820.0"/><rect class="mm-leaf c4" x="513.2" y="800" width="230.0" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="815.5">Elephantine, lawyers' paradise</text><text class="mm-leaf-n" x="523.2" y="830.5">Kamath, Maheswari</text><path class="mm-link c4" d="M317.2,772.0 C345.2,772.0 485.2,868.0 513.2,868.0"/><rect class="mm-leaf c4" x="513.2" y="848" width="168.9" height="40" rx="4"/><text class="mm-leaf-t" x="523.2" y="863.5">Ambedkar's warnings</text><text class="mm-leaf-n" x="523.2" y="878.5">era of contradictions</text></svg></div><div id="mm-outline" hidden><ul class="outline"><li><strong>Salient Features</strong><ul><li class="c0"><details open><summary>Size and form</summary><ul><li>Lengthiest written <span class="ol-note">395 Arts. to 470 Arts.</span></li><li>Parliamentary form <span class="ol-note">Westminster model</span></li><li>Rigid + flexible <span class="ol-note">Art. 368</span></li></ul></details></li><li class="c1"><details open><summary>Rights and duties</summary><ul><li>Fundamental Rights <span class="ol-note">Part III; justiciable</span></li><li>DPSP <span class="ol-note">Part IV; non-justiciable</span></li><li>Fundamental Duties <span class="ol-note">Part IVA; 42nd Am. 1976</span></li></ul></details></li><li class="c2"><details open><summary>Federal and unitary</summary><ul><li>Strong Centre <span class="ol-note">Union of States, Art. 1</span></li><li>Quasi-federal <span class="ol-note">K.C. Wheare</span></li><li>Single citizenship <span class="ol-note">no dual citizenship</span></li></ul></details></li><li class="c3"><details open><summary>People and law</summary><ul><li>Universal suffrage <span class="ol-note">18 years since 61st Am. 1988</span></li><li>Independent judiciary <span class="ol-note">Arts. 13, 32, 226</span></li><li>Secular State <span class="ol-note">Arts. 25-28</span></li><li>Separation of powers <span class="ol-note">functional, not rigid</span></li></ul></details></li><li class="c4"><details open><summary>Critique</summary><ul><li>Borrowed <span class="ol-note">Ivor Jennings: patchwork</span></li><li>Carbon copy of 1935 <span class="ol-note">Srinivasan, Deshmukh</span></li><li>Un-Indian, Un-Gandhian <span class="ol-note">Hanumanthaiya</span></li><li>Elephantine, lawyers' paradise <span class="ol-note">Kamath, Maheswari</span></li><li>Ambedkar's warnings <span class="ol-note">era of contradictions</span></li></ul></details></li></ul></li></ul></div></section><div class="notes"><h2 id="exam-lens-priority-and-pyqs">Exam lens: priority and PYQs<a class="anchor" href="#exam-lens-priority-and-pyqs" aria-label="Link to this section">#</a></h2><aside class="callout source"><span class="tag">Source note</span><p><strong>This chapter comes from the Sarrthi handout only.</strong> There are no class slides or teacher ink. Priority is high priority, counted from the handout’s own PYQ section: <strong>10 Prelims and 1 Mains</strong> questions are quoted. Years quoted are listed below; a “years quoted” count is not a count of distinct questions.</p></aside><div class="tblock"><div class="tcap">What the handout itself stresses</div><div class="tablewrap"><table><thead><tr><th>Signal in the handout</th><th>Where</th><th>Why it matters</th></tr></thead><tbody><tr><th scope='row'>Handout lists <strong>12 salient features</strong>, each with its own short note</th><td>Salient features</td><td>Every feature is a possible statement in Prelims.</td></tr><tr><th scope='row'><strong>Types of majority</strong> (simple, effective, absolute, special I, II, III) with Article numbers</th><td>Feature 3 (Additional information)</td><td>The densest fact table of the chapter; Prelims asks which majority a motion needs.</td></tr><tr><th scope='row'>The 42nd Amendment (1976) placed Fundamental Duties in <strong>Part IVA, <span class="art">Art. 51A</span></strong>; the 86th (2002) added the 11th duty</th><td>Feature 6</td><td>Date and Amendment pairing.</td></tr><tr><th scope='row'>K.C. Wheare called India <strong>quasi-federal</strong></th><td>Feature 7</td><td>A one-word label for Mains.</td></tr><tr><th scope='row'>Critique section: each charge is paired with a defender (Ambedkar, Granville Austin)</th><td>Critique</td><td>Gives the balanced two-sided structure Mains answers need.</td></tr></tbody></table></div></div><div class="tblock"><div class="tcap">PYQs quoted in the handout</div><div class="tablewrap"><table><thead><tr><th>Year and paper</th><th>What was asked</th><th>The answer</th><th>Where in this chapter</th></tr></thead><tbody><tr><th scope='row'>Prelims 2023</th><td>Which one of the following statements best reflects the Chief purpose of the 'Constitution' of a country?</td><td>(c) It defines and limits the powers of government.</td><td>Whole chapter</td></tr><tr><th scope='row'>Prelims 2023</th><td>Consider the following statements in respect of the Constitution Day: Statement-I: The Constitution Day is celebrated on 26th November every year to promote constitutiona…</td><td>(c) Statement-I is correct but Statement-II is incorrect</td><td><a href="#2-1-the-lengthiest-written-constitution">2 · 1. The lengthiest written Constitution</a></td></tr><tr><th scope='row'>Prelims 2021</th><td>Which one of the following factors constitutes the best safeguard of liberty in a liberal democracy?</td><td>(d) Separation of powers</td><td>Whole chapter</td></tr><tr><th scope='row'>Prelims 2021</th><td>With reference to India, consider the following statements: 1. There is only one citizenship and one domicile. 2. A Citizen by birth only can become the Head of State. 3.…</td><td>(a) 1 only</td><td>Whole chapter</td></tr><tr><th scope='row'>Prelims 2021</th><td>Constitutional government means</td><td>(d) A government limited by the terms of the constitution</td><td><a href="#3-2-parliamentary-form-of-government">3 · 2. Parliamentary form of government</a></td></tr><tr><th scope='row'>Prelims 2020</th><td>A constitutional government by definition is a</td><td>(d) limited government</td><td>Whole chapter</td></tr><tr><th scope='row'>Mains 2016</th><td>Did the Government of India Act, 1935 lay down a federal constitution? Discuss.</td><td>Open-ended: see the answer skeleton in the flashcards</td><td>Whole chapter</td></tr><tr><th scope='row'>Prelims 2009</th><td>Consider the following statements: 1. The discussions in the Third Round Table Conference eventually led to the passing of the Government of India Act, 1935. 2. The Gover…</td><td>(c) Both 1 and 2</td><td>Whole chapter</td></tr><tr><th scope='row'>Prelims 1996</th><td>Who gave the idea of a Constituent Assembly firstly for the formation of Constitution for India?</td><td>(a) Swaraj Party in 1934</td><td>Whole chapter</td></tr><tr><th scope='row'>Prelims 1993</th><td>Which of the following statement(s) is/are true in relation to Constituent Assembly? 1. Assembly was based on adult suffrage. 2. The assembly was a result of direct elect…</td><td>(c) 3 and 4 only</td><td>Whole chapter</td></tr><tr><th scope='row'>Prelims 1993</th><td>Which of the following characteristics is common between the Federal system of India and America?</td><td>(d) A Federal Supreme Court for Interpretation of the Constitution</td><td>Whole chapter</td></tr></tbody></table></div><p class="gdesc">The “where” link is matched by shared terms, so treat it as a pointer.</p></div><aside class="callout key"><span class="tag">What to prepare</span><p><strong>Prelims hooks:</strong> the 12 features with their Article numbers; the six types of majority; 395 to 470 Articles, 22 to 25 Parts, 8 to 12 Schedules; voting age 21 to 18 (61st Amendment, 1988); which duty was added in 2002.</p><p><strong>Mains hooks:</strong> whether the Constitution is borrowed or adapted; federal or unitary (quasi-federal); the Government of India Act, 1935 as source (2016 asks if it laid down a federal constitution); rigid and flexible; separation of powers as functional.</p><p><strong>Closing idea:</strong> The Constitution borrowed widely but adapted carefully; its flexibility and its blend of ideals are strengths, and Ambedkar's warning is that political democracy needs social and economic democracy.</p></aside><h2 id="1-the-twelve-features-at-a-glance">1 · The twelve features at a glance<a class="anchor" href="#1-the-twelve-features-at-a-glance" aria-label="Link to this section">#</a></h2>
+<p>The Constitution was adopted on <strong>26 November 1949</strong> and enforced on <strong>26 January 1950</strong>. The framers studied many countries' Constitutions and the working of the Government of India Act, 1935, then took what suited India.</p>
+<aside class="callout mnemo"><span class="tag">All twelve in one sentence</span><div class="mn"><b>L</b><b>P</b><b>B</b><b>F</b><b>D</b><b>D</b><b>F</b><b>U</b><b>J</b><b>S</b><b>S</b><b>S</b></div><p>"<strong>L</strong>ong <strong>P</strong>arliaments <strong>B</strong>lend <strong>F</strong>ine <strong>D</strong>ebates, <strong>D</strong>uties; <strong>F</strong>ederal <strong>U</strong>nions <strong>J</strong>udge <strong>S</strong>ecular <strong>S</strong>ingle <strong>S</strong>eparations." Order: Lengthiest, Parliamentary, Blend of rigid/flexible, Fundamental Rights, DPSP, Duties, Federation, Universal suffrage, Judiciary, Secular, Single citizenship, Separation of powers.</p></aside>
+<aside class="callout shortcut"><span class="tag">Four clusters</span><p><strong>Size and form</strong> (1-3), <strong>Rights side</strong> (4-6), <strong>Federal side</strong> (7, 11), <strong>People and law</strong> (8-10, 12). Sort each feature into its cluster and the list stops feeling long.</p></aside>
+<h2 id="2-1-the-lengthiest-written-constitution">2 · 1. The lengthiest written Constitution<a class="anchor" href="#2-1-the-lengthiest-written-constitution" aria-label="Link to this section">#</a></h2>
+<p>It is the most detailed written Constitution in the world (written, like the American; unlike the unwritten British).</p>
+<div class="tblock"><div class="tcap">Size then and now</div><div class="tablewrap"><table><thead><tr><th></th><th>At adoption</th><th>Today (handout)</th></tr></thead><tbody><tr><th scope='row'><strong>Articles</strong></th><td>395</td><td>470</td></tr><tr><th scope='row'><strong>Parts</strong></th><td>22</td><td>25</td></tr><tr><th scope='row'><strong>Schedules</strong></th><td>8</td><td>12</td></tr></tbody></table></div></div>
+<p>Amendments deleted about <strong>20 Articles and one Part (Part VII)</strong> and added nearly <strong>95 new Articles, four Parts (IVA, IXA, IXB, XIVA) and four Schedules (9, 10, 11, 12)</strong>.</p>
+<aside class="callout mnemo"><span class="tag">Four new Parts</span><div class="mn"><b>4A</b><b>9A</b><b>9B</b><b>14A</b></div><p>IVA, IXA, IXB, XIVA. Chant it as "<strong>IV-A, IX-A, IX-B, XIV-A</strong>": the A, A, B, A pattern is all you need.</p></aside>
+<h3>Why so long (four reasons)</h3>
+<ul class='lst'><li>Vast geography and diversity needing special provisions.</li><li>Influence of the lengthy Government of India Act, 1935.</li><li>One Constitution for both Union and States, unlike federations such as the USA.</li><li>A lawyer-dominated Constituent Assembly that preferred detailed drafting.</li></ul>
+<p>Subjects that other democracies leave to convention or ordinary law (electoral system, administrative machinery) are written into this Constitution.</p>
+<aside class="callout alert"><span class="tag">Handout alert</span><p>The handout says <strong>470 Articles</strong> here, but in the Critique section says "<strong>now over 450</strong>". Use 470 as the current figure given under Feature 1, and note the mismatch.</p></aside>
+<h2 id="3-2-parliamentary-form-of-government">3 · 2. Parliamentary form of government<a class="anchor" href="#3-2-parliamentary-form-of-government" aria-label="Link to this section">#</a></h2>
+<p>India took the <strong>Westminster model</strong>, not the American presidential system, as better suited to its social diversity and democratic traditions. It runs on cooperation between legislature and executive, not strict separation.</p>
+<section class="flow"><h4>Who holds power</h4><div class="chain"><div class="step "><div><div class="sl">President</div><div class="ss">Nominal head of State</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">Prime Minister and Council of Ministers</div><div class="ss">Real authority; collectively responsible to the Lok Sabha</div></div></div><div class="arr" aria-hidden="true"></div><div class="step warn"><div><div class="sl">No-confidence motion</div><div class="ss">Can remove the government</div></div></div></div></section>
+<div class="two"><div class="col"><h4>Differences from the British model</h4><ul><li>Parliament is not sovereign: bound by a written Constitution and judicial review</li><li>Head of State is an elected republican, not a hereditary monarch</li></ul></div><div class="col"><h4>Criticisms</h4><ul><li>Instability in coalition politics</li><li>executive dominance under majority rule</li><li>growth of Prime Ministerial Government</li></ul></div></div>
+<p>The framers chose it deliberately for its balance of <strong>stability with accountability</strong>.</p>
+<h2 id="4-3-blend-of-rigidity-and-flexibility">4 · 3. Blend of rigidity and flexibility<a class="anchor" href="#4-3-blend-of-rigidity-and-flexibility" aria-label="Link to this section">#</a></h2>
+<p>Neither wholly rigid nor wholly flexible.</p>
+<div class="two"><div class="col"><h4>Rigid</h4><ul><li>Federal structure, judiciary, fundamental rights</li><li>special majority of Parliament plus ratification by half the states (<span class="art">Art. 368</span>)</li></ul></div><div class="col"><h4>Flexible</h4><ul><li>Formation of new states, change of names or boundaries</li><li>simple majority like ordinary laws</li></ul></div></div>
+<h3>Types of majority (Additional information, redrawn)</h3>
+<div class="tblock"><div class="tcap">Six majorities and where each is used</div><div class="tablewrap"><table><thead><tr><th>Type</th><th>Meaning</th><th>Used for</th></tr></thead><tbody><tr><th scope='row'><strong>1 Simple</strong> (ordinary or functional)</th><td>More than 50% of members <strong>present and voting</strong>; default rule (<span class="art">Art. 100</span>)</td><td>Ordinary, Money and Financial Bills; motions (confidence, no-confidence, censure, adjournment, thanks); President's Rule (<span class="art">Art. 356</span>); Financial Emergency (<span class="art">Art. 360</span>); Speaker/Deputy Speaker election (<span class="art">Art. 93</span>); Deputy Chairman of Rajya Sabha (<span class="art">Art. 89</span>); disapproval of National Emergency (<span class="art">Art. 352</span>)</td></tr><tr><th scope='row'><strong>2 Effective</strong></th><td>More than 50% of the <strong>effective strength</strong> = total membership minus vacant seats ("majority of all the then members")</td><td>Removal of Vice-President (<span class="art">Art. 67</span>, Rajya Sabha); Deputy Chairman of Rajya Sabha (<span class="art">Art. 90</span>); Speaker and Deputy Speaker of Lok Sabha (<span class="art">Art. 94</span>)</td></tr><tr><th scope='row'><strong>3 Absolute</strong></th><td>More than 50% of the <strong>total strength</strong> of the House, regardless of vacancies or absentees</td><td>Not stand-alone; a component of Special Majority I. A party needs an absolute majority (≥ 272 in Lok Sabha) to form government</td></tr><tr><th scope='row'><strong>4 Special, Type I</strong></th><td>(a) Majority of the total membership of each House <strong>and</strong> (b) two-thirds of members present and voting</td><td>Amendment (<span class="art">Art. 368</span>); removal of SC judges (<span class="art">Art. 124</span>) and HC judges (<span class="art">Art. 217</span>); CAG (<span class="art">Art. 148</span>); CEC (<span class="art">Art. 324</span>); State Election Commissioner (<span class="art">Art. 243K</span>); approval of National Emergency (<span class="art">Art. 352</span>)</td></tr><tr><th scope='row'><strong>5 Special, Type II</strong></th><td>Two-thirds of the <strong>total membership</strong> of each House (no "present and voting")</td><td>Impeachment of the President (<span class="art">Art. 61</span>)</td></tr><tr><th scope='row'><strong>6 Special, Type III</strong></th><td>Two-thirds present and voting in the <strong>Rajya Sabha only</strong></td><td><span class="art">Art. 312</span> (new All-India Services); <span class="art">Art. 249</span> (laws on State List subjects in the national interest)</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Six majorities</span><div class="mn"><b>S</b><b>E</b><b>A</b><b>S</b><b>S</b><b>S</b></div><p><strong>S</strong>imple, <strong>E</strong>ffective, <strong>A</strong>bsolute, then three <strong>S</strong>pecials. Hook: "<strong>S</strong>ome <strong>E</strong>lephants <strong>A</strong>lways <strong>S</strong>ing <strong>S</strong>weet <strong>S</strong>ongs."</p></aside>
+<aside class="callout shortcut"><span class="tag">Shortcut</span><p>Simple = "present and voting". Effective = "minus vacancies". Absolute = "of the whole House". Special I = "majority of all <strong>and</strong> two-thirds present". Special II = "two-thirds of <strong>all</strong>" (only the President's impeachment). Special III = "Rajya Sabha only".</p></aside>
+<aside class="callout alert"><span class="tag">Handout alert</span><p><span class="art">Article 352</span> appears in <strong>two</strong> places: disapproval of a National Emergency (Simple) and approval of a National Emergency (Special I). Likewise the Deputy Chairman of Rajya Sabha appears under <span class="art">Art. 89</span> (Simple, election) and <span class="art">Art. 90</span> (Effective, removal).</p></aside>
+<h2 id="5-4-fundamental-rights">5 · 4. Fundamental Rights<a class="anchor" href="#5-4-fundamental-rights" aria-label="Link to this section">#</a></h2>
+<p>Part III, the cornerstone of democracy, guarantee civil and political liberties and check arbitrary State power. They are <strong>justiciable</strong>.</p>
+<div class="tblock"><div class="tcap">The six categories</div><div class="tablewrap"><table><thead><tr><th>Right</th><th>Articles</th><th>Core idea</th></tr></thead><tbody><tr><th scope='row'><strong>Equality</strong></th><td>14-18</td><td>Equality before law, no discrimination, abolition of untouchability and titles</td></tr><tr><th scope='row'><strong>Freedom</strong></th><td>19-22</td><td>Speech, association, movement, residence, profession; protection on conviction and personal liberty</td></tr><tr><th scope='row'><strong>Against exploitation</strong></th><td>23-24</td><td>Bans trafficking, forced labour, child labour</td></tr><tr><th scope='row'><strong>Freedom of religion</strong></th><td>25-28</td><td>Conscience; profess, practise, propagate</td></tr><tr><th scope='row'><strong>Cultural and educational</strong></th><td>29-30</td><td>Language, culture, minorities' right to run educational institutions</td></tr><tr><th scope='row'><strong>Constitutional remedies</strong></th><td>32</td><td>Move the Supreme Court; Ambedkar: "heart and soul"</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Six rights</span><div class="mn"><b>E</b><b>F</b><b>E</b><b>R</b><b>C</b><b>C</b></div><p><strong>E</strong>quality, <strong>F</strong>reedom, <strong>E</strong>xploitation, <strong>R</strong>eligion, <strong>C</strong>ultural-educational, <strong>C</strong>onstitutional remedies: "<strong>E</strong>very <strong>F</strong>ine <strong>E</strong>ngine <strong>R</strong>uns <strong>C</strong>ool <strong>C</strong>ompletely." Originally <strong>seven</strong> rights. The <strong>Right to Property (<span class="art">Art. 31</span>)</strong> was removed by the <strong>44th Amendment, 1978</strong> and made a legal right under <strong><span class="art">Art. 300</span>-A (Part XII)</strong>.</p></aside>
+<h2 id="6-5-directive-principles-of-state-policy">6 · 5. Directive Principles of State Policy<a class="anchor" href="#6-5-directive-principles-of-state-policy" aria-label="Link to this section">#</a></h2>
+<p>Part IV: non-justiciable guidelines for a welfare State and socio-economic democracy. Ambedkar: a <strong>"novel feature"</strong>.</p>
+<div class="tblock"><div class="tcap">Three categories</div><div class="tablewrap"><table><thead><tr><th>Category</th><th>Examples in the handout</th></tr></thead><tbody><tr><th scope='row'><strong>Socialist</strong></th><td>Right to work, education, livelihood</td></tr><tr><th scope='row'><strong>Gandhian</strong></th><td>Panchayati Raj, village industries, prohibition of intoxicants</td></tr><tr><th scope='row'><strong>Liberal-intellectual</strong></th><td>Uniform civil code, protection of environment, promotion of international peace</td></tr></tbody></table></div></div>
+<p>They are not enforceable but fundamental in governance, and influenced <strong>land reforms, MGNREGA and the Right to Education Act</strong>.</p>
+<aside class="callout mnemo"><span class="tag">Three types</span><div class="mn"><b>S</b><b>G</b><b>L</b></div><p><strong>S</strong>ocialist, <strong>G</strong>andhian, <strong>L</strong>iberal-intellectual: "<strong>S</strong>ee <strong>G</strong>andhi <strong>L</strong>ead".</p></aside>
+<h2 id="7-6-fundamental-duties">7 · 6. Fundamental Duties<a class="anchor" href="#7-6-fundamental-duties" aria-label="Link to this section">#</a></h2>
+<p>Inspired by the <strong>Constitution of the USSR</strong>. They instil civic responsibility and balance rights with obligations.</p>
+<section class="flow"><h4>How the duties came</h4><div class="chain"><div class="step "><div><div class="sl">1976</div><div class="ss">42nd Amendment places them in <strong>Part IVA, <span class="art">Art. 51A</span></strong>: <strong>10 duties</strong></div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">2002</div><div class="ss">86th Amendment adds the <strong>11th</strong>: parents or guardians to provide educational opportunities to children aged <strong>6 to 14</strong> (<span class="art">Art. 51A(k)</span>)</div></div></div></div></section>
+<p>They are non-justiciable: a moral code guiding national unity, integrity and constitutional values.</p>
+<h2 id="8-7-federation-with-a-strong-centralising-tenden">8 · 7. Federation with a strong centralising tendency<a class="anchor" href="#8-7-federation-with-a-strong-centralising-tenden" aria-label="Link to this section">#</a></h2>
+<p><span class="art">Art. 1</span> calls India a <strong>"Union of States"</strong>. States cannot secede: the Union is indestructible.</p>
+<div class="two"><div class="col"><h4>Federal features</h4><ul><li>Dual polity</li><li>division of powers</li><li>written Constitution</li><li>independent judiciary</li><li>bicameralism at the Centre</li></ul></div><div class="col"><h4>Tilt to the Centre</h4><ul><li>Most important subjects with the Union</li><li>emergency takeover</li><li>one Constitution</li><li>one citizenship</li></ul></div></div>
+<p>K.C. Wheare called it <strong>"quasi-federal"</strong>: structurally tilted to the Centre for unity and stability.</p>
+<h2 id="9-8-universal-adult-suffrage">9 · 8. Universal adult suffrage<a class="anchor" href="#9-8-universal-adult-suffrage" aria-label="Link to this section">#</a></h2>
+<p><strong><span class="art">Art. 326</span></strong>: every citizen aged <strong>18+</strong> votes in Parliament and State Legislature elections. Voting age was <strong>21</strong>, reduced to <strong>18</strong> by the <strong>61st Amendment (1988)</strong>. Equal votes regardless of caste, religion, gender, education or economic status. Over <strong>900 million</strong> eligible voters make India the world's largest democracy.</p>
+<h2 id="10-9-independent-judiciary">10 · 9. Independent judiciary<a class="anchor" href="#10-9-independent-judiciary" aria-label="Link to this section">#</a></h2>
+<p>An <strong>integrated</strong> judiciary: Supreme Court at the apex, High Courts, subordinate courts; one system enforces both Central and State laws. <strong>Judicial review</strong> under <strong>Arts. 13, 32 and 226</strong> makes it the guardian of the Constitution and Fundamental Rights, and it decides Union-State disputes. Independence rests on <strong>security of tenure, fixed service conditions and a rigorous impeachment process</strong>.</p>
+<h2 id="11-10-secular-state">11 · 10. Secular State<a class="anchor" href="#11-10-secular-state" aria-label="Link to this section">#</a></h2>
+<p>No State religion; Arts. 25-28 guarantee the right to profess, practise and propagate any faith, <strong>or none</strong>. The <strong>42nd Amendment (1976)</strong> inserted "Secular" in the Preamble. Unlike Western absolute separation, India follows <strong>Sarva Dharma Sambhava</strong>: equal respect for all religions, with State intervention for reform (banning untouchability, gender equality in places of worship) while staying neutral.</p>
+<h2 id="12-11-single-citizenship">12 · 11. Single citizenship<a class="anchor" href="#12-11-single-citizenship" aria-label="Link to this section">#</a></h2>
+<p>Unlike the US (dual citizenship), India has <strong>one citizenship</strong>. Every Indian enjoys the same political and civil rights (vote, movement, equality before law) irrespective of state or union territory. It prevents parochial loyalties and promotes national integration and fraternity.</p>
+<h2 id="13-12-separation-of-powers">13 · 12. Separation of powers<a class="anchor" href="#13-12-separation-of-powers" aria-label="Link to this section">#</a></h2>
+<p><strong>Montesquieu's</strong> doctrine: legislature makes laws, executive implements, judiciary interprets. In India it is <strong>functional and flexible, not rigid</strong>.</p>
+<div class="tblock"><div class="tcap">Where the powers deliberately overlap</div><div class="tablewrap"><table><thead><tr><th>Overlap</th><th>Example in the handout</th></tr></thead><tbody><tr><th scope='row'><strong>Executive in legislature</strong></th><td>Ministers are drawn from the legislature; accountable through Question Hour, no-confidence motions, committee scrutiny</td></tr><tr><th scope='row'><strong>Judiciary over others</strong></th><td>Judicial review of legislative enactments and executive decisions</td></tr><tr><th scope='row'><strong>Legislature in judiciary</strong></th><td>Role in impeachment of judges</td></tr><tr><th scope='row'><strong>Executive in judiciary</strong></th><td>Participation in judicial appointments</td></tr></tbody></table></div></div>
+<p>Result: a dynamic system of <strong>checks and balances</strong>, not watertight compartments.</p>
+<h2 id="14-critique-the-eight-charges-and-the-replies">14 · Critique: the eight charges and the replies<a class="anchor" href="#14-critique-the-eight-charges-and-the-replies" aria-label="Link to this section">#</a></h2>
+<p>Critics inside and outside the Assembly called it borrowed, bulky and over-legalistic. The framers defended each choice by India's diversity, history and governance needs.</p>
+<aside class="callout mnemo"><span class="tag">Eight charges</span><div class="mn"><b>B</b><b>C</b><b>U</b><b>U</b><b>E</b><b>P</b><b>L</b><b>A</b></div><p><strong>B</strong>orrowed, <strong>C</strong>arbon copy, <strong>U</strong>n-Indian, <strong>U</strong>n-Gandhian, <strong>E</strong>lephantine, <strong>P</strong>aradise of lawyers, <strong>L</strong>acks consistency, <strong>A</strong>mbedkar's warnings: "<strong>B</strong>ad <strong>C</strong>opies <strong>U</strong>sually <strong>U</strong>pset <strong>E</strong>very <strong>P</strong>roud <strong>L</strong>awyer, <strong>A</strong>mbedkar warned."</p></aside>
+<div class="tblock"><div class="tcap">Charge, critic and defence</div><div class="tablewrap"><table><thead><tr><th>Charge</th><th>The critics said</th><th>The defence</th></tr></thead><tbody><tr><th scope='row'><strong>1 A borrowed Constitution</strong></th><td>"Bag of borrowings"; <strong>Ivor Jennings</strong>: "patchwork", "lawyer's paradise"</td><td><strong>Ambedkar</strong>: none framed so late in history could avoid resemblance. <strong>Granville Austin</strong>: borrowing was adaptation, not imitation</td></tr><tr><th scope='row'><strong>2 Carbon copy of the 1935 Act</strong></th><td><strong>N. Srinivasan</strong>: "close copy of the 1935 Act"; <strong>P.R. Deshmukh</strong>: "1935 Act with only adult franchise added"</td><td><strong>Ambedkar</strong>: India already ran under the 1935 Act, so retaining its administrative machinery was practical; democracy's soul, adult franchise and fundamental rights were new</td></tr><tr><th scope='row'><strong>3 Un-Indian or anti-Indian</strong></th><td><strong>K. Hanumanthaiya</strong>: "music of an English band" not Veena or Sitar; <strong>Lokanath Misra</strong>: "slavish imitation of the West"</td><td><strong>Granville Austin</strong>: "absurd"; Indianness is not fixed; liberty, equality, fraternity are universal and India needed them for a secular democratic plural state</td></tr><tr><th scope='row'><strong>4 Un-Gandhian</strong></th><td>Gandhi wanted village-based decentralised self-reliance; <strong>Hanumanthaiya</strong>: "the kind of Constitution Mahatma Gandhi did not want"; <strong>T. Prakasam</strong> blamed Ambedkar's distance from Gandhian politics</td><td><strong><span class="art">Art. 40</span></strong> (village panchayats) and later the <strong>73rd and 74th Amendments</strong>; Ambedkar: villages were "dens of darkness", empowering them without social reform would empower local elites</td></tr><tr><th scope='row'><strong>5 Elephantine size</strong></th><td><strong>Jennings</strong>: "too long and complicated"; <strong>H.V. Kamath</strong>: the Assembly's emblem was an elephant, so an "elephantine constitution"</td><td>Diversity needed detailed provisions on minorities, states and Centre-State relations; one Constitution for Union and States; detail reduced ambiguity and litigation</td></tr><tr><th scope='row'><strong>6 Paradise of the lawyers</strong></th><td><strong>Jennings</strong>: "lawyer's paradise"; <strong>H.K. Maheswari</strong>: Indians would become more litigious</td><td>A Constitution is a legal document, so precision was unavoidable; needed to protect rights and federalism</td></tr><tr><th scope='row'><strong>7 Lacks theoretical consistency</strong></th><td>Mixes liberal ideals (liberty, equality) with traditional concerns (cow protection, prohibition)</td><td><strong>Hanna Lerner</strong>: deferral, ambiguity and non-justiciability managed divisive issues (UCC, prohibition); inconsistency reflected plurality and let the Constitution evolve</td></tr><tr><th scope='row'><strong>8 Ambedkar's warnings</strong></th><td>His own: political democracy cannot last without <strong>social and economic democracy</strong>; "era of contradictions" (political equality with socio-economic inequality); beware <strong>hero-worship</strong></td><td>He stressed <strong>constitutional morality and methods</strong>, not mass protests or blind faith in leaders</td></tr></tbody></table></div></div>
+</div><section id="chapter-timeline"><h2>Timeline<a class="anchor" href="#chapter-timeline">#</a></h2><ol class="timeline"><li class="tl high"><time class="yr">1949 Nov 26</time><span class="pin"></span><div class="tlbody">Constitution adopted<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">1950 Jan 26</time><span class="pin"></span><div class="tlbody">Constitution enforced<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">1950</time><span class="pin"></span><div class="tlbody">395 Articles, 22 Parts, 8 Schedules at adoption</div></li><li class="tl high"><time class="yr">1976</time><span class="pin"></span><div class="tlbody">42nd Amendment: Fundamental Duties (Part IVA, <span class="art">Art. 51A</span>); 'Secular' in the Preamble<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">1978</time><span class="pin"></span><div class="tlbody">44th Amendment removes the Right to Property (<span class="art">Art. 31</span>); made <span class="art">Art. 300</span>-A<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">1988</time><span class="pin"></span><div class="tlbody">61st Amendment lowers the voting age from 21 to 18<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">2002</time><span class="pin"></span><div class="tlbody">86th Amendment adds the 11th Fundamental Duty (education of children aged 6 to 14)</div></li></ol></section><section id="connects"><h2>Connects to<a class="anchor" href="#connects">#</a></h2><div class="lkgrid"><article class="link"><div class="lk-line">Ch 1: Preamble</div><p>Secular, Socialist and Integrity: the 42nd Amendment appears in both chapters.</p></article><article class="link"><div class="lk-line">Ch 3: Sources of the Constitution</div><p>The "borrowed" charge: which country gave which feature.</p></article><article class="link"><div class="lk-line">Ch 5: Fundamental Rights</div><p>Feature 4 expanded Article by Article.</p></article><article class="link"><div class="lk-line">Ch 7: Directive Principles</div><p>Feature 5, the three categories in full.</p></article><article class="link"><div class="lk-line">Ch 8: Fundamental Duties</div><p>Feature 6 in full.</p></article><article class="link"><div class="lk-line">Ch 9: Amendment of the Constitution</div><p><span class="art">Art. 368</span> and the rigid-flexible blend.</p></article></div></section><section id="recall"><h2>Recall sheet<a class="anchor" href="#recall">#</a></h2><p class="gdesc">Read once, hide it, then rebuild the chapter from memory.</p><ol class="recall"><li>12 features: lengthiest, parliamentary, rigid-flexible, FR, DPSP, FD, federation with strong Centre (quasi-federal, Wheare), universal suffrage (61st Am. 1988: 21 to 18), independent judiciary, secular, single citizenship, separation of powers (functional).</li><li>Size: 395 Arts./22 Parts/8 Schedules to 470/25/12. New Parts IVA, IXA, IXB, XIVA; new Schedules 9-12; Part VII deleted.</li><li>Six majorities: simple, effective, absolute, special I (amendment, judges, CAG, CEC, SEC, Emergency approval), special II (President's impeachment), special III (Rajya Sabha: <span class="art">Art. 312</span>, 249).</li><li>Six FRs (Arts. 14-18, 19-22, 23-24, 25-28, 29-30, 32); property: <span class="art">Art. 31</span> removed by 44th Am. 1978, now <span class="art">Art. 300</span>-A.</li><li>DPSP: three types; non-justiciable; Ambedkar "novel feature". FD: USSR; 42nd Am. 1976; 10 duties; 86th Am. 2002 added the 11th.</li><li>Critique: B-C-U-U-E-P-L-A with Jennings, Srinivasan, Deshmukh, Hanumanthaiya, Kamath, Maheswari, Lerner; defenders: Ambedkar and Granville Austin.</li></ol></section><section id="practice"><h2>Test yourself<a class="anchor" href="#practice">#</a></h2><h3>Quick quiz</h3><div class="count" id="score">0 / 0 correct</div><div id="quiz"></div><h3>Flashcards</h3><p class="gdesc">Tap the card to flip.</p><div class="deck"><div class="fc" id="fc" tabindex="0" role="button" aria-label="Flashcard, press to flip"></div><div class="count" id="fccount"></div><div class="row"><button class="btn" id="fcprev" type="button">Back</button><button class="btn pri" id="fcnext" type="button">Next</button><button class="btn" id="fcmiss" type="button">Missed it</button><button class="btn" id="fcshuf" type="button">Shuffle</button><button class="btn" id="fconlymiss" type="button">Only missed</button><button class="btn" id="fcall" type="button">All cards</button></div></div></section><nav class="pager"><a href="pol-ch01.html"><small>Previous</small>Preamble</a><a class="nx" href="pol-ch03.html"><small>Next</small>Sources of the Constitution</a></nav><footer>Personal study notes built from the Sarrthi IAS GS Foundation Polity handout (Parts 1 to 3). Handout only: no class slides or teacher ink for this chapter. Mnemonics and shortcuts are memory aids built from the handout’s own facts. Copyright belongs to the teacher; keep this private.</footer></main></div><div id="lightbox" hidden><img alt=""></div><script type="application/json" id="data">{"mcq": [{"q": "Which Amendment lowered the voting age from 21 to 18?", "options": ["42nd", "44th", "61st", "86th"], "answer": 2, "explain": "The 61st Amendment (1988) reduced the voting age to 18 under Art. 326."}, {"q": "Impeachment of the President (Art. 61) needs which majority, per the handout?", "options": ["Simple majority", "Special Majority Type II: two-thirds of the total membership of each House", "Two-thirds of Rajya Sabha present and voting", "Effective majority"], "answer": 1, "explain": "Special Majority Type II is two-thirds of the total membership without the \"present and voting\" condition."}, {"q": "Who described India's system as \"quasi-federal\"?", "options": ["Granville Austin", "Ivor Jennings", "K.C. Wheare", "Montesquieu"], "answer": 2, "explain": "K.C. Wheare called India quasi-federal. Montesquieu is linked with separation of powers."}, {"q": "Which Article creates new All-India Services and needs Special Majority Type III?", "options": ["Article 249", "Article 312", "Article 352", "Article 368"], "answer": 1, "explain": "Type III (two-thirds of Rajya Sabha present and voting) is used under Art. 312 and Art. 249."}, {"q": "Fundamental Duties are inspired by the Constitution of which country?", "options": ["USA", "Ireland", "USSR", "Canada"], "answer": 2, "explain": "The handout states the duties are inspired by the USSR Constitution; they were added by the 42nd Amendment (1976)."}, {"q": "[PYQ 2023] Which one of the following statements best reflects the Chief purpose of the 'Constitution' of a country?", "options": ["It determines the objective for the making of necessary laws.", "It enables the creation of political offices and a government.", "It defines and limits the powers of government.", "It secures social justice, social equality and social security."], "answer": 2, "explain": "PYQ 2023. The answer is (c)."}, {"q": "[PYQ 2023] Consider the following statements in respect of the Constitution Day: Statement-I: The Constitution Day is celebrated on 26th November every year to promote constitutional values among citizens. Statement-II: On 26th November, 1949, the Constituent Assembly of India set up a Drafting Committee under the Chairmanship of Dr. B. R. Ambedkar to prepare a Draft Constitution of India. Which one of the following is correct in respect of the above statements?", "options": ["Both Statement-I and Statement-II are correct and Statement-I is the correct explanation for Statement-I", "Both Statement-I and Statement-II are correct and Statement-II is not the correct explanation for Statement-I", "Statement-I is correct but Statement-II is incorrect", "Statement-I is incorrect but Statement-II is correct"], "answer": 2, "explain": "PYQ 2023. The answer is (c). Revise: 2 · 1. The lengthiest written Constitution."}, {"q": "[PYQ 2021] Which one of the following factors constitutes the best safeguard of liberty in a liberal democracy?", "options": ["A committed judiciary", "Centralization of powers", "Elected government", "Separation of powers"], "answer": 3, "explain": "PYQ 2021. The answer is (d)."}, {"q": "[PYQ 2021] With reference to India, consider the following statements: 1. There is only one citizenship and one domicile. 2. A Citizen by birth only can become the Head of State. 3. A foreigner once granted the citizenship cannot be deprived of it under any circumstance. Which of the statements given above is/are correct?", "options": ["1 only", "2 only", "1 and 3", "2 and 3"], "answer": 0, "explain": "PYQ 2021. The answer is (a)."}, {"q": "[PYQ 2021] Constitutional government means", "options": ["A representative government of a nation with federal structure", "A government whose head enjoys nominal powers", "A government whose Head enjoys real powers", "A government limited by the terms of the constitution"], "answer": 3, "explain": "PYQ 2021. The answer is (d). Revise: 3 · 2. Parliamentary form of government."}, {"q": "[PYQ 2020] A constitutional government by definition is a", "options": ["government by legislature", "popular government", "multi-party government", "limited government"], "answer": 3, "explain": "PYQ 2020. The answer is (d)."}, {"q": "[PYQ 2009] Consider the following statements: 1. The discussions in the Third Round Table Conference eventually led to the passing of the Government of India Act, 1935. 2. The Government of India Act, 1935 provided for the establishment of an All-India Federation to be based on a Union of the Provinces of British India and the Princely States. Which of the statement(s) given above is/are correct?", "options": ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"], "answer": 2, "explain": "PYQ 2009. The answer is (c)."}, {"q": "[PYQ 1996] Who gave the idea of a Constituent Assembly firstly for the formation of Constitution for India?", "options": ["Swaraj Party in 1934", "Congress Party in 1936", "Muslim League in 1942", "All Parties Conference in 1946"], "answer": 0, "explain": "PYQ 1996. The answer is (a)."}, {"q": "[PYQ 1993] Which of the following statement(s) is/are true in relation to Constituent Assembly? 1. Assembly was based on adult suffrage. 2. The assembly was a result of direct election. 3. Assembly was a multi-party body. 4. Assembly worked through various committees. Choose the correct answer by using the code given below:", "options": ["1 and 2 only", "2 and 3 only", "3 and 4 only", "1, 2, 3 and 4"], "answer": 2, "explain": "PYQ 1993. The answer is (c)."}, {"q": "[PYQ 1993] Which of the following characteristics is common between the Federal system of India and America?", "options": ["A Single Citizenship", "Three lists in the Constitution", "Dual Judicial System", "A Federal Supreme Court for Interpretation of the Constitution"], "answer": 3, "explain": "PYQ 1993. The answer is (d)."}], "cards": [{"q": "How many Articles, Parts and Schedules at adoption and today (handout)?", "a": "395, 22, 8 at adoption; 470, 25, 12 today."}, {"q": "Which Parts and Schedules were added by amendment?", "a": "Parts IVA, IXA, IXB, XIVA; Schedules 9, 10, 11, 12. Part VII was deleted."}, {"q": "Define effective majority.", "a": "More than 50% of total membership minus vacancies."}, {"q": "Define absolute majority.", "a": "More than 50% of the total strength of the House (≥ 272 in Lok Sabha for government)."}, {"q": "Special Majority Type I?", "a": "Majority of total membership of each House plus two-thirds present and voting (amendment, judges, CAG, CEC, SEC, Emergency approval)."}, {"q": "Special Majority Type III?", "a": "Two-thirds present and voting in Rajya Sabha only: Art. 312 and Art. 249."}, {"q": "What happened to the Right to Property?", "a": "Art. 31 removed by the 44th Amendment (1978); now a legal right under Art. 300-A (Part XII)."}, {"q": "What did Hanumanthaiya say about the Constitution?", "a": "\"We wanted the music of Veena or Sitar, but here we have the music of an English band.\""}, {"q": "What was Ambedkar's reply to the \"carbon copy\" charge?", "a": "India already ran under the 1935 Act, so its machinery was practical to retain; democracy's soul, adult franchise and fundamental rights were new."}, {"q": "Ambedkar's warning about democracy?", "a": "Political democracy cannot last without social and economic democracy; an \"era of contradictions\"; avoid hero-worship."}, {"q": "Mains 2016: Did the Government of India Act, 1935 lay down a federal constitution? Discuss.", "a": "Intro:: Note that the handout names the 1935 Act as a major influence and a source of the federal scheme, and that critics called the Constitution a \"carbon copy\" of it Body:: Sources chapter lists \"Federal scheme\" from the 1935 Act / Indian federal features: dual polity, division of powers, written Constitution, independent judiciary, bicameralism / the Constitution tilts to the Centre (quasi-federal, Wheare) / critics Srinivasan and Deshmukh vs Ambedkar's defence that retaining the 1935 machinery was practical Close:: Close: the 1935 Act supplied the federal scheme but the Constitution added adult franchise, fundamental rights and its own Centre-tilted balance. (Built only from the notes; the handout does not discuss the 1935 Act's federal design in detail.)"}]}</script><script>window.__NB={"id": "polity", "ch": 2, "title": "Salient Features and Critique of the Constitution"};/* Shared store: reading progress, preferences, optional cross-device sync. */
+(function(){
+var KEY='nbapp:v1',root=document.documentElement;
+function today(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function fresh(){return{v:1,prefs:{fs:1,lh:1.65,w:780,font:'serif',theme:'auto',pt:0},last:null,nb:{},days:{}}}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+var S;
+try{S=JSON.parse(lsGet(KEY))}catch(e){S=null}
+if(!S||!S.v)S=fresh();
+S.prefs=Object.assign(fresh().prefs,S.prefs||{});
+// one-time import of the older done list and theme
+if(!S.migrated){
+  try{var od=JSON.parse(lsGet('nb-done')||'[]');od.forEach(function(n){var c=chap('modern-india',n);c.done=1;c.dt=1})}catch(e){}
+  var ot=lsGet('nb-theme');if(ot&&!S.prefs.pt){S.prefs.theme=ot;S.prefs.pt=1}
+  S.migrated=1;
+}
+function chap(nb,n){var b=S.nb[nb]||(S.nb[nb]={});return b[n]||(b[n]={read:{},done:0,dt:0,pos:null,t:0})}
+var listeners=[],dirty=false,saveT=null,syncT=null;
+function save(){
+  dirty=true;clearTimeout(saveT);
+  saveT=setTimeout(function(){lsSet(KEY,JSON.stringify(S));listeners.forEach(function(f){try{f()}catch(e){}});scheduleSync()},250);
+}
+function flush(){lsSet(KEY,JSON.stringify(S))}
+function merge(a,b){ // a local, b remote; returns merged
+  var o=fresh();
+  o.prefs=((b.prefs&&b.prefs.pt||0)>(a.prefs&&a.prefs.pt||0))?Object.assign({},a.prefs,b.prefs):Object.assign({},b.prefs,a.prefs);
+  o.last=(!a.last||(b.last&&b.last.ts>a.last.ts))?b.last:a.last;
+  o.migrated=1;
+  var ids={};Object.keys(a.nb||{}).concat(Object.keys(b.nb||{})).forEach(function(k){ids[k]=1});
+  Object.keys(ids).forEach(function(id){
+    o.nb[id]={};var ca=(a.nb||{})[id]||{},cb=(b.nb||{})[id]||{},ks={};
+    Object.keys(ca).concat(Object.keys(cb)).forEach(function(k){ks[k]=1});
+    Object.keys(ks).forEach(function(k){
+      var x=ca[k],y=cb[k];if(!x||!y){o.nb[id][k]=x||y;return}
+      var r=Object.assign({},x.read,y.read),done=(y.dt||0)>(x.dt||0)?y:x,pos=(y.t||0)>(x.t||0)?y.pos:x.pos;
+      o.nb[id][k]={read:r,done:done.done,dt:done.dt||0,pos:pos,t:Math.max(x.t||0,y.t||0)};
+    });
+  });
+  var dk={};Object.keys(a.days||{}).concat(Object.keys(b.days||{})).forEach(function(k){dk[k]=1});
+  Object.keys(dk).forEach(function(k){o.days[k]=Math.max((a.days||{})[k]||0,(b.days||{})[k]||0)});
+  return o;
+}
+var syncState='off';
+function scheduleSync(){clearTimeout(syncT);syncT=setTimeout(function(){sync()},4000)}
+var dbp=null;
+function getRef(){
+  if(dbp)return dbp;
+  dbp=(async function(){
+    if(!window.claude||!claude.use)return null;
+    var db=await claude.use('db'),u=await claude.use('user');
+    if(!db||!u||!u.id)return null;
+    var id=await u.id();if(!id)return null;
+    return db.doc('data/users/'+id+'/nbapp');
+  })().catch(function(){return null});
+  return dbp;
+}
+var busy=false;
+async function sync(){
+  if(busy)return;busy=true;
+  try{
+    var ref=await getRef();if(!ref){syncState='local';return}
+    var snap=await ref.get(),rem=null;
+    if(snap.exists){var d=snap.data();try{rem=JSON.parse(d.state)}catch(e){}}
+    var m=rem?merge(S,rem):S;
+    var changed=JSON.stringify(m)!==JSON.stringify(S);
+    S=m;
+    if(changed){flush();listeners.forEach(function(f){try{f()}catch(e){}})}
+    var out=JSON.stringify(S);
+    if(!rem||JSON.stringify(rem)!==out)await ref.set({v:1,updated:Date.now(),state:out});
+    syncState='synced';
+  }catch(e){syncState='local'}
+  finally{busy=false}
+}
+var API={
+  get:function(){return S},
+  chap:chap,
+  save:save,flush:flush,sync:sync,
+  onChange:function(f){listeners.push(f)},
+  syncState:function(){return syncState},
+  setPref:function(k,v){S.prefs[k]=v;S.prefs.pt=Date.now();applyPrefs();save()},
+  reset:function(){S=fresh();S.migrated=1;flush();save()},
+  today:today,
+  pct:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c||!total)return 0;var r=0;Object.keys(c.read||{}).forEach(function(k){if(c.read[k])r++});return Math.min(1,r/total)},
+  isDone:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c)return false;if(c.dt)return !!c.done;return false}
+};
+window.NBS=API;
+function applyPrefs(){
+  var p=S.prefs;
+  var th=p.theme;
+  if(th==='auto')root.removeAttribute('data-theme');else root.setAttribute('data-theme',th);
+  root.style.setProperty('--zoom',p.fs);root.style.setProperty('--lh',p.lh);root.style.setProperty('--pw',p.w+'px');
+  root.setAttribute('data-font',p.font);
+}
+API.applyPrefs=applyPrefs;applyPrefs();
+// studied time, counted while the page is visible and touched in the last minute
+var lastAct=Date.now();
+['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){lastAct=Date.now()},{passive:true})});
+setInterval(function(){
+  if(document.hidden||Date.now()-lastAct>60000||!window.__NB)return;
+  var t=today();S.days[t]=(S.days[t]||0)+15;save();
+},15000);
+document.addEventListener('visibilitychange',function(){if(document.hidden){flush();sync()}else{sync()}});
+addEventListener('pagehide',flush);
+setTimeout(sync,800);
+})();
+(function(){var b=document.getElementById('themebtn');if(!b)return;var o=['auto','light','sepia','dark'];b.addEventListener('click',function(){var t=NBS.get().prefs.theme,i=(o.indexOf(t)+1)%o.length;NBS.setPref('theme',o[i]);b.textContent='Theme: '+o[i]})})();
+(function(){
+var D=JSON.parse(document.getElementById('data').textContent);
+// map/outline toggle
+document.querySelectorAll('.seg button').forEach(function(bt){bt.addEventListener('click',function(){var v=bt.dataset.v;document.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===bt)});document.getElementById('mm-map').hidden=v!=='map';document.getElementById('mm-outline').hidden=v!=='outline'})});
+if(window.innerWidth<640){var ob=document.querySelector('.seg button[data-v="outline"]');if(ob)ob.click()}
+// lightbox
+var lb=document.getElementById('lightbox'),li=lb.querySelector('img');
+document.querySelectorAll('a.zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();li.src=a.getAttribute('href');lb.hidden=false})});
+lb.addEventListener('click',function(){lb.hidden=true});document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true});
+// quiz
+var qz=document.getElementById('quiz'),score=document.getElementById('score'),right=0,answered=0;
+if(qz)D.mcq.forEach(function(m,i){var d=document.createElement('div');d.className='q';var t=document.createElement('div');t.className='qt';t.textContent=(i+1)+'. '+m.q;d.appendChild(t);var ex=document.createElement('div');ex.className='ex';ex.hidden=true;ex.textContent=m.explain;var btns=[];
+m.options.forEach(function(o,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent='ABCD'[j]+'. '+o;b.addEventListener('click',function(){if(d.dataset.done)return;d.dataset.done=1;answered++;if(j===m.answer){right++;b.classList.add('right')}else{b.classList.add('wrong');btns[m.answer].classList.add('right')}ex.hidden=false;score.textContent=right+' / '+answered+' correct'});btns.push(b);d.appendChild(b)});d.appendChild(ex);qz.appendChild(d)});
+// flashcards
+var fc=document.getElementById('fc');
+if(fc){var all=D.cards.map(function(c,i){return{q:c.q,a:c.a,i:i}}),deck=all.slice(),pos=0,back=false,missed={};
+function show(){if(!deck.length){fc.textContent='No cards in this deck.';document.getElementById('fccount').textContent='';return}var c=deck[pos];fc.textContent=back?c.a:c.q;fc.classList.toggle('back',back);document.getElementById('fccount').textContent='Card '+(pos+1)+' of '+deck.length+(back?' (answer)':' (question)')}
+function go(d){if(!deck.length)return;pos=(pos+d+deck.length)%deck.length;back=false;show()}
+fc.addEventListener('click',function(){back=!back;show()});fc.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();back=!back;show()}});
+document.getElementById('fcnext').onclick=function(){go(1)};document.getElementById('fcprev').onclick=function(){go(-1)};
+document.getElementById('fcmiss').onclick=function(){if(deck.length){missed[deck[pos].i]=1;go(1)}};
+document.getElementById('fcshuf').onclick=function(){for(var i=deck.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=deck[i];deck[i]=deck[j];deck[j]=t}pos=0;back=false;show()};
+document.getElementById('fconlymiss').onclick=function(){deck=all.filter(function(c){return missed[c.i]});pos=0;back=false;show()};
+document.getElementById('fcall').onclick=function(){deck=all.slice();pos=0;back=false;show()};show()}
+// side toc highlight
+var links=[].slice.call(document.querySelectorAll('.sidetoc a'));
+if('IntersectionObserver' in window&&links.length){var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on')}})},{rootMargin:'-70px 0px -70% 0px'});Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)})}
+})();
+(function(){
+var N=window.__NB,S=window.NBS;if(!N||!S)return;
+var root=document.documentElement,body=document.body;
+var rec=function(){return S.chap(N.id,N.ch)};
+var heads=[].slice.call(document.querySelectorAll('.page h2[id]'));
+var titles=heads.map(function(h){return h.firstChild?h.firstChild.textContent.trim():h.id});
+var ids=heads.map(function(h){return h.id});
+var seen={},manual={};
+// Done box
+var box=document.getElementById('donebox');
+if(box){box.checked=!!(rec().done);box.addEventListener('change',function(){var r=rec();r.done=box.checked?1:0;r.dt=Date.now();S.save()})}
+// progress bar
+var bar=document.createElement('div');bar.className='rbar';body.appendChild(bar);
+// per-section read buttons
+heads.forEach(function(h,i){
+  var b=document.createElement('button');b.type='button';b.className='h2read';
+  function paint(){var on=!!rec().read[h.id];b.setAttribute('aria-pressed',on);b.textContent=on?'Read ✓':'Mark read'}
+  b.addEventListener('click',function(){var r=rec();manual[h.id]=1;if(r.read[h.id])delete r.read[h.id];else r.read[h.id]=1;r.t=Date.now();S.save();paint();refresh()});
+  h.insertBefore(b,h.firstChild);paint();b._paint=paint;h._b=b;
+});
+function repaint(){heads.forEach(function(h){h._b._paint()});refresh()}
+// caption clamp
+document.querySelectorAll('figcaption').forEach(function(c){if(c.textContent.length>170){c.classList.add('clamp');c.addEventListener('click',function(){c.classList.toggle('open')})}});
+// dock
+var dock=document.createElement('div');dock.className='dock';
+dock.innerHTML='<button type="button" id="dprev" aria-label="Previous section">‹ Prev</button><button type="button" class="mid" id="dmid"></button><button type="button" id="dnext" aria-label="Next section">Next ›</button>';
+body.appendChild(dock);body.classList.add('has-dock');
+var dmid=dock.querySelector('#dmid');
+function curIdx(){var y=innerHeight*0.25,c=-1;for(var i=0;i<heads.length;i++){if(heads[i].getBoundingClientRect().top<=y)c=i;else break}return c}
+function goto(i){if(i<0||i>=heads.length)return;heads[i].scrollIntoView({behavior:'smooth',block:'start'})}
+dock.querySelector('#dprev').onclick=function(){var c=curIdx(),h=heads[c];goto(h&&h.getBoundingClientRect().top<-40?c:c-1)};
+dock.querySelector('#dnext').onclick=function(){goto(curIdx()+1)};
+function refresh(){
+  var c=curIdx(),r=rec().read,n=0;ids.forEach(function(id){if(r[id])n++});
+  dmid.innerHTML='<b>'+(c<0?'Top':(c+1)+'/'+heads.length)+'</b> · '+(c<0?'Start of chapter':esc(titles[c]))+' · '+n+' read';
+}
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+// sheets
+function sheet(html){var s=document.createElement('div');s.className='sheet';s.hidden=true;s.innerHTML='<div class="sheetin">'+html+'</div>';s.addEventListener('click',function(e){if(e.target===s)s.hidden=true});body.appendChild(s);return s}
+var cs=sheet('<h3>Sections</h3><div class="secl" id="secl"></div>');
+dmid.onclick=function(){
+  var r=rec().read,c=curIdx(),h='';
+  ids.forEach(function(id,i){h+='<a href="#'+id+'" data-i="'+i+'" class="'+(r[id]?'rd ':'')+(i===c?'cur':'')+'"><span class="tk">'+(r[id]?'✓':'')+'</span><span>'+esc(titles[i])+'</span></a>'});
+  cs.querySelector('#secl').innerHTML=h;cs.hidden=false;
+  var cur=cs.querySelector('.cur');if(cur)cur.scrollIntoView({block:'center'});
+};
+cs.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-i]');if(a){e.preventDefault();cs.hidden=true;goto(+a.dataset.i)}});
+var ps=sheet('<h3>Reading settings</h3><div id="pbody"></div>');
+function grp(key,label,opts){var p=S.get().prefs;return '<div class="srow"><label>'+label+'</label><div class="grp">'+opts.map(function(o){return '<button type="button" data-k="'+key+'" data-v="'+o[0]+'" aria-pressed="'+(String(p[key])===String(o[0]))+'">'+o[1]+'</button>'}).join('')+'</div></div>'}
+function drawPrefs(){
+  ps.querySelector('#pbody').innerHTML=
+    grp('fs','Text size',[[0.88,"A−"],[1,"A"],[1.12,"A+"],[1.25,"A++"],[1.4,"A+++"]])+
+    grp('lh','Spacing',[[1.45,'Tight'],[1.65,'Normal'],[1.85,'Roomy']])+
+    grp('w','Width',[[640,'Narrow'],[780,'Medium'],[980,'Wide']])+
+    grp('font','Font',[['serif','Serif'],['sans','Sans']])+
+    grp('theme','Theme',[['auto','Auto'],['light','Light'],['sepia','Sepia'],['dark','Dark']])+
+    '<div class="srow"><label>Extras</label><div class="grp"><button type="button" id="pfocus" aria-pressed="'+body.classList.contains('focus')+'">Focus mode</button>'+('wakeLock' in navigator?'<button type="button" id="pwake" aria-pressed="'+!!wl+'">Keep screen on</button>':'')+'</div></div>';
+}
+var wl=null;
+ps.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('button');if(!b)return;
+  if(b.dataset.k){var v=b.dataset.v;S.setPref(b.dataset.k,b.dataset.k==='font'||b.dataset.k==='theme'?v:+v);drawPrefs();return}
+  if(b.id==='pfocus'){body.classList.toggle('focus');drawPrefs();return}
+  if(b.id==='pwake'){
+    if(wl){wl.release();wl=null;drawPrefs()}else{navigator.wakeLock.request('screen').then(function(l){wl=l;l.addEventListener('release',function(){wl=null});drawPrefs()}).catch(function(){})}
+  }
+});
+function openPrefs(){drawPrefs();ps.hidden=false}
+var aa=document.getElementById('aabtn');if(aa)aa.onclick=openPrefs;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){ps.hidden=true;cs.hidden=true;body.classList.remove('focus')}});
+// focus-mode exit: tap the top edge area
+var fx=document.createElement('button');fx.type='button';fx.textContent='Exit focus';fx.className='h2read';fx.style.cssText='position:fixed;right:10px;top:10px;z-index:45;float:none;display:none';fx.onclick=function(){body.classList.remove('focus')};body.appendChild(fx);
+new MutationObserver(function(){fx.style.display=body.classList.contains('focus')?'block':'none'}).observe(body,{attributes:true,attributeFilter:['class']});
+// scroll handling
+var tick=false,saveAt=0;
+function onScroll(){
+  if(tick)return;tick=true;requestAnimationFrame(function(){
+    tick=false;
+    var doc=document.documentElement,max=doc.scrollHeight-innerHeight;
+    bar.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';
+    var vh=innerHeight,r=rec(),ch=false;
+    heads.forEach(function(h,i){
+      var t=h.getBoundingClientRect().top;
+      if(t<vh&&t>-40)seen[h.id]=1;
+      var nt=i+1<heads.length?heads[i+1].getBoundingClientRect().top:(scrollY>=max-160?-1:1e9);
+      if(seen[h.id]&&nt<vh*0.35&&!r.read[h.id]&&!manual[h.id]){r.read[h.id]=1;ch=true;h._b._paint()}
+    });
+    if(ch){r.t=Date.now();S.save()}
+    refresh();
+    var now=Date.now();
+    if(now-saveAt>1500){saveAt=now;var c=curIdx(),rr=rec();
+      if(c>=0){var hh=heads[c].getBoundingClientRect().top;rr.pos={s:ids[c],o:Math.round(-hh)};rr.t=now}
+      S.get().last={nb:N.id,ch:N.ch,s:c>=0?ids[c]:'',st:c>=0?titles[c]:'',ts:now};S.save()}
+  })}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
+S.onChange(function(){if(box)box.checked=!!rec().done;repaint()});
+refresh();onScroll();
+// resume offer
+var p=rec().pos;
+if(!location.hash&&p&&p.s&&ids.indexOf(p.s)>0){
+  var el=document.getElementById(p.s);
+  var t=document.createElement('div');t.className='toast';t.innerHTML='<span>Resume at “'+esc(titles[ids.indexOf(p.s)])+'”?</span><button type="button" id="tgo">Resume</button><button type="button" id="tx">Dismiss</button>';
+  body.appendChild(t);
+  t.querySelector('#tgo').onclick=function(){if(el){el.scrollIntoView({block:'start'});scrollBy(0,(p.o||0))}t.remove()};
+  t.querySelector('#tx').onclick=function(){t.remove()};
+  setTimeout(function(){if(t.parentNode)t.remove()},12000);
+}
+})();
+</script></body></html>

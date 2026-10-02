@@ -1,0 +1,449 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Ch 1 · Preamble</title><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style><style>:root{--bg:#FBFAF6;--surface:#fff;--surface2:#F3F1EA;--ink:#1F2A2A;--muted:#5D6A68;--line:#DAD6C8;--acc:#0E6B5C;--acc-ink:#fff;--acc-soft:#DDF0EA;--saf:#B85C00;--saf-soft:#FFF0DB;--red:#B3261E;--red-soft:#FDE7E4;--blue:#1F5FA8;--blue-soft:#E3EEFA;--good:#2E7D32;--good-soft:#E3F3E4;--hl:#FFE9A6;
+--c0:#0E6B5C;--c1:#B85C00;--c2:#1F5FA8;--c3:#8E3B8E;--c4:#B3261E;--c5:#5C7A1F;--c6:#8A6D00;--c7:#37607A;
+--serif:Literata,Spectral,Georgia,'Times New Roman',serif;--sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:17px/1.65 var(--serif);margin:0}
+a{color:var(--acc)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;margin:0}
+.bar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.barin{display:flex;align-items:center;gap:8px;padding:8px 16px;max-width:1200px;margin:0 auto;font:600 14px var(--sans);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.barin::-webkit-scrollbar{display:none}
+.bar a.home,.nbtn,.themebtn{color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 10px;font:600 13px var(--sans);cursor:pointer;flex:none}
+.nbtn{padding:5px 12px;font-size:16px;line-height:1}.nbtn.off{opacity:.35}
+.bartitle{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-weight:500}.bartitle b{color:var(--acc)}
+.done{display:flex;align-items:center;gap:5px;flex:none;font:600 13px var(--sans);cursor:pointer}.done input{width:18px;height:18px;accent-color:var(--acc)}
+.layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px;padding:0 16px}
+.sidetoc{position:sticky;top:58px;align-self:start;max-height:calc(100vh - 70px);overflow:auto;padding:18px 0;font:14px/1.4 var(--sans)}
+.sth{font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;color:var(--muted);margin-bottom:8px}
+.sidetoc ol{list-style:none;margin:0;padding:0}.sidetoc li{margin:0}.sidetoc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--ink);text-decoration:none}.sidetoc a:hover,.sidetoc a.on{border-color:var(--acc);color:var(--acc);background:var(--acc-soft)}
+.page{max-width:780px;margin:0 auto;padding:24px 16px 60px;width:100%;min-width:0}
+.home-page{max-width:900px}
+.chead{margin-bottom:22px}
+.eyebrow{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font-size:clamp(28px,5vw,40px);margin:6px 0 10px;font-weight:700}
+.lede{font-size:18px;color:var(--muted);margin:10px 0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:600 12px var(--sans);padding:3px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--line);color:var(--muted)}
+.pill.cls{background:var(--acc-soft);color:var(--acc);border-color:transparent}.pill.hb{background:var(--saf-soft);color:var(--saf);border-color:transparent}
+h2{font-size:clamp(22px,3.6vw,28px);margin:40px 0 12px;padding-top:14px;border-top:2px solid var(--acc);font-weight:700}
+h3{font-size:19px;margin:24px 0 8px;color:var(--acc)}
+h4{font-size:16px;margin-bottom:10px}
+.anchor{margin-left:8px;font-size:.7em;color:var(--muted);opacity:0;text-decoration:none}h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 12px}
+mark{background:var(--hl);color:inherit;padding:0 3px;border-radius:3px}
+.lst{margin:0 0 14px;padding-left:22px}.lst li{margin:5px 0}.lst li.sub{margin-left:18px;list-style:circle;color:var(--ink)}
+.gdesc{color:var(--muted);font:15px var(--sans);margin:-4px 0 12px}
+.xref{font:600 .92em var(--sans);white-space:nowrap}
+.callout{border-left:4px solid var(--acc);background:var(--acc-soft);border-radius:0 10px 10px 0;padding:10px 14px 4px;margin:14px 0}
+.callout .tag{display:inline-block;font:700 11px var(--sans);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;color:var(--acc)}
+.callout.teacher{border-color:var(--saf);background:var(--saf-soft)}.callout.teacher .tag{color:var(--saf)}
+.callout.alert{border-color:var(--red);background:var(--red-soft)}.callout.alert .tag{color:var(--red)}
+.callout.note{border-color:var(--blue);background:var(--blue-soft)}.callout.note .tag{color:var(--blue)}
+.callout.example{border-color:var(--good);background:var(--good-soft)}.callout.example .tag{color:var(--good)}
+.callout.source{background:var(--surface2);border-color:var(--line)}.callout.source .tag{color:var(--muted)}
+figure{margin:18px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure img{display:block;width:100%;height:auto;background:#fff}
+figure a.zoom{display:block;cursor:zoom-in}
+figcaption{padding:8px 12px;font:14px/1.45 var(--sans);color:var(--muted)}.figsrc{font:700 11px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--acc);margin-right:6px}
+.tblock{margin:16px 0}.tcap{font:700 14px var(--sans);margin-bottom:6px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font:15px/1.45 var(--sans);min-width:480px}
+th,td{padding:8px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--acc);color:var(--acc-ink);font-weight:700}
+tbody th{background:var(--surface2);font-weight:700}tbody tr:last-child>*{border-bottom:0}tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface2) 55%,transparent)}
+.stepsblock{margin:16px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}.stepsblock ol{margin:0;padding-left:22px}.stepsblock li{margin:4px 0}
+.flow{margin:20px 0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.chain{display:flex;flex-direction:column;align-items:stretch}
+.step{border:1.5px solid var(--acc);background:var(--acc-soft);border-radius:10px;padding:8px 12px;font:15px/1.4 var(--sans)}
+.step .sl{font-weight:700}.step .ss{color:var(--muted);font-size:14px;margin-top:2px}
+.step.warn{border-color:var(--saf);background:var(--saf-soft)}.step.bad{border-color:var(--red);background:var(--red-soft)}.step.good{border-color:var(--good);background:var(--good-soft)}
+.arr{height:20px;position:relative;flex:none}.arr:before{content:"";position:absolute;left:50%;top:0;bottom:6px;border-left:2px solid var(--muted)}.arr:after{content:"";position:absolute;left:calc(50% - 5px);bottom:0;border:5px solid transparent;border-top:7px solid var(--muted);border-bottom:0}
+.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.lane{display:flex;flex-direction:column}.lane-h{font:700 12px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;text-align:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:10px}.seg button{font:600 13px var(--sans);padding:6px 14px;border:0;background:var(--surface);color:var(--ink);cursor:pointer}.seg button[aria-pressed=true]{background:var(--acc);color:var(--acc-ink)}
+.mapblock h2{margin-top:10px}
+.mmframe{overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:8px;-webkit-overflow-scrolling:touch}
+svg.mm{display:block;font-family:var(--sans)}
+.mm-root{fill:var(--acc)}.mm-root-t{fill:var(--acc-ink);font:700 14px var(--sans)}
+.mm-link{fill:none;stroke-width:2;opacity:.7}.mm-branch-t{font:700 13px var(--sans);fill:#fff}.mm-leaf-t{font:13px var(--sans);fill:var(--ink)}.mm-leaf-n{font:11.5px var(--sans);fill:var(--muted)}
+.mm-leaf{fill:var(--surface2);stroke-width:1.5}
+.mm-branch.c0{fill:var(--c0)}.mm-branch.c1{fill:var(--c1)}.mm-branch.c2{fill:var(--c2)}.mm-branch.c3{fill:var(--c3)}.mm-branch.c4{fill:var(--c4)}.mm-branch.c5{fill:var(--c5)}.mm-branch.c6{fill:var(--c6)}.mm-branch.c7{fill:var(--c7)}
+.mm-link.c0,.mm-leaf.c0{stroke:var(--c0)}.mm-link.c1,.mm-leaf.c1{stroke:var(--c1)}.mm-link.c2,.mm-leaf.c2{stroke:var(--c2)}.mm-link.c3,.mm-leaf.c3{stroke:var(--c3)}.mm-link.c4,.mm-leaf.c4{stroke:var(--c4)}.mm-link.c5,.mm-leaf.c5{stroke:var(--c5)}.mm-link.c6,.mm-leaf.c6{stroke:var(--c6)}.mm-link.c7,.mm-leaf.c7{stroke:var(--c7)}
+:root:not([data-theme="dark"]) .mm-branch-t{fill:#fff}
+.outline,.outline ul{list-style:none;padding-left:18px;margin:4px 0}.outline>li{padding-left:0}.outline summary{cursor:pointer;font:700 15px var(--sans)}
+.outline li.c0>details>summary{color:var(--c0)}.outline li.c1>details>summary{color:var(--c1)}.outline li.c2>details>summary{color:var(--c2)}.outline li.c3>details>summary{color:var(--c3)}.outline li.c4>details>summary{color:var(--c4)}.outline li.c5>details>summary{color:var(--c5)}.outline li.c6>details>summary{color:var(--c6)}.outline li.c7>details>summary{color:var(--c7)}
+.ol-note{color:var(--muted);font-size:.9em}
+.timeline{list-style:none;margin:10px 0;padding:0;position:relative}
+.timeline:before{content:"";position:absolute;left:94px;top:0;bottom:0;border-left:2px solid var(--line)}
+.tl{display:grid;grid-template-columns:86px 18px 1fr;gap:0 6px;margin:0 0 12px;align-items:start}
+.yr{font:700 14px var(--mono);text-align:right;color:var(--acc);padding-top:2px}
+.pin{width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--acc);margin:7px 0 0 2px;position:relative;z-index:1}
+.tl.high .pin{background:var(--saf);border-color:var(--saf)}
+.tlbody{font:16px/1.5 var(--sans);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px}
+.tl.high .tlbody{border-color:var(--saf)}.star{color:var(--saf);margin-left:6px}.sref{float:right;margin-left:10px;font:600 12px var(--sans);text-decoration:none}
+.lkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.link{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:15px/1.45 var(--sans)}.link p{margin:4px 0 0;color:var(--muted)}.lk-line{font-weight:700}
+.recall{font:16px/1.55 var(--sans);padding-left:24px}.recall li{margin:6px 0}
+.count{font:600 13px var(--sans);color:var(--muted);margin:8px 0}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;font:16px/1.5 var(--sans)}
+.q .qt{font-weight:700;margin-bottom:8px}.q .opt{display:block;width:100%;text-align:left;padding:8px 12px;margin:6px 0;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.q .opt:hover{border-color:var(--acc)}.q .opt.right{border-color:var(--good);background:var(--good-soft)}.q .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.q .ex{margin-top:8px;color:var(--muted)}
+.deck{margin:10px 0}
+.fc{min-height:150px;background:var(--surface);border:2px solid var(--acc);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:center;text-align:center;font:18px/1.5 var(--serif);cursor:pointer;user-select:none}
+.fc.back{background:var(--acc-soft)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.btn{font:600 14px var(--sans);padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.pri{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:40px 0 20px}.pager a{display:block;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--ink);font:600 15px var(--sans)}.pager a.nx{text-align:right}.pager small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+footer{color:var(--muted);font:13px/1.5 var(--sans);border-top:1px solid var(--line);padding-top:14px;margin-top:30px}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:flex;align-items:center;justify-content:center;padding:10px;overflow:auto}#lightbox img{max-width:none;width:min(1600px,100%);height:auto;background:#fff;cursor:zoom-out}
+.part{margin:34px 0}.part h2{margin-top:0}
+.chlist{display:flex;flex-direction:column;gap:8px}
+.chcard{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+a.chcard:hover{border-color:var(--acc)}.chcard.pending{opacity:.5}
+.chn{font:700 18px var(--mono);color:var(--acc);text-align:center}.cht b{font:700 16px var(--serif);display:block}.cht small{font:13px/1.4 var(--sans);color:var(--muted);display:block;margin-top:2px}
+.chb{display:flex;flex-direction:column;gap:4px;align-items:flex-end;font:600 11px var(--sans)}.chb em{font-style:normal;background:var(--acc-soft);color:var(--acc);padding:2px 8px;border-radius:99px}.chb i.tick{font-style:normal;background:var(--good);color:#fff;padding:2px 8px;border-radius:99px}
+.prog{font:600 14px var(--sans);color:var(--muted)}
+.sbox{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:17px var(--sans);margin:6px 0 14px}
+.results .hit{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0;font:15px/1.5 var(--sans)}.results .hit a{font-weight:700}.results .hit small{color:var(--muted)}
+.chips{display:flex;gap:8px;margin-bottom:8px}.chip{font:600 13px var(--sans);padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}.chip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+@media (max-width:900px){.layout{display:block}.sidetoc{display:none}}
+@media (max-width:560px){body{font-size:16.5px}.tl{grid-template-columns:62px 16px 1fr}.timeline:before{left:70px}.yr{font-size:12px}.chcard{grid-template-columns:34px 1fr}.chb{display:none}.lanes{grid-template-columns:1fr}}
+
+code{font:.88em var(--mono);background:var(--surface2);padding:1px 5px;border-radius:4px}
+
+/* ---- reader app ---- */
+:root{--zoom:1;--lh:1.65;--pw:780px}
+:root[data-theme="sepia"]{--bg:#F4ECD8;--surface:#FBF5E6;--surface2:#EADFC4;--ink:#3B3022;--muted:#7A6A52;--line:#D8C9A6;--acc:#7A4A12;--acc-ink:#fff;--acc-soft:#EFDDB8;--saf:#A4470A;--saf-soft:#F6E2BE;--red:#9C2A1C;--red-soft:#F3D9CB;--blue:#2F5C8A;--blue-soft:#DDE6E4;--good:#3E6B2A;--good-soft:#DDE8C8;--hl:#F2D98A;color-scheme:light}
+:root[data-font="sans"] body{font-family:var(--sans)}
+:root[data-font="sans"] .notes p,:root[data-font="sans"] .notes li{font-family:var(--sans)}
+.page{zoom:var(--zoom);max-width:var(--pw)}
+.notes p,.notes li{line-height:var(--lh)}
+.rbar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--acc);z-index:40;transition:width .15s}
+.aabtn{color:var(--ink);border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 12px;font:700 14px var(--serif);cursor:pointer;flex:none}
+.h2read{float:right;margin:2px 0 0 10px;font:600 12px var(--sans);border:1px solid var(--line);background:var(--surface2);color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer;min-height:30px}
+.h2read[aria-pressed="true"]{background:var(--acc-soft);color:var(--acc);border-color:var(--acc)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding:6px 10px calc(6px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:center;justify-content:center}
+.dock button{font:600 14px var(--sans);min-height:44px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;padding:0 14px;cursor:pointer}
+.dock .mid{flex:1;max-width:520px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dock .mid b{color:var(--acc)}
+body.has-dock .page{padding-bottom:110px}
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.sheetin{background:var(--surface);color:var(--ink);width:100%;max-width:560px;max-height:82vh;overflow:auto;border-radius:16px 16px 0 0;padding:16px 18px calc(18px + env(safe-area-inset-bottom,0px));font:15px/1.4 var(--sans)}
+.sheetin h3{margin:0 0 10px;font:700 17px var(--sans)}
+.srow{display:flex;align-items:center;gap:10px;margin:12px 0;flex-wrap:wrap}
+.srow label{flex:0 0 92px;color:var(--muted);font-weight:600}
+.srow .grp{display:flex;gap:6px;flex-wrap:wrap}
+.srow button{font:600 14px var(--sans);min-height:42px;min-width:48px;padding:0 12px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;cursor:pointer}
+.srow button[aria-pressed="true"]{border-color:var(--acc);background:var(--acc-soft);color:var(--acc)}
+.secl a{display:flex;gap:10px;align-items:center;padding:12px 6px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;min-height:44px}
+.secl a .tk{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;color:var(--acc-ink)}
+.secl a.rd .tk{background:var(--acc);border-color:var(--acc)}
+.secl a.cur{background:var(--acc-soft)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:50;background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 14px;display:flex;gap:12px;align-items:center;font:600 14px var(--sans);max-width:92vw;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.toast button{font:700 14px var(--sans);background:transparent;border:0;color:var(--bg);text-decoration:underline;cursor:pointer;min-height:36px}
+body.focus .bar{display:none}body.focus .sidetoc{display:none}
+figcaption.clamp{max-height:3.3em;overflow:hidden;position:relative;cursor:pointer}
+figcaption.clamp.open{max-height:none}
+figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bottom:0;background:var(--bg);color:var(--acc);font:700 12px var(--sans);padding-left:14px}
+.cbar{display:block;height:4px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}.cbar i{display:block;height:100%;width:0;background:var(--acc)}
+.nbcard h2{border:0;padding:0}.nbcard{border-top:1px solid var(--line)}
+</style><style>
+.mn{display:inline-flex;gap:4px;flex-wrap:wrap;margin:2px 0 6px}.mn b{font:700 15px var(--mono);background:var(--acc);color:var(--acc-ink);border-radius:6px;padding:1px 8px}
+.callout.shortcut{border-color:var(--saf);background:var(--saf-soft)}.callout.shortcut .tag{color:var(--saf)}
+.callout.mnemo{border-color:var(--c3);background:var(--surface2)}.callout.mnemo .tag{color:var(--c3)}
+.callout p,.callout li{font-family:var(--sans)}
+.art{font-family:var(--mono);font-size:.86em;background:var(--acc-soft);padding:0 .28em;border-radius:4px;white-space:nowrap}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin:14px 0}
+.two .col{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:10px 14px;font:15px/1.5 var(--sans)}
+.two .col h4{margin:0 0 4px;font:700 13px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--acc)}
+.two .col ul{margin:4px 0;padding-left:18px}
+.ptag{display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:2px 9px;margin-left:8px;vertical-align:middle}
+.ptag.high{background:var(--red-soft);color:var(--red)}.ptag.med{background:var(--saf-soft);color:var(--saf)}.ptag.low{background:var(--surface2);color:var(--muted)}
+</style></head><body><header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="pol-home.html">Contents</a><span class="bartitle"><b>Ch 1</b> Preamble</span><a class="nbtn" href="pol-ch02.html" title="Salient Features and Critique" aria-label="Next chapter">›</a><a class="home" href="pol-search.html">Search</a><a class="home" href="pol-timeline.html">Timeline</a><label class="done"><input type="checkbox" id="donebox" data-ch="1"><span>Done</span></label><button class="aabtn" id="aabtn" type="button" aria-label="Reading settings">Aa</button></div></header><div class="layout"><aside class="sidetoc"><div class="sth">In this chapter</div><ol><li><a href="#chapter-map">Chapter map</a></li><li><a href="#exam-lens-priority-and-pyqs">Exam lens: priority and PYQs</a></li><li><a href="#1-the-text-and-where-it-came-from">1 · The text and where it came from</a></li><li><a href="#2-the-five-keywords-that-give-india-its-nature">2 · The five keywords that give India its nature</a></li><li><a href="#3-the-four-objectives-and-the-articles-behind-th">3 · The four objectives and the Articles behind them</a></li><li><a href="#4-why-the-preamble-matters">4 · Why the Preamble matters</a></li><li><a href="#5-is-the-preamble-part-of-the-constitution">5 · Is the Preamble part of the Constitution?</a></li><li><a href="#6-can-it-be-amended">6 · Can it be amended?</a></li><li><a href="#7-recent-issue-should-socialist-and-secular-go">7 · Recent issue: should "Socialist" and "Secular" go?</a></li><li><a href="#8-conclusion">8 · Conclusion</a></li><li><a href="#chapter-timeline">Timeline</a></li><li><a href="#connects">Connects to</a></li><li><a href="#recall">Recall sheet</a></li><li><a href="#practice">Test yourself</a></li></ol></aside><main class="page"><div class="chead"><div class="eyebrow">Polity · Part 1 · Constitution and Rights · Chapter 1</div><h1>Preamble<span class="ptag med">Medium priority</span></h1><div class="pills"><span class="pill hb">Handout only: no class slides</span><span class="pill ">Handout pages 2-10</span><span class="pill ">5 Prelims · 1 Mains PYQs quoted</span></div><p class="lede">The Preamble in one breath: its text, where it came from (the Objectives Resolution), the nine keywords that give India its nature and its goals, what courts have said about its status, and the one time it was amended.</p></div><section class="mapblock"><h2 id="chapter-map">Chapter map<a class="anchor" href="#chapter-map">#</a></h2><div class="seg" role="group" aria-label="Map view"><button type="button" data-v="map" aria-pressed="true">Map</button><button type="button" data-v="outline" aria-pressed="false">Outline</button></div><div id="mm-map" class="mmframe"><svg class="mm" viewBox="0 0 766 1096" width="766" height="1096" role="img" aria-label="Mind map: Preamble"><rect class="mm-root" x="8" y="533.0" width="104.0" height="28" rx="6"/><text class="mm-root-t" x="60.0" y="552.0" text-anchor="middle">Preamble</text><path class="mm-link c0" d="M112.0,547.0 C144.0,547.0 144.0,76.0 176.0,76.0"/><rect class="mm-branch c0" x="176" y="62.0" width="80.0" height="28" rx="5"/><text class="mm-branch-t" x="216.0" y="80.5" text-anchor="middle">Origin</text><path class="mm-link c0" d="M256.0,76.0 C284.0,76.0 402.0,28.0 430.0,28.0"/><rect class="mm-leaf c0" x="430.0" y="8" width="231.0" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="23.5">Text</text><text class="mm-leaf-n" x="440.0" y="38.5">We, the People ... 26 Nov 1949</text><path class="mm-link c0" d="M256.0,76.0 C284.0,76.0 402.0,76.0 430.0,76.0"/><rect class="mm-leaf c0" x="430.0" y="56" width="327.6" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="71.5">Objectives Resolution</text><text class="mm-leaf-n" x="440.0" y="86.5">Nehru moved 13 Dec 1946; adopted 22 Jan 1947</text><path class="mm-link c0" d="M256.0,76.0 C284.0,76.0 402.0,124.0 430.0,124.0"/><rect class="mm-leaf c0" x="430.0" y="104" width="168.9" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="119.5">First with a Preamble</text><text class="mm-leaf-n" x="440.0" y="134.5">American Constitution</text><path class="mm-link c1" d="M112.0,547.0 C144.0,547.0 144.0,274.0 176.0,274.0"/><rect class="mm-branch c1" x="176" y="260.0" width="146.0" height="28" rx="5"/><text class="mm-branch-t" x="249.0" y="278.5" text-anchor="middle">Nature of State</text><path class="mm-link c1" d="M322.0,274.0 C350.0,274.0 402.0,178.0 430.0,178.0"/><rect class="mm-leaf c1" x="430.0" y="158" width="279.3" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="173.5">Sovereign</text><text class="mm-leaf-n" x="440.0" y="188.5">free in internal and external matters</text><path class="mm-link c1" d="M322.0,274.0 C350.0,274.0 402.0,226.0 430.0,226.0"/><rect class="mm-leaf c1" x="430.0" y="206" width="265.5" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="221.5">Socialist</text><text class="mm-leaf-n" x="440.0" y="236.5">42nd Am. 1976; democratic socialism</text><path class="mm-link c1" d="M322.0,274.0 C350.0,274.0 402.0,274.0 430.0,274.0"/><rect class="mm-leaf c1" x="430.0" y="254" width="272.4" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="269.5">Secular</text><text class="mm-leaf-n" x="440.0" y="284.5">42nd Am. 1976; Sarva Dharma Sambhava</text><path class="mm-link c1" d="M322.0,274.0 C350.0,274.0 402.0,322.0 430.0,322.0"/><rect class="mm-leaf c1" x="430.0" y="302" width="155.1" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="317.5">Democratic</text><text class="mm-leaf-n" x="440.0" y="332.5">popular sovereignty</text><path class="mm-link c1" d="M322.0,274.0 C350.0,274.0 402.0,370.0 430.0,370.0"/><rect class="mm-leaf c1" x="430.0" y="350" width="168.9" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="365.5">Republic</text><text class="mm-leaf-n" x="440.0" y="380.5">head of State elected</text><path class="mm-link c2" d="M112.0,547.0 C144.0,547.0 144.0,496.0 176.0,496.0"/><rect class="mm-branch c2" x="176" y="482.0" width="106.0" height="28" rx="5"/><text class="mm-branch-t" x="229.0" y="500.5" text-anchor="middle">Objectives</text><path class="mm-link c2" d="M282.0,496.0 C310.0,496.0 402.0,424.0 430.0,424.0"/><rect class="mm-leaf c2" x="430.0" y="404" width="210.3" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="419.5">Justice</text><text class="mm-leaf-n" x="440.0" y="434.5">social, economic, political</text><path class="mm-link c2" d="M282.0,496.0 C310.0,496.0 402.0,472.0 430.0,472.0"/><rect class="mm-leaf c2" x="430.0" y="452" width="320.7" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="467.5">Liberty</text><text class="mm-leaf-n" x="440.0" y="482.5">thought, expression, belief, faith, worship</text><path class="mm-link c2" d="M282.0,496.0 C310.0,496.0 402.0,520.0 430.0,520.0"/><rect class="mm-leaf c2" x="430.0" y="500" width="175.8" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="515.5">Equality</text><text class="mm-leaf-n" x="440.0" y="530.5">status and opportunity</text><path class="mm-link c2" d="M282.0,496.0 C310.0,496.0 402.0,568.0 430.0,568.0"/><rect class="mm-leaf c2" x="430.0" y="548" width="217.2" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="563.5">Fraternity</text><text class="mm-leaf-n" x="440.0" y="578.5">dignity; unity and integrity</text><path class="mm-link c3" d="M112.0,547.0 C144.0,547.0 144.0,670.0 176.0,670.0"/><rect class="mm-branch c3" x="176" y="656.0" width="122.0" height="28" rx="5"/><text class="mm-branch-t" x="237.0" y="674.5" text-anchor="middle">Significance</text><path class="mm-link c3" d="M298.0,670.0 C326.0,670.0 402.0,622.0 430.0,622.0"/><rect class="mm-leaf c3" x="430.0" y="602" width="153.0" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="617.5">Source of authority</text><text class="mm-leaf-n" x="440.0" y="632.5">We, the People</text><path class="mm-link c3" d="M298.0,670.0 C326.0,670.0 402.0,670.0 430.0,670.0"/><rect class="mm-leaf c3" x="430.0" y="650" width="217.2" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="665.5">Interpretative key</text><text class="mm-leaf-n" x="440.0" y="680.5">guide, not a source of power</text><path class="mm-link c3" d="M298.0,670.0 C326.0,670.0 402.0,718.0 430.0,718.0"/><rect class="mm-leaf c3" x="430.0" y="698" width="111.0" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="713.5">Identity card</text><text class="mm-leaf-n" x="440.0" y="728.5">Palkhivala</text><path class="mm-link c4" d="M112.0,547.0 C144.0,547.0 144.0,844.0 176.0,844.0"/><rect class="mm-branch c4" x="176" y="830.0" width="130.0" height="28" rx="5"/><text class="mm-branch-t" x="241.0" y="848.5" text-anchor="middle">Status in law</text><path class="mm-link c4" d="M306.0,844.0 C334.0,844.0 402.0,772.0 430.0,772.0"/><rect class="mm-leaf c4" x="430.0" y="752" width="111.0" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="767.5">Berubari 1960</text><text class="mm-leaf-n" x="440.0" y="782.5">not a part</text><path class="mm-link c4" d="M306.0,844.0 C334.0,844.0 402.0,820.0 430.0,820.0"/><rect class="mm-leaf c4" x="430.0" y="800" width="189.6" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="815.5">Kesavananda 1973</text><text class="mm-leaf-n" x="440.0" y="830.5">part of the Constitution</text><path class="mm-link c4" d="M306.0,844.0 C334.0,844.0 402.0,868.0 430.0,868.0"/><rect class="mm-leaf c4" x="430.0" y="848" width="113.7" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="863.5">LIC 1995</text><text class="mm-leaf-n" x="440.0" y="878.5">integral part</text><path class="mm-link c4" d="M306.0,844.0 C334.0,844.0 402.0,916.0 430.0,916.0"/><rect class="mm-leaf c4" x="430.0" y="896" width="162.0" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="911.5">Non-justiciable</text><text class="mm-leaf-n" x="440.0" y="926.5">no rights, no duties</text><path class="mm-link c5" d="M112.0,547.0 C144.0,547.0 144.0,1018.0 176.0,1018.0"/><rect class="mm-branch c5" x="176" y="1004.0" width="98.0" height="28" rx="5"/><text class="mm-branch-t" x="225.0" y="1022.5" text-anchor="middle">Amendment</text><path class="mm-link c5" d="M274.0,1018.0 C302.0,1018.0 402.0,970.0 430.0,970.0"/><rect class="mm-leaf c5" x="430.0" y="950" width="113.7" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="965.5">Only once</text><text class="mm-leaf-n" x="440.0" y="980.5">42nd Am. 1976</text><path class="mm-link c5" d="M274.0,1018.0 C302.0,1018.0 402.0,1018.0 430.0,1018.0"/><rect class="mm-leaf c5" x="430.0" y="998" width="224.1" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="1013.5">Added</text><text class="mm-leaf-n" x="440.0" y="1028.5">Socialist, Secular, Integrity</text><path class="mm-link c5" d="M274.0,1018.0 C302.0,1018.0 402.0,1066.0 430.0,1066.0"/><rect class="mm-leaf c5" x="430.0" y="1046" width="127.5" height="40" rx="4"/><text class="mm-leaf-t" x="440.0" y="1061.5">Limit</text><text class="mm-leaf-n" x="440.0" y="1076.5">basic structure</text></svg></div><div id="mm-outline" hidden><ul class="outline"><li><strong>Preamble</strong><ul><li class="c0"><details open><summary>Origin</summary><ul><li>Text <span class="ol-note">We, the People ... 26 Nov 1949</span></li><li>Objectives Resolution <span class="ol-note">Nehru moved 13 Dec 1946; adopted 22 Jan 1947</span></li><li>First with a Preamble <span class="ol-note">American Constitution</span></li></ul></details></li><li class="c1"><details open><summary>Nature of State</summary><ul><li>Sovereign <span class="ol-note">free in internal and external matters</span></li><li>Socialist <span class="ol-note">42nd Am. 1976; democratic socialism</span></li><li>Secular <span class="ol-note">42nd Am. 1976; Sarva Dharma Sambhava</span></li><li>Democratic <span class="ol-note">popular sovereignty</span></li><li>Republic <span class="ol-note">head of State elected</span></li></ul></details></li><li class="c2"><details open><summary>Objectives</summary><ul><li>Justice <span class="ol-note">social, economic, political</span></li><li>Liberty <span class="ol-note">thought, expression, belief, faith, worship</span></li><li>Equality <span class="ol-note">status and opportunity</span></li><li>Fraternity <span class="ol-note">dignity; unity and integrity</span></li></ul></details></li><li class="c3"><details open><summary>Significance</summary><ul><li>Source of authority <span class="ol-note">We, the People</span></li><li>Interpretative key <span class="ol-note">guide, not a source of power</span></li><li>Identity card <span class="ol-note">Palkhivala</span></li></ul></details></li><li class="c4"><details open><summary>Status in law</summary><ul><li>Berubari 1960 <span class="ol-note">not a part</span></li><li>Kesavananda 1973 <span class="ol-note">part of the Constitution</span></li><li>LIC 1995 <span class="ol-note">integral part</span></li><li>Non-justiciable <span class="ol-note">no rights, no duties</span></li></ul></details></li><li class="c5"><details open><summary>Amendment</summary><ul><li>Only once <span class="ol-note">42nd Am. 1976</span></li><li>Added <span class="ol-note">Socialist, Secular, Integrity</span></li><li>Limit <span class="ol-note">basic structure</span></li></ul></details></li></ul></li></ul></div></section><div class="notes"><h2 id="exam-lens-priority-and-pyqs">Exam lens: priority and PYQs<a class="anchor" href="#exam-lens-priority-and-pyqs" aria-label="Link to this section">#</a></h2><aside class="callout source"><span class="tag">Source note</span><p><strong>This chapter comes from the Sarrthi handout only.</strong> There are no class slides or teacher ink. Priority is medium priority, counted from the handout’s own PYQ section: <strong>5 Prelims and 1 Mains</strong> questions are quoted. Years quoted are listed below; a “years quoted” count is not a count of distinct questions.</p></aside><div class="tblock"><div class="tcap">What the handout itself stresses</div><div class="tablewrap"><table><thead><tr><th>Signal in the handout</th><th>Where</th><th>Why it matters</th></tr></thead><tbody><tr><th scope='row'>Preamble is <strong>not justiciable</strong>; neither a source of power nor a prohibition on the legislature</th><td>Status in law</td><td>Prelims 2020 asks exactly this; the handout lists it as the "Important Takeaway".</td></tr><tr><th scope='row'>Berubari (1960): not a part; <strong>Kesavananda (1973): part</strong>; LIC (1995): integral part</th><td>Status in law</td><td>A three-case chronology is a classic statement trap.</td></tr><tr><th scope='row'>Amended <strong>only once</strong>, by the 42nd Amendment (1976): Socialist, Secular, Integrity</th><td>Amendability</td><td>Appears as both fact and Mains argument.</td></tr><tr><th scope='row'>Handout's "Key Facts for Prelims": the <strong>American Constitution was the first in the world to begin with a Preamble</strong></th><td>Introduction</td><td>The handout's own Prelims flag.</td></tr><tr><th scope='row'>Value addition for Mains: Palkhivala, Munshi, Hidayatullah quotes</th><td>Introduction</td><td>Ready-made quotes for the first line of an answer.</td></tr></tbody></table></div></div><div class="tblock"><div class="tcap">PYQs quoted in the handout</div><div class="tablewrap"><table><thead><tr><th>Year and paper</th><th>What was asked</th><th>The answer</th><th>Where in this chapter</th></tr></thead><tbody><tr><th scope='row'>Prelims 2020</th><td>The Preamble to the Constitution of India is</td><td>(d) a part of the Constitution but has no legal effect independently of other parts</td><td>Whole chapter</td></tr><tr><th scope='row'>Prelims 2017</th><td>Which one of the following objectives is not embodied in the Preamble to the Constitution of India?</td><td>(b) Economic liberty</td><td><a href="#3-the-four-objectives-and-the-articles-behind-th">3 · The four objectives and the Articles behind them</a></td></tr><tr><th scope='row'>Prelims 2017</th><td>The mind of the makers of the Constitution of India is reflected in which of the following?</td><td>(a) The Preamble</td><td><a href="#3-the-four-objectives-and-the-articles-behind-th">3 · The four objectives and the Articles behind them</a></td></tr><tr><th scope='row'>Mains 2016</th><td>Discuss each adjective attached to the word ‘Republic’ in the ‘Preamble’. Are they defendable in the present circumstances?</td><td>Open-ended: see the answer skeleton in the flashcards</td><td>Whole chapter</td></tr><tr><th scope='row'>Prelims 2013</th><td>‘Economic Justice’ as one of the objectives of the Indian Constitution has been provided in</td><td>(b) The Preamble and the Directive Principles of State Policy</td><td><a href="#3-the-four-objectives-and-the-articles-behind-th">3 · The four objectives and the Articles behind them</a></td></tr><tr><th scope='row'>Prelims 2011</th><td>Other than the Fundamental Rights, which of the following parts of the Constitution of India reflect/reflects the principles and provisions of the Universal Declaration o…</td><td>(d) 1, 2 and 3</td><td><a href="#3-the-four-objectives-and-the-articles-behind-th">3 · The four objectives and the Articles behind them</a></td></tr></tbody></table></div><p class="gdesc">The “where” link is matched by shared terms, so treat it as a pointer.</p></div><aside class="callout key"><span class="tag">What to prepare</span><p><strong>Prelims hooks:</strong> legal status (part or not, justiciable or not); which objectives are in the Preamble (Prelims 2017); where economic justice sits (Preamble + DPSP, Prelims 2013); the three cases in order; the three words added in 1976.</p><p><strong>Mains hooks:</strong> the five adjectives of the State (2016 asks for each adjective attached to Republic); the Socialist-Secular removal debate with the basic-structure answer; the way forward.</p><p><strong>Closing idea:</strong> The Preamble is the soul and compass of the Constitution: it guides interpretation and cannot override an explicit article.</p></aside><h2 id="1-the-text-and-where-it-came-from">1 · The text and where it came from<a class="anchor" href="#1-the-text-and-where-it-came-from" aria-label="Link to this section">#</a></h2>
+<p>The Preamble opens with <strong>"WE, THE PEOPLE OF INDIA"</strong> and resolves to constitute India into a <strong>Sovereign Socialist Secular Democratic Republic</strong>, securing to all citizens <strong>Justice, Liberty, Equality</strong> and promoting <strong>Fraternity</strong> "assuring the dignity of the individual and the unity and integrity of the Nation". It ends: "In our Constituent Assembly this twenty-sixth day of November, 1949, do HEREBY ADOPT, ENACT AND GIVE TO OURSELVES THIS CONSTITUTION."</p>
+<aside class="callout key"><span class="tag">Prelims fact</span><p>The American Constitution was the first in the world to begin with a Preamble. "Preamble" comes from the Latin <em>praeambulum</em>, "to walk before".</p></aside>
+<div class="two"><div class="col"><h4>N.A. Palkhivala</h4><ul><li>"Identity card of the Constitution"</li></ul></div><div class="col"><h4>K.M. Munshi</h4><ul><li>"Horoscope of our sovereign democratic republic"</li></ul></div><div class="col"><h4>M. Hidayatullah</h4><ul><li>The "soul of our Constitution", a solemn resolve "which nothing but a revolution can alter"</li></ul></div></div>
+<aside class="callout mnemo"><span class="tag">Quote memory</span><div class="mn"><b>P</b><b>M</b><b>H</b></div><p>Palkhivala = Passport (identity card); Munshi = Moon-chart (horoscope); Hidayatullah = Heart (soul).</p></aside>
+<h3>The Objectives Resolution</h3>
+<p>The Preamble is based on the <strong>Objectives Resolution</strong>, drafted and moved by <strong>Jawaharlal Nehru</strong> on <strong>13 December 1946</strong>. The Assembly adopted it unanimously on <strong>22 January 1947</strong>, and a modified version became the Preamble.</p>
+<section class="flow"><h4>What the Objectives Resolution declared (eight points)</h4><div class="chain"><div class="step "><div><div class="sl">1 Resolve</div><div class="ss">Proclaim India an Independent Sovereign Republic and draw up a Constitution for her governance</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">2 Union</div><div class="ss">British India, the Indian States and other willing territories form a Union of them all</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">3 Autonomous units</div><div class="ss">Territories keep the status of autonomous units with residuary powers, except what is vested in or implied for the Union</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">4 People's power</div><div class="ss">All power and authority of sovereign independent India and its organs derive from the people</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">5 Guarantees</div><div class="ss">Justice, social, economic and political; equality of status and opportunity and before the law; freedom of thought, expression, belief, faith, worship, vocation, association and action, subject to law and public morality</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">6 Safeguards</div><div class="ss">Adequate safeguards for minorities, backward and tribal areas, depressed and other backward classes</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">7 Integrity</div><div class="ss">The territory's integrity and its sovereign rights on land, sea and air, as per justice and the law of civilized nations</div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">8 World role</div><div class="ss">This ancient land attains its rightful and honoured place and contributes to world peace and the welfare of mankind</div></div></div></div></section>
+<h2 id="2-the-five-keywords-that-give-india-its-nature">2 · The five keywords that give India its nature<a class="anchor" href="#2-the-five-keywords-that-give-india-its-nature" aria-label="Link to this section">#</a></h2>
+<p>The Preamble's keywords describe both <strong>what the State is</strong> (nature) and <strong>what it must achieve</strong> (objectives). Start with the nature.</p>
+<aside class="callout mnemo"><span class="tag">The five-word nature</span><div class="mn"><b>S</b><b>S</b><b>S</b><b>D</b><b>R</b></div><p><strong>S</strong>overeign, <strong>S</strong>ocialist, <strong>S</strong>ecular, <strong>D</strong>emocratic, <strong>R</strong>epublic. Say it as "Three S, then D, then R". Only the middle two S's (Socialist, Secular) came in 1976.</p></aside>
+<div class="tblock"><div class="tcap">The five keywords at a glance</div><div class="tablewrap"><table><thead><tr><th>Keyword</th><th>Meaning in the handout</th><th>Key hook</th></tr></thead><tbody><tr><th scope='row'><strong>Sovereign</strong></th><td>Fully independent in internal and external matters; no external power dictates India's policies</td><td>UN or Commonwealth membership does not limit it; India can acquire or cede territory; strategic autonomy and leadership in NAM</td></tr><tr><th scope='row'><strong>Socialist</strong></th><td>Commitment to reduce inequality and ensure social and economic justice; <strong>democratic socialism</strong> with a mixed economy</td><td>Added by 42nd Am. (1976); inspired by the <strong>Congress Avadi Resolution (1955)</strong>; blends Marxist ideals with Gandhian thought, leaning to <strong>Gandhian socialism</strong>; MGNREGA and food security reflect it despite post-1991 reforms</td></tr><tr><th scope='row'><strong>Secular</strong></th><td>No official religion; equal respect for all faiths (<strong>Sarva Dharma Sambhava</strong>)</td><td>Inserted by 42nd Am. (1976) though implicit already; State may regulate and reform religion (untouchability, temple entry); Arts. 25-28 guarantee religious freedom: <strong>positive secularism</strong></td></tr><tr><th scope='row'><strong>Democratic</strong></th><td>Power rests with the people (popular sovereignty), via universal adult suffrage and periodic elections</td><td>Goes beyond politics to <strong>social and economic democracy</strong>: substantive equality, not only formal rights</td></tr><tr><th scope='row'><strong>Republic</strong></th><td>Head of State (the President) is elected, not hereditary</td><td>Unlike monarchies such as the UK; the President is elected indirectly by an electoral college</td></tr></tbody></table></div></div>
+<aside class="callout shortcut"><span class="tag">Shortcut</span><p>Nature = <strong>who rules and how</strong> (S-S-S-D-R). Objectives = <strong>what the State promises</strong> (J-L-E-F). Keep the two lists apart in the exam hall.</p></aside>
+<h2 id="3-the-four-objectives-and-the-articles-behind-th">3 · The four objectives and the Articles behind them<a class="anchor" href="#3-the-four-objectives-and-the-articles-behind-th" aria-label="Link to this section">#</a></h2>
+<aside class="callout mnemo"><span class="tag">Objectives</span><div class="mn"><b>J</b><b>L</b><b>E</b><b>F</b></div><p><strong>J</strong>ustice, <strong>L</strong>iberty, <strong>E</strong>quality, <strong>F</strong>raternity. Sentence: "<strong>J</strong>udges <strong>L</strong>et <strong>E</strong>veryone <strong>F</strong>lourish."</p></aside>
+<div class="tblock"><div class="tcap">Objective, scope and the Article that delivers it</div><div class="tablewrap"><table><thead><tr><th>Objective</th><th>What the handout says</th><th>Articles named</th></tr></thead><tbody><tr><th scope='row'><strong>Justice</strong></th><td>Social (equality irrespective of caste, religion, gender; uplift through reservations), economic (reduce inequality of wealth, income, property), political (equal access through universal adult suffrage)</td><td><span class="art">Article 39</span> for economic justice</td></tr><tr><th scope='row'><strong>Liberty</strong></th><td>Not only absence of restraint but opportunities for human potential; thought, expression, belief, faith, worship; <strong>not absolute</strong> (public order, morality, national security); RTI Act extends transparency</td><td><span class="art">Articles 19</span>-22</td></tr><tr><th scope='row'><strong>Equality</strong></th><td>Absence of special privileges; equality of status and opportunity in three forms: civic, political, economic</td><td>Civic: Arts. 14-18 (equality before law; abolishes untouchability and titles). Political: Arts. 325-326. Economic: <span class="art">Art. 39</span> (equal pay for equal work, fair distribution) and <span class="art">Art. 43</span> (living wage)</td></tr><tr><th scope='row'><strong>Fraternity</strong></th><td>Brotherhood, dignity of the individual, unity and integrity of the nation; <strong>'integrity' added by 42nd Am. (1976)</strong></td><td><span class="art">Art. 21</span> (right to live with dignity, by judicial interpretation); <span class="art">Art. 51A</span> (renounce practices derogatory to women's dignity); <span class="art">Art. 1</span> (Union of States)</td></tr></tbody></table></div></div>
+<section class="flow"><h4>Political equality, step by step</h4><div class="chain"><div class="step "><div><div class="sl"><span class="art">Article 325</span></div><div class="ss">No person excluded from the electoral rolls on grounds of religion, race, caste or sex</div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl"><span class="art">Article 326</span></div><div class="ss">Lok Sabha and State Assembly elections rest on universal adult suffrage</div></div></div></div></section>
+<aside class="callout alert"><span class="tag">Handout alert</span><p>Economic justice appears in <strong>both the Preamble and the DPSP</strong> (Prelims 2013 answer: Preamble and Directive Principles). Fundamental Rights alone do not carry it.</p></aside>
+<h2 id="4-why-the-preamble-matters">4 · Why the Preamble matters<a class="anchor" href="#4-why-the-preamble-matters" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">Seven roles (the handout's list)</div><div class="tablewrap"><table><thead><tr><th>Role</th><th>One line</th></tr></thead><tbody><tr><th scope='row'><strong>Source of authority</strong></th><td>"We, the People": popular sovereignty; the Constitution draws legitimacy from citizens, not a monarch or outside power</td></tr><tr><th scope='row'><strong>Reflection of ideals</strong></th><td>Justice, liberty, equality, fraternity: the philosophy of the framers; a guide to read other provisions in harmony</td></tr><tr><th scope='row'><strong>Introduction</strong></th><td>A concise preface of aims and objectives</td></tr><tr><th scope='row'><strong>Interpretative role</strong></th><td>Not enforceable as a source of power, but used by courts to read ambiguous provisions; in Kesavananda (1973) it helped identify the basic structure</td></tr><tr><th scope='row'><strong>Declaration of the nature of the State</strong></th><td>Sovereign, socialist, secular, democratic, republic</td></tr><tr><th scope='row'><strong>Reflection of objectives</strong></th><td>Guides policy, lawmaking and governance; links freedom struggle ideals to the Republic</td></tr><tr><th scope='row'><strong>National integration</strong></th><td>Fraternity, dignity and unity push citizens beyond caste, religion, language and region</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Seven roles</span><div class="mn"><b>S</b><b>R</b><b>I</b><b>I</b><b>D</b><b>R</b><b>N</b></div><p><strong>S</strong>ource, <strong>R</strong>eflection of ideals, <strong>I</strong>ntroduction, <strong>I</strong>nterpretation, <strong>D</strong>eclaration of nature, <strong>R</strong>eflection of objectives, <strong>N</strong>ational integration. Hook: "Some Rivers Irrigate; Instead Deserts Remain Naked."</p></aside>
+<h2 id="5-is-the-preamble-part-of-the-constitution">5 · Is the Preamble part of the Constitution?<a class="anchor" href="#5-is-the-preamble-part-of-the-constitution" aria-label="Link to this section">#</a></h2>
+<p>It does not confer powers or impose limits. Its role is <strong>interpretative</strong>: it shows the framers' intent when a provision is unclear. Courts moved in three steps.</p>
+<section class="flow"><h4>Three cases, three positions</h4><div class="chain"><div class="step bad"><div><div class="sl">Berubari Union Case (1960)</div><div class="ss"><strong>Not a part</strong> of the Constitution. A guiding light for the framers' intent only; no independent legal force; cannot be a source of power or rights</div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">Kesavananda Bharati (1973)</div><div class="ss"><strong>Is a part</strong>. The Constitution must be read in the light of its ideals. Also gave the <strong>basic structure</strong> doctrine: sovereignty, democracy, liberty, equality and justice guide what Parliament cannot amend away</div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">LIC of India Case (1995)</div><div class="ss"><strong>Reaffirmed</strong>: an integral part; creates no independent rights but guides interpretation and protects the spirit of the Constitution</div></div></div></div></section>
+<aside class="callout mnemo"><span class="tag">Case order</span><div class="mn"><b>B</b><b>K</b><b>L</b></div><p><strong>B</strong>erubari = No → <strong>K</strong>esavananda = Yes → <strong>L</strong>IC = Yes again. Hook: "<strong>B</strong>ad <strong>K</strong>ind <strong>L</strong>aw" (bad first, kind later, law settled).</p></aside>
+<aside class="callout note"><span class="tag">Constituent Assembly's view</span><p>The Preamble was adopted <strong>after</strong> the rest of the Constitution, to ensure full conformity. Dr Rajendra Prasad put the question "that the Preamble stands part of the Constitution" to a vote and it was adopted, showing the framers' intent.</p></aside>
+<aside class="callout key"><span class="tag">Important takeaway</span><p>The Preamble is <strong>neither a source of power to the legislature nor a prohibition upon its powers</strong>. It is <strong>non-justiciable</strong>: its provisions are not enforceable in courts.</p></aside>
+<h3>Five limitations</h3>
+<ul class='lst'><li><strong>Cannot override explicit provisions.</strong> A clear article prevails over the Preamble's broad ideals.</li><li><strong>Not enforceable in court.</strong> Its objectives are aspirational; Fundamental Rights are enforceable.</li><li><strong>Cannot confer rights or duties.</strong> It is a statement of vision to be turned into reality by articles, laws and policies.</li><li><strong>Ambiguous scope.</strong> Justice, liberty, equality and fraternity lack precise definitions, so courts must interpret them.</li><li><strong>Depends on operative provisions.</strong> It is not self-executory: Fundamental Rights, DPSP and welfare policy deliver its ideals.</li></ul>
+<aside class="callout mnemo"><span class="tag">Limitations</span><div class="mn"><b>O</b><b>E</b><b>R</b><b>A</b><b>D</b></div><p><strong>O</strong>verride (cannot), <strong>E</strong>nforce (cannot), <strong>R</strong>ights (cannot confer), <strong>A</strong>mbiguous, <strong>D</strong>epends on others. Hook: "Only Even Rich Aunts Donate."</p></aside>
+<h2 id="6-can-it-be-amended">6 · Can it be amended?<a class="anchor" href="#6-can-it-be-amended" aria-label="Link to this section">#</a></h2>
+<section class="flow"><h4>How the amendment question was settled</h4><div class="chain"><div class="step "><div><div class="sl">1960</div><div class="ss">Berubari: Preamble is not a part, so it cannot be amended</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">1973</div><div class="ss">Kesavananda overrules that view: it is a part and <strong>can be amended under <span class="art">Article 368</span></strong>, but <strong>only if the basic structure is respected</strong></div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">1976</div><div class="ss"><strong>Amended only once</strong>: 42nd Constitutional Amendment Act added <strong>Socialist, Secular and Integrity</strong></div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">Later judgments</div><div class="ss">The Supreme Court upheld the amendment: changes are permissible under <span class="art">Article 368</span> so long as the basic structure is not damaged</div></div></div></div></section>
+<aside class="callout key"><span class="tag">Remember</span><p>Opponents of amendability argued that even an amendable Preamble could not have its basic features destroyed. That safeguard is the basic structure.</p></aside>
+<aside class="callout mnemo"><span class="tag">Words added</span><div class="mn"><b>S</b><b>S</b><b>I</b></div><p><strong>S</strong>ocialist, <strong>S</strong>ecular, <strong>I</strong>ntegrity: "two S and an I, once, in 1976".</p></aside>
+<h2 id="7-recent-issue-should-socialist-and-secular-go">7 · Recent issue: should "Socialist" and "Secular" go?<a class="anchor" href="#7-recent-issue-should-socialist-and-secular-go" aria-label="Link to this section">#</a></h2>
+<div class="two"><div class="col"><h4>For removal</h4><ul><li>Emergency-era insertion in 1976, not in the 1950 Preamble, so politically motivated</li><li>Changed times: after liberalisation and 1991, rigid socialism may constrain economic reform</li><li>Ideological neutrality: the State should not be tied to a doctrine</li></ul></div><div class="col"><h4>Against removal</h4><ul><li>They affirm India's identity as welfare, plural and inclusive</li><li>Basic structure: Minerva Mills (1980) and SR Bommai (1994) protect features like secularism</li><li>Secularism protects minorities and prevents majoritarian dominance</li><li>Preamble is the "identity card" (Palkhivala), removing words risks its coherence</li></ul></div></div>
+<div class="two"><div class="col"><h4>Balance</h4><ul><li>Retain inclusive principles while allowing economic liberalisation</li><li>Dialogue: Parliament, states, civil society and judiciary together</li><li>Judicial safeguards: keep "secular" and "socialist" as essential features</li></ul></div><div class="col"><h4>Practice over semantics</h4><ul><li>Enforce secularism and welfare in practice</li><li>PM's "5S": Samman, Samvad, Sahyog, Shanti, Samriddhi</li></ul></div></div>
+<h2 id="8-conclusion">8 · Conclusion<a class="anchor" href="#8-conclusion" aria-label="Link to this section">#</a></h2>
+<p>The Preamble is the <strong>soul and guiding light</strong> of the Constitution: a solemn declaration of India as a Sovereign, Socialist, Secular, Democratic and Republic nation committed to justice, liberty, equality and fraternity.</p>
+</div><section id="chapter-timeline"><h2>Timeline<a class="anchor" href="#chapter-timeline">#</a></h2><ol class="timeline"><li class="tl high"><time class="yr">1946 Dec 13</time><span class="pin"></span><div class="tlbody">Nehru moves the Objectives Resolution<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">1947 Jan 22</time><span class="pin"></span><div class="tlbody">Objectives Resolution adopted unanimously</div></li><li class="tl high"><time class="yr">1949 Nov 26</time><span class="pin"></span><div class="tlbody">Constitution adopted by the Constituent Assembly (date in the Preamble's last line)<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">1950</time><span class="pin"></span><div class="tlbody">Original Preamble: no "Socialist", "Secular" or "Integrity"</div></li><li class="tl "><time class="yr">1955</time><span class="pin"></span><div class="tlbody">Congress Avadi Resolution inspires the socialist idea</div></li><li class="tl "><time class="yr">1960</time><span class="pin"></span><div class="tlbody">Berubari: Preamble not a part of the Constitution</div></li><li class="tl high"><time class="yr">1973</time><span class="pin"></span><div class="tlbody">Kesavananda Bharati: Preamble is part; amendable within the basic structure<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">1976</time><span class="pin"></span><div class="tlbody">42nd Amendment adds Socialist, Secular, Integrity; the only amendment to the Preamble<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">1980</time><span class="pin"></span><div class="tlbody">Minerva Mills: basic structure protects secular and democratic core</div></li><li class="tl "><time class="yr">1994</time><span class="pin"></span><div class="tlbody">SR Bommai: secularism as part of the basic structure</div></li><li class="tl "><time class="yr">1995</time><span class="pin"></span><div class="tlbody">LIC of India: Preamble is integral</div></li></ol></section><section id="connects"><h2>Connects to<a class="anchor" href="#connects">#</a></h2><div class="lkgrid"><article class="link"><div class="lk-line">Ch 2: Salient Features and Critique</div><p>The Preamble's ideals reappear as the features of the Constitution.</p></article><article class="link"><div class="lk-line">Ch 5: Fundamental Rights</div><p>Arts. 14-22 deliver equality and liberty; <span class="art">Art. 21</span> gives dignity.</p></article><article class="link"><div class="lk-line">Ch 6: Basic Structure</div><p>Kesavananda, Minerva Mills and Bommai: how the Preamble guides the basic structure.</p></article><article class="link"><div class="lk-line">Ch 7: Directive Principles</div><p>Arts. 39 and 43 deliver economic justice and economic equality.</p></article><article class="link"><div class="lk-line">Ch 9: Amendment of the Constitution</div><p>The 42nd Amendment and <span class="art">Article 368</span>.</p></article></div></section><section id="recall"><h2>Recall sheet<a class="anchor" href="#recall">#</a></h2><p class="gdesc">Read once, hide it, then rebuild the chapter from memory.</p><ol class="recall"><li>Text: "We, the People ..." Sovereign Socialist Secular Democratic Republic; objectives Justice, Liberty, Equality, Fraternity; adopted 26 Nov 1949.</li><li>Based on Nehru's Objectives Resolution: moved 13 Dec 1946, adopted 22 Jan 1947.</li><li>American Constitution was the first to begin with a Preamble. Palkhivala: identity card; Munshi: horoscope; Hidayatullah: soul.</li><li>Nature = S-S-S-D-R. Socialist and Secular added by 42nd Am. 1976 (Socialist: democratic socialism, Avadi 1955; Secular: Sarva Dharma Sambhava, positive secularism).</li><li>Objectives = J-L-E-F. Justice: <span class="art">Art. 39</span>; Liberty: Arts. 19-22; Equality: Arts. 14-18, 325-326, 39, 43; Fraternity: <span class="art">Art. 21</span>, 51A, <span class="art">Art. 1</span>; 'Integrity' added 1976.</li><li>Status: Berubari 1960 not part; Kesavananda 1973 part; LIC 1995 integral. Non-justiciable; neither a source of power nor a prohibition.</li><li>Amendable under <span class="art">Art. 368</span> within basic structure; amended once only (42nd, 1976: Socialist, Secular, Integrity).</li><li>Removal debate: for (Emergency, changed times, neutrality) vs against (identity, basic structure with Minerva Mills and Bommai, minorities, symbol). Way forward: balance, dialogue, judicial safeguards, practice, 5S.</li></ol></section><section id="practice"><h2>Test yourself<a class="anchor" href="#practice">#</a></h2><h3>Quick quiz</h3><div class="count" id="score">0 / 0 correct</div><div id="quiz"></div><h3>Flashcards</h3><p class="gdesc">Tap the card to flip.</p><div class="deck"><div class="fc" id="fc" tabindex="0" role="button" aria-label="Flashcard, press to flip"></div><div class="count" id="fccount"></div><div class="row"><button class="btn" id="fcprev" type="button">Back</button><button class="btn pri" id="fcnext" type="button">Next</button><button class="btn" id="fcmiss" type="button">Missed it</button><button class="btn" id="fcshuf" type="button">Shuffle</button><button class="btn" id="fconlymiss" type="button">Only missed</button><button class="btn" id="fcall" type="button">All cards</button></div></div></section><nav class="pager"><span></span><a class="nx" href="pol-ch02.html"><small>Next</small>Salient Features and Critique</a></nav><footer>Personal study notes built from the Sarrthi IAS GS Foundation Polity handout (Parts 1 to 3). Handout only: no class slides or teacher ink for this chapter. Mnemonics and shortcuts are memory aids built from the handout’s own facts. Copyright belongs to the teacher; keep this private.</footer></main></div><div id="lightbox" hidden><img alt=""></div><script type="application/json" id="data">{"mcq": [{"q": "Which list gives the three words added to the Preamble by the 42nd Amendment?", "options": ["Sovereign, Secular, Republic", "Socialist, Secular, Integrity", "Democratic, Socialist, Integrity", "Socialist, Secular, Fraternity"], "answer": 1, "explain": "The 42nd Amendment (1976) added Socialist, Secular and Integrity. The Preamble has been amended only once."}, {"q": "In which case did the Supreme Court first hold that the Preamble is a part of the Constitution?", "options": ["Berubari Union (1960)", "LIC of India (1995)", "Kesavananda Bharati (1973)", "Minerva Mills (1980)"], "answer": 2, "explain": "Berubari (1960) held it was not a part; Kesavananda (1973) reversed this; LIC (1995) reaffirmed it."}, {"q": "Which statement about the Preamble is correct, according to the handout?", "options": ["It is a source of power to the legislature", "It is non-justiciable", "It prohibits the legislature from certain laws", "It can never be amended"], "answer": 1, "explain": "The Preamble is neither a source of power nor a prohibition upon the legislature, and it is not enforceable in courts. It can be amended within the basic structure."}, {"q": "The Objectives Resolution was moved on and adopted on which dates?", "options": ["Moved 22 Jan 1947, adopted 13 Dec 1946", "Moved 13 Dec 1946, adopted 22 Jan 1947", "Moved 26 Nov 1949, adopted 26 Jan 1950", "Moved 15 Aug 1947, adopted 22 Jan 1947"], "answer": 1, "explain": "Nehru moved it on 13 December 1946; it was unanimously adopted on 22 January 1947."}, {"q": "Which Articles does the handout link to civic equality in the Preamble?", "options": ["Articles 19-22", "Articles 25-28", "Articles 14-18", "Articles 325-326"], "answer": 2, "explain": "Civic equality: Arts. 14-18. Political equality: Arts. 325-326. Liberty: Arts. 19-22."}, {"q": "[PYQ 2020] The Preamble to the Constitution of India is", "options": ["a part of the Constitution but has no legal effect", "not a part of the Constitution and has no legal effect either", "a part of the Constitution and has the same legal effect as any other part", "a part of the Constitution but has no legal effect independently of other parts"], "answer": 3, "explain": "PYQ 2020. The answer is (d)."}, {"q": "[PYQ 2017] Which one of the following objectives is not embodied in the Preamble to the Constitution of India?", "options": ["Liberty of thought", "Economic liberty", "Liberty of expression", "Liberty of belief"], "answer": 1, "explain": "PYQ 2017. The answer is (b). Revise: 3 · The four objectives and the Articles behind them."}, {"q": "[PYQ 2017] The mind of the makers of the Constitution of India is reflected in which of the following?", "options": ["The Preamble", "The Fundamental Rights", "The Directive Principles of State Policy", "The Fundamental Duties"], "answer": 0, "explain": "PYQ 2017. The answer is (a). Revise: 3 · The four objectives and the Articles behind them."}, {"q": "[PYQ 2013] ‘Economic Justice’ as one of the objectives of the Indian Constitution has been provided in", "options": ["The Preamble and the Fundamental Rights", "The Preamble and the Directive Principles of State Policy", "The Fundamental Rights and the Directive Principles of State Policy", "None of the above"], "answer": 1, "explain": "PYQ 2013. The answer is (b). Revise: 3 · The four objectives and the Articles behind them."}, {"q": "[PYQ 2011] Other than the Fundamental Rights, which of the following parts of the Constitution of India reflect/reflects the principles and provisions of the Universal Declaration of Human Rights (1948)? 1. Preamble 2. Directive Principles of State Policy 3. Fundamental Duties Select the correct answer using the code given below:", "options": ["1 and 2 only", "2 only", "1 and 3 only", "1, 2 and 3"], "answer": 3, "explain": "PYQ 2011. The answer is (d). Revise: 3 · The four objectives and the Articles behind them."}], "cards": [{"q": "Nature of the State in the Preamble?", "a": "Sovereign, Socialist, Secular, Democratic, Republic (S-S-S-D-R)."}, {"q": "Objectives of the State?", "a": "Justice, Liberty, Equality, Fraternity (J-L-E-F)."}, {"q": "Which Amendment changed the Preamble and how?", "a": "42nd Amendment, 1976: added Socialist, Secular and Integrity. The only amendment to date."}, {"q": "Who called the Preamble the \"identity card\" of the Constitution?", "a": "N.A. Palkhivala."}, {"q": "Who called it the \"horoscope of our sovereign democratic republic\"?", "a": "K.M. Munshi."}, {"q": "Preamble and justiciability?", "a": "Non-justiciable; neither a source of power nor a prohibition upon the legislature."}, {"q": "Which case made the Preamble part of the Constitution, and what else did it give?", "a": "Kesavananda Bharati (1973); also the basic structure doctrine."}, {"q": "Which Articles back each objective?", "a": "Justice: Art. 39; Liberty: Arts. 19-22; Equality: Arts. 14-18, 325-326, 39, 43; Fraternity: Art. 21, 51A, Art. 1."}, {"q": "Which cases protect secularism from amendment, per the handout?", "a": "Minerva Mills (1980) and SR Bommai (1994)."}, {"q": "What is the PM's \"5S\" approach in the handout?", "a": "Samman, Samvad, Sahyog, Shanti, Samriddhi."}, {"q": "Mains 2016: Discuss each adjective attached to the word ‘Republic’ in the ‘Preamble’. Are they defendable in the present circumstances?", "a": "Intro:: Introduce the Preamble as the \"identity card\" (Palkhivala) that declares India a Sovereign, Socialist, Secular, Democratic Republic Body:: Sovereign: fully independent, strategic autonomy, NAM / Socialist: democratic socialism, mixed economy, Avadi 1955, MGNREGA / Secular: Sarva Dharma Sambhava, positive secularism, Arts. 25-28 / Democratic: popular sovereignty, universal adult suffrage, social and economic democracy / Republic: head of State elected, not hereditary / Defend today: removal debate, basic structure (Minerva Mills, Bommai) Close:: Close: the words are safeguards of identity, and the way forward is to strengthen practice rather than debate semantics"}]}</script><script>window.__NB={"id": "polity", "ch": 1, "title": "Preamble"};/* Shared store: reading progress, preferences, optional cross-device sync. */
+(function(){
+var KEY='nbapp:v1',root=document.documentElement;
+function today(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function fresh(){return{v:1,prefs:{fs:1,lh:1.65,w:780,font:'serif',theme:'auto',pt:0},last:null,nb:{},days:{}}}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+var S;
+try{S=JSON.parse(lsGet(KEY))}catch(e){S=null}
+if(!S||!S.v)S=fresh();
+S.prefs=Object.assign(fresh().prefs,S.prefs||{});
+// one-time import of the older done list and theme
+if(!S.migrated){
+  try{var od=JSON.parse(lsGet('nb-done')||'[]');od.forEach(function(n){var c=chap('modern-india',n);c.done=1;c.dt=1})}catch(e){}
+  var ot=lsGet('nb-theme');if(ot&&!S.prefs.pt){S.prefs.theme=ot;S.prefs.pt=1}
+  S.migrated=1;
+}
+function chap(nb,n){var b=S.nb[nb]||(S.nb[nb]={});return b[n]||(b[n]={read:{},done:0,dt:0,pos:null,t:0})}
+var listeners=[],dirty=false,saveT=null,syncT=null;
+function save(){
+  dirty=true;clearTimeout(saveT);
+  saveT=setTimeout(function(){lsSet(KEY,JSON.stringify(S));listeners.forEach(function(f){try{f()}catch(e){}});scheduleSync()},250);
+}
+function flush(){lsSet(KEY,JSON.stringify(S))}
+function merge(a,b){ // a local, b remote; returns merged
+  var o=fresh();
+  o.prefs=((b.prefs&&b.prefs.pt||0)>(a.prefs&&a.prefs.pt||0))?Object.assign({},a.prefs,b.prefs):Object.assign({},b.prefs,a.prefs);
+  o.last=(!a.last||(b.last&&b.last.ts>a.last.ts))?b.last:a.last;
+  o.migrated=1;
+  var ids={};Object.keys(a.nb||{}).concat(Object.keys(b.nb||{})).forEach(function(k){ids[k]=1});
+  Object.keys(ids).forEach(function(id){
+    o.nb[id]={};var ca=(a.nb||{})[id]||{},cb=(b.nb||{})[id]||{},ks={};
+    Object.keys(ca).concat(Object.keys(cb)).forEach(function(k){ks[k]=1});
+    Object.keys(ks).forEach(function(k){
+      var x=ca[k],y=cb[k];if(!x||!y){o.nb[id][k]=x||y;return}
+      var r=Object.assign({},x.read,y.read),done=(y.dt||0)>(x.dt||0)?y:x,pos=(y.t||0)>(x.t||0)?y.pos:x.pos;
+      o.nb[id][k]={read:r,done:done.done,dt:done.dt||0,pos:pos,t:Math.max(x.t||0,y.t||0)};
+    });
+  });
+  var dk={};Object.keys(a.days||{}).concat(Object.keys(b.days||{})).forEach(function(k){dk[k]=1});
+  Object.keys(dk).forEach(function(k){o.days[k]=Math.max((a.days||{})[k]||0,(b.days||{})[k]||0)});
+  return o;
+}
+var syncState='off';
+function scheduleSync(){clearTimeout(syncT);syncT=setTimeout(function(){sync()},4000)}
+var dbp=null;
+function getRef(){
+  if(dbp)return dbp;
+  dbp=(async function(){
+    if(!window.claude||!claude.use)return null;
+    var db=await claude.use('db'),u=await claude.use('user');
+    if(!db||!u||!u.id)return null;
+    var id=await u.id();if(!id)return null;
+    return db.doc('data/users/'+id+'/nbapp');
+  })().catch(function(){return null});
+  return dbp;
+}
+var busy=false;
+async function sync(){
+  if(busy)return;busy=true;
+  try{
+    var ref=await getRef();if(!ref){syncState='local';return}
+    var snap=await ref.get(),rem=null;
+    if(snap.exists){var d=snap.data();try{rem=JSON.parse(d.state)}catch(e){}}
+    var m=rem?merge(S,rem):S;
+    var changed=JSON.stringify(m)!==JSON.stringify(S);
+    S=m;
+    if(changed){flush();listeners.forEach(function(f){try{f()}catch(e){}})}
+    var out=JSON.stringify(S);
+    if(!rem||JSON.stringify(rem)!==out)await ref.set({v:1,updated:Date.now(),state:out});
+    syncState='synced';
+  }catch(e){syncState='local'}
+  finally{busy=false}
+}
+var API={
+  get:function(){return S},
+  chap:chap,
+  save:save,flush:flush,sync:sync,
+  onChange:function(f){listeners.push(f)},
+  syncState:function(){return syncState},
+  setPref:function(k,v){S.prefs[k]=v;S.prefs.pt=Date.now();applyPrefs();save()},
+  reset:function(){S=fresh();S.migrated=1;flush();save()},
+  today:today,
+  pct:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c||!total)return 0;var r=0;Object.keys(c.read||{}).forEach(function(k){if(c.read[k])r++});return Math.min(1,r/total)},
+  isDone:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c)return false;if(c.dt)return !!c.done;return false}
+};
+window.NBS=API;
+function applyPrefs(){
+  var p=S.prefs;
+  var th=p.theme;
+  if(th==='auto')root.removeAttribute('data-theme');else root.setAttribute('data-theme',th);
+  root.style.setProperty('--zoom',p.fs);root.style.setProperty('--lh',p.lh);root.style.setProperty('--pw',p.w+'px');
+  root.setAttribute('data-font',p.font);
+}
+API.applyPrefs=applyPrefs;applyPrefs();
+// studied time, counted while the page is visible and touched in the last minute
+var lastAct=Date.now();
+['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){lastAct=Date.now()},{passive:true})});
+setInterval(function(){
+  if(document.hidden||Date.now()-lastAct>60000||!window.__NB)return;
+  var t=today();S.days[t]=(S.days[t]||0)+15;save();
+},15000);
+document.addEventListener('visibilitychange',function(){if(document.hidden){flush();sync()}else{sync()}});
+addEventListener('pagehide',flush);
+setTimeout(sync,800);
+})();
+(function(){var b=document.getElementById('themebtn');if(!b)return;var o=['auto','light','sepia','dark'];b.addEventListener('click',function(){var t=NBS.get().prefs.theme,i=(o.indexOf(t)+1)%o.length;NBS.setPref('theme',o[i]);b.textContent='Theme: '+o[i]})})();
+(function(){
+var D=JSON.parse(document.getElementById('data').textContent);
+// map/outline toggle
+document.querySelectorAll('.seg button').forEach(function(bt){bt.addEventListener('click',function(){var v=bt.dataset.v;document.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===bt)});document.getElementById('mm-map').hidden=v!=='map';document.getElementById('mm-outline').hidden=v!=='outline'})});
+if(window.innerWidth<640){var ob=document.querySelector('.seg button[data-v="outline"]');if(ob)ob.click()}
+// lightbox
+var lb=document.getElementById('lightbox'),li=lb.querySelector('img');
+document.querySelectorAll('a.zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();li.src=a.getAttribute('href');lb.hidden=false})});
+lb.addEventListener('click',function(){lb.hidden=true});document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true});
+// quiz
+var qz=document.getElementById('quiz'),score=document.getElementById('score'),right=0,answered=0;
+if(qz)D.mcq.forEach(function(m,i){var d=document.createElement('div');d.className='q';var t=document.createElement('div');t.className='qt';t.textContent=(i+1)+'. '+m.q;d.appendChild(t);var ex=document.createElement('div');ex.className='ex';ex.hidden=true;ex.textContent=m.explain;var btns=[];
+m.options.forEach(function(o,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent='ABCD'[j]+'. '+o;b.addEventListener('click',function(){if(d.dataset.done)return;d.dataset.done=1;answered++;if(j===m.answer){right++;b.classList.add('right')}else{b.classList.add('wrong');btns[m.answer].classList.add('right')}ex.hidden=false;score.textContent=right+' / '+answered+' correct'});btns.push(b);d.appendChild(b)});d.appendChild(ex);qz.appendChild(d)});
+// flashcards
+var fc=document.getElementById('fc');
+if(fc){var all=D.cards.map(function(c,i){return{q:c.q,a:c.a,i:i}}),deck=all.slice(),pos=0,back=false,missed={};
+function show(){if(!deck.length){fc.textContent='No cards in this deck.';document.getElementById('fccount').textContent='';return}var c=deck[pos];fc.textContent=back?c.a:c.q;fc.classList.toggle('back',back);document.getElementById('fccount').textContent='Card '+(pos+1)+' of '+deck.length+(back?' (answer)':' (question)')}
+function go(d){if(!deck.length)return;pos=(pos+d+deck.length)%deck.length;back=false;show()}
+fc.addEventListener('click',function(){back=!back;show()});fc.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();back=!back;show()}});
+document.getElementById('fcnext').onclick=function(){go(1)};document.getElementById('fcprev').onclick=function(){go(-1)};
+document.getElementById('fcmiss').onclick=function(){if(deck.length){missed[deck[pos].i]=1;go(1)}};
+document.getElementById('fcshuf').onclick=function(){for(var i=deck.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=deck[i];deck[i]=deck[j];deck[j]=t}pos=0;back=false;show()};
+document.getElementById('fconlymiss').onclick=function(){deck=all.filter(function(c){return missed[c.i]});pos=0;back=false;show()};
+document.getElementById('fcall').onclick=function(){deck=all.slice();pos=0;back=false;show()};show()}
+// side toc highlight
+var links=[].slice.call(document.querySelectorAll('.sidetoc a'));
+if('IntersectionObserver' in window&&links.length){var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on')}})},{rootMargin:'-70px 0px -70% 0px'});Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)})}
+})();
+(function(){
+var N=window.__NB,S=window.NBS;if(!N||!S)return;
+var root=document.documentElement,body=document.body;
+var rec=function(){return S.chap(N.id,N.ch)};
+var heads=[].slice.call(document.querySelectorAll('.page h2[id]'));
+var titles=heads.map(function(h){return h.firstChild?h.firstChild.textContent.trim():h.id});
+var ids=heads.map(function(h){return h.id});
+var seen={},manual={};
+// Done box
+var box=document.getElementById('donebox');
+if(box){box.checked=!!(rec().done);box.addEventListener('change',function(){var r=rec();r.done=box.checked?1:0;r.dt=Date.now();S.save()})}
+// progress bar
+var bar=document.createElement('div');bar.className='rbar';body.appendChild(bar);
+// per-section read buttons
+heads.forEach(function(h,i){
+  var b=document.createElement('button');b.type='button';b.className='h2read';
+  function paint(){var on=!!rec().read[h.id];b.setAttribute('aria-pressed',on);b.textContent=on?'Read ✓':'Mark read'}
+  b.addEventListener('click',function(){var r=rec();manual[h.id]=1;if(r.read[h.id])delete r.read[h.id];else r.read[h.id]=1;r.t=Date.now();S.save();paint();refresh()});
+  h.insertBefore(b,h.firstChild);paint();b._paint=paint;h._b=b;
+});
+function repaint(){heads.forEach(function(h){h._b._paint()});refresh()}
+// caption clamp
+document.querySelectorAll('figcaption').forEach(function(c){if(c.textContent.length>170){c.classList.add('clamp');c.addEventListener('click',function(){c.classList.toggle('open')})}});
+// dock
+var dock=document.createElement('div');dock.className='dock';
+dock.innerHTML='<button type="button" id="dprev" aria-label="Previous section">‹ Prev</button><button type="button" class="mid" id="dmid"></button><button type="button" id="dnext" aria-label="Next section">Next ›</button>';
+body.appendChild(dock);body.classList.add('has-dock');
+var dmid=dock.querySelector('#dmid');
+function curIdx(){var y=innerHeight*0.25,c=-1;for(var i=0;i<heads.length;i++){if(heads[i].getBoundingClientRect().top<=y)c=i;else break}return c}
+function goto(i){if(i<0||i>=heads.length)return;heads[i].scrollIntoView({behavior:'smooth',block:'start'})}
+dock.querySelector('#dprev').onclick=function(){var c=curIdx(),h=heads[c];goto(h&&h.getBoundingClientRect().top<-40?c:c-1)};
+dock.querySelector('#dnext').onclick=function(){goto(curIdx()+1)};
+function refresh(){
+  var c=curIdx(),r=rec().read,n=0;ids.forEach(function(id){if(r[id])n++});
+  dmid.innerHTML='<b>'+(c<0?'Top':(c+1)+'/'+heads.length)+'</b> · '+(c<0?'Start of chapter':esc(titles[c]))+' · '+n+' read';
+}
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+// sheets
+function sheet(html){var s=document.createElement('div');s.className='sheet';s.hidden=true;s.innerHTML='<div class="sheetin">'+html+'</div>';s.addEventListener('click',function(e){if(e.target===s)s.hidden=true});body.appendChild(s);return s}
+var cs=sheet('<h3>Sections</h3><div class="secl" id="secl"></div>');
+dmid.onclick=function(){
+  var r=rec().read,c=curIdx(),h='';
+  ids.forEach(function(id,i){h+='<a href="#'+id+'" data-i="'+i+'" class="'+(r[id]?'rd ':'')+(i===c?'cur':'')+'"><span class="tk">'+(r[id]?'✓':'')+'</span><span>'+esc(titles[i])+'</span></a>'});
+  cs.querySelector('#secl').innerHTML=h;cs.hidden=false;
+  var cur=cs.querySelector('.cur');if(cur)cur.scrollIntoView({block:'center'});
+};
+cs.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-i]');if(a){e.preventDefault();cs.hidden=true;goto(+a.dataset.i)}});
+var ps=sheet('<h3>Reading settings</h3><div id="pbody"></div>');
+function grp(key,label,opts){var p=S.get().prefs;return '<div class="srow"><label>'+label+'</label><div class="grp">'+opts.map(function(o){return '<button type="button" data-k="'+key+'" data-v="'+o[0]+'" aria-pressed="'+(String(p[key])===String(o[0]))+'">'+o[1]+'</button>'}).join('')+'</div></div>'}
+function drawPrefs(){
+  ps.querySelector('#pbody').innerHTML=
+    grp('fs','Text size',[[0.88,"A−"],[1,"A"],[1.12,"A+"],[1.25,"A++"],[1.4,"A+++"]])+
+    grp('lh','Spacing',[[1.45,'Tight'],[1.65,'Normal'],[1.85,'Roomy']])+
+    grp('w','Width',[[640,'Narrow'],[780,'Medium'],[980,'Wide']])+
+    grp('font','Font',[['serif','Serif'],['sans','Sans']])+
+    grp('theme','Theme',[['auto','Auto'],['light','Light'],['sepia','Sepia'],['dark','Dark']])+
+    '<div class="srow"><label>Extras</label><div class="grp"><button type="button" id="pfocus" aria-pressed="'+body.classList.contains('focus')+'">Focus mode</button>'+('wakeLock' in navigator?'<button type="button" id="pwake" aria-pressed="'+!!wl+'">Keep screen on</button>':'')+'</div></div>';
+}
+var wl=null;
+ps.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('button');if(!b)return;
+  if(b.dataset.k){var v=b.dataset.v;S.setPref(b.dataset.k,b.dataset.k==='font'||b.dataset.k==='theme'?v:+v);drawPrefs();return}
+  if(b.id==='pfocus'){body.classList.toggle('focus');drawPrefs();return}
+  if(b.id==='pwake'){
+    if(wl){wl.release();wl=null;drawPrefs()}else{navigator.wakeLock.request('screen').then(function(l){wl=l;l.addEventListener('release',function(){wl=null});drawPrefs()}).catch(function(){})}
+  }
+});
+function openPrefs(){drawPrefs();ps.hidden=false}
+var aa=document.getElementById('aabtn');if(aa)aa.onclick=openPrefs;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){ps.hidden=true;cs.hidden=true;body.classList.remove('focus')}});
+// focus-mode exit: tap the top edge area
+var fx=document.createElement('button');fx.type='button';fx.textContent='Exit focus';fx.className='h2read';fx.style.cssText='position:fixed;right:10px;top:10px;z-index:45;float:none;display:none';fx.onclick=function(){body.classList.remove('focus')};body.appendChild(fx);
+new MutationObserver(function(){fx.style.display=body.classList.contains('focus')?'block':'none'}).observe(body,{attributes:true,attributeFilter:['class']});
+// scroll handling
+var tick=false,saveAt=0;
+function onScroll(){
+  if(tick)return;tick=true;requestAnimationFrame(function(){
+    tick=false;
+    var doc=document.documentElement,max=doc.scrollHeight-innerHeight;
+    bar.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';
+    var vh=innerHeight,r=rec(),ch=false;
+    heads.forEach(function(h,i){
+      var t=h.getBoundingClientRect().top;
+      if(t<vh&&t>-40)seen[h.id]=1;
+      var nt=i+1<heads.length?heads[i+1].getBoundingClientRect().top:(scrollY>=max-160?-1:1e9);
+      if(seen[h.id]&&nt<vh*0.35&&!r.read[h.id]&&!manual[h.id]){r.read[h.id]=1;ch=true;h._b._paint()}
+    });
+    if(ch){r.t=Date.now();S.save()}
+    refresh();
+    var now=Date.now();
+    if(now-saveAt>1500){saveAt=now;var c=curIdx(),rr=rec();
+      if(c>=0){var hh=heads[c].getBoundingClientRect().top;rr.pos={s:ids[c],o:Math.round(-hh)};rr.t=now}
+      S.get().last={nb:N.id,ch:N.ch,s:c>=0?ids[c]:'',st:c>=0?titles[c]:'',ts:now};S.save()}
+  })}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
+S.onChange(function(){if(box)box.checked=!!rec().done;repaint()});
+refresh();onScroll();
+// resume offer
+var p=rec().pos;
+if(!location.hash&&p&&p.s&&ids.indexOf(p.s)>0){
+  var el=document.getElementById(p.s);
+  var t=document.createElement('div');t.className='toast';t.innerHTML='<span>Resume at “'+esc(titles[ids.indexOf(p.s)])+'”?</span><button type="button" id="tgo">Resume</button><button type="button" id="tx">Dismiss</button>';
+  body.appendChild(t);
+  t.querySelector('#tgo').onclick=function(){if(el){el.scrollIntoView({block:'start'});scrollBy(0,(p.o||0))}t.remove()};
+  t.querySelector('#tx').onclick=function(){t.remove()};
+  setTimeout(function(){if(t.parentNode)t.remove()},12000);
+}
+})();
+</script></body></html>

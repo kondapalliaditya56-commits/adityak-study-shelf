@@ -1,0 +1,450 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Ch 25 · Voting Behaviour</title><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style><style>:root{--bg:#FBFAF6;--surface:#fff;--surface2:#F3F1EA;--ink:#1F2A2A;--muted:#5D6A68;--line:#DAD6C8;--acc:#0E6B5C;--acc-ink:#fff;--acc-soft:#DDF0EA;--saf:#B85C00;--saf-soft:#FFF0DB;--red:#B3261E;--red-soft:#FDE7E4;--blue:#1F5FA8;--blue-soft:#E3EEFA;--good:#2E7D32;--good-soft:#E3F3E4;--hl:#FFE9A6;
+--c0:#0E6B5C;--c1:#B85C00;--c2:#1F5FA8;--c3:#8E3B8E;--c4:#B3261E;--c5:#5C7A1F;--c6:#8A6D00;--c7:#37607A;
+--serif:Literata,Spectral,Georgia,'Times New Roman',serif;--sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:17px/1.65 var(--serif);margin:0}
+a{color:var(--acc)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;margin:0}
+.bar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.barin{display:flex;align-items:center;gap:8px;padding:8px 16px;max-width:1200px;margin:0 auto;font:600 14px var(--sans);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.barin::-webkit-scrollbar{display:none}
+.bar a.home,.nbtn,.themebtn{color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 10px;font:600 13px var(--sans);cursor:pointer;flex:none}
+.nbtn{padding:5px 12px;font-size:16px;line-height:1}.nbtn.off{opacity:.35}
+.bartitle{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-weight:500}.bartitle b{color:var(--acc)}
+.done{display:flex;align-items:center;gap:5px;flex:none;font:600 13px var(--sans);cursor:pointer}.done input{width:18px;height:18px;accent-color:var(--acc)}
+.layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px;padding:0 16px}
+.sidetoc{position:sticky;top:58px;align-self:start;max-height:calc(100vh - 70px);overflow:auto;padding:18px 0;font:14px/1.4 var(--sans)}
+.sth{font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;color:var(--muted);margin-bottom:8px}
+.sidetoc ol{list-style:none;margin:0;padding:0}.sidetoc li{margin:0}.sidetoc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--ink);text-decoration:none}.sidetoc a:hover,.sidetoc a.on{border-color:var(--acc);color:var(--acc);background:var(--acc-soft)}
+.page{max-width:780px;margin:0 auto;padding:24px 16px 60px;width:100%;min-width:0}
+.home-page{max-width:900px}
+.chead{margin-bottom:22px}
+.eyebrow{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font-size:clamp(28px,5vw,40px);margin:6px 0 10px;font-weight:700}
+.lede{font-size:18px;color:var(--muted);margin:10px 0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:600 12px var(--sans);padding:3px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--line);color:var(--muted)}
+.pill.cls{background:var(--acc-soft);color:var(--acc);border-color:transparent}.pill.hb{background:var(--saf-soft);color:var(--saf);border-color:transparent}
+h2{font-size:clamp(22px,3.6vw,28px);margin:40px 0 12px;padding-top:14px;border-top:2px solid var(--acc);font-weight:700}
+h3{font-size:19px;margin:24px 0 8px;color:var(--acc)}
+h4{font-size:16px;margin-bottom:10px}
+.anchor{margin-left:8px;font-size:.7em;color:var(--muted);opacity:0;text-decoration:none}h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 12px}
+mark{background:var(--hl);color:inherit;padding:0 3px;border-radius:3px}
+.lst{margin:0 0 14px;padding-left:22px}.lst li{margin:5px 0}.lst li.sub{margin-left:18px;list-style:circle;color:var(--ink)}
+.gdesc{color:var(--muted);font:15px var(--sans);margin:-4px 0 12px}
+.xref{font:600 .92em var(--sans);white-space:nowrap}
+.callout{border-left:4px solid var(--acc);background:var(--acc-soft);border-radius:0 10px 10px 0;padding:10px 14px 4px;margin:14px 0}
+.callout .tag{display:inline-block;font:700 11px var(--sans);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;color:var(--acc)}
+.callout.teacher{border-color:var(--saf);background:var(--saf-soft)}.callout.teacher .tag{color:var(--saf)}
+.callout.alert{border-color:var(--red);background:var(--red-soft)}.callout.alert .tag{color:var(--red)}
+.callout.note{border-color:var(--blue);background:var(--blue-soft)}.callout.note .tag{color:var(--blue)}
+.callout.example{border-color:var(--good);background:var(--good-soft)}.callout.example .tag{color:var(--good)}
+.callout.source{background:var(--surface2);border-color:var(--line)}.callout.source .tag{color:var(--muted)}
+figure{margin:18px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure img{display:block;width:100%;height:auto;background:#fff}
+figure a.zoom{display:block;cursor:zoom-in}
+figcaption{padding:8px 12px;font:14px/1.45 var(--sans);color:var(--muted)}.figsrc{font:700 11px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--acc);margin-right:6px}
+.tblock{margin:16px 0}.tcap{font:700 14px var(--sans);margin-bottom:6px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font:15px/1.45 var(--sans);min-width:480px}
+th,td{padding:8px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--acc);color:var(--acc-ink);font-weight:700}
+tbody th{background:var(--surface2);font-weight:700}tbody tr:last-child>*{border-bottom:0}tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface2) 55%,transparent)}
+.stepsblock{margin:16px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}.stepsblock ol{margin:0;padding-left:22px}.stepsblock li{margin:4px 0}
+.flow{margin:20px 0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.chain{display:flex;flex-direction:column;align-items:stretch}
+.step{border:1.5px solid var(--acc);background:var(--acc-soft);border-radius:10px;padding:8px 12px;font:15px/1.4 var(--sans)}
+.step .sl{font-weight:700}.step .ss{color:var(--muted);font-size:14px;margin-top:2px}
+.step.warn{border-color:var(--saf);background:var(--saf-soft)}.step.bad{border-color:var(--red);background:var(--red-soft)}.step.good{border-color:var(--good);background:var(--good-soft)}
+.arr{height:20px;position:relative;flex:none}.arr:before{content:"";position:absolute;left:50%;top:0;bottom:6px;border-left:2px solid var(--muted)}.arr:after{content:"";position:absolute;left:calc(50% - 5px);bottom:0;border:5px solid transparent;border-top:7px solid var(--muted);border-bottom:0}
+.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.lane{display:flex;flex-direction:column}.lane-h{font:700 12px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;text-align:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:10px}.seg button{font:600 13px var(--sans);padding:6px 14px;border:0;background:var(--surface);color:var(--ink);cursor:pointer}.seg button[aria-pressed=true]{background:var(--acc);color:var(--acc-ink)}
+.mapblock h2{margin-top:10px}
+.mmframe{overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:8px;-webkit-overflow-scrolling:touch}
+svg.mm{display:block;font-family:var(--sans)}
+.mm-root{fill:var(--acc)}.mm-root-t{fill:var(--acc-ink);font:700 14px var(--sans)}
+.mm-link{fill:none;stroke-width:2;opacity:.7}.mm-branch-t{font:700 13px var(--sans);fill:#fff}.mm-leaf-t{font:13px var(--sans);fill:var(--ink)}.mm-leaf-n{font:11.5px var(--sans);fill:var(--muted)}
+.mm-leaf{fill:var(--surface2);stroke-width:1.5}
+.mm-branch.c0{fill:var(--c0)}.mm-branch.c1{fill:var(--c1)}.mm-branch.c2{fill:var(--c2)}.mm-branch.c3{fill:var(--c3)}.mm-branch.c4{fill:var(--c4)}.mm-branch.c5{fill:var(--c5)}.mm-branch.c6{fill:var(--c6)}.mm-branch.c7{fill:var(--c7)}
+.mm-link.c0,.mm-leaf.c0{stroke:var(--c0)}.mm-link.c1,.mm-leaf.c1{stroke:var(--c1)}.mm-link.c2,.mm-leaf.c2{stroke:var(--c2)}.mm-link.c3,.mm-leaf.c3{stroke:var(--c3)}.mm-link.c4,.mm-leaf.c4{stroke:var(--c4)}.mm-link.c5,.mm-leaf.c5{stroke:var(--c5)}.mm-link.c6,.mm-leaf.c6{stroke:var(--c6)}.mm-link.c7,.mm-leaf.c7{stroke:var(--c7)}
+:root:not([data-theme="dark"]) .mm-branch-t{fill:#fff}
+.outline,.outline ul{list-style:none;padding-left:18px;margin:4px 0}.outline>li{padding-left:0}.outline summary{cursor:pointer;font:700 15px var(--sans)}
+.outline li.c0>details>summary{color:var(--c0)}.outline li.c1>details>summary{color:var(--c1)}.outline li.c2>details>summary{color:var(--c2)}.outline li.c3>details>summary{color:var(--c3)}.outline li.c4>details>summary{color:var(--c4)}.outline li.c5>details>summary{color:var(--c5)}.outline li.c6>details>summary{color:var(--c6)}.outline li.c7>details>summary{color:var(--c7)}
+.ol-note{color:var(--muted);font-size:.9em}
+.timeline{list-style:none;margin:10px 0;padding:0;position:relative}
+.timeline:before{content:"";position:absolute;left:94px;top:0;bottom:0;border-left:2px solid var(--line)}
+.tl{display:grid;grid-template-columns:86px 18px 1fr;gap:0 6px;margin:0 0 12px;align-items:start}
+.yr{font:700 14px var(--mono);text-align:right;color:var(--acc);padding-top:2px}
+.pin{width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--acc);margin:7px 0 0 2px;position:relative;z-index:1}
+.tl.high .pin{background:var(--saf);border-color:var(--saf)}
+.tlbody{font:16px/1.5 var(--sans);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px}
+.tl.high .tlbody{border-color:var(--saf)}.star{color:var(--saf);margin-left:6px}.sref{float:right;margin-left:10px;font:600 12px var(--sans);text-decoration:none}
+.lkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.link{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:15px/1.45 var(--sans)}.link p{margin:4px 0 0;color:var(--muted)}.lk-line{font-weight:700}
+.recall{font:16px/1.55 var(--sans);padding-left:24px}.recall li{margin:6px 0}
+.count{font:600 13px var(--sans);color:var(--muted);margin:8px 0}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;font:16px/1.5 var(--sans)}
+.q .qt{font-weight:700;margin-bottom:8px}.q .opt{display:block;width:100%;text-align:left;padding:8px 12px;margin:6px 0;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.q .opt:hover{border-color:var(--acc)}.q .opt.right{border-color:var(--good);background:var(--good-soft)}.q .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.q .ex{margin-top:8px;color:var(--muted)}
+.deck{margin:10px 0}
+.fc{min-height:150px;background:var(--surface);border:2px solid var(--acc);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:center;text-align:center;font:18px/1.5 var(--serif);cursor:pointer;user-select:none}
+.fc.back{background:var(--acc-soft)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.btn{font:600 14px var(--sans);padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.pri{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:40px 0 20px}.pager a{display:block;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--ink);font:600 15px var(--sans)}.pager a.nx{text-align:right}.pager small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+footer{color:var(--muted);font:13px/1.5 var(--sans);border-top:1px solid var(--line);padding-top:14px;margin-top:30px}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:flex;align-items:center;justify-content:center;padding:10px;overflow:auto}#lightbox img{max-width:none;width:min(1600px,100%);height:auto;background:#fff;cursor:zoom-out}
+.part{margin:34px 0}.part h2{margin-top:0}
+.chlist{display:flex;flex-direction:column;gap:8px}
+.chcard{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+a.chcard:hover{border-color:var(--acc)}.chcard.pending{opacity:.5}
+.chn{font:700 18px var(--mono);color:var(--acc);text-align:center}.cht b{font:700 16px var(--serif);display:block}.cht small{font:13px/1.4 var(--sans);color:var(--muted);display:block;margin-top:2px}
+.chb{display:flex;flex-direction:column;gap:4px;align-items:flex-end;font:600 11px var(--sans)}.chb em{font-style:normal;background:var(--acc-soft);color:var(--acc);padding:2px 8px;border-radius:99px}.chb i.tick{font-style:normal;background:var(--good);color:#fff;padding:2px 8px;border-radius:99px}
+.prog{font:600 14px var(--sans);color:var(--muted)}
+.sbox{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:17px var(--sans);margin:6px 0 14px}
+.results .hit{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0;font:15px/1.5 var(--sans)}.results .hit a{font-weight:700}.results .hit small{color:var(--muted)}
+.chips{display:flex;gap:8px;margin-bottom:8px}.chip{font:600 13px var(--sans);padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}.chip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+@media (max-width:900px){.layout{display:block}.sidetoc{display:none}}
+@media (max-width:560px){body{font-size:16.5px}.tl{grid-template-columns:62px 16px 1fr}.timeline:before{left:70px}.yr{font-size:12px}.chcard{grid-template-columns:34px 1fr}.chb{display:none}.lanes{grid-template-columns:1fr}}
+
+code{font:.88em var(--mono);background:var(--surface2);padding:1px 5px;border-radius:4px}
+
+/* ---- reader app ---- */
+:root{--zoom:1;--lh:1.65;--pw:780px}
+:root[data-theme="sepia"]{--bg:#F4ECD8;--surface:#FBF5E6;--surface2:#EADFC4;--ink:#3B3022;--muted:#7A6A52;--line:#D8C9A6;--acc:#7A4A12;--acc-ink:#fff;--acc-soft:#EFDDB8;--saf:#A4470A;--saf-soft:#F6E2BE;--red:#9C2A1C;--red-soft:#F3D9CB;--blue:#2F5C8A;--blue-soft:#DDE6E4;--good:#3E6B2A;--good-soft:#DDE8C8;--hl:#F2D98A;color-scheme:light}
+:root[data-font="sans"] body{font-family:var(--sans)}
+:root[data-font="sans"] .notes p,:root[data-font="sans"] .notes li{font-family:var(--sans)}
+.page{zoom:var(--zoom);max-width:var(--pw)}
+.notes p,.notes li{line-height:var(--lh)}
+.rbar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--acc);z-index:40;transition:width .15s}
+.aabtn{color:var(--ink);border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 12px;font:700 14px var(--serif);cursor:pointer;flex:none}
+.h2read{float:right;margin:2px 0 0 10px;font:600 12px var(--sans);border:1px solid var(--line);background:var(--surface2);color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer;min-height:30px}
+.h2read[aria-pressed="true"]{background:var(--acc-soft);color:var(--acc);border-color:var(--acc)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding:6px 10px calc(6px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:center;justify-content:center}
+.dock button{font:600 14px var(--sans);min-height:44px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;padding:0 14px;cursor:pointer}
+.dock .mid{flex:1;max-width:520px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dock .mid b{color:var(--acc)}
+body.has-dock .page{padding-bottom:110px}
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.sheetin{background:var(--surface);color:var(--ink);width:100%;max-width:560px;max-height:82vh;overflow:auto;border-radius:16px 16px 0 0;padding:16px 18px calc(18px + env(safe-area-inset-bottom,0px));font:15px/1.4 var(--sans)}
+.sheetin h3{margin:0 0 10px;font:700 17px var(--sans)}
+.srow{display:flex;align-items:center;gap:10px;margin:12px 0;flex-wrap:wrap}
+.srow label{flex:0 0 92px;color:var(--muted);font-weight:600}
+.srow .grp{display:flex;gap:6px;flex-wrap:wrap}
+.srow button{font:600 14px var(--sans);min-height:42px;min-width:48px;padding:0 12px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;cursor:pointer}
+.srow button[aria-pressed="true"]{border-color:var(--acc);background:var(--acc-soft);color:var(--acc)}
+.secl a{display:flex;gap:10px;align-items:center;padding:12px 6px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;min-height:44px}
+.secl a .tk{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;color:var(--acc-ink)}
+.secl a.rd .tk{background:var(--acc);border-color:var(--acc)}
+.secl a.cur{background:var(--acc-soft)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:50;background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 14px;display:flex;gap:12px;align-items:center;font:600 14px var(--sans);max-width:92vw;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.toast button{font:700 14px var(--sans);background:transparent;border:0;color:var(--bg);text-decoration:underline;cursor:pointer;min-height:36px}
+body.focus .bar{display:none}body.focus .sidetoc{display:none}
+figcaption.clamp{max-height:3.3em;overflow:hidden;position:relative;cursor:pointer}
+figcaption.clamp.open{max-height:none}
+figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bottom:0;background:var(--bg);color:var(--acc);font:700 12px var(--sans);padding-left:14px}
+.cbar{display:block;height:4px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}.cbar i{display:block;height:100%;width:0;background:var(--acc)}
+.nbcard h2{border:0;padding:0}.nbcard{border-top:1px solid var(--line)}
+</style><style>
+.mn{display:inline-flex;gap:4px;flex-wrap:wrap;margin:2px 0 6px}.mn b{font:700 15px var(--mono);background:var(--acc);color:var(--acc-ink);border-radius:6px;padding:1px 8px}
+.callout.shortcut{border-color:var(--saf);background:var(--saf-soft)}.callout.shortcut .tag{color:var(--saf)}
+.callout.mnemo{border-color:var(--c3);background:var(--surface2)}.callout.mnemo .tag{color:var(--c3)}
+.callout p,.callout li{font-family:var(--sans)}
+.art{font-family:var(--mono);font-size:.86em;background:var(--acc-soft);padding:0 .28em;border-radius:4px;white-space:nowrap}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin:14px 0}
+.two .col{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:10px 14px;font:15px/1.5 var(--sans)}
+.two .col h4{margin:0 0 4px;font:700 13px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--acc)}
+.two .col ul{margin:4px 0;padding-left:18px}
+.ptag{display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:2px 9px;margin-left:8px;vertical-align:middle}
+.ptag.high{background:var(--red-soft);color:var(--red)}.ptag.med{background:var(--saf-soft);color:var(--saf)}.ptag.low{background:var(--surface2);color:var(--muted)}
+</style></head><body><header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="pol-home.html">Contents</a><a class="nbtn" href="pol-ch24.html" title="Elections and Electoral Reforms" aria-label="Previous chapter">‹</a><span class="bartitle"><b>Ch 25</b> Voting Behaviour</span><a class="nbtn" href="pol-ch26.html" title="Union Territories" aria-label="Next chapter">›</a><a class="home" href="pol-search.html">Search</a><a class="home" href="pol-timeline.html">Timeline</a><label class="done"><input type="checkbox" id="donebox" data-ch="25"><span>Done</span></label><button class="aabtn" id="aabtn" type="button" aria-label="Reading settings">Aa</button></div></header><div class="layout"><aside class="sidetoc"><div class="sth">In this chapter</div><ol><li><a href="#chapter-map">Chapter map</a></li><li><a href="#exam-lens-priority-and-pyqs">Exam lens: priority and PYQs</a></li><li><a href="#1-what-decides-a-vote">1 · What decides a vote</a></li><li><a href="#2-short-term-influences">2 · Short-term influences</a></li><li><a href="#3-long-term-factors">3 · Long-term factors</a></li><li><a href="#4-paradoxes-in-our-democracy">4 · Paradoxes in our democracy</a></li><li><a href="#5-democracy-index-and-international-democracy-da">5 · Democracy Index and International Democracy Day</a></li><li><a href="#chapter-timeline">Timeline</a></li><li><a href="#connects">Connects to</a></li><li><a href="#recall">Recall sheet</a></li><li><a href="#practice">Test yourself</a></li></ol></aside><main class="page"><div class="chead"><div class="eyebrow">Polity · Part 2 · Institutions and Processes · Chapter 25</div><h1>Voting Behaviour<span class="ptag high">High priority</span></h1><div class="pills"><span class="pill hb">Handout only: no class slides</span><span class="pill ">Handout pages: Voting Behavior in India, Paradoxes in our Democracy, Democracy Index</span><span class="pill ">5 Prelims · 9 Mains PYQs quoted</span></div><p class="lede">Why Indian voters choose as they do (short-term and long-term influences), the paradoxes the handout finds in Indian democracy, and what the Democracy Index says about India.</p></div><section class="mapblock"><h2 id="chapter-map">Chapter map<a class="anchor" href="#chapter-map">#</a></h2><div class="seg" role="group" aria-label="Map view"><button type="button" data-v="map" aria-pressed="true">Map</button><button type="button" data-v="outline" aria-pressed="false">Outline</button></div><div id="mm-map" class="mmframe"><svg class="mm" viewBox="0 0 859 1102" width="859" height="1102" role="img" aria-label="Mind map: Voting Behaviour"><rect class="mm-root" x="8" y="524.0" width="155.2" height="28" rx="6"/><text class="mm-root-t" x="85.6" y="543.0" text-anchor="middle">Voting Behaviour</text><path class="mm-link c0" d="M163.2,538.0 C195.2,538.0 195.2,52.0 227.2,52.0"/><rect class="mm-branch c0" x="227.2" y="38.0" width="202.0" height="28" rx="5"/><text class="mm-branch-t" x="328.2" y="56.5" text-anchor="middle">Two kinds of influence</text><path class="mm-link c0" d="M429.2,52.0 C457.2,52.0 509.2,28.0 537.2,28.0"/><rect class="mm-leaf c0" x="537.2" y="8" width="217.2" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="23.5">Short-term</text><text class="mm-leaf-n" x="547.2" y="38.5">immediate, one election only</text><path class="mm-link c0" d="M429.2,52.0 C457.2,52.0 509.2,76.0 537.2,76.0"/><rect class="mm-leaf c0" x="537.2" y="56" width="210.3" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="71.5">Long-term</text><text class="mm-leaf-n" x="547.2" y="86.5">social, economic, political</text><path class="mm-link c1" d="M163.2,538.0 C195.2,538.0 195.2,202.0 227.2,202.0"/><rect class="mm-branch c1" x="227.2" y="188.0" width="170.0" height="28" rx="5"/><text class="mm-branch-t" x="312.2" y="206.5" text-anchor="middle">Short-term factors</text><path class="mm-link c1" d="M397.2,202.0 C425.2,202.0 509.2,130.0 537.2,130.0"/><rect class="mm-leaf c1" x="537.2" y="110" width="182.7" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="125.5">Economy</text><text class="mm-leaf-n" x="547.2" y="140.5">inflation, unemployment</text><path class="mm-link c1" d="M397.2,202.0 C425.2,202.0 509.2,178.0 537.2,178.0"/><rect class="mm-leaf c1" x="537.2" y="158" width="155.1" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="173.5">Local conditions</text><text class="mm-leaf-n" x="547.2" y="188.5">water, power, roads</text><path class="mm-link c1" d="M397.2,202.0 C425.2,202.0 509.2,226.0 537.2,226.0"/><rect class="mm-leaf c1" x="537.2" y="206" width="210.3" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="221.5">Leaders and events</text><text class="mm-leaf-n" x="547.2" y="236.5">Emergency and Indira Gandhi</text><path class="mm-link c1" d="M397.2,202.0 C425.2,202.0 509.2,274.0 537.2,274.0"/><rect class="mm-leaf c1" x="537.2" y="254" width="155.1" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="269.5">Media</text><text class="mm-leaf-n" x="547.2" y="284.5">pattern of coverage</text><path class="mm-link c2" d="M163.2,538.0 C195.2,538.0 195.2,376.0 227.2,376.0"/><rect class="mm-branch c2" x="227.2" y="362.0" width="162.0" height="28" rx="5"/><text class="mm-branch-t" x="308.2" y="380.5" text-anchor="middle">Long-term factors</text><path class="mm-link c2" d="M389.2,376.0 C417.2,376.0 509.2,328.0 537.2,328.0"/><rect class="mm-leaf c2" x="537.2" y="308" width="313.8" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="323.5">Social</text><text class="mm-leaf-n" x="547.2" y="338.5">age, gender, inhabitation, caste, religion</text><path class="mm-link c2" d="M389.2,376.0 C417.2,376.0 509.2,376.0 537.2,376.0"/><rect class="mm-leaf c2" x="537.2" y="356" width="224.1" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="371.5">Economic</text><text class="mm-leaf-n" x="547.2" y="386.5">income groups versus the poor</text><path class="mm-link c2" d="M389.2,376.0 C417.2,376.0 509.2,424.0 537.2,424.0"/><rect class="mm-leaf c2" x="537.2" y="404" width="286.2" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="419.5">Political</text><text class="mm-leaf-n" x="547.2" y="434.5">ideology, family, party identification</text><path class="mm-link c3" d="M163.2,538.0 C195.2,538.0 195.2,526.0 227.2,526.0"/><rect class="mm-branch c3" x="227.2" y="512.0" width="80.0" height="28" rx="5"/><text class="mm-branch-t" x="267.2" y="530.5" text-anchor="middle">Trends</text><path class="mm-link c3" d="M307.2,526.0 C335.2,526.0 509.2,478.0 537.2,478.0"/><rect class="mm-leaf c3" x="537.2" y="458" width="230.0" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="473.5">Party or leader over candidate</text><text class="mm-leaf-n" x="547.2" y="488.5">independents do poorly</text><path class="mm-link c3" d="M307.2,526.0 C335.2,526.0 509.2,526.0 537.2,526.0"/><rect class="mm-leaf c3" x="537.2" y="506" width="223.0" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="521.5">Vote against the ruling party</text><text class="mm-leaf-n" x="547.2" y="536.5">not for another</text><path class="mm-link c3" d="M307.2,526.0 C335.2,526.0 509.2,574.0 537.2,574.0"/><rect class="mm-leaf c3" x="537.2" y="554" width="216.0" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="569.5">National versus State choice</text><text class="mm-leaf-n" x="547.2" y="584.5">different</text><path class="mm-link c4" d="M163.2,538.0 C195.2,538.0 195.2,700.0 227.2,700.0"/><rect class="mm-branch c4" x="227.2" y="686.0" width="98.0" height="28" rx="5"/><text class="mm-branch-t" x="276.2" y="704.5" text-anchor="middle">Paradoxes</text><path class="mm-link c4" d="M325.2,700.0 C353.2,700.0 509.2,628.0 537.2,628.0"/><rect class="mm-leaf c4" x="537.2" y="608" width="279.0" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="623.5">Participation versus muscle and money</text><text class="mm-leaf-n" x="547.2" y="638.5">peaceful power transfer</text><path class="mm-link c4" d="M325.2,700.0 C353.2,700.0 509.2,676.0 537.2,676.0"/><rect class="mm-leaf c4" x="537.2" y="656" width="196.5" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="671.5">Identity politics</text><text class="mm-leaf-n" x="547.2" y="686.5">language, caste, religion</text><path class="mm-link c4" d="M325.2,700.0 C353.2,700.0 509.2,724.0 537.2,724.0"/><rect class="mm-leaf c4" x="537.2" y="704" width="182.7" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="719.5">Democracy and poverty</text><text class="mm-leaf-n" x="547.2" y="734.5">quota not material gain</text><path class="mm-link c4" d="M325.2,700.0 C353.2,700.0 509.2,772.0 537.2,772.0"/><rect class="mm-leaf c4" x="537.2" y="752" width="175.8" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="767.5">Psephocracy</text><text class="mm-leaf-n" x="547.2" y="782.5">electoral dictatorship</text><path class="mm-link c5" d="M163.2,538.0 C195.2,538.0 195.2,874.0 227.2,874.0"/><rect class="mm-branch c5" x="227.2" y="860.0" width="122.0" height="28" rx="5"/><text class="mm-branch-t" x="288.2" y="878.5" text-anchor="middle">Party system</text><path class="mm-link c5" d="M349.2,874.0 C377.2,874.0 509.2,826.0 537.2,826.0"/><rect class="mm-leaf c5" x="537.2" y="806" width="162.0" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="821.5">Personality cult</text><text class="mm-leaf-n" x="547.2" y="836.5">high command parties</text><path class="mm-link c5" d="M349.2,874.0 C377.2,874.0 509.2,874.0 537.2,874.0"/><rect class="mm-leaf c5" x="537.2" y="854" width="118.0" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="869.5">Fluid ideology</text><text class="mm-leaf-n" x="547.2" y="884.5">defection</text><path class="mm-link c5" d="M349.2,874.0 C377.2,874.0 509.2,922.0 537.2,922.0"/><rect class="mm-leaf c5" x="537.2" y="902" width="217.2" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="917.5">Consensus is hard</text><text class="mm-leaf-n" x="547.2" y="932.5">many parties, no real choice</text><path class="mm-link c6" d="M163.2,538.0 C195.2,538.0 195.2,1024.0 227.2,1024.0"/><rect class="mm-branch c6" x="227.2" y="1010.0" width="146.0" height="28" rx="5"/><text class="mm-branch-t" x="300.2" y="1028.5" text-anchor="middle">Democracy Index</text><path class="mm-link c6" d="M373.2,1024.0 C401.2,1024.0 509.2,976.0 537.2,976.0"/><rect class="mm-leaf c6" x="537.2" y="956" width="210.3" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="971.5">0-10 scale</text><text class="mm-leaf-n" x="547.2" y="986.5">60 indicators, 5 categories</text><path class="mm-link c6" d="M373.2,1024.0 C401.2,1024.0 509.2,1024.0 537.2,1024.0"/><rect class="mm-leaf c6" x="537.2" y="1004" width="168.9" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="1019.5">Four regime types</text><text class="mm-leaf-n" x="547.2" y="1034.5">full to authoritarian</text><path class="mm-link c6" d="M373.2,1024.0 C401.2,1024.0 509.2,1072.0 537.2,1072.0"/><rect class="mm-leaf c6" x="537.2" y="1052" width="168.9" height="40" rx="4"/><text class="mm-leaf-t" x="547.2" y="1067.5">India 2020</text><text class="mm-leaf-n" x="547.2" y="1082.5">Flawed democracy 6.61</text></svg></div><div id="mm-outline" hidden><ul class="outline"><li><strong>Voting Behaviour</strong><ul><li class="c0"><details open><summary>Two kinds of influence</summary><ul><li>Short-term <span class="ol-note">immediate, one election only</span></li><li>Long-term <span class="ol-note">social, economic, political</span></li></ul></details></li><li class="c1"><details open><summary>Short-term factors</summary><ul><li>Economy <span class="ol-note">inflation, unemployment</span></li><li>Local conditions <span class="ol-note">water, power, roads</span></li><li>Leaders and events <span class="ol-note">Emergency and Indira Gandhi</span></li><li>Media <span class="ol-note">pattern of coverage</span></li></ul></details></li><li class="c2"><details open><summary>Long-term factors</summary><ul><li>Social <span class="ol-note">age, gender, inhabitation, caste, religion</span></li><li>Economic <span class="ol-note">income groups versus the poor</span></li><li>Political <span class="ol-note">ideology, family, party identification</span></li></ul></details></li><li class="c3"><details open><summary>Trends</summary><ul><li>Party or leader over candidate <span class="ol-note">independents do poorly</span></li><li>Vote against the ruling party <span class="ol-note">not for another</span></li><li>National versus State choice <span class="ol-note">different</span></li></ul></details></li><li class="c4"><details open><summary>Paradoxes</summary><ul><li>Participation versus muscle and money <span class="ol-note">peaceful power transfer</span></li><li>Identity politics <span class="ol-note">language, caste, religion</span></li><li>Democracy and poverty <span class="ol-note">quota not material gain</span></li><li>Psephocracy <span class="ol-note">electoral dictatorship</span></li></ul></details></li><li class="c5"><details open><summary>Party system</summary><ul><li>Personality cult <span class="ol-note">high command parties</span></li><li>Fluid ideology <span class="ol-note">defection</span></li><li>Consensus is hard <span class="ol-note">many parties, no real choice</span></li></ul></details></li><li class="c6"><details open><summary>Democracy Index</summary><ul><li>0-10 scale <span class="ol-note">60 indicators, 5 categories</span></li><li>Four regime types <span class="ol-note">full to authoritarian</span></li><li>India 2020 <span class="ol-note">Flawed democracy 6.61</span></li></ul></details></li></ul></li></ul></div></section><div class="notes"><h2 id="exam-lens-priority-and-pyqs">Exam lens: priority and PYQs<a class="anchor" href="#exam-lens-priority-and-pyqs" aria-label="Link to this section">#</a></h2><aside class="callout source"><span class="tag">Source note</span><p><strong>This chapter comes from the Sarrthi handout only.</strong> There are no class slides or teacher ink. Priority is high priority, counted from the handout’s own PYQ section: <strong>5 Prelims and 9 Mains</strong> questions are quoted. Years quoted are listed below; a “years quoted” count is not a count of distinct questions.</p></aside><div class="tblock"><div class="tcap">What the handout itself stresses</div><div class="tablewrap"><table><thead><tr><th>Signal in the handout</th><th>Where</th><th>Why it matters</th></tr></thead><tbody><tr><th scope='row'>Voter's choice is split into <strong>short-term</strong> and <strong>long-term</strong> influences</th><td>Section 1</td><td>A neat two-column frame for any Mains answer on voting behaviour.</td></tr><tr><th scope='row'>The handout lists <strong>nine paradoxes in our democracy</strong> and defines <strong>Psephocracy</strong></th><td>Section 4</td><td>The term and the "three phases of identity politics" are the memorable parts.</td></tr><tr><th scope='row'>The <strong>Democracy Index</strong> paragraph (60 indicators, 5 categories, 4 regime types, India "Flawed democracy" in 2020, score 6.61)</th><td>Section 5</td><td>Direct factual recall for Prelims.</td></tr><tr><th scope='row'><strong>International Democracy Day</strong> (15 September; Universal Declaration on Democracy 2007)</th><td>Section 5</td><td>A one-line date fact.</td></tr></tbody></table></div></div><div class="tblock"><div class="tcap">PYQs quoted in the handout</div><div class="tablewrap"><table><thead><tr><th>Year and paper</th><th>What was asked</th><th>The answer</th><th>Where in this chapter</th></tr></thead><tbody><tr><th scope='row'>Mains 2025</th><td>Discuss the 'corrupt practices' for the purpose of the Representation of the PeopleAct, 1951. Analyze whether the increase in the assets of the legislators and/or their a…</td><td>Open-ended: see the answer skeleton in the flashcards</td><td>Whole chapter</td></tr><tr><th scope='row'>Mains 2024</th><td>Examine the need for electoral reforms as suggested by various committees with particular reference to the “one nation-one election” principle.</td><td>Open-ended: see the answer skeleton in the flashcards</td><td>Whole chapter</td></tr><tr><th scope='row'>Mains 2022</th><td>Discuss the role of the Election Commission of India in light of the evolution of the Model Code of Conduct.</td><td>Open-ended: see the answer skeleton in the flashcards</td><td>Whole chapter</td></tr><tr><th scope='row'>Mains 2022</th><td>Discuss the procedures to decide the disputes arising out of the election of a Member of the Parliament or State Legislature under The Representation of the People Act, 1…</td><td>Open-ended: see the answer skeleton in the flashcards</td><td><a href="#3-long-term-factors">3 · Long-term factors</a></td></tr><tr><th scope='row'>Prelims 2020</th><td>Consider the following statements: [2020] 1. According to the Constitution of India, a person who is eligible to vote can be made a minister in a State for six months eve…</td><td>(a) 1 only</td><td>Whole chapter</td></tr><tr><th scope='row'>Mains 2020</th><td>There is a need for simplification of procedure for disqualification of persons found guilty of corrupt practices under the Representation of Peoples Act. Comment. (15M)</td><td>Open-ended: see the answer skeleton in the flashcards</td><td>Whole chapter</td></tr><tr><th scope='row'>Mains 2019</th><td>On what grounds a people’s representative can be disqualified under the Representation of People Act, 1951? Also, mention the remedies available to such a person against …</td><td>Open-ended: see the answer skeleton in the flashcards</td><td>Whole chapter</td></tr><tr><th scope='row'>Mains 2018</th><td>In the light of recent controversy regarding the use of Electronic Voting Machines (EVM), what are the challenges before the Election Commission of India to ensure the tr…</td><td>Open-ended: see the answer skeleton in the flashcards</td><td>Whole chapter</td></tr><tr><th scope='row'>Mains 2017</th><td>“Simultaneous elections to the Lok Sabha and the State Assemblies will limit the amount of time and money spent in electioneering but it will reduce the government’s acco…</td><td>Open-ended: see the answer skeleton in the flashcards</td><td>Whole chapter</td></tr><tr><th scope='row'>Mains 2017</th><td>To enhance the quality of democracy in India the Election Commission of India has proposed electoral reforms in 2016. What are the suggested reforms and how far are they …</td><td>Open-ended: see the answer skeleton in the flashcards</td><td>Whole chapter</td></tr><tr><th scope='row'>Prelims 2012</th><td>With reference to the Delimitation Commission, consider the following statements: (2012) 1. The orders of the Delimitation Commission cannot be challenged in a Court of L…</td><td>(c) Both 1 and 2</td><td>Whole chapter</td></tr><tr><th scope='row'>Prelims 2001</th><td>Consider the following statements regarding the political parties in India: [2001] I. The Representation of the People Act, 1951 provides for the registration of politica…</td><td>(d) I, II, III and IV</td><td><a href="#4-paradoxes-in-our-democracy">4 · Paradoxes in our democracy</a></td></tr><tr><th scope='row'>Prelims 1997</th><td>Dinesh Goswami Committee recommended: [1997]</td><td>(c) Governmental funding of parliamentary elections</td><td><a href="#4-paradoxes-in-our-democracy">4 · Paradoxes in our democracy</a></td></tr><tr><th scope='row'>Prelims 1995</th><td>The Dinesh Goswami Committee was concerned with: [1995]</td><td>(b) Electoral reforms</td><td>Whole chapter</td></tr></tbody></table></div><p class="gdesc">The “where” link is matched by shared terms, so treat it as a pointer.</p></div><aside class="callout key"><span class="tag">What to prepare</span><p><strong>Prelims hooks:</strong> short-term versus long-term factors; Psephocracy; the three phases of identity politics; Democracy Index categories and India's 2020 status; 15 September as International Democracy Day. No Prelims PYQ is quoted in the material.</p><p><strong>Mains hooks:</strong> factors shaping voting behaviour in India; role of caste and religion in elections; paradoxes of Indian democracy; identity politics and its phases. No Mains PYQ is quoted in the material.</p><p><strong>Closing idea:</strong> Voters choose on both passing issues and lasting loyalties, and Indian democracy keeps free elections while struggling with money, identity and real choice.</p></aside><h2 id="1-what-decides-a-vote">1 · What decides a vote<a class="anchor" href="#1-what-decides-a-vote" aria-label="Link to this section">#</a></h2>
+<p>Individual voting is the function of <strong>individual choices</strong> and <strong>group choices</strong> (religious group, social group and so on). The determinants of a voter's choice split into <strong>short-term influence</strong> and <strong>long-term influence</strong>.</p>
+<div class="two"><div class="col"><h4>Short-term</h4><ul><li>Immediate influence on <strong>specific elections only</strong></li><li>they do not decide voters' long-term behaviour</li></ul></div><div class="col"><h4>Long-term</h4><ul><li>Lasting factors: <strong>social, economic and political</strong></li></ul></div></div>
+<aside class="callout mnemo"><span class="tag">Long-term trio</span><div class="mn"><b>S</b><b>E</b><b>P</b></div><p><strong>S</strong>ocial, <strong>E</strong>conomic, <strong>P</strong>olitical: "<strong>S</strong>ome <strong>E</strong>lectors <strong>P</strong>onder."</p></aside>
+<h2 id="2-short-term-influences">2 · Short-term influences<a class="anchor" href="#2-short-term-influences" aria-label="Link to this section">#</a></h2>
+<ul class='lst'><li><strong>State of the economy</strong> at election time: <strong>inflation, unemployment</strong> and similar parameters shape voter behaviour.</li><li><strong>Local conditions of life</strong>: water supply, power supply, road conditions.</li><li><strong>Personality or public standing of leaders.</strong></li><li><strong>Specific events</strong> before the election: the imposition of the <strong>National Emergency</strong> affected election results for <strong>Indira Gandhi</strong>.</li><li><strong>Pattern of media coverage</strong> of issues.</li></ul>
+<aside class="callout mnemo"><span class="tag">Five short-term factors</span><div class="mn"><b>E</b><b>L</b><b>P</b><b>S</b><b>M</b></div><p><strong>E</strong>conomy, <strong>L</strong>ocal conditions, <strong>P</strong>ersonality of leaders, <strong>S</strong>pecific events, <strong>M</strong>edia: "<strong>E</strong>very <strong>L</strong>eader <strong>P</strong>refers <strong>S</strong>mooth <strong>M</strong>essages."</p></aside>
+<h2 id="3-long-term-factors">3 · Long-term factors<a class="anchor" href="#3-long-term-factors" aria-label="Link to this section">#</a></h2>
+<h3>Social factors</h3>
+<div class="tblock"><div class="tcap">Five social factors</div><div class="tablewrap"><table><thead><tr><th>Factor</th><th>How it shapes voting</th></tr></thead><tbody><tr><th scope='row'><strong>Age</strong></th><td>The age of the voter affects behaviour</td></tr><tr><th scope='row'><strong>Gender</strong></th><td>Gender inequality can give one gender greater participation and awareness than the other</td></tr><tr><th scope='row'><strong>Inhabitation</strong></th><td>In the initial decades after independence urban voters were considered politically <strong>more aware and active</strong> than rural voters; <strong>now rural people are also politically conscious and aware</strong></td></tr><tr><th scope='row'><strong>Caste</strong></th><td>Especially in rural areas <strong>caste loyalties run very deep</strong>; caste-based mobilisation of <strong>OBC and Dalit communities</strong> increased its influence further</td></tr><tr><th scope='row'><strong>Religion</strong></th><td>Religion is used by <strong>exploiting the apprehension</strong> of minority and majority. In the initial decades the <strong>minority's</strong> apprehension was exploited; in recent times the <strong>majority's</strong> apprehension is seen. These apprehensions can be <strong>real or imaginary</strong></td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Social factors</span><div class="mn"><b>A</b><b>G</b><b>I</b><b>C</b><b>R</b></div><p><strong>A</strong>ge, <strong>G</strong>ender, <strong>I</strong>nhabitation, <strong>C</strong>aste, <strong>R</strong>eligion: "<strong>A</strong> <strong>G</strong>ood <strong>I</strong>dea: <strong>C</strong>ount <strong>R</strong>ightly."</p></aside>
+<h3>Economic factors</h3>
+<div class="two"><div class="col"><h4>Higher, middle and lower-income groups</h4><ul><li>More concerned with the problems of society</li><li>politically more aware</li><li>conscious of the effects of government policies on their long-term interests</li></ul></div><div class="col"><h4>Poor sections</h4><ul><li>More concerned with their personal economic problems</li><li>only sense of belonging is to caste and religion</li><li>vote as their <strong>employer</strong> says, more so in <strong>rural India</strong></li></ul></div></div>
+<h3>Political factors</h3>
+<ul class='lst'><li>When a voter's <strong>ideology matches</strong> a party's ideology, the voter tends to vote for that party.</li><li><strong>Political family background</strong> and <strong>political socialisation</strong> also affect voting.</li><li><strong>Party identification</strong>: the <strong>psychological attachment</strong> with a political party.</li></ul>
+<h3>Trends</h3>
+<section class="flow"><h4>Trends in voting</h4><div class="chain"><div class="step "><div><div class="sl">Party or leader over candidate</div><div class="ss">Voters vote for the <strong>party or party leaders</strong> rather than the individual candidate</div></div></div><div class="arr" aria-hidden="true"></div><div class="step warn"><div><div class="sl">Leader image</div><div class="ss">The party depends on the <strong>image of the leader</strong>, not its programme or ideology</div></div></div><div class="arr" aria-hidden="true"></div><div class="step bad"><div><div class="sl">Independents</div><div class="ss"><strong>Independents tend to perform poorly</strong></div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">Vote against</div><div class="ss">People vote <strong>against the ruling party</strong> rather than for another party</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">Two levels</div><div class="ss">There is a <strong>distinction between national and State choices</strong> of electors</div></div></div></div></section>
+<aside class="callout shortcut"><span class="tag">Anti-incumbency rule of thumb</span><p>The handout's trend is <strong>"vote against, not for"</strong>: the ruling party carries the burden, whoever gains.</p></aside>
+<h2 id="4-paradoxes-in-our-democracy">4 · Paradoxes in our democracy<a class="anchor" href="#4-paradoxes-in-our-democracy" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">The paradoxes (handout order)</div><div class="tablewrap"><table><thead><tr><th>Paradox</th><th>One side</th><th>Other side</th></tr></thead><tbody><tr><th scope='row'><strong>1. Participation versus muscle and money</strong></th><td>Participation has increased; <strong>peaceful transition of power</strong>; <strong>gun culture stamped out</strong></td><td><strong>Muscle and money power</strong> in elections is very much prevalent</td></tr><tr><th scope='row'><strong>2. Bureaucracy and the State</strong></th><td>Bureaucracy works within a <strong>democratic framework and political control</strong></td><td>The State has become <strong>more repressive</strong> through <strong>draconian laws</strong>; bureaucracy often behaves <strong>anti-people</strong></td></tr><tr><th scope='row'><strong>3. Issue-based versus identity politics</strong></th><td>Democratic politics should be <strong>issue-based</strong></td><td>In most countries <strong>politics of identity</strong> prevails on a large scale</td></tr><tr><th scope='row'><strong>4. Democracy and abject poverty</strong></th><td>Voting rights, regular elections and peaceful transfer should let the poor remove parties that ignore them</td><td>That is <strong>not the case</strong></td></tr><tr><th scope='row'><strong>5. Too many parties, no real choice</strong></th><td>Many parties</td><td>Most stand for the <strong>same type of economic ideologies and policies</strong></td></tr><tr><th scope='row'><strong>6. Tolerance without liberal ethic</strong></th><td>Tolerance is propagated as a <strong>virtue</strong></td><td>Without a <strong>strong liberal ethic</strong> it cannot be practised, so <strong>mob lynching, vigilantism</strong> are justified</td></tr><tr><th scope='row'><strong>7. Multi-party system and personality cult</strong></th><td><strong>Multi-party system</strong> exists</td><td><strong>Personality cult prevails</strong>; democracy should not rest on a leader's personality</td></tr><tr><th scope='row'><strong>8. Psephocracy</strong></th><td>Democratic practices honoured <strong>during</strong> free and fair elections and peaceful transfer</td><td>Not <strong>between</strong> two elections: leads to <strong>electoral dictatorships</strong></td></tr><tr><th scope='row'><strong>9. Contradictions in the party system</strong></th><td>See below</td><td></td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Nine paradoxes</span><div class="mn"><b>P</b><b>B</b><b>I</b><b>D</b><b>T</b><b>T</b><b>M</b><b>P</b><b>C</b></div><p><strong>P</strong>articipation vs muscle, <strong>B</strong>ureaucracy vs repression, <strong>I</strong>dentity vs issues, <strong>D</strong>emocracy vs poverty, <strong>T</strong>oo many parties, <strong>T</strong>olerance without liberalism, <strong>M</strong>ulti-party vs cult, <strong>P</strong>sephocracy, <strong>C</strong>ontradictions: "<strong>P</strong>oor <strong>B</strong>oys <strong>I</strong>gnore <strong>D</strong>ull <strong>T</strong>alk, <strong>T</strong>hink <strong>M</strong>ore, <strong>P</strong>lan <strong>C</strong>arefully."</p></aside>
+<h3>Politics of identity: three phases</h3>
+<section class="flow"><h4>Phases of identity politics</h4><div class="chain"><div class="step "><div><div class="sl">Phase 1</div><div class="ss"><strong>Language</strong>-based identity played an important role</div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">Phase 2</div><div class="ss">After the <strong>Mandal Commission</strong> period, <strong>caste</strong>-based identity politics took centre stage</div></div></div><div class="arr" aria-hidden="true"></div><div class="step warn"><div><div class="sl">Phase 3</div><div class="ss">After the <strong>Ram Janmabhoomi Movement</strong>, <strong>religion</strong>-based identity politics began to dominate</div></div></div></div></section>
+<ul class='lst'><li>With excessive focus on identities, <strong>identities get frozen</strong>, so <strong>negotiation and reconciliation become impossible</strong>.</li></ul>
+<aside class="callout mnemo"><span class="tag">Identity phases</span><div class="mn"><b>L</b><b>C</b><b>R</b></div><p><strong>L</strong>anguage, <strong>C</strong>aste (post-Mandal), <strong>R</strong>eligion (post-Ram Janmabhoomi): "<strong>L</strong>ook, <strong>C</strong>ast <strong>R</strong>ight."</p></aside>
+<h3>Democracy and poverty in detail</h3>
+<ul class='lst'><li><strong>Economic inequality is not as much a scandal as social inequality.</strong> The <strong>reservation (quota)</strong> system is an example of the effort to address social inequalities.</li><li>But these efforts <strong>did not convert into material or economic benefits</strong> for the poor.</li><li>Indian democracy has been <strong>preoccupied with transforming the pre-existing imbalance of social power</strong>.</li><li>The idea was to bring <strong>new political elites from Backward Classes</strong>. Backward-class people did not get substantial benefit from this; the <strong>material status of the poor remained unchanged</strong>.</li></ul>
+<h3>Psephocracy</h3>
+<aside class="callout key"><span class="tag">Psephocracy</span><p>A democracy in which democratic practices are honoured <strong>during the election</strong> (free and fair) and at <strong>peaceful transfer of power</strong>, but <strong>not in the period between two consecutive elections</strong>. This leads to <strong>electoral dictatorships</strong>.</p></aside>
+<h3>Contradictions in the party system</h3>
+<aside class="callout mnemo"><span class="tag">Seven contradictions</span><div class="mn"><b>P</b><b>H</b><b>I</b><b>R</b><b>F</b><b>C</b></div><p><strong>P</strong>ersonality cult at the Centre, <strong>H</strong>igh command parties, <strong>I</strong>ncreasing regional parties, <strong>R</strong>eal choice absent, <strong>F</strong>luid ideology, <strong>C</strong>onsensus difficult, plus rising <strong>I</strong>ndependents: "<strong>P</strong>arties <strong>H</strong>old <strong>I</strong>nterests, <strong>R</strong>arely <strong>F</strong>ollowing <strong>C</strong>onscience."</p></aside>
+<ul class='lst'><li>The <strong>personality cult re-emerged</strong> at the central level.</li><li><strong>High command-oriented, centralised</strong> parties.</li><li><strong>Increasing influence of regional parties.</strong></li><li>Multi-party system but <strong>absence of real choice</strong>.</li><li><strong>Increasing number of independent candidates.</strong></li><li><strong>Fluid ideology of members</strong>: candidates now change parties and ideology frequently.</li><li>The multi-party system has made the system <strong>more representative, yet consensus-building has become difficult</strong>.</li></ul>
+<aside class="callout alert"><span class="tag">Handout alert</span><p>The handout says <strong>independents tend to perform poorly</strong> (Trends) and also lists <strong>increasing numbers of independent candidates</strong> (party-system contradictions). They answer different questions: <strong>numbers rise, success stays low</strong>. Also the paradox list has <strong>nine</strong> headings only if "contradictions in the party system" is counted as the last one; the handout does not number them.</p></aside>
+<h2 id="5-democracy-index-and-international-democracy-da">5 · Democracy Index and International Democracy Day<a class="anchor" href="#5-democracy-index-and-international-democracy-da" aria-label="Link to this section">#</a></h2>
+<h3>The Democracy Index</h3>
+<ul class='lst'><li>Scores countries on a <strong>0 to 10 scale</strong> using <strong>60 individual indicators</strong> in <strong>five core categories</strong>: <strong>electoral process and pluralism, functioning of government, political participation, political culture, civil liberties</strong>.</li><li>Each country is placed in one of <strong>four regime types</strong>: <strong>Full democracy, Flawed democracy, Hybrid regime, Authoritarian regime</strong>.</li><li><strong>2024 edition</strong>: global democracy is under strain; the <strong>average global score dropped to its lowest since the index began in 2006</strong>.</li><li><strong>2020 Index</strong>: the EIU ranked <strong>India a "Flawed democracy"</strong>. India's score fell from an earlier peak to <strong>6.61 in 2020</strong>, which the EIU described as <strong>democratic backsliding</strong>.</li></ul>
+<aside class="callout mnemo"><span class="tag">Five categories</span><div class="mn"><b>E</b><b>F</b><b>P</b><b>P</b><b>C</b></div><p><strong>E</strong>lectoral process, <strong>F</strong>unctioning of government, <strong>P</strong>articipation, <strong>P</strong>olitical culture, <strong>C</strong>ivil liberties: "<strong>E</strong>very <strong>F</strong>air <strong>P</strong>oll <strong>P</strong>rotects <strong>C</strong>itizens."</p></aside>
+<aside class="callout shortcut"><span class="tag">Index ladder</span><p>Full &gt; Flawed &gt; Hybrid &gt; Authoritarian. India (2020): <strong>second step, Flawed</strong>, score <strong>6.61</strong>.</p></aside>
+<h3>International Democracy Day</h3>
+<p><strong>15 September</strong> each year. On this date in <strong>2007</strong> the <strong>Universal Declaration on Democracy</strong> was adopted by the <strong>Inter-Parliamentary Union</strong>.</p>
+</div><section id="chapter-timeline"><h2>Timeline<a class="anchor" href="#chapter-timeline">#</a></h2><ol class="timeline"><li class="tl "><time class="yr">1975</time><span class="pin"></span><div class="tlbody">National Emergency (example of a short-term event affecting election results)</div></li><li class="tl "><time class="yr">2006</time><span class="pin"></span><div class="tlbody">Democracy Index begins</div></li><li class="tl high"><time class="yr">2007 Sep 15</time><span class="pin"></span><div class="tlbody">Universal Declaration on Democracy adopted by the Inter-Parliamentary Union<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">2020</time><span class="pin"></span><div class="tlbody">India classed "Flawed democracy" with score 6.61<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">2024</time><span class="pin"></span><div class="tlbody">Index edition: global average lowest since 2006</div></li></ol></section><section id="connects"><h2>Connects to<a class="anchor" href="#connects">#</a></h2><div class="lkgrid"><article class="link"><div class="lk-line">Ch 24: Elections and Electoral Reforms</div><p>Muscle and money power, and the reforms that answer it.</p></article><article class="link"><div class="lk-line">Ch 23: Political Parties</div><p>Personality cult, high command, regional parties, defection.</p></article><article class="link"><div class="lk-line">Ch 18: Parliamentary System</div><p>Multi-party system and consensus-building.</p></article><article class="link"><div class="lk-line">Ch 2: Salient Features and Critique</div><p>Social justice and the reservation system the handout mentions.</p></article><article class="link"><div class="lk-line">Ch 30: Election Commission</div><p>The body that runs free and fair elections.</p></article></div></section><section id="recall"><h2>Recall sheet<a class="anchor" href="#recall">#</a></h2><p class="gdesc">Read once, hide it, then rebuild the chapter from memory.</p><ol class="recall"><li>Short-term: economy (inflation, unemployment), local conditions, leaders, specific events (Emergency), media.</li><li>Long-term social: age, gender, inhabitation, caste, religion. Economic: income groups versus the poor. Political: ideology, family, party identification.</li><li>Trends: party or leader over candidate; independents weak; vote against the ruling party; national and State choices differ.</li><li>Paradoxes: muscle and money, repressive State, identity politics (language, caste after Mandal, religion after Ram Janmabhoomi), democracy with poverty, no real choice, tolerance without liberal ethic, personality cult, Psephocracy.</li><li>Democracy Index: 0-10, 60 indicators, five categories, four regime types; India 2020 Flawed, 6.61. 15 September: International Democracy Day.</li></ol></section><section id="practice"><h2>Test yourself<a class="anchor" href="#practice">#</a></h2><h3>Quick quiz</h3><div class="count" id="score">0 / 0 correct</div><div id="quiz"></div><h3>Flashcards</h3><p class="gdesc">Tap the card to flip.</p><div class="deck"><div class="fc" id="fc" tabindex="0" role="button" aria-label="Flashcard, press to flip"></div><div class="count" id="fccount"></div><div class="row"><button class="btn" id="fcprev" type="button">Back</button><button class="btn pri" id="fcnext" type="button">Next</button><button class="btn" id="fcmiss" type="button">Missed it</button><button class="btn" id="fcshuf" type="button">Shuffle</button><button class="btn" id="fconlymiss" type="button">Only missed</button><button class="btn" id="fcall" type="button">All cards</button></div></div></section><nav class="pager"><a href="pol-ch24.html"><small>Previous</small>Elections and Electoral Reforms</a><a class="nx" href="pol-ch26.html"><small>Next</small>Union Territories</a></nav><footer>Personal study notes built from the Sarrthi IAS GS Foundation Polity handout (Parts 1 to 3). Handout only: no class slides or teacher ink for this chapter. Mnemonics and shortcuts are memory aids built from the handout’s own facts. Copyright belongs to the teacher; keep this private.</footer></main></div><div id="lightbox" hidden><img alt=""></div><script type="application/json" id="data">{"mcq": [{"q": "Which of the following is a short-term influence on a voter's choice?", "options": ["Caste loyalty", "State of the economy at election time", "Party identification", "Political family background"], "answer": 1, "explain": "Economy (inflation, unemployment) is listed under short-term influences; the others are long-term."}, {"q": "Party identification is best described as", "options": ["Voting for the candidate with the best manifesto", "Psychological attachment with a political party", "Voting against the party in power", "Voting by employer's wishes"], "answer": 1, "explain": "The handout defines party identification as psychological attachment to a party."}, {"q": "In the handout's account of religion as a factor in voting, in the initial decades of independence the apprehension exploited was mainly that of", "options": ["The majority", "The minority", "The urban voters", "The rural voters"], "answer": 1, "explain": "Early on minority apprehension was used; in recent times it is majority apprehension."}, {"q": "Which phase of identity politics followed the Mandal Commission period?", "options": ["Language-based", "Caste-based", "Religion-based", "Region-based"], "answer": 1, "explain": "Phase 1 language, phase 2 caste (post-Mandal), phase 3 religion (post-Ram Janmabhoomi)."}, {"q": "A democracy that honours democratic practices during elections and peaceful transfer of power but not between two consecutive elections is called", "options": ["Plutocracy", "Psephocracy", "Technocracy", "Theocracy"], "answer": 1, "explain": "The handout defines Psephocracy this way and says it leads to electoral dictatorships."}, {"q": "Which is NOT one of the five core categories of the Democracy Index as given in the handout?", "options": ["Political culture", "Civil liberties", "Economic growth", "Functioning of government"], "answer": 2, "explain": "The five are electoral process and pluralism, functioning of government, political participation, political culture, civil liberties."}, {"q": "In the 2020 Democracy Index, India was classified as", "options": ["Full democracy", "Flawed democracy", "Hybrid regime", "Authoritarian regime"], "answer": 1, "explain": "The EIU ranked India a Flawed democracy, with a score of 6.61."}, {"q": "International Democracy Day is celebrated on", "options": ["15 August", "15 September", "26 November", "2 October"], "answer": 1, "explain": "15 September, marking the 2007 adoption of the Universal Declaration on Democracy by the Inter-Parliamentary Union."}, {"q": "According to the handout, which tends to perform poorly in Indian elections?", "options": ["Party candidates", "Independents", "Regional parties", "Incumbent leaders"], "answer": 1, "explain": "The handout notes independents tend to perform poorly as voters choose party or leader."}, {"q": "The Democracy Index sorts countries on a scale of", "options": ["0 to 5", "0 to 10", "1 to 100", "0 to 60"], "answer": 1, "explain": "A 0-10 scale from 60 indicators in five categories."}, {"q": "[PYQ 2020] Consider the following statements: [2020] 1. According to the Constitution of India, a person who is eligible to vote can be made a minister in a State for six months even if he/she is not a member of the Legislature of that State. 2. According to the Representation of People Act, 1951, a person convicted of a criminal offence and sentenced to imprisonment for five years is permanently disqualified from contesting an election even after his release from prison. Which of the statements given above is/are correct?", "options": ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"], "answer": 0, "explain": "PYQ 2020. The answer is (a)."}, {"q": "[PYQ 2012] With reference to the Delimitation Commission, consider the following statements: (2012) 1. The orders of the Delimitation Commission cannot be challenged in a Court of Law. 2. When the orders of the Delimitation Commission are laid before the Lok Sabha or State Legislative Assembly, they cannot effect any modifications in the orders. Which of the statements given above is/are correct?", "options": ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"], "answer": 2, "explain": "PYQ 2012. The answer is (c)."}, {"q": "[PYQ 2001] Consider the following statements regarding the political parties in India: [2001] I. The Representation of the People Act, 1951 provides for the registration of political parties. II. Registration of political parties is carried out by the Election Commission. III. A national level political party is one which is recognised in four or more States. IV. During the 1999 general elections, there were six National and 48 State level parties recognised by the Election Commission. Which of these statements are correct?", "options": ["I, II and IV", "I and III", "II and IV", "I, II, III and IV"], "answer": 3, "explain": "PYQ 2001. The answer is (d). Revise: 4 · Paradoxes in our democracy."}, {"q": "[PYQ 1997] Dinesh Goswami Committee recommended: [1997]", "options": ["The constitution of state level election commissions", "List System of election to the Lok Sabha", "Governmental funding of parliamentary elections", "A ban on the candidature of independent candidates in the parliamentary elections"], "answer": 2, "explain": "PYQ 1997. The answer is (c). Revise: 4 · Paradoxes in our democracy."}, {"q": "[PYQ 1995] The Dinesh Goswami Committee was concerned with: [1995]", "options": ["De nationalisation of banks", "Electoral reforms", "Steps to put down insurgency in the North East", "The problem of the Chakmas"], "answer": 1, "explain": "PYQ 1995. The answer is (b)."}], "cards": [{"q": "What are the two kinds of influence on a voter?", "a": "Short-term (immediate, one election) and long-term (lasting: social, economic, political)."}, {"q": "Name the five short-term influences.", "a": "Economy, local conditions, personality of leaders, specific events (such as the Emergency), media coverage."}, {"q": "Name the five social factors in long-term voting.", "a": "Age, gender, inhabitation, caste, religion."}, {"q": "How has urban versus rural awareness changed?", "a": "Urban voters were once seen as more aware; now rural voters are also politically conscious."}, {"q": "How does the handout describe caste in voting?", "a": "Loyalties run deep in rural areas; OBC and Dalit mobilisation increased its influence."}, {"q": "How does the handout describe religion in voting?", "a": "Exploiting apprehension of minority (earlier) and majority (recent); real or imaginary."}, {"q": "How do richer and poorer groups vote?", "a": "Higher, middle and lower-income groups are society-minded and policy-aware; the poor focus on personal problems, caste, religion and the employer's word."}, {"q": "What is party identification?", "a": "Psychological attachment with a political party."}, {"q": "What are the three trends in voting?", "a": "Party or leader over candidate; vote against the ruling party; national and State choices differ."}, {"q": "What is Psephocracy?", "a": "Democracy honoured only during elections and transfer of power, not between elections: leads to electoral dictatorships."}, {"q": "The three phases of identity politics?", "a": "Language; caste (post-Mandal Commission); religion (post-Ram Janmabhoomi Movement)."}, {"q": "What happens when identities get frozen?", "a": "Negotiation and reconciliation become impossible."}, {"q": "Why is poverty a paradox of Indian democracy?", "a": "Voting rights and elections should let the poor remove unresponsive parties, but quotas for social equality did not convert into material benefit."}, {"q": "What is the tolerance paradox?", "a": "Tolerance is propagated as a virtue without a strong liberal ethic, so mob lynching and vigilantism are justified."}, {"q": "List the contradictions in the party system.", "a": "Personality cult at the Centre; high command parties; rising regional parties; no real choice; more independents; fluid ideology; representative but consensus is hard."}, {"q": "What is the Democracy Index scale?", "a": "0 to 10, from 60 indicators in five categories."}, {"q": "Four regime types in the Index?", "a": "Full democracy, Flawed democracy, Hybrid regime, Authoritarian regime."}, {"q": "India in the 2020 Democracy Index?", "a": "Flawed democracy; score 6.61, which the EIU called democratic backsliding."}, {"q": "What happened in the 2024 Index edition?", "a": "The average global score dropped to its lowest since the index began in 2006."}, {"q": "When is International Democracy Day and why?", "a": "15 September; the Universal Declaration on Democracy was adopted by the Inter-Parliamentary Union in 2007."}, {"q": "Mains 2025: Discuss the 'corrupt practices' for the purpose of the Representation of the PeopleAct, 1951. Analyze whether the increase in the assets of the legislators and/or their associates, disproportionate to their known sources of income, would constitute undue influence and consequently a corrupt practice. (10 M)", "a": "Build the answer from: the whole chapter."}, {"q": "Mains 2024: Examine the need for electoral reforms as suggested by various committees with particular reference to the “one nation-one election” principle.", "a": "Build the answer from: the whole chapter."}, {"q": "Mains 2022: Discuss the role of the Election Commission of India in light of the evolution of the Model Code of Conduct.", "a": "Build the answer from: the whole chapter."}, {"q": "Mains 2022: Discuss the procedures to decide the disputes arising out of the election of a Member of the Parliament or State Legislature under The Representation of the People Act, 1951. What are the grounds on which the election of any returned candidate may be declared void? What remedy is available to the aggrieved party against the decision? Refer to the case laws (15M)", "a": "Build the answer from: 3 · Long-term factors."}, {"q": "Mains 2020: There is a need for simplification of procedure for disqualification of persons found guilty of corrupt practices under the Representation of Peoples Act. Comment. (15M)", "a": "Build the answer from: the whole chapter."}, {"q": "Mains 2019: On what grounds a people’s representative can be disqualified under the Representation of People Act, 1951? Also, mention the remedies available to such a person against his disqualification (15M)", "a": "Build the answer from: the whole chapter."}, {"q": "Mains 2018: In the light of recent controversy regarding the use of Electronic Voting Machines (EVM), what are the challenges before the Election Commission of India to ensure the trustworthiness of elections in India? (10M)", "a": "Build the answer from: the whole chapter."}, {"q": "Mains 2017: “Simultaneous elections to the Lok Sabha and the State Assemblies will limit the amount of time and money spent in electioneering but it will reduce the government’s accountability to the people.” Discuss. (10M)", "a": "Build the answer from: the whole chapter."}, {"q": "Mains 2017: To enhance the quality of democracy in India the Election Commission of India has proposed electoral reforms in 2016. What are the suggested reforms and how far are they significant to make democracy successful? (15M)", "a": "Build the answer from: the whole chapter."}]}</script><script>window.__NB={"id": "polity", "ch": 25, "title": "Voting Behaviour"};/* Shared store: reading progress, preferences, optional cross-device sync. */
+(function(){
+var KEY='nbapp:v1',root=document.documentElement;
+function today(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function fresh(){return{v:1,prefs:{fs:1,lh:1.65,w:780,font:'serif',theme:'auto',pt:0},last:null,nb:{},days:{}}}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+var S;
+try{S=JSON.parse(lsGet(KEY))}catch(e){S=null}
+if(!S||!S.v)S=fresh();
+S.prefs=Object.assign(fresh().prefs,S.prefs||{});
+// one-time import of the older done list and theme
+if(!S.migrated){
+  try{var od=JSON.parse(lsGet('nb-done')||'[]');od.forEach(function(n){var c=chap('modern-india',n);c.done=1;c.dt=1})}catch(e){}
+  var ot=lsGet('nb-theme');if(ot&&!S.prefs.pt){S.prefs.theme=ot;S.prefs.pt=1}
+  S.migrated=1;
+}
+function chap(nb,n){var b=S.nb[nb]||(S.nb[nb]={});return b[n]||(b[n]={read:{},done:0,dt:0,pos:null,t:0})}
+var listeners=[],dirty=false,saveT=null,syncT=null;
+function save(){
+  dirty=true;clearTimeout(saveT);
+  saveT=setTimeout(function(){lsSet(KEY,JSON.stringify(S));listeners.forEach(function(f){try{f()}catch(e){}});scheduleSync()},250);
+}
+function flush(){lsSet(KEY,JSON.stringify(S))}
+function merge(a,b){ // a local, b remote; returns merged
+  var o=fresh();
+  o.prefs=((b.prefs&&b.prefs.pt||0)>(a.prefs&&a.prefs.pt||0))?Object.assign({},a.prefs,b.prefs):Object.assign({},b.prefs,a.prefs);
+  o.last=(!a.last||(b.last&&b.last.ts>a.last.ts))?b.last:a.last;
+  o.migrated=1;
+  var ids={};Object.keys(a.nb||{}).concat(Object.keys(b.nb||{})).forEach(function(k){ids[k]=1});
+  Object.keys(ids).forEach(function(id){
+    o.nb[id]={};var ca=(a.nb||{})[id]||{},cb=(b.nb||{})[id]||{},ks={};
+    Object.keys(ca).concat(Object.keys(cb)).forEach(function(k){ks[k]=1});
+    Object.keys(ks).forEach(function(k){
+      var x=ca[k],y=cb[k];if(!x||!y){o.nb[id][k]=x||y;return}
+      var r=Object.assign({},x.read,y.read),done=(y.dt||0)>(x.dt||0)?y:x,pos=(y.t||0)>(x.t||0)?y.pos:x.pos;
+      o.nb[id][k]={read:r,done:done.done,dt:done.dt||0,pos:pos,t:Math.max(x.t||0,y.t||0)};
+    });
+  });
+  var dk={};Object.keys(a.days||{}).concat(Object.keys(b.days||{})).forEach(function(k){dk[k]=1});
+  Object.keys(dk).forEach(function(k){o.days[k]=Math.max((a.days||{})[k]||0,(b.days||{})[k]||0)});
+  return o;
+}
+var syncState='off';
+function scheduleSync(){clearTimeout(syncT);syncT=setTimeout(function(){sync()},4000)}
+var dbp=null;
+function getRef(){
+  if(dbp)return dbp;
+  dbp=(async function(){
+    if(!window.claude||!claude.use)return null;
+    var db=await claude.use('db'),u=await claude.use('user');
+    if(!db||!u||!u.id)return null;
+    var id=await u.id();if(!id)return null;
+    return db.doc('data/users/'+id+'/nbapp');
+  })().catch(function(){return null});
+  return dbp;
+}
+var busy=false;
+async function sync(){
+  if(busy)return;busy=true;
+  try{
+    var ref=await getRef();if(!ref){syncState='local';return}
+    var snap=await ref.get(),rem=null;
+    if(snap.exists){var d=snap.data();try{rem=JSON.parse(d.state)}catch(e){}}
+    var m=rem?merge(S,rem):S;
+    var changed=JSON.stringify(m)!==JSON.stringify(S);
+    S=m;
+    if(changed){flush();listeners.forEach(function(f){try{f()}catch(e){}})}
+    var out=JSON.stringify(S);
+    if(!rem||JSON.stringify(rem)!==out)await ref.set({v:1,updated:Date.now(),state:out});
+    syncState='synced';
+  }catch(e){syncState='local'}
+  finally{busy=false}
+}
+var API={
+  get:function(){return S},
+  chap:chap,
+  save:save,flush:flush,sync:sync,
+  onChange:function(f){listeners.push(f)},
+  syncState:function(){return syncState},
+  setPref:function(k,v){S.prefs[k]=v;S.prefs.pt=Date.now();applyPrefs();save()},
+  reset:function(){S=fresh();S.migrated=1;flush();save()},
+  today:today,
+  pct:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c||!total)return 0;var r=0;Object.keys(c.read||{}).forEach(function(k){if(c.read[k])r++});return Math.min(1,r/total)},
+  isDone:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c)return false;if(c.dt)return !!c.done;return false}
+};
+window.NBS=API;
+function applyPrefs(){
+  var p=S.prefs;
+  var th=p.theme;
+  if(th==='auto')root.removeAttribute('data-theme');else root.setAttribute('data-theme',th);
+  root.style.setProperty('--zoom',p.fs);root.style.setProperty('--lh',p.lh);root.style.setProperty('--pw',p.w+'px');
+  root.setAttribute('data-font',p.font);
+}
+API.applyPrefs=applyPrefs;applyPrefs();
+// studied time, counted while the page is visible and touched in the last minute
+var lastAct=Date.now();
+['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){lastAct=Date.now()},{passive:true})});
+setInterval(function(){
+  if(document.hidden||Date.now()-lastAct>60000||!window.__NB)return;
+  var t=today();S.days[t]=(S.days[t]||0)+15;save();
+},15000);
+document.addEventListener('visibilitychange',function(){if(document.hidden){flush();sync()}else{sync()}});
+addEventListener('pagehide',flush);
+setTimeout(sync,800);
+})();
+(function(){var b=document.getElementById('themebtn');if(!b)return;var o=['auto','light','sepia','dark'];b.addEventListener('click',function(){var t=NBS.get().prefs.theme,i=(o.indexOf(t)+1)%o.length;NBS.setPref('theme',o[i]);b.textContent='Theme: '+o[i]})})();
+(function(){
+var D=JSON.parse(document.getElementById('data').textContent);
+// map/outline toggle
+document.querySelectorAll('.seg button').forEach(function(bt){bt.addEventListener('click',function(){var v=bt.dataset.v;document.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===bt)});document.getElementById('mm-map').hidden=v!=='map';document.getElementById('mm-outline').hidden=v!=='outline'})});
+if(window.innerWidth<640){var ob=document.querySelector('.seg button[data-v="outline"]');if(ob)ob.click()}
+// lightbox
+var lb=document.getElementById('lightbox'),li=lb.querySelector('img');
+document.querySelectorAll('a.zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();li.src=a.getAttribute('href');lb.hidden=false})});
+lb.addEventListener('click',function(){lb.hidden=true});document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true});
+// quiz
+var qz=document.getElementById('quiz'),score=document.getElementById('score'),right=0,answered=0;
+if(qz)D.mcq.forEach(function(m,i){var d=document.createElement('div');d.className='q';var t=document.createElement('div');t.className='qt';t.textContent=(i+1)+'. '+m.q;d.appendChild(t);var ex=document.createElement('div');ex.className='ex';ex.hidden=true;ex.textContent=m.explain;var btns=[];
+m.options.forEach(function(o,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent='ABCD'[j]+'. '+o;b.addEventListener('click',function(){if(d.dataset.done)return;d.dataset.done=1;answered++;if(j===m.answer){right++;b.classList.add('right')}else{b.classList.add('wrong');btns[m.answer].classList.add('right')}ex.hidden=false;score.textContent=right+' / '+answered+' correct'});btns.push(b);d.appendChild(b)});d.appendChild(ex);qz.appendChild(d)});
+// flashcards
+var fc=document.getElementById('fc');
+if(fc){var all=D.cards.map(function(c,i){return{q:c.q,a:c.a,i:i}}),deck=all.slice(),pos=0,back=false,missed={};
+function show(){if(!deck.length){fc.textContent='No cards in this deck.';document.getElementById('fccount').textContent='';return}var c=deck[pos];fc.textContent=back?c.a:c.q;fc.classList.toggle('back',back);document.getElementById('fccount').textContent='Card '+(pos+1)+' of '+deck.length+(back?' (answer)':' (question)')}
+function go(d){if(!deck.length)return;pos=(pos+d+deck.length)%deck.length;back=false;show()}
+fc.addEventListener('click',function(){back=!back;show()});fc.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();back=!back;show()}});
+document.getElementById('fcnext').onclick=function(){go(1)};document.getElementById('fcprev').onclick=function(){go(-1)};
+document.getElementById('fcmiss').onclick=function(){if(deck.length){missed[deck[pos].i]=1;go(1)}};
+document.getElementById('fcshuf').onclick=function(){for(var i=deck.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=deck[i];deck[i]=deck[j];deck[j]=t}pos=0;back=false;show()};
+document.getElementById('fconlymiss').onclick=function(){deck=all.filter(function(c){return missed[c.i]});pos=0;back=false;show()};
+document.getElementById('fcall').onclick=function(){deck=all.slice();pos=0;back=false;show()};show()}
+// side toc highlight
+var links=[].slice.call(document.querySelectorAll('.sidetoc a'));
+if('IntersectionObserver' in window&&links.length){var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on')}})},{rootMargin:'-70px 0px -70% 0px'});Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)})}
+})();
+(function(){
+var N=window.__NB,S=window.NBS;if(!N||!S)return;
+var root=document.documentElement,body=document.body;
+var rec=function(){return S.chap(N.id,N.ch)};
+var heads=[].slice.call(document.querySelectorAll('.page h2[id]'));
+var titles=heads.map(function(h){return h.firstChild?h.firstChild.textContent.trim():h.id});
+var ids=heads.map(function(h){return h.id});
+var seen={},manual={};
+// Done box
+var box=document.getElementById('donebox');
+if(box){box.checked=!!(rec().done);box.addEventListener('change',function(){var r=rec();r.done=box.checked?1:0;r.dt=Date.now();S.save()})}
+// progress bar
+var bar=document.createElement('div');bar.className='rbar';body.appendChild(bar);
+// per-section read buttons
+heads.forEach(function(h,i){
+  var b=document.createElement('button');b.type='button';b.className='h2read';
+  function paint(){var on=!!rec().read[h.id];b.setAttribute('aria-pressed',on);b.textContent=on?'Read ✓':'Mark read'}
+  b.addEventListener('click',function(){var r=rec();manual[h.id]=1;if(r.read[h.id])delete r.read[h.id];else r.read[h.id]=1;r.t=Date.now();S.save();paint();refresh()});
+  h.insertBefore(b,h.firstChild);paint();b._paint=paint;h._b=b;
+});
+function repaint(){heads.forEach(function(h){h._b._paint()});refresh()}
+// caption clamp
+document.querySelectorAll('figcaption').forEach(function(c){if(c.textContent.length>170){c.classList.add('clamp');c.addEventListener('click',function(){c.classList.toggle('open')})}});
+// dock
+var dock=document.createElement('div');dock.className='dock';
+dock.innerHTML='<button type="button" id="dprev" aria-label="Previous section">‹ Prev</button><button type="button" class="mid" id="dmid"></button><button type="button" id="dnext" aria-label="Next section">Next ›</button>';
+body.appendChild(dock);body.classList.add('has-dock');
+var dmid=dock.querySelector('#dmid');
+function curIdx(){var y=innerHeight*0.25,c=-1;for(var i=0;i<heads.length;i++){if(heads[i].getBoundingClientRect().top<=y)c=i;else break}return c}
+function goto(i){if(i<0||i>=heads.length)return;heads[i].scrollIntoView({behavior:'smooth',block:'start'})}
+dock.querySelector('#dprev').onclick=function(){var c=curIdx(),h=heads[c];goto(h&&h.getBoundingClientRect().top<-40?c:c-1)};
+dock.querySelector('#dnext').onclick=function(){goto(curIdx()+1)};
+function refresh(){
+  var c=curIdx(),r=rec().read,n=0;ids.forEach(function(id){if(r[id])n++});
+  dmid.innerHTML='<b>'+(c<0?'Top':(c+1)+'/'+heads.length)+'</b> · '+(c<0?'Start of chapter':esc(titles[c]))+' · '+n+' read';
+}
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+// sheets
+function sheet(html){var s=document.createElement('div');s.className='sheet';s.hidden=true;s.innerHTML='<div class="sheetin">'+html+'</div>';s.addEventListener('click',function(e){if(e.target===s)s.hidden=true});body.appendChild(s);return s}
+var cs=sheet('<h3>Sections</h3><div class="secl" id="secl"></div>');
+dmid.onclick=function(){
+  var r=rec().read,c=curIdx(),h='';
+  ids.forEach(function(id,i){h+='<a href="#'+id+'" data-i="'+i+'" class="'+(r[id]?'rd ':'')+(i===c?'cur':'')+'"><span class="tk">'+(r[id]?'✓':'')+'</span><span>'+esc(titles[i])+'</span></a>'});
+  cs.querySelector('#secl').innerHTML=h;cs.hidden=false;
+  var cur=cs.querySelector('.cur');if(cur)cur.scrollIntoView({block:'center'});
+};
+cs.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-i]');if(a){e.preventDefault();cs.hidden=true;goto(+a.dataset.i)}});
+var ps=sheet('<h3>Reading settings</h3><div id="pbody"></div>');
+function grp(key,label,opts){var p=S.get().prefs;return '<div class="srow"><label>'+label+'</label><div class="grp">'+opts.map(function(o){return '<button type="button" data-k="'+key+'" data-v="'+o[0]+'" aria-pressed="'+(String(p[key])===String(o[0]))+'">'+o[1]+'</button>'}).join('')+'</div></div>'}
+function drawPrefs(){
+  ps.querySelector('#pbody').innerHTML=
+    grp('fs','Text size',[[0.88,"A−"],[1,"A"],[1.12,"A+"],[1.25,"A++"],[1.4,"A+++"]])+
+    grp('lh','Spacing',[[1.45,'Tight'],[1.65,'Normal'],[1.85,'Roomy']])+
+    grp('w','Width',[[640,'Narrow'],[780,'Medium'],[980,'Wide']])+
+    grp('font','Font',[['serif','Serif'],['sans','Sans']])+
+    grp('theme','Theme',[['auto','Auto'],['light','Light'],['sepia','Sepia'],['dark','Dark']])+
+    '<div class="srow"><label>Extras</label><div class="grp"><button type="button" id="pfocus" aria-pressed="'+body.classList.contains('focus')+'">Focus mode</button>'+('wakeLock' in navigator?'<button type="button" id="pwake" aria-pressed="'+!!wl+'">Keep screen on</button>':'')+'</div></div>';
+}
+var wl=null;
+ps.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('button');if(!b)return;
+  if(b.dataset.k){var v=b.dataset.v;S.setPref(b.dataset.k,b.dataset.k==='font'||b.dataset.k==='theme'?v:+v);drawPrefs();return}
+  if(b.id==='pfocus'){body.classList.toggle('focus');drawPrefs();return}
+  if(b.id==='pwake'){
+    if(wl){wl.release();wl=null;drawPrefs()}else{navigator.wakeLock.request('screen').then(function(l){wl=l;l.addEventListener('release',function(){wl=null});drawPrefs()}).catch(function(){})}
+  }
+});
+function openPrefs(){drawPrefs();ps.hidden=false}
+var aa=document.getElementById('aabtn');if(aa)aa.onclick=openPrefs;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){ps.hidden=true;cs.hidden=true;body.classList.remove('focus')}});
+// focus-mode exit: tap the top edge area
+var fx=document.createElement('button');fx.type='button';fx.textContent='Exit focus';fx.className='h2read';fx.style.cssText='position:fixed;right:10px;top:10px;z-index:45;float:none;display:none';fx.onclick=function(){body.classList.remove('focus')};body.appendChild(fx);
+new MutationObserver(function(){fx.style.display=body.classList.contains('focus')?'block':'none'}).observe(body,{attributes:true,attributeFilter:['class']});
+// scroll handling
+var tick=false,saveAt=0;
+function onScroll(){
+  if(tick)return;tick=true;requestAnimationFrame(function(){
+    tick=false;
+    var doc=document.documentElement,max=doc.scrollHeight-innerHeight;
+    bar.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';
+    var vh=innerHeight,r=rec(),ch=false;
+    heads.forEach(function(h,i){
+      var t=h.getBoundingClientRect().top;
+      if(t<vh&&t>-40)seen[h.id]=1;
+      var nt=i+1<heads.length?heads[i+1].getBoundingClientRect().top:(scrollY>=max-160?-1:1e9);
+      if(seen[h.id]&&nt<vh*0.35&&!r.read[h.id]&&!manual[h.id]){r.read[h.id]=1;ch=true;h._b._paint()}
+    });
+    if(ch){r.t=Date.now();S.save()}
+    refresh();
+    var now=Date.now();
+    if(now-saveAt>1500){saveAt=now;var c=curIdx(),rr=rec();
+      if(c>=0){var hh=heads[c].getBoundingClientRect().top;rr.pos={s:ids[c],o:Math.round(-hh)};rr.t=now}
+      S.get().last={nb:N.id,ch:N.ch,s:c>=0?ids[c]:'',st:c>=0?titles[c]:'',ts:now};S.save()}
+  })}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
+S.onChange(function(){if(box)box.checked=!!rec().done;repaint()});
+refresh();onScroll();
+// resume offer
+var p=rec().pos;
+if(!location.hash&&p&&p.s&&ids.indexOf(p.s)>0){
+  var el=document.getElementById(p.s);
+  var t=document.createElement('div');t.className='toast';t.innerHTML='<span>Resume at “'+esc(titles[ids.indexOf(p.s)])+'”?</span><button type="button" id="tgo">Resume</button><button type="button" id="tx">Dismiss</button>';
+  body.appendChild(t);
+  t.querySelector('#tgo').onclick=function(){if(el){el.scrollIntoView({block:'start'});scrollBy(0,(p.o||0))}t.remove()};
+  t.querySelector('#tx').onclick=function(){t.remove()};
+  setTimeout(function(){if(t.parentNode)t.remove()},12000);
+}
+})();
+</script></body></html>

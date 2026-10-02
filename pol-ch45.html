@@ -1,0 +1,477 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Ch 45 · Information Commissions</title><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style><style>:root{--bg:#FBFAF6;--surface:#fff;--surface2:#F3F1EA;--ink:#1F2A2A;--muted:#5D6A68;--line:#DAD6C8;--acc:#0E6B5C;--acc-ink:#fff;--acc-soft:#DDF0EA;--saf:#B85C00;--saf-soft:#FFF0DB;--red:#B3261E;--red-soft:#FDE7E4;--blue:#1F5FA8;--blue-soft:#E3EEFA;--good:#2E7D32;--good-soft:#E3F3E4;--hl:#FFE9A6;
+--c0:#0E6B5C;--c1:#B85C00;--c2:#1F5FA8;--c3:#8E3B8E;--c4:#B3261E;--c5:#5C7A1F;--c6:#8A6D00;--c7:#37607A;
+--serif:Literata,Spectral,Georgia,'Times New Roman',serif;--sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:17px/1.65 var(--serif);margin:0}
+a{color:var(--acc)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;margin:0}
+.bar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.barin{display:flex;align-items:center;gap:8px;padding:8px 16px;max-width:1200px;margin:0 auto;font:600 14px var(--sans);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.barin::-webkit-scrollbar{display:none}
+.bar a.home,.nbtn,.themebtn{color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 10px;font:600 13px var(--sans);cursor:pointer;flex:none}
+.nbtn{padding:5px 12px;font-size:16px;line-height:1}.nbtn.off{opacity:.35}
+.bartitle{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-weight:500}.bartitle b{color:var(--acc)}
+.done{display:flex;align-items:center;gap:5px;flex:none;font:600 13px var(--sans);cursor:pointer}.done input{width:18px;height:18px;accent-color:var(--acc)}
+.layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px;padding:0 16px}
+.sidetoc{position:sticky;top:58px;align-self:start;max-height:calc(100vh - 70px);overflow:auto;padding:18px 0;font:14px/1.4 var(--sans)}
+.sth{font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;color:var(--muted);margin-bottom:8px}
+.sidetoc ol{list-style:none;margin:0;padding:0}.sidetoc li{margin:0}.sidetoc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--ink);text-decoration:none}.sidetoc a:hover,.sidetoc a.on{border-color:var(--acc);color:var(--acc);background:var(--acc-soft)}
+.page{max-width:780px;margin:0 auto;padding:24px 16px 60px;width:100%;min-width:0}
+.home-page{max-width:900px}
+.chead{margin-bottom:22px}
+.eyebrow{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font-size:clamp(28px,5vw,40px);margin:6px 0 10px;font-weight:700}
+.lede{font-size:18px;color:var(--muted);margin:10px 0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:600 12px var(--sans);padding:3px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--line);color:var(--muted)}
+.pill.cls{background:var(--acc-soft);color:var(--acc);border-color:transparent}.pill.hb{background:var(--saf-soft);color:var(--saf);border-color:transparent}
+h2{font-size:clamp(22px,3.6vw,28px);margin:40px 0 12px;padding-top:14px;border-top:2px solid var(--acc);font-weight:700}
+h3{font-size:19px;margin:24px 0 8px;color:var(--acc)}
+h4{font-size:16px;margin-bottom:10px}
+.anchor{margin-left:8px;font-size:.7em;color:var(--muted);opacity:0;text-decoration:none}h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 12px}
+mark{background:var(--hl);color:inherit;padding:0 3px;border-radius:3px}
+.lst{margin:0 0 14px;padding-left:22px}.lst li{margin:5px 0}.lst li.sub{margin-left:18px;list-style:circle;color:var(--ink)}
+.gdesc{color:var(--muted);font:15px var(--sans);margin:-4px 0 12px}
+.xref{font:600 .92em var(--sans);white-space:nowrap}
+.callout{border-left:4px solid var(--acc);background:var(--acc-soft);border-radius:0 10px 10px 0;padding:10px 14px 4px;margin:14px 0}
+.callout .tag{display:inline-block;font:700 11px var(--sans);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;color:var(--acc)}
+.callout.teacher{border-color:var(--saf);background:var(--saf-soft)}.callout.teacher .tag{color:var(--saf)}
+.callout.alert{border-color:var(--red);background:var(--red-soft)}.callout.alert .tag{color:var(--red)}
+.callout.note{border-color:var(--blue);background:var(--blue-soft)}.callout.note .tag{color:var(--blue)}
+.callout.example{border-color:var(--good);background:var(--good-soft)}.callout.example .tag{color:var(--good)}
+.callout.source{background:var(--surface2);border-color:var(--line)}.callout.source .tag{color:var(--muted)}
+figure{margin:18px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure img{display:block;width:100%;height:auto;background:#fff}
+figure a.zoom{display:block;cursor:zoom-in}
+figcaption{padding:8px 12px;font:14px/1.45 var(--sans);color:var(--muted)}.figsrc{font:700 11px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--acc);margin-right:6px}
+.tblock{margin:16px 0}.tcap{font:700 14px var(--sans);margin-bottom:6px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font:15px/1.45 var(--sans);min-width:480px}
+th,td{padding:8px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--acc);color:var(--acc-ink);font-weight:700}
+tbody th{background:var(--surface2);font-weight:700}tbody tr:last-child>*{border-bottom:0}tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface2) 55%,transparent)}
+.stepsblock{margin:16px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}.stepsblock ol{margin:0;padding-left:22px}.stepsblock li{margin:4px 0}
+.flow{margin:20px 0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.chain{display:flex;flex-direction:column;align-items:stretch}
+.step{border:1.5px solid var(--acc);background:var(--acc-soft);border-radius:10px;padding:8px 12px;font:15px/1.4 var(--sans)}
+.step .sl{font-weight:700}.step .ss{color:var(--muted);font-size:14px;margin-top:2px}
+.step.warn{border-color:var(--saf);background:var(--saf-soft)}.step.bad{border-color:var(--red);background:var(--red-soft)}.step.good{border-color:var(--good);background:var(--good-soft)}
+.arr{height:20px;position:relative;flex:none}.arr:before{content:"";position:absolute;left:50%;top:0;bottom:6px;border-left:2px solid var(--muted)}.arr:after{content:"";position:absolute;left:calc(50% - 5px);bottom:0;border:5px solid transparent;border-top:7px solid var(--muted);border-bottom:0}
+.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.lane{display:flex;flex-direction:column}.lane-h{font:700 12px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;text-align:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:10px}.seg button{font:600 13px var(--sans);padding:6px 14px;border:0;background:var(--surface);color:var(--ink);cursor:pointer}.seg button[aria-pressed=true]{background:var(--acc);color:var(--acc-ink)}
+.mapblock h2{margin-top:10px}
+.mmframe{overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:8px;-webkit-overflow-scrolling:touch}
+svg.mm{display:block;font-family:var(--sans)}
+.mm-root{fill:var(--acc)}.mm-root-t{fill:var(--acc-ink);font:700 14px var(--sans)}
+.mm-link{fill:none;stroke-width:2;opacity:.7}.mm-branch-t{font:700 13px var(--sans);fill:#fff}.mm-leaf-t{font:13px var(--sans);fill:var(--ink)}.mm-leaf-n{font:11.5px var(--sans);fill:var(--muted)}
+.mm-leaf{fill:var(--surface2);stroke-width:1.5}
+.mm-branch.c0{fill:var(--c0)}.mm-branch.c1{fill:var(--c1)}.mm-branch.c2{fill:var(--c2)}.mm-branch.c3{fill:var(--c3)}.mm-branch.c4{fill:var(--c4)}.mm-branch.c5{fill:var(--c5)}.mm-branch.c6{fill:var(--c6)}.mm-branch.c7{fill:var(--c7)}
+.mm-link.c0,.mm-leaf.c0{stroke:var(--c0)}.mm-link.c1,.mm-leaf.c1{stroke:var(--c1)}.mm-link.c2,.mm-leaf.c2{stroke:var(--c2)}.mm-link.c3,.mm-leaf.c3{stroke:var(--c3)}.mm-link.c4,.mm-leaf.c4{stroke:var(--c4)}.mm-link.c5,.mm-leaf.c5{stroke:var(--c5)}.mm-link.c6,.mm-leaf.c6{stroke:var(--c6)}.mm-link.c7,.mm-leaf.c7{stroke:var(--c7)}
+:root:not([data-theme="dark"]) .mm-branch-t{fill:#fff}
+.outline,.outline ul{list-style:none;padding-left:18px;margin:4px 0}.outline>li{padding-left:0}.outline summary{cursor:pointer;font:700 15px var(--sans)}
+.outline li.c0>details>summary{color:var(--c0)}.outline li.c1>details>summary{color:var(--c1)}.outline li.c2>details>summary{color:var(--c2)}.outline li.c3>details>summary{color:var(--c3)}.outline li.c4>details>summary{color:var(--c4)}.outline li.c5>details>summary{color:var(--c5)}.outline li.c6>details>summary{color:var(--c6)}.outline li.c7>details>summary{color:var(--c7)}
+.ol-note{color:var(--muted);font-size:.9em}
+.timeline{list-style:none;margin:10px 0;padding:0;position:relative}
+.timeline:before{content:"";position:absolute;left:94px;top:0;bottom:0;border-left:2px solid var(--line)}
+.tl{display:grid;grid-template-columns:86px 18px 1fr;gap:0 6px;margin:0 0 12px;align-items:start}
+.yr{font:700 14px var(--mono);text-align:right;color:var(--acc);padding-top:2px}
+.pin{width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--acc);margin:7px 0 0 2px;position:relative;z-index:1}
+.tl.high .pin{background:var(--saf);border-color:var(--saf)}
+.tlbody{font:16px/1.5 var(--sans);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px}
+.tl.high .tlbody{border-color:var(--saf)}.star{color:var(--saf);margin-left:6px}.sref{float:right;margin-left:10px;font:600 12px var(--sans);text-decoration:none}
+.lkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.link{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:15px/1.45 var(--sans)}.link p{margin:4px 0 0;color:var(--muted)}.lk-line{font-weight:700}
+.recall{font:16px/1.55 var(--sans);padding-left:24px}.recall li{margin:6px 0}
+.count{font:600 13px var(--sans);color:var(--muted);margin:8px 0}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;font:16px/1.5 var(--sans)}
+.q .qt{font-weight:700;margin-bottom:8px}.q .opt{display:block;width:100%;text-align:left;padding:8px 12px;margin:6px 0;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.q .opt:hover{border-color:var(--acc)}.q .opt.right{border-color:var(--good);background:var(--good-soft)}.q .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.q .ex{margin-top:8px;color:var(--muted)}
+.deck{margin:10px 0}
+.fc{min-height:150px;background:var(--surface);border:2px solid var(--acc);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:center;text-align:center;font:18px/1.5 var(--serif);cursor:pointer;user-select:none}
+.fc.back{background:var(--acc-soft)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.btn{font:600 14px var(--sans);padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.pri{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:40px 0 20px}.pager a{display:block;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--ink);font:600 15px var(--sans)}.pager a.nx{text-align:right}.pager small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+footer{color:var(--muted);font:13px/1.5 var(--sans);border-top:1px solid var(--line);padding-top:14px;margin-top:30px}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:flex;align-items:center;justify-content:center;padding:10px;overflow:auto}#lightbox img{max-width:none;width:min(1600px,100%);height:auto;background:#fff;cursor:zoom-out}
+.part{margin:34px 0}.part h2{margin-top:0}
+.chlist{display:flex;flex-direction:column;gap:8px}
+.chcard{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+a.chcard:hover{border-color:var(--acc)}.chcard.pending{opacity:.5}
+.chn{font:700 18px var(--mono);color:var(--acc);text-align:center}.cht b{font:700 16px var(--serif);display:block}.cht small{font:13px/1.4 var(--sans);color:var(--muted);display:block;margin-top:2px}
+.chb{display:flex;flex-direction:column;gap:4px;align-items:flex-end;font:600 11px var(--sans)}.chb em{font-style:normal;background:var(--acc-soft);color:var(--acc);padding:2px 8px;border-radius:99px}.chb i.tick{font-style:normal;background:var(--good);color:#fff;padding:2px 8px;border-radius:99px}
+.prog{font:600 14px var(--sans);color:var(--muted)}
+.sbox{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:17px var(--sans);margin:6px 0 14px}
+.results .hit{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0;font:15px/1.5 var(--sans)}.results .hit a{font-weight:700}.results .hit small{color:var(--muted)}
+.chips{display:flex;gap:8px;margin-bottom:8px}.chip{font:600 13px var(--sans);padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}.chip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+@media (max-width:900px){.layout{display:block}.sidetoc{display:none}}
+@media (max-width:560px){body{font-size:16.5px}.tl{grid-template-columns:62px 16px 1fr}.timeline:before{left:70px}.yr{font-size:12px}.chcard{grid-template-columns:34px 1fr}.chb{display:none}.lanes{grid-template-columns:1fr}}
+
+code{font:.88em var(--mono);background:var(--surface2);padding:1px 5px;border-radius:4px}
+
+/* ---- reader app ---- */
+:root{--zoom:1;--lh:1.65;--pw:780px}
+:root[data-theme="sepia"]{--bg:#F4ECD8;--surface:#FBF5E6;--surface2:#EADFC4;--ink:#3B3022;--muted:#7A6A52;--line:#D8C9A6;--acc:#7A4A12;--acc-ink:#fff;--acc-soft:#EFDDB8;--saf:#A4470A;--saf-soft:#F6E2BE;--red:#9C2A1C;--red-soft:#F3D9CB;--blue:#2F5C8A;--blue-soft:#DDE6E4;--good:#3E6B2A;--good-soft:#DDE8C8;--hl:#F2D98A;color-scheme:light}
+:root[data-font="sans"] body{font-family:var(--sans)}
+:root[data-font="sans"] .notes p,:root[data-font="sans"] .notes li{font-family:var(--sans)}
+.page{zoom:var(--zoom);max-width:var(--pw)}
+.notes p,.notes li{line-height:var(--lh)}
+.rbar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--acc);z-index:40;transition:width .15s}
+.aabtn{color:var(--ink);border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 12px;font:700 14px var(--serif);cursor:pointer;flex:none}
+.h2read{float:right;margin:2px 0 0 10px;font:600 12px var(--sans);border:1px solid var(--line);background:var(--surface2);color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer;min-height:30px}
+.h2read[aria-pressed="true"]{background:var(--acc-soft);color:var(--acc);border-color:var(--acc)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding:6px 10px calc(6px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:center;justify-content:center}
+.dock button{font:600 14px var(--sans);min-height:44px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;padding:0 14px;cursor:pointer}
+.dock .mid{flex:1;max-width:520px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dock .mid b{color:var(--acc)}
+body.has-dock .page{padding-bottom:110px}
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.sheetin{background:var(--surface);color:var(--ink);width:100%;max-width:560px;max-height:82vh;overflow:auto;border-radius:16px 16px 0 0;padding:16px 18px calc(18px + env(safe-area-inset-bottom,0px));font:15px/1.4 var(--sans)}
+.sheetin h3{margin:0 0 10px;font:700 17px var(--sans)}
+.srow{display:flex;align-items:center;gap:10px;margin:12px 0;flex-wrap:wrap}
+.srow label{flex:0 0 92px;color:var(--muted);font-weight:600}
+.srow .grp{display:flex;gap:6px;flex-wrap:wrap}
+.srow button{font:600 14px var(--sans);min-height:42px;min-width:48px;padding:0 12px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;cursor:pointer}
+.srow button[aria-pressed="true"]{border-color:var(--acc);background:var(--acc-soft);color:var(--acc)}
+.secl a{display:flex;gap:10px;align-items:center;padding:12px 6px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;min-height:44px}
+.secl a .tk{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;color:var(--acc-ink)}
+.secl a.rd .tk{background:var(--acc);border-color:var(--acc)}
+.secl a.cur{background:var(--acc-soft)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:50;background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 14px;display:flex;gap:12px;align-items:center;font:600 14px var(--sans);max-width:92vw;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.toast button{font:700 14px var(--sans);background:transparent;border:0;color:var(--bg);text-decoration:underline;cursor:pointer;min-height:36px}
+body.focus .bar{display:none}body.focus .sidetoc{display:none}
+figcaption.clamp{max-height:3.3em;overflow:hidden;position:relative;cursor:pointer}
+figcaption.clamp.open{max-height:none}
+figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bottom:0;background:var(--bg);color:var(--acc);font:700 12px var(--sans);padding-left:14px}
+.cbar{display:block;height:4px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}.cbar i{display:block;height:100%;width:0;background:var(--acc)}
+.nbcard h2{border:0;padding:0}.nbcard{border-top:1px solid var(--line)}
+</style><style>
+.mn{display:inline-flex;gap:4px;flex-wrap:wrap;margin:2px 0 6px}.mn b{font:700 15px var(--mono);background:var(--acc);color:var(--acc-ink);border-radius:6px;padding:1px 8px}
+.callout.shortcut{border-color:var(--saf);background:var(--saf-soft)}.callout.shortcut .tag{color:var(--saf)}
+.callout.mnemo{border-color:var(--c3);background:var(--surface2)}.callout.mnemo .tag{color:var(--c3)}
+.callout p,.callout li{font-family:var(--sans)}
+.art{font-family:var(--mono);font-size:.86em;background:var(--acc-soft);padding:0 .28em;border-radius:4px;white-space:nowrap}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin:14px 0}
+.two .col{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:10px 14px;font:15px/1.5 var(--sans)}
+.two .col h4{margin:0 0 4px;font:700 13px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--acc)}
+.two .col ul{margin:4px 0;padding-left:18px}
+.ptag{display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:2px 9px;margin-left:8px;vertical-align:middle}
+.ptag.high{background:var(--red-soft);color:var(--red)}.ptag.med{background:var(--saf-soft);color:var(--saf)}.ptag.low{background:var(--surface2);color:var(--muted)}
+</style></head><body><header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="pol-home.html">Contents</a><a class="nbtn" href="pol-ch44.html" title="Lokpal and Lokayukta" aria-label="Previous chapter">‹</a><span class="bartitle"><b>Ch 45</b> Information Commissions</span><a class="nbtn" href="pol-ch46.html" title="National Investigation Agency" aria-label="Next chapter">›</a><a class="home" href="pol-search.html">Search</a><a class="home" href="pol-timeline.html">Timeline</a><label class="done"><input type="checkbox" id="donebox" data-ch="45"><span>Done</span></label><button class="aabtn" id="aabtn" type="button" aria-label="Reading settings">Aa</button></div></header><div class="layout"><aside class="sidetoc"><div class="sth">In this chapter</div><ol><li><a href="#chapter-map">Chapter map</a></li><li><a href="#exam-lens-priority-and-pyqs">Exam lens: priority and PYQs</a></li><li><a href="#1-introduction-and-global-perspective">1 · Introduction and global perspective</a></li><li><a href="#2-cic-composition-appointment-tenure-and-removal">2 · CIC: composition, appointment, tenure and removal</a></li><li><a href="#3-powers-and-functions-of-the-cic">3 · Powers and functions of the CIC</a></li><li><a href="#4-recent-reforms-challenges-and-way-forward-cic">4 · Recent reforms, challenges and way forward (CIC)</a></li><li><a href="#5-state-information-commission-status-compositio">5 · State Information Commission: status, composition and tenure</a></li><li><a href="#6-powers-and-functions-of-the-sic">6 · Powers and functions of the SIC</a></li><li><a href="#7-rti-amendment-act-2019-key-changes">7 · RTI (Amendment) Act, 2019: key changes</a></li><li><a href="#chapter-timeline">Timeline</a></li><li><a href="#connects">Connects to</a></li><li><a href="#recall">Recall sheet</a></li><li><a href="#practice">Test yourself</a></li></ol></aside><main class="page"><div class="chead"><div class="eyebrow">Polity · Part 3 · Bodies, Commissions and Governance · Chapter 45</div><h1>Information Commissions<span class="ptag low">None quoted</span></h1><div class="pills"><span class="pill hb">Handout only: no class slides</span><span class="pill ">Handout chapter: Central Information Commission and State Information Commission</span><span class="pill ">No PYQs quoted</span></div><p class="lede">The statutory final appellate bodies under the RTI Act, 2005: the global rights base, how the CIC and the State Commissions are composed, appointed and removed, what they can order, and how the RTI (Amendment) Act, 2019 changed tenure and pay.</p></div><section class="mapblock"><h2 id="chapter-map">Chapter map<a class="anchor" href="#chapter-map">#</a></h2><div class="seg" role="group" aria-label="Map view"><button type="button" data-v="map" aria-pressed="true">Map</button><button type="button" data-v="outline" aria-pressed="false">Outline</button></div><div id="mm-map" class="mmframe"><svg class="mm" viewBox="0 0 645 1012" width="645" height="1012" role="img" aria-label="Mind map: Information Commissions"><rect class="mm-root" x="8" y="505.4" width="114.2" height="47.2" rx="6"/><text class="mm-root-t" x="65.1" y="525.2" text-anchor="middle">Information</text><text class="mm-root-t" x="65.1" y="542.8" text-anchor="middle">Commissions</text><path class="mm-link c0" d="M122.2,529.0 C154.2,529.0 154.2,76.0 186.2,76.0"/><rect class="mm-branch c0" x="186.2" y="62.0" width="80.0" height="28" rx="5"/><text class="mm-branch-t" x="226.2" y="80.5" text-anchor="middle">Basis</text><path class="mm-link c0" d="M266.2,76.0 C294.2,76.0 412.2,28.0 440.2,28.0"/><rect class="mm-leaf c0" x="440.2" y="8" width="120.6" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="23.5">RTI Act, 2005</text><text class="mm-leaf-n" x="450.2" y="38.5">statutory body</text><path class="mm-link c0" d="M266.2,76.0 C294.2,76.0 412.2,76.0 440.2,76.0"/><rect class="mm-leaf c0" x="440.2" y="56" width="113.7" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="71.5">Art. 19(1)(a)</text><text class="mm-leaf-n" x="450.2" y="86.5">right to know</text><path class="mm-link c0" d="M266.2,76.0 C294.2,76.0 412.2,124.0 440.2,124.0"/><rect class="mm-leaf c0" x="440.2" y="104" width="153.0" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="119.5">UDHR, ICCPR, ICESCR</text><text class="mm-leaf-n" x="450.2" y="134.5">global base</text><path class="mm-link c1" d="M122.2,529.0 C154.2,529.0 154.2,226.0 186.2,226.0"/><rect class="mm-branch c1" x="186.2" y="212.0" width="146.0" height="28" rx="5"/><text class="mm-branch-t" x="259.2" y="230.5" text-anchor="middle">CIC composition</text><path class="mm-link c1" d="M332.2,226.0 C360.2,226.0 412.2,178.0 440.2,178.0"/><rect class="mm-leaf c1" x="440.2" y="158" width="146.0" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="173.5">CIC + up to 10 ICs</text><text class="mm-leaf-n" x="450.2" y="188.5">max 11</text><path class="mm-link c1" d="M332.2,226.0 C360.2,226.0 412.2,226.0 440.2,226.0"/><rect class="mm-leaf c1" x="440.2" y="206" width="196.5" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="221.5">President appoints</text><text class="mm-leaf-n" x="450.2" y="236.5">PM, LoP, Cabinet Minister</text><path class="mm-link c1" d="M332.2,226.0 C360.2,226.0 412.2,274.0 440.2,274.0"/><rect class="mm-leaf c1" x="440.2" y="254" width="120.6" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="269.5">Sec. 12</text><text class="mm-leaf-n" x="450.2" y="284.5">CIC under DoPT</text><path class="mm-link c2" d="M122.2,529.0 C154.2,529.0 154.2,376.0 186.2,376.0"/><rect class="mm-branch c2" x="186.2" y="362.0" width="138.0" height="28" rx="5"/><text class="mm-branch-t" x="255.2" y="380.5" text-anchor="middle">Tenure and pay</text><path class="mm-link c2" d="M324.2,376.0 C352.2,376.0 412.2,328.0 440.2,328.0"/><rect class="mm-leaf c2" x="440.2" y="308" width="141.3" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="323.5">2019 Amendment</text><text class="mm-leaf-n" x="450.2" y="338.5">Centre prescribes</text><path class="mm-link c2" d="M324.2,376.0 C352.2,376.0 412.2,376.0 440.2,376.0"/><rect class="mm-leaf c2" x="440.2" y="356" width="174.0" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="371.5">Notified 3 yrs, age 65</text><text class="mm-leaf-n" x="450.2" y="386.5">Oct 2019</text><path class="mm-link c2" d="M324.2,376.0 C352.2,376.0 412.2,424.0 440.2,424.0"/><rect class="mm-leaf c2" x="440.2" y="404" width="195.0" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="419.5">Rs 2.5 lakh, Rs 2.25 lakh</text><text class="mm-leaf-n" x="450.2" y="434.5">CIC, IC</text><path class="mm-link c3" d="M122.2,529.0 C154.2,529.0 154.2,502.0 186.2,502.0"/><rect class="mm-branch c3" x="186.2" y="488.0" width="82.0" height="28" rx="5"/><text class="mm-branch-t" x="227.2" y="506.5" text-anchor="middle">Removal</text><path class="mm-link c3" d="M268.2,502.0 C296.2,502.0 412.2,478.0 440.2,478.0"/><rect class="mm-leaf c3" x="440.2" y="458" width="141.3" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="473.5">Sec. 14</text><text class="mm-leaf-n" x="450.2" y="488.5">President removes</text><path class="mm-link c3" d="M268.2,502.0 C296.2,502.0 412.2,526.0 440.2,526.0"/><rect class="mm-leaf c3" x="440.2" y="506" width="148.2" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="521.5">Six grounds</text><text class="mm-leaf-n" x="450.2" y="536.5">SC inquiry for (6)</text><path class="mm-link c4" d="M122.2,529.0 C154.2,529.0 154.2,652.0 186.2,652.0"/><rect class="mm-branch c4" x="186.2" y="638.0" width="80.0" height="28" rx="5"/><text class="mm-branch-t" x="226.2" y="656.5" text-anchor="middle">Powers</text><path class="mm-link c4" d="M266.2,652.0 C294.2,652.0 412.2,580.0 440.2,580.0"/><rect class="mm-leaf c4" x="440.2" y="560" width="118.0" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="575.5">Second appeals</text><text class="mm-leaf-n" x="450.2" y="590.5">Sec. 19(3)</text><path class="mm-link c4" d="M266.2,652.0 C294.2,652.0 412.2,628.0 440.2,628.0"/><rect class="mm-leaf c4" x="440.2" y="608" width="90.0" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="623.5">Complaints</text><text class="mm-leaf-n" x="450.2" y="638.5">Sec. 18</text><path class="mm-link c4" d="M266.2,652.0 C294.2,652.0 412.2,676.0 440.2,676.0"/><rect class="mm-leaf c4" x="440.2" y="656" width="146.0" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="671.5">Civil court powers</text><text class="mm-leaf-n" x="450.2" y="686.5">CPC 1908</text><path class="mm-link c4" d="M266.2,652.0 C294.2,652.0 412.2,724.0 440.2,724.0"/><rect class="mm-leaf c4" x="440.2" y="704" width="182.7" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="719.5">Penalty</text><text class="mm-leaf-n" x="450.2" y="734.5">Rs 250 a day, Rs 25,000</text><path class="mm-link c5" d="M122.2,529.0 C154.2,529.0 154.2,802.0 186.2,802.0"/><rect class="mm-branch c5" x="186.2" y="788.0" width="80.0" height="28" rx="5"/><text class="mm-branch-t" x="226.2" y="806.5" text-anchor="middle">SIC</text><path class="mm-link c5" d="M266.2,802.0 C294.2,802.0 412.2,778.0 440.2,778.0"/><rect class="mm-leaf c5" x="440.2" y="758" width="141.3" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="773.5">Sec. 15</text><text class="mm-leaf-n" x="450.2" y="788.5">Governor appoints</text><path class="mm-link c5" d="M266.2,802.0 C294.2,802.0 412.2,826.0 440.2,826.0"/><rect class="mm-leaf c5" x="440.2" y="806" width="160.0" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="821.5">SCIC + up to 10 SICs</text><text class="mm-leaf-n" x="450.2" y="836.5">CM-led committee</text><path class="mm-link c6" d="M122.2,529.0 C154.2,529.0 154.2,904.0 186.2,904.0"/><rect class="mm-branch c6" x="186.2" y="890.0" width="82.0" height="28" rx="5"/><text class="mm-branch-t" x="227.2" y="908.5" text-anchor="middle">Reforms</text><path class="mm-link c6" d="M268.2,904.0 C296.2,904.0 412.2,880.0 440.2,880.0"/><rect class="mm-leaf c6" x="440.2" y="860" width="167.0" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="875.5">Portal, Dashboard 2.0</text><text class="mm-leaf-n" x="450.2" y="890.5">digital push</text><path class="mm-link c6" d="M268.2,904.0 C296.2,904.0 412.2,928.0 440.2,928.0"/><rect class="mm-leaf c6" x="440.2" y="908" width="99.9" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="923.5">Pendency</text><text class="mm-leaf-n" x="450.2" y="938.5">over 30,000</text><path class="mm-link c7" d="M122.2,529.0 C154.2,529.0 154.2,982.0 186.2,982.0"/><rect class="mm-branch c7" x="186.2" y="968.0" width="114.0" height="28" rx="5"/><text class="mm-branch-t" x="243.2" y="986.5" text-anchor="middle">Way forward</text><path class="mm-link c7" d="M300.2,982.0 C328.2,982.0 412.2,982.0 440.2,982.0"/><rect class="mm-leaf c7" x="440.2" y="962" width="162.0" height="40" rx="4"/><text class="mm-leaf-t" x="450.2" y="977.5">Restore autonomy</text><text class="mm-leaf-n" x="450.2" y="992.5">fixed tenure, parity</text></svg></div><div id="mm-outline" hidden><ul class="outline"><li><strong>Information Commissions</strong><ul><li class="c0"><details open><summary>Basis</summary><ul><li>RTI Act, 2005 <span class="ol-note">statutory body</span></li><li>Art. 19(1)(a) <span class="ol-note">right to know</span></li><li>UDHR, ICCPR, ICESCR <span class="ol-note">global base</span></li></ul></details></li><li class="c1"><details open><summary>CIC composition</summary><ul><li>CIC + up to 10 ICs <span class="ol-note">max 11</span></li><li>President appoints <span class="ol-note">PM, LoP, Cabinet Minister</span></li><li>Sec. 12 <span class="ol-note">CIC under DoPT</span></li></ul></details></li><li class="c2"><details open><summary>Tenure and pay</summary><ul><li>2019 Amendment <span class="ol-note">Centre prescribes</span></li><li>Notified 3 yrs, age 65 <span class="ol-note">Oct 2019</span></li><li>Rs 2.5 lakh, Rs 2.25 lakh <span class="ol-note">CIC, IC</span></li></ul></details></li><li class="c3"><details open><summary>Removal</summary><ul><li>Sec. 14 <span class="ol-note">President removes</span></li><li>Six grounds <span class="ol-note">SC inquiry for (6)</span></li></ul></details></li><li class="c4"><details open><summary>Powers</summary><ul><li>Second appeals <span class="ol-note">Sec. 19(3)</span></li><li>Complaints <span class="ol-note">Sec. 18</span></li><li>Civil court powers <span class="ol-note">CPC 1908</span></li><li>Penalty <span class="ol-note">Rs 250 a day, Rs 25,000</span></li></ul></details></li><li class="c5"><details open><summary>SIC</summary><ul><li>Sec. 15 <span class="ol-note">Governor appoints</span></li><li>SCIC + up to 10 SICs <span class="ol-note">CM-led committee</span></li></ul></details></li><li class="c6"><details open><summary>Reforms</summary><ul><li>Portal, Dashboard 2.0 <span class="ol-note">digital push</span></li><li>Pendency <span class="ol-note">over 30,000</span></li></ul></details></li><li class="c7"><details open><summary>Way forward</summary><ul><li>Restore autonomy <span class="ol-note">fixed tenure, parity</span></li></ul></details></li></ul></li></ul></div></section><div class="notes"><h2 id="exam-lens-priority-and-pyqs">Exam lens: priority and PYQs<a class="anchor" href="#exam-lens-priority-and-pyqs" aria-label="Link to this section">#</a></h2><aside class="callout source"><span class="tag">Source note</span><p><strong>This chapter comes from the Sarrthi handout only.</strong> There are no class slides or teacher ink. Priority is none quoted, counted from the handout’s own PYQ section: <strong>0 Prelims and 0 Mains</strong> questions are quoted. <strong>None quoted in the material.</strong></p></aside><div class="tblock"><div class="tcap">What the handout itself stresses</div><div class="tablewrap"><table><thead><tr><th>Signal in the handout</th><th>Where</th><th>Why it matters</th></tr></thead><tbody><tr><th scope='row'><strong>No PYQ section</strong> is quoted for this chapter in the material</th><td>Whole chapter</td><td>Treat as a facts chapter: Sections (12, 14, 15, 18, 19(3)), numbers (11 members, 3 years, 65, Rs 250 and Rs 25,000) and the 2019 changes are the hooks.</td></tr><tr><th scope='row'><strong>CIC is statutory</strong> (RTI Act, 2005, <strong>Section 12</strong>); SIC under <strong>Section 15</strong>; the <strong>RTI right</strong> flows from <strong><span class="art">Article 19(1)(a)</span></strong> through judicial pronouncements</th><td>Sections 1 and 5</td><td>Statutory, not constitutional, bodies.</td></tr><tr><th scope='row'><strong>Composition</strong>: CIC plus up to <strong>10</strong> ICs (max <strong>11</strong>); committee <strong>PM, LoP, Union Cabinet Minister nominated by the PM</strong></th><td>Section 2</td><td>The committee differs from the CVC and Lokpal committees.</td></tr><tr><th scope='row'><strong>RTI (Amendment) Act, 2019</strong> removed fixed five-year tenure and parity of pay with Election Commissioners; the Centre now prescribes both</th><td>Sections 4 and 7</td><td>The central controversy of the chapter.</td></tr><tr><th scope='row'><strong>Section 18</strong> complaints and <strong>Section 19(3)</strong> second appeals; penalty <strong>Rs 250 per day up to Rs 25,000</strong></th><td>Section 3</td><td>Provision-number matching.</td></tr><tr><th scope='row'><strong>Writ remedy</strong>: orders binding unless challenged before the High Court (<span class="art">Article 226</span>)</th><td>Section 3</td><td>The CIC is the "final appellate authority" yet not beyond judicial review.</td></tr></tbody></table></div></div><aside class="callout key"><span class="tag">What to prepare</span><p><strong>Prelims hooks:</strong> statutory versus constitutional status; Sections 12, 14, 15, 18, 19(3), 4, 8(1), 25; composition and appointing committee; tenure after 2019; removal grounds; penalty amount; what the 2019 Amendment changed; <span class="art">Article 19(1)(a)</span>; UDHR and ICCPR <span class="art">Article 19</span>.</p><p><strong>Mains hooks:</strong> none quoted in the material. Likely angles from the notes: the 2019 amendment and independence of Information Commissions, pendency and vacancies, and the way forward.</p><p><strong>Closing idea:</strong> Information Commissions guard the citizen's right to know with civil court powers and penalties, but executive control over tenure and pay since 2019 is the standing worry about their independence.</p></aside><h2 id="1-introduction-and-global-perspective">1 · Introduction and global perspective<a class="anchor" href="#1-introduction-and-global-perspective" aria-label="Link to this section">#</a></h2>
+<p>The <strong>Central Information Commission (CIC)</strong> is a <strong>statutory body</strong> established under the <strong>Right to Information Act, 2005</strong>. The right to information promotes transparency, accountability and participatory democracy. The judiciary has treated it, through judicial pronouncements, as a <strong>fundamental right under <span class="art">Article 19(1)(a)</span></strong>.</p>
+<ul class='lst'><li>The CIC is the <strong>final appellate authority</strong> in RTI matters, but its decision can be challenged by a <strong>writ petition before any High Court</strong>.</li><li>By ensuring <strong>time-bound disclosure</strong> and <strong>penalising delays or denials</strong>, it strengthens participatory democracy and protects the "Right to Know", a derivative of <span class="art">Article 19(1)(a)</span>.</li></ul>
+<div class="tblock"><div class="tcap">Global perspective (the handout's table, rebuilt)</div><div class="tablewrap"><table><thead><tr><th>Instrument</th><th>Context for RTI</th><th>Key principle</th></tr></thead><tbody><tr><th scope='row'>UDHR: <span class="art">Article 19</span></th><td>Foundational right</td><td>Explicitly includes the freedom to "seek, receive and impart information" through any media; access to information is a prerequisite for freedom of opinion</td></tr><tr><th scope='row'>ICCPR: <span class="art">Article 19</span></th><td>Binding obligation</td><td>Turns the UDHR "declaration" into a binding treaty; a positive duty on states to give access to information held by public bodies, for government accountability</td></tr><tr><th scope='row'>ICESCR</th><td>Enabling right</td><td>RTI is not named, but information is an "enabling right": one cannot claim health, education or fair wages (Arts. 6-13) without information on schemes and services</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Three instruments</span><div class="mn"><b>U</b><b>I</b><b>I</b></div><p><strong>U</strong>DHR (foundational), <strong>I</strong>CCPR (binding), <strong>I</strong>CESCR (enabling): "<strong>U</strong>nion <strong>I</strong>s <strong>I</strong>nformed."</p></aside>
+<aside class="callout shortcut"><span class="tag">Global shortcut</span><p><strong>Declare, Bind, Enable</strong>: UDHR declares, ICCPR binds, ICESCR enables.</p></aside>
+<h2 id="2-cic-composition-appointment-tenure-and-removal">2 · CIC: composition, appointment, tenure and removal<a class="anchor" href="#2-cic-composition-appointment-tenure-and-removal" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">CIC at a glance (the handout's table, rebuilt)</div><div class="tablewrap"><table><thead><tr><th>Parameter</th><th>Details (RTI Act, 2005 and RTI Amendment Act, 2019; updated till 2024)</th></tr></thead><tbody><tr><th scope='row'>Legal status</th><td>Statutory body under <strong>Section 12</strong> of the RTI Act, 2005; functions under the <strong>Department of Personnel and Training (DoPT)</strong>, Ministry of Personnel, Public Grievances and Pensions</td></tr><tr><th scope='row'>Composition</th><td>Chief Information Commissioner (head) and up to <strong>10</strong> Information Commissioners; total not more than <strong>11</strong></td></tr><tr><th scope='row'>Appointing authority</th><td>The President of India appoints the CIC and ICs</td></tr><tr><th scope='row'>Appointment committee</th><td>Section 12(3): three members: Prime Minister (Chairperson); Leader of Opposition in the Lok Sabha (or leader of the single largest opposition group if there is no recognised LoP); a Union Cabinet Minister nominated by the Prime Minister</td></tr><tr><th scope='row'>Eligibility</th><td>Persons of eminence in public life with wide knowledge and experience in law, science and technology, social service, management, journalism, mass media, or administration and governance. Cannot be an MP, a member of a State Legislature, or hold any office of profit or political affiliation</td></tr><tr><th scope='row'>Tenure</th><td>Under the 2019 Amendment, as prescribed by the Central Government (not fixed in the Act). Per DoPT notification (October 2019): <strong>3 years or age 65</strong>, whichever is earlier. Earlier: fixed 5 years</td></tr><tr><th scope='row'>Reappointment</th><td>Not eligible. An IC may be appointed CIC within the same overall tenure limit</td></tr><tr><th scope='row'>Service conditions (post-2019)</th><td>Prescribed by the Central Government by notification. Earlier: CIC pay equal to the Chief Election Commissioner; ICs equal to Election Commissioners. Under 2019 DoPT Rules: <strong>CIC Rs 2,50,000 a month (fixed); IC Rs 2,25,000 a month (fixed)</strong></td></tr><tr><th scope='row'>Resignation</th><td>By writing to the President</td></tr><tr><th scope='row'>Removal authority</th><td>President, on specified grounds under <strong>Section 14</strong> of the RTI Act, 2005</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Appointment committee</span><div class="mn"><b>P</b><b>L</b><b>C</b></div><p><strong>P</strong>M (chair), <strong>L</strong>oP in Lok Sabha, <strong>C</strong>abinet Minister nominated by the PM: "<strong>P</strong>ublic <strong>L</strong>ife <strong>C</strong>ounts."</p></aside>
+<aside class="callout shortcut"><span class="tag">Count shortcut</span><p><strong>1 + 10 = 11</strong>. <strong>3 and 65</strong>: three years or age 65 (notified, 2019). Old rule: <strong>5 years</strong>, pay equal to <strong>CEC</strong> and <strong>EC</strong>.</p></aside>
+<div class="two"><div class="col"><h4>Before</h4><ul><li>Fixed five years or age 65</li><li>pay equal to CEC (CIC) and EC (ICs)</li><li>fixed by Parliament through the Act</li></ul></div><div class="col"><h4>After</h4><ul><li>Tenure and pay prescribed by the Central Government</li><li>DoPT notification Oct 2019: 3 years or 65</li><li>CIC Rs 2,50,000 and IC Rs 2,25,000 a month</li></ul></div></div>
+<aside class="callout alert"><span class="tag">Handout alert</span><p>The handout says the 2019 Amendment left <strong>no fixed tenure</strong> (the Centre prescribes it), and also quotes the <strong>DoPT notification (October 2019) of 3 years or age 65</strong>. Read them together: the Act no longer fixes tenure; the Centre's current rule is 3 years or 65. For the SIC the handout says "as prescribed by the Central Government or until age 65" and gives no fixed figure.</p></aside>
+<h3>Grounds for removal (Section 14)</h3>
+<ul class='lst'><li>Insolvency.</li><li>Conviction for an offence involving moral turpitude (in the President's opinion).</li><li>Paid employment outside official duties.</li><li>Mental or physical infirmity (in the President's opinion).</li><li>Financial or other interests prejudicially affecting official duties.</li><li>Proved misbehaviour or incapacity, after inquiry by the <strong>Supreme Court</strong> and its recommendation for removal.</li></ul>
+<aside class="callout mnemo"><span class="tag">Six grounds</span><div class="mn"><b>I</b><b>C</b><b>P</b><b>I</b><b>F</b><b>P</b></div><p><strong>I</strong>nsolvency, <strong>C</strong>onviction, <strong>P</strong>aid job, <strong>I</strong>nfirmity, <strong>F</strong>inancial interest, <strong>P</strong>roved misbehaviour: "<strong>I</strong> <strong>C</strong>an <strong>P</strong>ay <strong>I</strong>f <strong>F</strong>ree, <strong>P</strong>lease."</p></aside>
+<section class="flow"><h4>Safeguard against arbitrary removal</h4><div class="chain"><div class="step "><div><div class="sl">Charge</div><div class="ss">Proved misbehaviour or incapacity alleged</div></div></div><div class="arr" aria-hidden="true"></div><div class="step warn"><div><div class="sl">President refers</div><div class="ss">The matter must go to the Supreme Court for inquiry</div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">Court upholds</div><div class="ss">Only after the Court upholds the charge can the President remove</div></div></div></div></section>
+<h2 id="3-powers-and-functions-of-the-cic">3 · Powers and functions of the CIC<a class="anchor" href="#3-powers-and-functions-of-the-cic" aria-label="Link to this section">#</a></h2>
+<p>The CIC is the <strong>final appellate authority</strong> for matters concerning <strong>Central Public Authorities</strong> under the RTI Act. It makes sure the right is not curtailed by delay, denial or excessive fees.</p>
+<aside class="callout mnemo"><span class="tag">Six roles</span><div class="mn"><b>A</b><b>I</b><b>C</b><b>A</b><b>S</b><b>Q</b></div><p><strong>A</strong>djudicatory, <strong>I</strong>nvestigative, <strong>C</strong>ompliance and enforcement, <strong>A</strong>dvisory and reporting, <strong>S</strong>upervisory and monitoring, <strong>Q</strong>uasi-judicial: "<strong>A</strong> <strong>I</strong>nformed <strong>C</strong>itizen <strong>A</strong>sks, <strong>S</strong>ees, <strong>Q</strong>uestions."</p></aside>
+<h3>1. Adjudicatory powers</h3>
+<ul class='lst'><li><strong>Second appeals</strong> against orders of the First Appellate Authority, under <strong>Section 19(3)</strong>.</li><li><strong>Complaints under Section 18</strong> from any person who: was denied access to information; could not submit an RTI request because no <strong>PIO</strong> was appointed; was charged unreasonable fees; got incomplete, false or misleading information.</li></ul>
+<h3>2. Investigative and inquiry powers</h3>
+<ul class='lst'><li>Can inquire <strong>suo motu</strong> or on a complaint when there are reasonable grounds.</li><li><strong>Civil court powers</strong> under the Code of Civil Procedure, 1908: summon and compel attendance and evidence on oath; discovery and inspection of documents; evidence on affidavits; requisition any public record from any court or office; issue summons for examination of witnesses or documents; inspect records <strong>in camera</strong> if required to protect sensitive information.</li><li><strong>Section 18(3)</strong>: no public authority may withhold any record from the Commission during the inquiry.</li></ul>
+<h3>3. Compliance and enforcement powers</h3>
+<div class="tblock"><div class="tcap">What the CIC can order</div><div class="tablewrap"><table><thead><tr><th>Power</th><th>Detail</th></tr></thead><tbody><tr><th scope='row'>Disclosure</th><td>Direct disclosure in a specified form or language</td></tr><tr><th scope='row'>PIO</th><td>Order appointment of a PIO where none exists</td></tr><tr><th scope='row'>Proactive publication</th><td>Mandate publication under <strong>Section 4</strong></td></tr><tr><th scope='row'>Record management</th><td>Recommend digitisation, indexing, preservation systems</td></tr><tr><th scope='row'>Compensation</th><td>Order compensation to applicants for loss or detriment from denial or delay</td></tr><tr><th scope='row'>Penalty</th><td>On errant PIOs: <strong>Rs 250 per day, up to Rs 25,000</strong>; recommend disciplinary action for persistent violation</td></tr></tbody></table></div></div>
+<aside class="callout shortcut"><span class="tag">Penalty shortcut</span><p><strong>250 a day, 25,000 cap</strong>: 100 days of delay reach the cap.</p></aside>
+<h3>4. Advisory and reporting functions</h3>
+<ul class='lst'><li><strong>Annual report</strong> to the Central Government on RTI implementation, laid before <strong>both Houses</strong> of Parliament.</li><li><strong>Recommendations</strong> to public authorities for conformity with the Act.</li><li><strong>Awareness and training</strong>: workshops, guides, circulars.</li><li><strong>Policy consultation</strong>: assists DoPT and ministries in revising RTI rules, digital disclosure and proactive publication norms.</li></ul>
+<h3>5. Supervisory and monitoring role</h3>
+<ul class='lst'><li>Watchdog across all Central Public Authorities, PSUs and UT administrations.</li><li>Reviews periodic reports of departments under <strong>Section 25</strong>.</li><li>Monitors compliance and recommends reforms where delay, secrecy or opacity appear.</li><li>Works with State Information Commissions for uniform interpretation and best practices.</li></ul>
+<h3>6. Quasi-judicial nature</h3>
+<ul class='lst'><li>Proceedings are deemed <strong>judicial proceedings</strong> under <strong>Sections 193 and 228 of the IPC</strong>.</li><li>Orders are <strong>binding</strong> unless challenged before the High Court under writ jurisdiction (<strong><span class="art">Article 226</span></strong>).</li><li>Keeps case law repositories for consistency and transparency.</li></ul>
+<div class="two"><div class="col"><h4>Section 18 complaint</h4><ul><li>By any person: denied access, no PIO, unreasonable fees, incomplete or false information</li><li>CIC may inquire and use civil court powers</li></ul></div><div class="col"><h4>Section 19(3) second appeal</h4><ul><li>Against the First Appellate Authority's order</li><li>CIC decides on merits as final appellate authority</li></ul></div></div>
+<h2 id="4-recent-reforms-challenges-and-way-forward-cic">4 · Recent reforms, challenges and way forward (CIC)<a class="anchor" href="#4-recent-reforms-challenges-and-way-forward-cic" aria-label="Link to this section">#</a></h2>
+<h3>Key reforms and developments</h3>
+<div class="tblock"><div class="tcap">Four developments</div><div class="tablewrap"><table><thead><tr><th>Development</th><th>What the handout says</th></tr></thead><tbody><tr><th scope='row'>RTI (Amendment) Act, 2019</th><td>Removed the fixed five-year tenure and pay parity with ECs; the Central Government now decides tenure, salary and service conditions. Government: flexibility and administrative efficiency. Critics: independence compromised by financial and administrative dependence on the executive</td></tr><tr><th scope='row'>Digitalisation</th><td>RTI Online Portal expanded to all UTs and major Central PSUs (e-filing, appeals, fee payment); <strong>CIC Dashboard 2.0 (2022)</strong>; video-conferencing hearings institutionalised during COVID-19</td></tr><tr><th scope='row'>AI-based file tracking (2024)</th><td>DoPT and CIC piloted an AI-driven system to predict pendency, track appeals and flag delays</td></tr><tr><th scope='row'>Backlog clearance drives</th><td>Special benches (2021-23); pendency crossed <strong>32,000</strong> by late 2023; summary disposal of repetitive cases, digitisation, link with CPGRAMS</td></tr></tbody></table></div></div>
+<h3>Emerging challenges</h3>
+<ul class='lst'><li><strong>Institutional independence</strong>: the 2019 amendment blurs autonomous oversight and executive control; lack of CIC and EC parity weakens stature.</li><li><strong>Pendency and capacity</strong>: pending appeals consistently above <strong>30,000</strong>, average wait over <strong>10 months</strong>; vacancies, especially of the Chief Information Commissioner, delay decisions.</li><li><strong>Transparency fatigue</strong>: misuse of <strong>Section 8(1)</strong> exemptions on vague "national interest" grounds; post-COVID opacity and digital red tape.</li></ul>
+<h3>Role in transparency (2019 to 2025)</h3>
+<ul class='lst'><li><strong>PSUs</strong>: rulings in ONGC vs RTI Applicant (2022) and the BSNL case (2023): PSUs performing public functions cannot refuse information under commercial secrecy.</li><li><strong>Public health</strong>: in 2021 the CIC directed the Health Ministry to publish vaccine procurement and pricing data suo motu.</li><li><strong>Environment</strong>: in CIC v. Ministry of Environment (2022), proactive disclosure of EIA clearances and expert committee minutes.</li><li><strong>Whistleblowers</strong>: pressed for anonymity and procedural safeguards for RTI activists; urged DoPT to hasten amendments to the Whistleblower Protection Act, 2014.</li></ul>
+<h3>Way forward</h3>
+<div class="tblock"><div class="tcap">Six steps</div><div class="tablewrap"><table><thead><tr><th>Step</th><th>Detail</th></tr></thead><tbody><tr><th scope='row'>Restore autonomy</th><td>Amend the 2019 Act to bring back fixed tenure and pay parity with ECs</td></tr><tr><th scope='row'>Stronger enforcement</th><td>Binding compliance directions, or refer persistent violators to Parliament</td></tr><tr><th scope='row'>Digitisation and outreach</th><td>Vernacular RTI Portal; integrate with the National Data Governance Framework</td></tr><tr><th scope='row'>Capacity and staffing</th><td>Timely appointment of Commissioners; regional benches</td></tr><tr><th scope='row'>Cultural shift</th><td>Treat transparency as governance reform, not compliance</td></tr><tr><th scope='row'>Parliamentary review</th><td>Annual evaluation of CIC performance</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Six steps</span><div class="mn"><b>R</b><b>E</b><b>D</b><b>C</b><b>C</b><b>P</b></div><p><strong>R</strong>estore autonomy, <strong>E</strong>nforce, <strong>D</strong>igitise, <strong>C</strong>apacity, <strong>C</strong>ulture, <strong>P</strong>arliament review: "<strong>R</strong>ight <strong>E</strong>very <strong>D</strong>ay, <strong>C</strong>itizens <strong>C</strong>an <strong>P</strong>ry."</p></aside>
+<h2 id="5-state-information-commission-status-compositio">5 · State Information Commission: status, composition and tenure<a class="anchor" href="#5-state-information-commission-status-compositio" aria-label="Link to this section">#</a></h2>
+<p>The <strong>State Information Commission (SIC)</strong> is an independent statutory body under the RTI Act, 2005 for transparency in <strong>state public authorities</strong>. It decides complaints and second appeals for state departments, PSUs, local bodies and institutions under the State Government.</p>
+<ul class='lst'><li><strong>Statutory, not constitutional.</strong></li><li>Constituted by <strong>notification of the State Government</strong> under <strong>Section 15</strong> of the RTI Act, 2005.</li><li>Independent; <strong>not subordinate to the CIC</strong>.</li></ul>
+<div class="tblock"><div class="tcap">SIC at a glance (the handout's table, rebuilt)</div><div class="tablewrap"><table><thead><tr><th>Aspect</th><th>Provision</th></tr></thead><tbody><tr><th scope='row'>Composition</th><td>One State Chief Information Commissioner (SCIC) plus up to <strong>10</strong> State Information Commissioners (SICs)</td></tr><tr><th scope='row'>Appointing authority</th><td>The <strong>Governor</strong>, on the recommendation of a committee: Chief Minister (Chairperson); Leader of Opposition in the Legislative Assembly; one Cabinet Minister nominated by the CM</td></tr><tr><th scope='row'>Eligibility</th><td>Persons of eminence in law, science and technology, social service, management, journalism, mass media, or administration and governance</td></tr><tr><th scope='row'>Disqualifications</th><td>Cannot be an MP or MLA or hold an office of profit; cannot be affiliated to a political party or carry on a business or profession</td></tr><tr><th scope='row'>Tenure (post-2019)</th><td>As prescribed by the Central Government or until age 65, whichever is earlier. Earlier fixed 5 years</td></tr><tr><th scope='row'>Reappointment</th><td>A State Information Commissioner can become State Chief Information Commissioner, provided total service does not extend beyond <strong>5 years</strong></td></tr><tr><th scope='row'>Removal</th><td>By the <strong>Governor</strong> for insolvency, conviction for moral turpitude, paid employment, infirmity or conflict of interest. For proved misbehaviour or incapacity, the Governor must refer the matter to the <strong>Supreme Court</strong> for inquiry</td></tr><tr><th scope='row'>Service conditions (post-2019)</th><td>Determined by the Central Government (earlier parity with EC and Chief Secretary). Cannot be varied to their disadvantage</td></tr></tbody></table></div></div>
+<div class="two"><div class="col"><h4>CIC</h4><ul><li>Section 12</li><li>President appoints</li><li>PM, LoP, Union Cabinet Minister</li><li>removal by President on Section 14</li><li>CIC plus up to 10 ICs</li></ul></div><div class="col"><h4>SIC</h4><ul><li>Section 15</li><li>Governor appoints</li><li>CM, LoP in Assembly, Cabinet Minister nominated by CM</li><li>removal by Governor, SC inquiry for misbehaviour</li><li>SCIC plus up to 10 SICs</li></ul></div></div>
+<aside class="callout mnemo"><span class="tag">State committee</span><div class="mn"><b>C</b><b>L</b><b>C</b></div><p><strong>C</strong>M (chair), <strong>L</strong>oP in the Assembly, <strong>C</strong>abinet Minister nominated by CM: "<strong>C</strong>ome, <strong>L</strong>et's <strong>C</strong>ount."</p></aside>
+<aside class="callout alert"><span class="tag">Handout alert</span><p>The <strong>reappointment</strong> wording differs: for the CIC, an IC may become CIC "subject to the same overall tenure limit"; for the SIC, the limit is stated as "<strong>not beyond 5 years</strong>" total service, which is the old fixed term. The SIC tenure line also says "as prescribed by the Central Government or until 65". Use the 5-year wording only for the SIC reappointment line as the handout states it; note that the 2019 tenure is set by the Centre.</p></aside>
+<h2 id="6-powers-and-functions-of-the-sic">6 · Powers and functions of the SIC<a class="anchor" href="#6-powers-and-functions-of-the-sic" aria-label="Link to this section">#</a></h2>
+<p>The SIC is the <strong>final appellate authority</strong> under the RTI Act at the state level, a quasi-judicial body deciding second appeals and complaints.</p>
+<h3>1. Adjudicatory powers</h3>
+<ul class='lst'><li><strong>Section 19(3) appeals</strong>: from people unhappy with the departmental appellate authority's decision or inaction; can direct disclosure, modification or rejection on merits.</li><li><strong>Section 18 complaints</strong> from any person who: could not submit an RTI application because no PIO was appointed; was refused information; got no response in the prescribed time; considers the fee excessive; finds information incomplete, misleading or false; or faces any other difficulty in accessing information.</li></ul>
+<h3>2. Investigative and suo motu powers</h3>
+<ul class='lst'><li>Can start an inquiry <strong>on its own motion</strong> if it believes information was unjustly denied or concealed.</li><li><strong>Civil court powers</strong>: summon and compel attendance; production, discovery and inspection of documents; evidence on affidavit; requisition public records from courts or offices; issue summons for witnesses or documents; <strong>spot inspections</strong> or verification of records.</li></ul>
+<h3>3. Enforcement and compliance powers</h3>
+<ul class='lst'><li><strong>Granting access</strong>: disclosure in a specific format or mode.</li><li><strong>Appointment of PIO</strong>: direct the authority to designate an officer where none exists.</li><li><strong>Record management</strong>: reforms in record maintenance, cataloguing and disclosure.</li><li><strong>Compensation</strong> for loss or detriment from delay or denial.</li><li><strong>Penalty</strong>: Rs 250 per day of delay up to Rs 25,000; may recommend disciplinary action under service rules.</li></ul>
+<h3>4. Supervisory and advisory powers</h3>
+<ul class='lst'><li><strong>Annual report</strong> to the State Government on RTI implementation, tabled before the <strong>State Legislature</strong>.</li><li><strong>Recommendations</strong> on record-keeping, digital disclosure and officer training.</li><li><strong>Awareness and training</strong>: advise the government on public awareness campaigns and sensitisation.</li></ul>
+<aside class="callout shortcut"><span class="tag">Mirror shortcut</span><p>The SIC does what the CIC does, one level down: same <strong>Section 18</strong> and <strong>19(3)</strong>, same <strong>civil court powers</strong>, same <strong>Rs 250 and Rs 25,000</strong>, and the report goes to the <strong>State Legislature</strong>.</p></aside>
+<aside class="callout mnemo"><span class="tag">SIC powers</span><div class="mn"><b>A</b><b>I</b><b>E</b><b>S</b></div><p><strong>A</strong>djudicate, <strong>I</strong>nvestigate (suo motu), <strong>E</strong>nforce, <strong>S</strong>upervise and advise: "<strong>A</strong>ll <strong>I</strong>nformation <strong>E</strong>nds <strong>S</strong>ecrecy."</p></aside>
+<h2 id="7-rti-amendment-act-2019-key-changes">7 · RTI (Amendment) Act, 2019: key changes<a class="anchor" href="#7-rti-amendment-act-2019-key-changes" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">Before and after (the handout's table, rebuilt)</div><div class="tablewrap"><table><thead><tr><th>Aspect</th><th>Before (RTI Act, 2005)</th><th>After (RTI Amendment Act, 2019)</th></tr></thead><tbody><tr><th scope='row'>1. Tenure of office</th><td>Fixed 5-year term or until age 65, whichever earlier</td><td>No fixed tenure; term prescribed by the Central Government (for both CIC and SIC)</td></tr><tr><th scope='row'>2. Salary and service conditions</th><td>CIC equal to Chief Election Commissioner; ICs equal to Election Commissioners; SCIC equal to EC; SICs equal to Chief Secretary of the State</td><td>Salaries, allowances and conditions of CIC, ICs, SCIC and SICs prescribed by the Central Government through executive rules</td></tr><tr><th scope='row'>3. Reappointment</th><td>Not eligible after completing tenure</td><td>Remains the same: no reappointment</td></tr><tr><th scope='row'>4. Deduction of previous pension benefits</th><td>Deductions were made from salary for pension or retirement benefits from previous government service</td><td>Such deductions removed; salaries paid in full regardless of earlier government service</td></tr><tr><th scope='row'>5. Authority determining conditions</th><td>Fixed by Parliament through the RTI Act, 2005</td><td>Delegated to the Central Government via executive rule-making power</td></tr><tr><th scope='row'>6. Applicability</th><td>Separate provisions for Central and State Commissions under Sections 12-15</td><td>Uniform control by the Central Government over both levels</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Six changes</span><div class="mn"><b>T</b><b>S</b><b>R</b><b>D</b><b>A</b><b>U</b></div><p><strong>T</strong>enure, <strong>S</strong>alary, <strong>R</strong>eappointment (same), <strong>D</strong>eduction of pension (removed), <strong>A</strong>uthority (Centre), <strong>U</strong>niform control: "<strong>T</strong>en <strong>S</strong>tudents <strong>R</strong>ead <strong>D</strong>ocuments <strong>A</strong>nd <strong>U</strong>nderstand."</p></aside>
+<aside class="callout shortcut"><span class="tag">Amendment shortcut</span><p><strong>Five things moved to the Centre</strong> (tenure, pay, conditions, rule-making, uniform control), <strong>one stayed</strong> (no reappointment), <strong>one was removed</strong> (pension deduction).</p></aside>
+<aside class="callout note"><span class="tag">The critique</span><p>The handout says the Government claimed flexibility and efficiency, while transparency advocates and former commissioners said making the Commissions dependent on the executive compromised their independence.</p></aside>
+</div><section id="chapter-timeline"><h2>Timeline<a class="anchor" href="#chapter-timeline">#</a></h2><ol class="timeline"><li class="tl high"><time class="yr">2005</time><span class="pin"></span><div class="tlbody">RTI Act enacted; CIC under Section 12 and SIC under Section 15<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">2019</time><span class="pin"></span><div class="tlbody">RTI (Amendment) Act: tenure and pay moved to the Central Government<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">2019 Oct</time><span class="pin"></span><div class="tlbody">DoPT notification: tenure 3 years or age 65<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">2021</time><span class="pin"></span><div class="tlbody">CIC directs Health Ministry to publish vaccine data; special benches (2021-23)</div></li><li class="tl "><time class="yr">2022</time><span class="pin"></span><div class="tlbody">CIC Dashboard 2.0; ONGC ruling; Environment Ministry ruling</div></li><li class="tl "><time class="yr">2023</time><span class="pin"></span><div class="tlbody">BSNL ruling; pendency crossed 32,000 (late 2023)</div></li><li class="tl "><time class="yr">2024</time><span class="pin"></span><div class="tlbody">AI-driven file monitoring pilot by DoPT and CIC</div></li></ol></section><section id="connects"><h2>Connects to<a class="anchor" href="#connects">#</a></h2><div class="lkgrid"><article class="link"><div class="lk-line">Ch 56: Right to Information Act</div><p>The Act that creates the Commissions.</p></article><article class="link"><div class="lk-line">Ch 57: RTI: CIC, Issues and Impact</div><p>Further treatment of the CIC and its issues.</p></article><article class="link"><div class="lk-line">Ch 43: Central Vigilance Commission</div><p>Another statutory commission with a PM-led committee; handout also links the Whistleblower Protection Act.</p></article><article class="link"><div class="lk-line">Ch 44: Lokpal and Lokayukta</div><p>Committee appointment and Supreme Court inquiry removal pattern.</p></article><article class="link"><div class="lk-line">Ch 30: Election Commission</div><p>Pay parity with ECs before 2019 and the Chief Election Commissioner benchmark.</p></article><article class="link"><div class="lk-line">Ch 5: Fundamental Rights</div><p><span class="art">Article 19(1)(a)</span> as the base of the right to know.</p></article><article class="link"><div class="lk-line">Ch 11: Governor</div><p>The Governor appoints and removes SIC members.</p></article></div></section><section id="recall"><h2>Recall sheet<a class="anchor" href="#recall">#</a></h2><p class="gdesc">Read once, hide it, then rebuild the chapter from memory.</p><ol class="recall"><li>CIC: statutory body under RTI Act, 2005 (Section 12); under DoPT; final appellate authority; High Court writ possible (<span class="art">Art. 226</span>).</li><li>Right to know: derivative of <span class="art">Article 19(1)(a)</span>. UDHR <span class="art">Art. 19</span> foundational; ICCPR <span class="art">Art. 19</span> binding; ICESCR enabling (Arts. 6-13).</li><li>Composition: CIC plus up to 10 ICs (max 11). President appoints on PM, LoP, Union Cabinet Minister nominated by PM.</li><li>Tenure: Act no longer fixes it; DoPT Oct 2019: 3 years or age 65; earlier 5 years. No reappointment; IC can become CIC.</li><li>Pay (2019 Rules): CIC Rs 2,50,000, IC Rs 2,25,000; earlier equal to CEC and EC.</li><li>Removal: President, Section 14, six grounds; SC inquiry for misbehaviour or incapacity.</li><li>Powers: second appeals (19(3)), complaints (18), civil court powers, Section 18(3), Rs 250 per day up to Rs 25,000, Section 4 publication, Section 25 reports.</li><li>Proceedings deemed judicial under IPC Sections 193 and 228; orders binding unless challenged under <span class="art">Art. 226</span>.</li><li>2019 reforms: tenure and pay to Centre; pension deduction removed. Pendency above 30,000; average wait over 10 months.</li><li>SIC: Section 15; Governor appoints; CM, LoP in Assembly, Cabinet Minister nominated by CM; SCIC plus up to 10 SICs; not subordinate to CIC.</li></ol></section><section id="practice"><h2>Test yourself<a class="anchor" href="#practice">#</a></h2><h3>Quick quiz</h3><div class="count" id="score">0 / 0 correct</div><div id="quiz"></div><h3>Flashcards</h3><p class="gdesc">Tap the card to flip.</p><div class="deck"><div class="fc" id="fc" tabindex="0" role="button" aria-label="Flashcard, press to flip"></div><div class="count" id="fccount"></div><div class="row"><button class="btn" id="fcprev" type="button">Back</button><button class="btn pri" id="fcnext" type="button">Next</button><button class="btn" id="fcmiss" type="button">Missed it</button><button class="btn" id="fcshuf" type="button">Shuffle</button><button class="btn" id="fconlymiss" type="button">Only missed</button><button class="btn" id="fcall" type="button">All cards</button></div></div></section><nav class="pager"><a href="pol-ch44.html"><small>Previous</small>Lokpal and Lokayukta</a><a class="nx" href="pol-ch46.html"><small>Next</small>National Investigation Agency</a></nav><footer>Personal study notes built from the Sarrthi IAS GS Foundation Polity handout (Parts 1 to 3). Handout only: no class slides or teacher ink for this chapter. Mnemonics and shortcuts are memory aids built from the handout’s own facts. Copyright belongs to the teacher; keep this private.</footer></main></div><div id="lightbox" hidden><img alt=""></div><script type="application/json" id="data">{"mcq": [{"q": "The Central Information Commission is", "options": ["A constitutional body", "A statutory body under the RTI Act, 2005", "An executive department", "A tribunal under Article 323A"], "answer": 1, "explain": "The CIC is a statutory body established under the RTI Act, 2005 (Section 12)."}, {"q": "The maximum strength of the CIC is", "options": ["7", "10", "11", "12"], "answer": 2, "explain": "One Chief Information Commissioner plus up to 10 Information Commissioners: not more than 11."}, {"q": "Which member is part of the committee that recommends CIC appointments?", "options": ["Speaker of the Lok Sabha", "Chief Justice of India", "Union Cabinet Minister nominated by the PM", "Home Minister by office"], "answer": 2, "explain": "The committee has the PM, the LoP in the Lok Sabha and a Union Cabinet Minister nominated by the PM."}, {"q": "Under the DoPT notification of October 2019, the CIC's tenure is", "options": ["5 years or age 65", "3 years or age 65", "4 years or age 62", "6 years or age 65"], "answer": 1, "explain": "The handout gives 3 years or age 65, whichever is earlier; earlier it was a fixed 5 years."}, {"q": "Under the RTI (Amendment) Act, 2019, tenure and service conditions of Information Commissioners are decided by", "options": ["Parliament through the Act", "The President alone", "The Central Government", "The Supreme Court"], "answer": 2, "explain": "The Act delegated them to the Central Government through executive rule-making power."}, {"q": "Which Section gives the CIC power to hear complaints?", "options": ["Section 4", "Section 14", "Section 18", "Section 25"], "answer": 2, "explain": "Complaints are under Section 18; second appeals under Section 19(3); removal under Section 14."}, {"q": "The penalty the CIC can impose on an errant PIO is", "options": ["Rs 100 a day up to Rs 10,000", "Rs 250 a day up to Rs 25,000", "Rs 500 a day up to Rs 50,000", "Rs 1,000 a day up to Rs 1 lakh"], "answer": 1, "explain": "The handout gives Rs 250 per day, up to Rs 25,000."}, {"q": "Who appoints the State Chief Information Commissioner?", "options": ["President", "Governor", "Chief Minister", "Chief Justice of the High Court"], "answer": 1, "explain": "The Governor appoints on the recommendation of the CM-led committee."}, {"q": "An Information Commissioner can be removed on proved misbehaviour or incapacity only after", "options": ["A resolution of Parliament", "Inquiry by the Supreme Court", "A vote of no-confidence", "Consent of the CIC"], "answer": 1, "explain": "The President (or Governor) must refer the matter to the Supreme Court."}, {"q": "Which of the following was a change made by the RTI (Amendment) Act, 2019?", "options": ["Fixed 10-year tenure", "Pay parity with Supreme Court judges", "Removal of deductions for previous pension benefits", "Reappointment allowed"], "answer": 2, "explain": "Pension deductions were removed; reappointment remains barred."}, {"q": "The right to information has been held by the judiciary to be a fundamental right under", "options": ["Article 14", "Article 19(1)(a)", "Article 21A", "Article 32"], "answer": 1, "explain": "The handout says it operates as a fundamental right under Article 19(1)(a)."}], "cards": [{"q": "What is the CIC?", "a": "A statutory body established under the RTI Act, 2005; the final appellate authority in RTI matters."}, {"q": "Can the CIC's decision be challenged?", "a": "Yes, by a writ petition before a High Court (Article 226)."}, {"q": "Under which Article is the right to information a fundamental right?", "a": "Article 19(1)(a), by judicial pronouncements."}, {"q": "What do UDHR, ICCPR and ICESCR contribute to RTI?", "a": "UDHR Art. 19: foundational; ICCPR Art. 19: binding obligation; ICESCR: enabling right (Arts. 6-13)."}, {"q": "What is the composition of the CIC?", "a": "Chief Information Commissioner plus up to 10 Information Commissioners: at most 11."}, {"q": "Under which Section is the CIC established?", "a": "Section 12 of the RTI Act, 2005."}, {"q": "Who is on the CIC appointment committee?", "a": "PM (Chairperson), LoP in Lok Sabha (or leader of the single largest opposition group), Union Cabinet Minister nominated by the PM."}, {"q": "What is the CIC's current tenure?", "a": "As prescribed by the Centre: 3 years or age 65 (DoPT Oct 2019). Earlier 5 years."}, {"q": "What are the 2019 pay figures?", "a": "CIC Rs 2,50,000 a month and IC Rs 2,25,000 a month (fixed)."}, {"q": "Who could the CIC and ICs be compared to before 2019?", "a": "Chief Election Commissioner (CIC) and Election Commissioners (ICs)."}, {"q": "Is reappointment allowed?", "a": "No; an IC may be appointed CIC within the same overall tenure limit."}, {"q": "Under which Section can the President remove the CIC?", "a": "Section 14, RTI Act, 2005."}, {"q": "Name the removal grounds.", "a": "Insolvency; conviction for moral turpitude; paid employment; infirmity; financial or other interest; proved misbehaviour or incapacity (after SC inquiry)."}, {"q": "What are the CIC's adjudicatory powers?", "a": "Second appeals under Section 19(3) and complaints under Section 18."}, {"q": "What civil court powers does the CIC have?", "a": "Under the CPC 1908: summon and compel evidence on oath; discover documents; affidavits; requisition records; issue summons; in camera inspection."}, {"q": "What does Section 18(3) say?", "a": "No public authority may withhold any record from the Commission during an inquiry."}, {"q": "What is the penalty on PIOs?", "a": "Rs 250 per day, up to Rs 25,000, plus recommendation for disciplinary action."}, {"q": "What does Section 25 deal with?", "a": "Periodic reports by departments, reviewed by the CIC."}, {"q": "What are CIC proceedings deemed to be?", "a": "Judicial proceedings under Sections 193 and 228 of the IPC."}, {"q": "What did the 2019 Amendment do?", "a": "Removed fixed tenure and pay parity with ECs; Centre prescribes tenure, pay and conditions; pension deductions removed."}, {"q": "What is the Government's defence of the 2019 Amendment?", "a": "Flexibility for administrative efficiency; critics say it compromised independence."}, {"q": "What is CIC Dashboard 2.0?", "a": "A 2022 tool integrating real-time tracking of pending cases, hearing schedules and orders."}, {"q": "How big is the pendency?", "a": "Above 30,000 appeals, average wait over 10 months; over 32,000 by late 2023."}, {"q": "What is the SIC and under which Section?", "a": "An independent statutory body under Section 15 of the RTI Act, 2005; not subordinate to the CIC."}, {"q": "Who is on the SIC appointment committee?", "a": "CM (Chairperson), LoP in the Legislative Assembly, one Cabinet Minister nominated by the CM; the Governor appoints."}, {"q": "What is the SIC's strength?", "a": "One SCIC plus up to 10 SICs."}, {"q": "Who removes an SIC member?", "a": "The Governor; for misbehaviour or incapacity, only after Supreme Court inquiry."}, {"q": "Which Commission report goes to the State Legislature?", "a": "The SIC's annual report on RTI implementation, via the State Government."}, {"q": "How were SIC salaries fixed before 2019?", "a": "SCIC equal to Election Commissioner; SICs equal to Chief Secretary of the State."}]}</script><script>window.__NB={"id": "polity", "ch": 45, "title": "Information Commissions"};/* Shared store: reading progress, preferences, optional cross-device sync. */
+(function(){
+var KEY='nbapp:v1',root=document.documentElement;
+function today(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function fresh(){return{v:1,prefs:{fs:1,lh:1.65,w:780,font:'serif',theme:'auto',pt:0},last:null,nb:{},days:{}}}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+var S;
+try{S=JSON.parse(lsGet(KEY))}catch(e){S=null}
+if(!S||!S.v)S=fresh();
+S.prefs=Object.assign(fresh().prefs,S.prefs||{});
+// one-time import of the older done list and theme
+if(!S.migrated){
+  try{var od=JSON.parse(lsGet('nb-done')||'[]');od.forEach(function(n){var c=chap('modern-india',n);c.done=1;c.dt=1})}catch(e){}
+  var ot=lsGet('nb-theme');if(ot&&!S.prefs.pt){S.prefs.theme=ot;S.prefs.pt=1}
+  S.migrated=1;
+}
+function chap(nb,n){var b=S.nb[nb]||(S.nb[nb]={});return b[n]||(b[n]={read:{},done:0,dt:0,pos:null,t:0})}
+var listeners=[],dirty=false,saveT=null,syncT=null;
+function save(){
+  dirty=true;clearTimeout(saveT);
+  saveT=setTimeout(function(){lsSet(KEY,JSON.stringify(S));listeners.forEach(function(f){try{f()}catch(e){}});scheduleSync()},250);
+}
+function flush(){lsSet(KEY,JSON.stringify(S))}
+function merge(a,b){ // a local, b remote; returns merged
+  var o=fresh();
+  o.prefs=((b.prefs&&b.prefs.pt||0)>(a.prefs&&a.prefs.pt||0))?Object.assign({},a.prefs,b.prefs):Object.assign({},b.prefs,a.prefs);
+  o.last=(!a.last||(b.last&&b.last.ts>a.last.ts))?b.last:a.last;
+  o.migrated=1;
+  var ids={};Object.keys(a.nb||{}).concat(Object.keys(b.nb||{})).forEach(function(k){ids[k]=1});
+  Object.keys(ids).forEach(function(id){
+    o.nb[id]={};var ca=(a.nb||{})[id]||{},cb=(b.nb||{})[id]||{},ks={};
+    Object.keys(ca).concat(Object.keys(cb)).forEach(function(k){ks[k]=1});
+    Object.keys(ks).forEach(function(k){
+      var x=ca[k],y=cb[k];if(!x||!y){o.nb[id][k]=x||y;return}
+      var r=Object.assign({},x.read,y.read),done=(y.dt||0)>(x.dt||0)?y:x,pos=(y.t||0)>(x.t||0)?y.pos:x.pos;
+      o.nb[id][k]={read:r,done:done.done,dt:done.dt||0,pos:pos,t:Math.max(x.t||0,y.t||0)};
+    });
+  });
+  var dk={};Object.keys(a.days||{}).concat(Object.keys(b.days||{})).forEach(function(k){dk[k]=1});
+  Object.keys(dk).forEach(function(k){o.days[k]=Math.max((a.days||{})[k]||0,(b.days||{})[k]||0)});
+  return o;
+}
+var syncState='off';
+function scheduleSync(){clearTimeout(syncT);syncT=setTimeout(function(){sync()},4000)}
+var dbp=null;
+function getRef(){
+  if(dbp)return dbp;
+  dbp=(async function(){
+    if(!window.claude||!claude.use)return null;
+    var db=await claude.use('db'),u=await claude.use('user');
+    if(!db||!u||!u.id)return null;
+    var id=await u.id();if(!id)return null;
+    return db.doc('data/users/'+id+'/nbapp');
+  })().catch(function(){return null});
+  return dbp;
+}
+var busy=false;
+async function sync(){
+  if(busy)return;busy=true;
+  try{
+    var ref=await getRef();if(!ref){syncState='local';return}
+    var snap=await ref.get(),rem=null;
+    if(snap.exists){var d=snap.data();try{rem=JSON.parse(d.state)}catch(e){}}
+    var m=rem?merge(S,rem):S;
+    var changed=JSON.stringify(m)!==JSON.stringify(S);
+    S=m;
+    if(changed){flush();listeners.forEach(function(f){try{f()}catch(e){}})}
+    var out=JSON.stringify(S);
+    if(!rem||JSON.stringify(rem)!==out)await ref.set({v:1,updated:Date.now(),state:out});
+    syncState='synced';
+  }catch(e){syncState='local'}
+  finally{busy=false}
+}
+var API={
+  get:function(){return S},
+  chap:chap,
+  save:save,flush:flush,sync:sync,
+  onChange:function(f){listeners.push(f)},
+  syncState:function(){return syncState},
+  setPref:function(k,v){S.prefs[k]=v;S.prefs.pt=Date.now();applyPrefs();save()},
+  reset:function(){S=fresh();S.migrated=1;flush();save()},
+  today:today,
+  pct:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c||!total)return 0;var r=0;Object.keys(c.read||{}).forEach(function(k){if(c.read[k])r++});return Math.min(1,r/total)},
+  isDone:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c)return false;if(c.dt)return !!c.done;return false}
+};
+window.NBS=API;
+function applyPrefs(){
+  var p=S.prefs;
+  var th=p.theme;
+  if(th==='auto')root.removeAttribute('data-theme');else root.setAttribute('data-theme',th);
+  root.style.setProperty('--zoom',p.fs);root.style.setProperty('--lh',p.lh);root.style.setProperty('--pw',p.w+'px');
+  root.setAttribute('data-font',p.font);
+}
+API.applyPrefs=applyPrefs;applyPrefs();
+// studied time, counted while the page is visible and touched in the last minute
+var lastAct=Date.now();
+['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){lastAct=Date.now()},{passive:true})});
+setInterval(function(){
+  if(document.hidden||Date.now()-lastAct>60000||!window.__NB)return;
+  var t=today();S.days[t]=(S.days[t]||0)+15;save();
+},15000);
+document.addEventListener('visibilitychange',function(){if(document.hidden){flush();sync()}else{sync()}});
+addEventListener('pagehide',flush);
+setTimeout(sync,800);
+})();
+(function(){var b=document.getElementById('themebtn');if(!b)return;var o=['auto','light','sepia','dark'];b.addEventListener('click',function(){var t=NBS.get().prefs.theme,i=(o.indexOf(t)+1)%o.length;NBS.setPref('theme',o[i]);b.textContent='Theme: '+o[i]})})();
+(function(){
+var D=JSON.parse(document.getElementById('data').textContent);
+// map/outline toggle
+document.querySelectorAll('.seg button').forEach(function(bt){bt.addEventListener('click',function(){var v=bt.dataset.v;document.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===bt)});document.getElementById('mm-map').hidden=v!=='map';document.getElementById('mm-outline').hidden=v!=='outline'})});
+if(window.innerWidth<640){var ob=document.querySelector('.seg button[data-v="outline"]');if(ob)ob.click()}
+// lightbox
+var lb=document.getElementById('lightbox'),li=lb.querySelector('img');
+document.querySelectorAll('a.zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();li.src=a.getAttribute('href');lb.hidden=false})});
+lb.addEventListener('click',function(){lb.hidden=true});document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true});
+// quiz
+var qz=document.getElementById('quiz'),score=document.getElementById('score'),right=0,answered=0;
+if(qz)D.mcq.forEach(function(m,i){var d=document.createElement('div');d.className='q';var t=document.createElement('div');t.className='qt';t.textContent=(i+1)+'. '+m.q;d.appendChild(t);var ex=document.createElement('div');ex.className='ex';ex.hidden=true;ex.textContent=m.explain;var btns=[];
+m.options.forEach(function(o,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent='ABCD'[j]+'. '+o;b.addEventListener('click',function(){if(d.dataset.done)return;d.dataset.done=1;answered++;if(j===m.answer){right++;b.classList.add('right')}else{b.classList.add('wrong');btns[m.answer].classList.add('right')}ex.hidden=false;score.textContent=right+' / '+answered+' correct'});btns.push(b);d.appendChild(b)});d.appendChild(ex);qz.appendChild(d)});
+// flashcards
+var fc=document.getElementById('fc');
+if(fc){var all=D.cards.map(function(c,i){return{q:c.q,a:c.a,i:i}}),deck=all.slice(),pos=0,back=false,missed={};
+function show(){if(!deck.length){fc.textContent='No cards in this deck.';document.getElementById('fccount').textContent='';return}var c=deck[pos];fc.textContent=back?c.a:c.q;fc.classList.toggle('back',back);document.getElementById('fccount').textContent='Card '+(pos+1)+' of '+deck.length+(back?' (answer)':' (question)')}
+function go(d){if(!deck.length)return;pos=(pos+d+deck.length)%deck.length;back=false;show()}
+fc.addEventListener('click',function(){back=!back;show()});fc.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();back=!back;show()}});
+document.getElementById('fcnext').onclick=function(){go(1)};document.getElementById('fcprev').onclick=function(){go(-1)};
+document.getElementById('fcmiss').onclick=function(){if(deck.length){missed[deck[pos].i]=1;go(1)}};
+document.getElementById('fcshuf').onclick=function(){for(var i=deck.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=deck[i];deck[i]=deck[j];deck[j]=t}pos=0;back=false;show()};
+document.getElementById('fconlymiss').onclick=function(){deck=all.filter(function(c){return missed[c.i]});pos=0;back=false;show()};
+document.getElementById('fcall').onclick=function(){deck=all.slice();pos=0;back=false;show()};show()}
+// side toc highlight
+var links=[].slice.call(document.querySelectorAll('.sidetoc a'));
+if('IntersectionObserver' in window&&links.length){var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on')}})},{rootMargin:'-70px 0px -70% 0px'});Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)})}
+})();
+(function(){
+var N=window.__NB,S=window.NBS;if(!N||!S)return;
+var root=document.documentElement,body=document.body;
+var rec=function(){return S.chap(N.id,N.ch)};
+var heads=[].slice.call(document.querySelectorAll('.page h2[id]'));
+var titles=heads.map(function(h){return h.firstChild?h.firstChild.textContent.trim():h.id});
+var ids=heads.map(function(h){return h.id});
+var seen={},manual={};
+// Done box
+var box=document.getElementById('donebox');
+if(box){box.checked=!!(rec().done);box.addEventListener('change',function(){var r=rec();r.done=box.checked?1:0;r.dt=Date.now();S.save()})}
+// progress bar
+var bar=document.createElement('div');bar.className='rbar';body.appendChild(bar);
+// per-section read buttons
+heads.forEach(function(h,i){
+  var b=document.createElement('button');b.type='button';b.className='h2read';
+  function paint(){var on=!!rec().read[h.id];b.setAttribute('aria-pressed',on);b.textContent=on?'Read ✓':'Mark read'}
+  b.addEventListener('click',function(){var r=rec();manual[h.id]=1;if(r.read[h.id])delete r.read[h.id];else r.read[h.id]=1;r.t=Date.now();S.save();paint();refresh()});
+  h.insertBefore(b,h.firstChild);paint();b._paint=paint;h._b=b;
+});
+function repaint(){heads.forEach(function(h){h._b._paint()});refresh()}
+// caption clamp
+document.querySelectorAll('figcaption').forEach(function(c){if(c.textContent.length>170){c.classList.add('clamp');c.addEventListener('click',function(){c.classList.toggle('open')})}});
+// dock
+var dock=document.createElement('div');dock.className='dock';
+dock.innerHTML='<button type="button" id="dprev" aria-label="Previous section">‹ Prev</button><button type="button" class="mid" id="dmid"></button><button type="button" id="dnext" aria-label="Next section">Next ›</button>';
+body.appendChild(dock);body.classList.add('has-dock');
+var dmid=dock.querySelector('#dmid');
+function curIdx(){var y=innerHeight*0.25,c=-1;for(var i=0;i<heads.length;i++){if(heads[i].getBoundingClientRect().top<=y)c=i;else break}return c}
+function goto(i){if(i<0||i>=heads.length)return;heads[i].scrollIntoView({behavior:'smooth',block:'start'})}
+dock.querySelector('#dprev').onclick=function(){var c=curIdx(),h=heads[c];goto(h&&h.getBoundingClientRect().top<-40?c:c-1)};
+dock.querySelector('#dnext').onclick=function(){goto(curIdx()+1)};
+function refresh(){
+  var c=curIdx(),r=rec().read,n=0;ids.forEach(function(id){if(r[id])n++});
+  dmid.innerHTML='<b>'+(c<0?'Top':(c+1)+'/'+heads.length)+'</b> · '+(c<0?'Start of chapter':esc(titles[c]))+' · '+n+' read';
+}
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+// sheets
+function sheet(html){var s=document.createElement('div');s.className='sheet';s.hidden=true;s.innerHTML='<div class="sheetin">'+html+'</div>';s.addEventListener('click',function(e){if(e.target===s)s.hidden=true});body.appendChild(s);return s}
+var cs=sheet('<h3>Sections</h3><div class="secl" id="secl"></div>');
+dmid.onclick=function(){
+  var r=rec().read,c=curIdx(),h='';
+  ids.forEach(function(id,i){h+='<a href="#'+id+'" data-i="'+i+'" class="'+(r[id]?'rd ':'')+(i===c?'cur':'')+'"><span class="tk">'+(r[id]?'✓':'')+'</span><span>'+esc(titles[i])+'</span></a>'});
+  cs.querySelector('#secl').innerHTML=h;cs.hidden=false;
+  var cur=cs.querySelector('.cur');if(cur)cur.scrollIntoView({block:'center'});
+};
+cs.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-i]');if(a){e.preventDefault();cs.hidden=true;goto(+a.dataset.i)}});
+var ps=sheet('<h3>Reading settings</h3><div id="pbody"></div>');
+function grp(key,label,opts){var p=S.get().prefs;return '<div class="srow"><label>'+label+'</label><div class="grp">'+opts.map(function(o){return '<button type="button" data-k="'+key+'" data-v="'+o[0]+'" aria-pressed="'+(String(p[key])===String(o[0]))+'">'+o[1]+'</button>'}).join('')+'</div></div>'}
+function drawPrefs(){
+  ps.querySelector('#pbody').innerHTML=
+    grp('fs','Text size',[[0.88,"A−"],[1,"A"],[1.12,"A+"],[1.25,"A++"],[1.4,"A+++"]])+
+    grp('lh','Spacing',[[1.45,'Tight'],[1.65,'Normal'],[1.85,'Roomy']])+
+    grp('w','Width',[[640,'Narrow'],[780,'Medium'],[980,'Wide']])+
+    grp('font','Font',[['serif','Serif'],['sans','Sans']])+
+    grp('theme','Theme',[['auto','Auto'],['light','Light'],['sepia','Sepia'],['dark','Dark']])+
+    '<div class="srow"><label>Extras</label><div class="grp"><button type="button" id="pfocus" aria-pressed="'+body.classList.contains('focus')+'">Focus mode</button>'+('wakeLock' in navigator?'<button type="button" id="pwake" aria-pressed="'+!!wl+'">Keep screen on</button>':'')+'</div></div>';
+}
+var wl=null;
+ps.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('button');if(!b)return;
+  if(b.dataset.k){var v=b.dataset.v;S.setPref(b.dataset.k,b.dataset.k==='font'||b.dataset.k==='theme'?v:+v);drawPrefs();return}
+  if(b.id==='pfocus'){body.classList.toggle('focus');drawPrefs();return}
+  if(b.id==='pwake'){
+    if(wl){wl.release();wl=null;drawPrefs()}else{navigator.wakeLock.request('screen').then(function(l){wl=l;l.addEventListener('release',function(){wl=null});drawPrefs()}).catch(function(){})}
+  }
+});
+function openPrefs(){drawPrefs();ps.hidden=false}
+var aa=document.getElementById('aabtn');if(aa)aa.onclick=openPrefs;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){ps.hidden=true;cs.hidden=true;body.classList.remove('focus')}});
+// focus-mode exit: tap the top edge area
+var fx=document.createElement('button');fx.type='button';fx.textContent='Exit focus';fx.className='h2read';fx.style.cssText='position:fixed;right:10px;top:10px;z-index:45;float:none;display:none';fx.onclick=function(){body.classList.remove('focus')};body.appendChild(fx);
+new MutationObserver(function(){fx.style.display=body.classList.contains('focus')?'block':'none'}).observe(body,{attributes:true,attributeFilter:['class']});
+// scroll handling
+var tick=false,saveAt=0;
+function onScroll(){
+  if(tick)return;tick=true;requestAnimationFrame(function(){
+    tick=false;
+    var doc=document.documentElement,max=doc.scrollHeight-innerHeight;
+    bar.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';
+    var vh=innerHeight,r=rec(),ch=false;
+    heads.forEach(function(h,i){
+      var t=h.getBoundingClientRect().top;
+      if(t<vh&&t>-40)seen[h.id]=1;
+      var nt=i+1<heads.length?heads[i+1].getBoundingClientRect().top:(scrollY>=max-160?-1:1e9);
+      if(seen[h.id]&&nt<vh*0.35&&!r.read[h.id]&&!manual[h.id]){r.read[h.id]=1;ch=true;h._b._paint()}
+    });
+    if(ch){r.t=Date.now();S.save()}
+    refresh();
+    var now=Date.now();
+    if(now-saveAt>1500){saveAt=now;var c=curIdx(),rr=rec();
+      if(c>=0){var hh=heads[c].getBoundingClientRect().top;rr.pos={s:ids[c],o:Math.round(-hh)};rr.t=now}
+      S.get().last={nb:N.id,ch:N.ch,s:c>=0?ids[c]:'',st:c>=0?titles[c]:'',ts:now};S.save()}
+  })}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
+S.onChange(function(){if(box)box.checked=!!rec().done;repaint()});
+refresh();onScroll();
+// resume offer
+var p=rec().pos;
+if(!location.hash&&p&&p.s&&ids.indexOf(p.s)>0){
+  var el=document.getElementById(p.s);
+  var t=document.createElement('div');t.className='toast';t.innerHTML='<span>Resume at “'+esc(titles[ids.indexOf(p.s)])+'”?</span><button type="button" id="tgo">Resume</button><button type="button" id="tx">Dismiss</button>';
+  body.appendChild(t);
+  t.querySelector('#tgo').onclick=function(){if(el){el.scrollIntoView({block:'start'});scrollBy(0,(p.o||0))}t.remove()};
+  t.querySelector('#tx').onclick=function(){t.remove()};
+  setTimeout(function(){if(t.parentNode)t.remove()},12000);
+}
+})();
+</script></body></html>

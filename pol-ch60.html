@@ -1,0 +1,453 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Ch 60 · Tackling Corruption and Social Audit</title><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style><style>:root{--bg:#FBFAF6;--surface:#fff;--surface2:#F3F1EA;--ink:#1F2A2A;--muted:#5D6A68;--line:#DAD6C8;--acc:#0E6B5C;--acc-ink:#fff;--acc-soft:#DDF0EA;--saf:#B85C00;--saf-soft:#FFF0DB;--red:#B3261E;--red-soft:#FDE7E4;--blue:#1F5FA8;--blue-soft:#E3EEFA;--good:#2E7D32;--good-soft:#E3F3E4;--hl:#FFE9A6;
+--c0:#0E6B5C;--c1:#B85C00;--c2:#1F5FA8;--c3:#8E3B8E;--c4:#B3261E;--c5:#5C7A1F;--c6:#8A6D00;--c7:#37607A;
+--serif:Literata,Spectral,Georgia,'Times New Roman',serif;--sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:17px/1.65 var(--serif);margin:0}
+a{color:var(--acc)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;margin:0}
+.bar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.barin{display:flex;align-items:center;gap:8px;padding:8px 16px;max-width:1200px;margin:0 auto;font:600 14px var(--sans);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.barin::-webkit-scrollbar{display:none}
+.bar a.home,.nbtn,.themebtn{color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 10px;font:600 13px var(--sans);cursor:pointer;flex:none}
+.nbtn{padding:5px 12px;font-size:16px;line-height:1}.nbtn.off{opacity:.35}
+.bartitle{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-weight:500}.bartitle b{color:var(--acc)}
+.done{display:flex;align-items:center;gap:5px;flex:none;font:600 13px var(--sans);cursor:pointer}.done input{width:18px;height:18px;accent-color:var(--acc)}
+.layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px;padding:0 16px}
+.sidetoc{position:sticky;top:58px;align-self:start;max-height:calc(100vh - 70px);overflow:auto;padding:18px 0;font:14px/1.4 var(--sans)}
+.sth{font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;color:var(--muted);margin-bottom:8px}
+.sidetoc ol{list-style:none;margin:0;padding:0}.sidetoc li{margin:0}.sidetoc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--ink);text-decoration:none}.sidetoc a:hover,.sidetoc a.on{border-color:var(--acc);color:var(--acc);background:var(--acc-soft)}
+.page{max-width:780px;margin:0 auto;padding:24px 16px 60px;width:100%;min-width:0}
+.home-page{max-width:900px}
+.chead{margin-bottom:22px}
+.eyebrow{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font-size:clamp(28px,5vw,40px);margin:6px 0 10px;font-weight:700}
+.lede{font-size:18px;color:var(--muted);margin:10px 0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:600 12px var(--sans);padding:3px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--line);color:var(--muted)}
+.pill.cls{background:var(--acc-soft);color:var(--acc);border-color:transparent}.pill.hb{background:var(--saf-soft);color:var(--saf);border-color:transparent}
+h2{font-size:clamp(22px,3.6vw,28px);margin:40px 0 12px;padding-top:14px;border-top:2px solid var(--acc);font-weight:700}
+h3{font-size:19px;margin:24px 0 8px;color:var(--acc)}
+h4{font-size:16px;margin-bottom:10px}
+.anchor{margin-left:8px;font-size:.7em;color:var(--muted);opacity:0;text-decoration:none}h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 12px}
+mark{background:var(--hl);color:inherit;padding:0 3px;border-radius:3px}
+.lst{margin:0 0 14px;padding-left:22px}.lst li{margin:5px 0}.lst li.sub{margin-left:18px;list-style:circle;color:var(--ink)}
+.gdesc{color:var(--muted);font:15px var(--sans);margin:-4px 0 12px}
+.xref{font:600 .92em var(--sans);white-space:nowrap}
+.callout{border-left:4px solid var(--acc);background:var(--acc-soft);border-radius:0 10px 10px 0;padding:10px 14px 4px;margin:14px 0}
+.callout .tag{display:inline-block;font:700 11px var(--sans);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;color:var(--acc)}
+.callout.teacher{border-color:var(--saf);background:var(--saf-soft)}.callout.teacher .tag{color:var(--saf)}
+.callout.alert{border-color:var(--red);background:var(--red-soft)}.callout.alert .tag{color:var(--red)}
+.callout.note{border-color:var(--blue);background:var(--blue-soft)}.callout.note .tag{color:var(--blue)}
+.callout.example{border-color:var(--good);background:var(--good-soft)}.callout.example .tag{color:var(--good)}
+.callout.source{background:var(--surface2);border-color:var(--line)}.callout.source .tag{color:var(--muted)}
+figure{margin:18px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure img{display:block;width:100%;height:auto;background:#fff}
+figure a.zoom{display:block;cursor:zoom-in}
+figcaption{padding:8px 12px;font:14px/1.45 var(--sans);color:var(--muted)}.figsrc{font:700 11px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--acc);margin-right:6px}
+.tblock{margin:16px 0}.tcap{font:700 14px var(--sans);margin-bottom:6px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font:15px/1.45 var(--sans);min-width:480px}
+th,td{padding:8px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--acc);color:var(--acc-ink);font-weight:700}
+tbody th{background:var(--surface2);font-weight:700}tbody tr:last-child>*{border-bottom:0}tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface2) 55%,transparent)}
+.stepsblock{margin:16px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}.stepsblock ol{margin:0;padding-left:22px}.stepsblock li{margin:4px 0}
+.flow{margin:20px 0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.chain{display:flex;flex-direction:column;align-items:stretch}
+.step{border:1.5px solid var(--acc);background:var(--acc-soft);border-radius:10px;padding:8px 12px;font:15px/1.4 var(--sans)}
+.step .sl{font-weight:700}.step .ss{color:var(--muted);font-size:14px;margin-top:2px}
+.step.warn{border-color:var(--saf);background:var(--saf-soft)}.step.bad{border-color:var(--red);background:var(--red-soft)}.step.good{border-color:var(--good);background:var(--good-soft)}
+.arr{height:20px;position:relative;flex:none}.arr:before{content:"";position:absolute;left:50%;top:0;bottom:6px;border-left:2px solid var(--muted)}.arr:after{content:"";position:absolute;left:calc(50% - 5px);bottom:0;border:5px solid transparent;border-top:7px solid var(--muted);border-bottom:0}
+.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.lane{display:flex;flex-direction:column}.lane-h{font:700 12px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;text-align:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:10px}.seg button{font:600 13px var(--sans);padding:6px 14px;border:0;background:var(--surface);color:var(--ink);cursor:pointer}.seg button[aria-pressed=true]{background:var(--acc);color:var(--acc-ink)}
+.mapblock h2{margin-top:10px}
+.mmframe{overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:8px;-webkit-overflow-scrolling:touch}
+svg.mm{display:block;font-family:var(--sans)}
+.mm-root{fill:var(--acc)}.mm-root-t{fill:var(--acc-ink);font:700 14px var(--sans)}
+.mm-link{fill:none;stroke-width:2;opacity:.7}.mm-branch-t{font:700 13px var(--sans);fill:#fff}.mm-leaf-t{font:13px var(--sans);fill:var(--ink)}.mm-leaf-n{font:11.5px var(--sans);fill:var(--muted)}
+.mm-leaf{fill:var(--surface2);stroke-width:1.5}
+.mm-branch.c0{fill:var(--c0)}.mm-branch.c1{fill:var(--c1)}.mm-branch.c2{fill:var(--c2)}.mm-branch.c3{fill:var(--c3)}.mm-branch.c4{fill:var(--c4)}.mm-branch.c5{fill:var(--c5)}.mm-branch.c6{fill:var(--c6)}.mm-branch.c7{fill:var(--c7)}
+.mm-link.c0,.mm-leaf.c0{stroke:var(--c0)}.mm-link.c1,.mm-leaf.c1{stroke:var(--c1)}.mm-link.c2,.mm-leaf.c2{stroke:var(--c2)}.mm-link.c3,.mm-leaf.c3{stroke:var(--c3)}.mm-link.c4,.mm-leaf.c4{stroke:var(--c4)}.mm-link.c5,.mm-leaf.c5{stroke:var(--c5)}.mm-link.c6,.mm-leaf.c6{stroke:var(--c6)}.mm-link.c7,.mm-leaf.c7{stroke:var(--c7)}
+:root:not([data-theme="dark"]) .mm-branch-t{fill:#fff}
+.outline,.outline ul{list-style:none;padding-left:18px;margin:4px 0}.outline>li{padding-left:0}.outline summary{cursor:pointer;font:700 15px var(--sans)}
+.outline li.c0>details>summary{color:var(--c0)}.outline li.c1>details>summary{color:var(--c1)}.outline li.c2>details>summary{color:var(--c2)}.outline li.c3>details>summary{color:var(--c3)}.outline li.c4>details>summary{color:var(--c4)}.outline li.c5>details>summary{color:var(--c5)}.outline li.c6>details>summary{color:var(--c6)}.outline li.c7>details>summary{color:var(--c7)}
+.ol-note{color:var(--muted);font-size:.9em}
+.timeline{list-style:none;margin:10px 0;padding:0;position:relative}
+.timeline:before{content:"";position:absolute;left:94px;top:0;bottom:0;border-left:2px solid var(--line)}
+.tl{display:grid;grid-template-columns:86px 18px 1fr;gap:0 6px;margin:0 0 12px;align-items:start}
+.yr{font:700 14px var(--mono);text-align:right;color:var(--acc);padding-top:2px}
+.pin{width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--acc);margin:7px 0 0 2px;position:relative;z-index:1}
+.tl.high .pin{background:var(--saf);border-color:var(--saf)}
+.tlbody{font:16px/1.5 var(--sans);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px}
+.tl.high .tlbody{border-color:var(--saf)}.star{color:var(--saf);margin-left:6px}.sref{float:right;margin-left:10px;font:600 12px var(--sans);text-decoration:none}
+.lkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.link{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:15px/1.45 var(--sans)}.link p{margin:4px 0 0;color:var(--muted)}.lk-line{font-weight:700}
+.recall{font:16px/1.55 var(--sans);padding-left:24px}.recall li{margin:6px 0}
+.count{font:600 13px var(--sans);color:var(--muted);margin:8px 0}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;font:16px/1.5 var(--sans)}
+.q .qt{font-weight:700;margin-bottom:8px}.q .opt{display:block;width:100%;text-align:left;padding:8px 12px;margin:6px 0;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.q .opt:hover{border-color:var(--acc)}.q .opt.right{border-color:var(--good);background:var(--good-soft)}.q .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.q .ex{margin-top:8px;color:var(--muted)}
+.deck{margin:10px 0}
+.fc{min-height:150px;background:var(--surface);border:2px solid var(--acc);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:center;text-align:center;font:18px/1.5 var(--serif);cursor:pointer;user-select:none}
+.fc.back{background:var(--acc-soft)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.btn{font:600 14px var(--sans);padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.pri{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:40px 0 20px}.pager a{display:block;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--ink);font:600 15px var(--sans)}.pager a.nx{text-align:right}.pager small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+footer{color:var(--muted);font:13px/1.5 var(--sans);border-top:1px solid var(--line);padding-top:14px;margin-top:30px}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:flex;align-items:center;justify-content:center;padding:10px;overflow:auto}#lightbox img{max-width:none;width:min(1600px,100%);height:auto;background:#fff;cursor:zoom-out}
+.part{margin:34px 0}.part h2{margin-top:0}
+.chlist{display:flex;flex-direction:column;gap:8px}
+.chcard{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+a.chcard:hover{border-color:var(--acc)}.chcard.pending{opacity:.5}
+.chn{font:700 18px var(--mono);color:var(--acc);text-align:center}.cht b{font:700 16px var(--serif);display:block}.cht small{font:13px/1.4 var(--sans);color:var(--muted);display:block;margin-top:2px}
+.chb{display:flex;flex-direction:column;gap:4px;align-items:flex-end;font:600 11px var(--sans)}.chb em{font-style:normal;background:var(--acc-soft);color:var(--acc);padding:2px 8px;border-radius:99px}.chb i.tick{font-style:normal;background:var(--good);color:#fff;padding:2px 8px;border-radius:99px}
+.prog{font:600 14px var(--sans);color:var(--muted)}
+.sbox{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:17px var(--sans);margin:6px 0 14px}
+.results .hit{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0;font:15px/1.5 var(--sans)}.results .hit a{font-weight:700}.results .hit small{color:var(--muted)}
+.chips{display:flex;gap:8px;margin-bottom:8px}.chip{font:600 13px var(--sans);padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}.chip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+@media (max-width:900px){.layout{display:block}.sidetoc{display:none}}
+@media (max-width:560px){body{font-size:16.5px}.tl{grid-template-columns:62px 16px 1fr}.timeline:before{left:70px}.yr{font-size:12px}.chcard{grid-template-columns:34px 1fr}.chb{display:none}.lanes{grid-template-columns:1fr}}
+
+code{font:.88em var(--mono);background:var(--surface2);padding:1px 5px;border-radius:4px}
+
+/* ---- reader app ---- */
+:root{--zoom:1;--lh:1.65;--pw:780px}
+:root[data-theme="sepia"]{--bg:#F4ECD8;--surface:#FBF5E6;--surface2:#EADFC4;--ink:#3B3022;--muted:#7A6A52;--line:#D8C9A6;--acc:#7A4A12;--acc-ink:#fff;--acc-soft:#EFDDB8;--saf:#A4470A;--saf-soft:#F6E2BE;--red:#9C2A1C;--red-soft:#F3D9CB;--blue:#2F5C8A;--blue-soft:#DDE6E4;--good:#3E6B2A;--good-soft:#DDE8C8;--hl:#F2D98A;color-scheme:light}
+:root[data-font="sans"] body{font-family:var(--sans)}
+:root[data-font="sans"] .notes p,:root[data-font="sans"] .notes li{font-family:var(--sans)}
+.page{zoom:var(--zoom);max-width:var(--pw)}
+.notes p,.notes li{line-height:var(--lh)}
+.rbar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--acc);z-index:40;transition:width .15s}
+.aabtn{color:var(--ink);border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 12px;font:700 14px var(--serif);cursor:pointer;flex:none}
+.h2read{float:right;margin:2px 0 0 10px;font:600 12px var(--sans);border:1px solid var(--line);background:var(--surface2);color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer;min-height:30px}
+.h2read[aria-pressed="true"]{background:var(--acc-soft);color:var(--acc);border-color:var(--acc)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding:6px 10px calc(6px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:center;justify-content:center}
+.dock button{font:600 14px var(--sans);min-height:44px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;padding:0 14px;cursor:pointer}
+.dock .mid{flex:1;max-width:520px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dock .mid b{color:var(--acc)}
+body.has-dock .page{padding-bottom:110px}
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.sheetin{background:var(--surface);color:var(--ink);width:100%;max-width:560px;max-height:82vh;overflow:auto;border-radius:16px 16px 0 0;padding:16px 18px calc(18px + env(safe-area-inset-bottom,0px));font:15px/1.4 var(--sans)}
+.sheetin h3{margin:0 0 10px;font:700 17px var(--sans)}
+.srow{display:flex;align-items:center;gap:10px;margin:12px 0;flex-wrap:wrap}
+.srow label{flex:0 0 92px;color:var(--muted);font-weight:600}
+.srow .grp{display:flex;gap:6px;flex-wrap:wrap}
+.srow button{font:600 14px var(--sans);min-height:42px;min-width:48px;padding:0 12px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;cursor:pointer}
+.srow button[aria-pressed="true"]{border-color:var(--acc);background:var(--acc-soft);color:var(--acc)}
+.secl a{display:flex;gap:10px;align-items:center;padding:12px 6px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;min-height:44px}
+.secl a .tk{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;color:var(--acc-ink)}
+.secl a.rd .tk{background:var(--acc);border-color:var(--acc)}
+.secl a.cur{background:var(--acc-soft)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:50;background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 14px;display:flex;gap:12px;align-items:center;font:600 14px var(--sans);max-width:92vw;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.toast button{font:700 14px var(--sans);background:transparent;border:0;color:var(--bg);text-decoration:underline;cursor:pointer;min-height:36px}
+body.focus .bar{display:none}body.focus .sidetoc{display:none}
+figcaption.clamp{max-height:3.3em;overflow:hidden;position:relative;cursor:pointer}
+figcaption.clamp.open{max-height:none}
+figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bottom:0;background:var(--bg);color:var(--acc);font:700 12px var(--sans);padding-left:14px}
+.cbar{display:block;height:4px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}.cbar i{display:block;height:100%;width:0;background:var(--acc)}
+.nbcard h2{border:0;padding:0}.nbcard{border-top:1px solid var(--line)}
+</style><style>
+.mn{display:inline-flex;gap:4px;flex-wrap:wrap;margin:2px 0 6px}.mn b{font:700 15px var(--mono);background:var(--acc);color:var(--acc-ink);border-radius:6px;padding:1px 8px}
+.callout.shortcut{border-color:var(--saf);background:var(--saf-soft)}.callout.shortcut .tag{color:var(--saf)}
+.callout.mnemo{border-color:var(--c3);background:var(--surface2)}.callout.mnemo .tag{color:var(--c3)}
+.callout p,.callout li{font-family:var(--sans)}
+.art{font-family:var(--mono);font-size:.86em;background:var(--acc-soft);padding:0 .28em;border-radius:4px;white-space:nowrap}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin:14px 0}
+.two .col{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:10px 14px;font:15px/1.5 var(--sans)}
+.two .col h4{margin:0 0 4px;font:700 13px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--acc)}
+.two .col ul{margin:4px 0;padding-left:18px}
+.ptag{display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:2px 9px;margin-left:8px;vertical-align:middle}
+.ptag.high{background:var(--red-soft);color:var(--red)}.ptag.med{background:var(--saf-soft);color:var(--saf)}.ptag.low{background:var(--surface2);color:var(--muted)}
+</style></head><body><header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="pol-home.html">Contents</a><a class="nbtn" href="pol-ch59.html" title="Corruption: CBI and CVC" aria-label="Previous chapter">‹</a><span class="bartitle"><b>Ch 60</b> Tackling Corruption and Social Audit</span><a class="nbtn" href="pol-ch61.html" title="Corruption: Lokpal in India" aria-label="Next chapter">›</a><a class="home" href="pol-search.html">Search</a><a class="home" href="pol-timeline.html">Timeline</a><label class="done"><input type="checkbox" id="donebox" data-ch="60"><span>Done</span></label><button class="aabtn" id="aabtn" type="button" aria-label="Reading settings">Aa</button></div></header><div class="layout"><aside class="sidetoc"><div class="sth">In this chapter</div><ol><li><a href="#chapter-map">Chapter map</a></li><li><a href="#exam-lens-priority-and-pyqs">Exam lens: priority and PYQs</a></li><li><a href="#1-the-wicked-problem-of-corruption">1 · The 'wicked problem' of corruption</a></li><li><a href="#2-stick-measures">2 · Stick measures</a></li><li><a href="#3-carrot-measures">3 · Carrot measures</a></li><li><a href="#4-administrative-and-technical-measures">4 · Administrative and technical measures</a></li><li><a href="#5-radical-approaches">5 · Radical approaches</a></li><li><a href="#6-international-measures">6 · International measures</a></li><li><a href="#7-critique-of-the-global-anti-corruption-industr">7 · Critique of the global anti-corruption industry and alternatives</a></li><li><a href="#8-social-audit-meaning-and-features">8 · Social audit: meaning and features</a></li><li><a href="#9-strengthening-social-audit">9 · Strengthening social audit</a></li><li><a href="#10-success-stories-of-social-audit-in-india">10 · Success stories of social audit in India</a></li><li><a href="#chapter-timeline">Timeline</a></li><li><a href="#connects">Connects to</a></li><li><a href="#recall">Recall sheet</a></li><li><a href="#practice">Test yourself</a></li></ol></aside><main class="page"><div class="chead"><div class="eyebrow">Polity · Part 3 · Bodies, Commissions and Governance · Chapter 60</div><h1>Tackling Corruption and Social Audit<span class="ptag low">None quoted</span></h1><div class="pills"><span class="pill hb">Handout only: no class slides</span><span class="pill ">Handout section 5</span><span class="pill ">No PYQs quoted</span></div><p class="lede">The toolkit against corruption (stick, carrot, administrative, radical and international measures, plus a critique and alternatives), followed by social audit: what it is, its features, significance, problems, how to strengthen it and the success stories the handout cites.</p></div><section class="mapblock"><h2 id="chapter-map">Chapter map<a class="anchor" href="#chapter-map">#</a></h2><div class="seg" role="group" aria-label="Map view"><button type="button" data-v="map" aria-pressed="true">Map</button><button type="button" data-v="outline" aria-pressed="false">Outline</button></div><div id="mm-map" class="mmframe"><svg class="mm" viewBox="0 0 709 964" width="709" height="964" role="img" aria-label="Mind map: Tackling Corruption and Social Audit"><rect class="mm-root" x="8" y="493.4" width="106.0" height="47.2" rx="6"/><text class="mm-root-t" x="61.0" y="513.2" text-anchor="middle">Tackling</text><text class="mm-root-t" x="61.0" y="530.8" text-anchor="middle">Corruption</text><path class="mm-link c0" d="M114.0,517.0 C146.0,517.0 146.0,100.0 178.0,100.0"/><rect class="mm-branch c0" x="178.0" y="86.0" width="138.0" height="28" rx="5"/><text class="mm-branch-t" x="247.0" y="104.5" text-anchor="middle">Stick measures</text><path class="mm-link c0" d="M316.0,100.0 C344.0,100.0 428.0,28.0 456.0,28.0"/><rect class="mm-leaf c0" x="456.0" y="8" width="189.6" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="23.5">Prosecution</text><text class="mm-leaf-n" x="466.0" y="38.5">conviction rates, trials</text><path class="mm-link c0" d="M316.0,100.0 C344.0,100.0 428.0,76.0 456.0,76.0"/><rect class="mm-leaf c0" x="456.0" y="56" width="237.9" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="71.5">Stings, laws</text><text class="mm-leaf-n" x="466.0" y="86.5">admissibility; PCA 2018 diluted</text><path class="mm-link c0" d="M316.0,100.0 C344.0,100.0 428.0,124.0 456.0,124.0"/><rect class="mm-leaf c0" x="456.0" y="104" width="210.3" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="119.5">Assets, agencies</text><text class="mm-leaf-n" x="466.0" y="134.5">declarations; single agency</text><path class="mm-link c0" d="M316.0,100.0 C344.0,100.0 428.0,172.0 456.0,172.0"/><rect class="mm-leaf c0" x="456.0" y="152" width="175.8" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="167.5">Shaming, forfeiture</text><text class="mm-leaf-n" x="466.0" y="182.5">blacklisting; pensions</text><path class="mm-link c1" d="M114.0,517.0 C146.0,517.0 146.0,250.0 178.0,250.0"/><rect class="mm-branch c1" x="178.0" y="236.0" width="146.0" height="28" rx="5"/><text class="mm-branch-t" x="251.0" y="254.5" text-anchor="middle">Carrot measures</text><path class="mm-link c1" d="M324.0,250.0 C352.0,250.0 428.0,226.0 456.0,226.0"/><rect class="mm-leaf c1" x="456.0" y="206" width="182.7" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="221.5">Pay increase</text><text class="mm-leaf-n" x="466.0" y="236.5">with strict enforcement</text><path class="mm-link c1" d="M324.0,250.0 C352.0,250.0 428.0,274.0 456.0,274.0"/><rect class="mm-leaf c1" x="456.0" y="254" width="99.9" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="269.5">Helplines</text><text class="mm-leaf-n" x="466.0" y="284.5">Delhi model</text><path class="mm-link c2" d="M114.0,517.0 C146.0,517.0 146.0,376.0 178.0,376.0"/><rect class="mm-branch c2" x="178.0" y="362.0" width="138.0" height="28" rx="5"/><text class="mm-branch-t" x="247.0" y="380.5" text-anchor="middle">Administrative</text><path class="mm-link c2" d="M316.0,376.0 C344.0,376.0 428.0,328.0 456.0,328.0"/><rect class="mm-leaf c2" x="456.0" y="308" width="104.0" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="323.5">Job rotation</text><text class="mm-leaf-n" x="466.0" y="338.5">Kautilya</text><path class="mm-link c2" d="M316.0,376.0 C344.0,376.0 428.0,376.0 456.0,376.0"/><rect class="mm-leaf c2" x="456.0" y="356" width="196.5" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="371.5">Audit, procurement</text><text class="mm-leaf-n" x="466.0" y="386.5">CAG 25%; 2012 bill lapsed</text><path class="mm-link c2" d="M316.0,376.0 C344.0,376.0 428.0,424.0 456.0,424.0"/><rect class="mm-leaf c2" x="456.0" y="404" width="175.8" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="419.5">Digitisation, CCTV</text><text class="mm-leaf-n" x="466.0" y="434.5">cut physical interface</text><path class="mm-link c3" d="M114.0,517.0 C146.0,517.0 146.0,502.0 178.0,502.0"/><rect class="mm-branch c3" x="178.0" y="488.0" width="170.0" height="28" rx="5"/><text class="mm-branch-t" x="263.0" y="506.5" text-anchor="middle">Radical and global</text><path class="mm-link c3" d="M348.0,502.0 C376.0,502.0 428.0,478.0 456.0,478.0"/><rect class="mm-leaf c3" x="456.0" y="458" width="196.5" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="473.5">Georgia, Peru, Romania</text><text class="mm-leaf-n" x="466.0" y="488.5">disband, gender, monetise</text><path class="mm-link c3" d="M348.0,502.0 C376.0,502.0 428.0,526.0 456.0,526.0"/><rect class="mm-leaf c3" x="456.0" y="506" width="244.8" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="521.5">FCPA, UK Bribery Act</text><text class="mm-leaf-n" x="466.0" y="536.5">OECD 1997, UNCAC 2003, FATF 1989</text><path class="mm-link c4" d="M114.0,517.0 C146.0,517.0 146.0,604.0 178.0,604.0"/><rect class="mm-branch c4" x="178.0" y="590.0" width="90.0" height="28" rx="5"/><text class="mm-branch-t" x="223.0" y="608.5" text-anchor="middle">Critique</text><path class="mm-link c4" d="M268.0,604.0 C296.0,604.0 428.0,580.0 456.0,580.0"/><rect class="mm-leaf c4" x="456.0" y="560" width="188.0" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="575.5">Anti-corruption industry</text><text class="mm-leaf-n" x="466.0" y="590.5">geopolitical tool</text><path class="mm-link c4" d="M268.0,604.0 C296.0,604.0 428.0,628.0 456.0,628.0"/><rect class="mm-leaf c4" x="456.0" y="608" width="189.6" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="623.5">Alternatives</text><text class="mm-leaf-n" x="466.0" y="638.5">spiritual education; IRC</text><path class="mm-link c5" d="M114.0,517.0 C146.0,517.0 146.0,730.0 178.0,730.0"/><rect class="mm-branch c5" x="178.0" y="716.0" width="122.0" height="28" rx="5"/><text class="mm-branch-t" x="239.0" y="734.5" text-anchor="middle">Social audit</text><path class="mm-link c5" d="M300.0,730.0 C328.0,730.0 428.0,682.0 456.0,682.0"/><rect class="mm-leaf c5" x="456.0" y="662" width="175.8" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="677.5">Meaning</text><text class="mm-leaf-n" x="466.0" y="692.5">Jan Sunwai; Gram Sabha</text><path class="mm-link c5" d="M300.0,730.0 C328.0,730.0 428.0,730.0 456.0,730.0"/><rect class="mm-leaf c5" x="456.0" y="710" width="113.7" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="725.5">Features</text><text class="mm-leaf-n" x="466.0" y="740.5">four features</text><path class="mm-link c5" d="M300.0,730.0 C328.0,730.0 428.0,778.0 456.0,778.0"/><rect class="mm-leaf c5" x="456.0" y="758" width="162.0" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="773.5">Issues</text><text class="mm-leaf-n" x="466.0" y="788.5">only NREGA statutory</text><path class="mm-link c6" d="M114.0,517.0 C146.0,517.0 146.0,856.0 178.0,856.0"/><rect class="mm-branch c6" x="178.0" y="842.0" width="130.0" height="28" rx="5"/><text class="mm-branch-t" x="243.0" y="860.5" text-anchor="middle">Strengthening</text><path class="mm-link c6" d="M308.0,856.0 C336.0,856.0 428.0,832.0 456.0,832.0"/><rect class="mm-leaf c6" x="456.0" y="812" width="168.9" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="827.5">Law and units</text><text class="mm-leaf-n" x="466.0" y="842.5">Meghalaya 2017; SSAAT</text><path class="mm-link c6" d="M308.0,856.0 C336.0,856.0 428.0,880.0 456.0,880.0"/><rect class="mm-leaf c6" x="456.0" y="860" width="182.7" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="875.5">Models</text><text class="mm-leaf-n" x="466.0" y="890.5">Chhattisgarh, Karnataka</text><path class="mm-link c7" d="M114.0,517.0 C146.0,517.0 146.0,934.0 178.0,934.0"/><rect class="mm-branch c7" x="178.0" y="920.0" width="146.0" height="28" rx="5"/><text class="mm-branch-t" x="251.0" y="938.5" text-anchor="middle">Success stories</text><path class="mm-link c7" d="M324.0,934.0 C352.0,934.0 428.0,934.0 456.0,934.0"/><rect class="mm-leaf c7" x="456.0" y="914" width="210.3" height="40" rx="4"/><text class="mm-leaf-t" x="466.0" y="929.5">AP, Jharkhand, MKSS</text><text class="mm-leaf-n" x="466.0" y="944.5">Bengaluru CRC; benchmarking</text></svg></div><div id="mm-outline" hidden><ul class="outline"><li><strong>Tackling Corruption</strong><ul><li class="c0"><details open><summary>Stick measures</summary><ul><li>Prosecution <span class="ol-note">conviction rates, trials</span></li><li>Stings, laws <span class="ol-note">admissibility; PCA 2018 diluted</span></li><li>Assets, agencies <span class="ol-note">declarations; single agency</span></li><li>Shaming, forfeiture <span class="ol-note">blacklisting; pensions</span></li></ul></details></li><li class="c1"><details open><summary>Carrot measures</summary><ul><li>Pay increase <span class="ol-note">with strict enforcement</span></li><li>Helplines <span class="ol-note">Delhi model</span></li></ul></details></li><li class="c2"><details open><summary>Administrative</summary><ul><li>Job rotation <span class="ol-note">Kautilya</span></li><li>Audit, procurement <span class="ol-note">CAG 25%; 2012 bill lapsed</span></li><li>Digitisation, CCTV <span class="ol-note">cut physical interface</span></li></ul></details></li><li class="c3"><details open><summary>Radical and global</summary><ul><li>Georgia, Peru, Romania <span class="ol-note">disband, gender, monetise</span></li><li>FCPA, UK Bribery Act <span class="ol-note">OECD 1997, UNCAC 2003, FATF 1989</span></li></ul></details></li><li class="c4"><details open><summary>Critique</summary><ul><li>Anti-corruption industry <span class="ol-note">geopolitical tool</span></li><li>Alternatives <span class="ol-note">spiritual education; IRC</span></li></ul></details></li><li class="c5"><details open><summary>Social audit</summary><ul><li>Meaning <span class="ol-note">Jan Sunwai; Gram Sabha</span></li><li>Features <span class="ol-note">four features</span></li><li>Issues <span class="ol-note">only NREGA statutory</span></li></ul></details></li><li class="c6"><details open><summary>Strengthening</summary><ul><li>Law and units <span class="ol-note">Meghalaya 2017; SSAAT</span></li><li>Models <span class="ol-note">Chhattisgarh, Karnataka</span></li></ul></details></li><li class="c7"><details open><summary>Success stories</summary><ul><li>AP, Jharkhand, MKSS <span class="ol-note">Bengaluru CRC; benchmarking</span></li></ul></details></li></ul></li></ul></div></section><div class="notes"><h2 id="exam-lens-priority-and-pyqs">Exam lens: priority and PYQs<a class="anchor" href="#exam-lens-priority-and-pyqs" aria-label="Link to this section">#</a></h2><aside class="callout source"><span class="tag">Source note</span><p><strong>This chapter comes from the Sarrthi handout only.</strong> There are no class slides or teacher ink. Priority is none quoted, counted from the handout’s own PYQ section: <strong>0 Prelims and 0 Mains</strong> questions are quoted. <strong>None quoted in the material.</strong></p></aside><div class="tblock"><div class="tcap">What the handout itself stresses</div><div class="tablewrap"><table><thead><tr><th>Signal in the handout</th><th>Where</th><th>Why it matters</th></tr></thead><tbody><tr><th scope='row'>Measures are grouped as <strong>stick, carrot, administrative and technical, radical, international</strong></th><td>Sections 2 to 6</td><td>A ready answer structure for any "measures to curb corruption" question.</td></tr><tr><th scope='row'>Named country examples: <strong>Botswana, China, Sweden, Singapore (CPIB), Hong Kong (ICAC), South Africa, Georgia, Peru, Romania</strong></th><td>Stick and radical measures</td><td>Examples lift a Mains answer.</td></tr><tr><th scope='row'>International instruments with years: <strong>FCPA 1977, UK Bribery Act 2010, OECD Convention 1997, UNCAC 2003, FATF 1989</strong></th><td>International Measures</td><td>Straight match-the-year questions.</td></tr><tr><th scope='row'>Social audit: <strong>Meghalaya 2017 Act, Andhra Pradesh SSAAT, Jharkhand SAU, MKSS jan sunwais, Bengaluru Citizen Report Cards</strong></th><td>Social audit sections</td><td>Examples and models for Mains.</td></tr></tbody></table></div></div><aside class="callout key"><span class="tag">What to prepare</span><p><strong>Prelims hooks:</strong> none quoted in the material. Likely hooks: social audit under NREGA, SSAAT, Swaraj Abhiyan (2016), MKSS and RTI 2005, international anti-corruption instruments.</p><p><strong>Mains hooks:</strong> none quoted in the material. Use stick-carrot-administrative-radical-international, then social audit with its features, issues and success stories.</p><p><strong>Closing idea:</strong> Corruption is a wicked problem that can be controlled but not eliminated, so the answer is a mix of deterrence, incentives, transparency and citizen participation, with social audit pressing from the demand side.</p></aside><h2 id="1-the-wicked-problem-of-corruption">1 · The 'wicked problem' of corruption<a class="anchor" href="#1-the-wicked-problem-of-corruption" aria-label="Link to this section">#</a></h2>
+<p>Despite many laws (PCA, Lokpal, CVC Act), corruption persists. A <strong>proliferation of laws often signals systemic inefficiency</strong>. Corruption is termed a <strong>'wicked problem'</strong>: it can only be <strong>controlled, not eliminated</strong>.</p>
+<aside class="callout mnemo"><span class="tag">Five toolkits</span><div class="mn"><b>S</b><b>C</b><b>A</b><b>R</b><b>I</b></div><p><strong>S</strong>tick, <strong>C</strong>arrot, <strong>A</strong>dministrative and technical, <strong>R</strong>adical, <strong>I</strong>nternational: "<strong>S</strong>ome <strong>C</strong>ats <strong>A</strong>lways <strong>R</strong>un <strong>I</strong>nside".</p></aside>
+<h2 id="2-stick-measures">2 · Stick measures<a class="anchor" href="#2-stick-measures" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">Stick measures</div><div class="tablewrap"><table><thead><tr><th>Measure</th><th>Content</th></tr></thead><tbody><tr><th scope='row'><strong>Legal system and prosecution</strong></th><td>Higher conviction rates deter (e.g. <strong>Botswana</strong>). In India delayed trials and lenient punishments reduce deterrence. Harsh penalties like <strong>China</strong> are unsuitable here because of rule-of-law gaps and risk of victimisation</td></tr><tr><th scope='row'><strong>Sting operations and entrapment</strong></th><td>Admissibility of sting evidence is ambiguous. <strong>Natural stings</strong> (citizen recordings) should be admissible. Legal clarity is needed to avoid misuse, as in <strong>Sweden's</strong> restrictive stance</td></tr><tr><th scope='row'><strong>Tightening anti-corruption laws</strong></th><td>The <strong>2018 amendments diluted the PCA</strong>. Political will is lacking to plug loopholes in whistleblower laws, the CVC Act, the Lokpal Act etc.</td></tr><tr><th scope='row'><strong>Declaration of assets</strong></th><td>Monitor disproportionate lifestyle indicators and conduct rigorous audits</td></tr><tr><th scope='row'><strong>Effective anti-corruption agencies</strong></th><td>India's fragmented structure (CVC, CBI, Lokpal, ED) lacks focus. <strong>Singapore (CPIB)</strong> and <strong>Hong Kong (ICAC)</strong> succeed with a single dedicated agency</td></tr><tr><th scope='row'><strong>Public shaming and blacklisting</strong></th><td>Naming corrupt officials (as in <strong>South Africa</strong>) and blacklisting firms from public contracts are soft deterrents</td></tr><tr><th scope='row'><strong>Penalties targeting financial security</strong></th><td>Forfeiture of pensions and future financial benefits creates fear of long-term loss</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Seven sticks</span><div class="mn"><b>L</b><b>S</b><b>T</b><b>A</b><b>E</b><b>P</b><b>P</b></div><p><strong>L</strong>egal prosecution, <strong>S</strong>ting, <strong>T</strong>ighter laws, <strong>A</strong>ssets, <strong>E</strong>ffective agency, <strong>P</strong>ublic shaming, <strong>P</strong>ension forfeiture: "<strong>L</strong>ions <strong>S</strong>napped <strong>T</strong>heir <strong>A</strong>ngry <strong>E</strong>nemies, <strong>P</strong>ouncing <strong>P</strong>romptly".</p></aside>
+<div class="two"><div class="col"><h4>India</h4><ul><li>Fragmented: CVC, CBI, Lokpal, ED lack focus</li></ul></div><div class="col"><h4>Success models</h4><ul><li>Singapore CPIB and Hong Kong ICAC: one dedicated agency</li></ul></div></div>
+<h2 id="3-carrot-measures">3 · Carrot measures<a class="anchor" href="#3-carrot-measures" aria-label="Link to this section">#</a></h2>
+<ul class='lst'><li><strong>Substantial pay increase</strong>: higher salaries, paired with strict enforcement, can improve integrity at entry level.</li><li><strong>Citizen-centric anti-corruption helplines</strong>: Delhi's anti-corruption hotline lets citizens report bribe demands without fear. Effective <strong>whistleblower and witness protection laws</strong> are essential to replicate it.</li></ul>
+<aside class="callout alert"><span class="tag">Handout alert</span><p>The earlier chapter on the Problem of Corruption says simply raising salaries may not make a significant dent, while this chapter backs pay rises <strong>if paired with strict enforcement</strong>. Use both: pay helps only with enforcement.</p></aside>
+<h2 id="4-administrative-and-technical-measures">4 · Administrative and technical measures<a class="anchor" href="#4-administrative-and-technical-measures" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">Administrative measures</div><div class="tablewrap"><table><thead><tr><th>Measure</th><th>Content</th></tr></thead><tbody><tr><th scope='row'><strong>Job rotation</strong></th><td>Frequent transfers in sensitive positions disrupt entrenched networks; Kautilya's Arthashastra supports this</td></tr><tr><th scope='row'><strong>Strengthen auditing</strong></th><td>CAG's limited coverage (<strong>25%</strong> of auditable units yearly) hampers oversight. Need manpower, IT tools and random audits</td></tr><tr><th scope='row'><strong>Procurement norms and transparency</strong></th><td>Internal bid norms and a comprehensive <strong>Public Procurement Law</strong> needed. Public procurement is <strong>30% of GDP</strong> and corruption-prone. The <strong>2012 bill lapsed</strong> and urgent revival is needed</td></tr><tr><th scope='row'><strong>Digitisation of services</strong></th><td>Online delivery reduces physical interface and curbs petty corruption</td></tr><tr><th scope='row'><strong>CCTV in high-risk zones</strong></th><td>Functional CCTV in police stations, borders and vulnerable departments; prioritise high-risk areas first</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Five admin tools</span><div class="mn"><b>J</b><b>A</b><b>P</b><b>D</b><b>C</b></div><p><strong>J</strong>ob rotation, <strong>A</strong>udit, <strong>P</strong>rocurement, <strong>D</strong>igitisation, <strong>C</strong>CTV: "<strong>J</strong>ust <strong>A</strong>sk <strong>P</strong>eople: <strong>D</strong>ial <strong>C</strong>omplaints".</p></aside>
+<h2 id="5-radical-approaches">5 · Radical approaches<a class="anchor" href="#5-radical-approaches" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">Radical approaches</div><div class="tablewrap"><table><thead><tr><th>Approach</th><th>Example and note</th></tr></thead><tbody><tr><th scope='row'><strong>Departmental disbanding (Georgia Model)</strong></th><td>Non-reformable departments (e.g. <strong>Traffic Police in Georgia, 2004</strong>) disbanded, fresh recruitment under stricter norms</td></tr><tr><th scope='row'><strong>Gender balance in bureaucracy (Peru)</strong></th><td>Greater women representation showed reduced corruption tendencies; can be piloted in India</td></tr><tr><th scope='row'><strong>Monetising bribes (Romania Model)</strong></th><td>Allowing official payments to avoid petty bribes (as in Romania's conscription policy); controversial for equity concerns</td></tr><tr><th scope='row'><strong>General amnesty</strong></th><td>Amnesty to disclose black money (with <strong>50% surrender</strong>) is debated; stricter enforcement is essential afterwards</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Radical four</span><div class="mn"><b>D</b><b>G</b><b>M</b><b>A</b></div><p><strong>D</strong>isband (Georgia), <strong>G</strong>ender (Peru), <strong>M</strong>onetise (Romania), <strong>A</strong>mnesty: "<strong>D</strong>o <strong>G</strong>ood, <strong>M</strong>ake <strong>A</strong>mends".</p></aside>
+<h2 id="6-international-measures">6 · International measures<a class="anchor" href="#6-international-measures" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">Global instruments</div><div class="tablewrap"><table><thead><tr><th>Instrument</th><th>Role</th></tr></thead><tbody><tr><th scope='row'><strong>Foreign Corrupt Practices Act (1977, USA)</strong></th><td>Penalises MNCs' offshore corrupt practices</td></tr><tr><th scope='row'><strong>UK Bribery Act (2010)</strong></th><td>Same: penalises MNCs' offshore corrupt practices</td></tr><tr><th scope='row'><strong>OECD Anti-Bribery Convention (1997)</strong></th><td>Promotes global anti-corruption norms</td></tr><tr><th scope='row'><strong>UNCAC (2003)</strong></th><td>Promotes global anti-corruption norms</td></tr><tr><th scope='row'><strong>FATF (1989)</strong></th><td>Combats money laundering</td></tr><tr><th scope='row'><strong>Interpol's IGEC</strong></th><td>Sets corruption standards for police forces</td></tr></tbody></table></div></div>
+<aside class="callout note"><span class="tag">Gaps the handout names</span><p>WTO's inaction on corruption as a <strong>non-tariff barrier</strong> is a missed opportunity. The push for global financial transparency against <strong>banking havens</strong> remains critical.</p></aside>
+<aside class="callout mnemo"><span class="tag">Years</span><div class="mn"><b>F</b><b>U</b><b>O</b><b>U</b><b>F</b></div><p><strong>F</strong>CPA 1977, <strong>U</strong>K Bribery 2010, <strong>O</strong>ECD 1997, <strong>U</strong>NCAC 2003, <strong>F</strong>ATF 1989: "<strong>F</strong>ine <strong>U</strong>sual <strong>O</strong>ld <strong>U</strong>niforms <strong>F</strong>it".</p></aside>
+<h2 id="7-critique-of-the-global-anti-corruption-industr">7 · Critique of the global anti-corruption industry and alternatives<a class="anchor" href="#7-critique-of-the-global-anti-corruption-industr" aria-label="Link to this section">#</a></h2>
+<ul class='lst'><li>Western countries <strong>ignored corruption until the 1990s</strong>. After globalisation, anti-corruption became a <strong>geopolitical tool</strong>.</li><li>The <strong>'anti-corruption industry'</strong> with vested NGO interests often prioritises data production over ground impact. <strong>Cultural imperialism</strong> concerns persist.</li></ul>
+<h3>Alternative approaches</h3>
+<ul class='lst'><li><strong>Spiritual education</strong>: ethics and meditation in curricula to foster internal integrity.</li><li><strong>Integrity Recognition Certificates (IRC)</strong>: officially recognise honest officers to create peer-pressure networks against corruption; must be insulated from politicisation.</li></ul>
+<h2 id="8-social-audit-meaning-and-features">8 · Social audit: meaning and features<a class="anchor" href="#8-social-audit-meaning-and-features" aria-label="Link to this section">#</a></h2>
+<h3>What it is</h3>
+<p>In evaluating schemes, if the local population is involved through <strong>public hearings or Jan Sunwai</strong>, funds, resources, beneficiaries and records are laid bare. People give input and pick loopholes, which checks corruption, increases transparency, fixes accountability and strengthens democracy. The handout traces its origin to <strong>CSR in private companies</strong>. Details of implementation, resources, financial and non-financial, are shared with beneficiaries on a public platform (Jan Sunwai, public hearing). The <strong>Gram Sabha</strong> can be called so people can hold the local bureaucracy and Panchayat leaders accountable and evaluate real impact.</p>
+<aside class="callout key"><span class="tag">Key condition</span><p>Social audit works only with a sound <strong>access to information regime</strong>: public agencies must fully reveal all details of the scheme, or the process is a lost cause.</p></aside>
+<h3>Features</h3>
+<div class="tblock"><div class="tcap">Four features</div><div class="tablewrap"><table><thead><tr><th>Feature</th><th>Meaning</th></tr></thead><tbody><tr><th scope='row'><strong>Multi-perspective</strong></th><td>Benefits beneficiaries, local leaders and civil servants; they can present their side if loopholes are found; bureaucracy, leaders and people all give perspectives</td></tr><tr><th scope='row'><strong>Regular</strong></th><td>Periodic, depending on the scheme, so issues are re-evaluated and addressed continuously</td></tr><tr><th scope='row'><strong>Comparative</strong></th><td>Time-based comparison and comparison across villages, showing weaknesses against what other villages did well</td></tr><tr><th scope='row'><strong>Strengthens demand side</strong></th><td>Pressure on local bureaucracy to implement honestly is weak; the process strengthens demand side weaknesses and indirectly targets supply side ones</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Features</span><div class="mn"><b>M</b><b>R</b><b>C</b><b>D</b></div><p><strong>M</strong>ulti-perspective, <strong>R</strong>egular, <strong>C</strong>omparative, <strong>D</strong>emand side: "<strong>M</strong>y <strong>R</strong>eport <strong>C</strong>ards <strong>D</strong>eliver".</p></aside>
+<h3>Significance</h3>
+<ul class='lst'><li>Improves people's <strong>participation</strong> in administration.</li><li><strong>Benefits reach</strong> targeted persons.</li><li>Builds <strong>social capital</strong> (community building, people coming together for change).</li><li>Identifies <strong>human resource and training needs</strong> of civil servants.</li><li>Highlights <strong>development concerns</strong>.</li><li>Facilitates transparency and <strong>checks corruption</strong>.</li><li>Helps design <strong>improved programmes</strong> in future.</li></ul>
+<h3>Issues</h3>
+<ul class='lst'><li>Not part of <strong>mainstream policy discourse</strong>.</li><li>A statutory requirement under very few programmes; <strong>NREGA</strong> is one where it must be held.</li><li><strong>Lack of trained social auditors</strong>.</li><li><strong>Opposition from vested interests</strong>.</li><li><strong>Symptom-cause relationship</strong>: dealing only with surface symptoms (e.g. awareness drives for plague outbreaks) without root causes (poor sanitation, congested housing) gives minimal impact. A scheme's failure at a remote symptom level should not justify its discontinuation unless all causal layers are examined. Audits must examine multiple cause-effect layers, not in isolation, so <strong>trained auditors</strong> are essential.</li></ul>
+<h2 id="9-strengthening-social-audit">9 · Strengthening social audit<a class="anchor" href="#9-strengthening-social-audit" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">Strengthening plan</div><div class="tablewrap"><table><thead><tr><th>Heading</th><th>Steps</th></tr></thead><tbody><tr><th scope='row'><strong>Legal and institutional framework</strong></th><td><strong>Model Social Audit Law</strong> (inspired by <strong>Meghalaya's 2017 Act</strong>) for all public service schemes. <strong>Independent audit units</strong> such as Andhra Pradesh's <strong>SSAAT</strong>. Support the <strong>CAG</strong> and build <strong>PRI</strong> technical and human capacity</td></tr><tr><th scope='row'><strong>Empower stakeholders</strong></th><td>Public awareness and training of Gram Sabha members and social auditors (standards, ethics). NGO and media partnerships. Recognition schemes for active Gram Sabha participants</td></tr><tr><th scope='row'><strong>Standardise and digitise</strong></th><td>Online transparency portals for real-time access to audit reports, expenditure and PRI records. Proactive disclosure of project data. Unified audit guidelines and checklists across sectors</td></tr><tr><th scope='row'><strong>Best practices to scale</strong></th><td><strong>Chhattisgarh Model</strong>: link social audits with grievance redressal and use wall writing for community transparency. <strong>Karnataka Model</strong>: rotate audit teams after every <strong>three audit cycles</strong> to prevent familiarity and collusion</td></tr></tbody></table></div></div>
+<aside class="callout alert"><span class="tag">Handout alert</span><p>The handout numbers the Chhattisgarh and Karnataka models as 26 and 27 (stray list numbers from a longer list); they are just two models. Numbers dropped.</p></aside>
+<aside class="callout mnemo"><span class="tag">Strengthening</span><div class="mn"><b>L</b><b>E</b><b>S</b><b>A</b></div><p><strong>L</strong>egal and institutional, <strong>E</strong>mpower stakeholders, <strong>S</strong>tandardise and digitise, <strong>A</strong>dopt best practices: "<strong>L</strong>earn, <strong>E</strong>ducate, <strong>S</strong>tandardise, <strong>A</strong>dopt".</p></aside>
+<h2 id="10-success-stories-of-social-audit-in-india">10 · Success stories of social audit in India<a class="anchor" href="#10-success-stories-of-social-audit-in-india" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">Five stories</div><div class="tablewrap"><table><thead><tr><th>Story</th><th>What happened</th></tr></thead><tbody><tr><th scope='row'><strong>MGNREGA social audits in Andhra Pradesh</strong></th><td>Autonomous <strong>Society for Social Audit, Accountability and Transparency (SSAAT)</strong>. Trained village-level resource persons audited, leading to recovery of crores misappropriated in wage payments. The <strong>World Bank</strong> lauded it as a global best practice</td></tr><tr><th scope='row'><strong>Jharkhand Social Audit Unit (SAU)</strong></th><td>Covers MGNREGA, PDS and pensions. Exposed ghost beneficiaries, wage payment delays and ration diversion in PDS. <strong>SC in the Swaraj Abhiyan Case (2016)</strong> appreciated the role of social audits in MGNREGA. Built local capacity and empowered Gram Sabhas</td></tr><tr><th scope='row'><strong>Rajasthan MKSS</strong></th><td><strong>Mazdoor Kisan Shakti Sangathan</strong> jan sunwais in the <strong>1990s</strong> revealed massive leakages. The movement led to the <strong>Right to Information Act, 2005</strong></td></tr><tr><th scope='row'><strong>Citizen Report Cards, Bengaluru</strong></th><td>A civil society organisation pioneered CRCs to evaluate public services. Surveys on water supply, public hospitals and transport led to measurable improvement: bribery rates fell and satisfaction rose. Endorsed in a <strong>2003</strong> study and now globally recognised</td></tr><tr><th scope='row'><strong>Benchmarking in municipal services</strong></th><td>Local governments compared service delivery costs (e.g. cost per km of road construction). Public disclosure of the comparisons built citizen pressure on inefficient bodies and reduced corruption in urban local governance</td></tr></tbody></table></div></div>
+<aside class="callout shortcut"><span class="tag">Story to state</span><p><strong>AP = SSAAT, Jharkhand = SAU, Rajasthan = MKSS, Bengaluru = CRC.</strong> MKSS leads to <strong>RTI 2005</strong>; Swaraj Abhiyan is <strong>2016</strong>.</p></aside>
+<aside class="callout mnemo"><span class="tag">Four places</span><div class="mn"><b>A</b><b>J</b><b>R</b><b>B</b></div><p><strong>A</strong>ndhra, <strong>J</strong>harkhand, <strong>R</strong>ajasthan, <strong>B</strong>engaluru: "<strong>A</strong>ll <strong>J</strong>ust <strong>R</strong>ight <strong>B</strong>eautiful".</p></aside>
+</div><section id="chapter-timeline"><h2>Timeline<a class="anchor" href="#chapter-timeline">#</a></h2><ol class="timeline"><li class="tl "><time class="yr">1977</time><span class="pin"></span><div class="tlbody">US Foreign Corrupt Practices Act</div></li><li class="tl "><time class="yr">1989</time><span class="pin"></span><div class="tlbody">FATF</div></li><li class="tl "><time class="yr">1990s</time><span class="pin"></span><div class="tlbody">MKSS jan sunwais in Rajasthan; West ignored corruption until then</div></li><li class="tl high"><time class="yr">1997</time><span class="pin"></span><div class="tlbody">OECD Anti-Bribery Convention<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">2003</time><span class="pin"></span><div class="tlbody">UNCAC; Bengaluru CRC study endorsed<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">2004</time><span class="pin"></span><div class="tlbody">Georgia disbands Traffic Police</div></li><li class="tl high"><time class="yr">2005</time><span class="pin"></span><div class="tlbody">Right to Information Act (from MKSS movement)<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">2010</time><span class="pin"></span><div class="tlbody">UK Bribery Act</div></li><li class="tl "><time class="yr">2012</time><span class="pin"></span><div class="tlbody">Public Procurement bill lapses</div></li><li class="tl high"><time class="yr">2016</time><span class="pin"></span><div class="tlbody">Swaraj Abhiyan Case appreciates social audits<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">2017</time><span class="pin"></span><div class="tlbody">Meghalaya's social audit Act<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">2018</time><span class="pin"></span><div class="tlbody">PCA amendments (handout says diluted the Act)</div></li></ol></section><section id="connects"><h2>Connects to<a class="anchor" href="#connects">#</a></h2><div class="lkgrid"><article class="link"><div class="lk-line">Ch 58: Problem of Corruption</div><p>The causes these measures answer.</p></article><article class="link"><div class="lk-line">Ch 59: Corruption: CBI and CVC</div><p>The agencies named under stick measures.</p></article><article class="link"><div class="lk-line">Ch 61: Corruption: Lokpal in India</div><p>Lokpal, whistleblower law and PCA 2018.</p></article><article class="link"><div class="lk-line">Ch 56: Right to Information Act</div><p>Access to information is the key to social audit.</p></article><article class="link"><div class="lk-line">Ch 13: Local Self-Government</div><p>Gram Sabha and PRIs conduct grassroots audits.</p></article><article class="link"><div class="lk-line">Ch 39: Comptroller and Auditor General</div><p>CAG coverage of 25% auditable units.</p></article></div></section><section id="recall"><h2>Recall sheet<a class="anchor" href="#recall">#</a></h2><p class="gdesc">Read once, hide it, then rebuild the chapter from memory.</p><ol class="recall"><li>Wicked problem: control, not eliminate.</li><li>Stick: prosecution (Botswana), stings (Sweden), tighter laws (PCA 2018 diluted), assets, single agency (CPIB, ICAC), shaming (South Africa), pension forfeiture.</li><li>Carrot: pay rise with enforcement; Delhi helpline with whistleblower protection.</li><li>Administrative: job rotation (Kautilya), CAG 25%, procurement 30% of GDP and 2012 bill lapsed, digitisation, CCTV.</li><li>Radical: Georgia 2004 Traffic Police, Peru women, Romania monetising, amnesty with 50% surrender.</li><li>International: FCPA 1977, UK Bribery Act 2010, OECD 1997, UNCAC 2003, FATF 1989, Interpol IGEC.</li><li>Critique: anti-corruption industry; alternatives: spiritual education, IRC.</li><li>Social audit: Jan Sunwai, Gram Sabha; features multi-perspective, regular, comparative, demand side; needs access to information.</li><li>Issues: few statutory (NREGA), no trained auditors, vested interests, symptom-cause layers.</li><li>Strengthen: Meghalaya 2017 model, SSAAT, Chhattisgarh (wall writing), Karnataka (rotate after three cycles).</li><li>Success: AP SSAAT (World Bank), Jharkhand SAU (Swaraj Abhiyan 2016), MKSS (RTI 2005), Bengaluru CRC (2003 study), benchmarking.</li></ol></section><section id="practice"><h2>Test yourself<a class="anchor" href="#practice">#</a></h2><h3>Quick quiz</h3><div class="count" id="score">0 / 0 correct</div><div id="quiz"></div><h3>Flashcards</h3><p class="gdesc">Tap the card to flip.</p><div class="deck"><div class="fc" id="fc" tabindex="0" role="button" aria-label="Flashcard, press to flip"></div><div class="count" id="fccount"></div><div class="row"><button class="btn" id="fcprev" type="button">Back</button><button class="btn pri" id="fcnext" type="button">Next</button><button class="btn" id="fcmiss" type="button">Missed it</button><button class="btn" id="fcshuf" type="button">Shuffle</button><button class="btn" id="fconlymiss" type="button">Only missed</button><button class="btn" id="fcall" type="button">All cards</button></div></div></section><nav class="pager"><a href="pol-ch59.html"><small>Previous</small>Corruption: CBI and CVC</a><a class="nx" href="pol-ch61.html"><small>Next</small>Corruption: Lokpal in India</a></nav><footer>Personal study notes built from the Sarrthi IAS GS Foundation Polity handout (Parts 1 to 3). Handout only: no class slides or teacher ink for this chapter. Mnemonics and shortcuts are memory aids built from the handout’s own facts. Copyright belongs to the teacher; keep this private.</footer></main></div><div id="lightbox" hidden><img alt=""></div><script type="application/json" id="data">{"mcq": [{"q": "Which agency model does the handout cite as successful single dedicated anti-corruption agencies?", "options": ["CPIB (Singapore) and ICAC (Hong Kong)", "FBI and CIA", "CBI and CVC", "OECD and FATF"], "answer": 0, "explain": "The handout contrasts India's fragmented setup with Singapore's CPIB and Hong Kong's ICAC."}, {"q": "The 'Georgia Model' of tackling corruption refers to", "options": ["Allowing official payments", "Disbanding non-reformable departments such as Traffic Police", "Gender balance in bureaucracy", "General amnesty"], "answer": 1, "explain": "Georgia disbanded its Traffic Police in 2004 and recruited afresh under stricter norms."}, {"q": "Allowing official payments to avoid petty bribes, as in Romania's conscription policy, is called", "options": ["Monetising bribes", "Penalty targeting financial security", "Public shaming", "Job rotation"], "answer": 0, "explain": "It is the 'Romania Model' of monetising bribes, controversial for equity."}, {"q": "The Foreign Corrupt Practices Act was enacted in", "options": ["1977", "1989", "1997", "2010"], "answer": 0, "explain": "FCPA 1977 (USA). FATF 1989, OECD 1997, UNCAC 2003, UK Bribery Act 2010."}, {"q": "FATF, mentioned in the handout, is aimed at", "options": ["Banking havens", "Money laundering", "Police standards", "Bribery by MNCs"], "answer": 1, "explain": "FATF (1989) combats money laundering. Interpol's IGEC sets standards for police forces."}, {"q": "According to the handout, CAG covers what share of auditable units yearly?", "options": ["10%", "25%", "50%", "75%"], "answer": 1, "explain": "The handout says CAG's coverage is limited to 25% of auditable units yearly."}, {"q": "Which feature of social audit means it brings out time-based and village-to-village comparison?", "options": ["Regular", "Multi-perspective", "Comparative", "Demand side"], "answer": 2, "explain": "Comparative: compares both temporally and spatially."}, {"q": "Social audit is a statutory requirement under which programme named in the handout?", "options": ["NREGA", "PDS", "National Health Mission", "Pension schemes"], "answer": 0, "explain": "NREGA is the programme named for a statutory social audit; very few programmes have it."}, {"q": "The handout says the key to social audit effectiveness is", "options": ["Funds", "Sound access to information regime", "A national law", "Media coverage"], "answer": 1, "explain": "Without full disclosure by public agencies, social audit is a lost cause."}, {"q": "The autonomous body that conducts social audit of MGNREGA in Andhra Pradesh is", "options": ["SSAAT", "SAU", "MKSS", "CRC"], "answer": 0, "explain": "Society for Social Audit, Accountability and Transparency, lauded by the World Bank. SAU is Jharkhand's."}, {"q": "Which Karnataka practice is recommended by the handout?", "options": ["Wall writing", "Rotating audit teams after every three audit cycles", "Linking audits to grievance redressal", "A national law"], "answer": 1, "explain": "Karnataka rotates audit teams after three cycles to prevent collusion. Wall writing is the Chhattisgarh model."}, {"q": "The jan sunwais of MKSS in Rajasthan eventually led to", "options": ["MGNREGA", "Right to Information Act, 2005", "Lokpal Act, 2013", "Meghalaya's social audit law"], "answer": 1, "explain": "The MKSS movement of the 1990s led to the RTI Act, 2005."}], "cards": [{"q": "Why is corruption called a 'wicked problem'?", "a": "It can only be controlled, not eliminated, and more laws often signal systemic inefficiency."}, {"q": "Name the seven stick measures.", "a": "Prosecution, sting operations, tighter laws, asset declaration, effective agency, public shaming and blacklisting, penalties on financial security (pension forfeiture)."}, {"q": "Which countries are cited for conviction, harsh penalties and sting stance?", "a": "Botswana (conviction), China (harsh penalties, unsuitable), Sweden (restrictive on stings)."}, {"q": "What anti-corruption bodies work as single agencies?", "a": "Singapore's CPIB and Hong Kong's ICAC."}, {"q": "Which country is cited for naming corrupt officials?", "a": "South Africa."}, {"q": "What are the two carrot measures?", "a": "Substantial pay increase with strict enforcement, and citizen-centric helplines like Delhi's with whistleblower protection."}, {"q": "Which administrative measure does Kautilya support?", "a": "Job rotation (frequent transfers in sensitive posts)."}, {"q": "What is the CAG coverage figure and the procurement figure?", "a": "CAG covers 25% of auditable units yearly. Public procurement is 30% of GDP."}, {"q": "What happened to the 2012 procurement bill?", "a": "It lapsed and needs urgent revival."}, {"q": "Name the four radical approaches.", "a": "Disbanding departments (Georgia), gender balance (Peru), monetising bribes (Romania), general amnesty (50% surrender)."}, {"q": "Name six international instruments with years.", "a": "FCPA 1977, UK Bribery Act 2010, OECD Convention 1997, UNCAC 2003, FATF 1989, Interpol IGEC."}, {"q": "What does the handout say about WTO?", "a": "Its inaction on corruption as a non-tariff barrier is a missed opportunity."}, {"q": "What is the critique of the global anti-corruption industry?", "a": "Became a geopolitical tool after globalisation, NGO vested interests, data over impact, cultural imperialism concerns."}, {"q": "What is an Integrity Recognition Certificate?", "a": "Official recognition of honest officers to create peer-pressure networks; must be insulated from politicisation."}, {"q": "Define social audit.", "a": "Sharing details of scheme implementation and resources with beneficiaries on a public platform (Jan Sunwai, public hearing, Gram Sabha) so people can hold officials accountable."}, {"q": "What is the key to social audit effectiveness?", "a": "A sound access to information regime."}, {"q": "Four features of social audit?", "a": "Multi-perspective, regular, comparative, strengthens demand side."}, {"q": "Seven benefits of social audit?", "a": "Participation, benefits reach target, social capital, training needs of civil servants, highlights development concerns, transparency and checking corruption, better future programmes."}, {"q": "Four issues with social audit?", "a": "Not mainstream, statutory in very few programmes (NREGA), lack of trained auditors, vested-interest opposition."}, {"q": "What is the symptom-cause problem?", "a": "Treating symptoms (plague awareness drives) without root causes (sanitation, housing) has minimal impact; audit all causal layers."}, {"q": "Which state's Act inspires a Model Social Audit Law?", "a": "Meghalaya's 2017 Act."}, {"q": "What is the Chhattisgarh model?", "a": "Link social audits with grievance redressal and use wall writing."}, {"q": "What is the Karnataka model?", "a": "Rotate audit teams after every three audit cycles."}, {"q": "What did Andhra Pradesh's SSAAT achieve?", "a": "Trained village resource persons audited MGNREGA, crores of wage misappropriation recovered, praised by the World Bank."}, {"q": "What did Jharkhand's SAU expose?", "a": "Ghost beneficiaries, wage payment delays, ration diversion in PDS; Swaraj Abhiyan Case (2016) appreciated social audits."}, {"q": "What did Bengaluru's Citizen Report Cards show?", "a": "Surveys on water, hospitals and transport led to lower bribery and higher satisfaction; endorsed by a 2003 study."}, {"q": "What is benchmarking in municipal services?", "a": "Comparing service delivery costs, such as cost per km of road, with public disclosure pressing inefficient bodies."}]}</script><script>window.__NB={"id": "polity", "ch": 60, "title": "Tackling Corruption and Social Audit"};/* Shared store: reading progress, preferences, optional cross-device sync. */
+(function(){
+var KEY='nbapp:v1',root=document.documentElement;
+function today(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function fresh(){return{v:1,prefs:{fs:1,lh:1.65,w:780,font:'serif',theme:'auto',pt:0},last:null,nb:{},days:{}}}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+var S;
+try{S=JSON.parse(lsGet(KEY))}catch(e){S=null}
+if(!S||!S.v)S=fresh();
+S.prefs=Object.assign(fresh().prefs,S.prefs||{});
+// one-time import of the older done list and theme
+if(!S.migrated){
+  try{var od=JSON.parse(lsGet('nb-done')||'[]');od.forEach(function(n){var c=chap('modern-india',n);c.done=1;c.dt=1})}catch(e){}
+  var ot=lsGet('nb-theme');if(ot&&!S.prefs.pt){S.prefs.theme=ot;S.prefs.pt=1}
+  S.migrated=1;
+}
+function chap(nb,n){var b=S.nb[nb]||(S.nb[nb]={});return b[n]||(b[n]={read:{},done:0,dt:0,pos:null,t:0})}
+var listeners=[],dirty=false,saveT=null,syncT=null;
+function save(){
+  dirty=true;clearTimeout(saveT);
+  saveT=setTimeout(function(){lsSet(KEY,JSON.stringify(S));listeners.forEach(function(f){try{f()}catch(e){}});scheduleSync()},250);
+}
+function flush(){lsSet(KEY,JSON.stringify(S))}
+function merge(a,b){ // a local, b remote; returns merged
+  var o=fresh();
+  o.prefs=((b.prefs&&b.prefs.pt||0)>(a.prefs&&a.prefs.pt||0))?Object.assign({},a.prefs,b.prefs):Object.assign({},b.prefs,a.prefs);
+  o.last=(!a.last||(b.last&&b.last.ts>a.last.ts))?b.last:a.last;
+  o.migrated=1;
+  var ids={};Object.keys(a.nb||{}).concat(Object.keys(b.nb||{})).forEach(function(k){ids[k]=1});
+  Object.keys(ids).forEach(function(id){
+    o.nb[id]={};var ca=(a.nb||{})[id]||{},cb=(b.nb||{})[id]||{},ks={};
+    Object.keys(ca).concat(Object.keys(cb)).forEach(function(k){ks[k]=1});
+    Object.keys(ks).forEach(function(k){
+      var x=ca[k],y=cb[k];if(!x||!y){o.nb[id][k]=x||y;return}
+      var r=Object.assign({},x.read,y.read),done=(y.dt||0)>(x.dt||0)?y:x,pos=(y.t||0)>(x.t||0)?y.pos:x.pos;
+      o.nb[id][k]={read:r,done:done.done,dt:done.dt||0,pos:pos,t:Math.max(x.t||0,y.t||0)};
+    });
+  });
+  var dk={};Object.keys(a.days||{}).concat(Object.keys(b.days||{})).forEach(function(k){dk[k]=1});
+  Object.keys(dk).forEach(function(k){o.days[k]=Math.max((a.days||{})[k]||0,(b.days||{})[k]||0)});
+  return o;
+}
+var syncState='off';
+function scheduleSync(){clearTimeout(syncT);syncT=setTimeout(function(){sync()},4000)}
+var dbp=null;
+function getRef(){
+  if(dbp)return dbp;
+  dbp=(async function(){
+    if(!window.claude||!claude.use)return null;
+    var db=await claude.use('db'),u=await claude.use('user');
+    if(!db||!u||!u.id)return null;
+    var id=await u.id();if(!id)return null;
+    return db.doc('data/users/'+id+'/nbapp');
+  })().catch(function(){return null});
+  return dbp;
+}
+var busy=false;
+async function sync(){
+  if(busy)return;busy=true;
+  try{
+    var ref=await getRef();if(!ref){syncState='local';return}
+    var snap=await ref.get(),rem=null;
+    if(snap.exists){var d=snap.data();try{rem=JSON.parse(d.state)}catch(e){}}
+    var m=rem?merge(S,rem):S;
+    var changed=JSON.stringify(m)!==JSON.stringify(S);
+    S=m;
+    if(changed){flush();listeners.forEach(function(f){try{f()}catch(e){}})}
+    var out=JSON.stringify(S);
+    if(!rem||JSON.stringify(rem)!==out)await ref.set({v:1,updated:Date.now(),state:out});
+    syncState='synced';
+  }catch(e){syncState='local'}
+  finally{busy=false}
+}
+var API={
+  get:function(){return S},
+  chap:chap,
+  save:save,flush:flush,sync:sync,
+  onChange:function(f){listeners.push(f)},
+  syncState:function(){return syncState},
+  setPref:function(k,v){S.prefs[k]=v;S.prefs.pt=Date.now();applyPrefs();save()},
+  reset:function(){S=fresh();S.migrated=1;flush();save()},
+  today:today,
+  pct:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c||!total)return 0;var r=0;Object.keys(c.read||{}).forEach(function(k){if(c.read[k])r++});return Math.min(1,r/total)},
+  isDone:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c)return false;if(c.dt)return !!c.done;return false}
+};
+window.NBS=API;
+function applyPrefs(){
+  var p=S.prefs;
+  var th=p.theme;
+  if(th==='auto')root.removeAttribute('data-theme');else root.setAttribute('data-theme',th);
+  root.style.setProperty('--zoom',p.fs);root.style.setProperty('--lh',p.lh);root.style.setProperty('--pw',p.w+'px');
+  root.setAttribute('data-font',p.font);
+}
+API.applyPrefs=applyPrefs;applyPrefs();
+// studied time, counted while the page is visible and touched in the last minute
+var lastAct=Date.now();
+['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){lastAct=Date.now()},{passive:true})});
+setInterval(function(){
+  if(document.hidden||Date.now()-lastAct>60000||!window.__NB)return;
+  var t=today();S.days[t]=(S.days[t]||0)+15;save();
+},15000);
+document.addEventListener('visibilitychange',function(){if(document.hidden){flush();sync()}else{sync()}});
+addEventListener('pagehide',flush);
+setTimeout(sync,800);
+})();
+(function(){var b=document.getElementById('themebtn');if(!b)return;var o=['auto','light','sepia','dark'];b.addEventListener('click',function(){var t=NBS.get().prefs.theme,i=(o.indexOf(t)+1)%o.length;NBS.setPref('theme',o[i]);b.textContent='Theme: '+o[i]})})();
+(function(){
+var D=JSON.parse(document.getElementById('data').textContent);
+// map/outline toggle
+document.querySelectorAll('.seg button').forEach(function(bt){bt.addEventListener('click',function(){var v=bt.dataset.v;document.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===bt)});document.getElementById('mm-map').hidden=v!=='map';document.getElementById('mm-outline').hidden=v!=='outline'})});
+if(window.innerWidth<640){var ob=document.querySelector('.seg button[data-v="outline"]');if(ob)ob.click()}
+// lightbox
+var lb=document.getElementById('lightbox'),li=lb.querySelector('img');
+document.querySelectorAll('a.zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();li.src=a.getAttribute('href');lb.hidden=false})});
+lb.addEventListener('click',function(){lb.hidden=true});document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true});
+// quiz
+var qz=document.getElementById('quiz'),score=document.getElementById('score'),right=0,answered=0;
+if(qz)D.mcq.forEach(function(m,i){var d=document.createElement('div');d.className='q';var t=document.createElement('div');t.className='qt';t.textContent=(i+1)+'. '+m.q;d.appendChild(t);var ex=document.createElement('div');ex.className='ex';ex.hidden=true;ex.textContent=m.explain;var btns=[];
+m.options.forEach(function(o,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent='ABCD'[j]+'. '+o;b.addEventListener('click',function(){if(d.dataset.done)return;d.dataset.done=1;answered++;if(j===m.answer){right++;b.classList.add('right')}else{b.classList.add('wrong');btns[m.answer].classList.add('right')}ex.hidden=false;score.textContent=right+' / '+answered+' correct'});btns.push(b);d.appendChild(b)});d.appendChild(ex);qz.appendChild(d)});
+// flashcards
+var fc=document.getElementById('fc');
+if(fc){var all=D.cards.map(function(c,i){return{q:c.q,a:c.a,i:i}}),deck=all.slice(),pos=0,back=false,missed={};
+function show(){if(!deck.length){fc.textContent='No cards in this deck.';document.getElementById('fccount').textContent='';return}var c=deck[pos];fc.textContent=back?c.a:c.q;fc.classList.toggle('back',back);document.getElementById('fccount').textContent='Card '+(pos+1)+' of '+deck.length+(back?' (answer)':' (question)')}
+function go(d){if(!deck.length)return;pos=(pos+d+deck.length)%deck.length;back=false;show()}
+fc.addEventListener('click',function(){back=!back;show()});fc.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();back=!back;show()}});
+document.getElementById('fcnext').onclick=function(){go(1)};document.getElementById('fcprev').onclick=function(){go(-1)};
+document.getElementById('fcmiss').onclick=function(){if(deck.length){missed[deck[pos].i]=1;go(1)}};
+document.getElementById('fcshuf').onclick=function(){for(var i=deck.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=deck[i];deck[i]=deck[j];deck[j]=t}pos=0;back=false;show()};
+document.getElementById('fconlymiss').onclick=function(){deck=all.filter(function(c){return missed[c.i]});pos=0;back=false;show()};
+document.getElementById('fcall').onclick=function(){deck=all.slice();pos=0;back=false;show()};show()}
+// side toc highlight
+var links=[].slice.call(document.querySelectorAll('.sidetoc a'));
+if('IntersectionObserver' in window&&links.length){var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on')}})},{rootMargin:'-70px 0px -70% 0px'});Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)})}
+})();
+(function(){
+var N=window.__NB,S=window.NBS;if(!N||!S)return;
+var root=document.documentElement,body=document.body;
+var rec=function(){return S.chap(N.id,N.ch)};
+var heads=[].slice.call(document.querySelectorAll('.page h2[id]'));
+var titles=heads.map(function(h){return h.firstChild?h.firstChild.textContent.trim():h.id});
+var ids=heads.map(function(h){return h.id});
+var seen={},manual={};
+// Done box
+var box=document.getElementById('donebox');
+if(box){box.checked=!!(rec().done);box.addEventListener('change',function(){var r=rec();r.done=box.checked?1:0;r.dt=Date.now();S.save()})}
+// progress bar
+var bar=document.createElement('div');bar.className='rbar';body.appendChild(bar);
+// per-section read buttons
+heads.forEach(function(h,i){
+  var b=document.createElement('button');b.type='button';b.className='h2read';
+  function paint(){var on=!!rec().read[h.id];b.setAttribute('aria-pressed',on);b.textContent=on?'Read ✓':'Mark read'}
+  b.addEventListener('click',function(){var r=rec();manual[h.id]=1;if(r.read[h.id])delete r.read[h.id];else r.read[h.id]=1;r.t=Date.now();S.save();paint();refresh()});
+  h.insertBefore(b,h.firstChild);paint();b._paint=paint;h._b=b;
+});
+function repaint(){heads.forEach(function(h){h._b._paint()});refresh()}
+// caption clamp
+document.querySelectorAll('figcaption').forEach(function(c){if(c.textContent.length>170){c.classList.add('clamp');c.addEventListener('click',function(){c.classList.toggle('open')})}});
+// dock
+var dock=document.createElement('div');dock.className='dock';
+dock.innerHTML='<button type="button" id="dprev" aria-label="Previous section">‹ Prev</button><button type="button" class="mid" id="dmid"></button><button type="button" id="dnext" aria-label="Next section">Next ›</button>';
+body.appendChild(dock);body.classList.add('has-dock');
+var dmid=dock.querySelector('#dmid');
+function curIdx(){var y=innerHeight*0.25,c=-1;for(var i=0;i<heads.length;i++){if(heads[i].getBoundingClientRect().top<=y)c=i;else break}return c}
+function goto(i){if(i<0||i>=heads.length)return;heads[i].scrollIntoView({behavior:'smooth',block:'start'})}
+dock.querySelector('#dprev').onclick=function(){var c=curIdx(),h=heads[c];goto(h&&h.getBoundingClientRect().top<-40?c:c-1)};
+dock.querySelector('#dnext').onclick=function(){goto(curIdx()+1)};
+function refresh(){
+  var c=curIdx(),r=rec().read,n=0;ids.forEach(function(id){if(r[id])n++});
+  dmid.innerHTML='<b>'+(c<0?'Top':(c+1)+'/'+heads.length)+'</b> · '+(c<0?'Start of chapter':esc(titles[c]))+' · '+n+' read';
+}
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+// sheets
+function sheet(html){var s=document.createElement('div');s.className='sheet';s.hidden=true;s.innerHTML='<div class="sheetin">'+html+'</div>';s.addEventListener('click',function(e){if(e.target===s)s.hidden=true});body.appendChild(s);return s}
+var cs=sheet('<h3>Sections</h3><div class="secl" id="secl"></div>');
+dmid.onclick=function(){
+  var r=rec().read,c=curIdx(),h='';
+  ids.forEach(function(id,i){h+='<a href="#'+id+'" data-i="'+i+'" class="'+(r[id]?'rd ':'')+(i===c?'cur':'')+'"><span class="tk">'+(r[id]?'✓':'')+'</span><span>'+esc(titles[i])+'</span></a>'});
+  cs.querySelector('#secl').innerHTML=h;cs.hidden=false;
+  var cur=cs.querySelector('.cur');if(cur)cur.scrollIntoView({block:'center'});
+};
+cs.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-i]');if(a){e.preventDefault();cs.hidden=true;goto(+a.dataset.i)}});
+var ps=sheet('<h3>Reading settings</h3><div id="pbody"></div>');
+function grp(key,label,opts){var p=S.get().prefs;return '<div class="srow"><label>'+label+'</label><div class="grp">'+opts.map(function(o){return '<button type="button" data-k="'+key+'" data-v="'+o[0]+'" aria-pressed="'+(String(p[key])===String(o[0]))+'">'+o[1]+'</button>'}).join('')+'</div></div>'}
+function drawPrefs(){
+  ps.querySelector('#pbody').innerHTML=
+    grp('fs','Text size',[[0.88,"A−"],[1,"A"],[1.12,"A+"],[1.25,"A++"],[1.4,"A+++"]])+
+    grp('lh','Spacing',[[1.45,'Tight'],[1.65,'Normal'],[1.85,'Roomy']])+
+    grp('w','Width',[[640,'Narrow'],[780,'Medium'],[980,'Wide']])+
+    grp('font','Font',[['serif','Serif'],['sans','Sans']])+
+    grp('theme','Theme',[['auto','Auto'],['light','Light'],['sepia','Sepia'],['dark','Dark']])+
+    '<div class="srow"><label>Extras</label><div class="grp"><button type="button" id="pfocus" aria-pressed="'+body.classList.contains('focus')+'">Focus mode</button>'+('wakeLock' in navigator?'<button type="button" id="pwake" aria-pressed="'+!!wl+'">Keep screen on</button>':'')+'</div></div>';
+}
+var wl=null;
+ps.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('button');if(!b)return;
+  if(b.dataset.k){var v=b.dataset.v;S.setPref(b.dataset.k,b.dataset.k==='font'||b.dataset.k==='theme'?v:+v);drawPrefs();return}
+  if(b.id==='pfocus'){body.classList.toggle('focus');drawPrefs();return}
+  if(b.id==='pwake'){
+    if(wl){wl.release();wl=null;drawPrefs()}else{navigator.wakeLock.request('screen').then(function(l){wl=l;l.addEventListener('release',function(){wl=null});drawPrefs()}).catch(function(){})}
+  }
+});
+function openPrefs(){drawPrefs();ps.hidden=false}
+var aa=document.getElementById('aabtn');if(aa)aa.onclick=openPrefs;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){ps.hidden=true;cs.hidden=true;body.classList.remove('focus')}});
+// focus-mode exit: tap the top edge area
+var fx=document.createElement('button');fx.type='button';fx.textContent='Exit focus';fx.className='h2read';fx.style.cssText='position:fixed;right:10px;top:10px;z-index:45;float:none;display:none';fx.onclick=function(){body.classList.remove('focus')};body.appendChild(fx);
+new MutationObserver(function(){fx.style.display=body.classList.contains('focus')?'block':'none'}).observe(body,{attributes:true,attributeFilter:['class']});
+// scroll handling
+var tick=false,saveAt=0;
+function onScroll(){
+  if(tick)return;tick=true;requestAnimationFrame(function(){
+    tick=false;
+    var doc=document.documentElement,max=doc.scrollHeight-innerHeight;
+    bar.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';
+    var vh=innerHeight,r=rec(),ch=false;
+    heads.forEach(function(h,i){
+      var t=h.getBoundingClientRect().top;
+      if(t<vh&&t>-40)seen[h.id]=1;
+      var nt=i+1<heads.length?heads[i+1].getBoundingClientRect().top:(scrollY>=max-160?-1:1e9);
+      if(seen[h.id]&&nt<vh*0.35&&!r.read[h.id]&&!manual[h.id]){r.read[h.id]=1;ch=true;h._b._paint()}
+    });
+    if(ch){r.t=Date.now();S.save()}
+    refresh();
+    var now=Date.now();
+    if(now-saveAt>1500){saveAt=now;var c=curIdx(),rr=rec();
+      if(c>=0){var hh=heads[c].getBoundingClientRect().top;rr.pos={s:ids[c],o:Math.round(-hh)};rr.t=now}
+      S.get().last={nb:N.id,ch:N.ch,s:c>=0?ids[c]:'',st:c>=0?titles[c]:'',ts:now};S.save()}
+  })}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
+S.onChange(function(){if(box)box.checked=!!rec().done;repaint()});
+refresh();onScroll();
+// resume offer
+var p=rec().pos;
+if(!location.hash&&p&&p.s&&ids.indexOf(p.s)>0){
+  var el=document.getElementById(p.s);
+  var t=document.createElement('div');t.className='toast';t.innerHTML='<span>Resume at “'+esc(titles[ids.indexOf(p.s)])+'”?</span><button type="button" id="tgo">Resume</button><button type="button" id="tx">Dismiss</button>';
+  body.appendChild(t);
+  t.querySelector('#tgo').onclick=function(){if(el){el.scrollIntoView({block:'start'});scrollBy(0,(p.o||0))}t.remove()};
+  t.querySelector('#tx').onclick=function(){t.remove()};
+  setTimeout(function(){if(t.parentNode)t.remove()},12000);
+}
+})();
+</script></body></html>

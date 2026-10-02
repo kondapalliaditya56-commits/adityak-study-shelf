@@ -1,0 +1,480 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Ch 54 · Making of the Constitution</title><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style><style>:root{--bg:#FBFAF6;--surface:#fff;--surface2:#F3F1EA;--ink:#1F2A2A;--muted:#5D6A68;--line:#DAD6C8;--acc:#0E6B5C;--acc-ink:#fff;--acc-soft:#DDF0EA;--saf:#B85C00;--saf-soft:#FFF0DB;--red:#B3261E;--red-soft:#FDE7E4;--blue:#1F5FA8;--blue-soft:#E3EEFA;--good:#2E7D32;--good-soft:#E3F3E4;--hl:#FFE9A6;
+--c0:#0E6B5C;--c1:#B85C00;--c2:#1F5FA8;--c3:#8E3B8E;--c4:#B3261E;--c5:#5C7A1F;--c6:#8A6D00;--c7:#37607A;
+--serif:Literata,Spectral,Georgia,'Times New Roman',serif;--sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:17px/1.65 var(--serif);margin:0}
+a{color:var(--acc)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;margin:0}
+.bar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.barin{display:flex;align-items:center;gap:8px;padding:8px 16px;max-width:1200px;margin:0 auto;font:600 14px var(--sans);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.barin::-webkit-scrollbar{display:none}
+.bar a.home,.nbtn,.themebtn{color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 10px;font:600 13px var(--sans);cursor:pointer;flex:none}
+.nbtn{padding:5px 12px;font-size:16px;line-height:1}.nbtn.off{opacity:.35}
+.bartitle{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-weight:500}.bartitle b{color:var(--acc)}
+.done{display:flex;align-items:center;gap:5px;flex:none;font:600 13px var(--sans);cursor:pointer}.done input{width:18px;height:18px;accent-color:var(--acc)}
+.layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px;padding:0 16px}
+.sidetoc{position:sticky;top:58px;align-self:start;max-height:calc(100vh - 70px);overflow:auto;padding:18px 0;font:14px/1.4 var(--sans)}
+.sth{font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;color:var(--muted);margin-bottom:8px}
+.sidetoc ol{list-style:none;margin:0;padding:0}.sidetoc li{margin:0}.sidetoc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--ink);text-decoration:none}.sidetoc a:hover,.sidetoc a.on{border-color:var(--acc);color:var(--acc);background:var(--acc-soft)}
+.page{max-width:780px;margin:0 auto;padding:24px 16px 60px;width:100%;min-width:0}
+.home-page{max-width:900px}
+.chead{margin-bottom:22px}
+.eyebrow{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font-size:clamp(28px,5vw,40px);margin:6px 0 10px;font-weight:700}
+.lede{font-size:18px;color:var(--muted);margin:10px 0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:600 12px var(--sans);padding:3px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--line);color:var(--muted)}
+.pill.cls{background:var(--acc-soft);color:var(--acc);border-color:transparent}.pill.hb{background:var(--saf-soft);color:var(--saf);border-color:transparent}
+h2{font-size:clamp(22px,3.6vw,28px);margin:40px 0 12px;padding-top:14px;border-top:2px solid var(--acc);font-weight:700}
+h3{font-size:19px;margin:24px 0 8px;color:var(--acc)}
+h4{font-size:16px;margin-bottom:10px}
+.anchor{margin-left:8px;font-size:.7em;color:var(--muted);opacity:0;text-decoration:none}h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 12px}
+mark{background:var(--hl);color:inherit;padding:0 3px;border-radius:3px}
+.lst{margin:0 0 14px;padding-left:22px}.lst li{margin:5px 0}.lst li.sub{margin-left:18px;list-style:circle;color:var(--ink)}
+.gdesc{color:var(--muted);font:15px var(--sans);margin:-4px 0 12px}
+.xref{font:600 .92em var(--sans);white-space:nowrap}
+.callout{border-left:4px solid var(--acc);background:var(--acc-soft);border-radius:0 10px 10px 0;padding:10px 14px 4px;margin:14px 0}
+.callout .tag{display:inline-block;font:700 11px var(--sans);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;color:var(--acc)}
+.callout.teacher{border-color:var(--saf);background:var(--saf-soft)}.callout.teacher .tag{color:var(--saf)}
+.callout.alert{border-color:var(--red);background:var(--red-soft)}.callout.alert .tag{color:var(--red)}
+.callout.note{border-color:var(--blue);background:var(--blue-soft)}.callout.note .tag{color:var(--blue)}
+.callout.example{border-color:var(--good);background:var(--good-soft)}.callout.example .tag{color:var(--good)}
+.callout.source{background:var(--surface2);border-color:var(--line)}.callout.source .tag{color:var(--muted)}
+figure{margin:18px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure img{display:block;width:100%;height:auto;background:#fff}
+figure a.zoom{display:block;cursor:zoom-in}
+figcaption{padding:8px 12px;font:14px/1.45 var(--sans);color:var(--muted)}.figsrc{font:700 11px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--acc);margin-right:6px}
+.tblock{margin:16px 0}.tcap{font:700 14px var(--sans);margin-bottom:6px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font:15px/1.45 var(--sans);min-width:480px}
+th,td{padding:8px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--acc);color:var(--acc-ink);font-weight:700}
+tbody th{background:var(--surface2);font-weight:700}tbody tr:last-child>*{border-bottom:0}tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface2) 55%,transparent)}
+.stepsblock{margin:16px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}.stepsblock ol{margin:0;padding-left:22px}.stepsblock li{margin:4px 0}
+.flow{margin:20px 0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.chain{display:flex;flex-direction:column;align-items:stretch}
+.step{border:1.5px solid var(--acc);background:var(--acc-soft);border-radius:10px;padding:8px 12px;font:15px/1.4 var(--sans)}
+.step .sl{font-weight:700}.step .ss{color:var(--muted);font-size:14px;margin-top:2px}
+.step.warn{border-color:var(--saf);background:var(--saf-soft)}.step.bad{border-color:var(--red);background:var(--red-soft)}.step.good{border-color:var(--good);background:var(--good-soft)}
+.arr{height:20px;position:relative;flex:none}.arr:before{content:"";position:absolute;left:50%;top:0;bottom:6px;border-left:2px solid var(--muted)}.arr:after{content:"";position:absolute;left:calc(50% - 5px);bottom:0;border:5px solid transparent;border-top:7px solid var(--muted);border-bottom:0}
+.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.lane{display:flex;flex-direction:column}.lane-h{font:700 12px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;text-align:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:10px}.seg button{font:600 13px var(--sans);padding:6px 14px;border:0;background:var(--surface);color:var(--ink);cursor:pointer}.seg button[aria-pressed=true]{background:var(--acc);color:var(--acc-ink)}
+.mapblock h2{margin-top:10px}
+.mmframe{overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:8px;-webkit-overflow-scrolling:touch}
+svg.mm{display:block;font-family:var(--sans)}
+.mm-root{fill:var(--acc)}.mm-root-t{fill:var(--acc-ink);font:700 14px var(--sans)}
+.mm-link{fill:none;stroke-width:2;opacity:.7}.mm-branch-t{font:700 13px var(--sans);fill:#fff}.mm-leaf-t{font:13px var(--sans);fill:var(--ink)}.mm-leaf-n{font:11.5px var(--sans);fill:var(--muted)}
+.mm-leaf{fill:var(--surface2);stroke-width:1.5}
+.mm-branch.c0{fill:var(--c0)}.mm-branch.c1{fill:var(--c1)}.mm-branch.c2{fill:var(--c2)}.mm-branch.c3{fill:var(--c3)}.mm-branch.c4{fill:var(--c4)}.mm-branch.c5{fill:var(--c5)}.mm-branch.c6{fill:var(--c6)}.mm-branch.c7{fill:var(--c7)}
+.mm-link.c0,.mm-leaf.c0{stroke:var(--c0)}.mm-link.c1,.mm-leaf.c1{stroke:var(--c1)}.mm-link.c2,.mm-leaf.c2{stroke:var(--c2)}.mm-link.c3,.mm-leaf.c3{stroke:var(--c3)}.mm-link.c4,.mm-leaf.c4{stroke:var(--c4)}.mm-link.c5,.mm-leaf.c5{stroke:var(--c5)}.mm-link.c6,.mm-leaf.c6{stroke:var(--c6)}.mm-link.c7,.mm-leaf.c7{stroke:var(--c7)}
+:root:not([data-theme="dark"]) .mm-branch-t{fill:#fff}
+.outline,.outline ul{list-style:none;padding-left:18px;margin:4px 0}.outline>li{padding-left:0}.outline summary{cursor:pointer;font:700 15px var(--sans)}
+.outline li.c0>details>summary{color:var(--c0)}.outline li.c1>details>summary{color:var(--c1)}.outline li.c2>details>summary{color:var(--c2)}.outline li.c3>details>summary{color:var(--c3)}.outline li.c4>details>summary{color:var(--c4)}.outline li.c5>details>summary{color:var(--c5)}.outline li.c6>details>summary{color:var(--c6)}.outline li.c7>details>summary{color:var(--c7)}
+.ol-note{color:var(--muted);font-size:.9em}
+.timeline{list-style:none;margin:10px 0;padding:0;position:relative}
+.timeline:before{content:"";position:absolute;left:94px;top:0;bottom:0;border-left:2px solid var(--line)}
+.tl{display:grid;grid-template-columns:86px 18px 1fr;gap:0 6px;margin:0 0 12px;align-items:start}
+.yr{font:700 14px var(--mono);text-align:right;color:var(--acc);padding-top:2px}
+.pin{width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--acc);margin:7px 0 0 2px;position:relative;z-index:1}
+.tl.high .pin{background:var(--saf);border-color:var(--saf)}
+.tlbody{font:16px/1.5 var(--sans);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px}
+.tl.high .tlbody{border-color:var(--saf)}.star{color:var(--saf);margin-left:6px}.sref{float:right;margin-left:10px;font:600 12px var(--sans);text-decoration:none}
+.lkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.link{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:15px/1.45 var(--sans)}.link p{margin:4px 0 0;color:var(--muted)}.lk-line{font-weight:700}
+.recall{font:16px/1.55 var(--sans);padding-left:24px}.recall li{margin:6px 0}
+.count{font:600 13px var(--sans);color:var(--muted);margin:8px 0}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;font:16px/1.5 var(--sans)}
+.q .qt{font-weight:700;margin-bottom:8px}.q .opt{display:block;width:100%;text-align:left;padding:8px 12px;margin:6px 0;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.q .opt:hover{border-color:var(--acc)}.q .opt.right{border-color:var(--good);background:var(--good-soft)}.q .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.q .ex{margin-top:8px;color:var(--muted)}
+.deck{margin:10px 0}
+.fc{min-height:150px;background:var(--surface);border:2px solid var(--acc);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:center;text-align:center;font:18px/1.5 var(--serif);cursor:pointer;user-select:none}
+.fc.back{background:var(--acc-soft)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.btn{font:600 14px var(--sans);padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.pri{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:40px 0 20px}.pager a{display:block;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--ink);font:600 15px var(--sans)}.pager a.nx{text-align:right}.pager small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+footer{color:var(--muted);font:13px/1.5 var(--sans);border-top:1px solid var(--line);padding-top:14px;margin-top:30px}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:flex;align-items:center;justify-content:center;padding:10px;overflow:auto}#lightbox img{max-width:none;width:min(1600px,100%);height:auto;background:#fff;cursor:zoom-out}
+.part{margin:34px 0}.part h2{margin-top:0}
+.chlist{display:flex;flex-direction:column;gap:8px}
+.chcard{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+a.chcard:hover{border-color:var(--acc)}.chcard.pending{opacity:.5}
+.chn{font:700 18px var(--mono);color:var(--acc);text-align:center}.cht b{font:700 16px var(--serif);display:block}.cht small{font:13px/1.4 var(--sans);color:var(--muted);display:block;margin-top:2px}
+.chb{display:flex;flex-direction:column;gap:4px;align-items:flex-end;font:600 11px var(--sans)}.chb em{font-style:normal;background:var(--acc-soft);color:var(--acc);padding:2px 8px;border-radius:99px}.chb i.tick{font-style:normal;background:var(--good);color:#fff;padding:2px 8px;border-radius:99px}
+.prog{font:600 14px var(--sans);color:var(--muted)}
+.sbox{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:17px var(--sans);margin:6px 0 14px}
+.results .hit{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0;font:15px/1.5 var(--sans)}.results .hit a{font-weight:700}.results .hit small{color:var(--muted)}
+.chips{display:flex;gap:8px;margin-bottom:8px}.chip{font:600 13px var(--sans);padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}.chip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+@media (max-width:900px){.layout{display:block}.sidetoc{display:none}}
+@media (max-width:560px){body{font-size:16.5px}.tl{grid-template-columns:62px 16px 1fr}.timeline:before{left:70px}.yr{font-size:12px}.chcard{grid-template-columns:34px 1fr}.chb{display:none}.lanes{grid-template-columns:1fr}}
+
+code{font:.88em var(--mono);background:var(--surface2);padding:1px 5px;border-radius:4px}
+
+/* ---- reader app ---- */
+:root{--zoom:1;--lh:1.65;--pw:780px}
+:root[data-theme="sepia"]{--bg:#F4ECD8;--surface:#FBF5E6;--surface2:#EADFC4;--ink:#3B3022;--muted:#7A6A52;--line:#D8C9A6;--acc:#7A4A12;--acc-ink:#fff;--acc-soft:#EFDDB8;--saf:#A4470A;--saf-soft:#F6E2BE;--red:#9C2A1C;--red-soft:#F3D9CB;--blue:#2F5C8A;--blue-soft:#DDE6E4;--good:#3E6B2A;--good-soft:#DDE8C8;--hl:#F2D98A;color-scheme:light}
+:root[data-font="sans"] body{font-family:var(--sans)}
+:root[data-font="sans"] .notes p,:root[data-font="sans"] .notes li{font-family:var(--sans)}
+.page{zoom:var(--zoom);max-width:var(--pw)}
+.notes p,.notes li{line-height:var(--lh)}
+.rbar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--acc);z-index:40;transition:width .15s}
+.aabtn{color:var(--ink);border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 12px;font:700 14px var(--serif);cursor:pointer;flex:none}
+.h2read{float:right;margin:2px 0 0 10px;font:600 12px var(--sans);border:1px solid var(--line);background:var(--surface2);color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer;min-height:30px}
+.h2read[aria-pressed="true"]{background:var(--acc-soft);color:var(--acc);border-color:var(--acc)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding:6px 10px calc(6px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:center;justify-content:center}
+.dock button{font:600 14px var(--sans);min-height:44px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;padding:0 14px;cursor:pointer}
+.dock .mid{flex:1;max-width:520px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dock .mid b{color:var(--acc)}
+body.has-dock .page{padding-bottom:110px}
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.sheetin{background:var(--surface);color:var(--ink);width:100%;max-width:560px;max-height:82vh;overflow:auto;border-radius:16px 16px 0 0;padding:16px 18px calc(18px + env(safe-area-inset-bottom,0px));font:15px/1.4 var(--sans)}
+.sheetin h3{margin:0 0 10px;font:700 17px var(--sans)}
+.srow{display:flex;align-items:center;gap:10px;margin:12px 0;flex-wrap:wrap}
+.srow label{flex:0 0 92px;color:var(--muted);font-weight:600}
+.srow .grp{display:flex;gap:6px;flex-wrap:wrap}
+.srow button{font:600 14px var(--sans);min-height:42px;min-width:48px;padding:0 12px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;cursor:pointer}
+.srow button[aria-pressed="true"]{border-color:var(--acc);background:var(--acc-soft);color:var(--acc)}
+.secl a{display:flex;gap:10px;align-items:center;padding:12px 6px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;min-height:44px}
+.secl a .tk{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;color:var(--acc-ink)}
+.secl a.rd .tk{background:var(--acc);border-color:var(--acc)}
+.secl a.cur{background:var(--acc-soft)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:50;background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 14px;display:flex;gap:12px;align-items:center;font:600 14px var(--sans);max-width:92vw;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.toast button{font:700 14px var(--sans);background:transparent;border:0;color:var(--bg);text-decoration:underline;cursor:pointer;min-height:36px}
+body.focus .bar{display:none}body.focus .sidetoc{display:none}
+figcaption.clamp{max-height:3.3em;overflow:hidden;position:relative;cursor:pointer}
+figcaption.clamp.open{max-height:none}
+figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bottom:0;background:var(--bg);color:var(--acc);font:700 12px var(--sans);padding-left:14px}
+.cbar{display:block;height:4px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}.cbar i{display:block;height:100%;width:0;background:var(--acc)}
+.nbcard h2{border:0;padding:0}.nbcard{border-top:1px solid var(--line)}
+</style><style>
+.mn{display:inline-flex;gap:4px;flex-wrap:wrap;margin:2px 0 6px}.mn b{font:700 15px var(--mono);background:var(--acc);color:var(--acc-ink);border-radius:6px;padding:1px 8px}
+.callout.shortcut{border-color:var(--saf);background:var(--saf-soft)}.callout.shortcut .tag{color:var(--saf)}
+.callout.mnemo{border-color:var(--c3);background:var(--surface2)}.callout.mnemo .tag{color:var(--c3)}
+.callout p,.callout li{font-family:var(--sans)}
+.art{font-family:var(--mono);font-size:.86em;background:var(--acc-soft);padding:0 .28em;border-radius:4px;white-space:nowrap}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin:14px 0}
+.two .col{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:10px 14px;font:15px/1.5 var(--sans)}
+.two .col h4{margin:0 0 4px;font:700 13px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--acc)}
+.two .col ul{margin:4px 0;padding-left:18px}
+.ptag{display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:2px 9px;margin-left:8px;vertical-align:middle}
+.ptag.high{background:var(--red-soft);color:var(--red)}.ptag.med{background:var(--saf-soft);color:var(--saf)}.ptag.low{background:var(--surface2);color:var(--muted)}
+</style></head><body><header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="pol-home.html">Contents</a><a class="nbtn" href="pol-ch53.html" title="The Cooperative Sector" aria-label="Previous chapter">‹</a><span class="bartitle"><b>Ch 54</b> Making of the Constitution</span><a class="nbtn" href="pol-ch55.html" title="Hindi Text of the Constitution" aria-label="Next chapter">›</a><a class="home" href="pol-search.html">Search</a><a class="home" href="pol-timeline.html">Timeline</a><label class="done"><input type="checkbox" id="donebox" data-ch="54"><span>Done</span></label><button class="aabtn" id="aabtn" type="button" aria-label="Reading settings">Aa</button></div></header><div class="layout"><aside class="sidetoc"><div class="sth">In this chapter</div><ol><li><a href="#chapter-map">Chapter map</a></li><li><a href="#exam-lens-priority-and-pyqs">Exam lens: priority and PYQs</a></li><li><a href="#1-introduction-the-birth-of-a-constitutional-nat">1 · Introduction: the birth of a constitutional nation</a></li><li><a href="#2-evolution-of-the-demand-1934-to-1942">2 · Evolution of the demand (1934 to 1942)</a></li><li><a href="#3-the-cabinet-mission-plan-1946">3 · The Cabinet Mission Plan, 1946</a></li><li><a href="#4-composition-of-the-assembly">4 · Composition of the Assembly</a></li><li><a href="#5-key-timeline-of-the-making">5 · Key timeline of the making</a></li><li><a href="#6-the-objectives-resolution">6 · The Objectives Resolution</a></li><li><a href="#7-important-committees">7 · Important committees</a></li><li><a href="#8-criticism-of-the-assembly">8 · Criticism of the Assembly</a></li><li><a href="#9-important-facts-constituent-assembly">9 · Important facts: Constituent Assembly</a></li><li><a href="#chapter-timeline">Timeline</a></li><li><a href="#connects">Connects to</a></li><li><a href="#recall">Recall sheet</a></li><li><a href="#practice">Test yourself</a></li></ol></aside><main class="page"><div class="chead"><div class="eyebrow">Polity · Part 3 · Bodies, Commissions and Governance · Chapter 54</div><h1>Making of the Constitution<span class="ptag low">None quoted</span></h1><div class="pills"><span class="pill hb">Handout only: no class slides</span><span class="pill ">Handout: Making of the Constitution</span><span class="pill ">No PYQs quoted</span></div><p class="lede">How the Constituent Assembly came about (1934 to 1946), who sat in it, what it did day by day from 9 Dec 1946 to 26 Jan 1950, the Objectives Resolution, the committees, the criticisms, and the trivia Prelims likes.</p></div><section class="mapblock"><h2 id="chapter-map">Chapter map<a class="anchor" href="#chapter-map">#</a></h2><div class="seg" role="group" aria-label="Map view"><button type="button" data-v="map" aria-pressed="true">Map</button><button type="button" data-v="outline" aria-pressed="false">Outline</button></div><div id="mm-map" class="mmframe"><svg class="mm" viewBox="0 0 737 1294" width="737" height="1294" role="img" aria-label="Mind map: Making of the Constitution"><rect class="mm-root" x="8" y="658.4" width="130.6" height="47.2" rx="6"/><text class="mm-root-t" x="73.3" y="678.2" text-anchor="middle">Making of the</text><text class="mm-root-t" x="73.3" y="695.8" text-anchor="middle">Constitution</text><path class="mm-link c0" d="M138.6,682.0 C170.6,682.0 170.6,148.0 202.6,148.0"/><rect class="mm-branch c0" x="202.6" y="134.0" width="154.0" height="28" rx="5"/><text class="mm-branch-t" x="279.6" y="152.5" text-anchor="middle">Demand (1934-46)</text><path class="mm-link c0" d="M356.6,148.0 C384.6,148.0 476.6,28.0 504.6,28.0"/><rect class="mm-leaf c0" x="504.6" y="8" width="210.3" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="23.5">1934</text><text class="mm-leaf-n" x="514.6" y="38.5">M.N. Roy first put the idea</text><path class="mm-link c0" d="M356.6,148.0 C384.6,148.0 476.6,76.0 504.6,76.0"/><rect class="mm-leaf c0" x="504.6" y="56" width="182.7" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="71.5">1935</text><text class="mm-leaf-n" x="514.6" y="86.5">INC officially demanded</text><path class="mm-link c0" d="M356.6,148.0 C384.6,148.0 476.6,124.0 504.6,124.0"/><rect class="mm-leaf c0" x="504.6" y="104" width="224.1" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="119.5">1938</text><text class="mm-leaf-n" x="514.6" y="134.5">Nehru: franchise, sovereignty</text><path class="mm-link c0" d="M356.6,148.0 C384.6,148.0 476.6,172.0 504.6,172.0"/><rect class="mm-leaf c0" x="504.6" y="152" width="106.8" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="167.5">1940</text><text class="mm-leaf-n" x="514.6" y="182.5">August Offer</text><path class="mm-link c0" d="M356.6,148.0 C384.6,148.0 476.6,220.0 504.6,220.0"/><rect class="mm-leaf c0" x="504.6" y="200" width="168.9" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="215.5">1942</text><text class="mm-leaf-n" x="514.6" y="230.5">Cripps Mission failed</text><path class="mm-link c0" d="M356.6,148.0 C384.6,148.0 476.6,268.0 504.6,268.0"/><rect class="mm-leaf c0" x="504.6" y="248" width="162.0" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="263.5">1946</text><text class="mm-leaf-n" x="514.6" y="278.5">Cabinet Mission Plan</text><path class="mm-link c1" d="M138.6,682.0 C170.6,682.0 170.6,370.0 202.6,370.0"/><rect class="mm-branch c1" x="202.6" y="356.0" width="114.0" height="28" rx="5"/><text class="mm-branch-t" x="259.6" y="374.5" text-anchor="middle">Composition</text><path class="mm-link c1" d="M316.6,370.0 C344.6,370.0 476.6,322.0 504.6,322.0"/><rect class="mm-leaf c1" x="504.6" y="302" width="224.1" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="317.5">389 seats</text><text class="mm-leaf-n" x="514.6" y="332.5">296 British India + 93 States</text><path class="mm-link c1" d="M316.6,370.0 C344.6,370.0 476.6,370.0 504.6,370.0"/><rect class="mm-leaf c1" x="504.6" y="350" width="125.0" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="365.5">After Partition</text><text class="mm-leaf-n" x="514.6" y="380.5">299 (229 + 70)</text><path class="mm-link c1" d="M316.6,370.0 C344.6,370.0 476.6,418.0 504.6,418.0"/><rect class="mm-leaf c1" x="504.6" y="398" width="139.0" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="413.5">Indirect election</text><text class="mm-leaf-n" x="514.6" y="428.5">PR by STV</text><path class="mm-link c2" d="M138.6,682.0 C170.6,682.0 170.6,544.0 202.6,544.0"/><rect class="mm-branch c2" x="202.6" y="530.0" width="90.0" height="28" rx="5"/><text class="mm-branch-t" x="247.6" y="548.5" text-anchor="middle">Timeline</text><path class="mm-link c2" d="M292.6,544.0 C320.6,544.0 476.6,472.0 504.6,472.0"/><rect class="mm-leaf c2" x="504.6" y="452" width="113.7" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="467.5">9 Dec 1946</text><text class="mm-leaf-n" x="514.6" y="482.5">first meeting</text><path class="mm-link c2" d="M292.6,544.0 C320.6,544.0 476.6,520.0 504.6,520.0"/><rect class="mm-leaf c2" x="504.6" y="500" width="97.0" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="515.5">26 Nov 1949</text><text class="mm-leaf-n" x="514.6" y="530.5">adopted</text><path class="mm-link c2" d="M292.6,544.0 C320.6,544.0 476.6,568.0 504.6,568.0"/><rect class="mm-leaf c2" x="504.6" y="548" width="113.7" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="563.5">24 Jan 1950</text><text class="mm-leaf-n" x="514.6" y="578.5">final session</text><path class="mm-link c2" d="M292.6,544.0 C320.6,544.0 476.6,616.0 504.6,616.0"/><rect class="mm-leaf c2" x="504.6" y="596" width="106.8" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="611.5">26 Jan 1950</text><text class="mm-leaf-n" x="514.6" y="626.5">commencement</text><path class="mm-link c3" d="M138.6,682.0 C170.6,682.0 170.6,718.0 202.6,718.0"/><rect class="mm-branch c3" x="202.6" y="704.0" width="194.0" height="28" rx="5"/><text class="mm-branch-t" x="299.6" y="722.5" text-anchor="middle">Objectives Resolution</text><path class="mm-link c3" d="M396.6,718.0 C424.6,718.0 476.6,670.0 504.6,670.0"/><rect class="mm-leaf c3" x="504.6" y="650" width="139.0" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="665.5">Moved 13 Dec 1946</text><text class="mm-leaf-n" x="514.6" y="680.5">by Nehru</text><path class="mm-link c3" d="M396.6,718.0 C424.6,718.0 476.6,718.0 504.6,718.0"/><rect class="mm-leaf c3" x="504.6" y="698" width="153.0" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="713.5">Adopted 22 Jan 1947</text><text class="mm-leaf-n" x="514.6" y="728.5">unanimously</text><path class="mm-link c3" d="M396.6,718.0 C424.6,718.0 476.6,766.0 504.6,766.0"/><rect class="mm-leaf c3" x="504.6" y="746" width="155.1" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="761.5">8 points</text><text class="mm-leaf-n" x="514.6" y="776.5">became the Preamble</text><path class="mm-link c4" d="M138.6,682.0 C170.6,682.0 170.6,892.0 202.6,892.0"/><rect class="mm-branch c4" x="202.6" y="878.0" width="106.0" height="28" rx="5"/><text class="mm-branch-t" x="255.6" y="896.5" text-anchor="middle">Committees</text><path class="mm-link c4" d="M308.6,892.0 C336.6,892.0 476.6,820.0 504.6,820.0"/><rect class="mm-leaf c4" x="504.6" y="800" width="79.2" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="815.5">Drafting</text><text class="mm-leaf-n" x="514.6" y="830.5">Ambedkar</text><path class="mm-link c4" d="M308.6,892.0 C336.6,892.0 476.6,868.0 504.6,868.0"/><rect class="mm-leaf c4" x="504.6" y="848" width="162.0" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="863.5">Nehru</text><text class="mm-leaf-n" x="514.6" y="878.5">two Union committees</text><path class="mm-link c4" d="M308.6,892.0 C336.6,892.0 476.6,916.0 504.6,916.0"/><rect class="mm-leaf c4" x="504.6" y="896" width="182.7" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="911.5">Patel</text><text class="mm-leaf-n" x="514.6" y="926.5">Provincial; FR Advisory</text><path class="mm-link c4" d="M308.6,892.0 C336.6,892.0 476.6,964.0 504.6,964.0"/><rect class="mm-leaf c4" x="504.6" y="944" width="217.2" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="959.5">Prasad</text><text class="mm-leaf-n" x="514.6" y="974.5">Rules of Procedure, Steering</text><path class="mm-link c5" d="M138.6,682.0 C170.6,682.0 170.6,1066.0 202.6,1066.0"/><rect class="mm-branch c5" x="202.6" y="1052.0" width="98.0" height="28" rx="5"/><text class="mm-branch-t" x="251.6" y="1070.5" text-anchor="middle">Criticism</text><path class="mm-link c5" d="M300.6,1066.0 C328.6,1066.0 476.6,1018.0 504.6,1018.0"/><rect class="mm-leaf c5" x="504.6" y="998" width="146.0" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="1013.5">Not representative</text><text class="mm-leaf-n" x="514.6" y="1028.5">not sovereign</text><path class="mm-link c5" d="M300.6,1066.0 C328.6,1066.0 476.6,1066.0 504.6,1066.0"/><rect class="mm-leaf c5" x="504.6" y="1046" width="148.2" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="1061.5">Time-consuming</text><text class="mm-leaf-n" x="514.6" y="1076.5">Congress-dominated</text><path class="mm-link c5" d="M300.6,1066.0 C328.6,1066.0 476.6,1114.0 504.6,1114.0"/><rect class="mm-leaf c5" x="504.6" y="1094" width="139.0" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="1109.5">Lawyer-politician</text><text class="mm-leaf-n" x="514.6" y="1124.5">Hindu-dominated</text><path class="mm-link c6" d="M138.6,682.0 C170.6,682.0 170.6,1216.0 202.6,1216.0"/><rect class="mm-branch c6" x="202.6" y="1202.0" width="80.0" height="28" rx="5"/><text class="mm-branch-t" x="242.6" y="1220.5" text-anchor="middle">Facts</text><path class="mm-link c6" d="M282.6,1216.0 C310.6,1216.0 476.6,1168.0 504.6,1168.0"/><rect class="mm-leaf c6" x="504.6" y="1148" width="217.2" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="1163.5">Elephant seal</text><text class="mm-leaf-n" x="514.6" y="1178.5">Rau, Iyengar, S.N. Mukherjee</text><path class="mm-link c6" d="M282.6,1216.0 C310.6,1216.0 476.6,1216.0 504.6,1216.0"/><rect class="mm-leaf c6" x="504.6" y="1196" width="99.9" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="1211.5">Raizada</text><text class="mm-leaf-n" x="514.6" y="1226.5">calligraphy</text><path class="mm-link c6" d="M282.6,1216.0 C310.6,1216.0 476.6,1264.0 504.6,1264.0"/><rect class="mm-leaf c6" x="504.6" y="1244" width="118.0" height="40" rx="4"/><text class="mm-leaf-t" x="514.6" y="1259.5">Bose and Sinha</text><text class="mm-leaf-n" x="514.6" y="1274.5">decoration</text></svg></div><div id="mm-outline" hidden><ul class="outline"><li><strong>Making of the Constitution</strong><ul><li class="c0"><details open><summary>Demand (1934-46)</summary><ul><li>1934 <span class="ol-note">M.N. Roy first put the idea</span></li><li>1935 <span class="ol-note">INC officially demanded</span></li><li>1938 <span class="ol-note">Nehru: franchise, sovereignty</span></li><li>1940 <span class="ol-note">August Offer</span></li><li>1942 <span class="ol-note">Cripps Mission failed</span></li><li>1946 <span class="ol-note">Cabinet Mission Plan</span></li></ul></details></li><li class="c1"><details open><summary>Composition</summary><ul><li>389 seats <span class="ol-note">296 British India + 93 States</span></li><li>After Partition <span class="ol-note">299 (229 + 70)</span></li><li>Indirect election <span class="ol-note">PR by STV</span></li></ul></details></li><li class="c2"><details open><summary>Timeline</summary><ul><li>9 Dec 1946 <span class="ol-note">first meeting</span></li><li>26 Nov 1949 <span class="ol-note">adopted</span></li><li>24 Jan 1950 <span class="ol-note">final session</span></li><li>26 Jan 1950 <span class="ol-note">commencement</span></li></ul></details></li><li class="c3"><details open><summary>Objectives Resolution</summary><ul><li>Moved 13 Dec 1946 <span class="ol-note">by Nehru</span></li><li>Adopted 22 Jan 1947 <span class="ol-note">unanimously</span></li><li>8 points <span class="ol-note">became the Preamble</span></li></ul></details></li><li class="c4"><details open><summary>Committees</summary><ul><li>Drafting <span class="ol-note">Ambedkar</span></li><li>Nehru <span class="ol-note">two Union committees</span></li><li>Patel <span class="ol-note">Provincial; FR Advisory</span></li><li>Prasad <span class="ol-note">Rules of Procedure, Steering</span></li></ul></details></li><li class="c5"><details open><summary>Criticism</summary><ul><li>Not representative <span class="ol-note">not sovereign</span></li><li>Time-consuming <span class="ol-note">Congress-dominated</span></li><li>Lawyer-politician <span class="ol-note">Hindu-dominated</span></li></ul></details></li><li class="c6"><details open><summary>Facts</summary><ul><li>Elephant seal <span class="ol-note">Rau, Iyengar, S.N. Mukherjee</span></li><li>Raizada <span class="ol-note">calligraphy</span></li><li>Bose and Sinha <span class="ol-note">decoration</span></li></ul></details></li></ul></li></ul></div></section><div class="notes"><h2 id="exam-lens-priority-and-pyqs">Exam lens: priority and PYQs<a class="anchor" href="#exam-lens-priority-and-pyqs" aria-label="Link to this section">#</a></h2><aside class="callout source"><span class="tag">Source note</span><p><strong>This chapter comes from the Sarrthi handout only.</strong> There are no class slides or teacher ink. Priority is none quoted, counted from the handout’s own PYQ section: <strong>0 Prelims and 0 Mains</strong> questions are quoted. <strong>None quoted in the material.</strong></p></aside><div class="tblock"><div class="tcap">What the handout itself stresses</div><div class="tablewrap"><table><thead><tr><th>Signal in the handout</th><th>Where</th><th>Why it matters</th></tr></thead><tbody><tr><th scope='row'>The handout gives a <strong>Key Timeline</strong> of the Assembly (9 Dec 1946 to 26 Jan 1950) and a detailed <strong>Objectives Resolution</strong> (8 points)</th><td>Timeline and Objectives Resolution sections</td><td>Dates, movers and the link to the Preamble are the usual questions.</td></tr><tr><th scope='row'>A separate section on <strong>Important Facts</strong> (Seal, Advisor, Secretary, Chief Draftsman, calligraphy)</th><td>Important Facts</td><td>The handout itself says these trivia points are often asked in Prelims.</td></tr><tr><th scope='row'>Principal committees with chairpersons</th><td>Important Committees</td><td>Match-the-following material.</td></tr></tbody></table></div></div><aside class="callout key"><span class="tag">What to prepare</span><p><strong>Prelims hooks:</strong> none quoted in the material for this chapter. Expect matches of committee and chairperson, dates of the timeline, seat numbers, and the Cripps and Cabinet Mission proposals.</p><p><strong>Mains hooks:</strong> none quoted in the material for this chapter. Constituent Assembly questions are quoted under the Preamble chapter (Ch 1).</p><p><strong>Closing idea:</strong> A body born of the Cabinet Mission, elected indirectly, which wrote the Constitution in 2 years, 11 months and 17 days and began it on the Purna Swaraj date.</p></aside><h2 id="1-introduction-the-birth-of-a-constitutional-nat">1 · Introduction: the birth of a constitutional nation<a class="anchor" href="#1-introduction-the-birth-of-a-constitutional-nat" aria-label="Link to this section">#</a></h2>
+<p>The making of the Constitution was a revolutionary act of self-determination, not merely a legal exercise. For nearly two centuries India had been governed by laws of the British Parliament, designed to rule subjects, not to empower citizens.</p>
+<ul class='lst'><li>The <strong>Constituent Assembly</strong> was a body of representatives composed for the specific purpose of drafting the Constitution of India.</li><li>Formed in <strong>November 1946</strong> under the <strong>Cabinet Mission Plan</strong>.</li><li>It served as the <strong>first Parliament of independent India</strong> and facilitated the transfer of sovereign power from British to Indian hands.</li><li>Its task: to stitch a diverse, fragmented subcontinent into a single, unified nation under the "Rule of Law", born amidst the turmoil of partition and the optimism of Independence.</li></ul>
+<aside class="callout key"><span class="tag">Big idea</span><p>The formation of the Assembly in 1946 marked the transition from colonial rule to a sovereign democratic republic.</p></aside>
+<h2 id="2-evolution-of-the-demand-1934-to-1942">2 · Evolution of the demand (1934 to 1942)<a class="anchor" href="#2-evolution-of-the-demand-1934-to-1942" aria-label="Link to this section">#</a></h2>
+<p>The idea of a Constituent Assembly was not sudden but the result of a gradual demand.</p>
+<section class="flow"><h4>Steps of the demand</h4><div class="chain"><div class="step good"><div><div class="sl">1934</div><div class="ss">M.N. Roy (pioneer of the Communist movement in India) put the idea forward for the first time</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">1935</div><div class="ss">The Indian National Congress officially demanded a Constituent Assembly</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">1938</div><div class="ss">Nehru's Declaration on behalf of the INC (sovereignty and democracy)</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">1940</div><div class="ss">August Offer by Viceroy Lord Linlithgow</div></div></div><div class="arr" aria-hidden="true"></div><div class="step warn"><div><div class="sl">1942</div><div class="ss">Cripps Mission (failed)</div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">1946</div><div class="ss">Cabinet Mission Plan; Assembly formed in November 1946</div></div></div></div></section>
+<h3>1938: Nehru's Declaration</h3>
+<p>Jawaharlal Nehru added two non-negotiable conditions:</p>
+<ul class='lst'><li><strong>Adult franchise</strong>: the Assembly must be elected by the people (democratic legitimacy).</li><li><strong>No outside interference</strong>: the British Parliament would have no say in the drafting (sovereignty).</li></ul>
+<h3>1940: The August Offer</h3>
+<ul class='lst'><li>Context: World War II had begun (1939) and Britain desperately needed Indian cooperation; Viceroy Lord Linlithgow made the offer to win over Indian political parties.</li><li>The "principle" accepted: for the first time the British explicitly acknowledged the right of Indians to frame their own Constitution.</li><li>The catch: the new constitution would be framed <strong>"mainly"</strong> (not "solely") by Indians, implying continued British oversight.</li></ul>
+<h3>1942: The Cripps Mission</h3>
+<ul class='lst'><li>Proposal: Sir Stafford Cripps (member of the British War Cabinet) proposed an elected body after the war to frame a constitution. It promised <strong>Dominion Status</strong> with the right to secede from the Commonwealth.</li></ul>
+<div class="tblock"><div class="tcap">Why the Cripps Mission failed</div><div class="tablewrap"><table><thead><tr><th>Who</th><th>Objection</th></tr></thead><tbody><tr><th scope='row'>Opt-out clause</th><td>Provinces could reject the new constitution and form separate unions; the INC saw a blueprint for the Balkanization of India</td></tr><tr><th scope='row'>Mahatma Gandhi</th><td>Called it "a post-dated cheque on a crashing bank" (declining power of the British Empire in the war)</td></tr><tr><th scope='row'>Muslim League</th><td>Rejected it because it did not explicitly grant a sovereign Pakistan with two distinct Constituent Assemblies</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Six steps of the demand</span><div class="mn"><b>R</b><b>I</b><b>N</b><b>A</b><b>C</b><b>C</b></div><p><strong>R</strong>oy 1934, <strong>I</strong>NC 1935, <strong>N</strong>ehru 1938, <strong>A</strong>ugust Offer 1940, <strong>C</strong>ripps 1942, <strong>C</strong>abinet Mission 1946: "<strong>R</strong>eal <strong>I</strong>ndians <strong>N</strong>ever <strong>A</strong>ccept <strong>C</strong>heap <strong>C</strong>heques."</p></aside>
+<aside class="callout shortcut"><span class="tag">Mainly vs solely</span><p>August Offer says "<strong>mainly</strong>" by Indians = British still watching. Cripps = <strong>opt-out</strong> for provinces = the <strong>post-dated cheque</strong>.</p></aside>
+<h2 id="3-the-cabinet-mission-plan-1946">3 · The Cabinet Mission Plan, 1946<a class="anchor" href="#3-the-cabinet-mission-plan-1946" aria-label="Link to this section">#</a></h2>
+<p>The Mission rejected the demand for two assemblies and offered a compromise.</p>
+<ul class='lst'><li><strong>Members</strong>: Lord Pethick Lawrence (Secretary of State for India), Sir Stafford Cripps, and A.V. Alexander.</li><li><strong>Rejection of two assemblies</strong>: the Mission studied the Muslim League's demand for a separate Pakistan and two Constituent Assemblies but rejected it, arguing it would not solve the communal minority problem.</li><li><strong>The scheme (the compromise)</strong>: to satisfy the Muslim League, a <strong>Grouping System</strong>.</li></ul>
+<div class="tblock"><div class="tcap">Grouping System</div><div class="tablewrap"><table><thead><tr><th>Group</th><th>Provinces</th><th>Examples</th></tr></thead><tbody><tr><th scope='row'>Group A</th><td>Hindu-majority provinces</td><td>Madras, Bombay, UP</td></tr><tr><th scope='row'>Group B</th><td>Muslim-majority provinces in the North-West</td><td>Punjab, Sindh</td></tr><tr><th scope='row'>Group C</th><td>Muslim-majority provinces in the North-East</td><td>Bengal, Assam</td></tr></tbody></table></div></div>
+<ul class='lst'><li><strong>Outcome</strong>: both the INC and the Muslim League accepted the plan initially, though with different interpretations of the "Grouping" clause.</li><li>This agreement allowed elections in <strong>July to August 1946</strong>, leading to the formation of the Constituent Assembly in <strong>November 1946</strong>.</li></ul>
+<aside class="callout mnemo"><span class="tag">Mission members</span><div class="mn"><b>P</b><b>C</b><b>A</b></div><p><strong>P</strong>ethick Lawrence, <strong>C</strong>ripps, <strong>A</strong>lexander: "<strong>P</strong>lease <strong>C</strong>all <strong>A</strong>ll."</p></aside>
+<aside class="callout shortcut"><span class="tag">Groups</span><p><strong>A = Hindu-majority</strong> (Madras, Bombay, UP). <strong>B = Punjab, Sindh</strong> (North-West). <strong>C = Bengal, Assam</strong> (North-East). Letters run A, B, C in that order.</p></aside>
+<h2 id="4-composition-of-the-assembly">4 · Composition of the Assembly<a class="anchor" href="#4-composition-of-the-assembly" aria-label="Link to this section">#</a></h2>
+<p>The Assembly was partly elected and partly nominated.</p>
+<ul class='lst'><li><strong>Elected members</strong>: indirectly elected by the members of the Provincial Legislative Assemblies, using <strong>Proportional Representation by Single Transferable Vote</strong>.</li><li><strong>Nominated members</strong>: representatives of Princely States were nominated by their heads.</li></ul>
+<div class="tblock"><div class="tcap">Seat allocation (total strength 389)</div><div class="tablewrap"><table><thead><tr><th>Component</th><th>Before Partition</th><th>After Partition</th></tr></thead><tbody><tr><th scope='row'>British India</th><td>296</td><td>229</td></tr><tr><th scope='row'>Princely States</th><td>93</td><td>70</td></tr><tr><th scope='row'>Total</th><td>389</td><td>299</td></tr></tbody></table></div></div>
+<ul class='lst'><li>The 296 British India seats were allocated among <strong>Muslims, Sikhs and General</strong> categories in proportion to population: <strong>292 from eleven governors' provinces</strong> and <strong>4 from the four Chief Commissioners' provinces</strong>.</li><li>The strength fell to 299 after Partition and the withdrawal of Muslim League members (from Pakistani territories).</li></ul>
+<aside class="callout note"><span class="tag">Check the sums</span><p>292 + 4 = 296 and 296 + 93 = 389. After Partition 229 + 70 = 299.</p></aside>
+<div class="two"><div class="col"><h4>Elected</h4><ul><li>Indirectly, by Provincial Legislative Assemblies</li><li>PR by STV</li><li>British India seats</li></ul></div><div class="col"><h4>Nominated</h4><ul><li>Representatives of Princely States</li><li>nominated by their heads</li><li>93 seats at first</li></ul></div></div>
+<aside class="callout shortcut"><span class="tag">Numbers</span><p><strong>389 = 296 + 93</strong>, then <strong>299 = 229 + 70</strong>. British India lost 67, the States lost 23 (as the handout's figures give).</p></aside>
+<h2 id="5-key-timeline-of-the-making">5 · Key timeline of the making<a class="anchor" href="#5-key-timeline-of-the-making" aria-label="Link to this section">#</a></h2>
+<p>The process took <strong>2 years, 11 months and 17 days</strong>.</p>
+<div class="tblock"><div class="tcap">Timeline in the handout's order</div><div class="tablewrap"><table><thead><tr><th>Date</th><th>Event</th></tr></thead><tbody><tr><th scope='row'>9 Dec 1946</th><td>First meeting (boycotted by the Muslim League); Dr. Sachchidananda Sinha temporary President</td></tr><tr><th scope='row'>11 Dec 1946</th><td>Dr. Rajendra Prasad elected President; H.C. Mookerjee and V.T. Krishnamachari Vice-Presidents; B.N. Rau appointed Constitutional Legal Advisor</td></tr><tr><th scope='row'>13 Dec 1946</th><td>Nehru moved the Objectives Resolution</td></tr><tr><th scope='row'>22 Jan 1947</th><td>Objectives Resolution unanimously adopted</td></tr><tr><th scope='row'>22 July 1947</th><td>National Flag adopted</td></tr><tr><th scope='row'>Aug 1947</th><td>Independence Act: Assembly became fully sovereign and also the Dominion Legislature (first Parliament)</td></tr><tr><th scope='row'>Feb 1948</th><td>Drafting Committee (formed 29 Aug 1947) published the first draft</td></tr><tr><th scope='row'>26 Nov 1949</th><td>Constitution passed and adopted</td></tr><tr><th scope='row'>24 Jan 1950</th><td>Final session</td></tr><tr><th scope='row'>26 Jan 1950</th><td>Commencement of the Constitution</td></tr></tbody></table></div></div>
+<h3>After August 1947: two hats</h3>
+<ul class='lst'><li>As <strong>Constituent body</strong>: chaired by Dr. Rajendra Prasad.</li><li>As <strong>Legislative body</strong> (Dominion Legislature): chaired by <strong>G.V. Mavlankar</strong>.</li></ul>
+<h3>26 Nov 1949 and 24 Jan 1950</h3>
+<ul class='lst'><li><strong>26 Nov 1949</strong>: citizenship, elections and provisional parliament provisions came into force immediately.</li><li><strong>24 Jan 1950</strong> (final session): the Constitution was signed; the National Anthem and National Song were adopted; Dr. Rajendra Prasad was elected the first President of India.</li><li><strong>26 Jan 1950</strong>: the date was chosen to commemorate the <strong>Purna Swaraj</strong> declaration of 1930.</li></ul>
+<section class="flow"><h4>Path from first sitting to commencement</h4><div class="chain"><div class="step "><div><div class="sl">9 Dec 1946</div><div class="ss">First meeting, Sachchidananda Sinha temporary President</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">11 Dec 1946</div><div class="ss">Prasad elected President</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">13 Dec 1946</div><div class="ss">Objectives Resolution moved</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">22 Jan 1947</div><div class="ss">Resolution adopted unanimously</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">Aug 1947</div><div class="ss">Fully sovereign; two roles (Prasad and Mavlankar)</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">Feb 1948</div><div class="ss">First draft published</div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">26 Nov 1949</div><div class="ss">Adopted</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">24 Jan 1950</div><div class="ss">Signed; anthem, song; first President elected</div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">26 Jan 1950</div><div class="ss">Commenced (Purna Swaraj date)</div></div></div></div></section>
+<aside class="callout mnemo"><span class="tag">December dates</span><div class="mn"><b>9</b><b>11</b><b>13</b></div><p><strong>9</strong> first meeting, <strong>11</strong> President elected, <strong>13</strong> Resolution moved; then <strong>22</strong> Jan 1947 it is adopted: "Nine-Eleven-Thirteen, then Twenty-Two."</p></aside>
+<aside class="callout alert"><span class="tag">Handout alert</span><p>The Drafting Committee is listed in the Feb 1948 line with the note "formed on Aug 29, 1947". Treat 29 Aug 1947 as the formation date and Feb 1948 as the publication of the first draft. The handout's numbered lists in this chapter carry stray numbers (17 to 25, 30 to 35) that are PDF list-numbering, not facts, and are dropped here. The source text has no PYQ section for this chapter.</p></aside>
+<h2 id="6-the-objectives-resolution">6 · The Objectives Resolution<a class="anchor" href="#6-the-objectives-resolution" aria-label="Link to this section">#</a></h2>
+<p>The roadmap and guiding principles for framing the Constitution.</p>
+<div class="tblock"><div class="tcap">Basics</div><div class="tablewrap"><table><thead><tr><th>Item</th><th>Detail</th></tr></thead><tbody><tr><th scope='row'>Moved by</th><td>Pt. Jawaharlal Nehru</td></tr><tr><th scope='row'>Introduced</th><td>13 December 1946</td></tr><tr><th scope='row'>Adopted</th><td>22 January 1947 (unanimously)</td></tr><tr><th scope='row'>Significance</th><td>Roadmap and guiding principles; its modified version later became the Preamble</td></tr></tbody></table></div></div>
+<h3>Key provisions: the 8 points</h3>
+<div class="tblock"><div class="tcap">The eight principles</div><div class="tablewrap"><table><thead><tr><th>No.</th><th>Point</th><th>What it says</th></tr></thead><tbody><tr><th scope='row'>1</th><td>Sovereignty</td><td>Firm and solemn resolve to proclaim India an Independent Sovereign Republic</td></tr><tr><th scope='row'>2</th><td>Territorial Union</td><td>Territories of British India, the Indian States and other parts willing to join form a Union of India</td></tr><tr><th scope='row'>3</th><td>Federalism and residuary powers</td><td>Territories keep "retained status" (autonomy); residuary powers (not assigned to the Union) vest in the units, making India federal</td></tr><tr><th scope='row'>4</th><td>Source of power</td><td>All power and authority of Sovereign Independent India and its Constitution derive from the People</td></tr><tr><th scope='row'>5</th><td>Fundamental values</td><td>Justice (social, economic, political); Liberty (thought, expression, belief, faith, worship); Equality (status and opportunity)</td></tr><tr><th scope='row'>6</th><td>Protection of vulnerable sections</td><td>Adequate safeguards for minorities, backward and tribal areas, depressed and other backward classes</td></tr><tr><th scope='row'>7</th><td>Territorial integrity</td><td>Integrity of the territory of the Republic and its sovereign rights on land, sea and air maintained per justice and the law of civilized nations</td></tr><tr><th scope='row'>8</th><td>International peace</td><td>Full and willing contribution to world peace and the welfare of mankind</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Eight points</span><div class="mn"><b>S</b><b>T</b><b>F</b><b>S</b><b>F</b><b>P</b><b>T</b><b>I</b></div><p><strong>S</strong>overeignty, <strong>T</strong>erritorial Union, <strong>F</strong>ederalism, <strong>S</strong>ource of power, <strong>F</strong>undamental values, <strong>P</strong>rotection of vulnerable sections, <strong>T</strong>erritorial integrity, <strong>I</strong>nternational peace: "<strong>S</strong>ome <strong>T</strong>all <strong>F</strong>olks <strong>S</strong>ang <strong>F</strong>ine <strong>P</strong>oems <strong>T</strong>o <strong>I</strong>mpress."</p></aside>
+<h3>Evolution into the Preamble</h3>
+<p>The Resolution was not a temporary motion but a pledge.</p>
+<ul class='lst'><li>After Partition and Independence (1947) the word <strong>"Independent"</strong> was retained, but the federal structure was made <strong>stronger (Unitary bias)</strong> because of fears of Balkanization.</li><li>The core ideals (<strong>Justice, Liberty, Equality, Fraternity</strong>) were enshrined in the Preamble, which serves as the <strong>identity card</strong> of the Constitution.</li></ul>
+<div class="two"><div class="col"><h4>Objectives Resolution (1946-47)</h4><ul><li>Federal, residuary powers with the units</li><li>"Independent Sovereign Republic"</li><li>guaranteed Justice, Liberty, Equality</li></ul></div><div class="col"><h4>As it evolved</h4><ul><li>"Independent" retained</li><li>federal structure made stronger (Unitary bias)</li><li>Justice, Liberty, Equality, Fraternity in the Preamble</li></ul></div></div>
+<aside class="callout shortcut"><span class="tag">Resolution to Preamble</span><p>Resolution = <strong>pledge</strong>; Preamble = <strong>identity card</strong>. Federalism in the Resolution (units keep residuary powers), Unitary bias later.</p></aside>
+<h2 id="7-important-committees">7 · Important committees<a class="anchor" href="#7-important-committees" aria-label="Link to this section">#</a></h2>
+<p>The Assembly worked through committees for specific tasks.</p>
+<div class="tblock"><div class="tcap">Principal committees and chairpersons</div><div class="tablewrap"><table><thead><tr><th>Committee</th><th>Chairperson</th></tr></thead><tbody><tr><th scope='row'>Drafting Committee</th><td>Dr. B.R. Ambedkar</td></tr><tr><th scope='row'>Union Powers Committee</th><td>Jawaharlal Nehru</td></tr><tr><th scope='row'>Union Constitution Committee</th><td>Jawaharlal Nehru</td></tr><tr><th scope='row'>Provincial Constitution Committee</th><td>Sardar Vallabhbhai Patel</td></tr><tr><th scope='row'>Advisory Committee on Fundamental Rights and Minorities</th><td>Sardar Vallabhbhai Patel</td></tr><tr><th scope='row'>Rules of Procedure Committee</th><td>Dr. Rajendra Prasad</td></tr><tr><th scope='row'>Steering Committee</th><td>Dr. Rajendra Prasad</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Chairs</span><div class="mn"><b>A</b><b>N</b><b>P</b><b>P</b></div><p><strong>A</strong>mbedkar (Drafting), <strong>N</strong>ehru (two Union committees), <strong>P</strong>atel (Provincial and Advisory), <strong>P</strong>rasad (Rules and Steering): "<strong>A</strong> <strong>N</strong>ew <strong>P</strong>en <strong>P</strong>roduces."</p></aside>
+<aside class="callout shortcut"><span class="tag">Two each</span><p>Nehru = <strong>both Union</strong> committees. Patel = <strong>Provincial + Advisory (FR and Minorities)</strong>. Prasad = <strong>Rules + Steering</strong>. Ambedkar = <strong>Drafting</strong> alone.</p></aside>
+<h2 id="8-criticism-of-the-assembly">8 · Criticism of the Assembly<a class="anchor" href="#8-criticism-of-the-assembly" aria-label="Link to this section">#</a></h2>
+<p>Scholars and critics raised several objections.</p>
+<div class="tblock"><div class="tcap">Six criticisms</div><div class="tablewrap"><table><thead><tr><th>Criticism</th><th>Point made</th></tr></thead><tbody><tr><th scope='row'>Not a representative body</th><td>Members not directly elected on universal adult franchise</td></tr><tr><th scope='row'>Not a sovereign body</th><td>Created by the proposals of the British Government (Cabinet Mission)</td></tr><tr><th scope='row'>Time-consuming</th><td>Took too long compared with the American Constitution (4 months)</td></tr><tr><th scope='row'>Dominated by Congress</th><td>Granville Austin: "The Assembly was the Congress, and the Congress was India."</td></tr><tr><th scope='row'>Lawyer-politician domination</th><td>Led to the complicated language of the Constitution</td></tr><tr><th scope='row'>Hindu dominated</th><td>Winston Churchill: represented "only one major community in India"</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Six faults</span><div class="mn"><b>R</b><b>S</b><b>T</b><b>C</b><b>L</b><b>H</b></div><p><strong>R</strong>epresentative (not), <strong>S</strong>overeign (not), <strong>T</strong>ime-consuming, <strong>C</strong>ongress-dominated, <strong>L</strong>awyer-dominated, <strong>H</strong>indu-dominated: "<strong>R</strong>eal <strong>S</strong>tudents <strong>T</strong>ake <strong>C</strong>areful <strong>L</strong>ong <strong>H</strong>ours."</p></aside>
+<aside class="callout note"><span class="tag">Who said what</span><p>Granville Austin made the Congress remark. Winston Churchill made the "one major community" remark.</p></aside>
+<h2 id="9-important-facts-constituent-assembly">9 · Important facts: Constituent Assembly<a class="anchor" href="#9-important-facts-constituent-assembly" aria-label="Link to this section">#</a></h2>
+<p>The handout says these trivia points are often asked in Prelims.</p>
+<div class="tblock"><div class="tcap">Personnel and symbol</div><div class="tablewrap"><table><thead><tr><th>Item</th><th>Answer</th></tr></thead><tbody><tr><th scope='row'>Symbol (Seal)</th><td>The Elephant</td></tr><tr><th scope='row'>Constitutional Advisor</th><td>Sir B.N. Rau (Legal Advisor to the Assembly)</td></tr><tr><th scope='row'>Secretary</th><td>H.V.R. Iyengar</td></tr><tr><th scope='row'>Chief Draftsman</th><td>S.N. Mukherjee</td></tr></tbody></table></div></div>
+<h3>Calligraphy and decoration</h3>
+<div class="tblock"><div class="tcap">Who did what</div><div class="tablewrap"><table><thead><tr><th>Task</th><th>Person</th></tr></thead><tbody><tr><th scope='row'>English calligraphy</th><td>Prem Behari Narain Raizada, handwritten in a flowing italic style</td></tr><tr><th scope='row'>Decoration (general)</th><td>Artists from Shantiniketan, including Nand Lal Bose and Beohar Rammanohar Sinha</td></tr><tr><th scope='row'>Preamble decoration</th><td>Beohar Rammanohar Sinha illuminated and ornamented the original Preamble (calligraphed by Raizada)</td></tr><tr><th scope='row'>Hindi calligraphy</th><td>Vasant Krishan Vaidya</td></tr><tr><th scope='row'>Hindi decoration</th><td>Nand Lal Bose</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Four posts</span><div class="mn"><b>S</b><b>E</b><b>S</b><b>C</b></div><p><strong>S</strong>eal = <strong>E</strong>lephant, <strong>S</strong>ecretary = Iyengar, <strong>C</strong>hief Draftsman = S.N. Mukherjee (Advisor = Rau): "<strong>S</strong>ee <strong>E</strong>lephants <strong>S</strong>ing <strong>C</strong>alypso."</p></aside>
+<aside class="callout shortcut"><span class="tag">Art team</span><p><strong>Raizada writes English; Vaidya writes Hindi; Nand Lal Bose decorates the Hindi; Sinha illuminates the Preamble.</strong></p></aside>
+</div><section id="chapter-timeline"><h2>Timeline<a class="anchor" href="#chapter-timeline">#</a></h2><ol class="timeline"><li class="tl high"><time class="yr">1934</time><span class="pin"></span><div class="tlbody">M.N. Roy puts forward the idea of a Constituent Assembly<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">1935</time><span class="pin"></span><div class="tlbody">INC officially demands a Constituent Assembly</div></li><li class="tl "><time class="yr">1938</time><span class="pin"></span><div class="tlbody">Nehru's Declaration: adult franchise, no outside interference</div></li><li class="tl "><time class="yr">1940</time><span class="pin"></span><div class="tlbody">August Offer (Linlithgow): framed "mainly" by Indians</div></li><li class="tl "><time class="yr">1942</time><span class="pin"></span><div class="tlbody">Cripps Mission: Dominion Status, opt-out clause, rejected</div></li><li class="tl high"><time class="yr">1946</time><span class="pin"></span><div class="tlbody">Cabinet Mission Plan; Assembly formed in November<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">1946 Dec 9</time><span class="pin"></span><div class="tlbody">First meeting of the Assembly<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">1946 Dec 11</time><span class="pin"></span><div class="tlbody">Rajendra Prasad elected President; B.N. Rau Legal Advisor</div></li><li class="tl high"><time class="yr">1946 Dec 13</time><span class="pin"></span><div class="tlbody">Objectives Resolution moved by Nehru<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">1947 Jan 22</time><span class="pin"></span><div class="tlbody">Objectives Resolution adopted unanimously<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">1947 Jul 22</time><span class="pin"></span><div class="tlbody">National Flag adopted</div></li><li class="tl "><time class="yr">1947 Aug 29</time><span class="pin"></span><div class="tlbody">Drafting Committee formed</div></li><li class="tl "><time class="yr">1948 Feb</time><span class="pin"></span><div class="tlbody">First draft published</div></li><li class="tl high"><time class="yr">1949 Nov 26</time><span class="pin"></span><div class="tlbody">Constitution adopted<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">1950 Jan 24</time><span class="pin"></span><div class="tlbody">Signed; anthem and song adopted; first President elected</div></li><li class="tl high"><time class="yr">1950 Jan 26</time><span class="pin"></span><div class="tlbody">Constitution commences (Purna Swaraj date)<span class="star" title="High-yield">★</span></div></li></ol></section><section id="connects"><h2>Connects to<a class="anchor" href="#connects">#</a></h2><div class="lkgrid"><article class="link"><div class="lk-line">Ch 1: Preamble</div><p>The Objectives Resolution (13 Dec 1946, adopted 22 Jan 1947) became the Preamble. The Preamble PYQs include Constituent Assembly questions, so revise this chapter with Ch 1.</p></article><article class="link"><div class="lk-line">Ch 2: Salient Features and Critique</div><p>The Assembly's work and the charge of borrowing.</p></article><article class="link"><div class="lk-line">Ch 3: Sources of the Constitution</div><p>What the framers borrowed while drafting.</p></article><article class="link"><div class="lk-line">Ch 4: The Schedules</div><p>Part of the document the Assembly produced.</p></article><article class="link"><div class="lk-line">Ch 29: Citizenship</div><p>Citizenship provisions came into force on 26 Nov 1949.</p></article><article class="link"><div class="lk-line">Ch 55: Hindi Text of the Constitution</div><p>The Hindi calligraphy of the original, and the later authoritative Hindi text.</p></article></div></section><section id="recall"><h2>Recall sheet<a class="anchor" href="#recall">#</a></h2><p class="gdesc">Read once, hide it, then rebuild the chapter from memory.</p><ol class="recall"><li>Demand: Roy 1934, INC 1935, Nehru 1938 (adult franchise, no outside interference), August Offer 1940 ("mainly"), Cripps 1942 (opt-out, Dominion Status), Cabinet Mission 1946.</li><li>Cabinet Mission: Pethick Lawrence, Cripps, Alexander; rejected two assemblies; Groups A, B, C.</li><li>Composition: 389 seats (296 + 93); indirect, PR by STV; 299 after Partition (229 + 70).</li><li>Timeline: 9 Dec 1946 first sitting, 11 Dec Prasad, 13 Dec Resolution, 22 Jan 1947 adopted, 26 Nov 1949 adopted, 24 Jan 1950 signed, 26 Jan 1950 commenced.</li><li>Two roles after Aug 1947: Prasad (Constituent), Mavlankar (Legislative).</li><li>Committees: Ambedkar Drafting; Nehru two Union; Patel Provincial and Advisory; Prasad Rules and Steering.</li><li>Seal Elephant; Rau Legal Advisor; Iyengar Secretary; S.N. Mukherjee Chief Draftsman.</li><li>Raizada English; Vaidya Hindi; Bose; Sinha (Preamble).</li></ol></section><section id="practice"><h2>Test yourself<a class="anchor" href="#practice">#</a></h2><h3>Quick quiz</h3><div class="count" id="score">0 / 0 correct</div><div id="quiz"></div><h3>Flashcards</h3><p class="gdesc">Tap the card to flip.</p><div class="deck"><div class="fc" id="fc" tabindex="0" role="button" aria-label="Flashcard, press to flip"></div><div class="count" id="fccount"></div><div class="row"><button class="btn" id="fcprev" type="button">Back</button><button class="btn pri" id="fcnext" type="button">Next</button><button class="btn" id="fcmiss" type="button">Missed it</button><button class="btn" id="fcshuf" type="button">Shuffle</button><button class="btn" id="fconlymiss" type="button">Only missed</button><button class="btn" id="fcall" type="button">All cards</button></div></div></section><nav class="pager"><a href="pol-ch53.html"><small>Previous</small>The Cooperative Sector</a><a class="nx" href="pol-ch55.html"><small>Next</small>Hindi Text of the Constitution</a></nav><footer>Personal study notes built from the Sarrthi IAS GS Foundation Polity handout (Parts 1 to 3). Handout only: no class slides or teacher ink for this chapter. Mnemonics and shortcuts are memory aids built from the handout’s own facts. Copyright belongs to the teacher; keep this private.</footer></main></div><div id="lightbox" hidden><img alt=""></div><script type="application/json" id="data">{"mcq": [{"q": "Who first put forward the idea of a Constituent Assembly in 1934?", "options": ["Jawaharlal Nehru", "M.N. Roy", "Mahatma Gandhi", "Lord Linlithgow"], "answer": 1, "explain": "The handout credits M.N. Roy in 1934; the INC officially demanded it in 1935."}, {"q": "The August Offer of 1940 stated the new constitution would be framed", "options": ["solely by Indians", "mainly by Indians", "by the British Parliament", "by the Viceroy"], "answer": 1, "explain": "\"Mainly\" (not \"solely\"), implying continued British oversight."}, {"q": "Which was a reason the Muslim League rejected the Cripps proposals?", "options": ["They allowed no Dominion Status", "They did not explicitly grant a sovereign Pakistan with two Constituent Assemblies", "They gave provinces no opt-out", "They demanded adult franchise"], "answer": 1, "explain": "Muslim League rejection rested on the two-assemblies demand; the opt-out was the INC's objection."}, {"q": "Group B of the Cabinet Mission grouping consisted of", "options": ["Hindu-majority provinces", "Muslim-majority provinces in the North-West", "Muslim-majority provinces in the North-East", "Princely States"], "answer": 1, "explain": "A = Hindu-majority; B = Muslim-majority North-West (Punjab, Sindh); C = North-East (Bengal, Assam)."}, {"q": "The total strength of the Constituent Assembly as planned was", "options": ["299", "389", "296", "229"], "answer": 1, "explain": "296 British India plus 93 Princely States gave 389; after Partition it was 299."}, {"q": "Who was elected permanent President of the Constituent Assembly on 11 December 1946?", "options": ["Sachchidananda Sinha", "G.V. Mavlankar", "Rajendra Prasad", "B.N. Rau"], "answer": 2, "explain": "Prasad was elected President; Sinha was the temporary President on 9 Dec."}, {"q": "Who chaired the Assembly when it met as the Dominion Legislature?", "options": ["Rajendra Prasad", "G.V. Mavlankar", "B.R. Ambedkar", "Jawaharlal Nehru"], "answer": 1, "explain": "After Aug 1947 Prasad chaired the Constituent body and Mavlankar the Legislative body."}, {"q": "The Objectives Resolution was adopted unanimously on", "options": ["13 December 1946", "22 January 1947", "26 November 1949", "26 January 1950"], "answer": 1, "explain": "Moved on 13 Dec 1946 and adopted on 22 Jan 1947."}, {"q": "Which pair of committees was chaired by Sardar Vallabhbhai Patel?", "options": ["Union Powers and Union Constitution", "Rules of Procedure and Steering", "Provincial Constitution and Advisory on Fundamental Rights and Minorities", "Drafting and Steering"], "answer": 2, "explain": "Nehru chaired the Union committees; Prasad Rules and Steering."}, {"q": "Who was the Chief Draftsman of the Constitution in the Assembly?", "options": ["B.N. Rau", "H.V.R. Iyengar", "S.N. Mukherjee", "Prem Behari Narain Raizada"], "answer": 2, "explain": "Rau was Legal Advisor, Iyengar Secretary, Mukherjee Chief Draftsman."}, {"q": "The date 26 January 1950 was chosen to commemorate", "options": ["the Objectives Resolution", "the Purna Swaraj declaration of 1930", "the Cripps Mission", "the adoption of the National Flag"], "answer": 1, "explain": "The handout links the commencement date to Purna Swaraj, 1930."}, {"q": "Granville Austin's remark \"The Assembly was the Congress, and the Congress was India\" is cited as a criticism that it was", "options": ["not sovereign", "dominated by Congress", "time-consuming", "Hindu dominated"], "answer": 1, "explain": "It is the \"Dominated by Congress\" criticism."}], "cards": [{"q": "Who first proposed a Constituent Assembly, and when?", "a": "M.N. Roy, 1934."}, {"q": "When did the INC officially demand a Constituent Assembly?", "a": "1935."}, {"q": "Two conditions in Nehru's 1938 Declaration?", "a": "Adult franchise (elected by the people) and no outside interference (no say for the British Parliament)."}, {"q": "Catch in the August Offer 1940?", "a": "The constitution would be framed \"mainly\", not \"solely\", by Indians."}, {"q": "Who made the August Offer?", "a": "Viceroy Lord Linlithgow."}, {"q": "Why did the INC object to the Cripps Mission?", "a": "The opt-out clause let provinces form separate unions: a blueprint for Balkanization."}, {"q": "Gandhi's remark on the Cripps offer?", "a": "\"A post-dated cheque on a crashing bank.\""}, {"q": "Members of the Cabinet Mission?", "a": "Lord Pethick Lawrence, Sir Stafford Cripps, A.V. Alexander."}, {"q": "What were Groups A, B and C?", "a": "A: Hindu-majority provinces (Madras, Bombay, UP). B: Muslim-majority North-West (Punjab, Sindh). C: Muslim-majority North-East (Bengal, Assam)."}, {"q": "How were Assembly members elected?", "a": "Indirectly, by Provincial Legislative Assemblies, by PR through the single transferable vote."}, {"q": "Seats of the Assembly?", "a": "389: British India 296 (292 from governors' provinces, 4 from Chief Commissioners' provinces) and Princely States 93."}, {"q": "Strength after Partition?", "a": "299: British India 229, Princely States 70."}, {"q": "Time taken to make the Constitution?", "a": "2 years, 11 months and 17 days."}, {"q": "First meeting of the Assembly?", "a": "9 Dec 1946, boycotted by the Muslim League; Sachchidananda Sinha temporary President."}, {"q": "Who were the Vice-Presidents elected on 11 Dec 1946?", "a": "H.C. Mookerjee and V.T. Krishnamachari (Prasad was President)."}, {"q": "Who chaired as Constituent body versus Legislative body?", "a": "Constituent: Rajendra Prasad. Legislative: G.V. Mavlankar."}, {"q": "Objectives Resolution: mover and dates?", "a": "Nehru; moved 13 Dec 1946, adopted unanimously 22 Jan 1947."}, {"q": "Which of the 8 points deals with residuary powers?", "a": "Federalism: territories have retained status and residuary powers vest in the units."}, {"q": "What did the Objectives Resolution become?", "a": "The Preamble, in modified form: the identity card of the Constitution."}, {"q": "Who chaired the Drafting Committee?", "a": "Dr. B.R. Ambedkar."}, {"q": "Which committees did Nehru chair?", "a": "Union Powers and Union Constitution."}, {"q": "Which committees did Patel chair?", "a": "Provincial Constitution; Advisory Committee on Fundamental Rights and Minorities."}, {"q": "Which committees did Prasad chair?", "a": "Rules of Procedure and Steering."}, {"q": "What happened on 24 Jan 1950?", "a": "Constitution signed; National Anthem and National Song adopted; Prasad elected first President."}, {"q": "Why 26 January 1950?", "a": "To commemorate the Purna Swaraj declaration of 1930."}, {"q": "Seal of the Assembly?", "a": "The Elephant."}, {"q": "Who were the Legal Advisor, Secretary and Chief Draftsman?", "a": "B.N. Rau, H.V.R. Iyengar, S.N. Mukherjee."}, {"q": "Who calligraphed the English original?", "a": "Prem Behari Narain Raizada."}, {"q": "Who illuminated the original Preamble?", "a": "Beohar Rammanohar Sinha."}, {"q": "Hindi calligraphy and its decoration?", "a": "Calligraphed by Vasant Krishan Vaidya, decorated by Nand Lal Bose."}, {"q": "Who said \"Hindu dominated\" criticism?", "a": "Winston Churchill, about \"only one major community in India\"."}]}</script><script>window.__NB={"id": "polity", "ch": 54, "title": "Making of the Constitution"};/* Shared store: reading progress, preferences, optional cross-device sync. */
+(function(){
+var KEY='nbapp:v1',root=document.documentElement;
+function today(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function fresh(){return{v:1,prefs:{fs:1,lh:1.65,w:780,font:'serif',theme:'auto',pt:0},last:null,nb:{},days:{}}}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+var S;
+try{S=JSON.parse(lsGet(KEY))}catch(e){S=null}
+if(!S||!S.v)S=fresh();
+S.prefs=Object.assign(fresh().prefs,S.prefs||{});
+// one-time import of the older done list and theme
+if(!S.migrated){
+  try{var od=JSON.parse(lsGet('nb-done')||'[]');od.forEach(function(n){var c=chap('modern-india',n);c.done=1;c.dt=1})}catch(e){}
+  var ot=lsGet('nb-theme');if(ot&&!S.prefs.pt){S.prefs.theme=ot;S.prefs.pt=1}
+  S.migrated=1;
+}
+function chap(nb,n){var b=S.nb[nb]||(S.nb[nb]={});return b[n]||(b[n]={read:{},done:0,dt:0,pos:null,t:0})}
+var listeners=[],dirty=false,saveT=null,syncT=null;
+function save(){
+  dirty=true;clearTimeout(saveT);
+  saveT=setTimeout(function(){lsSet(KEY,JSON.stringify(S));listeners.forEach(function(f){try{f()}catch(e){}});scheduleSync()},250);
+}
+function flush(){lsSet(KEY,JSON.stringify(S))}
+function merge(a,b){ // a local, b remote; returns merged
+  var o=fresh();
+  o.prefs=((b.prefs&&b.prefs.pt||0)>(a.prefs&&a.prefs.pt||0))?Object.assign({},a.prefs,b.prefs):Object.assign({},b.prefs,a.prefs);
+  o.last=(!a.last||(b.last&&b.last.ts>a.last.ts))?b.last:a.last;
+  o.migrated=1;
+  var ids={};Object.keys(a.nb||{}).concat(Object.keys(b.nb||{})).forEach(function(k){ids[k]=1});
+  Object.keys(ids).forEach(function(id){
+    o.nb[id]={};var ca=(a.nb||{})[id]||{},cb=(b.nb||{})[id]||{},ks={};
+    Object.keys(ca).concat(Object.keys(cb)).forEach(function(k){ks[k]=1});
+    Object.keys(ks).forEach(function(k){
+      var x=ca[k],y=cb[k];if(!x||!y){o.nb[id][k]=x||y;return}
+      var r=Object.assign({},x.read,y.read),done=(y.dt||0)>(x.dt||0)?y:x,pos=(y.t||0)>(x.t||0)?y.pos:x.pos;
+      o.nb[id][k]={read:r,done:done.done,dt:done.dt||0,pos:pos,t:Math.max(x.t||0,y.t||0)};
+    });
+  });
+  var dk={};Object.keys(a.days||{}).concat(Object.keys(b.days||{})).forEach(function(k){dk[k]=1});
+  Object.keys(dk).forEach(function(k){o.days[k]=Math.max((a.days||{})[k]||0,(b.days||{})[k]||0)});
+  return o;
+}
+var syncState='off';
+function scheduleSync(){clearTimeout(syncT);syncT=setTimeout(function(){sync()},4000)}
+var dbp=null;
+function getRef(){
+  if(dbp)return dbp;
+  dbp=(async function(){
+    if(!window.claude||!claude.use)return null;
+    var db=await claude.use('db'),u=await claude.use('user');
+    if(!db||!u||!u.id)return null;
+    var id=await u.id();if(!id)return null;
+    return db.doc('data/users/'+id+'/nbapp');
+  })().catch(function(){return null});
+  return dbp;
+}
+var busy=false;
+async function sync(){
+  if(busy)return;busy=true;
+  try{
+    var ref=await getRef();if(!ref){syncState='local';return}
+    var snap=await ref.get(),rem=null;
+    if(snap.exists){var d=snap.data();try{rem=JSON.parse(d.state)}catch(e){}}
+    var m=rem?merge(S,rem):S;
+    var changed=JSON.stringify(m)!==JSON.stringify(S);
+    S=m;
+    if(changed){flush();listeners.forEach(function(f){try{f()}catch(e){}})}
+    var out=JSON.stringify(S);
+    if(!rem||JSON.stringify(rem)!==out)await ref.set({v:1,updated:Date.now(),state:out});
+    syncState='synced';
+  }catch(e){syncState='local'}
+  finally{busy=false}
+}
+var API={
+  get:function(){return S},
+  chap:chap,
+  save:save,flush:flush,sync:sync,
+  onChange:function(f){listeners.push(f)},
+  syncState:function(){return syncState},
+  setPref:function(k,v){S.prefs[k]=v;S.prefs.pt=Date.now();applyPrefs();save()},
+  reset:function(){S=fresh();S.migrated=1;flush();save()},
+  today:today,
+  pct:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c||!total)return 0;var r=0;Object.keys(c.read||{}).forEach(function(k){if(c.read[k])r++});return Math.min(1,r/total)},
+  isDone:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c)return false;if(c.dt)return !!c.done;return false}
+};
+window.NBS=API;
+function applyPrefs(){
+  var p=S.prefs;
+  var th=p.theme;
+  if(th==='auto')root.removeAttribute('data-theme');else root.setAttribute('data-theme',th);
+  root.style.setProperty('--zoom',p.fs);root.style.setProperty('--lh',p.lh);root.style.setProperty('--pw',p.w+'px');
+  root.setAttribute('data-font',p.font);
+}
+API.applyPrefs=applyPrefs;applyPrefs();
+// studied time, counted while the page is visible and touched in the last minute
+var lastAct=Date.now();
+['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){lastAct=Date.now()},{passive:true})});
+setInterval(function(){
+  if(document.hidden||Date.now()-lastAct>60000||!window.__NB)return;
+  var t=today();S.days[t]=(S.days[t]||0)+15;save();
+},15000);
+document.addEventListener('visibilitychange',function(){if(document.hidden){flush();sync()}else{sync()}});
+addEventListener('pagehide',flush);
+setTimeout(sync,800);
+})();
+(function(){var b=document.getElementById('themebtn');if(!b)return;var o=['auto','light','sepia','dark'];b.addEventListener('click',function(){var t=NBS.get().prefs.theme,i=(o.indexOf(t)+1)%o.length;NBS.setPref('theme',o[i]);b.textContent='Theme: '+o[i]})})();
+(function(){
+var D=JSON.parse(document.getElementById('data').textContent);
+// map/outline toggle
+document.querySelectorAll('.seg button').forEach(function(bt){bt.addEventListener('click',function(){var v=bt.dataset.v;document.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===bt)});document.getElementById('mm-map').hidden=v!=='map';document.getElementById('mm-outline').hidden=v!=='outline'})});
+if(window.innerWidth<640){var ob=document.querySelector('.seg button[data-v="outline"]');if(ob)ob.click()}
+// lightbox
+var lb=document.getElementById('lightbox'),li=lb.querySelector('img');
+document.querySelectorAll('a.zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();li.src=a.getAttribute('href');lb.hidden=false})});
+lb.addEventListener('click',function(){lb.hidden=true});document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true});
+// quiz
+var qz=document.getElementById('quiz'),score=document.getElementById('score'),right=0,answered=0;
+if(qz)D.mcq.forEach(function(m,i){var d=document.createElement('div');d.className='q';var t=document.createElement('div');t.className='qt';t.textContent=(i+1)+'. '+m.q;d.appendChild(t);var ex=document.createElement('div');ex.className='ex';ex.hidden=true;ex.textContent=m.explain;var btns=[];
+m.options.forEach(function(o,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent='ABCD'[j]+'. '+o;b.addEventListener('click',function(){if(d.dataset.done)return;d.dataset.done=1;answered++;if(j===m.answer){right++;b.classList.add('right')}else{b.classList.add('wrong');btns[m.answer].classList.add('right')}ex.hidden=false;score.textContent=right+' / '+answered+' correct'});btns.push(b);d.appendChild(b)});d.appendChild(ex);qz.appendChild(d)});
+// flashcards
+var fc=document.getElementById('fc');
+if(fc){var all=D.cards.map(function(c,i){return{q:c.q,a:c.a,i:i}}),deck=all.slice(),pos=0,back=false,missed={};
+function show(){if(!deck.length){fc.textContent='No cards in this deck.';document.getElementById('fccount').textContent='';return}var c=deck[pos];fc.textContent=back?c.a:c.q;fc.classList.toggle('back',back);document.getElementById('fccount').textContent='Card '+(pos+1)+' of '+deck.length+(back?' (answer)':' (question)')}
+function go(d){if(!deck.length)return;pos=(pos+d+deck.length)%deck.length;back=false;show()}
+fc.addEventListener('click',function(){back=!back;show()});fc.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();back=!back;show()}});
+document.getElementById('fcnext').onclick=function(){go(1)};document.getElementById('fcprev').onclick=function(){go(-1)};
+document.getElementById('fcmiss').onclick=function(){if(deck.length){missed[deck[pos].i]=1;go(1)}};
+document.getElementById('fcshuf').onclick=function(){for(var i=deck.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=deck[i];deck[i]=deck[j];deck[j]=t}pos=0;back=false;show()};
+document.getElementById('fconlymiss').onclick=function(){deck=all.filter(function(c){return missed[c.i]});pos=0;back=false;show()};
+document.getElementById('fcall').onclick=function(){deck=all.slice();pos=0;back=false;show()};show()}
+// side toc highlight
+var links=[].slice.call(document.querySelectorAll('.sidetoc a'));
+if('IntersectionObserver' in window&&links.length){var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on')}})},{rootMargin:'-70px 0px -70% 0px'});Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)})}
+})();
+(function(){
+var N=window.__NB,S=window.NBS;if(!N||!S)return;
+var root=document.documentElement,body=document.body;
+var rec=function(){return S.chap(N.id,N.ch)};
+var heads=[].slice.call(document.querySelectorAll('.page h2[id]'));
+var titles=heads.map(function(h){return h.firstChild?h.firstChild.textContent.trim():h.id});
+var ids=heads.map(function(h){return h.id});
+var seen={},manual={};
+// Done box
+var box=document.getElementById('donebox');
+if(box){box.checked=!!(rec().done);box.addEventListener('change',function(){var r=rec();r.done=box.checked?1:0;r.dt=Date.now();S.save()})}
+// progress bar
+var bar=document.createElement('div');bar.className='rbar';body.appendChild(bar);
+// per-section read buttons
+heads.forEach(function(h,i){
+  var b=document.createElement('button');b.type='button';b.className='h2read';
+  function paint(){var on=!!rec().read[h.id];b.setAttribute('aria-pressed',on);b.textContent=on?'Read ✓':'Mark read'}
+  b.addEventListener('click',function(){var r=rec();manual[h.id]=1;if(r.read[h.id])delete r.read[h.id];else r.read[h.id]=1;r.t=Date.now();S.save();paint();refresh()});
+  h.insertBefore(b,h.firstChild);paint();b._paint=paint;h._b=b;
+});
+function repaint(){heads.forEach(function(h){h._b._paint()});refresh()}
+// caption clamp
+document.querySelectorAll('figcaption').forEach(function(c){if(c.textContent.length>170){c.classList.add('clamp');c.addEventListener('click',function(){c.classList.toggle('open')})}});
+// dock
+var dock=document.createElement('div');dock.className='dock';
+dock.innerHTML='<button type="button" id="dprev" aria-label="Previous section">‹ Prev</button><button type="button" class="mid" id="dmid"></button><button type="button" id="dnext" aria-label="Next section">Next ›</button>';
+body.appendChild(dock);body.classList.add('has-dock');
+var dmid=dock.querySelector('#dmid');
+function curIdx(){var y=innerHeight*0.25,c=-1;for(var i=0;i<heads.length;i++){if(heads[i].getBoundingClientRect().top<=y)c=i;else break}return c}
+function goto(i){if(i<0||i>=heads.length)return;heads[i].scrollIntoView({behavior:'smooth',block:'start'})}
+dock.querySelector('#dprev').onclick=function(){var c=curIdx(),h=heads[c];goto(h&&h.getBoundingClientRect().top<-40?c:c-1)};
+dock.querySelector('#dnext').onclick=function(){goto(curIdx()+1)};
+function refresh(){
+  var c=curIdx(),r=rec().read,n=0;ids.forEach(function(id){if(r[id])n++});
+  dmid.innerHTML='<b>'+(c<0?'Top':(c+1)+'/'+heads.length)+'</b> · '+(c<0?'Start of chapter':esc(titles[c]))+' · '+n+' read';
+}
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+// sheets
+function sheet(html){var s=document.createElement('div');s.className='sheet';s.hidden=true;s.innerHTML='<div class="sheetin">'+html+'</div>';s.addEventListener('click',function(e){if(e.target===s)s.hidden=true});body.appendChild(s);return s}
+var cs=sheet('<h3>Sections</h3><div class="secl" id="secl"></div>');
+dmid.onclick=function(){
+  var r=rec().read,c=curIdx(),h='';
+  ids.forEach(function(id,i){h+='<a href="#'+id+'" data-i="'+i+'" class="'+(r[id]?'rd ':'')+(i===c?'cur':'')+'"><span class="tk">'+(r[id]?'✓':'')+'</span><span>'+esc(titles[i])+'</span></a>'});
+  cs.querySelector('#secl').innerHTML=h;cs.hidden=false;
+  var cur=cs.querySelector('.cur');if(cur)cur.scrollIntoView({block:'center'});
+};
+cs.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-i]');if(a){e.preventDefault();cs.hidden=true;goto(+a.dataset.i)}});
+var ps=sheet('<h3>Reading settings</h3><div id="pbody"></div>');
+function grp(key,label,opts){var p=S.get().prefs;return '<div class="srow"><label>'+label+'</label><div class="grp">'+opts.map(function(o){return '<button type="button" data-k="'+key+'" data-v="'+o[0]+'" aria-pressed="'+(String(p[key])===String(o[0]))+'">'+o[1]+'</button>'}).join('')+'</div></div>'}
+function drawPrefs(){
+  ps.querySelector('#pbody').innerHTML=
+    grp('fs','Text size',[[0.88,"A−"],[1,"A"],[1.12,"A+"],[1.25,"A++"],[1.4,"A+++"]])+
+    grp('lh','Spacing',[[1.45,'Tight'],[1.65,'Normal'],[1.85,'Roomy']])+
+    grp('w','Width',[[640,'Narrow'],[780,'Medium'],[980,'Wide']])+
+    grp('font','Font',[['serif','Serif'],['sans','Sans']])+
+    grp('theme','Theme',[['auto','Auto'],['light','Light'],['sepia','Sepia'],['dark','Dark']])+
+    '<div class="srow"><label>Extras</label><div class="grp"><button type="button" id="pfocus" aria-pressed="'+body.classList.contains('focus')+'">Focus mode</button>'+('wakeLock' in navigator?'<button type="button" id="pwake" aria-pressed="'+!!wl+'">Keep screen on</button>':'')+'</div></div>';
+}
+var wl=null;
+ps.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('button');if(!b)return;
+  if(b.dataset.k){var v=b.dataset.v;S.setPref(b.dataset.k,b.dataset.k==='font'||b.dataset.k==='theme'?v:+v);drawPrefs();return}
+  if(b.id==='pfocus'){body.classList.toggle('focus');drawPrefs();return}
+  if(b.id==='pwake'){
+    if(wl){wl.release();wl=null;drawPrefs()}else{navigator.wakeLock.request('screen').then(function(l){wl=l;l.addEventListener('release',function(){wl=null});drawPrefs()}).catch(function(){})}
+  }
+});
+function openPrefs(){drawPrefs();ps.hidden=false}
+var aa=document.getElementById('aabtn');if(aa)aa.onclick=openPrefs;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){ps.hidden=true;cs.hidden=true;body.classList.remove('focus')}});
+// focus-mode exit: tap the top edge area
+var fx=document.createElement('button');fx.type='button';fx.textContent='Exit focus';fx.className='h2read';fx.style.cssText='position:fixed;right:10px;top:10px;z-index:45;float:none;display:none';fx.onclick=function(){body.classList.remove('focus')};body.appendChild(fx);
+new MutationObserver(function(){fx.style.display=body.classList.contains('focus')?'block':'none'}).observe(body,{attributes:true,attributeFilter:['class']});
+// scroll handling
+var tick=false,saveAt=0;
+function onScroll(){
+  if(tick)return;tick=true;requestAnimationFrame(function(){
+    tick=false;
+    var doc=document.documentElement,max=doc.scrollHeight-innerHeight;
+    bar.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';
+    var vh=innerHeight,r=rec(),ch=false;
+    heads.forEach(function(h,i){
+      var t=h.getBoundingClientRect().top;
+      if(t<vh&&t>-40)seen[h.id]=1;
+      var nt=i+1<heads.length?heads[i+1].getBoundingClientRect().top:(scrollY>=max-160?-1:1e9);
+      if(seen[h.id]&&nt<vh*0.35&&!r.read[h.id]&&!manual[h.id]){r.read[h.id]=1;ch=true;h._b._paint()}
+    });
+    if(ch){r.t=Date.now();S.save()}
+    refresh();
+    var now=Date.now();
+    if(now-saveAt>1500){saveAt=now;var c=curIdx(),rr=rec();
+      if(c>=0){var hh=heads[c].getBoundingClientRect().top;rr.pos={s:ids[c],o:Math.round(-hh)};rr.t=now}
+      S.get().last={nb:N.id,ch:N.ch,s:c>=0?ids[c]:'',st:c>=0?titles[c]:'',ts:now};S.save()}
+  })}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
+S.onChange(function(){if(box)box.checked=!!rec().done;repaint()});
+refresh();onScroll();
+// resume offer
+var p=rec().pos;
+if(!location.hash&&p&&p.s&&ids.indexOf(p.s)>0){
+  var el=document.getElementById(p.s);
+  var t=document.createElement('div');t.className='toast';t.innerHTML='<span>Resume at “'+esc(titles[ids.indexOf(p.s)])+'”?</span><button type="button" id="tgo">Resume</button><button type="button" id="tx">Dismiss</button>';
+  body.appendChild(t);
+  t.querySelector('#tgo').onclick=function(){if(el){el.scrollIntoView({block:'start'});scrollBy(0,(p.o||0))}t.remove()};
+  t.querySelector('#tx').onclick=function(){t.remove()};
+  setTimeout(function(){if(t.parentNode)t.remove()},12000);
+}
+})();
+</script></body></html>

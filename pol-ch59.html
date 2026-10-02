@@ -1,0 +1,450 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Ch 59 · Corruption: CBI and CVC</title><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style><style>:root{--bg:#FBFAF6;--surface:#fff;--surface2:#F3F1EA;--ink:#1F2A2A;--muted:#5D6A68;--line:#DAD6C8;--acc:#0E6B5C;--acc-ink:#fff;--acc-soft:#DDF0EA;--saf:#B85C00;--saf-soft:#FFF0DB;--red:#B3261E;--red-soft:#FDE7E4;--blue:#1F5FA8;--blue-soft:#E3EEFA;--good:#2E7D32;--good-soft:#E3F3E4;--hl:#FFE9A6;
+--c0:#0E6B5C;--c1:#B85C00;--c2:#1F5FA8;--c3:#8E3B8E;--c4:#B3261E;--c5:#5C7A1F;--c6:#8A6D00;--c7:#37607A;
+--serif:Literata,Spectral,Georgia,'Times New Roman',serif;--sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:17px/1.65 var(--serif);margin:0}
+a{color:var(--acc)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;margin:0}
+.bar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.barin{display:flex;align-items:center;gap:8px;padding:8px 16px;max-width:1200px;margin:0 auto;font:600 14px var(--sans);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.barin::-webkit-scrollbar{display:none}
+.bar a.home,.nbtn,.themebtn{color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 10px;font:600 13px var(--sans);cursor:pointer;flex:none}
+.nbtn{padding:5px 12px;font-size:16px;line-height:1}.nbtn.off{opacity:.35}
+.bartitle{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-weight:500}.bartitle b{color:var(--acc)}
+.done{display:flex;align-items:center;gap:5px;flex:none;font:600 13px var(--sans);cursor:pointer}.done input{width:18px;height:18px;accent-color:var(--acc)}
+.layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px;padding:0 16px}
+.sidetoc{position:sticky;top:58px;align-self:start;max-height:calc(100vh - 70px);overflow:auto;padding:18px 0;font:14px/1.4 var(--sans)}
+.sth{font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;color:var(--muted);margin-bottom:8px}
+.sidetoc ol{list-style:none;margin:0;padding:0}.sidetoc li{margin:0}.sidetoc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--ink);text-decoration:none}.sidetoc a:hover,.sidetoc a.on{border-color:var(--acc);color:var(--acc);background:var(--acc-soft)}
+.page{max-width:780px;margin:0 auto;padding:24px 16px 60px;width:100%;min-width:0}
+.home-page{max-width:900px}
+.chead{margin-bottom:22px}
+.eyebrow{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font-size:clamp(28px,5vw,40px);margin:6px 0 10px;font-weight:700}
+.lede{font-size:18px;color:var(--muted);margin:10px 0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:600 12px var(--sans);padding:3px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--line);color:var(--muted)}
+.pill.cls{background:var(--acc-soft);color:var(--acc);border-color:transparent}.pill.hb{background:var(--saf-soft);color:var(--saf);border-color:transparent}
+h2{font-size:clamp(22px,3.6vw,28px);margin:40px 0 12px;padding-top:14px;border-top:2px solid var(--acc);font-weight:700}
+h3{font-size:19px;margin:24px 0 8px;color:var(--acc)}
+h4{font-size:16px;margin-bottom:10px}
+.anchor{margin-left:8px;font-size:.7em;color:var(--muted);opacity:0;text-decoration:none}h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 12px}
+mark{background:var(--hl);color:inherit;padding:0 3px;border-radius:3px}
+.lst{margin:0 0 14px;padding-left:22px}.lst li{margin:5px 0}.lst li.sub{margin-left:18px;list-style:circle;color:var(--ink)}
+.gdesc{color:var(--muted);font:15px var(--sans);margin:-4px 0 12px}
+.xref{font:600 .92em var(--sans);white-space:nowrap}
+.callout{border-left:4px solid var(--acc);background:var(--acc-soft);border-radius:0 10px 10px 0;padding:10px 14px 4px;margin:14px 0}
+.callout .tag{display:inline-block;font:700 11px var(--sans);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;color:var(--acc)}
+.callout.teacher{border-color:var(--saf);background:var(--saf-soft)}.callout.teacher .tag{color:var(--saf)}
+.callout.alert{border-color:var(--red);background:var(--red-soft)}.callout.alert .tag{color:var(--red)}
+.callout.note{border-color:var(--blue);background:var(--blue-soft)}.callout.note .tag{color:var(--blue)}
+.callout.example{border-color:var(--good);background:var(--good-soft)}.callout.example .tag{color:var(--good)}
+.callout.source{background:var(--surface2);border-color:var(--line)}.callout.source .tag{color:var(--muted)}
+figure{margin:18px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure img{display:block;width:100%;height:auto;background:#fff}
+figure a.zoom{display:block;cursor:zoom-in}
+figcaption{padding:8px 12px;font:14px/1.45 var(--sans);color:var(--muted)}.figsrc{font:700 11px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--acc);margin-right:6px}
+.tblock{margin:16px 0}.tcap{font:700 14px var(--sans);margin-bottom:6px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font:15px/1.45 var(--sans);min-width:480px}
+th,td{padding:8px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--acc);color:var(--acc-ink);font-weight:700}
+tbody th{background:var(--surface2);font-weight:700}tbody tr:last-child>*{border-bottom:0}tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface2) 55%,transparent)}
+.stepsblock{margin:16px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}.stepsblock ol{margin:0;padding-left:22px}.stepsblock li{margin:4px 0}
+.flow{margin:20px 0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.chain{display:flex;flex-direction:column;align-items:stretch}
+.step{border:1.5px solid var(--acc);background:var(--acc-soft);border-radius:10px;padding:8px 12px;font:15px/1.4 var(--sans)}
+.step .sl{font-weight:700}.step .ss{color:var(--muted);font-size:14px;margin-top:2px}
+.step.warn{border-color:var(--saf);background:var(--saf-soft)}.step.bad{border-color:var(--red);background:var(--red-soft)}.step.good{border-color:var(--good);background:var(--good-soft)}
+.arr{height:20px;position:relative;flex:none}.arr:before{content:"";position:absolute;left:50%;top:0;bottom:6px;border-left:2px solid var(--muted)}.arr:after{content:"";position:absolute;left:calc(50% - 5px);bottom:0;border:5px solid transparent;border-top:7px solid var(--muted);border-bottom:0}
+.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.lane{display:flex;flex-direction:column}.lane-h{font:700 12px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;text-align:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:10px}.seg button{font:600 13px var(--sans);padding:6px 14px;border:0;background:var(--surface);color:var(--ink);cursor:pointer}.seg button[aria-pressed=true]{background:var(--acc);color:var(--acc-ink)}
+.mapblock h2{margin-top:10px}
+.mmframe{overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:8px;-webkit-overflow-scrolling:touch}
+svg.mm{display:block;font-family:var(--sans)}
+.mm-root{fill:var(--acc)}.mm-root-t{fill:var(--acc-ink);font:700 14px var(--sans)}
+.mm-link{fill:none;stroke-width:2;opacity:.7}.mm-branch-t{font:700 13px var(--sans);fill:#fff}.mm-leaf-t{font:13px var(--sans);fill:var(--ink)}.mm-leaf-n{font:11.5px var(--sans);fill:var(--muted)}
+.mm-leaf{fill:var(--surface2);stroke-width:1.5}
+.mm-branch.c0{fill:var(--c0)}.mm-branch.c1{fill:var(--c1)}.mm-branch.c2{fill:var(--c2)}.mm-branch.c3{fill:var(--c3)}.mm-branch.c4{fill:var(--c4)}.mm-branch.c5{fill:var(--c5)}.mm-branch.c6{fill:var(--c6)}.mm-branch.c7{fill:var(--c7)}
+.mm-link.c0,.mm-leaf.c0{stroke:var(--c0)}.mm-link.c1,.mm-leaf.c1{stroke:var(--c1)}.mm-link.c2,.mm-leaf.c2{stroke:var(--c2)}.mm-link.c3,.mm-leaf.c3{stroke:var(--c3)}.mm-link.c4,.mm-leaf.c4{stroke:var(--c4)}.mm-link.c5,.mm-leaf.c5{stroke:var(--c5)}.mm-link.c6,.mm-leaf.c6{stroke:var(--c6)}.mm-link.c7,.mm-leaf.c7{stroke:var(--c7)}
+:root:not([data-theme="dark"]) .mm-branch-t{fill:#fff}
+.outline,.outline ul{list-style:none;padding-left:18px;margin:4px 0}.outline>li{padding-left:0}.outline summary{cursor:pointer;font:700 15px var(--sans)}
+.outline li.c0>details>summary{color:var(--c0)}.outline li.c1>details>summary{color:var(--c1)}.outline li.c2>details>summary{color:var(--c2)}.outline li.c3>details>summary{color:var(--c3)}.outline li.c4>details>summary{color:var(--c4)}.outline li.c5>details>summary{color:var(--c5)}.outline li.c6>details>summary{color:var(--c6)}.outline li.c7>details>summary{color:var(--c7)}
+.ol-note{color:var(--muted);font-size:.9em}
+.timeline{list-style:none;margin:10px 0;padding:0;position:relative}
+.timeline:before{content:"";position:absolute;left:94px;top:0;bottom:0;border-left:2px solid var(--line)}
+.tl{display:grid;grid-template-columns:86px 18px 1fr;gap:0 6px;margin:0 0 12px;align-items:start}
+.yr{font:700 14px var(--mono);text-align:right;color:var(--acc);padding-top:2px}
+.pin{width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--acc);margin:7px 0 0 2px;position:relative;z-index:1}
+.tl.high .pin{background:var(--saf);border-color:var(--saf)}
+.tlbody{font:16px/1.5 var(--sans);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px}
+.tl.high .tlbody{border-color:var(--saf)}.star{color:var(--saf);margin-left:6px}.sref{float:right;margin-left:10px;font:600 12px var(--sans);text-decoration:none}
+.lkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.link{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:15px/1.45 var(--sans)}.link p{margin:4px 0 0;color:var(--muted)}.lk-line{font-weight:700}
+.recall{font:16px/1.55 var(--sans);padding-left:24px}.recall li{margin:6px 0}
+.count{font:600 13px var(--sans);color:var(--muted);margin:8px 0}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;font:16px/1.5 var(--sans)}
+.q .qt{font-weight:700;margin-bottom:8px}.q .opt{display:block;width:100%;text-align:left;padding:8px 12px;margin:6px 0;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.q .opt:hover{border-color:var(--acc)}.q .opt.right{border-color:var(--good);background:var(--good-soft)}.q .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.q .ex{margin-top:8px;color:var(--muted)}
+.deck{margin:10px 0}
+.fc{min-height:150px;background:var(--surface);border:2px solid var(--acc);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:center;text-align:center;font:18px/1.5 var(--serif);cursor:pointer;user-select:none}
+.fc.back{background:var(--acc-soft)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.btn{font:600 14px var(--sans);padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.pri{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:40px 0 20px}.pager a{display:block;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--ink);font:600 15px var(--sans)}.pager a.nx{text-align:right}.pager small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+footer{color:var(--muted);font:13px/1.5 var(--sans);border-top:1px solid var(--line);padding-top:14px;margin-top:30px}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:flex;align-items:center;justify-content:center;padding:10px;overflow:auto}#lightbox img{max-width:none;width:min(1600px,100%);height:auto;background:#fff;cursor:zoom-out}
+.part{margin:34px 0}.part h2{margin-top:0}
+.chlist{display:flex;flex-direction:column;gap:8px}
+.chcard{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+a.chcard:hover{border-color:var(--acc)}.chcard.pending{opacity:.5}
+.chn{font:700 18px var(--mono);color:var(--acc);text-align:center}.cht b{font:700 16px var(--serif);display:block}.cht small{font:13px/1.4 var(--sans);color:var(--muted);display:block;margin-top:2px}
+.chb{display:flex;flex-direction:column;gap:4px;align-items:flex-end;font:600 11px var(--sans)}.chb em{font-style:normal;background:var(--acc-soft);color:var(--acc);padding:2px 8px;border-radius:99px}.chb i.tick{font-style:normal;background:var(--good);color:#fff;padding:2px 8px;border-radius:99px}
+.prog{font:600 14px var(--sans);color:var(--muted)}
+.sbox{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:17px var(--sans);margin:6px 0 14px}
+.results .hit{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0;font:15px/1.5 var(--sans)}.results .hit a{font-weight:700}.results .hit small{color:var(--muted)}
+.chips{display:flex;gap:8px;margin-bottom:8px}.chip{font:600 13px var(--sans);padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}.chip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+@media (max-width:900px){.layout{display:block}.sidetoc{display:none}}
+@media (max-width:560px){body{font-size:16.5px}.tl{grid-template-columns:62px 16px 1fr}.timeline:before{left:70px}.yr{font-size:12px}.chcard{grid-template-columns:34px 1fr}.chb{display:none}.lanes{grid-template-columns:1fr}}
+
+code{font:.88em var(--mono);background:var(--surface2);padding:1px 5px;border-radius:4px}
+
+/* ---- reader app ---- */
+:root{--zoom:1;--lh:1.65;--pw:780px}
+:root[data-theme="sepia"]{--bg:#F4ECD8;--surface:#FBF5E6;--surface2:#EADFC4;--ink:#3B3022;--muted:#7A6A52;--line:#D8C9A6;--acc:#7A4A12;--acc-ink:#fff;--acc-soft:#EFDDB8;--saf:#A4470A;--saf-soft:#F6E2BE;--red:#9C2A1C;--red-soft:#F3D9CB;--blue:#2F5C8A;--blue-soft:#DDE6E4;--good:#3E6B2A;--good-soft:#DDE8C8;--hl:#F2D98A;color-scheme:light}
+:root[data-font="sans"] body{font-family:var(--sans)}
+:root[data-font="sans"] .notes p,:root[data-font="sans"] .notes li{font-family:var(--sans)}
+.page{zoom:var(--zoom);max-width:var(--pw)}
+.notes p,.notes li{line-height:var(--lh)}
+.rbar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--acc);z-index:40;transition:width .15s}
+.aabtn{color:var(--ink);border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 12px;font:700 14px var(--serif);cursor:pointer;flex:none}
+.h2read{float:right;margin:2px 0 0 10px;font:600 12px var(--sans);border:1px solid var(--line);background:var(--surface2);color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer;min-height:30px}
+.h2read[aria-pressed="true"]{background:var(--acc-soft);color:var(--acc);border-color:var(--acc)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding:6px 10px calc(6px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:center;justify-content:center}
+.dock button{font:600 14px var(--sans);min-height:44px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;padding:0 14px;cursor:pointer}
+.dock .mid{flex:1;max-width:520px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dock .mid b{color:var(--acc)}
+body.has-dock .page{padding-bottom:110px}
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.sheetin{background:var(--surface);color:var(--ink);width:100%;max-width:560px;max-height:82vh;overflow:auto;border-radius:16px 16px 0 0;padding:16px 18px calc(18px + env(safe-area-inset-bottom,0px));font:15px/1.4 var(--sans)}
+.sheetin h3{margin:0 0 10px;font:700 17px var(--sans)}
+.srow{display:flex;align-items:center;gap:10px;margin:12px 0;flex-wrap:wrap}
+.srow label{flex:0 0 92px;color:var(--muted);font-weight:600}
+.srow .grp{display:flex;gap:6px;flex-wrap:wrap}
+.srow button{font:600 14px var(--sans);min-height:42px;min-width:48px;padding:0 12px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;cursor:pointer}
+.srow button[aria-pressed="true"]{border-color:var(--acc);background:var(--acc-soft);color:var(--acc)}
+.secl a{display:flex;gap:10px;align-items:center;padding:12px 6px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;min-height:44px}
+.secl a .tk{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;color:var(--acc-ink)}
+.secl a.rd .tk{background:var(--acc);border-color:var(--acc)}
+.secl a.cur{background:var(--acc-soft)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:50;background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 14px;display:flex;gap:12px;align-items:center;font:600 14px var(--sans);max-width:92vw;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.toast button{font:700 14px var(--sans);background:transparent;border:0;color:var(--bg);text-decoration:underline;cursor:pointer;min-height:36px}
+body.focus .bar{display:none}body.focus .sidetoc{display:none}
+figcaption.clamp{max-height:3.3em;overflow:hidden;position:relative;cursor:pointer}
+figcaption.clamp.open{max-height:none}
+figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bottom:0;background:var(--bg);color:var(--acc);font:700 12px var(--sans);padding-left:14px}
+.cbar{display:block;height:4px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}.cbar i{display:block;height:100%;width:0;background:var(--acc)}
+.nbcard h2{border:0;padding:0}.nbcard{border-top:1px solid var(--line)}
+</style><style>
+.mn{display:inline-flex;gap:4px;flex-wrap:wrap;margin:2px 0 6px}.mn b{font:700 15px var(--mono);background:var(--acc);color:var(--acc-ink);border-radius:6px;padding:1px 8px}
+.callout.shortcut{border-color:var(--saf);background:var(--saf-soft)}.callout.shortcut .tag{color:var(--saf)}
+.callout.mnemo{border-color:var(--c3);background:var(--surface2)}.callout.mnemo .tag{color:var(--c3)}
+.callout p,.callout li{font-family:var(--sans)}
+.art{font-family:var(--mono);font-size:.86em;background:var(--acc-soft);padding:0 .28em;border-radius:4px;white-space:nowrap}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin:14px 0}
+.two .col{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:10px 14px;font:15px/1.5 var(--sans)}
+.two .col h4{margin:0 0 4px;font:700 13px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--acc)}
+.two .col ul{margin:4px 0;padding-left:18px}
+.ptag{display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:2px 9px;margin-left:8px;vertical-align:middle}
+.ptag.high{background:var(--red-soft);color:var(--red)}.ptag.med{background:var(--saf-soft);color:var(--saf)}.ptag.low{background:var(--surface2);color:var(--muted)}
+</style></head><body><header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="pol-home.html">Contents</a><a class="nbtn" href="pol-ch58.html" title="Problem of Corruption" aria-label="Previous chapter">‹</a><span class="bartitle"><b>Ch 59</b> Corruption: CBI and CVC</span><a class="nbtn" href="pol-ch60.html" title="Tackling Corruption and Social Audit" aria-label="Next chapter">›</a><a class="home" href="pol-search.html">Search</a><a class="home" href="pol-timeline.html">Timeline</a><label class="done"><input type="checkbox" id="donebox" data-ch="59"><span>Done</span></label><button class="aabtn" id="aabtn" type="button" aria-label="Reading settings">Aa</button></div></header><div class="layout"><aside class="sidetoc"><div class="sth">In this chapter</div><ol><li><a href="#chapter-map">Chapter map</a></li><li><a href="#exam-lens-priority-and-pyqs">Exam lens: priority and PYQs</a></li><li><a href="#1-legal-and-institutional-framework">1 · Legal and institutional framework</a></li><li><a href="#2-central-bureau-of-investigation">2 · Central Bureau of Investigation</a></li><li><a href="#3-vineet-narain-case-1997">3 · Vineet Narain Case, 1997</a></li><li><a href="#4-central-vigilance-commission-status-selection-">4 · Central Vigilance Commission: status, selection, term</a></li><li><a href="#5-functions-and-powers-of-the-cvc">5 · Functions and powers of the CVC</a></li><li><a href="#6-issues-in-functioning-and-how-to-strengthen-th">6 · Issues in functioning and how to strengthen the CVC</a></li><li><a href="#chapter-timeline">Timeline</a></li><li><a href="#connects">Connects to</a></li><li><a href="#recall">Recall sheet</a></li><li><a href="#practice">Test yourself</a></li></ol></aside><main class="page"><div class="chead"><div class="eyebrow">Polity · Part 3 · Bodies, Commissions and Governance · Chapter 59</div><h1>Corruption: CBI and CVC<span class="ptag low">None quoted</span></h1><div class="pills"><span class="pill hb">Handout only: no class slides</span><span class="pill ">Handout section 4</span><span class="pill ">No PYQs quoted</span></div><p class="lede">The laws and institutions against corruption, then the two central bodies: the CBI (origin, divisions, problems, the Vineet Narain directions) and the CVC (status, selection and the PJ Thomas case, term, removal, powers, weaknesses and seven reform suggestions).</p></div><section class="mapblock"><h2 id="chapter-map">Chapter map<a class="anchor" href="#chapter-map">#</a></h2><div class="seg" role="group" aria-label="Map view"><button type="button" data-v="map" aria-pressed="true">Map</button><button type="button" data-v="outline" aria-pressed="false">Outline</button></div><div id="mm-map" class="mmframe"><svg class="mm" viewBox="0 0 745 1096" width="745" height="1096" role="img" aria-label="Mind map: Corruption: CBI and CVC"><rect class="mm-root" x="8" y="557.0" width="114.2" height="28" rx="6"/><text class="mm-root-t" x="65.1" y="576.0" text-anchor="middle">CBI and CVC</text><path class="mm-link c0" d="M122.2,571.0 C154.2,571.0 154.2,124.0 186.2,124.0"/><rect class="mm-branch c0" x="186.2" y="110.0" width="146.0" height="28" rx="5"/><text class="mm-branch-t" x="259.2" y="128.5" text-anchor="middle">Legal framework</text><path class="mm-link c0" d="M332.2,124.0 C360.2,124.0 436.2,28.0 464.2,28.0"/><rect class="mm-leaf c0" x="464.2" y="8" width="251.7" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="23.5">BNS 203 and 316</text><text class="mm-leaf-n" x="474.2" y="38.5">illegal property; breach of trust</text><path class="mm-link c0" d="M332.2,124.0 C360.2,124.0 436.2,76.0 464.2,76.0"/><rect class="mm-leaf c0" x="464.2" y="56" width="99.9" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="71.5">DSPE 1946</text><text class="mm-leaf-n" x="474.2" y="86.5">creates CBI</text><path class="mm-link c0" d="M332.2,124.0 C360.2,124.0 436.2,124.0 464.2,124.0"/><rect class="mm-leaf c0" x="464.2" y="104" width="224.1" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="119.5">PCA 1988, PMLA 2003</text><text class="mm-leaf-n" x="474.2" y="134.5">general law; money laundering</text><path class="mm-link c0" d="M332.2,124.0 C360.2,124.0 436.2,172.0 464.2,172.0"/><rect class="mm-leaf c0" x="464.2" y="152" width="210.3" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="167.5">RPA Sec 123</text><text class="mm-leaf-n" x="474.2" y="182.5">electoral corrupt practices</text><path class="mm-link c0" d="M332.2,124.0 C360.2,124.0 436.2,220.0 464.2,220.0"/><rect class="mm-leaf c0" x="464.2" y="200" width="237.0" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="215.5">Lokpal 2013, Whistleblower 2014</text><text class="mm-leaf-n" x="474.2" y="230.5">newer laws</text><path class="mm-link c1" d="M122.2,571.0 C154.2,571.0 154.2,322.0 186.2,322.0"/><rect class="mm-branch c1" x="186.2" y="308.0" width="122.0" height="28" rx="5"/><text class="mm-branch-t" x="247.2" y="326.5" text-anchor="middle">Institutions</text><path class="mm-link c1" d="M308.2,322.0 C336.2,322.0 436.2,274.0 464.2,274.0"/><rect class="mm-leaf c1" x="464.2" y="254" width="120.6" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="269.5">CBI, CVC</text><text class="mm-leaf-n" x="474.2" y="284.5">central bodies</text><path class="mm-link c1" d="M308.2,322.0 C336.2,322.0 436.2,322.0 464.2,322.0"/><rect class="mm-leaf c1" x="464.2" y="302" width="127.5" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="317.5">ED, CAG, Lokpal</text><text class="mm-leaf-n" x="474.2" y="332.5">other watchdogs</text><path class="mm-link c1" d="M308.2,322.0 C336.2,322.0 436.2,370.0 464.2,370.0"/><rect class="mm-leaf c1" x="464.2" y="350" width="174.0" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="365.5">State ACBs, Lokayuktas</text><text class="mm-leaf-n" x="474.2" y="380.5">state level</text><path class="mm-link c2" d="M122.2,571.0 C154.2,571.0 154.2,472.0 186.2,472.0"/><rect class="mm-branch c2" x="186.2" y="458.0" width="80.0" height="28" rx="5"/><text class="mm-branch-t" x="226.2" y="476.5" text-anchor="middle">CBI</text><path class="mm-link c2" d="M266.2,472.0 C294.2,472.0 436.2,424.0 464.2,424.0"/><rect class="mm-leaf c2" x="464.2" y="404" width="223.0" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="419.5">1941 SPE; 1946 DSPE; 1963 CBI</text><text class="mm-leaf-n" x="474.2" y="434.5">origin</text><path class="mm-link c2" d="M266.2,472.0 C294.2,472.0 436.2,472.0 464.2,472.0"/><rect class="mm-leaf c2" x="464.2" y="452" width="210.3" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="467.5">Four divisions</text><text class="mm-leaf-n" x="474.2" y="482.5">ACB, crimes, economic, bank</text><path class="mm-link c2" d="M266.2,472.0 C294.2,472.0 436.2,520.0 464.2,520.0"/><rect class="mm-leaf c2" x="464.2" y="500" width="272.4" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="515.5">Issues</text><text class="mm-leaf-n" x="474.2" y="530.5">caged parrot, vacancies, no suo-moto</text><path class="mm-link c3" d="M122.2,571.0 C154.2,571.0 154.2,646.0 186.2,646.0"/><rect class="mm-branch c3" x="186.2" y="632.0" width="170.0" height="28" rx="5"/><text class="mm-branch-t" x="271.2" y="650.5" text-anchor="middle">Vineet Narain 1997</text><path class="mm-link c3" d="M356.2,646.0 C384.2,646.0 436.2,574.0 464.2,574.0"/><rect class="mm-leaf c3" x="464.2" y="554" width="146.0" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="569.5">CVC supervises CBI</text><text class="mm-leaf-n" x="474.2" y="584.5">corruption cases</text><path class="mm-link c3" d="M356.2,646.0 C384.2,646.0 436.2,622.0 464.2,622.0"/><rect class="mm-leaf c3" x="464.2" y="602" width="127.5" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="617.5">Director tenure</text><text class="mm-leaf-n" x="474.2" y="632.5">minimum 2 years</text><path class="mm-link c3" d="M356.2,646.0 C384.2,646.0 436.2,670.0 464.2,670.0"/><rect class="mm-leaf c3" x="464.2" y="650" width="106.8" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="665.5">Committee</text><text class="mm-leaf-n" x="474.2" y="680.5">PM, LoP, CJI</text><path class="mm-link c3" d="M356.2,646.0 C384.2,646.0 436.2,718.0 464.2,718.0"/><rect class="mm-leaf c3" x="464.2" y="698" width="132.0" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="713.5">Single Directive</text><text class="mm-leaf-n" x="474.2" y="728.5">struck down</text><path class="mm-link c4" d="M122.2,571.0 C154.2,571.0 154.2,844.0 186.2,844.0"/><rect class="mm-branch c4" x="186.2" y="830.0" width="80.0" height="28" rx="5"/><text class="mm-branch-t" x="226.2" y="848.5" text-anchor="middle">CVC</text><path class="mm-link c4" d="M266.2,844.0 C294.2,844.0 436.2,772.0 464.2,772.0"/><rect class="mm-leaf c4" x="464.2" y="752" width="230.0" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="767.5">1964 executive; 2003 statutory</text><text class="mm-leaf-n" x="474.2" y="782.5">Santhanam Committee</text><path class="mm-link c4" d="M266.2,844.0 C294.2,844.0 436.2,820.0 464.2,820.0"/><rect class="mm-leaf c4" x="464.2" y="800" width="120.6" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="815.5">Composition</text><text class="mm-leaf-n" x="474.2" y="830.5">CVC plus 2 VCs</text><path class="mm-link c4" d="M266.2,844.0 C294.2,844.0 436.2,868.0 464.2,868.0"/><rect class="mm-leaf c4" x="464.2" y="848" width="210.3" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="863.5">Selection</text><text class="mm-leaf-n" x="474.2" y="878.5">PM, HM, LoP; PJ Thomas 2011</text><path class="mm-link c4" d="M266.2,844.0 C294.2,844.0 436.2,916.0 464.2,916.0"/><rect class="mm-leaf c4" x="464.2" y="896" width="141.3" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="911.5">Term</text><text class="mm-leaf-n" x="474.2" y="926.5">4 years or age 65</text><path class="mm-link c5" d="M122.2,571.0 C154.2,571.0 154.2,1018.0 186.2,1018.0"/><rect class="mm-branch c5" x="186.2" y="1004.0" width="162.0" height="28" rx="5"/><text class="mm-branch-t" x="267.2" y="1022.5" text-anchor="middle">Powers and reform</text><path class="mm-link c5" d="M348.2,1018.0 C376.2,1018.0 436.2,970.0 464.2,970.0"/><rect class="mm-leaf c5" x="464.2" y="950" width="189.6" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="965.5">Powers</text><text class="mm-leaf-n" x="474.2" y="980.5">superintend; civil court</text><path class="mm-link c5" d="M348.2,1018.0 C376.2,1018.0 436.2,1018.0 464.2,1018.0"/><rect class="mm-leaf c5" x="464.2" y="998" width="272.4" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="1013.5">Weaknesses</text><text class="mm-leaf-n" x="474.2" y="1028.5">depends on CBI, no prosecution power</text><path class="mm-link c5" d="M348.2,1018.0 C376.2,1018.0 436.2,1066.0 464.2,1066.0"/><rect class="mm-leaf c5" x="464.2" y="1046" width="189.6" height="40" rx="4"/><text class="mm-leaf-t" x="474.2" y="1061.5">Reforms</text><text class="mm-leaf-n" x="474.2" y="1076.5">autonomy; sanction limit</text></svg></div><div id="mm-outline" hidden><ul class="outline"><li><strong>CBI and CVC</strong><ul><li class="c0"><details open><summary>Legal framework</summary><ul><li>BNS 203 and 316 <span class="ol-note">illegal property; breach of trust</span></li><li>DSPE 1946 <span class="ol-note">creates CBI</span></li><li>PCA 1988, PMLA 2003 <span class="ol-note">general law; money laundering</span></li><li>RPA Sec 123 <span class="ol-note">electoral corrupt practices</span></li><li>Lokpal 2013, Whistleblower 2014 <span class="ol-note">newer laws</span></li></ul></details></li><li class="c1"><details open><summary>Institutions</summary><ul><li>CBI, CVC <span class="ol-note">central bodies</span></li><li>ED, CAG, Lokpal <span class="ol-note">other watchdogs</span></li><li>State ACBs, Lokayuktas <span class="ol-note">state level</span></li></ul></details></li><li class="c2"><details open><summary>CBI</summary><ul><li>1941 SPE; 1946 DSPE; 1963 CBI <span class="ol-note">origin</span></li><li>Four divisions <span class="ol-note">ACB, crimes, economic, bank</span></li><li>Issues <span class="ol-note">caged parrot, vacancies, no suo-moto</span></li></ul></details></li><li class="c3"><details open><summary>Vineet Narain 1997</summary><ul><li>CVC supervises CBI <span class="ol-note">corruption cases</span></li><li>Director tenure <span class="ol-note">minimum 2 years</span></li><li>Committee <span class="ol-note">PM, LoP, CJI</span></li><li>Single Directive <span class="ol-note">struck down</span></li></ul></details></li><li class="c4"><details open><summary>CVC</summary><ul><li>1964 executive; 2003 statutory <span class="ol-note">Santhanam Committee</span></li><li>Composition <span class="ol-note">CVC plus 2 VCs</span></li><li>Selection <span class="ol-note">PM, HM, LoP; PJ Thomas 2011</span></li><li>Term <span class="ol-note">4 years or age 65</span></li></ul></details></li><li class="c5"><details open><summary>Powers and reform</summary><ul><li>Powers <span class="ol-note">superintend; civil court</span></li><li>Weaknesses <span class="ol-note">depends on CBI, no prosecution power</span></li><li>Reforms <span class="ol-note">autonomy; sanction limit</span></li></ul></details></li></ul></li></ul></div></section><div class="notes"><h2 id="exam-lens-priority-and-pyqs">Exam lens: priority and PYQs<a class="anchor" href="#exam-lens-priority-and-pyqs" aria-label="Link to this section">#</a></h2><aside class="callout source"><span class="tag">Source note</span><p><strong>This chapter comes from the Sarrthi handout only.</strong> There are no class slides or teacher ink. Priority is none quoted, counted from the handout’s own PYQ section: <strong>0 Prelims and 0 Mains</strong> questions are quoted. <strong>None quoted in the material.</strong></p></aside><div class="tblock"><div class="tcap">What the handout itself stresses</div><div class="tablewrap"><table><thead><tr><th>Signal in the handout</th><th>Where</th><th>Why it matters</th></tr></thead><tbody><tr><th scope='row'>Handout gives a long <strong>laws list</strong> (BNS, DSPE, RPA Section 123, PCA, Benami, PMLA, CVC Act, RTI, Lokayuktas, Lokpal Act 2013, Whistleblower Act 2014)</th><td>Legal Framework</td><td>Match-the-law questions: which law does what.</td></tr><tr><th scope='row'><strong>Vineet Narain Case, 1997</strong> gets six directions (CVC supervision, Director's tenure, selection committee, Single Directive, DoPT control, transfer)</th><td>CBI section</td><td>The most testable block of the chapter.</td></tr><tr><th scope='row'><strong>PJ Thomas Case, 2011</strong>: consensus, not majority, in the CVC selection committee</th><td>CVC selection</td><td>Frequently confused with Vineet Narain.</td></tr><tr><th scope='row'>CVC numbers: <strong>4 years or 65 years, up to 2 vigilance commissioners, salary equal to UPSC Chairperson and members</strong></th><td>CVC section</td><td>Statement-type facts.</td></tr></tbody></table></div></div><aside class="callout key"><span class="tag">What to prepare</span><p><strong>Prelims hooks:</strong> none quoted in the material. Likely hooks: CVC composition, selection committee, tenure, removal by reference to the Supreme Court, CBI origin years (1941, 1946, 1963), Single Directive, PJ Thomas case.</p><p><strong>Mains hooks:</strong> none quoted in the material. Use the CBI issues list and the seven CVC reform suggestions (independent powers, sanction timelines, binding recommendations, manpower, civil society, transparent selection).</p><p><strong>Closing idea:</strong> The CBI investigates and the CVC supervises, but neither prosecutes on its own and both depend on government sanction, which is why their independence stays the central reform question.</p></aside><h2 id="1-legal-and-institutional-framework">1 · Legal and institutional framework<a class="anchor" href="#1-legal-and-institutional-framework" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">Laws that deal with corruption</div><div class="tablewrap"><table><thead><tr><th>Law</th><th>What it does</th></tr></thead><tbody><tr><th scope='row'><strong>Section 203 BNS</strong> (Sec 169 of IPC)</th><td>Makes civil servants acquiring property illegally an offence</td></tr><tr><th scope='row'><strong>Section 316 BNS</strong> (Sec 409 of IPC)</th><td>Makes criminal breach of trust by a public servant an offence</td></tr><tr><th scope='row'><strong>DSPE Act, 1946</strong></th><td>Establishes the CBI for anti-corruption investigation</td></tr><tr><th scope='row'><strong>Section 123 of RPA Act, 1951</strong></th><td>Deems which practices are corrupt practices in elections</td></tr><tr><th scope='row'><strong>Prevention of Corruption Act, 1988</strong></th><td>Law to tackle corruption in general</td></tr><tr><th scope='row'><strong>Benami Properties Act, 1988</strong></th><td>Enacted to prosecute benami properties</td></tr><tr><th scope='row'><strong>Prevention of Money Laundering Act, 2003</strong></th><td>Nodal law to tackle money laundering</td></tr><tr><th scope='row'><strong>CVC Act</strong></th><td>The central vigilance organisation to tackle corruption in the country</td></tr><tr><th scope='row'><strong>Right to Information Act, 2005</strong></th><td>Transparency and accountability</td></tr><tr><th scope='row'><strong>Lokayuktas Acts of states</strong></th><td>State ombudsman laws</td></tr><tr><th scope='row'><strong>Lokpal Act, 2013</strong></th><td>Central ombudsman</td></tr><tr><th scope='row'><strong>Whistleblower Act, 2014</strong></th><td>Protects those who disclose corruption</td></tr><tr><th scope='row'><strong>Time Bound Delivery of Services laws</strong></th><td>Tackle speed money corruption</td></tr></tbody></table></div></div>
+<div class="two"><div class="col"><h4>Central bodies</h4><ul><li>CBI</li><li>CVC</li><li>Comptroller and Auditor General</li><li>Lokpal</li><li>Enforcement Directorate (principally PMLA and FEMA)</li></ul></div><div class="col"><h4>State and other</h4><ul><li>Anti-corruption bureaus and vigilance wings in states</li><li>Lokayuktas</li><li>Banking Sector Ombudsman</li><li>Consumer Courts</li><li>the 3-tier judiciary</li></ul></div></div>
+<aside class="callout mnemo"><span class="tag">Laws in time order</span><div class="mn"><b>B</b><b>D</b><b>R</b><b>P</b><b>B</b><b>P</b><b>C</b><b>R</b><b>L</b><b>W</b></div><p><strong>B</strong>NS sections, <strong>D</strong>SPE 1946, <strong>R</strong>PA 1951, <strong>P</strong>CA 1988, <strong>B</strong>enami 1988, <strong>P</strong>MLA 2003, <strong>C</strong>VC Act, <strong>R</strong>TI 2005, <strong>L</strong>okpal 2013, <strong>W</strong>histleblower 2014: "<strong>B</strong>ig <strong>D</strong>ogs <strong>R</strong>un <strong>P</strong>ast <strong>B</strong>ushes, <strong>P</strong>ulling <strong>C</strong>hains, <strong>R</strong>ushing <strong>L</strong>ate <strong>W</strong>ildly".</p></aside>
+<h2 id="2-central-bureau-of-investigation">2 · Central Bureau of Investigation<a class="anchor" href="#2-central-bureau-of-investigation" aria-label="Link to this section">#</a></h2>
+<section class="flow"><h4>How the CBI grew</h4><div class="chain"><div class="step "><div><div class="sl">1941</div><div class="ss">Set up as the <strong>Special Police Establishment</strong></div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">1946</div><div class="ss">Statutory backing through the <strong>Delhi Special Police Establishment (DSPE) Act</strong></div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">1963</div><div class="ss">Acquired the popular name <strong>CBI</strong></div></div></div></div></section>
+<h3>Principal divisions</h3>
+<div class="tblock"><div class="tcap">Four divisions</div><div class="tablewrap"><table><thead><tr><th>Division</th><th>Covers</th></tr></thead><tbody><tr><th scope='row'><strong>Anti-Corruption Division</strong></th><td>Corruption cases</td></tr><tr><th scope='row'><strong>Special Crimes Division</strong></th><td>Serious, sensational, organised crimes</td></tr><tr><th scope='row'><strong>Economic Offences Division</strong></th><td>Cheating, Ponzi schemes, counterfeit currency and other economic offences</td></tr><tr><th scope='row'><strong>Banking and Security Frauds Division</strong></th><td>Economic offences related to banking and the securities market</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Four divisions</span><div class="mn"><b>A</b><b>S</b><b>E</b><b>B</b></div><p><strong>A</strong>nti-corruption, <strong>S</strong>pecial crimes, <strong>E</strong>conomic offences, <strong>B</strong>anking and securities: "<strong>A</strong>ll <strong>S</strong>leuths <strong>E</strong>xpose <strong>B</strong>ribes".</p></aside>
+<h3>Issues in functioning</h3>
+<ul class='lst'><li><strong>Politicisation</strong>: a former SC judge called the CBI a <strong>'caged parrot'</strong>. Every ruling party at the Centre has used it against opponents, so it is not impartial or autonomous.</li><li><strong>Shortage of staff</strong>: around <strong>one-third</strong> of posts are vacant.</li><li><strong>Conviction rate</strong>: CBI's is <strong>67%</strong>, relatively high against <strong>30-40%</strong> for other agencies, but conviction in <strong>high-profile cases</strong> is low.</li><li><strong>Sanction for prosecution</strong>: too many delays in disposal, partly due to staff shortage. Prosecution follows investigation, but laws like <strong>Section 19 of PCA</strong> and <strong>Section 197 of CrPC</strong> protect civil servants and sanction to prosecute has to be provided by the state government. Delayed sanction means delayed prosecution.</li><li><strong>Jurisdiction</strong>: CBI has <strong>no suo-moto jurisdiction</strong>; it deals with cases transferred to it.</li></ul>
+<aside class="callout mnemo"><span class="tag">CBI problems</span><div class="mn"><b>P</b><b>S</b><b>C</b><b>S</b><b>J</b></div><p><strong>P</strong>oliticisation, <strong>S</strong>taff shortage, <strong>C</strong>onviction in high-profile cases, <strong>S</strong>anction delays, <strong>J</strong>urisdiction (no suo-moto): "<strong>P</strong>arrots <strong>S</strong>eldom <strong>C</strong>atch <strong>S</strong>lippery <strong>J</strong>ackals".</p></aside>
+<h2 id="3-vineet-narain-case-1997">3 · Vineet Narain Case, 1997<a class="anchor" href="#3-vineet-narain-case-1997" aria-label="Link to this section">#</a></h2>
+<p>The Supreme Court gave directions on the functioning of the CBI.</p>
+<div class="tblock"><div class="tcap">The directions</div><div class="tablewrap"><table><thead><tr><th>Direction</th><th>Detail</th></tr></thead><tbody><tr><th scope='row'><strong>CVC supervises CBI</strong></th><td>CVC deals largely with anti-corruption cases and violations of civil services discipline. Through the CVC Act it exercises general superintendence over CBI for work related to cases under the Prevention of Corruption Act</td></tr><tr><th scope='row'><strong>Minimum tenure</strong></th><td>Guaranteed minimum tenure for the Director and other important CBI positions. Under the DSPE Act the minimum tenure of the Director is <strong>2 years</strong>. An ordinance extended this up to <strong>5 years</strong>, after the two years in tranches of <strong>1 year</strong> each</td></tr><tr><th scope='row'><strong>Committee appointment</strong></th><td>CBI Director's appointment cannot be left to the government's sole discretion. Committee: <strong>PM, Leader of Opposition in Lok Sabha</strong> (or leader of the largest opposition party if there is no recognised LoP), and the <strong>CJI</strong></td></tr><tr><th scope='row'><strong>Single Directive struck down</strong></th><td>The rule requiring sanction for action against joint secretary rank and above</td></tr><tr><th scope='row'><strong>DoPT control</strong></th><td>CBI is under the broad direction and control of the <strong>Department of Personnel and Training</strong>, meaning only the overall policy framework, not day-to-day workings and investigations</td></tr><tr><th scope='row'><strong>Transfer</strong></th><td>Transfer of the CBI Director must be done by the <strong>same committee</strong> as for appointment</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Six directions</span><div class="mn"><b>C</b><b>T</b><b>C</b><b>S</b><b>D</b><b>T</b></div><p><strong>C</strong>VC supervision, <strong>T</strong>enure, <strong>C</strong>ommittee, <strong>S</strong>ingle Directive, <strong>D</strong>oPT limits, <strong>T</strong>ransfer: "<strong>C</strong>ourt <strong>T</strong>old <strong>C</strong>BI <strong>S</strong>tand <strong>D</strong>ifferent <strong>T</strong>oday".</p></aside>
+<aside class="callout note"><span class="tag">Reality check</span><p>Even after this judgement the CBI is still marred by allegations of politicisation and the 'caged parrot' label.</p></aside>
+<h2 id="4-central-vigilance-commission-status-selection-">4 · Central Vigilance Commission: status, selection, term<a class="anchor" href="#4-central-vigilance-commission-status-selection-" aria-label="Link to this section">#</a></h2>
+<section class="flow"><h4>How the CVC evolved</h4><div class="chain"><div class="step "><div><div class="sl">1962</div><div class="ss"><strong>Santhanam Committee</strong> on prevention of corruption appointed (headed by K Santhanam)</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">1964</div><div class="ss">CVC set up by the central government as an <strong>executive body</strong> to advise and guide central government agencies on vigilance</div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">2003</div><div class="ss">Made a <strong>statutory body</strong> by the <strong>CVC Act, 2003</strong></div></div></div></div></section>
+<p>The CVC is conceived as the <strong>apex vigilance institution free from control of any executive authority</strong>, monitoring all vigilance activity under the Central Government and advising authorities in planning, reviewing and reforming vigilance work.</p>
+<h3>Composition</h3>
+<p>A <strong>Central Vigilance Commissioner</strong> as chairperson and <strong>not more than two Vigilance Commissioners</strong> as members.</p>
+<h3>Selection</h3>
+<ul class='lst'><li>Drawn from two categories: those who are or have been in <strong>All India Services or Central Services</strong>, and officers of <strong>Central Public Sector Undertakings</strong>.</li><li>A selection committee of the <strong>PM, Home Minister and Leader of Opposition</strong> (or leader of the largest opposition party). Two government representatives means the government has the final say.</li></ul>
+<section class="flow"><h4>PJ Thomas Case, 2011</h4><div class="chain"><div class="step "><div><div class="sl">Problem</div><div class="ss">Government's majority in the committee made the Leader of Opposition's membership pointless</div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">Ruling</div><div class="ss">Selection must be on the principle of <strong>consensus of all members</strong>, not majority</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">Limit</div><div class="ss">The judgement applies only to this appointment, not to all other committee appointments</div></div></div></div></section>
+<aside class="callout alert"><span class="tag">Handout alert</span><p>The handout says "from both the categories, not more than two people can be selected, thus ensuring at least one from each category". The simple reading: the CVC and two VCs come from the two categories, so each category gets at least one. Use the rule "1 CVC plus up to 2 VCs".</p></aside>
+<h3>Term, conditions, removal</h3>
+<div class="tblock"><div class="tcap">Terms</div><div class="tablewrap"><table><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody><tr><th scope='row'><strong>Term</strong></th><td><strong>4 years</strong> for both CVC and VC; retirement age <strong>65 years</strong></td></tr><tr><th scope='row'><strong>Reappointment</strong></th><td>None at the same post. Elevation allowed (a VC can become CVC) if total stay in the Commission does not exceed <strong>4 years</strong></td></tr><tr><th scope='row'><strong>Bars after service</strong></th><td>Not eligible to be administrators of UTs, diplomatic assignments or any appointment made under the warrant and seal of the President; cannot hold an office of profit under Centre or states</td></tr><tr><th scope='row'><strong>Salary</strong></th><td>CVC equals <strong>UPSC Chairperson</strong>; VCs equal <strong>UPSC members</strong>. Cannot be altered to disadvantage after appointment</td></tr><tr><th scope='row'><strong>Source of pay</strong></th><td><strong>Consolidated Fund of India</strong></td></tr><tr><th scope='row'><strong>Removal</strong></th><td>On proven misbehaviour or incapacity through a <strong>reference to the Supreme Court</strong></td></tr><tr><th scope='row'><strong>Other grounds</strong></th><td>Insolvency, moral turpitude, private employment, infirmity of body and mind, prejudicial financial interests</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">CVC terms</span><div class="mn"><b>F</b><b>S</b><b>P</b><b>E</b></div><p><strong>F</strong>our years or 65, <strong>S</strong>alary like UPSC, <strong>P</strong>roven misbehaviour via SC, <strong>E</strong>levation allowed but no reappointment: "<strong>F</strong>our <strong>S</strong>ilver <strong>P</strong>ens <strong>E</strong>lected".</p></aside>
+<aside class="callout shortcut"><span class="tag">CVC versus CBI Director</span><p><strong>CVC: 4 years or 65, committee of PM, HM, LoP.</strong> <strong>CBI Director: minimum 2 years (up to 5 by ordinance), committee of PM, LoP, CJI.</strong></p></aside>
+<h2 id="5-functions-and-powers-of-the-cvc">5 · Functions and powers of the CVC<a class="anchor" href="#5-functions-and-powers-of-the-cvc" aria-label="Link to this section">#</a></h2>
+<ul class='lst'><li><strong>Superintend</strong> the CBI in corruption cases under the PCA, 1988, as directed in Vineet Narain (1997).</li><li><strong>Give directions</strong> to the CBI in those cases.</li><li><strong>Inquire</strong> (or cause an inquiry or investigation) on a reference by the Central Government.</li><li><strong>Inquire</strong> into complaints against officials specified in <strong>sub-section 2 of Section 8 of the CVC Act, 2003</strong>: Group A officials, All India Service officials and equivalent officials in Central PSUs.</li><li><strong>Review progress</strong> of investigations by the DSPE into PCA offences.</li><li><strong>Review pending sanctions</strong> for prosecution under the PCA.</li><li><strong>Tender advice</strong> to the Central Government and organisations on matters referred.</li><li><strong>Superintend vigilance administrations</strong> of Central Government ministries, departments and organisations.</li><li>Has the <strong>powers of a civil court</strong> when inquiring.</li><li><strong>Mandatory consultation</strong> with the Commission before rules or regulations on vigilance or disciplinary matters for persons in public services of the Union and members of All India Services.</li><li><strong>Enforcement Directorate</strong>: the CVC chairs (with VCs as members) the committee whose recommendation leads the Centre to appoint the <strong>Director of Enforcement</strong>; the same committee recommends, after consulting the Director, officers of <strong>Deputy Director and above</strong>.</li><li><strong>CBI officers</strong>: the same committee recommends, after consulting the CBI Director, appointment of officers of <strong>SP level and above, except the Director</strong>, and their extension and curtailment.</li><li><strong>Annual report</strong> to the President, who places it before both Houses of Parliament.</li></ul>
+<aside class="callout mnemo"><span class="tag">Powers</span><div class="mn"><b>S</b><b>G</b><b>I</b><b>R</b><b>T</b><b>C</b></div><p><strong>S</strong>uperintend CBI, <strong>G</strong>ive directions, <strong>I</strong>nquire, <strong>R</strong>eview, <strong>T</strong>ender advice, <strong>C</strong>ivil court powers: "<strong>S</strong>mart <strong>G</strong>uards <strong>I</strong>nspect <strong>R</strong>ecords, <strong>T</strong>rack <strong>C</strong>rooks".</p></aside>
+<h2 id="6-issues-in-functioning-and-how-to-strengthen-th">6 · Issues in functioning and how to strengthen the CVC<a class="anchor" href="#6-issues-in-functioning-and-how-to-strengthen-th" aria-label="Link to this section">#</a></h2>
+<h3>Issues</h3>
+<ul class='lst'><li><strong>Overwhelming dependence on the CBI</strong> for investigation, which is already politicised and under government control.</li><li><strong>No independent prosecution power</strong>; sanction needs government permission, often delayed.</li><li><strong>Non-cooperative attitude</strong> of the government.</li><li><strong>Poor engagement</strong> with civil society, citizens and NGOs working in the field.</li></ul>
+<h3>Seven suggestions to strengthen the CVC</h3>
+<div class="tblock"><div class="tcap">Reform suggestions</div><div class="tablewrap"><table><thead><tr><th>Suggestion</th><th>Detail and handout example</th></tr></thead><tbody><tr><th scope='row'><strong>Independent investigative and prosecution powers</strong></th><td>Direct investigative powers, like the Lokpal's model. The <strong>2nd ARC</strong> (Ethics in Governance) recommended functional autonomy for vigilance agencies</td></tr><tr><th scope='row'><strong>Statutory timelines for sanction</strong></th><td>Time-bound framework of <strong>3-6 months</strong>. Vineet Narain (1997) directed fixed timelines but delays persist. TI India: in 2023, over <strong>70%</strong> of sanctions pending beyond 6 months</td></tr><tr><th scope='row'><strong>Binding oversight in disciplinary and vigilance matters</strong></th><td>Turn the advisory role into binding oversight across ministries and PSUs. The <strong>Sarkaria Commission</strong> stressed robust independent oversight of central services</td></tr><tr><th scope='row'><strong>Manpower and technology</strong></th><td>More sanctioned staff, a dedicated Vigilance Cadre, digital real-time monitoring. CVC Annual Report 2023: less than <strong>50%</strong> of sanctioned staff, overseeing over <strong>1500</strong> organisations</td></tr><tr><th scope='row'><strong>Civil society participation and citizen feedback</strong></th><td>Periodic consultations with civil society, whistleblowers, NGOs; a public grievance dashboard. 2nd ARC recommended multi-stakeholder engagement. South Korea's ACRC is the best-practice model</td></tr><tr><th scope='row'><strong>Binding recommendations</strong></th><td>Amend the CVC Act so recommendations bind ministries in vigilance-lapse cases. The <strong>Punchhi Commission</strong> stressed statutory backing for vigilance bodies</td></tr><tr><th scope='row'><strong>Transparent selection</strong></th><td>Add judiciary members or eminent anti-corruption experts to the selection panel. The <strong>PJ Thomas Case (2011)</strong> showed the flaws and urged consensus</td></tr></tbody></table></div></div>
+<aside class="callout alert"><span class="tag">Handout alert</span><p>The handout numbers these suggestions 26 to 32 (list numbers carried over from a longer list). There are <strong>seven</strong> suggestions; the stray numbers are dropped. Also, the handout lists Sarkaria and Punchhi Commissions (on Centre-State relations) as examples for vigilance oversight; quote them as the handout does.</p></aside>
+<aside class="callout mnemo"><span class="tag">Seven reforms</span><div class="mn"><b>I</b><b>S</b><b>B</b><b>M</b><b>C</b><b>B</b><b>T</b></div><p><strong>I</strong>ndependent powers, <strong>S</strong>anction timelines, <strong>B</strong>inding oversight, <strong>M</strong>anpower, <strong>C</strong>ivil society, <strong>B</strong>inding recommendations, <strong>T</strong>ransparent selection: "<strong>I</strong>f <strong>S</strong>tate <strong>B</strong>odies <strong>M</strong>eet <strong>C</strong>itizens, <strong>B</strong>ribes <strong>T</strong>ake <strong>T</strong>ime".</p></aside>
+</div><section id="chapter-timeline"><h2>Timeline<a class="anchor" href="#chapter-timeline">#</a></h2><ol class="timeline"><li class="tl high"><time class="yr">1941</time><span class="pin"></span><div class="tlbody">CBI begins as the Special Police Establishment<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">1946</time><span class="pin"></span><div class="tlbody">DSPE Act gives statutory backing<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">1962</time><span class="pin"></span><div class="tlbody">Santhanam Committee on prevention of corruption</div></li><li class="tl "><time class="yr">1963</time><span class="pin"></span><div class="tlbody">Popular name CBI acquired</div></li><li class="tl high"><time class="yr">1964</time><span class="pin"></span><div class="tlbody">CVC set up as an executive body<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">1997</time><span class="pin"></span><div class="tlbody">Vineet Narain Case: directions on CBI<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">2003</time><span class="pin"></span><div class="tlbody">CVC Act makes CVC statutory<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">2011</time><span class="pin"></span><div class="tlbody">PJ Thomas Case: consensus in CVC selection<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">2013</time><span class="pin"></span><div class="tlbody">Lokpal Act</div></li><li class="tl "><time class="yr">2014</time><span class="pin"></span><div class="tlbody">Whistleblower Act</div></li></ol></section><section id="connects"><h2>Connects to<a class="anchor" href="#connects">#</a></h2><div class="lkgrid"><article class="link"><div class="lk-line">Ch 43: Central Vigilance Commission</div><p>The standalone CVC chapter.</p></article><article class="link"><div class="lk-line">Ch 42: Central Bureau of Investigation</div><p>The standalone CBI chapter.</p></article><article class="link"><div class="lk-line">Ch 58: Problem of Corruption</div><p>Section 6A of DSPE Act and the Single Directive.</p></article><article class="link"><div class="lk-line">Ch 61: Corruption: Lokpal in India</div><p>Lokpal Act 2013 and Whistleblower Act 2014 listed here.</p></article><article class="link"><div class="lk-line">Ch 44: Lokpal and Lokayukta</div><p>Independent investigative model suggested for CVC.</p></article><article class="link"><div class="lk-line">Ch 56: Right to Information Act</div><p>Part of the legal framework.</p></article></div></section><section id="recall"><h2>Recall sheet<a class="anchor" href="#recall">#</a></h2><p class="gdesc">Read once, hide it, then rebuild the chapter from memory.</p><ol class="recall"><li>Laws: BNS 203 (illegal property), BNS 316 (breach of trust), DSPE 1946 (CBI), RPA Sec 123, PCA 1988, Benami 1988, PMLA 2003, CVC Act, RTI 2005, Lokpal 2013, Whistleblower 2014.</li><li>CBI: SPE 1941, DSPE Act 1946, name CBI 1963.</li><li>CBI divisions: anti-corruption, special crimes, economic offences, banking and securities frauds.</li><li>CBI issues: caged parrot, one-third vacancies, 67% conviction versus 30-40%, sanction delays, no suo-moto.</li><li>Vineet Narain 1997: CVC supervision, Director minimum 2 years, committee PM-LoP-CJI, Single Directive struck, DoPT policy only, same committee for transfer.</li><li>CVC: 1964 executive, 2003 statutory, Santhanam Committee 1962.</li><li>CVC: CVC plus up to 2 VCs, PM-HM-LoP committee, PJ Thomas 2011 consensus, 4 years or 65, salary like UPSC, removal by SC reference.</li><li>CVC powers: superintend CBI, inquire into Group A and AIS, civil court powers, ED and CBI senior appointments, annual report to President.</li><li>CVC issues: depends on CBI, no prosecution power, sanction delay, non-cooperation, poor civil society engagement.</li></ol></section><section id="practice"><h2>Test yourself<a class="anchor" href="#practice">#</a></h2><h3>Quick quiz</h3><div class="count" id="score">0 / 0 correct</div><div id="quiz"></div><h3>Flashcards</h3><p class="gdesc">Tap the card to flip.</p><div class="deck"><div class="fc" id="fc" tabindex="0" role="button" aria-label="Flashcard, press to flip"></div><div class="count" id="fccount"></div><div class="row"><button class="btn" id="fcprev" type="button">Back</button><button class="btn pri" id="fcnext" type="button">Next</button><button class="btn" id="fcmiss" type="button">Missed it</button><button class="btn" id="fcshuf" type="button">Shuffle</button><button class="btn" id="fconlymiss" type="button">Only missed</button><button class="btn" id="fcall" type="button">All cards</button></div></div></section><nav class="pager"><a href="pol-ch58.html"><small>Previous</small>Problem of Corruption</a><a class="nx" href="pol-ch60.html"><small>Next</small>Tackling Corruption and Social Audit</a></nav><footer>Personal study notes built from the Sarrthi IAS GS Foundation Polity handout (Parts 1 to 3). Handout only: no class slides or teacher ink for this chapter. Mnemonics and shortcuts are memory aids built from the handout’s own facts. Copyright belongs to the teacher; keep this private.</footer></main></div><div id="lightbox" hidden><img alt=""></div><script type="application/json" id="data">{"mcq": [{"q": "The CBI was given statutory backing by", "options": ["CVC Act, 2003", "DSPE Act, 1946", "Prevention of Corruption Act, 1988", "Lokpal Act, 2013"], "answer": 1, "explain": "The handout: Special Police Establishment 1941, statutory backing in the DSPE Act, 1946, popular name CBI in 1963."}, {"q": "The CBI acquired its popular name in", "options": ["1941", "1946", "1963", "1964"], "answer": 2, "explain": "The popular name CBI was acquired in 1963. 1964 is when the CVC was set up."}, {"q": "Which division of the CBI covers Ponzi schemes and counterfeit currency?", "options": ["Special Crimes Division", "Economic Offences Division", "Anti-Corruption Division", "Banking and Security Frauds Division"], "answer": 1, "explain": "Economic Offences covers cheating, Ponzi schemes and counterfeit currency."}, {"q": "The Vineet Narain Case, 1997", "options": ["Created the CVC as a statutory body", "Struck down the Single Directive and gave directions on CBI functioning", "Struck down Section 6A in 2014", "Introduced the Lokpal"], "answer": 1, "explain": "The Court struck down the Single Directive and gave directions including CVC supervision and a selection committee for the Director."}, {"q": "Under the DSPE Act, the minimum tenure of the CBI Director is", "options": ["1 year", "2 years", "4 years", "5 years"], "answer": 1, "explain": "Two years, extended up to 5 years by an ordinance in tranches of 1 year each."}, {"q": "The committee that appoints the CBI Director comprises", "options": ["PM, Home Minister, LoP", "PM, LoP in Lok Sabha, CJI", "PM, Speaker, CJI", "President, PM, CJI"], "answer": 1, "explain": "After Vineet Narain: the PM, Leader of Opposition (or largest opposition party leader) and the CJI."}, {"q": "The CVC was made a statutory body in", "options": ["1964", "1997", "2003", "2011"], "answer": 2, "explain": "The CVC Act, 2003. It was set up in 1964 as an executive body."}, {"q": "The CVC was set up on the recommendation of the", "options": ["Santhanam Committee", "Sarkaria Commission", "Punchhi Commission", "First ARC"], "answer": 0, "explain": "The Committee on prevention of corruption headed by K Santhanam (1962)."}, {"q": "In the PJ Thomas Case (2011) the Supreme Court held that CVC selection should be on", "options": ["Majority of the committee", "Consensus of all committee members", "The PM's choice", "A vote by Parliament"], "answer": 1, "explain": "Majority representation of the government made the LoP's membership pointless, so consensus is needed. It applies only to this appointment."}, {"q": "The Central Vigilance Commissioner's salary and conditions of service are equal to those of", "options": ["The CJI", "The UPSC Chairperson", "A Supreme Court judge", "The Cabinet Secretary"], "answer": 1, "explain": "CVC equals the UPSC Chairperson and VCs equal UPSC members. Pay is from the Consolidated Fund of India."}, {"q": "The CVC and Vigilance Commissioners can be removed on proven misbehaviour or incapacity through", "options": ["A resolution of Parliament", "A reference to the Supreme Court", "The Prime Minister's order", "The Selection Committee"], "answer": 1, "explain": "Removal is by reference to the Supreme Court, plus other grounds like insolvency and moral turpitude."}, {"q": "The CVC has jurisdiction over complaints against which officials under Section 8(2) of the CVC Act, 2003?", "options": ["Group A officials, All India Service officials and equivalent officials in Central PSUs", "Only Group D staff", "Union Ministers", "Judges"], "answer": 0, "explain": "The handout lists Group A, All India Services and equivalent PSU officials."}], "cards": [{"q": "Which sections of BNS deal with illegal property and breach of trust?", "a": "Section 203 BNS (Sec 169 IPC) illegal acquisition of property by civil servants. Section 316 BNS (Sec 409 IPC) criminal breach of trust by a public servant."}, {"q": "What is Section 123 of the RPA Act, 1951?", "a": "Deems which practices are corrupt practices in elections."}, {"q": "What does PMLA, 2003 do?", "a": "Nodal law to tackle money laundering; the Enforcement Directorate implements PMLA and FEMA."}, {"q": "Give the CBI's origin.", "a": "SPE 1941, statutory backing by DSPE Act 1946, popular name CBI in 1963."}, {"q": "Name the CBI's four divisions.", "a": "Anti-Corruption, Special Crimes, Economic Offences, Banking and Security Frauds."}, {"q": "What does 'caged parrot' refer to?", "a": "A former SC judge's description of the CBI as politicised, used by ruling parties against opponents."}, {"q": "What are the CBI's staff and conviction figures in the handout?", "a": "About one-third of posts vacant. Conviction rate 67% versus 30-40% for other agencies, but low in high-profile cases."}, {"q": "Does the CBI have suo-moto jurisdiction?", "a": "No, it deals with cases transferred to it."}, {"q": "Who supervises the CBI in corruption cases after Vineet Narain?", "a": "The CVC, under the CVC Act, for PCA cases."}, {"q": "What is the CBI Director's tenure?", "a": "Minimum 2 years under the DSPE Act, extended up to 5 years by an ordinance in tranches of 1 year."}, {"q": "Who selects the CBI Director?", "a": "Committee of the PM, Leader of Opposition in Lok Sabha (or largest opposition party leader) and the CJI. The same committee approves transfer."}, {"q": "What is DoPT's role over the CBI?", "a": "Only the overall policy framework, not day-to-day workings and investigations."}, {"q": "When was the CVC set up and made statutory?", "a": "1964 as an executive body (Santhanam Committee), statutory in 2003 by the CVC Act."}, {"q": "Composition of the CVC?", "a": "A Central Vigilance Commissioner as chairperson and not more than two Vigilance Commissioners."}, {"q": "Who selects the CVC?", "a": "Committee of PM, Home Minister and Leader of Opposition (or largest opposition party leader)."}, {"q": "What did PJ Thomas (2011) decide?", "a": "Selection must be by consensus of all members, not majority; applies to this appointment only."}, {"q": "CVC term and age limit?", "a": "4 years, retire at 65, no reappointment at the same post, elevation allowed within 4 years total."}, {"q": "CVC salary?", "a": "CVC equals UPSC Chairperson, VCs equal UPSC members, from the Consolidated Fund of India."}, {"q": "How are CVC members removed?", "a": "Proven misbehaviour or incapacity through a reference to the Supreme Court, plus grounds like insolvency and moral turpitude."}, {"q": "Which officials fall under CVC inquiry under Section 8(2) of the CVC Act?", "a": "Group A officials, All India Service officials and equivalent officials in Central PSUs."}, {"q": "What role does the CVC play for the ED and the CBI?", "a": "The CVC chairs the committee recommending the Director of Enforcement and senior officers, and recommends CBI officers of SP level and above except the Director."}, {"q": "Name three issues in CVC functioning.", "a": "Dependence on the CBI, no independent prosecution power, non-cooperative government and poor engagement with civil society."}, {"q": "What timeline is suggested for prosecution sanction?", "a": "3-6 months, by statute."}, {"q": "Which commission recommended functional autonomy for vigilance agencies?", "a": "The 2nd ARC (Ethics in Governance)."}, {"q": "Which foreign model is cited for public participation?", "a": "South Korea's Anti-Corruption and Civil Rights Commission (ACRC)."}, {"q": "Who recommended statutory backing to vigilance bodies in the handout?", "a": "The Punchhi Commission."}]}</script><script>window.__NB={"id": "polity", "ch": 59, "title": "Corruption: CBI and CVC"};/* Shared store: reading progress, preferences, optional cross-device sync. */
+(function(){
+var KEY='nbapp:v1',root=document.documentElement;
+function today(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function fresh(){return{v:1,prefs:{fs:1,lh:1.65,w:780,font:'serif',theme:'auto',pt:0},last:null,nb:{},days:{}}}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+var S;
+try{S=JSON.parse(lsGet(KEY))}catch(e){S=null}
+if(!S||!S.v)S=fresh();
+S.prefs=Object.assign(fresh().prefs,S.prefs||{});
+// one-time import of the older done list and theme
+if(!S.migrated){
+  try{var od=JSON.parse(lsGet('nb-done')||'[]');od.forEach(function(n){var c=chap('modern-india',n);c.done=1;c.dt=1})}catch(e){}
+  var ot=lsGet('nb-theme');if(ot&&!S.prefs.pt){S.prefs.theme=ot;S.prefs.pt=1}
+  S.migrated=1;
+}
+function chap(nb,n){var b=S.nb[nb]||(S.nb[nb]={});return b[n]||(b[n]={read:{},done:0,dt:0,pos:null,t:0})}
+var listeners=[],dirty=false,saveT=null,syncT=null;
+function save(){
+  dirty=true;clearTimeout(saveT);
+  saveT=setTimeout(function(){lsSet(KEY,JSON.stringify(S));listeners.forEach(function(f){try{f()}catch(e){}});scheduleSync()},250);
+}
+function flush(){lsSet(KEY,JSON.stringify(S))}
+function merge(a,b){ // a local, b remote; returns merged
+  var o=fresh();
+  o.prefs=((b.prefs&&b.prefs.pt||0)>(a.prefs&&a.prefs.pt||0))?Object.assign({},a.prefs,b.prefs):Object.assign({},b.prefs,a.prefs);
+  o.last=(!a.last||(b.last&&b.last.ts>a.last.ts))?b.last:a.last;
+  o.migrated=1;
+  var ids={};Object.keys(a.nb||{}).concat(Object.keys(b.nb||{})).forEach(function(k){ids[k]=1});
+  Object.keys(ids).forEach(function(id){
+    o.nb[id]={};var ca=(a.nb||{})[id]||{},cb=(b.nb||{})[id]||{},ks={};
+    Object.keys(ca).concat(Object.keys(cb)).forEach(function(k){ks[k]=1});
+    Object.keys(ks).forEach(function(k){
+      var x=ca[k],y=cb[k];if(!x||!y){o.nb[id][k]=x||y;return}
+      var r=Object.assign({},x.read,y.read),done=(y.dt||0)>(x.dt||0)?y:x,pos=(y.t||0)>(x.t||0)?y.pos:x.pos;
+      o.nb[id][k]={read:r,done:done.done,dt:done.dt||0,pos:pos,t:Math.max(x.t||0,y.t||0)};
+    });
+  });
+  var dk={};Object.keys(a.days||{}).concat(Object.keys(b.days||{})).forEach(function(k){dk[k]=1});
+  Object.keys(dk).forEach(function(k){o.days[k]=Math.max((a.days||{})[k]||0,(b.days||{})[k]||0)});
+  return o;
+}
+var syncState='off';
+function scheduleSync(){clearTimeout(syncT);syncT=setTimeout(function(){sync()},4000)}
+var dbp=null;
+function getRef(){
+  if(dbp)return dbp;
+  dbp=(async function(){
+    if(!window.claude||!claude.use)return null;
+    var db=await claude.use('db'),u=await claude.use('user');
+    if(!db||!u||!u.id)return null;
+    var id=await u.id();if(!id)return null;
+    return db.doc('data/users/'+id+'/nbapp');
+  })().catch(function(){return null});
+  return dbp;
+}
+var busy=false;
+async function sync(){
+  if(busy)return;busy=true;
+  try{
+    var ref=await getRef();if(!ref){syncState='local';return}
+    var snap=await ref.get(),rem=null;
+    if(snap.exists){var d=snap.data();try{rem=JSON.parse(d.state)}catch(e){}}
+    var m=rem?merge(S,rem):S;
+    var changed=JSON.stringify(m)!==JSON.stringify(S);
+    S=m;
+    if(changed){flush();listeners.forEach(function(f){try{f()}catch(e){}})}
+    var out=JSON.stringify(S);
+    if(!rem||JSON.stringify(rem)!==out)await ref.set({v:1,updated:Date.now(),state:out});
+    syncState='synced';
+  }catch(e){syncState='local'}
+  finally{busy=false}
+}
+var API={
+  get:function(){return S},
+  chap:chap,
+  save:save,flush:flush,sync:sync,
+  onChange:function(f){listeners.push(f)},
+  syncState:function(){return syncState},
+  setPref:function(k,v){S.prefs[k]=v;S.prefs.pt=Date.now();applyPrefs();save()},
+  reset:function(){S=fresh();S.migrated=1;flush();save()},
+  today:today,
+  pct:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c||!total)return 0;var r=0;Object.keys(c.read||{}).forEach(function(k){if(c.read[k])r++});return Math.min(1,r/total)},
+  isDone:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c)return false;if(c.dt)return !!c.done;return false}
+};
+window.NBS=API;
+function applyPrefs(){
+  var p=S.prefs;
+  var th=p.theme;
+  if(th==='auto')root.removeAttribute('data-theme');else root.setAttribute('data-theme',th);
+  root.style.setProperty('--zoom',p.fs);root.style.setProperty('--lh',p.lh);root.style.setProperty('--pw',p.w+'px');
+  root.setAttribute('data-font',p.font);
+}
+API.applyPrefs=applyPrefs;applyPrefs();
+// studied time, counted while the page is visible and touched in the last minute
+var lastAct=Date.now();
+['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){lastAct=Date.now()},{passive:true})});
+setInterval(function(){
+  if(document.hidden||Date.now()-lastAct>60000||!window.__NB)return;
+  var t=today();S.days[t]=(S.days[t]||0)+15;save();
+},15000);
+document.addEventListener('visibilitychange',function(){if(document.hidden){flush();sync()}else{sync()}});
+addEventListener('pagehide',flush);
+setTimeout(sync,800);
+})();
+(function(){var b=document.getElementById('themebtn');if(!b)return;var o=['auto','light','sepia','dark'];b.addEventListener('click',function(){var t=NBS.get().prefs.theme,i=(o.indexOf(t)+1)%o.length;NBS.setPref('theme',o[i]);b.textContent='Theme: '+o[i]})})();
+(function(){
+var D=JSON.parse(document.getElementById('data').textContent);
+// map/outline toggle
+document.querySelectorAll('.seg button').forEach(function(bt){bt.addEventListener('click',function(){var v=bt.dataset.v;document.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===bt)});document.getElementById('mm-map').hidden=v!=='map';document.getElementById('mm-outline').hidden=v!=='outline'})});
+if(window.innerWidth<640){var ob=document.querySelector('.seg button[data-v="outline"]');if(ob)ob.click()}
+// lightbox
+var lb=document.getElementById('lightbox'),li=lb.querySelector('img');
+document.querySelectorAll('a.zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();li.src=a.getAttribute('href');lb.hidden=false})});
+lb.addEventListener('click',function(){lb.hidden=true});document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true});
+// quiz
+var qz=document.getElementById('quiz'),score=document.getElementById('score'),right=0,answered=0;
+if(qz)D.mcq.forEach(function(m,i){var d=document.createElement('div');d.className='q';var t=document.createElement('div');t.className='qt';t.textContent=(i+1)+'. '+m.q;d.appendChild(t);var ex=document.createElement('div');ex.className='ex';ex.hidden=true;ex.textContent=m.explain;var btns=[];
+m.options.forEach(function(o,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent='ABCD'[j]+'. '+o;b.addEventListener('click',function(){if(d.dataset.done)return;d.dataset.done=1;answered++;if(j===m.answer){right++;b.classList.add('right')}else{b.classList.add('wrong');btns[m.answer].classList.add('right')}ex.hidden=false;score.textContent=right+' / '+answered+' correct'});btns.push(b);d.appendChild(b)});d.appendChild(ex);qz.appendChild(d)});
+// flashcards
+var fc=document.getElementById('fc');
+if(fc){var all=D.cards.map(function(c,i){return{q:c.q,a:c.a,i:i}}),deck=all.slice(),pos=0,back=false,missed={};
+function show(){if(!deck.length){fc.textContent='No cards in this deck.';document.getElementById('fccount').textContent='';return}var c=deck[pos];fc.textContent=back?c.a:c.q;fc.classList.toggle('back',back);document.getElementById('fccount').textContent='Card '+(pos+1)+' of '+deck.length+(back?' (answer)':' (question)')}
+function go(d){if(!deck.length)return;pos=(pos+d+deck.length)%deck.length;back=false;show()}
+fc.addEventListener('click',function(){back=!back;show()});fc.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();back=!back;show()}});
+document.getElementById('fcnext').onclick=function(){go(1)};document.getElementById('fcprev').onclick=function(){go(-1)};
+document.getElementById('fcmiss').onclick=function(){if(deck.length){missed[deck[pos].i]=1;go(1)}};
+document.getElementById('fcshuf').onclick=function(){for(var i=deck.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=deck[i];deck[i]=deck[j];deck[j]=t}pos=0;back=false;show()};
+document.getElementById('fconlymiss').onclick=function(){deck=all.filter(function(c){return missed[c.i]});pos=0;back=false;show()};
+document.getElementById('fcall').onclick=function(){deck=all.slice();pos=0;back=false;show()};show()}
+// side toc highlight
+var links=[].slice.call(document.querySelectorAll('.sidetoc a'));
+if('IntersectionObserver' in window&&links.length){var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on')}})},{rootMargin:'-70px 0px -70% 0px'});Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)})}
+})();
+(function(){
+var N=window.__NB,S=window.NBS;if(!N||!S)return;
+var root=document.documentElement,body=document.body;
+var rec=function(){return S.chap(N.id,N.ch)};
+var heads=[].slice.call(document.querySelectorAll('.page h2[id]'));
+var titles=heads.map(function(h){return h.firstChild?h.firstChild.textContent.trim():h.id});
+var ids=heads.map(function(h){return h.id});
+var seen={},manual={};
+// Done box
+var box=document.getElementById('donebox');
+if(box){box.checked=!!(rec().done);box.addEventListener('change',function(){var r=rec();r.done=box.checked?1:0;r.dt=Date.now();S.save()})}
+// progress bar
+var bar=document.createElement('div');bar.className='rbar';body.appendChild(bar);
+// per-section read buttons
+heads.forEach(function(h,i){
+  var b=document.createElement('button');b.type='button';b.className='h2read';
+  function paint(){var on=!!rec().read[h.id];b.setAttribute('aria-pressed',on);b.textContent=on?'Read ✓':'Mark read'}
+  b.addEventListener('click',function(){var r=rec();manual[h.id]=1;if(r.read[h.id])delete r.read[h.id];else r.read[h.id]=1;r.t=Date.now();S.save();paint();refresh()});
+  h.insertBefore(b,h.firstChild);paint();b._paint=paint;h._b=b;
+});
+function repaint(){heads.forEach(function(h){h._b._paint()});refresh()}
+// caption clamp
+document.querySelectorAll('figcaption').forEach(function(c){if(c.textContent.length>170){c.classList.add('clamp');c.addEventListener('click',function(){c.classList.toggle('open')})}});
+// dock
+var dock=document.createElement('div');dock.className='dock';
+dock.innerHTML='<button type="button" id="dprev" aria-label="Previous section">‹ Prev</button><button type="button" class="mid" id="dmid"></button><button type="button" id="dnext" aria-label="Next section">Next ›</button>';
+body.appendChild(dock);body.classList.add('has-dock');
+var dmid=dock.querySelector('#dmid');
+function curIdx(){var y=innerHeight*0.25,c=-1;for(var i=0;i<heads.length;i++){if(heads[i].getBoundingClientRect().top<=y)c=i;else break}return c}
+function goto(i){if(i<0||i>=heads.length)return;heads[i].scrollIntoView({behavior:'smooth',block:'start'})}
+dock.querySelector('#dprev').onclick=function(){var c=curIdx(),h=heads[c];goto(h&&h.getBoundingClientRect().top<-40?c:c-1)};
+dock.querySelector('#dnext').onclick=function(){goto(curIdx()+1)};
+function refresh(){
+  var c=curIdx(),r=rec().read,n=0;ids.forEach(function(id){if(r[id])n++});
+  dmid.innerHTML='<b>'+(c<0?'Top':(c+1)+'/'+heads.length)+'</b> · '+(c<0?'Start of chapter':esc(titles[c]))+' · '+n+' read';
+}
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+// sheets
+function sheet(html){var s=document.createElement('div');s.className='sheet';s.hidden=true;s.innerHTML='<div class="sheetin">'+html+'</div>';s.addEventListener('click',function(e){if(e.target===s)s.hidden=true});body.appendChild(s);return s}
+var cs=sheet('<h3>Sections</h3><div class="secl" id="secl"></div>');
+dmid.onclick=function(){
+  var r=rec().read,c=curIdx(),h='';
+  ids.forEach(function(id,i){h+='<a href="#'+id+'" data-i="'+i+'" class="'+(r[id]?'rd ':'')+(i===c?'cur':'')+'"><span class="tk">'+(r[id]?'✓':'')+'</span><span>'+esc(titles[i])+'</span></a>'});
+  cs.querySelector('#secl').innerHTML=h;cs.hidden=false;
+  var cur=cs.querySelector('.cur');if(cur)cur.scrollIntoView({block:'center'});
+};
+cs.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-i]');if(a){e.preventDefault();cs.hidden=true;goto(+a.dataset.i)}});
+var ps=sheet('<h3>Reading settings</h3><div id="pbody"></div>');
+function grp(key,label,opts){var p=S.get().prefs;return '<div class="srow"><label>'+label+'</label><div class="grp">'+opts.map(function(o){return '<button type="button" data-k="'+key+'" data-v="'+o[0]+'" aria-pressed="'+(String(p[key])===String(o[0]))+'">'+o[1]+'</button>'}).join('')+'</div></div>'}
+function drawPrefs(){
+  ps.querySelector('#pbody').innerHTML=
+    grp('fs','Text size',[[0.88,"A−"],[1,"A"],[1.12,"A+"],[1.25,"A++"],[1.4,"A+++"]])+
+    grp('lh','Spacing',[[1.45,'Tight'],[1.65,'Normal'],[1.85,'Roomy']])+
+    grp('w','Width',[[640,'Narrow'],[780,'Medium'],[980,'Wide']])+
+    grp('font','Font',[['serif','Serif'],['sans','Sans']])+
+    grp('theme','Theme',[['auto','Auto'],['light','Light'],['sepia','Sepia'],['dark','Dark']])+
+    '<div class="srow"><label>Extras</label><div class="grp"><button type="button" id="pfocus" aria-pressed="'+body.classList.contains('focus')+'">Focus mode</button>'+('wakeLock' in navigator?'<button type="button" id="pwake" aria-pressed="'+!!wl+'">Keep screen on</button>':'')+'</div></div>';
+}
+var wl=null;
+ps.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('button');if(!b)return;
+  if(b.dataset.k){var v=b.dataset.v;S.setPref(b.dataset.k,b.dataset.k==='font'||b.dataset.k==='theme'?v:+v);drawPrefs();return}
+  if(b.id==='pfocus'){body.classList.toggle('focus');drawPrefs();return}
+  if(b.id==='pwake'){
+    if(wl){wl.release();wl=null;drawPrefs()}else{navigator.wakeLock.request('screen').then(function(l){wl=l;l.addEventListener('release',function(){wl=null});drawPrefs()}).catch(function(){})}
+  }
+});
+function openPrefs(){drawPrefs();ps.hidden=false}
+var aa=document.getElementById('aabtn');if(aa)aa.onclick=openPrefs;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){ps.hidden=true;cs.hidden=true;body.classList.remove('focus')}});
+// focus-mode exit: tap the top edge area
+var fx=document.createElement('button');fx.type='button';fx.textContent='Exit focus';fx.className='h2read';fx.style.cssText='position:fixed;right:10px;top:10px;z-index:45;float:none;display:none';fx.onclick=function(){body.classList.remove('focus')};body.appendChild(fx);
+new MutationObserver(function(){fx.style.display=body.classList.contains('focus')?'block':'none'}).observe(body,{attributes:true,attributeFilter:['class']});
+// scroll handling
+var tick=false,saveAt=0;
+function onScroll(){
+  if(tick)return;tick=true;requestAnimationFrame(function(){
+    tick=false;
+    var doc=document.documentElement,max=doc.scrollHeight-innerHeight;
+    bar.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';
+    var vh=innerHeight,r=rec(),ch=false;
+    heads.forEach(function(h,i){
+      var t=h.getBoundingClientRect().top;
+      if(t<vh&&t>-40)seen[h.id]=1;
+      var nt=i+1<heads.length?heads[i+1].getBoundingClientRect().top:(scrollY>=max-160?-1:1e9);
+      if(seen[h.id]&&nt<vh*0.35&&!r.read[h.id]&&!manual[h.id]){r.read[h.id]=1;ch=true;h._b._paint()}
+    });
+    if(ch){r.t=Date.now();S.save()}
+    refresh();
+    var now=Date.now();
+    if(now-saveAt>1500){saveAt=now;var c=curIdx(),rr=rec();
+      if(c>=0){var hh=heads[c].getBoundingClientRect().top;rr.pos={s:ids[c],o:Math.round(-hh)};rr.t=now}
+      S.get().last={nb:N.id,ch:N.ch,s:c>=0?ids[c]:'',st:c>=0?titles[c]:'',ts:now};S.save()}
+  })}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
+S.onChange(function(){if(box)box.checked=!!rec().done;repaint()});
+refresh();onScroll();
+// resume offer
+var p=rec().pos;
+if(!location.hash&&p&&p.s&&ids.indexOf(p.s)>0){
+  var el=document.getElementById(p.s);
+  var t=document.createElement('div');t.className='toast';t.innerHTML='<span>Resume at “'+esc(titles[ids.indexOf(p.s)])+'”?</span><button type="button" id="tgo">Resume</button><button type="button" id="tx">Dismiss</button>';
+  body.appendChild(t);
+  t.querySelector('#tgo').onclick=function(){if(el){el.scrollIntoView({block:'start'});scrollBy(0,(p.o||0))}t.remove()};
+  t.querySelector('#tx').onclick=function(){t.remove()};
+  setTimeout(function(){if(t.parentNode)t.remove()},12000);
+}
+})();
+</script></body></html>

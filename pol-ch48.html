@@ -1,0 +1,462 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Ch 48 · Delimitation Commission</title><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style><style>:root{--bg:#FBFAF6;--surface:#fff;--surface2:#F3F1EA;--ink:#1F2A2A;--muted:#5D6A68;--line:#DAD6C8;--acc:#0E6B5C;--acc-ink:#fff;--acc-soft:#DDF0EA;--saf:#B85C00;--saf-soft:#FFF0DB;--red:#B3261E;--red-soft:#FDE7E4;--blue:#1F5FA8;--blue-soft:#E3EEFA;--good:#2E7D32;--good-soft:#E3F3E4;--hl:#FFE9A6;
+--c0:#0E6B5C;--c1:#B85C00;--c2:#1F5FA8;--c3:#8E3B8E;--c4:#B3261E;--c5:#5C7A1F;--c6:#8A6D00;--c7:#37607A;
+--serif:Literata,Spectral,Georgia,'Times New Roman',serif;--sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:17px/1.65 var(--serif);margin:0}
+a{color:var(--acc)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;margin:0}
+.bar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.barin{display:flex;align-items:center;gap:8px;padding:8px 16px;max-width:1200px;margin:0 auto;font:600 14px var(--sans);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.barin::-webkit-scrollbar{display:none}
+.bar a.home,.nbtn,.themebtn{color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 10px;font:600 13px var(--sans);cursor:pointer;flex:none}
+.nbtn{padding:5px 12px;font-size:16px;line-height:1}.nbtn.off{opacity:.35}
+.bartitle{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-weight:500}.bartitle b{color:var(--acc)}
+.done{display:flex;align-items:center;gap:5px;flex:none;font:600 13px var(--sans);cursor:pointer}.done input{width:18px;height:18px;accent-color:var(--acc)}
+.layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px;padding:0 16px}
+.sidetoc{position:sticky;top:58px;align-self:start;max-height:calc(100vh - 70px);overflow:auto;padding:18px 0;font:14px/1.4 var(--sans)}
+.sth{font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;color:var(--muted);margin-bottom:8px}
+.sidetoc ol{list-style:none;margin:0;padding:0}.sidetoc li{margin:0}.sidetoc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--ink);text-decoration:none}.sidetoc a:hover,.sidetoc a.on{border-color:var(--acc);color:var(--acc);background:var(--acc-soft)}
+.page{max-width:780px;margin:0 auto;padding:24px 16px 60px;width:100%;min-width:0}
+.home-page{max-width:900px}
+.chead{margin-bottom:22px}
+.eyebrow{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font-size:clamp(28px,5vw,40px);margin:6px 0 10px;font-weight:700}
+.lede{font-size:18px;color:var(--muted);margin:10px 0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:600 12px var(--sans);padding:3px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--line);color:var(--muted)}
+.pill.cls{background:var(--acc-soft);color:var(--acc);border-color:transparent}.pill.hb{background:var(--saf-soft);color:var(--saf);border-color:transparent}
+h2{font-size:clamp(22px,3.6vw,28px);margin:40px 0 12px;padding-top:14px;border-top:2px solid var(--acc);font-weight:700}
+h3{font-size:19px;margin:24px 0 8px;color:var(--acc)}
+h4{font-size:16px;margin-bottom:10px}
+.anchor{margin-left:8px;font-size:.7em;color:var(--muted);opacity:0;text-decoration:none}h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 12px}
+mark{background:var(--hl);color:inherit;padding:0 3px;border-radius:3px}
+.lst{margin:0 0 14px;padding-left:22px}.lst li{margin:5px 0}.lst li.sub{margin-left:18px;list-style:circle;color:var(--ink)}
+.gdesc{color:var(--muted);font:15px var(--sans);margin:-4px 0 12px}
+.xref{font:600 .92em var(--sans);white-space:nowrap}
+.callout{border-left:4px solid var(--acc);background:var(--acc-soft);border-radius:0 10px 10px 0;padding:10px 14px 4px;margin:14px 0}
+.callout .tag{display:inline-block;font:700 11px var(--sans);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;color:var(--acc)}
+.callout.teacher{border-color:var(--saf);background:var(--saf-soft)}.callout.teacher .tag{color:var(--saf)}
+.callout.alert{border-color:var(--red);background:var(--red-soft)}.callout.alert .tag{color:var(--red)}
+.callout.note{border-color:var(--blue);background:var(--blue-soft)}.callout.note .tag{color:var(--blue)}
+.callout.example{border-color:var(--good);background:var(--good-soft)}.callout.example .tag{color:var(--good)}
+.callout.source{background:var(--surface2);border-color:var(--line)}.callout.source .tag{color:var(--muted)}
+figure{margin:18px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure img{display:block;width:100%;height:auto;background:#fff}
+figure a.zoom{display:block;cursor:zoom-in}
+figcaption{padding:8px 12px;font:14px/1.45 var(--sans);color:var(--muted)}.figsrc{font:700 11px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--acc);margin-right:6px}
+.tblock{margin:16px 0}.tcap{font:700 14px var(--sans);margin-bottom:6px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font:15px/1.45 var(--sans);min-width:480px}
+th,td{padding:8px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--acc);color:var(--acc-ink);font-weight:700}
+tbody th{background:var(--surface2);font-weight:700}tbody tr:last-child>*{border-bottom:0}tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface2) 55%,transparent)}
+.stepsblock{margin:16px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}.stepsblock ol{margin:0;padding-left:22px}.stepsblock li{margin:4px 0}
+.flow{margin:20px 0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.chain{display:flex;flex-direction:column;align-items:stretch}
+.step{border:1.5px solid var(--acc);background:var(--acc-soft);border-radius:10px;padding:8px 12px;font:15px/1.4 var(--sans)}
+.step .sl{font-weight:700}.step .ss{color:var(--muted);font-size:14px;margin-top:2px}
+.step.warn{border-color:var(--saf);background:var(--saf-soft)}.step.bad{border-color:var(--red);background:var(--red-soft)}.step.good{border-color:var(--good);background:var(--good-soft)}
+.arr{height:20px;position:relative;flex:none}.arr:before{content:"";position:absolute;left:50%;top:0;bottom:6px;border-left:2px solid var(--muted)}.arr:after{content:"";position:absolute;left:calc(50% - 5px);bottom:0;border:5px solid transparent;border-top:7px solid var(--muted);border-bottom:0}
+.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.lane{display:flex;flex-direction:column}.lane-h{font:700 12px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;text-align:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:10px}.seg button{font:600 13px var(--sans);padding:6px 14px;border:0;background:var(--surface);color:var(--ink);cursor:pointer}.seg button[aria-pressed=true]{background:var(--acc);color:var(--acc-ink)}
+.mapblock h2{margin-top:10px}
+.mmframe{overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:8px;-webkit-overflow-scrolling:touch}
+svg.mm{display:block;font-family:var(--sans)}
+.mm-root{fill:var(--acc)}.mm-root-t{fill:var(--acc-ink);font:700 14px var(--sans)}
+.mm-link{fill:none;stroke-width:2;opacity:.7}.mm-branch-t{font:700 13px var(--sans);fill:#fff}.mm-leaf-t{font:13px var(--sans);fill:var(--ink)}.mm-leaf-n{font:11.5px var(--sans);fill:var(--muted)}
+.mm-leaf{fill:var(--surface2);stroke-width:1.5}
+.mm-branch.c0{fill:var(--c0)}.mm-branch.c1{fill:var(--c1)}.mm-branch.c2{fill:var(--c2)}.mm-branch.c3{fill:var(--c3)}.mm-branch.c4{fill:var(--c4)}.mm-branch.c5{fill:var(--c5)}.mm-branch.c6{fill:var(--c6)}.mm-branch.c7{fill:var(--c7)}
+.mm-link.c0,.mm-leaf.c0{stroke:var(--c0)}.mm-link.c1,.mm-leaf.c1{stroke:var(--c1)}.mm-link.c2,.mm-leaf.c2{stroke:var(--c2)}.mm-link.c3,.mm-leaf.c3{stroke:var(--c3)}.mm-link.c4,.mm-leaf.c4{stroke:var(--c4)}.mm-link.c5,.mm-leaf.c5{stroke:var(--c5)}.mm-link.c6,.mm-leaf.c6{stroke:var(--c6)}.mm-link.c7,.mm-leaf.c7{stroke:var(--c7)}
+:root:not([data-theme="dark"]) .mm-branch-t{fill:#fff}
+.outline,.outline ul{list-style:none;padding-left:18px;margin:4px 0}.outline>li{padding-left:0}.outline summary{cursor:pointer;font:700 15px var(--sans)}
+.outline li.c0>details>summary{color:var(--c0)}.outline li.c1>details>summary{color:var(--c1)}.outline li.c2>details>summary{color:var(--c2)}.outline li.c3>details>summary{color:var(--c3)}.outline li.c4>details>summary{color:var(--c4)}.outline li.c5>details>summary{color:var(--c5)}.outline li.c6>details>summary{color:var(--c6)}.outline li.c7>details>summary{color:var(--c7)}
+.ol-note{color:var(--muted);font-size:.9em}
+.timeline{list-style:none;margin:10px 0;padding:0;position:relative}
+.timeline:before{content:"";position:absolute;left:94px;top:0;bottom:0;border-left:2px solid var(--line)}
+.tl{display:grid;grid-template-columns:86px 18px 1fr;gap:0 6px;margin:0 0 12px;align-items:start}
+.yr{font:700 14px var(--mono);text-align:right;color:var(--acc);padding-top:2px}
+.pin{width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--acc);margin:7px 0 0 2px;position:relative;z-index:1}
+.tl.high .pin{background:var(--saf);border-color:var(--saf)}
+.tlbody{font:16px/1.5 var(--sans);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px}
+.tl.high .tlbody{border-color:var(--saf)}.star{color:var(--saf);margin-left:6px}.sref{float:right;margin-left:10px;font:600 12px var(--sans);text-decoration:none}
+.lkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.link{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:15px/1.45 var(--sans)}.link p{margin:4px 0 0;color:var(--muted)}.lk-line{font-weight:700}
+.recall{font:16px/1.55 var(--sans);padding-left:24px}.recall li{margin:6px 0}
+.count{font:600 13px var(--sans);color:var(--muted);margin:8px 0}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;font:16px/1.5 var(--sans)}
+.q .qt{font-weight:700;margin-bottom:8px}.q .opt{display:block;width:100%;text-align:left;padding:8px 12px;margin:6px 0;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.q .opt:hover{border-color:var(--acc)}.q .opt.right{border-color:var(--good);background:var(--good-soft)}.q .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.q .ex{margin-top:8px;color:var(--muted)}
+.deck{margin:10px 0}
+.fc{min-height:150px;background:var(--surface);border:2px solid var(--acc);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:center;text-align:center;font:18px/1.5 var(--serif);cursor:pointer;user-select:none}
+.fc.back{background:var(--acc-soft)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.btn{font:600 14px var(--sans);padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.pri{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:40px 0 20px}.pager a{display:block;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--ink);font:600 15px var(--sans)}.pager a.nx{text-align:right}.pager small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+footer{color:var(--muted);font:13px/1.5 var(--sans);border-top:1px solid var(--line);padding-top:14px;margin-top:30px}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:flex;align-items:center;justify-content:center;padding:10px;overflow:auto}#lightbox img{max-width:none;width:min(1600px,100%);height:auto;background:#fff;cursor:zoom-out}
+.part{margin:34px 0}.part h2{margin-top:0}
+.chlist{display:flex;flex-direction:column;gap:8px}
+.chcard{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+a.chcard:hover{border-color:var(--acc)}.chcard.pending{opacity:.5}
+.chn{font:700 18px var(--mono);color:var(--acc);text-align:center}.cht b{font:700 16px var(--serif);display:block}.cht small{font:13px/1.4 var(--sans);color:var(--muted);display:block;margin-top:2px}
+.chb{display:flex;flex-direction:column;gap:4px;align-items:flex-end;font:600 11px var(--sans)}.chb em{font-style:normal;background:var(--acc-soft);color:var(--acc);padding:2px 8px;border-radius:99px}.chb i.tick{font-style:normal;background:var(--good);color:#fff;padding:2px 8px;border-radius:99px}
+.prog{font:600 14px var(--sans);color:var(--muted)}
+.sbox{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:17px var(--sans);margin:6px 0 14px}
+.results .hit{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0;font:15px/1.5 var(--sans)}.results .hit a{font-weight:700}.results .hit small{color:var(--muted)}
+.chips{display:flex;gap:8px;margin-bottom:8px}.chip{font:600 13px var(--sans);padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}.chip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+@media (max-width:900px){.layout{display:block}.sidetoc{display:none}}
+@media (max-width:560px){body{font-size:16.5px}.tl{grid-template-columns:62px 16px 1fr}.timeline:before{left:70px}.yr{font-size:12px}.chcard{grid-template-columns:34px 1fr}.chb{display:none}.lanes{grid-template-columns:1fr}}
+
+code{font:.88em var(--mono);background:var(--surface2);padding:1px 5px;border-radius:4px}
+
+/* ---- reader app ---- */
+:root{--zoom:1;--lh:1.65;--pw:780px}
+:root[data-theme="sepia"]{--bg:#F4ECD8;--surface:#FBF5E6;--surface2:#EADFC4;--ink:#3B3022;--muted:#7A6A52;--line:#D8C9A6;--acc:#7A4A12;--acc-ink:#fff;--acc-soft:#EFDDB8;--saf:#A4470A;--saf-soft:#F6E2BE;--red:#9C2A1C;--red-soft:#F3D9CB;--blue:#2F5C8A;--blue-soft:#DDE6E4;--good:#3E6B2A;--good-soft:#DDE8C8;--hl:#F2D98A;color-scheme:light}
+:root[data-font="sans"] body{font-family:var(--sans)}
+:root[data-font="sans"] .notes p,:root[data-font="sans"] .notes li{font-family:var(--sans)}
+.page{zoom:var(--zoom);max-width:var(--pw)}
+.notes p,.notes li{line-height:var(--lh)}
+.rbar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--acc);z-index:40;transition:width .15s}
+.aabtn{color:var(--ink);border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 12px;font:700 14px var(--serif);cursor:pointer;flex:none}
+.h2read{float:right;margin:2px 0 0 10px;font:600 12px var(--sans);border:1px solid var(--line);background:var(--surface2);color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer;min-height:30px}
+.h2read[aria-pressed="true"]{background:var(--acc-soft);color:var(--acc);border-color:var(--acc)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding:6px 10px calc(6px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:center;justify-content:center}
+.dock button{font:600 14px var(--sans);min-height:44px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;padding:0 14px;cursor:pointer}
+.dock .mid{flex:1;max-width:520px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dock .mid b{color:var(--acc)}
+body.has-dock .page{padding-bottom:110px}
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.sheetin{background:var(--surface);color:var(--ink);width:100%;max-width:560px;max-height:82vh;overflow:auto;border-radius:16px 16px 0 0;padding:16px 18px calc(18px + env(safe-area-inset-bottom,0px));font:15px/1.4 var(--sans)}
+.sheetin h3{margin:0 0 10px;font:700 17px var(--sans)}
+.srow{display:flex;align-items:center;gap:10px;margin:12px 0;flex-wrap:wrap}
+.srow label{flex:0 0 92px;color:var(--muted);font-weight:600}
+.srow .grp{display:flex;gap:6px;flex-wrap:wrap}
+.srow button{font:600 14px var(--sans);min-height:42px;min-width:48px;padding:0 12px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;cursor:pointer}
+.srow button[aria-pressed="true"]{border-color:var(--acc);background:var(--acc-soft);color:var(--acc)}
+.secl a{display:flex;gap:10px;align-items:center;padding:12px 6px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;min-height:44px}
+.secl a .tk{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;color:var(--acc-ink)}
+.secl a.rd .tk{background:var(--acc);border-color:var(--acc)}
+.secl a.cur{background:var(--acc-soft)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:50;background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 14px;display:flex;gap:12px;align-items:center;font:600 14px var(--sans);max-width:92vw;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.toast button{font:700 14px var(--sans);background:transparent;border:0;color:var(--bg);text-decoration:underline;cursor:pointer;min-height:36px}
+body.focus .bar{display:none}body.focus .sidetoc{display:none}
+figcaption.clamp{max-height:3.3em;overflow:hidden;position:relative;cursor:pointer}
+figcaption.clamp.open{max-height:none}
+figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bottom:0;background:var(--bg);color:var(--acc);font:700 12px var(--sans);padding-left:14px}
+.cbar{display:block;height:4px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}.cbar i{display:block;height:100%;width:0;background:var(--acc)}
+.nbcard h2{border:0;padding:0}.nbcard{border-top:1px solid var(--line)}
+</style><style>
+.mn{display:inline-flex;gap:4px;flex-wrap:wrap;margin:2px 0 6px}.mn b{font:700 15px var(--mono);background:var(--acc);color:var(--acc-ink);border-radius:6px;padding:1px 8px}
+.callout.shortcut{border-color:var(--saf);background:var(--saf-soft)}.callout.shortcut .tag{color:var(--saf)}
+.callout.mnemo{border-color:var(--c3);background:var(--surface2)}.callout.mnemo .tag{color:var(--c3)}
+.callout p,.callout li{font-family:var(--sans)}
+.art{font-family:var(--mono);font-size:.86em;background:var(--acc-soft);padding:0 .28em;border-radius:4px;white-space:nowrap}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin:14px 0}
+.two .col{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:10px 14px;font:15px/1.5 var(--sans)}
+.two .col h4{margin:0 0 4px;font:700 13px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--acc)}
+.two .col ul{margin:4px 0;padding-left:18px}
+.ptag{display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:2px 9px;margin-left:8px;vertical-align:middle}
+.ptag.high{background:var(--red-soft);color:var(--red)}.ptag.med{background:var(--saf-soft);color:var(--saf)}.ptag.low{background:var(--surface2);color:var(--muted)}
+</style></head><body><header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="pol-home.html">Contents</a><a class="nbtn" href="pol-ch47.html" title="Law Commission and Bar Council" aria-label="Previous chapter">‹</a><span class="bartitle"><b>Ch 48</b> Delimitation Commission</span><a class="nbtn" href="pol-ch49.html" title="Competition Commission of India" aria-label="Next chapter">›</a><a class="home" href="pol-search.html">Search</a><a class="home" href="pol-timeline.html">Timeline</a><label class="done"><input type="checkbox" id="donebox" data-ch="48"><span>Done</span></label><button class="aabtn" id="aabtn" type="button" aria-label="Reading settings">Aa</button></div></header><div class="layout"><aside class="sidetoc"><div class="sth">In this chapter</div><ol><li><a href="#chapter-map">Chapter map</a></li><li><a href="#exam-lens-priority-and-pyqs">Exam lens: priority and PYQs</a></li><li><a href="#1-meaning-and-rationale">1 · Meaning and rationale</a></li><li><a href="#2-constitutional-framework">2 · Constitutional framework</a></li><li><a href="#3-nature-and-legal-status">3 · Nature and legal status</a></li><li><a href="#4-commissions-constituted-so-far">4 · Commissions constituted so far</a></li><li><a href="#5-functions-principles-and-procedure">5 · Functions, principles and procedure</a></li><li><a href="#6-implementation-and-the-fourth-commission-2002">6 · Implementation and the Fourth Commission (2002)</a></li><li><a href="#7-delimitation-commission-2020-and-j-k-exercise-">7 · Delimitation Commission (2020) and J&amp;K exercise (2022)</a></li><li><a href="#chapter-timeline">Timeline</a></li><li><a href="#connects">Connects to</a></li><li><a href="#recall">Recall sheet</a></li><li><a href="#practice">Test yourself</a></li></ol></aside><main class="page"><div class="chead"><div class="eyebrow">Polity · Part 3 · Bodies, Commissions and Governance · Chapter 48</div><h1>Delimitation Commission<span class="ptag low">Low priority</span></h1><div class="pills"><span class="pill hb">Handout only: no class slides</span><span class="pill ">Handout: Delimitation Commission</span><span class="pill ">2 Prelims · 0 Mains PYQs quoted</span></div><p class="lede">The statutory, independent body that redraws Lok Sabha and Assembly constituency boundaries after each Census. Know the Articles, the four Commissions, the Fourth Commission details and the 2020-22 Jammu and Kashmir exercise.</p></div><section class="mapblock"><h2 id="chapter-map">Chapter map<a class="anchor" href="#chapter-map">#</a></h2><div class="seg" role="group" aria-label="Map view"><button type="button" data-v="map" aria-pressed="true">Map</button><button type="button" data-v="outline" aria-pressed="false">Outline</button></div><div id="mm-map" class="mmframe"><svg class="mm" viewBox="0 0 772 1246" width="772" height="1246" role="img" aria-label="Mind map: Delimitation Commission"><rect class="mm-root" x="8" y="586.4" width="122.4" height="47.2" rx="6"/><text class="mm-root-t" x="69.2" y="606.2" text-anchor="middle">Delimitation</text><text class="mm-root-t" x="69.2" y="623.8" text-anchor="middle">Commission</text><path class="mm-link c0" d="M130.4,610.0 C162.4,610.0 162.4,76.0 194.4,76.0"/><rect class="mm-branch c0" x="194.39999999999998" y="62.0" width="154.0" height="28" rx="5"/><text class="mm-branch-t" x="271.4" y="80.5" text-anchor="middle">Meaning and need</text><path class="mm-link c0" d="M348.4,76.0 C376.4,76.0 484.4,28.0 512.4,28.0"/><rect class="mm-leaf c0" x="512.4" y="8" width="139.0" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="23.5">Redraw boundaries</text><text class="mm-leaf-n" x="522.4" y="38.5">after Census</text><path class="mm-link c0" d="M348.4,76.0 C376.4,76.0 484.4,76.0 512.4,76.0"/><rect class="mm-leaf c0" x="512.4" y="56" width="153.0" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="71.5">One vote, one value</text><text class="mm-leaf-n" x="522.4" y="86.5">equal weight</text><path class="mm-link c0" d="M348.4,76.0 C376.4,76.0 484.4,124.0 512.4,124.0"/><rect class="mm-leaf c0" x="512.4" y="104" width="196.5" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="119.5">Prevents gerrymandering</text><text class="mm-leaf-n" x="522.4" y="134.5">independent, non-partisan</text><path class="mm-link c1" d="M130.4,610.0 C162.4,610.0 162.4,250.0 194.4,250.0"/><rect class="mm-branch c1" x="194.39999999999998" y="236.0" width="90.0" height="28" rx="5"/><text class="mm-branch-t" x="239.4" y="254.5" text-anchor="middle">Articles</text><path class="mm-link c1" d="M284.4,250.0 C312.4,250.0 484.4,178.0 512.4,178.0"/><rect class="mm-leaf c1" x="512.4" y="158" width="127.5" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="173.5">Art. 81</text><text class="mm-leaf-n" x="522.4" y="188.5">Lok Sabha seats</text><path class="mm-link c1" d="M284.4,250.0 C312.4,250.0 484.4,226.0 512.4,226.0"/><rect class="mm-leaf c1" x="512.4" y="206" width="162.0" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="221.5">Art. 82</text><text class="mm-leaf-n" x="522.4" y="236.5">readjust each Census</text><path class="mm-link c1" d="M284.4,250.0 C312.4,250.0 484.4,274.0 512.4,274.0"/><rect class="mm-leaf c1" x="512.4" y="254" width="134.4" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="269.5">Art. 170</text><text class="mm-leaf-n" x="522.4" y="284.5">State Assemblies</text><path class="mm-link c1" d="M284.4,250.0 C312.4,250.0 484.4,322.0 512.4,322.0"/><rect class="mm-leaf c1" x="512.4" y="302" width="168.9" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="317.5">Arts. 330 and 332</text><text class="mm-leaf-n" x="522.4" y="332.5">SC and ST reservation</text><path class="mm-link c2" d="M130.4,610.0 C162.4,610.0 162.4,448.0 194.4,448.0"/><rect class="mm-branch c2" x="194.39999999999998" y="434.0" width="122.0" height="28" rx="5"/><text class="mm-branch-t" x="255.4" y="452.5" text-anchor="middle">Legal status</text><path class="mm-link c2" d="M316.4,448.0 C344.4,448.0 484.4,376.0 512.4,376.0"/><rect class="mm-leaf c2" x="512.4" y="356" width="148.2" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="371.5">Statutory body</text><text class="mm-leaf-n" x="522.4" y="386.5">not constitutional</text><path class="mm-link c2" d="M316.4,448.0 C344.4,448.0 484.4,424.0 512.4,424.0"/><rect class="mm-leaf c2" x="512.4" y="404" width="148.2" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="419.5">Force of law</text><text class="mm-leaf-n" x="522.4" y="434.5">President notifies</text><path class="mm-link c2" d="M316.4,448.0 C344.4,448.0 484.4,472.0 512.4,472.0"/><rect class="mm-leaf c2" x="512.4" y="452" width="148.2" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="467.5">Non-justiciable</text><text class="mm-leaf-n" x="522.4" y="482.5">no court challenge</text><path class="mm-link c2" d="M316.4,448.0 C344.4,448.0 484.4,520.0 512.4,520.0"/><rect class="mm-leaf c2" x="512.4" y="500" width="146.0" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="515.5">Under Law Ministry</text><text class="mm-leaf-n" x="522.4" y="530.5">EC gives support</text><path class="mm-link c3" d="M130.4,610.0 C162.4,610.0 162.4,646.0 194.4,646.0"/><rect class="mm-branch c3" x="194.39999999999998" y="632.0" width="154.0" height="28" rx="5"/><text class="mm-branch-t" x="271.4" y="650.5" text-anchor="middle">Four Commissions</text><path class="mm-link c3" d="M348.4,646.0 C376.4,646.0 484.4,574.0 512.4,574.0"/><rect class="mm-leaf c3" x="512.4" y="554" width="99.9" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="569.5">1952</text><text class="mm-leaf-n" x="522.4" y="584.5">1951 Census</text><path class="mm-link c3" d="M348.4,646.0 C376.4,646.0 484.4,622.0 512.4,622.0"/><rect class="mm-leaf c3" x="512.4" y="602" width="99.9" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="617.5">1963</text><text class="mm-leaf-n" x="522.4" y="632.5">1961 Census</text><path class="mm-link c3" d="M348.4,646.0 C376.4,646.0 484.4,670.0 512.4,670.0"/><rect class="mm-leaf c3" x="512.4" y="650" width="196.5" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="665.5">1973</text><text class="mm-leaf-n" x="522.4" y="680.5">1971 Census, seats frozen</text><path class="mm-link c3" d="M348.4,646.0 C376.4,646.0 484.4,718.0 512.4,718.0"/><rect class="mm-leaf c3" x="512.4" y="698" width="251.7" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="713.5">2002</text><text class="mm-leaf-n" x="522.4" y="728.5">2001 Census, Justice Kuldip Singh</text><path class="mm-link c4" d="M130.4,610.0 C162.4,610.0 162.4,820.0 194.4,820.0"/><rect class="mm-branch c4" x="194.39999999999998" y="806.0" width="82.0" height="28" rx="5"/><text class="mm-branch-t" x="235.4" y="824.5" text-anchor="middle">Working</text><path class="mm-link c4" d="M276.4,820.0 C304.4,820.0 484.4,772.0 512.4,772.0"/><rect class="mm-leaf c4" x="512.4" y="752" width="182.7" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="767.5">Composition</text><text class="mm-leaf-n" x="522.4" y="782.5">SC judge, CEC, State EC</text><path class="mm-link c4" d="M276.4,820.0 C304.4,820.0 484.4,820.0 512.4,820.0"/><rect class="mm-leaf c4" x="512.4" y="800" width="196.5" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="815.5">Associate members</text><text class="mm-leaf-n" x="522.4" y="830.5">5 MPs and 5 MLAs, no vote</text><path class="mm-link c4" d="M276.4,820.0 C304.4,820.0 484.4,868.0 512.4,868.0"/><rect class="mm-leaf c4" x="512.4" y="848" width="175.8" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="863.5">Procedure</text><text class="mm-leaf-n" x="522.4" y="878.5">draft, hearings, order</text><path class="mm-link c5" d="M130.4,610.0 C162.4,610.0 162.4,970.0 194.4,970.0"/><rect class="mm-branch c5" x="194.39999999999998" y="956.0" width="162.0" height="28" rx="5"/><text class="mm-branch-t" x="275.4" y="974.5" text-anchor="middle">Fourth Commission</text><path class="mm-link c5" d="M356.4,970.0 C384.4,970.0 484.4,922.0 512.4,922.0"/><rect class="mm-leaf c5" x="512.4" y="902" width="113.7" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="917.5">Report 2007</text><text class="mm-leaf-n" x="522.4" y="932.5">notified 2008</text><path class="mm-link c5" d="M356.4,970.0 C384.4,970.0 484.4,970.0 512.4,970.0"/><rect class="mm-leaf c5" x="512.4" y="950" width="162.0" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="965.5">499 of 543 seats</text><text class="mm-leaf-n" x="522.4" y="980.5">five States excluded</text><path class="mm-link c5" d="M356.4,970.0 C384.4,970.0 484.4,1018.0 512.4,1018.0"/><rect class="mm-leaf c5" x="512.4" y="998" width="162.0" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="1013.5">First used</text><text class="mm-leaf-n" x="522.4" y="1028.5">2009 Lok Sabha polls</text><path class="mm-link c6" d="M130.4,610.0 C162.4,610.0 162.4,1144.0 194.4,1144.0"/><rect class="mm-branch c6" x="194.39999999999998" y="1130.0" width="210.0" height="28" rx="5"/><text class="mm-branch-t" x="299.4" y="1148.5" text-anchor="middle">2020 Commission and J&amp;K</text><path class="mm-link c6" d="M404.4,1144.0 C432.4,1144.0 484.4,1072.0 512.4,1072.0"/><rect class="mm-leaf c6" x="512.4" y="1052" width="223.0" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="1067.5">Justice Ranjana Prakash Desai</text><text class="mm-leaf-n" x="522.4" y="1082.5">chair</text><path class="mm-link c6" d="M404.4,1144.0 C432.4,1144.0 484.4,1120.0 512.4,1120.0"/><rect class="mm-leaf c6" x="512.4" y="1100" width="182.7" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="1115.5">90 Assembly seats</text><text class="mm-leaf-n" x="522.4" y="1130.5">43 Jammu and 47 Kashmir</text><path class="mm-link c6" d="M404.4,1144.0 C432.4,1144.0 484.4,1168.0 512.4,1168.0"/><rect class="mm-leaf c6" x="512.4" y="1148" width="174.0" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="1163.5">9 ST seats, 7 SC seats</text><text class="mm-leaf-n" x="522.4" y="1178.5">first ST reservation</text><path class="mm-link c6" d="M404.4,1144.0 C432.4,1144.0 484.4,1216.0 512.4,1216.0"/><rect class="mm-leaf c6" x="512.4" y="1196" width="139.0" height="40" rx="4"/><text class="mm-leaf-t" x="522.4" y="1211.5">5 Lok Sabha seats</text><text class="mm-leaf-n" x="522.4" y="1226.5">Anantnag-Rajouri</text></svg></div><div id="mm-outline" hidden><ul class="outline"><li><strong>Delimitation Commission</strong><ul><li class="c0"><details open><summary>Meaning and need</summary><ul><li>Redraw boundaries <span class="ol-note">after Census</span></li><li>One vote, one value <span class="ol-note">equal weight</span></li><li>Prevents gerrymandering <span class="ol-note">independent, non-partisan</span></li></ul></details></li><li class="c1"><details open><summary>Articles</summary><ul><li>Art. 81 <span class="ol-note">Lok Sabha seats</span></li><li>Art. 82 <span class="ol-note">readjust each Census</span></li><li>Art. 170 <span class="ol-note">State Assemblies</span></li><li>Arts. 330 and 332 <span class="ol-note">SC and ST reservation</span></li></ul></details></li><li class="c2"><details open><summary>Legal status</summary><ul><li>Statutory body <span class="ol-note">not constitutional</span></li><li>Force of law <span class="ol-note">President notifies</span></li><li>Non-justiciable <span class="ol-note">no court challenge</span></li><li>Under Law Ministry <span class="ol-note">EC gives support</span></li></ul></details></li><li class="c3"><details open><summary>Four Commissions</summary><ul><li>1952 <span class="ol-note">1951 Census</span></li><li>1963 <span class="ol-note">1961 Census</span></li><li>1973 <span class="ol-note">1971 Census, seats frozen</span></li><li>2002 <span class="ol-note">2001 Census, Justice Kuldip Singh</span></li></ul></details></li><li class="c4"><details open><summary>Working</summary><ul><li>Composition <span class="ol-note">SC judge, CEC, State EC</span></li><li>Associate members <span class="ol-note">5 MPs and 5 MLAs, no vote</span></li><li>Procedure <span class="ol-note">draft, hearings, order</span></li></ul></details></li><li class="c5"><details open><summary>Fourth Commission</summary><ul><li>Report 2007 <span class="ol-note">notified 2008</span></li><li>499 of 543 seats <span class="ol-note">five States excluded</span></li><li>First used <span class="ol-note">2009 Lok Sabha polls</span></li></ul></details></li><li class="c6"><details open><summary>2020 Commission and J&amp;K</summary><ul><li>Justice Ranjana Prakash Desai <span class="ol-note">chair</span></li><li>90 Assembly seats <span class="ol-note">43 Jammu and 47 Kashmir</span></li><li>9 ST seats, 7 SC seats <span class="ol-note">first ST reservation</span></li><li>5 Lok Sabha seats <span class="ol-note">Anantnag-Rajouri</span></li></ul></details></li></ul></li></ul></div></section><div class="notes"><h2 id="exam-lens-priority-and-pyqs">Exam lens: priority and PYQs<a class="anchor" href="#exam-lens-priority-and-pyqs" aria-label="Link to this section">#</a></h2><aside class="callout source"><span class="tag">Source note</span><p><strong>This chapter comes from the Sarrthi handout only.</strong> There are no class slides or teacher ink. Priority is low priority, counted from the handout’s own PYQ section: <strong>2 Prelims and 0 Mains</strong> questions are quoted. Years quoted are listed below; a “years quoted” count is not a count of distinct questions.</p></aside><div class="tblock"><div class="tcap">What the handout itself stresses</div><div class="tablewrap"><table><thead><tr><th>Signal in the handout</th><th>Where</th><th>Why it matters</th></tr></thead><tbody><tr><th scope='row'>Handout gives <span class="art">Articles 81</span>, 82, 170, 330 and 332 and the 84th Amendment freeze on seats</th><td>Constitutional Framework</td><td>Article-to-subject matching is the likeliest Prelims question.</td></tr><tr><th scope='row'><strong>Statutory and non-justiciable</strong>: orders have force of law and cannot be challenged in any court</th><td>Nature and Legal Status</td><td>Core statement-type fact.</td></tr><tr><th scope='row'>Table of four Commissions with Acts and Census used</th><td>Commissions table</td><td>Year, Act and Census are easy to mix up.</td></tr></tbody></table></div></div><div class="tblock"><div class="tcap">PYQs quoted in the handout</div><div class="tablewrap"><table><thead><tr><th>Year and paper</th><th>What was asked</th><th>The answer</th><th>Where in this chapter</th></tr></thead><tbody><tr><th scope='row'>Prelims 2024</th><td>How many Delimitation Commissions have been constituted by the Government of India till December 2023. (2024)</td><td>(d) Four</td><td><a href="#4-commissions-constituted-so-far">4 · Commissions constituted so far</a></td></tr><tr><th scope='row'>Prelims 2012</th><td>With reference to the Delimitation Commission, consider the following statements: (2012) 1. The orders of the Delimitation Commission cannot be challenged in a Court of L…</td><td>(c) Both 1 and 2</td><td>Whole chapter</td></tr></tbody></table></div><p class="gdesc">The “where” link is matched by shared terms, so treat it as a pointer.</p></div><aside class="callout key"><span class="tag">What to prepare</span><p><strong>Prelims hooks:</strong> <span class="art">Articles 81</span>, 82, 170, 330, 332; 84th Amendment freeze on seats (1971 Census) till first Census after 2026; Commission is statutory, not constitutional; orders are not modifiable by Parliament or courts; 2002 Commission under Justice Kuldip Singh; J&amp;K 2022 report: 90 seats, 9 ST seats.</p><p><strong>Mains hooks:</strong> why delimitation matters for equal representation; challenges of a seat freeze versus population shift; the J&amp;K exercise and regional balance.</p><p><strong>Closing idea:</strong> A statutory commission whose final orders cannot be changed gives the vote equal value, one Census at a time.</p></aside><h2 id="1-meaning-and-rationale">1 · Meaning and rationale<a class="anchor" href="#1-meaning-and-rationale" aria-label="Link to this section">#</a></h2>
+<p>Delimitation is the act of redrawing boundaries of parliamentary and legislative assembly constituencies so that citizens have fair and equal representation. It keeps constituencies in line with population changes recorded in each Census. The task lies with an independent, high-powered statutory body, the Delimitation Commission, constituted under successive Delimitation Acts of Parliament. Once the President publishes its orders they have the force of law and cannot be challenged in any court.</p>
+<aside class="callout key"><span class="tag">Constitutional ideal</span><p><strong>One person, one vote, one value</strong>: each elected representative speaks for an approximately equal number of citizens.</p></aside>
+<h3>Rationale for delimitation</h3>
+<p>1. <strong>Ensures electoral equality</strong>: parity in the value of each citizen's vote by equalising constituency populations. 2. <strong>Reflects demographic shifts</strong>: adjusts for migration, urbanisation and population growth. 3. <strong>Guarantees fair representation</strong>: prevents over- or under-representation of regions. 4. <strong>Strengthens democracy</strong>: periodic revision builds public trust. 5. <strong>Prevents gerrymandering</strong>: independent and non-partisan, so boundary drawing stays neutral.</p>
+<aside class="callout mnemo"><span class="tag">Five reasons</span><div class="mn"><b>E</b><b>D</b><b>F</b><b>S</b><b>P</b></div><p><strong>E</strong>qual vote, <strong>D</strong>emographic shifts, <strong>F</strong>air representation, <strong>S</strong>trengthens democracy, <strong>P</strong>revents gerrymandering: "<strong>E</strong>very <strong>D</strong>istrict <strong>F</strong>ights <strong>S</strong>ome <strong>P</strong>olitics".</p></aside>
+<h2 id="2-constitutional-framework">2 · Constitutional framework<a class="anchor" href="#2-constitutional-framework" aria-label="Link to this section">#</a></h2>
+<p>Delimitation is guided by <span class="art">Articles 81</span>, 82, 170, 330 and 332.</p>
+<div class="tblock"><div class="tcap">Articles</div><div class="tablewrap"><table><thead><tr><th>Article</th><th>Subject</th></tr></thead><tbody><tr><th scope='row'><span class="art">Article 81</span></th><td>Fixes representation of States in the Lok Sabha based on population</td></tr><tr><th scope='row'><span class="art">Article 82</span></th><td>Readjustment of constituencies after each Census through a Parliamentary Act</td></tr><tr><th scope='row'><span class="art">Article 170</span></th><td>Delimitation for State Legislative Assemblies</td></tr><tr><th scope='row'><span class="art">Article 330</span></th><td>Reservation of seats for SCs and STs (Lok Sabha)</td></tr><tr><th scope='row'><span class="art">Article 332</span></th><td>Reservation of seats for SCs and STs (State Assemblies)</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Articles</span><div class="mn"><b>L</b><b>R</b><b>A</b><b>S</b></div><p>81 = <strong>L</strong>ok Sabha seats, 82 = <strong>R</strong>eadjustment, 170 = <strong>A</strong>ssemblies, 330 and 332 = <strong>S</strong>C/ST reservation: "<strong>L</strong>et <strong>R</strong>eal <strong>A</strong>rticles <strong>S</strong>peak".</p></aside>
+<h3>84th Amendment Act, 2001</h3>
+<ul class='lst'><li>Froze the total number of Lok Sabha and Assembly seats (based on the 1971 Census) till the first Census after 2026.</li><li>The 84th and 87th Amendments froze seat numbers on the 1971 Census but allowed reallocation and redrawing on 2001 data.</li></ul>
+<aside class="callout shortcut"><span class="tag">Article shortcut</span><p><strong>81 = Lok Sabha seats. 82 = readjustment by Act. 170 = Assemblies. 330 and 332 = SC/ST reservation (LS and Assemblies).</strong></p></aside>
+<aside class="callout alert"><span class="tag">Handout alert</span><p>The 3rd Commission table says seat allocation was fixed till the 2001 Census "(later extended till 2026)", while the 84th Amendment text says seats are frozen till the first Census after 2026. Treat both as the same freeze extended by the 84th Amendment.</p></aside>
+<h2 id="3-nature-and-legal-status">3 · Nature and legal status<a class="anchor" href="#3-nature-and-legal-status" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">Status of the Commission</div><div class="tablewrap"><table><thead><tr><th>Feature</th><th>Detail</th></tr></thead><tbody><tr><th scope='row'>Nature</th><td><strong>Statutory but independent</strong>. Not a constitutional body. Constituted under Delimitation Acts of Parliament (1952, 1962, 1972, 2002)</td></tr><tr><th scope='row'>Independence</th><td>Operates independently of executive and legislature, so neutral in redrawing boundaries</td></tr><tr><th scope='row'>Constitutional backing</th><td>Legitimacy from <span class="art">Articles 81</span>, 82, 170, 330 and 332, which empower Parliament to enact delimitation laws and reserve seats for SCs and STs</td></tr><tr><th scope='row'>Finality</th><td>Once the President notifies the orders they have the force of law</td></tr><tr><th scope='row'>Placing before legislatures</th><td>Laid before Parliament and State Legislatures <strong>for information only</strong>, no modification permitted</td></tr><tr><th scope='row'>Judicial immunity</th><td>Decisions are <strong>non-justiciable</strong>: cannot be challenged in any court</td></tr><tr><th scope='row'>Administrative control</th><td>Under the Ministry of Law and Justice, but operations are autonomous. The Election Commission gives logistical support and coordination during implementation</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Legal status</span><div class="mn"><b>S</b><b>I</b><b>C</b><b>F</b><b>J</b><b>A</b></div><p><strong>S</strong>tatutory, <strong>I</strong>ndependent, <strong>C</strong>onstitutional backing, <strong>F</strong>inal orders, <strong>J</strong>udicially immune, <strong>A</strong>dministered by Law Ministry: "<strong>S</strong>ome <strong>I</strong>deas <strong>C</strong>annot <strong>F</strong>ace <strong>J</strong>udges, <strong>A</strong>t all".</p></aside>
+<h2 id="4-commissions-constituted-so-far">4 · Commissions constituted so far<a class="anchor" href="#4-commissions-constituted-so-far" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">Four Delimitation Commissions</div><div class="tablewrap"><table><thead><tr><th>Commission</th><th>Year</th><th>Governing Act</th><th>Census used</th><th>Key features</th></tr></thead><tbody><tr><th scope='row'>1st</th><td>1952</td><td>Delimitation Commission Act, 1952</td><td>1951</td><td>Drew boundaries for the first general elections</td></tr><tr><th scope='row'>2nd</th><td>1963</td><td>Delimitation Commission Act, 1962</td><td>1961</td><td>Adjusted seats after population growth</td></tr><tr><th scope='row'>3rd</th><td>1973</td><td>Delimitation Act, 1972</td><td>1971</td><td>Fixed seat allocation till 2001 Census (later extended till 2026)</td></tr><tr><th scope='row'>4th</th><td>2002</td><td>Delimitation Act, 2002</td><td>2001</td><td>Under Justice Kuldip Singh; based on 2001 Census data</td></tr></tbody></table></div></div>
+<aside class="callout note"><span class="tag">Pattern</span><p>Census years 1951, 1961, 1971, 2001 all end in 1; the Commissions followed in 1952, 1963, 1973 and 2002.</p></aside>
+<aside class="callout shortcut"><span class="tag">Table shortcut</span><p><strong>Act year = 1952, 1962, 1972, 2002; Census year is the year before the Commission's first work (1951, 1961, 1971, 2001).</strong> The 3rd Commission froze seats.</p></aside>
+<h3>Composition (Fourth Commission, 2002)</h3>
+<div class="tblock"><div class="tcap">Composition</div><div class="tablewrap"><table><thead><tr><th>Position</th><th>Details</th></tr></thead><tbody><tr><th scope='row'>Chairperson</th><td>Serving or retired Supreme Court Judge (Justice Kuldip Singh)</td></tr><tr><th scope='row'>Ex-officio member</th><td>Chief Election Commissioner or nominee</td></tr><tr><th scope='row'>Ex-officio member</th><td>State Election Commissioner of the concerned State/UT</td></tr><tr><th scope='row'>Associate members</th><td>10 (5 Lok Sabha MPs plus 5 MLAs nominated by Speakers); no voting rights</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Composition</span><div class="mn"><b>C</b><b>E</b><b>S</b><b>A</b></div><p><strong>C</strong>hair (SC judge), <strong>E</strong>lection Commissioner (CEC), <strong>S</strong>tate Election Commissioner, <strong>A</strong>ssociates (10): "<strong>C</strong>an <strong>E</strong>very <strong>S</strong>tate <strong>A</strong>gree".</p></aside>
+<h2 id="5-functions-principles-and-procedure">5 · Functions, principles and procedure<a class="anchor" href="#5-functions-principles-and-procedure" aria-label="Link to this section">#</a></h2>
+<h3>Functions</h3>
+<p>1. <strong>Redraw boundaries</strong>: demarcate parliamentary and assembly constituencies on the latest Census for balanced representation. 2. <strong>Reservation for SCs and STs</strong>: decide reserved constituencies under <span class="art">Articles 330</span> and 332 in proportion to their population in each State. 3. <strong>Population parity</strong>: nearly equal population across constituencies within a State ("one person, one vote, one value"). 4. <strong>Administrative integrity</strong>: avoid arbitrary division of districts, tehsils or panchayats and keep natural administrative boundaries. 5. <strong>Transparency and consultation</strong>: draft proposals published in the Gazette and local newspapers, inviting objections and suggestions before finalising. 6. <strong>Coordination with the Election Commission</strong> for implementing final orders.</p>
+<div class="tblock"><div class="tcap">Guiding principles</div><div class="tablewrap"><table><thead><tr><th>Principle</th><th>Explanation</th></tr></thead><tbody><tr><th scope='row'>Equal representation</th><td>Nearly equal population per constituency, so uniform vote value</td></tr><tr><th scope='row'>Geographical contiguity</th><td>Compact and continuous, no disconnected territories</td></tr><tr><th scope='row'>Administrative convenience</th><td>District and block boundaries kept intact as far as practicable</td></tr><tr><th scope='row'>Physical and natural features</th><td>Terrain, rivers, transport links and population density considered</td></tr><tr><th scope='row'>Public participation</th><td>Citizens, local bodies and parties may object and suggest during hearings</td></tr><tr><th scope='row'>Reservation parity</th><td>SC and ST seats proportionate to demographic presence per Census</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Six principles</span><div class="mn"><b>E</b><b>G</b><b>A</b><b>P</b><b>P</b><b>R</b></div><p><strong>E</strong>qual representation, <strong>G</strong>eographical contiguity, <strong>A</strong>dministrative convenience, <strong>P</strong>hysical features, <strong>P</strong>ublic participation, <strong>R</strong>eservation parity: "<strong>E</strong>ven <strong>G</strong>ood <strong>A</strong>dvice <strong>P</strong>ushes <strong>P</strong>eople's <strong>R</strong>ights".</p></aside>
+<h3>Working procedure</h3>
+<section class="flow"><h4>How a Commission works</h4><div class="chain"><div class="step "><div><div class="sl">Initiation</div><div class="ss">Begins after the Census and enactment of a new Delimitation Act</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">Data compilation</div><div class="ss">Census data and administrative maps collected</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">Drafting of proposals</div><div class="ss">Preliminary constituency outlines prepared and made public</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">Public consultation</div><div class="ss">Hearings on suggestions from citizens and parties</div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">Finalisation and notification</div><div class="ss">Final orders in the Gazette, notified by the President, with force of law</div></div></div></div></section>
+<h2 id="6-implementation-and-the-fourth-commission-2002">6 · Implementation and the Fourth Commission (2002)<a class="anchor" href="#6-implementation-and-the-fourth-commission-2002" aria-label="Link to this section">#</a></h2>
+<h3>Legal effect</h3>
+<ul class='lst'><li>Once notified by the President the orders have force of law and cannot be modified by Parliament, State Legislatures or any court.</li><li>Under the Delimitation Act the decisions are final and non-justiciable, ensuring independence from political influence.</li><li>Orders are laid before Parliament and State Legislatures for information only, not approval. They take effect from the date in the Presidential Notification.</li></ul>
+<div class="tblock"><div class="tcap">Implementation of the Fourth Commission</div><div class="tablewrap"><table><thead><tr><th>Aspect</th><th>Details</th></tr></thead><tbody><tr><th scope='row'>Chairperson</th><td>Justice Kuldip Singh (Retd.), Supreme Court</td></tr><tr><th scope='row'>Report submitted</th><td>2007</td></tr><tr><th scope='row'>Implementation notified</th><td>2008</td></tr><tr><th scope='row'>Applied to</th><td>499 out of 543 Lok Sabha constituencies</td></tr><tr><th scope='row'>Excluded</th><td>Assam, Arunachal Pradesh, Manipur, Nagaland, Jharkhand (security and demographic concerns)</td></tr><tr><th scope='row'>First election on new boundaries</th><td>2009 Lok Sabha elections</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Fourth Commission dates</span><div class="mn"><b>R</b><b>N</b><b>F</b></div><p><strong>R</strong>eport 2007, <strong>N</strong>otified 2008, <strong>F</strong>irst poll 2009: "<strong>R</strong>un <strong>N</strong>ow, <strong>F</strong>inish".</p></aside>
+<h3>Major outcomes of the 2008 implementation</h3>
+<ul class='lst'><li><strong>Equalised representation</strong>: balanced populations, reducing rural-urban variation.</li><li><strong>Urban representation enhanced</strong>: rapidly growing regions like Delhi, Maharashtra and Tamil Nadu gained fairer representation.</li><li><strong>Administrative coherence</strong>: boundaries aligned better with district and tehsil borders.</li><li><strong>Reservation adjustments</strong>: SC and ST seats re-identified on 2001 Census data.</li><li><strong>Electoral legitimacy</strong>: uniform vote value upholding political equality.</li></ul>
+<h3>Monitoring and coordination</h3>
+<ul class='lst'><li>Election Commission: implements new constituency maps during electoral roll revision and elections.</li><li>State governments: logistical readiness, updating administrative divisions, field support.</li><li>Central oversight: Ministry of Law and Justice oversees the process and notifies clarifications or corrections.</li></ul>
+<h3>Limitations and deferral</h3>
+<p>1. The 2002 Commission's recommendations were not applied to certain North-Eastern States owing to internal disturbances and demographic sensitivities. 2. The 2020 Commission was set up to address the pending States and Jammu and Kashmir (after the Reorganisation Act, 2019).</p>
+<aside class="callout alert"><span class="tag">Handout alert</span><p>Excluded States are five (Assam, Arunachal Pradesh, Manipur, Nagaland, Jharkhand) in the Fourth Commission section, but the 2020 Commission section lists only four North-Eastern States (Jharkhand is not named). Use the five-State list for the 2008 exclusion and the four-State list for the 2020 Commission's original brief.</p></aside>
+<h2 id="7-delimitation-commission-2020-and-j-k-exercise-">7 · Delimitation Commission (2020) and J&amp;K exercise (2022)<a class="anchor" href="#7-delimitation-commission-2020-and-j-k-exercise-" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">Establishment and composition (2020)</div><div class="tablewrap"><table><thead><tr><th>Aspect</th><th>Detail</th></tr></thead><tbody><tr><th scope='row'>Formation</th><td>March 2020, under the Delimitation Act, 2002 and the Jammu and Kashmir Reorganisation Act, 2019</td></tr><tr><th scope='row'>Purpose</th><td>Redraw Parliamentary and Assembly constituencies in four North-Eastern States (Assam, Arunachal Pradesh, Manipur, Nagaland) and the UT of Jammu and Kashmir</td></tr><tr><th scope='row'>Chairperson</th><td>Justice (Retd.) Ranjana Prakash Desai, former Supreme Court Judge</td></tr><tr><th scope='row'>Ex-officio members</th><td>Sushil Chandra, Election Commissioner of India; State Election Commissioner of the concerned State/UT</td></tr><tr><th scope='row'>Associate members</th><td>Five MPs (Lok Sabha members from J&amp;K) nominated by the Lok Sabha Speaker</td></tr><tr><th scope='row'>Jurisdiction adjustment (2021)</th><td>In March 2021 the Centre removed the four North-Eastern States, keeping its mandate only for J&amp;K</td></tr><tr><th scope='row'>Tenure</th><td>Extended twice, till May 2022, to complete the J&amp;K exercise</td></tr></tbody></table></div></div>
+<div class="tblock"><div class="tcap">Major recommendations (2022 Report)</div><div class="tablewrap"><table><thead><tr><th>Aspect</th><th>Provision or outcome</th></tr></thead><tbody><tr><th scope='row'>Total Assembly seats</th><td>90 elected plus 2 nominated women (if women are under-represented)</td></tr><tr><th scope='row'>Region-wise</th><td>43 seats for Jammu region and 47 for Kashmir region</td></tr><tr><th scope='row'>Increase in seats</th><td>6 new seats in Jammu and 1 new seat in Kashmir (total +7)</td></tr><tr><th scope='row'>ST reservation (first time)</th><td>9 Assembly seats for STs: 6 in Jammu and 3 in Kashmir</td></tr><tr><th scope='row'>SC reservation</th><td>7 seats for Scheduled Castes</td></tr><tr><th scope='row'>Parliamentary constituencies</th><td>5 Lok Sabha constituencies, each with 18 Assembly segments</td></tr><tr><th scope='row'>Cross-regional constituency</th><td>New <strong>Anantnag-Rajouri</strong> parliamentary seat combining parts of Kashmir and Jammu for regional balance</td></tr><tr><th scope='row'>Names updated</th><td>Some constituencies renamed for cultural or religious significance (e.g. Shri Mata Vaishno Devi)</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">J&amp;K numbers</span><div class="mn"><b>S</b><b>S</b><b>N</b><b>S</b></div><p><strong>S</strong>eats 90 (43 Jammu plus 47 Kashmir), <strong>S</strong>even new (6 plus 1), <strong>N</strong>ine ST seats (6 plus 3), <strong>S</strong>even SC seats; and 5 LS seats of 18 segments each (5 x 18 = 90): "<strong>S</strong>ome <strong>S</strong>tates <strong>N</strong>eed <strong>S</strong>eats".</p></aside>
+<h3>Recommendations on representation</h3>
+<p>1. <strong>Kashmiri migrants</strong>: nomination of at least two members (one woman) from displaced Kashmiri Pandits to the Legislative Assembly, with parity with nominated members of the Puducherry Assembly in rights and privileges. 2. <strong>Displaced persons from PoJK</strong>: special nomination of representatives to the J&amp;K Assembly for political participation.</p>
+<aside class="callout alert"><span class="tag">Handout alert</span><p>The table speaks of "2 nominated women (if women are under-represented)", while the representation text recommends at least two nominated Kashmiri migrant members (one woman) and special nomination of PoJK displaced persons. The handout does not reconcile these. Use the table for the "2 nominated women" figure and the text for the migrant and PoJK nomination proposals.</p></aside>
+<h3>Implications</h3>
+<ul class='lst'><li><strong>Democratic reconfiguration</strong>: electoral readiness for the first Assembly election in the UT since reorganisation in 2019.</li><li><strong>Greater representation for Jammu</strong>: addresses regional imbalance between Jammu and Kashmir.</li><li><strong>Inclusion of ST communities</strong>: first-ever legislative representation for Gujjar-Bakarwal and Pahari tribal groups.</li><li><strong>Administrative preparedness</strong>: lets the Election Commission begin voter list revision and poll preparations on the new boundaries.</li></ul>
+</div><section id="chapter-timeline"><h2>Timeline<a class="anchor" href="#chapter-timeline">#</a></h2><ol class="timeline"><li class="tl "><time class="yr">1952</time><span class="pin"></span><div class="tlbody">First Delimitation Commission (1951 Census)</div></li><li class="tl "><time class="yr">1963</time><span class="pin"></span><div class="tlbody">Second Delimitation Commission (1961 Census)</div></li><li class="tl high"><time class="yr">1973</time><span class="pin"></span><div class="tlbody">Third Commission under Delimitation Act, 1972; seats fixed on 1971 Census<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">2001</time><span class="pin"></span><div class="tlbody">84th Amendment: seat freeze till first Census after 2026<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">2002</time><span class="pin"></span><div class="tlbody">Fourth Commission under Delimitation Act, 2002; Justice Kuldip Singh<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">2007</time><span class="pin"></span><div class="tlbody">Fourth Commission report submitted</div></li><li class="tl "><time class="yr">2008</time><span class="pin"></span><div class="tlbody">Fourth Commission's orders notified (499 of 543 Lok Sabha seats)</div></li><li class="tl "><time class="yr">2009</time><span class="pin"></span><div class="tlbody">First Lok Sabha elections on new boundaries</div></li><li class="tl "><time class="yr">2019</time><span class="pin"></span><div class="tlbody">Jammu and Kashmir Reorganisation Act</div></li><li class="tl high"><time class="yr">2020</time><span class="pin"></span><div class="tlbody">March: new Commission under Justice Ranjana Prakash Desai<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">2021</time><span class="pin"></span><div class="tlbody">March: four North-Eastern States removed from its purview</div></li><li class="tl high"><time class="yr">2022</time><span class="pin"></span><div class="tlbody">J&amp;K report: 90 Assembly seats, 9 ST seats<span class="star" title="High-yield">★</span></div></li></ol></section><section id="connects"><h2>Connects to<a class="anchor" href="#connects">#</a></h2><div class="lkgrid"><article class="link"><div class="lk-line">Ch 24: Elections and Electoral Reforms</div><p>Constituency boundaries and the Election Commission's role.</p></article><article class="link"><div class="lk-line">Ch 30: Election Commission</div><p>CEC and State Election Commissioner sit on the Commission.</p></article><article class="link"><div class="lk-line">Ch 15: Parliament</div><p>Lok Sabha seat allocation under <span class="art">Article 81</span>.</p></article><article class="link"><div class="lk-line">Ch 17: State Legislature</div><p>Assembly seats under <span class="art">Article 170</span>.</p></article><article class="link"><div class="lk-line">Ch 26: Union Territories</div><p>Jammu and Kashmir as a Union Territory.</p></article><article class="link"><div class="lk-line">Ch 27: Scheduled and Tribal Areas</div><p>ST reservation and tribal representation themes.</p></article></div></section><section id="recall"><h2>Recall sheet<a class="anchor" href="#recall">#</a></h2><p class="gdesc">Read once, hide it, then rebuild the chapter from memory.</p><ol class="recall"><li>Delimitation: redraw constituencies after Census; one person, one vote, one value.</li><li>Articles: 81 (LS seats), 82 (readjustment), 170 (Assemblies), 330 and 332 (SC/ST reservation).</li><li>84th Amendment: seats frozen on 1971 Census till first Census after 2026.</li><li>Commission: statutory, independent, not constitutional; orders final, force of law, non-justiciable; laid before legislatures for information only.</li><li>Four Commissions: 1952, 1963, 1973, 2002; Acts 1952, 1962, 1972, 2002; Census 1951, 1961, 1971, 2001.</li><li>Fourth: Justice Kuldip Singh; 10 associate members (5 MPs, 5 MLAs, no vote); report 2007; notified 2008; 499 of 543; first used in 2009.</li><li>2020 Commission: Justice Ranjana Prakash Desai; J&amp;K 90 seats (43 plus 47); 9 ST, 7 SC; 5 LS seats of 18 segments; Anantnag-Rajouri.</li></ol></section><section id="practice"><h2>Test yourself<a class="anchor" href="#practice">#</a></h2><h3>Quick quiz</h3><div class="count" id="score">0 / 0 correct</div><div id="quiz"></div><h3>Flashcards</h3><p class="gdesc">Tap the card to flip.</p><div class="deck"><div class="fc" id="fc" tabindex="0" role="button" aria-label="Flashcard, press to flip"></div><div class="count" id="fccount"></div><div class="row"><button class="btn" id="fcprev" type="button">Back</button><button class="btn pri" id="fcnext" type="button">Next</button><button class="btn" id="fcmiss" type="button">Missed it</button><button class="btn" id="fcshuf" type="button">Shuffle</button><button class="btn" id="fconlymiss" type="button">Only missed</button><button class="btn" id="fcall" type="button">All cards</button></div></div></section><nav class="pager"><a href="pol-ch47.html"><small>Previous</small>Law Commission and Bar Council</a><a class="nx" href="pol-ch49.html"><small>Next</small>Competition Commission of India</a></nav><footer>Personal study notes built from the Sarrthi IAS GS Foundation Polity handout (Parts 1 to 3). Handout only: no class slides or teacher ink for this chapter. Mnemonics and shortcuts are memory aids built from the handout’s own facts. Copyright belongs to the teacher; keep this private.</footer></main></div><div id="lightbox" hidden><img alt=""></div><script type="application/json" id="data">{"mcq": [{"q": "Which Article provides for readjustment of constituencies after each Census?", "options": ["Article 81", "Article 82", "Article 170", "Article 330"], "answer": 1, "explain": "Article 82 mandates readjustment after each Census through a Parliamentary Act."}, {"q": "Which Article deals with delimitation for State Legislative Assemblies?", "options": ["Article 81", "Article 170", "Article 332", "Article 82"], "answer": 1, "explain": "Article 170 governs State Assemblies; Article 332 is SC/ST reservation in Assemblies."}, {"q": "The Delimitation Commission is", "options": ["a constitutional body", "a statutory body", "an executive committee of the EC", "a judicial tribunal"], "answer": 1, "explain": "It is statutory, constituted under Delimitation Acts of Parliament."}, {"q": "Orders of the Delimitation Commission, once notified by the President", "options": ["can be modified by Parliament", "can be challenged in High Courts", "have the force of law and cannot be challenged in any court", "need approval of State Legislatures"], "answer": 2, "explain": "They are final and non-justiciable; laid before legislatures for information only."}, {"q": "The 84th Amendment Act, 2001 froze seat numbers based on which Census?", "options": ["1951", "1961", "1971", "2001"], "answer": 2, "explain": "It froze Lok Sabha and Assembly seats on the 1971 Census till the first Census after 2026."}, {"q": "The Fourth Delimitation Commission (2002) was headed by", "options": ["Justice Kuldip Singh", "Justice Ranjana Prakash Desai", "Sushil Chandra", "M.C. Setalvad"], "answer": 0, "explain": "Justice Kuldip Singh; the 2020 Commission was headed by Justice Ranjana Prakash Desai."}, {"q": "Associate members of the Fourth Commission", "options": ["had full voting rights", "were 10 with no voting rights", "were only MPs", "were nominated by the President"], "answer": 1, "explain": "5 Lok Sabha MPs plus 5 MLAs nominated by Speakers; no voting rights."}, {"q": "The Fourth Commission's orders were applied to how many of 543 Lok Sabha constituencies?", "options": ["543", "499", "450", "400"], "answer": 1, "explain": "499; five States were excluded."}, {"q": "The first election on boundaries from the Fourth Commission was", "options": ["2004", "2008", "2009", "2014"], "answer": 2, "explain": "The 2009 Lok Sabha elections."}, {"q": "How many Assembly seats were recommended for J&K in the 2022 Report?", "options": ["83", "90", "107", "114"], "answer": 1, "explain": "90 elected seats: 43 Jammu plus 47 Kashmir (plus nominated members)."}, {"q": "The J&K report reserved Assembly seats for STs", "options": ["3", "6", "7", "9"], "answer": 3, "explain": "Nine seats for STs, 6 in Jammu and 3 in Kashmir, for the first time."}, {"q": "The new cross-regional Parliamentary seat in J&K is", "options": ["Baramulla-Poonch", "Anantnag-Rajouri", "Srinagar-Jammu", "Udhampur-Kathua"], "answer": 1, "explain": "The Anantnag-Rajouri seat combines parts of Kashmir and Jammu."}, {"q": "[PYQ 2024] How many Delimitation Commissions have been constituted by the Government of India till December 2023. (2024)", "options": ["One", "Two", "Three", "Four"], "answer": 3, "explain": "PYQ 2024. The answer is (d). Revise: 4 · Commissions constituted so far."}, {"q": "[PYQ 2012] With reference to the Delimitation Commission, consider the following statements: (2012) 1. The orders of the Delimitation Commission cannot be challenged in a Court of Law. 2. When the orders of the Delimitation Commission are laid before the Lok Sabha or State Legislative Assembly, they cannot effect any modifications in the orders. Which of the statements given above is/are correct?", "options": ["1 only", "2 only", "Both 1 and 2", "Neither 1 nor 2"], "answer": 2, "explain": "PYQ 2012. The answer is (c)."}], "cards": [{"q": "What is delimitation?", "a": "Redrawing the boundaries of parliamentary and assembly constituencies to keep representation fair and equal after each Census."}, {"q": "What constitutional ideal does it uphold?", "a": "One person, one vote, one value."}, {"q": "Which Article fixes Lok Sabha representation of States?", "a": "Article 81."}, {"q": "Which Article requires readjustment after each Census?", "a": "Article 82, through a Parliamentary Act."}, {"q": "Which Article governs Assembly delimitation?", "a": "Article 170."}, {"q": "Which Articles reserve seats for SCs and STs?", "a": "Articles 330 (Lok Sabha) and 332 (Assemblies)."}, {"q": "What did the 84th Amendment Act, 2001 do?", "a": "Froze total Lok Sabha and Assembly seats (1971 Census) till the first Census after 2026."}, {"q": "Is the Delimitation Commission constitutional?", "a": "No, it is a statutory, independent body under Delimitation Acts."}, {"q": "Can its orders be challenged in court?", "a": "No, they are final and non-justiciable once notified by the President."}, {"q": "Are orders laid before Parliament for approval?", "a": "No, only for information; no modification is permitted."}, {"q": "Which Ministry does it function under?", "a": "Ministry of Law and Justice; the Election Commission gives logistical support."}, {"q": "Delimitation Acts of Parliament?", "a": "1952, 1962, 1972 and 2002."}, {"q": "Which Commission fixed seats until 2001 (later extended to 2026)?", "a": "The 3rd Commission (1973, Delimitation Act, 1972, 1971 Census)."}, {"q": "Who chaired the Fourth Commission?", "a": "Justice Kuldip Singh (retired Supreme Court Judge)."}, {"q": "Composition of the Fourth Commission?", "a": "SC judge chair; CEC or nominee; State Election Commissioner; 10 associate members (5 MPs and 5 MLAs, no vote)."}, {"q": "Name the six guiding principles.", "a": "Equal representation, geographical contiguity, administrative convenience, physical and natural features, public participation, reservation parity."}, {"q": "What are the steps of working procedure?", "a": "Initiation, data compilation, drafting of proposals, public consultation, finalisation and notification."}, {"q": "Fourth Commission: report, notification and first use?", "a": "Report 2007; notified 2008; first used in the 2009 Lok Sabha elections."}, {"q": "Which States were excluded in 2008?", "a": "Assam, Arunachal Pradesh, Manipur, Nagaland and Jharkhand."}, {"q": "Who chaired the 2020 Commission?", "a": "Justice (Retd.) Ranjana Prakash Desai."}, {"q": "What changed in March 2021?", "a": "The four North-Eastern States were removed, leaving J&K only; tenure was extended twice till May 2022."}, {"q": "J&K seat distribution in the 2022 Report?", "a": "90 seats: 43 Jammu and 47 Kashmir (6 new in Jammu, 1 in Kashmir)."}, {"q": "How many seats were reserved for STs and SCs in J&K?", "a": "9 ST seats (6 Jammu, 3 Kashmir; first time) and 7 SC seats."}, {"q": "How many Lok Sabha seats in J&K and with how many segments?", "a": "5 seats, each with 18 Assembly segments."}, {"q": "What was proposed for Kashmiri migrants?", "a": "Nomination of at least two members (one woman) from displaced Kashmiri Pandits, with parity to nominated Puducherry Assembly members."}, {"q": "Which tribal groups gained first-ever legislative representation?", "a": "Gujjar-Bakarwal and Pahari groups."}]}</script><script>window.__NB={"id": "polity", "ch": 48, "title": "Delimitation Commission"};/* Shared store: reading progress, preferences, optional cross-device sync. */
+(function(){
+var KEY='nbapp:v1',root=document.documentElement;
+function today(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function fresh(){return{v:1,prefs:{fs:1,lh:1.65,w:780,font:'serif',theme:'auto',pt:0},last:null,nb:{},days:{}}}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+var S;
+try{S=JSON.parse(lsGet(KEY))}catch(e){S=null}
+if(!S||!S.v)S=fresh();
+S.prefs=Object.assign(fresh().prefs,S.prefs||{});
+// one-time import of the older done list and theme
+if(!S.migrated){
+  try{var od=JSON.parse(lsGet('nb-done')||'[]');od.forEach(function(n){var c=chap('modern-india',n);c.done=1;c.dt=1})}catch(e){}
+  var ot=lsGet('nb-theme');if(ot&&!S.prefs.pt){S.prefs.theme=ot;S.prefs.pt=1}
+  S.migrated=1;
+}
+function chap(nb,n){var b=S.nb[nb]||(S.nb[nb]={});return b[n]||(b[n]={read:{},done:0,dt:0,pos:null,t:0})}
+var listeners=[],dirty=false,saveT=null,syncT=null;
+function save(){
+  dirty=true;clearTimeout(saveT);
+  saveT=setTimeout(function(){lsSet(KEY,JSON.stringify(S));listeners.forEach(function(f){try{f()}catch(e){}});scheduleSync()},250);
+}
+function flush(){lsSet(KEY,JSON.stringify(S))}
+function merge(a,b){ // a local, b remote; returns merged
+  var o=fresh();
+  o.prefs=((b.prefs&&b.prefs.pt||0)>(a.prefs&&a.prefs.pt||0))?Object.assign({},a.prefs,b.prefs):Object.assign({},b.prefs,a.prefs);
+  o.last=(!a.last||(b.last&&b.last.ts>a.last.ts))?b.last:a.last;
+  o.migrated=1;
+  var ids={};Object.keys(a.nb||{}).concat(Object.keys(b.nb||{})).forEach(function(k){ids[k]=1});
+  Object.keys(ids).forEach(function(id){
+    o.nb[id]={};var ca=(a.nb||{})[id]||{},cb=(b.nb||{})[id]||{},ks={};
+    Object.keys(ca).concat(Object.keys(cb)).forEach(function(k){ks[k]=1});
+    Object.keys(ks).forEach(function(k){
+      var x=ca[k],y=cb[k];if(!x||!y){o.nb[id][k]=x||y;return}
+      var r=Object.assign({},x.read,y.read),done=(y.dt||0)>(x.dt||0)?y:x,pos=(y.t||0)>(x.t||0)?y.pos:x.pos;
+      o.nb[id][k]={read:r,done:done.done,dt:done.dt||0,pos:pos,t:Math.max(x.t||0,y.t||0)};
+    });
+  });
+  var dk={};Object.keys(a.days||{}).concat(Object.keys(b.days||{})).forEach(function(k){dk[k]=1});
+  Object.keys(dk).forEach(function(k){o.days[k]=Math.max((a.days||{})[k]||0,(b.days||{})[k]||0)});
+  return o;
+}
+var syncState='off';
+function scheduleSync(){clearTimeout(syncT);syncT=setTimeout(function(){sync()},4000)}
+var dbp=null;
+function getRef(){
+  if(dbp)return dbp;
+  dbp=(async function(){
+    if(!window.claude||!claude.use)return null;
+    var db=await claude.use('db'),u=await claude.use('user');
+    if(!db||!u||!u.id)return null;
+    var id=await u.id();if(!id)return null;
+    return db.doc('data/users/'+id+'/nbapp');
+  })().catch(function(){return null});
+  return dbp;
+}
+var busy=false;
+async function sync(){
+  if(busy)return;busy=true;
+  try{
+    var ref=await getRef();if(!ref){syncState='local';return}
+    var snap=await ref.get(),rem=null;
+    if(snap.exists){var d=snap.data();try{rem=JSON.parse(d.state)}catch(e){}}
+    var m=rem?merge(S,rem):S;
+    var changed=JSON.stringify(m)!==JSON.stringify(S);
+    S=m;
+    if(changed){flush();listeners.forEach(function(f){try{f()}catch(e){}})}
+    var out=JSON.stringify(S);
+    if(!rem||JSON.stringify(rem)!==out)await ref.set({v:1,updated:Date.now(),state:out});
+    syncState='synced';
+  }catch(e){syncState='local'}
+  finally{busy=false}
+}
+var API={
+  get:function(){return S},
+  chap:chap,
+  save:save,flush:flush,sync:sync,
+  onChange:function(f){listeners.push(f)},
+  syncState:function(){return syncState},
+  setPref:function(k,v){S.prefs[k]=v;S.prefs.pt=Date.now();applyPrefs();save()},
+  reset:function(){S=fresh();S.migrated=1;flush();save()},
+  today:today,
+  pct:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c||!total)return 0;var r=0;Object.keys(c.read||{}).forEach(function(k){if(c.read[k])r++});return Math.min(1,r/total)},
+  isDone:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c)return false;if(c.dt)return !!c.done;return false}
+};
+window.NBS=API;
+function applyPrefs(){
+  var p=S.prefs;
+  var th=p.theme;
+  if(th==='auto')root.removeAttribute('data-theme');else root.setAttribute('data-theme',th);
+  root.style.setProperty('--zoom',p.fs);root.style.setProperty('--lh',p.lh);root.style.setProperty('--pw',p.w+'px');
+  root.setAttribute('data-font',p.font);
+}
+API.applyPrefs=applyPrefs;applyPrefs();
+// studied time, counted while the page is visible and touched in the last minute
+var lastAct=Date.now();
+['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){lastAct=Date.now()},{passive:true})});
+setInterval(function(){
+  if(document.hidden||Date.now()-lastAct>60000||!window.__NB)return;
+  var t=today();S.days[t]=(S.days[t]||0)+15;save();
+},15000);
+document.addEventListener('visibilitychange',function(){if(document.hidden){flush();sync()}else{sync()}});
+addEventListener('pagehide',flush);
+setTimeout(sync,800);
+})();
+(function(){var b=document.getElementById('themebtn');if(!b)return;var o=['auto','light','sepia','dark'];b.addEventListener('click',function(){var t=NBS.get().prefs.theme,i=(o.indexOf(t)+1)%o.length;NBS.setPref('theme',o[i]);b.textContent='Theme: '+o[i]})})();
+(function(){
+var D=JSON.parse(document.getElementById('data').textContent);
+// map/outline toggle
+document.querySelectorAll('.seg button').forEach(function(bt){bt.addEventListener('click',function(){var v=bt.dataset.v;document.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===bt)});document.getElementById('mm-map').hidden=v!=='map';document.getElementById('mm-outline').hidden=v!=='outline'})});
+if(window.innerWidth<640){var ob=document.querySelector('.seg button[data-v="outline"]');if(ob)ob.click()}
+// lightbox
+var lb=document.getElementById('lightbox'),li=lb.querySelector('img');
+document.querySelectorAll('a.zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();li.src=a.getAttribute('href');lb.hidden=false})});
+lb.addEventListener('click',function(){lb.hidden=true});document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true});
+// quiz
+var qz=document.getElementById('quiz'),score=document.getElementById('score'),right=0,answered=0;
+if(qz)D.mcq.forEach(function(m,i){var d=document.createElement('div');d.className='q';var t=document.createElement('div');t.className='qt';t.textContent=(i+1)+'. '+m.q;d.appendChild(t);var ex=document.createElement('div');ex.className='ex';ex.hidden=true;ex.textContent=m.explain;var btns=[];
+m.options.forEach(function(o,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent='ABCD'[j]+'. '+o;b.addEventListener('click',function(){if(d.dataset.done)return;d.dataset.done=1;answered++;if(j===m.answer){right++;b.classList.add('right')}else{b.classList.add('wrong');btns[m.answer].classList.add('right')}ex.hidden=false;score.textContent=right+' / '+answered+' correct'});btns.push(b);d.appendChild(b)});d.appendChild(ex);qz.appendChild(d)});
+// flashcards
+var fc=document.getElementById('fc');
+if(fc){var all=D.cards.map(function(c,i){return{q:c.q,a:c.a,i:i}}),deck=all.slice(),pos=0,back=false,missed={};
+function show(){if(!deck.length){fc.textContent='No cards in this deck.';document.getElementById('fccount').textContent='';return}var c=deck[pos];fc.textContent=back?c.a:c.q;fc.classList.toggle('back',back);document.getElementById('fccount').textContent='Card '+(pos+1)+' of '+deck.length+(back?' (answer)':' (question)')}
+function go(d){if(!deck.length)return;pos=(pos+d+deck.length)%deck.length;back=false;show()}
+fc.addEventListener('click',function(){back=!back;show()});fc.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();back=!back;show()}});
+document.getElementById('fcnext').onclick=function(){go(1)};document.getElementById('fcprev').onclick=function(){go(-1)};
+document.getElementById('fcmiss').onclick=function(){if(deck.length){missed[deck[pos].i]=1;go(1)}};
+document.getElementById('fcshuf').onclick=function(){for(var i=deck.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=deck[i];deck[i]=deck[j];deck[j]=t}pos=0;back=false;show()};
+document.getElementById('fconlymiss').onclick=function(){deck=all.filter(function(c){return missed[c.i]});pos=0;back=false;show()};
+document.getElementById('fcall').onclick=function(){deck=all.slice();pos=0;back=false;show()};show()}
+// side toc highlight
+var links=[].slice.call(document.querySelectorAll('.sidetoc a'));
+if('IntersectionObserver' in window&&links.length){var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on')}})},{rootMargin:'-70px 0px -70% 0px'});Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)})}
+})();
+(function(){
+var N=window.__NB,S=window.NBS;if(!N||!S)return;
+var root=document.documentElement,body=document.body;
+var rec=function(){return S.chap(N.id,N.ch)};
+var heads=[].slice.call(document.querySelectorAll('.page h2[id]'));
+var titles=heads.map(function(h){return h.firstChild?h.firstChild.textContent.trim():h.id});
+var ids=heads.map(function(h){return h.id});
+var seen={},manual={};
+// Done box
+var box=document.getElementById('donebox');
+if(box){box.checked=!!(rec().done);box.addEventListener('change',function(){var r=rec();r.done=box.checked?1:0;r.dt=Date.now();S.save()})}
+// progress bar
+var bar=document.createElement('div');bar.className='rbar';body.appendChild(bar);
+// per-section read buttons
+heads.forEach(function(h,i){
+  var b=document.createElement('button');b.type='button';b.className='h2read';
+  function paint(){var on=!!rec().read[h.id];b.setAttribute('aria-pressed',on);b.textContent=on?'Read ✓':'Mark read'}
+  b.addEventListener('click',function(){var r=rec();manual[h.id]=1;if(r.read[h.id])delete r.read[h.id];else r.read[h.id]=1;r.t=Date.now();S.save();paint();refresh()});
+  h.insertBefore(b,h.firstChild);paint();b._paint=paint;h._b=b;
+});
+function repaint(){heads.forEach(function(h){h._b._paint()});refresh()}
+// caption clamp
+document.querySelectorAll('figcaption').forEach(function(c){if(c.textContent.length>170){c.classList.add('clamp');c.addEventListener('click',function(){c.classList.toggle('open')})}});
+// dock
+var dock=document.createElement('div');dock.className='dock';
+dock.innerHTML='<button type="button" id="dprev" aria-label="Previous section">‹ Prev</button><button type="button" class="mid" id="dmid"></button><button type="button" id="dnext" aria-label="Next section">Next ›</button>';
+body.appendChild(dock);body.classList.add('has-dock');
+var dmid=dock.querySelector('#dmid');
+function curIdx(){var y=innerHeight*0.25,c=-1;for(var i=0;i<heads.length;i++){if(heads[i].getBoundingClientRect().top<=y)c=i;else break}return c}
+function goto(i){if(i<0||i>=heads.length)return;heads[i].scrollIntoView({behavior:'smooth',block:'start'})}
+dock.querySelector('#dprev').onclick=function(){var c=curIdx(),h=heads[c];goto(h&&h.getBoundingClientRect().top<-40?c:c-1)};
+dock.querySelector('#dnext').onclick=function(){goto(curIdx()+1)};
+function refresh(){
+  var c=curIdx(),r=rec().read,n=0;ids.forEach(function(id){if(r[id])n++});
+  dmid.innerHTML='<b>'+(c<0?'Top':(c+1)+'/'+heads.length)+'</b> · '+(c<0?'Start of chapter':esc(titles[c]))+' · '+n+' read';
+}
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+// sheets
+function sheet(html){var s=document.createElement('div');s.className='sheet';s.hidden=true;s.innerHTML='<div class="sheetin">'+html+'</div>';s.addEventListener('click',function(e){if(e.target===s)s.hidden=true});body.appendChild(s);return s}
+var cs=sheet('<h3>Sections</h3><div class="secl" id="secl"></div>');
+dmid.onclick=function(){
+  var r=rec().read,c=curIdx(),h='';
+  ids.forEach(function(id,i){h+='<a href="#'+id+'" data-i="'+i+'" class="'+(r[id]?'rd ':'')+(i===c?'cur':'')+'"><span class="tk">'+(r[id]?'✓':'')+'</span><span>'+esc(titles[i])+'</span></a>'});
+  cs.querySelector('#secl').innerHTML=h;cs.hidden=false;
+  var cur=cs.querySelector('.cur');if(cur)cur.scrollIntoView({block:'center'});
+};
+cs.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-i]');if(a){e.preventDefault();cs.hidden=true;goto(+a.dataset.i)}});
+var ps=sheet('<h3>Reading settings</h3><div id="pbody"></div>');
+function grp(key,label,opts){var p=S.get().prefs;return '<div class="srow"><label>'+label+'</label><div class="grp">'+opts.map(function(o){return '<button type="button" data-k="'+key+'" data-v="'+o[0]+'" aria-pressed="'+(String(p[key])===String(o[0]))+'">'+o[1]+'</button>'}).join('')+'</div></div>'}
+function drawPrefs(){
+  ps.querySelector('#pbody').innerHTML=
+    grp('fs','Text size',[[0.88,"A−"],[1,"A"],[1.12,"A+"],[1.25,"A++"],[1.4,"A+++"]])+
+    grp('lh','Spacing',[[1.45,'Tight'],[1.65,'Normal'],[1.85,'Roomy']])+
+    grp('w','Width',[[640,'Narrow'],[780,'Medium'],[980,'Wide']])+
+    grp('font','Font',[['serif','Serif'],['sans','Sans']])+
+    grp('theme','Theme',[['auto','Auto'],['light','Light'],['sepia','Sepia'],['dark','Dark']])+
+    '<div class="srow"><label>Extras</label><div class="grp"><button type="button" id="pfocus" aria-pressed="'+body.classList.contains('focus')+'">Focus mode</button>'+('wakeLock' in navigator?'<button type="button" id="pwake" aria-pressed="'+!!wl+'">Keep screen on</button>':'')+'</div></div>';
+}
+var wl=null;
+ps.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('button');if(!b)return;
+  if(b.dataset.k){var v=b.dataset.v;S.setPref(b.dataset.k,b.dataset.k==='font'||b.dataset.k==='theme'?v:+v);drawPrefs();return}
+  if(b.id==='pfocus'){body.classList.toggle('focus');drawPrefs();return}
+  if(b.id==='pwake'){
+    if(wl){wl.release();wl=null;drawPrefs()}else{navigator.wakeLock.request('screen').then(function(l){wl=l;l.addEventListener('release',function(){wl=null});drawPrefs()}).catch(function(){})}
+  }
+});
+function openPrefs(){drawPrefs();ps.hidden=false}
+var aa=document.getElementById('aabtn');if(aa)aa.onclick=openPrefs;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){ps.hidden=true;cs.hidden=true;body.classList.remove('focus')}});
+// focus-mode exit: tap the top edge area
+var fx=document.createElement('button');fx.type='button';fx.textContent='Exit focus';fx.className='h2read';fx.style.cssText='position:fixed;right:10px;top:10px;z-index:45;float:none;display:none';fx.onclick=function(){body.classList.remove('focus')};body.appendChild(fx);
+new MutationObserver(function(){fx.style.display=body.classList.contains('focus')?'block':'none'}).observe(body,{attributes:true,attributeFilter:['class']});
+// scroll handling
+var tick=false,saveAt=0;
+function onScroll(){
+  if(tick)return;tick=true;requestAnimationFrame(function(){
+    tick=false;
+    var doc=document.documentElement,max=doc.scrollHeight-innerHeight;
+    bar.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';
+    var vh=innerHeight,r=rec(),ch=false;
+    heads.forEach(function(h,i){
+      var t=h.getBoundingClientRect().top;
+      if(t<vh&&t>-40)seen[h.id]=1;
+      var nt=i+1<heads.length?heads[i+1].getBoundingClientRect().top:(scrollY>=max-160?-1:1e9);
+      if(seen[h.id]&&nt<vh*0.35&&!r.read[h.id]&&!manual[h.id]){r.read[h.id]=1;ch=true;h._b._paint()}
+    });
+    if(ch){r.t=Date.now();S.save()}
+    refresh();
+    var now=Date.now();
+    if(now-saveAt>1500){saveAt=now;var c=curIdx(),rr=rec();
+      if(c>=0){var hh=heads[c].getBoundingClientRect().top;rr.pos={s:ids[c],o:Math.round(-hh)};rr.t=now}
+      S.get().last={nb:N.id,ch:N.ch,s:c>=0?ids[c]:'',st:c>=0?titles[c]:'',ts:now};S.save()}
+  })}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
+S.onChange(function(){if(box)box.checked=!!rec().done;repaint()});
+refresh();onScroll();
+// resume offer
+var p=rec().pos;
+if(!location.hash&&p&&p.s&&ids.indexOf(p.s)>0){
+  var el=document.getElementById(p.s);
+  var t=document.createElement('div');t.className='toast';t.innerHTML='<span>Resume at “'+esc(titles[ids.indexOf(p.s)])+'”?</span><button type="button" id="tgo">Resume</button><button type="button" id="tx">Dismiss</button>';
+  body.appendChild(t);
+  t.querySelector('#tgo').onclick=function(){if(el){el.scrollIntoView({block:'start'});scrollBy(0,(p.o||0))}t.remove()};
+  t.querySelector('#tx').onclick=function(){t.remove()};
+  setTimeout(function(){if(t.parentNode)t.remove()},12000);
+}
+})();
+</script></body></html>

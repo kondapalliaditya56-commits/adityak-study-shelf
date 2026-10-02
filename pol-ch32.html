@@ -1,0 +1,474 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Ch 32 · State Public Service Commission</title><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style><style>:root{--bg:#FBFAF6;--surface:#fff;--surface2:#F3F1EA;--ink:#1F2A2A;--muted:#5D6A68;--line:#DAD6C8;--acc:#0E6B5C;--acc-ink:#fff;--acc-soft:#DDF0EA;--saf:#B85C00;--saf-soft:#FFF0DB;--red:#B3261E;--red-soft:#FDE7E4;--blue:#1F5FA8;--blue-soft:#E3EEFA;--good:#2E7D32;--good-soft:#E3F3E4;--hl:#FFE9A6;
+--c0:#0E6B5C;--c1:#B85C00;--c2:#1F5FA8;--c3:#8E3B8E;--c4:#B3261E;--c5:#5C7A1F;--c6:#8A6D00;--c7:#37607A;
+--serif:Literata,Spectral,Georgia,'Times New Roman',serif;--sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:17px/1.65 var(--serif);margin:0}
+a{color:var(--acc)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;margin:0}
+.bar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.barin{display:flex;align-items:center;gap:8px;padding:8px 16px;max-width:1200px;margin:0 auto;font:600 14px var(--sans);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.barin::-webkit-scrollbar{display:none}
+.bar a.home,.nbtn,.themebtn{color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 10px;font:600 13px var(--sans);cursor:pointer;flex:none}
+.nbtn{padding:5px 12px;font-size:16px;line-height:1}.nbtn.off{opacity:.35}
+.bartitle{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-weight:500}.bartitle b{color:var(--acc)}
+.done{display:flex;align-items:center;gap:5px;flex:none;font:600 13px var(--sans);cursor:pointer}.done input{width:18px;height:18px;accent-color:var(--acc)}
+.layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px;padding:0 16px}
+.sidetoc{position:sticky;top:58px;align-self:start;max-height:calc(100vh - 70px);overflow:auto;padding:18px 0;font:14px/1.4 var(--sans)}
+.sth{font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;color:var(--muted);margin-bottom:8px}
+.sidetoc ol{list-style:none;margin:0;padding:0}.sidetoc li{margin:0}.sidetoc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--ink);text-decoration:none}.sidetoc a:hover,.sidetoc a.on{border-color:var(--acc);color:var(--acc);background:var(--acc-soft)}
+.page{max-width:780px;margin:0 auto;padding:24px 16px 60px;width:100%;min-width:0}
+.home-page{max-width:900px}
+.chead{margin-bottom:22px}
+.eyebrow{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font-size:clamp(28px,5vw,40px);margin:6px 0 10px;font-weight:700}
+.lede{font-size:18px;color:var(--muted);margin:10px 0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:600 12px var(--sans);padding:3px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--line);color:var(--muted)}
+.pill.cls{background:var(--acc-soft);color:var(--acc);border-color:transparent}.pill.hb{background:var(--saf-soft);color:var(--saf);border-color:transparent}
+h2{font-size:clamp(22px,3.6vw,28px);margin:40px 0 12px;padding-top:14px;border-top:2px solid var(--acc);font-weight:700}
+h3{font-size:19px;margin:24px 0 8px;color:var(--acc)}
+h4{font-size:16px;margin-bottom:10px}
+.anchor{margin-left:8px;font-size:.7em;color:var(--muted);opacity:0;text-decoration:none}h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 12px}
+mark{background:var(--hl);color:inherit;padding:0 3px;border-radius:3px}
+.lst{margin:0 0 14px;padding-left:22px}.lst li{margin:5px 0}.lst li.sub{margin-left:18px;list-style:circle;color:var(--ink)}
+.gdesc{color:var(--muted);font:15px var(--sans);margin:-4px 0 12px}
+.xref{font:600 .92em var(--sans);white-space:nowrap}
+.callout{border-left:4px solid var(--acc);background:var(--acc-soft);border-radius:0 10px 10px 0;padding:10px 14px 4px;margin:14px 0}
+.callout .tag{display:inline-block;font:700 11px var(--sans);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;color:var(--acc)}
+.callout.teacher{border-color:var(--saf);background:var(--saf-soft)}.callout.teacher .tag{color:var(--saf)}
+.callout.alert{border-color:var(--red);background:var(--red-soft)}.callout.alert .tag{color:var(--red)}
+.callout.note{border-color:var(--blue);background:var(--blue-soft)}.callout.note .tag{color:var(--blue)}
+.callout.example{border-color:var(--good);background:var(--good-soft)}.callout.example .tag{color:var(--good)}
+.callout.source{background:var(--surface2);border-color:var(--line)}.callout.source .tag{color:var(--muted)}
+figure{margin:18px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure img{display:block;width:100%;height:auto;background:#fff}
+figure a.zoom{display:block;cursor:zoom-in}
+figcaption{padding:8px 12px;font:14px/1.45 var(--sans);color:var(--muted)}.figsrc{font:700 11px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--acc);margin-right:6px}
+.tblock{margin:16px 0}.tcap{font:700 14px var(--sans);margin-bottom:6px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font:15px/1.45 var(--sans);min-width:480px}
+th,td{padding:8px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--acc);color:var(--acc-ink);font-weight:700}
+tbody th{background:var(--surface2);font-weight:700}tbody tr:last-child>*{border-bottom:0}tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface2) 55%,transparent)}
+.stepsblock{margin:16px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}.stepsblock ol{margin:0;padding-left:22px}.stepsblock li{margin:4px 0}
+.flow{margin:20px 0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.chain{display:flex;flex-direction:column;align-items:stretch}
+.step{border:1.5px solid var(--acc);background:var(--acc-soft);border-radius:10px;padding:8px 12px;font:15px/1.4 var(--sans)}
+.step .sl{font-weight:700}.step .ss{color:var(--muted);font-size:14px;margin-top:2px}
+.step.warn{border-color:var(--saf);background:var(--saf-soft)}.step.bad{border-color:var(--red);background:var(--red-soft)}.step.good{border-color:var(--good);background:var(--good-soft)}
+.arr{height:20px;position:relative;flex:none}.arr:before{content:"";position:absolute;left:50%;top:0;bottom:6px;border-left:2px solid var(--muted)}.arr:after{content:"";position:absolute;left:calc(50% - 5px);bottom:0;border:5px solid transparent;border-top:7px solid var(--muted);border-bottom:0}
+.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.lane{display:flex;flex-direction:column}.lane-h{font:700 12px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;text-align:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:10px}.seg button{font:600 13px var(--sans);padding:6px 14px;border:0;background:var(--surface);color:var(--ink);cursor:pointer}.seg button[aria-pressed=true]{background:var(--acc);color:var(--acc-ink)}
+.mapblock h2{margin-top:10px}
+.mmframe{overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:8px;-webkit-overflow-scrolling:touch}
+svg.mm{display:block;font-family:var(--sans)}
+.mm-root{fill:var(--acc)}.mm-root-t{fill:var(--acc-ink);font:700 14px var(--sans)}
+.mm-link{fill:none;stroke-width:2;opacity:.7}.mm-branch-t{font:700 13px var(--sans);fill:#fff}.mm-leaf-t{font:13px var(--sans);fill:var(--ink)}.mm-leaf-n{font:11.5px var(--sans);fill:var(--muted)}
+.mm-leaf{fill:var(--surface2);stroke-width:1.5}
+.mm-branch.c0{fill:var(--c0)}.mm-branch.c1{fill:var(--c1)}.mm-branch.c2{fill:var(--c2)}.mm-branch.c3{fill:var(--c3)}.mm-branch.c4{fill:var(--c4)}.mm-branch.c5{fill:var(--c5)}.mm-branch.c6{fill:var(--c6)}.mm-branch.c7{fill:var(--c7)}
+.mm-link.c0,.mm-leaf.c0{stroke:var(--c0)}.mm-link.c1,.mm-leaf.c1{stroke:var(--c1)}.mm-link.c2,.mm-leaf.c2{stroke:var(--c2)}.mm-link.c3,.mm-leaf.c3{stroke:var(--c3)}.mm-link.c4,.mm-leaf.c4{stroke:var(--c4)}.mm-link.c5,.mm-leaf.c5{stroke:var(--c5)}.mm-link.c6,.mm-leaf.c6{stroke:var(--c6)}.mm-link.c7,.mm-leaf.c7{stroke:var(--c7)}
+:root:not([data-theme="dark"]) .mm-branch-t{fill:#fff}
+.outline,.outline ul{list-style:none;padding-left:18px;margin:4px 0}.outline>li{padding-left:0}.outline summary{cursor:pointer;font:700 15px var(--sans)}
+.outline li.c0>details>summary{color:var(--c0)}.outline li.c1>details>summary{color:var(--c1)}.outline li.c2>details>summary{color:var(--c2)}.outline li.c3>details>summary{color:var(--c3)}.outline li.c4>details>summary{color:var(--c4)}.outline li.c5>details>summary{color:var(--c5)}.outline li.c6>details>summary{color:var(--c6)}.outline li.c7>details>summary{color:var(--c7)}
+.ol-note{color:var(--muted);font-size:.9em}
+.timeline{list-style:none;margin:10px 0;padding:0;position:relative}
+.timeline:before{content:"";position:absolute;left:94px;top:0;bottom:0;border-left:2px solid var(--line)}
+.tl{display:grid;grid-template-columns:86px 18px 1fr;gap:0 6px;margin:0 0 12px;align-items:start}
+.yr{font:700 14px var(--mono);text-align:right;color:var(--acc);padding-top:2px}
+.pin{width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--acc);margin:7px 0 0 2px;position:relative;z-index:1}
+.tl.high .pin{background:var(--saf);border-color:var(--saf)}
+.tlbody{font:16px/1.5 var(--sans);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px}
+.tl.high .tlbody{border-color:var(--saf)}.star{color:var(--saf);margin-left:6px}.sref{float:right;margin-left:10px;font:600 12px var(--sans);text-decoration:none}
+.lkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.link{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:15px/1.45 var(--sans)}.link p{margin:4px 0 0;color:var(--muted)}.lk-line{font-weight:700}
+.recall{font:16px/1.55 var(--sans);padding-left:24px}.recall li{margin:6px 0}
+.count{font:600 13px var(--sans);color:var(--muted);margin:8px 0}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;font:16px/1.5 var(--sans)}
+.q .qt{font-weight:700;margin-bottom:8px}.q .opt{display:block;width:100%;text-align:left;padding:8px 12px;margin:6px 0;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.q .opt:hover{border-color:var(--acc)}.q .opt.right{border-color:var(--good);background:var(--good-soft)}.q .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.q .ex{margin-top:8px;color:var(--muted)}
+.deck{margin:10px 0}
+.fc{min-height:150px;background:var(--surface);border:2px solid var(--acc);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:center;text-align:center;font:18px/1.5 var(--serif);cursor:pointer;user-select:none}
+.fc.back{background:var(--acc-soft)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.btn{font:600 14px var(--sans);padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.pri{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:40px 0 20px}.pager a{display:block;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--ink);font:600 15px var(--sans)}.pager a.nx{text-align:right}.pager small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+footer{color:var(--muted);font:13px/1.5 var(--sans);border-top:1px solid var(--line);padding-top:14px;margin-top:30px}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:flex;align-items:center;justify-content:center;padding:10px;overflow:auto}#lightbox img{max-width:none;width:min(1600px,100%);height:auto;background:#fff;cursor:zoom-out}
+.part{margin:34px 0}.part h2{margin-top:0}
+.chlist{display:flex;flex-direction:column;gap:8px}
+.chcard{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+a.chcard:hover{border-color:var(--acc)}.chcard.pending{opacity:.5}
+.chn{font:700 18px var(--mono);color:var(--acc);text-align:center}.cht b{font:700 16px var(--serif);display:block}.cht small{font:13px/1.4 var(--sans);color:var(--muted);display:block;margin-top:2px}
+.chb{display:flex;flex-direction:column;gap:4px;align-items:flex-end;font:600 11px var(--sans)}.chb em{font-style:normal;background:var(--acc-soft);color:var(--acc);padding:2px 8px;border-radius:99px}.chb i.tick{font-style:normal;background:var(--good);color:#fff;padding:2px 8px;border-radius:99px}
+.prog{font:600 14px var(--sans);color:var(--muted)}
+.sbox{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:17px var(--sans);margin:6px 0 14px}
+.results .hit{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0;font:15px/1.5 var(--sans)}.results .hit a{font-weight:700}.results .hit small{color:var(--muted)}
+.chips{display:flex;gap:8px;margin-bottom:8px}.chip{font:600 13px var(--sans);padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}.chip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+@media (max-width:900px){.layout{display:block}.sidetoc{display:none}}
+@media (max-width:560px){body{font-size:16.5px}.tl{grid-template-columns:62px 16px 1fr}.timeline:before{left:70px}.yr{font-size:12px}.chcard{grid-template-columns:34px 1fr}.chb{display:none}.lanes{grid-template-columns:1fr}}
+
+code{font:.88em var(--mono);background:var(--surface2);padding:1px 5px;border-radius:4px}
+
+/* ---- reader app ---- */
+:root{--zoom:1;--lh:1.65;--pw:780px}
+:root[data-theme="sepia"]{--bg:#F4ECD8;--surface:#FBF5E6;--surface2:#EADFC4;--ink:#3B3022;--muted:#7A6A52;--line:#D8C9A6;--acc:#7A4A12;--acc-ink:#fff;--acc-soft:#EFDDB8;--saf:#A4470A;--saf-soft:#F6E2BE;--red:#9C2A1C;--red-soft:#F3D9CB;--blue:#2F5C8A;--blue-soft:#DDE6E4;--good:#3E6B2A;--good-soft:#DDE8C8;--hl:#F2D98A;color-scheme:light}
+:root[data-font="sans"] body{font-family:var(--sans)}
+:root[data-font="sans"] .notes p,:root[data-font="sans"] .notes li{font-family:var(--sans)}
+.page{zoom:var(--zoom);max-width:var(--pw)}
+.notes p,.notes li{line-height:var(--lh)}
+.rbar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--acc);z-index:40;transition:width .15s}
+.aabtn{color:var(--ink);border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 12px;font:700 14px var(--serif);cursor:pointer;flex:none}
+.h2read{float:right;margin:2px 0 0 10px;font:600 12px var(--sans);border:1px solid var(--line);background:var(--surface2);color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer;min-height:30px}
+.h2read[aria-pressed="true"]{background:var(--acc-soft);color:var(--acc);border-color:var(--acc)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding:6px 10px calc(6px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:center;justify-content:center}
+.dock button{font:600 14px var(--sans);min-height:44px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;padding:0 14px;cursor:pointer}
+.dock .mid{flex:1;max-width:520px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dock .mid b{color:var(--acc)}
+body.has-dock .page{padding-bottom:110px}
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.sheetin{background:var(--surface);color:var(--ink);width:100%;max-width:560px;max-height:82vh;overflow:auto;border-radius:16px 16px 0 0;padding:16px 18px calc(18px + env(safe-area-inset-bottom,0px));font:15px/1.4 var(--sans)}
+.sheetin h3{margin:0 0 10px;font:700 17px var(--sans)}
+.srow{display:flex;align-items:center;gap:10px;margin:12px 0;flex-wrap:wrap}
+.srow label{flex:0 0 92px;color:var(--muted);font-weight:600}
+.srow .grp{display:flex;gap:6px;flex-wrap:wrap}
+.srow button{font:600 14px var(--sans);min-height:42px;min-width:48px;padding:0 12px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;cursor:pointer}
+.srow button[aria-pressed="true"]{border-color:var(--acc);background:var(--acc-soft);color:var(--acc)}
+.secl a{display:flex;gap:10px;align-items:center;padding:12px 6px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;min-height:44px}
+.secl a .tk{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;color:var(--acc-ink)}
+.secl a.rd .tk{background:var(--acc);border-color:var(--acc)}
+.secl a.cur{background:var(--acc-soft)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:50;background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 14px;display:flex;gap:12px;align-items:center;font:600 14px var(--sans);max-width:92vw;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.toast button{font:700 14px var(--sans);background:transparent;border:0;color:var(--bg);text-decoration:underline;cursor:pointer;min-height:36px}
+body.focus .bar{display:none}body.focus .sidetoc{display:none}
+figcaption.clamp{max-height:3.3em;overflow:hidden;position:relative;cursor:pointer}
+figcaption.clamp.open{max-height:none}
+figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bottom:0;background:var(--bg);color:var(--acc);font:700 12px var(--sans);padding-left:14px}
+.cbar{display:block;height:4px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}.cbar i{display:block;height:100%;width:0;background:var(--acc)}
+.nbcard h2{border:0;padding:0}.nbcard{border-top:1px solid var(--line)}
+</style><style>
+.mn{display:inline-flex;gap:4px;flex-wrap:wrap;margin:2px 0 6px}.mn b{font:700 15px var(--mono);background:var(--acc);color:var(--acc-ink);border-radius:6px;padding:1px 8px}
+.callout.shortcut{border-color:var(--saf);background:var(--saf-soft)}.callout.shortcut .tag{color:var(--saf)}
+.callout.mnemo{border-color:var(--c3);background:var(--surface2)}.callout.mnemo .tag{color:var(--c3)}
+.callout p,.callout li{font-family:var(--sans)}
+.art{font-family:var(--mono);font-size:.86em;background:var(--acc-soft);padding:0 .28em;border-radius:4px;white-space:nowrap}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin:14px 0}
+.two .col{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:10px 14px;font:15px/1.5 var(--sans)}
+.two .col h4{margin:0 0 4px;font:700 13px var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--acc)}
+.two .col ul{margin:4px 0;padding-left:18px}
+.ptag{display:inline-block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;border-radius:99px;padding:2px 9px;margin-left:8px;vertical-align:middle}
+.ptag.high{background:var(--red-soft);color:var(--red)}.ptag.med{background:var(--saf-soft);color:var(--saf)}.ptag.low{background:var(--surface2);color:var(--muted)}
+</style></head><body><header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="pol-home.html">Contents</a><a class="nbtn" href="pol-ch31.html" title="Union Public Service Commission" aria-label="Previous chapter">‹</a><span class="bartitle"><b>Ch 32</b> State Public Service Commission</span><a class="nbtn" href="pol-ch33.html" title="Finance Commission" aria-label="Next chapter">›</a><a class="home" href="pol-search.html">Search</a><a class="home" href="pol-timeline.html">Timeline</a><label class="done"><input type="checkbox" id="donebox" data-ch="32"><span>Done</span></label><button class="aabtn" id="aabtn" type="button" aria-label="Reading settings">Aa</button></div></header><div class="layout"><aside class="sidetoc"><div class="sth">In this chapter</div><ol><li><a href="#chapter-map">Chapter map</a></li><li><a href="#exam-lens-priority-and-pyqs">Exam lens: priority and PYQs</a></li><li><a href="#1-overview-and-constitutional-basis">1 · Overview and Constitutional Basis</a></li><li><a href="#2-composition-and-tenure">2 · Composition and Tenure</a></li><li><a href="#3-removal-of-members">3 · Removal of Members</a></li><li><a href="#4-independence-of-the-spsc">4 · Independence of the SPSC</a></li><li><a href="#5-functions-of-the-spsc">5 · Functions of the SPSC</a></li><li><a href="#6-institutional-role-within-state-administration">6 · Institutional Role within State Administration</a></li><li><a href="#7-limits-on-the-spsc-s-authority">7 · Limits on the SPSC's Authority</a></li><li><a href="#8-joint-state-public-service-commission">8 · Joint State Public Service Commission</a></li><li><a href="#9-key-articles">9 · Key Articles</a></li><li><a href="#chapter-timeline">Timeline</a></li><li><a href="#connects">Connects to</a></li><li><a href="#recall">Recall sheet</a></li><li><a href="#practice">Test yourself</a></li></ol></aside><main class="page"><div class="chead"><div class="eyebrow">Polity · Part 3 · Bodies, Commissions and Governance · Chapter 32</div><h1>State Public Service Commission<span class="ptag low">None quoted</span></h1><div class="pills"><span class="pill hb">Handout only: no class slides</span><span class="pill ">Handout: State Public Service Commission (Arts. 315-323), Joint SPSC, Key Articles table</span><span class="pill ">No PYQs quoted</span></div><p class="lede">The state-level twin of the UPSC: who appoints, who removes, how it stays independent, what it advises on, and where the Joint SPSC differs. Most answers turn on one contrast: Governor appoints, President removes.</p></div><section class="mapblock"><h2 id="chapter-map">Chapter map<a class="anchor" href="#chapter-map">#</a></h2><div class="seg" role="group" aria-label="Map view"><button type="button" data-v="map" aria-pressed="true">Map</button><button type="button" data-v="outline" aria-pressed="false">Outline</button></div><div id="mm-map" class="mmframe"><svg class="mm" viewBox="0 0 765 1156" width="765" height="1156" role="img" aria-label="Mind map: State Public Service Commission"><rect class="mm-root" x="8" y="565.4" width="171.6" height="47.2" rx="6"/><text class="mm-root-t" x="93.8" y="585.2" text-anchor="middle">State Public</text><text class="mm-root-t" x="93.8" y="602.8" text-anchor="middle">Service Commission</text><path class="mm-link c0" d="M179.6,589.0 C211.6,589.0 211.6,52.0 243.6,52.0"/><rect class="mm-branch c0" x="243.6" y="38.0" width="80.0" height="28" rx="5"/><text class="mm-branch-t" x="283.6" y="56.5" text-anchor="middle">Basics</text><path class="mm-link c0" d="M323.6,52.0 C351.6,52.0 525.6,28.0 553.6,28.0"/><rect class="mm-leaf c0" x="553.6" y="8" width="181.0" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="23.5">Part XIV, Arts. 315-323</text><text class="mm-leaf-n" x="563.6" y="38.5">same framework as UPSC</text><path class="mm-link c0" d="M323.6,52.0 C351.6,52.0 525.6,76.0 553.6,76.0"/><rect class="mm-leaf c0" x="553.6" y="56" width="153.0" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="71.5">Constitutional body</text><text class="mm-leaf-n" x="563.6" y="86.5">UPSC's state twin</text><path class="mm-link c1" d="M179.6,589.0 C211.6,589.0 211.6,202.0 243.6,202.0"/><rect class="mm-branch c1" x="243.6" y="188.0" width="202.0" height="28" rx="5"/><text class="mm-branch-t" x="344.6" y="206.5" text-anchor="middle">Composition and tenure</text><path class="mm-link c1" d="M445.6,202.0 C473.6,202.0 525.6,130.0 553.6,130.0"/><rect class="mm-leaf c1" x="553.6" y="110" width="168.9" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="125.5">Chairman and Members</text><text class="mm-leaf-n" x="563.6" y="140.5">appointed by Governor</text><path class="mm-link c1" d="M445.6,202.0 C473.6,202.0 525.6,178.0 553.6,178.0"/><rect class="mm-leaf c1" x="553.6" y="158" width="146.0" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="173.5">Strength not fixed</text><text class="mm-leaf-n" x="563.6" y="188.5">Governor decides</text><path class="mm-link c1" d="M445.6,202.0 C473.6,202.0 525.6,226.0 553.6,226.0"/><rect class="mm-leaf c1" x="553.6" y="206" width="139.0" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="221.5">6 years or age 62</text><text class="mm-leaf-n" x="563.6" y="236.5">UPSC is 65</text><path class="mm-link c1" d="M445.6,202.0 C473.6,202.0 525.6,274.0 553.6,274.0"/><rect class="mm-leaf c1" x="553.6" y="254" width="189.6" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="269.5">Half the Members</text><text class="mm-leaf-n" x="563.6" y="284.5">10 years in govt service</text><path class="mm-link c2" d="M179.6,589.0 C211.6,589.0 211.6,400.0 243.6,400.0"/><rect class="mm-branch c2" x="243.6" y="386.0" width="82.0" height="28" rx="5"/><text class="mm-branch-t" x="284.6" y="404.5" text-anchor="middle">Removal</text><path class="mm-link c2" d="M325.6,400.0 C353.6,400.0 525.6,328.0 553.6,328.0"/><rect class="mm-leaf c2" x="553.6" y="308" width="139.0" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="323.5">President removes</text><text class="mm-leaf-n" x="563.6" y="338.5">Art. 317 only</text><path class="mm-link c2" d="M325.6,400.0 C353.6,400.0 525.6,376.0 553.6,376.0"/><rect class="mm-leaf c2" x="553.6" y="356" width="196.5" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="371.5">Grounds</text><text class="mm-leaf-n" x="563.6" y="386.5">insolvent, job, infirmity</text><path class="mm-link c2" d="M325.6,400.0 C353.6,400.0 525.6,424.0 553.6,424.0"/><rect class="mm-leaf c2" x="553.6" y="404" width="203.4" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="419.5">Misbehaviour</text><text class="mm-leaf-n" x="563.6" y="434.5">SC enquiry, binding advice</text><path class="mm-link c2" d="M325.6,400.0 C353.6,400.0 525.6,472.0 553.6,472.0"/><rect class="mm-leaf c2" x="553.6" y="452" width="168.9" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="467.5">Governor suspends</text><text class="mm-leaf-n" x="563.6" y="482.5">during the SC enquiry</text><path class="mm-link c3" d="M179.6,589.0 C211.6,589.0 211.6,598.0 243.6,598.0"/><rect class="mm-branch c3" x="243.6" y="584.0" width="122.0" height="28" rx="5"/><text class="mm-branch-t" x="304.6" y="602.5" text-anchor="middle">Independence</text><path class="mm-link c3" d="M365.6,598.0 C393.6,598.0 525.6,526.0 553.6,526.0"/><rect class="mm-leaf c3" x="553.6" y="506" width="153.0" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="521.5">Charged expenditure</text><text class="mm-leaf-n" x="563.6" y="536.5">Art. 322</text><path class="mm-link c3" d="M365.6,598.0 C393.6,598.0 525.6,574.0 553.6,574.0"/><rect class="mm-leaf c3" x="553.6" y="554" width="203.4" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="569.5">Service conditions</text><text class="mm-leaf-n" x="563.6" y="584.5">not varied to disadvantage</text><path class="mm-link c3" d="M365.6,598.0 C393.6,598.0 525.6,622.0 553.6,622.0"/><rect class="mm-leaf c3" x="553.6" y="602" width="118.0" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="617.5">No second term</text><text class="mm-leaf-n" x="563.6" y="632.5">same office</text><path class="mm-link c3" d="M365.6,598.0 C393.6,598.0 525.6,670.0 553.6,670.0"/><rect class="mm-leaf c3" x="553.6" y="650" width="148.2" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="665.5">Post-tenure bar</text><text class="mm-leaf-n" x="563.6" y="680.5">limited posts only</text><path class="mm-link c4" d="M179.6,589.0 C211.6,589.0 211.6,796.0 243.6,796.0"/><rect class="mm-branch c4" x="243.6" y="782.0" width="98.0" height="28" rx="5"/><text class="mm-branch-t" x="292.6" y="800.5" text-anchor="middle">Functions</text><path class="mm-link c4" d="M341.6,796.0 C369.6,796.0 525.6,724.0 553.6,724.0"/><rect class="mm-leaf c4" x="553.6" y="704" width="139.0" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="719.5">Recruitment exams</text><text class="mm-leaf-n" x="563.6" y="734.5">State services</text><path class="mm-link c4" d="M341.6,796.0 C369.6,796.0 525.6,772.0 553.6,772.0"/><rect class="mm-leaf c4" x="553.6" y="752" width="168.9" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="767.5">Advisory body</text><text class="mm-leaf-n" x="563.6" y="782.5">promotion, discipline</text><path class="mm-link c4" d="M341.6,796.0 C369.6,796.0 525.6,820.0 553.6,820.0"/><rect class="mm-leaf c4" x="553.6" y="800" width="174.0" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="815.5">Consultation directory</text><text class="mm-leaf-n" x="563.6" y="830.5">not mandatory</text><path class="mm-link c4" d="M341.6,796.0 C369.6,796.0 525.6,868.0 553.6,868.0"/><rect class="mm-leaf c4" x="553.6" y="848" width="182.7" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="863.5">Annual report</text><text class="mm-leaf-n" x="563.6" y="878.5">Governor to Legislature</text><path class="mm-link c5" d="M179.6,589.0 C211.6,589.0 211.6,946.0 243.6,946.0"/><rect class="mm-branch c5" x="243.6" y="932.0" width="80.0" height="28" rx="5"/><text class="mm-branch-t" x="283.6" y="950.5" text-anchor="middle">Limits</text><path class="mm-link c5" d="M323.6,946.0 C351.6,946.0 525.6,922.0 553.6,922.0"/><rect class="mm-leaf c5" x="553.6" y="902" width="196.5" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="917.5">Not consulted</text><text class="mm-leaf-n" x="563.6" y="932.5">reservation, SC/ST claims</text><path class="mm-link c5" d="M323.6,946.0 C351.6,946.0 525.6,970.0 553.6,970.0"/><rect class="mm-leaf c5" x="553.6" y="950" width="174.0" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="965.5">Governor's regulations</text><text class="mm-leaf-n" x="563.6" y="980.5">laid 14 days</text><path class="mm-link c6" d="M179.6,589.0 C211.6,589.0 211.6,1048.0 243.6,1048.0"/><rect class="mm-branch c6" x="243.6" y="1034.0" width="106.0" height="28" rx="5"/><text class="mm-branch-t" x="296.6" y="1052.5" text-anchor="middle">Joint SPSC</text><path class="mm-link c6" d="M349.6,1048.0 C377.6,1048.0 525.6,1024.0 553.6,1024.0"/><rect class="mm-leaf c6" x="553.6" y="1004" width="203.4" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="1019.5">Statutory</text><text class="mm-leaf-n" x="563.6" y="1034.5">Parliament law, states ask</text><path class="mm-link c6" d="M349.6,1048.0 C377.6,1048.0 525.6,1072.0 553.6,1072.0"/><rect class="mm-leaf c6" x="553.6" y="1052" width="175.8" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="1067.5">Chairman and Members</text><text class="mm-leaf-n" x="563.6" y="1082.5">appointed by President</text><path class="mm-link c7" d="M179.6,589.0 C211.6,589.0 211.6,1126.0 243.6,1126.0"/><rect class="mm-branch c7" x="243.6" y="1112.0" width="122.0" height="28" rx="5"/><text class="mm-branch-t" x="304.6" y="1130.5" text-anchor="middle">Key Articles</text><path class="mm-link c7" d="M365.6,1126.0 C393.6,1126.0 525.6,1126.0 553.6,1126.0"/><rect class="mm-leaf c7" x="553.6" y="1106" width="134.4" height="40" rx="4"/><text class="mm-leaf-t" x="563.6" y="1121.5">315 to 323</text><text class="mm-leaf-n" x="563.6" y="1136.5">set-up to report</text></svg></div><div id="mm-outline" hidden><ul class="outline"><li><strong>State Public Service Commission</strong><ul><li class="c0"><details open><summary>Basics</summary><ul><li>Part XIV, Arts. 315-323 <span class="ol-note">same framework as UPSC</span></li><li>Constitutional body <span class="ol-note">UPSC's state twin</span></li></ul></details></li><li class="c1"><details open><summary>Composition and tenure</summary><ul><li>Chairman and Members <span class="ol-note">appointed by Governor</span></li><li>Strength not fixed <span class="ol-note">Governor decides</span></li><li>6 years or age 62 <span class="ol-note">UPSC is 65</span></li><li>Half the Members <span class="ol-note">10 years in govt service</span></li></ul></details></li><li class="c2"><details open><summary>Removal</summary><ul><li>President removes <span class="ol-note">Art. 317 only</span></li><li>Grounds <span class="ol-note">insolvent, job, infirmity</span></li><li>Misbehaviour <span class="ol-note">SC enquiry, binding advice</span></li><li>Governor suspends <span class="ol-note">during the SC enquiry</span></li></ul></details></li><li class="c3"><details open><summary>Independence</summary><ul><li>Charged expenditure <span class="ol-note">Art. 322</span></li><li>Service conditions <span class="ol-note">not varied to disadvantage</span></li><li>No second term <span class="ol-note">same office</span></li><li>Post-tenure bar <span class="ol-note">limited posts only</span></li></ul></details></li><li class="c4"><details open><summary>Functions</summary><ul><li>Recruitment exams <span class="ol-note">State services</span></li><li>Advisory body <span class="ol-note">promotion, discipline</span></li><li>Consultation directory <span class="ol-note">not mandatory</span></li><li>Annual report <span class="ol-note">Governor to Legislature</span></li></ul></details></li><li class="c5"><details open><summary>Limits</summary><ul><li>Not consulted <span class="ol-note">reservation, SC/ST claims</span></li><li>Governor's regulations <span class="ol-note">laid 14 days</span></li></ul></details></li><li class="c6"><details open><summary>Joint SPSC</summary><ul><li>Statutory <span class="ol-note">Parliament law, states ask</span></li><li>Chairman and Members <span class="ol-note">appointed by President</span></li></ul></details></li><li class="c7"><details open><summary>Key Articles</summary><ul><li>315 to 323 <span class="ol-note">set-up to report</span></li></ul></details></li></ul></li></ul></div></section><div class="notes"><h2 id="exam-lens-priority-and-pyqs">Exam lens: priority and PYQs<a class="anchor" href="#exam-lens-priority-and-pyqs" aria-label="Link to this section">#</a></h2><aside class="callout source"><span class="tag">Source note</span><p><strong>This chapter comes from the Sarrthi handout only.</strong> There are no class slides or teacher ink. Priority is none quoted, counted from the handout’s own PYQ section: <strong>0 Prelims and 0 Mains</strong> questions are quoted. <strong>None quoted in the material.</strong></p></aside><div class="tblock"><div class="tcap">What the handout itself stresses</div><div class="tablewrap"><table><thead><tr><th>Signal in the handout</th><th>Where</th><th>Why it matters</th></tr></thead><tbody><tr><th scope='row'><strong>Governor appoints but only the President removes</strong> SPSC Chairman and Members (<span class="art">Art. 317</span>)</th><td>Removal of Members</td><td>The classic split between appointment and removal that the handout repeats as the core independence safeguard.</td></tr><tr><th scope='row'><strong>Six years or 62 years, whichever is earlier</strong> (UPSC is 65)</th><td>Composition and Tenure</td><td>A numbers contrast the handout sets against the UPSC.</td></tr><tr><th scope='row'><strong>Consultation is directory, not mandatory</strong>, and an SPSC recommendation gives no right to appointment</th><td>Role and Responsibilities</td><td>The Supreme Court position the handout states in plain terms.</td></tr><tr><th scope='row'><strong>Joint SPSC is statutory, not constitutional</strong></th><td>Joint SPSC</td><td>Appointed and removed by the President, unlike an SPSC.</td></tr></tbody></table></div></div><aside class="callout key"><span class="tag">What to prepare</span><p><strong>Prelims hooks:</strong> none quoted in the material. Likely hooks from the handout: appointing and removing authority, age 62 versus 65, one-half of Members with 10 years of service, <span class="art">Art. 322</span> charged expenditure, JSPSC being statutory, the Article table (315-323).</p><p><strong>Mains hooks:</strong> none quoted in the material. Use the independence safeguards and the advisory-versus-binding position of the SPSC.</p><p><strong>Closing idea:</strong> An SPSC is a constitutional body made independent by a split in power: the Governor appoints, the President removes, the State Consolidated Fund pays, and the State government may still depart from its advice.</p></aside><h2 id="1-overview-and-constitutional-basis">1 · Overview and Constitutional Basis<a class="anchor" href="#1-overview-and-constitutional-basis" aria-label="Link to this section">#</a></h2>
+<p>Every state has its own <strong>State Public Service Commission (SPSC)</strong>, the state-level counterpart of the Union Public Service Commission. It is a constitutional body created to secure impartial and professional recruitment for state services.</p>
+<ul class='lst'><li>The framework for existence, membership, tenure, safeguards and autonomy is the same as for the UPSC: <strong>Part XIV, <span class="art">Articles 315</span>-323</strong>.</li><li>This parity gives state commissions a protected status like the Union body, while they work inside the federal structure.</li><li>The Constitution sets out: composition, term and conditions of members, grounds and procedure for removal or suspension, power to frame regulations on service conditions, limits on post-service employment, functions, and reporting and financial safeguards.</li></ul>
+<aside class="callout key"><span class="tag">Core idea</span><p>SPSC = UPSC framework applied at state level. Same Articles (315-323), same removal grounds, same <span class="art">Article 317</span> procedure.</p></aside>
+<h2 id="2-composition-and-tenure">2 · Composition and Tenure<a class="anchor" href="#2-composition-and-tenure" aria-label="Link to this section">#</a></h2>
+<p>An SPSC has a <strong>Chairman and a number of Members</strong>, all appointed by the <strong>Governor</strong>.</p>
+<div class="tblock"><div class="tcap">Composition and tenure at a glance</div><div class="tablewrap"><table><thead><tr><th>Point</th><th>Rule</th></tr></thead><tbody><tr><th scope='row'>Appointing authority</th><td>Governor of the State</td></tr><tr><th scope='row'>Numerical strength</th><td>Not fixed by the Constitution; the Governor decides</td></tr><tr><th scope='row'>Qualifications</th><td>No educational or professional qualification prescribed</td></tr><tr><th scope='row'>Experience safeguard</th><td>One-half of the Members must have held office for at least ten years under the Government of India or the Government of any State</td></tr><tr><th scope='row'>Conditions of service</th><td>Determined by the Governor</td></tr><tr><th scope='row'>Term</th><td>Six years or until age 62, whichever is earlier</td></tr><tr><th scope='row'>UPSC contrast</th><td>UPSC age limit is 65 years</td></tr><tr><th scope='row'>Resignation</th><td>At any time, to the Governor</td></tr></tbody></table></div></div>
+<aside class="callout shortcut"><span class="tag">Number trick</span><p><strong>6 and 62</strong> for the state, <strong>65</strong> for the Union. State = smaller number.</p></aside>
+<h3>Acting Chairman</h3>
+<ul class='lst'><li>If the Chairman's office is vacant, or he is temporarily unable to perform duties (for example absence or incapacity), the <strong>Governor may appoint one of the sitting Members</strong> to act as Chairman.</li><li>The acting Chairman continues until a substantive Chairman assumes office or the original Chairman resumes duties.</li></ul>
+<aside class="callout mnemo"><span class="tag">Composition facts</span><div class="mn"><b>G</b><b>N</b><b>H</b><b>S</b></div><p><strong>G</strong>overnor appoints, <strong>N</strong>umber not fixed, <strong>H</strong>alf the Members with 10 years' service, <strong>S</strong>ix years or 62: "<strong>G</strong>ood <strong>N</strong>ewspapers <strong>H</strong>ave <strong>S</strong>tories".</p></aside>
+<h2 id="3-removal-of-members">3 · Removal of Members<a class="anchor" href="#3-removal-of-members" aria-label="Link to this section">#</a></h2>
+<p>The appointing authority and the removing authority are different. The Governor appoints, but <strong>the President alone can remove</strong> the Chairman or a Member. Grounds and procedure are the same as for the UPSC and are governed by <strong><span class="art">Article 317</span></strong>.</p>
+<div class="two"><div class="col"><h4>Governor</h4><ul><li>Appoints Chairman and Members</li><li>fixes their conditions of service</li><li>accepts resignation</li><li>may appoint an acting Chairman</li><li>may suspend a Chairman or Member during the Supreme Court enquiry</li></ul></div><div class="col"><h4>President</h4><ul><li>Alone can remove</li><li>refers misbehaviour charges to the Supreme Court</li><li>removes on grounds (a) to (c) below</li><li>bound by the Supreme Court's advice</li></ul></div></div>
+<h3>Grounds for removal by the President</h3>
+<div class="tblock"><div class="tcap">Two routes to removal</div><div class="tablewrap"><table><thead><tr><th>Route</th><th>What happens</th></tr></thead><tbody><tr><th scope='row'>Express grounds</th><td>(a) adjudged insolvent; (b) accepts paid employment outside the duties of the office during tenure; (c) in the President's opinion unfit to continue because of mental or physical infirmity</td></tr><tr><th scope='row'>Misbehaviour</th><td>President refers the charge to the Supreme Court for enquiry; removal follows only if the Supreme Court upholds the charge and advises removal; the advice is binding on the President</td></tr></tbody></table></div></div>
+<section class="flow"><h4>Removal for misbehaviour</h4><div class="chain"><div class="step "><div><div class="sl">Charge of misbehaviour</div><div class="ss">allegation against Chairman or Member</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">President refers to the Supreme Court</div><div class="ss">enquiry is judicially supervised</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">Governor may suspend</div><div class="ss">the member is suspended while the Court inquires, pending the President's final decision</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">Supreme Court reports</div><div class="ss">upholds the charge and advises removal, or does not</div></div></div><div class="arr" aria-hidden="true"></div><div class="step good"><div><div class="sl">President removes</div><div class="ss">only after the Court's advice; the advice binds the President</div></div></div></div></section>
+<h3>What counts as misbehaviour</h3>
+<p>A member is guilty of misbehaviour if he or she is <strong>concerned or interested in any contract or agreement</strong> made by the Government of India or a State Government, or <strong>derives profit or benefit</strong> from such a contract or agreement. Holding shares as one shareholder among others in an incorporated company is the exception. This narrow definition prevents conflicts of interest.</p>
+<aside class="callout mnemo"><span class="tag">Grounds for removal</span><div class="mn"><b>I</b><b>P</b><b>I</b></div><p><strong>I</strong>nsolvent, <strong>P</strong>aid job outside office, <strong>I</strong>nfirmity (mental or physical): "<strong>I</strong>t <strong>P</strong>ays <strong>I</strong>nside".</p></aside>
+<aside class="callout shortcut"><span class="tag">Who does what</span><p><strong>Governor: appoint, suspend. President: remove. Supreme Court: inquire.</strong></p></aside>
+<h2 id="4-independence-of-the-spsc">4 · Independence of the SPSC<a class="anchor" href="#4-independence-of-the-spsc" aria-label="Link to this section">#</a></h2>
+<p>Six safeguards protect the Commission, as listed by the handout.</p>
+<div class="tblock"><div class="tcap">Safeguards of independence</div><div class="tablewrap"><table><thead><tr><th>Safeguard</th><th>Detail</th></tr></thead><tbody><tr><th scope='row'>Security of tenure</th><td>Removal only by the President and only on grounds in <span class="art">Article 317</span>; appointment (Governor) is separated from removal (President) to prevent arbitrary state executive control</td></tr><tr><th scope='row'>Service conditions protected</th><td>Set by the Governor but cannot be varied to the disadvantage of a sitting Chairman or Member</td></tr><tr><th scope='row'>Charged expenditure</th><td>All salaries, allowances and pensions are charged on the Consolidated Fund of the State (<span class="art">Article 322</span>); not subject to a legislative vote</td></tr><tr><th scope='row'>Post-tenure bar: Chairman</th><td>May be appointed Chairman or Member of UPSC, or Chairman of another SPSC; barred from any other government employment</td></tr><tr><th scope='row'>Post-tenure bar: Member</th><td>May become Chairman or Member of UPSC, or Chairman of the same or another SPSC; cannot accept any other role under Union or State Governments</td></tr><tr><th scope='row'>No second term</th><td>Chairman or Member is not eligible for a second term in the same office</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Independence</span><div class="mn"><b>S</b><b>P</b><b>C</b><b>P</b><b>P</b><b>N</b></div><p><strong>S</strong>ecurity of tenure, <strong>P</strong>rotected service conditions, <strong>C</strong>harged expenditure, <strong>P</strong>ost-tenure bar (Chairman), <strong>P</strong>ost-tenure bar (Members), <strong>N</strong>o reappointment: "<strong>S</strong>ix <strong>P</strong>ens <strong>C</strong>an <strong>P</strong>roduce <strong>P</strong>erfect <strong>N</strong>otes".</p></aside>
+<aside class="callout note"><span class="tag">Compare the two bars</span><p>A Chairman can go to UPSC (Chairman or Member) or to Chairman of another SPSC. A Member has one more door: Chairman of the same SPSC as well.</p></aside>
+<h2 id="5-functions-of-the-spsc">5 · Functions of the SPSC<a class="anchor" href="#5-functions-of-the-spsc" aria-label="Link to this section">#</a></h2>
+<p>Under <span class="art">Articles 315</span>-323 the SPSC ensures a merit-based, transparent and professional civil service at the state level. Its mandate mirrors the UPSC but for state services.</p>
+<h3>Primary function</h3>
+<ul class='lst'><li><strong>Conduct examinations</strong> for recruitment to State civil services and posts, giving equal opportunity and competitive selection.</li></ul>
+<h3>Advisory role</h3>
+<p>The SPSC advises the State executive on personnel matters. Consultation is needed in these areas.</p>
+<div class="tblock"><div class="tcap">Matters on which the SPSC is consulted</div><div class="tablewrap"><table><thead><tr><th>Area</th><th>Items</th></tr></thead><tbody><tr><th scope='row'>Recruitment and service management</th><td>Method and procedure of recruitment; principles for appointments, promotions and inter-service transfers; suitability of persons for direct recruitment, promotions and transfers, and appointments through transfer or deputation (departmental promotion proposals are referred to the Commission for approval)</td></tr><tr><th scope='row'>Disciplinary matters</th><td>Censure (formal reprimand); withholding of increments or promotions; recovery for pecuniary loss caused to the government; demotion to a lower rank or service; compulsory retirement; removal or dismissal from service</td></tr><tr><th scope='row'>Service-related claims</th><td>Reimbursement of legal expenses for officials defending acts done in the course of duty; grant and quantum of pension or compensation for injuries sustained during service</td></tr><tr><th scope='row'>Other personnel matters</th><td>Any additional service administration issue the State executive refers to it</td></tr><tr><th scope='row'>State Judicial Services</th><td>Governor consults the SPSC (and the High Court) on rules for appointments to State Judicial Services, excluding District Judges</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Six disciplinary penalties</span><div class="mn"><b>C</b><b>W</b><b>R</b><b>D</b><b>C</b><b>R</b></div><p><strong>C</strong>ensure, <strong>W</strong>ithholding increments or promotion, <strong>R</strong>ecovery of loss, <strong>D</strong>emotion, <strong>C</strong>ompulsory retirement, <strong>R</strong>emoval or dismissal: "<strong>C</strong>lerks <strong>W</strong>ho <strong>R</strong>eport <strong>D</strong>elays <strong>C</strong>ome <strong>R</strong>ight back".</p></aside>
+<h3>Judicial position on consultation</h3>
+<aside class="callout key"><span class="tag">Supreme Court position</span><p>Non-consultation or irregular consultation does <strong>not invalidate</strong> the government's final decision. Consultation is <strong>directory, not mandatory</strong>. An SPSC recommendation gives <strong>no legal right to appointment</strong>; selections must still be acted on fairly and without arbitrariness.</p></aside>
+<h3>Extension of functions</h3>
+<ul class='lst'><li>The <strong>State Legislature</strong> may expand the SPSC's role by assigning additional functions relating to State services, and by bringing the services of local authorities, public bodies or statutory institutions under SPSC oversight.</li><li>Such extension must be made through a <strong>State law</strong> (<span class="art">Article 321</span>).</li></ul>
+<h3>Reporting to the State Legislature</h3>
+<section class="flow"><h4>Annual report</h4><div class="chain"><div class="step "><div><div class="sl">SPSC submits report</div><div class="ss">each year, to the Governor</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">Governor lays it</div><div class="ss">before both Houses of the State Legislature</div></div></div><div class="arr" aria-hidden="true"></div><div class="step "><div><div class="sl">With a memorandum</div><div class="ss">explains why the Commission's advice was not accepted, if applicable, and the reasons for the divergence!good</div></div></div></div></section>
+<aside class="callout shortcut"><span class="tag">Article cue</span><p><strong><span class="art">Art. 320</span> functions, <span class="art">Art. 321</span> extension, <span class="art">Art. 322</span> expenses, <span class="art">Art. 323</span> annual report.</strong></p></aside>
+<h2 id="6-institutional-role-within-state-administration">6 · Institutional Role within State Administration<a class="anchor" href="#6-institutional-role-within-state-administration" aria-label="Link to this section">#</a></h2>
+<p>The Constitution treats the SPSC as a guardian of meritocracy in state public services.</p>
+<ul class='lst'><li>Its advisory scope covers <strong>recruitment and evaluation</strong> such as promotions and disciplinary proceedings.</li><li>It does <strong>not</strong> deal with broader personnel administration such as service classification, pay structures, cadre policies or training. These are handled by the Department of Personnel or the General Administration Department.</li><li>Its recommendations are <strong>advisory</strong>; the state government may depart from them with legislative accountability.</li><li>The executive can frame rules defining the extent and manner of the Commission's advisory involvement.</li></ul>
+<h3>Overlap with the State Vigilance Commission</h3>
+<ul class='lst'><li>The <strong>State Vigilance Commission (SVC)</strong> emerged in <strong>1964</strong>.</li><li>Both bodies are consulted in disciplinary cases, so overlapping jurisdiction can lead to differing recommendations.</li><li>As a constitutional authority, the <strong>SPSC retains precedence</strong> when conflicts arise.</li></ul>
+<div class="two"><div class="col"><h4>What the SPSC does</h4><ul><li>Conducts exams</li><li>advises on recruitment, promotions, discipline and claims</li><li>reports annually</li></ul></div><div class="col"><h4>What it does not do</h4><ul><li>Bind the government</li><li>decide service classification, pay structures, cadre policies or training</li><li>give a right to appointment</li></ul></div></div>
+<h2 id="7-limits-on-the-spsc-s-authority">7 · Limits on the SPSC's Authority<a class="anchor" href="#7-limits-on-the-spsc-s-authority" aria-label="Link to this section">#</a></h2>
+<p>The Constitution carves out areas where the SPSC is not consulted.</p>
+<div class="tblock"><div class="tcap">Exclusions from consultation</div><div class="tablewrap"><table><thead><tr><th>Excluded area</th><th>Who decides</th></tr></thead><tbody><tr><th scope='row'>Reservation in favour of any backward class of citizens</th><td>State executive and legislature</td></tr><tr><th scope='row'>Claims of Scheduled Castes and Scheduled Tribes in appointments to services and posts</th><td>State executive and legislature</td></tr><tr><th scope='row'>Posts, services or matters excluded by the Governor through regulations</th><td>Governor, subject to Legislature</td></tr></tbody></table></div></div>
+<h3>Governor's regulations</h3>
+<ul class='lst'><li>The Governor may exclude specified posts, services or matters from the SPSC's purview by making regulations.</li><li>Every such regulation must be <strong>laid before each House of the State Legislature for at least fourteen days</strong>.</li><li>The State Legislature may <strong>amend or repeal</strong> those regulations.</li></ul>
+<aside class="callout mnemo"><span class="tag">Exclusions</span><div class="mn"><b>R</b><b>S</b><b>G</b></div><p><strong>R</strong>eservation for backward classes, <strong>S</strong>C/ST claims, <strong>G</strong>overnor's regulations: "<strong>R</strong>ules <strong>S</strong>et <strong>G</strong>ently".</p></aside>
+<h2 id="8-joint-state-public-service-commission">8 · Joint State Public Service Commission<a class="anchor" href="#8-joint-state-public-service-commission" aria-label="Link to this section">#</a></h2>
+<p>Two or more States may have a <strong>Joint State Public Service Commission (JSPSC)</strong>. It is created by a <strong>law of Parliament</strong> when the Legislatures of the States pass resolutions requesting it (<span class="art">Article 315</span>).</p>
+<div class="tblock"><div class="tcap">SPSC versus JSPSC</div><div class="tablewrap"><table><thead><tr><th>Point</th><th>SPSC</th><th>JSPSC</th></tr></thead><tbody><tr><th scope='row'>Nature</th><td>Constitutional body</td><td>Statutory body (created only by a Parliament law on state request)</td></tr><tr><th scope='row'>Appointing authority</th><td>Governor</td><td>President</td></tr><tr><th scope='row'>Tenure</th><td>Six years or age 62, whichever earlier</td><td>Six years or age 62, whichever earlier</td></tr><tr><th scope='row'>Suspension and removal</th><td>President removes; Governor may suspend during SC enquiry</td><td>President suspends or removes</td></tr><tr><th scope='row'>Resignation</th><td>To the Governor</td><td>To the President</td></tr><tr><th scope='row'>Number of members and conditions of service</th><td>Governor decides</td><td>President decides under the enabling statute</td></tr><tr><th scope='row'>Annual report</th><td>To the Governor</td><td>To each of the Governors of the States it serves; each places it before his State Legislature</td></tr></tbody></table></div></div>
+<h3>Other points</h3>
+<ul class='lst'><li>Where a single State needs support, the <strong>UPSC may serve the State</strong> on the Governor's request and with Presidential approval, an alternate statutory route for cooperation in recruitment.</li></ul>
+<aside class="callout note"><span class="tag">Historical roots</span><p>Under the Government of India Act, 1919, a <strong>Central Public Service Commission</strong> was constituted (1926). The Government of India Act, 1935 envisaged a Federal Public Service Commission and also Provincial and Joint Public Service Commissions for groups of provinces. These precedents inform the modern JSPSC.</p></aside>
+<aside class="callout alert"><span class="tag">Handout alert</span><p>Do not carry the SPSC rule over to the JSPSC. For an SPSC the Governor appoints and the President removes. For a JSPSC the <strong>President</strong> both appoints and removes (the handout says so for both).</p></aside>
+<h2 id="9-key-articles">9 · Key Articles<a class="anchor" href="#9-key-articles" aria-label="Link to this section">#</a></h2>
+<div class="tblock"><div class="tcap">Article table (rebuilt from the flattened handout)</div><div class="tablewrap"><table><thead><tr><th>Article</th><th>Subject matter</th></tr></thead><tbody><tr><th scope='row'>315</th><td>Establishment of Public Service Commissions</td></tr><tr><th scope='row'>316</th><td>Appointment and term of office of Chairman and Members</td></tr><tr><th scope='row'>317</th><td>Removal and suspension</td></tr><tr><th scope='row'>318</th><td>Conditions of service and staff regulations</td></tr><tr><th scope='row'>319</th><td>Restrictions on further employment</td></tr><tr><th scope='row'>320</th><td>Functions of PSC</td></tr><tr><th scope='row'>321</th><td>Extension of functions</td></tr><tr><th scope='row'>322</th><td>Expenses charged on Consolidated Fund</td></tr><tr><th scope='row'>323</th><td>Annual report</td></tr></tbody></table></div></div>
+<aside class="callout mnemo"><span class="tag">Article ladder</span><div class="mn"><b>E</b><b>A</b><b>R</b><b>C</b><b>R</b><b>F</b><b>E</b><b>E</b><b>A</b></div><p><strong>E</strong>stablish 315, <strong>A</strong>ppointment 316, <strong>R</strong>emoval 317, <strong>C</strong>onditions 318, <strong>R</strong>estrictions 319, <strong>F</strong>unctions 320, <strong>E</strong>xtension 321, <strong>E</strong>xpenses 322, <strong>A</strong>nnual report 323: "<strong>E</strong>very <strong>A</strong>spirant <strong>R</strong>eads <strong>C</strong>ase <strong>R</strong>eports <strong>F</strong>or <strong>E</strong>xam <strong>E</strong>xcellence <strong>A</strong>lways".</p></aside>
+<aside class="callout note"><span class="tag">Two Articles to pin</span><p>The post-tenure employment bar is <strong><span class="art">Art. 319</span></strong> and the charged expenditure rule is <strong><span class="art">Art. 322</span></strong>.</p></aside>
+</div><section id="chapter-timeline"><h2>Timeline<a class="anchor" href="#chapter-timeline">#</a></h2><ol class="timeline"><li class="tl high"><time class="yr">1926</time><span class="pin"></span><div class="tlbody">Central Public Service Commission constituted (under the Government of India Act, 1919)<span class="star" title="High-yield">★</span></div></li><li class="tl high"><time class="yr">1935</time><span class="pin"></span><div class="tlbody">Government of India Act, 1935 envisaged Federal, Provincial and Joint Public Service Commissions<span class="star" title="High-yield">★</span></div></li><li class="tl "><time class="yr">1964</time><span class="pin"></span><div class="tlbody">State Vigilance Commission emerged, overlapping with SPSC in disciplinary matters</div></li></ol></section><section id="connects"><h2>Connects to<a class="anchor" href="#connects">#</a></h2><div class="lkgrid"><article class="link"><div class="lk-line">Ch 31: Union Public Service Commission</div><p>The UPSC framework (Arts. 315-323) is the model; age limit 65 versus 62.</p></article><article class="link"><div class="lk-line">Ch 11: Governor</div><p>Governor appoints SPSC members and lays the annual report before the Legislature.</p></article><article class="link"><div class="lk-line">Ch 10: Union Executive</div><p>The President removes SPSC members on <span class="art">Art. 317</span> grounds.</p></article><article class="link"><div class="lk-line">Ch 14: Judiciary</div><p>Supreme Court enquires into misbehaviour charges and its advice binds the President.</p></article><article class="link"><div class="lk-line">Ch 17: State Legislature</div><p>Extends SPSC functions by State law and reviews the Governor's regulations.</p></article><article class="link"><div class="lk-line">Ch 43: Central Vigilance Commission</div><p>Vigilance bodies overlap with the SPSC in disciplinary consultation.</p></article></div></section><section id="recall"><h2>Recall sheet<a class="anchor" href="#recall">#</a></h2><p class="gdesc">Read once, hide it, then rebuild the chapter from memory.</p><ol class="recall"><li>SPSC: constitutional body, Part XIV, Arts. 315-323, same framework as UPSC.</li><li>Chairman and Members appointed by the Governor; strength not fixed; half the Members with 10 years' government service.</li><li>Tenure six years or age 62 (UPSC 65); resignation to the Governor; Governor appoints an acting Chairman.</li><li>Only the President removes (<span class="art">Art. 317</span>): insolvency, outside paid job, infirmity, or misbehaviour after the Supreme Court's binding advice; Governor suspends during the enquiry.</li><li>Misbehaviour: interest or profit in a government contract, except as one shareholder in an incorporated company.</li><li>Independence: tenure, protected conditions, charged expenditure (<span class="art">Art. 322</span>), post-tenure bars, no second term.</li><li>Functions: exams, advice on recruitment, promotion, six disciplinary penalties, claims; consultation is directory.</li><li>Not consulted on backward class reservation or SC/ST claims; Governor's regulations laid 14 days.</li><li>JSPSC: statutory, created by Parliament law on state request; President appoints, suspends, removes.</li></ol></section><section id="practice"><h2>Test yourself<a class="anchor" href="#practice">#</a></h2><h3>Quick quiz</h3><div class="count" id="score">0 / 0 correct</div><div id="quiz"></div><h3>Flashcards</h3><p class="gdesc">Tap the card to flip.</p><div class="deck"><div class="fc" id="fc" tabindex="0" role="button" aria-label="Flashcard, press to flip"></div><div class="count" id="fccount"></div><div class="row"><button class="btn" id="fcprev" type="button">Back</button><button class="btn pri" id="fcnext" type="button">Next</button><button class="btn" id="fcmiss" type="button">Missed it</button><button class="btn" id="fcshuf" type="button">Shuffle</button><button class="btn" id="fconlymiss" type="button">Only missed</button><button class="btn" id="fcall" type="button">All cards</button></div></div></section><nav class="pager"><a href="pol-ch31.html"><small>Previous</small>Union Public Service Commission</a><a class="nx" href="pol-ch33.html"><small>Next</small>Finance Commission</a></nav><footer>Personal study notes built from the Sarrthi IAS GS Foundation Polity handout (Parts 1 to 3). Handout only: no class slides or teacher ink for this chapter. Mnemonics and shortcuts are memory aids built from the handout’s own facts. Copyright belongs to the teacher; keep this private.</footer></main></div><div id="lightbox" hidden><img alt=""></div><script type="application/json" id="data">{"mcq": [{"q": "Who appoints the Chairman and Members of a State Public Service Commission?", "options": ["President", "Governor", "Chief Minister", "Chief Justice of the High Court"], "answer": 1, "explain": "The Governor appoints; the President alone removes."}, {"q": "Who has the constitutional power to remove the Chairman or a Member of an SPSC?", "options": ["Governor", "State Legislature", "President", "High Court"], "answer": 2, "explain": "Removal lies only with the President under Article 317."}, {"q": "Members of an SPSC hold office for six years or until the age of", "options": ["60 years", "62 years", "65 years", "58 years"], "answer": 1, "explain": "Six years or age 62, whichever is earlier; 65 is the UPSC limit."}, {"q": "What portion of the Members of an SPSC must have held office for at least ten years under the Government of India or a State Government?", "options": ["One-fourth", "One-third", "One-half", "Two-thirds"], "answer": 2, "explain": "One-half of the Members, as a safeguard for experienced administrative representation."}, {"q": "In a misbehaviour enquiry, who may suspend the Chairman or Member of an SPSC while the Supreme Court inquires?", "options": ["President", "Governor", "Chief Justice of India", "State Legislature"], "answer": 1, "explain": "The Governor is empowered to suspend pending the President's final decision."}, {"q": "Expenses of an SPSC are charged on the Consolidated Fund of the State under which Article?", "options": ["317", "320", "322", "323"], "answer": 2, "explain": "Article 322 charges salaries, allowances and pensions on the State Consolidated Fund."}, {"q": "According to the Supreme Court, consultation with the SPSC is", "options": ["mandatory and its breach voids the decision", "directory, not mandatory", "required only for promotions", "required only for dismissals"], "answer": 1, "explain": "Non-consultation does not invalidate the final decision."}, {"q": "A Joint State Public Service Commission is", "options": ["a constitutional body", "a statutory body created by Parliament", "created by a Governor's order", "created by the Supreme Court"], "answer": 1, "explain": "A JSPSC arises by a Parliament law on request by State Legislatures."}, {"q": "The SPSC is NOT consulted on", "options": ["method of recruitment", "disciplinary matters", "reservation for any backward class of citizens", "promotion principles"], "answer": 2, "explain": "The handout lists reservation in favour of backward classes and SC/ST claims as outside the SPSC's consultation."}, {"q": "Which Article deals with the annual report of a Public Service Commission?", "options": ["321", "322", "323", "319"], "answer": 2, "explain": "Article 323: annual report; 319 is restrictions on further employment."}], "cards": [{"q": "Which Articles govern the SPSC?", "a": "Part XIV, Articles 315-323, the same framework as the UPSC."}, {"q": "Who appoints SPSC Chairman and Members?", "a": "The Governor."}, {"q": "Who removes them?", "a": "Only the President (Article 317)."}, {"q": "Tenure of SPSC members?", "a": "Six years or age 62, whichever is earlier (UPSC: 65)."}, {"q": "How many Members need ten years' government service?", "a": "One-half of the Members."}, {"q": "Who appoints an acting Chairman of an SPSC?", "a": "The Governor, from among the sitting Members."}, {"q": "Three express grounds for removal?", "a": "Adjudged insolvent; paid employment outside the office; unfit due to mental or physical infirmity."}, {"q": "Misbehaviour procedure?", "a": "President refers to the Supreme Court; removal only if the Court upholds the charge and advises it; the advice binds the President."}, {"q": "Who suspends during the enquiry?", "a": "The Governor."}, {"q": "What is misbehaviour here?", "a": "Being concerned or interested in a government contract, or deriving profit from it (except as one shareholder in an incorporated company)."}, {"q": "Which Article charges SPSC expenses on the State Consolidated Fund?", "a": "Article 322."}, {"q": "Can a member get a second term in the same office?", "a": "No."}, {"q": "Six disciplinary matters needing consultation?", "a": "Censure; withholding increments or promotions; recovery of loss; demotion; compulsory retirement; removal or dismissal."}, {"q": "Is SPSC consultation mandatory?", "a": "No. It is directory, and its recommendation gives no right to appointment."}, {"q": "Who can extend the SPSC's functions?", "a": "The State Legislature, by a State law."}, {"q": "Governor's regulations excluding posts must be laid for how long?", "a": "At least fourteen days before each House; the Legislature may amend or repeal them."}, {"q": "What does the Governor attach to the annual report?", "a": "A memorandum explaining why the Commission's advice was not accepted and the reasons."}, {"q": "Which areas is the SPSC not consulted on?", "a": "Reservation for backward classes and the claims of SC and ST in appointments."}, {"q": "Nature of a JSPSC?", "a": "Statutory, created by a Parliament law on request of state Legislatures."}, {"q": "Who appoints and removes a JSPSC's members?", "a": "The President."}, {"q": "Which body emerged in 1964 and overlaps with the SPSC?", "a": "The State Vigilance Commission."}, {"q": "Which Article covers restrictions on further employment?", "a": "Article 319."}]}</script><script>window.__NB={"id": "polity", "ch": 32, "title": "State Public Service Commission"};/* Shared store: reading progress, preferences, optional cross-device sync. */
+(function(){
+var KEY='nbapp:v1',root=document.documentElement;
+function today(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function fresh(){return{v:1,prefs:{fs:1,lh:1.65,w:780,font:'serif',theme:'auto',pt:0},last:null,nb:{},days:{}}}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+var S;
+try{S=JSON.parse(lsGet(KEY))}catch(e){S=null}
+if(!S||!S.v)S=fresh();
+S.prefs=Object.assign(fresh().prefs,S.prefs||{});
+// one-time import of the older done list and theme
+if(!S.migrated){
+  try{var od=JSON.parse(lsGet('nb-done')||'[]');od.forEach(function(n){var c=chap('modern-india',n);c.done=1;c.dt=1})}catch(e){}
+  var ot=lsGet('nb-theme');if(ot&&!S.prefs.pt){S.prefs.theme=ot;S.prefs.pt=1}
+  S.migrated=1;
+}
+function chap(nb,n){var b=S.nb[nb]||(S.nb[nb]={});return b[n]||(b[n]={read:{},done:0,dt:0,pos:null,t:0})}
+var listeners=[],dirty=false,saveT=null,syncT=null;
+function save(){
+  dirty=true;clearTimeout(saveT);
+  saveT=setTimeout(function(){lsSet(KEY,JSON.stringify(S));listeners.forEach(function(f){try{f()}catch(e){}});scheduleSync()},250);
+}
+function flush(){lsSet(KEY,JSON.stringify(S))}
+function merge(a,b){ // a local, b remote; returns merged
+  var o=fresh();
+  o.prefs=((b.prefs&&b.prefs.pt||0)>(a.prefs&&a.prefs.pt||0))?Object.assign({},a.prefs,b.prefs):Object.assign({},b.prefs,a.prefs);
+  o.last=(!a.last||(b.last&&b.last.ts>a.last.ts))?b.last:a.last;
+  o.migrated=1;
+  var ids={};Object.keys(a.nb||{}).concat(Object.keys(b.nb||{})).forEach(function(k){ids[k]=1});
+  Object.keys(ids).forEach(function(id){
+    o.nb[id]={};var ca=(a.nb||{})[id]||{},cb=(b.nb||{})[id]||{},ks={};
+    Object.keys(ca).concat(Object.keys(cb)).forEach(function(k){ks[k]=1});
+    Object.keys(ks).forEach(function(k){
+      var x=ca[k],y=cb[k];if(!x||!y){o.nb[id][k]=x||y;return}
+      var r=Object.assign({},x.read,y.read),done=(y.dt||0)>(x.dt||0)?y:x,pos=(y.t||0)>(x.t||0)?y.pos:x.pos;
+      o.nb[id][k]={read:r,done:done.done,dt:done.dt||0,pos:pos,t:Math.max(x.t||0,y.t||0)};
+    });
+  });
+  var dk={};Object.keys(a.days||{}).concat(Object.keys(b.days||{})).forEach(function(k){dk[k]=1});
+  Object.keys(dk).forEach(function(k){o.days[k]=Math.max((a.days||{})[k]||0,(b.days||{})[k]||0)});
+  return o;
+}
+var syncState='off';
+function scheduleSync(){clearTimeout(syncT);syncT=setTimeout(function(){sync()},4000)}
+var dbp=null;
+function getRef(){
+  if(dbp)return dbp;
+  dbp=(async function(){
+    if(!window.claude||!claude.use)return null;
+    var db=await claude.use('db'),u=await claude.use('user');
+    if(!db||!u||!u.id)return null;
+    var id=await u.id();if(!id)return null;
+    return db.doc('data/users/'+id+'/nbapp');
+  })().catch(function(){return null});
+  return dbp;
+}
+var busy=false;
+async function sync(){
+  if(busy)return;busy=true;
+  try{
+    var ref=await getRef();if(!ref){syncState='local';return}
+    var snap=await ref.get(),rem=null;
+    if(snap.exists){var d=snap.data();try{rem=JSON.parse(d.state)}catch(e){}}
+    var m=rem?merge(S,rem):S;
+    var changed=JSON.stringify(m)!==JSON.stringify(S);
+    S=m;
+    if(changed){flush();listeners.forEach(function(f){try{f()}catch(e){}})}
+    var out=JSON.stringify(S);
+    if(!rem||JSON.stringify(rem)!==out)await ref.set({v:1,updated:Date.now(),state:out});
+    syncState='synced';
+  }catch(e){syncState='local'}
+  finally{busy=false}
+}
+var API={
+  get:function(){return S},
+  chap:chap,
+  save:save,flush:flush,sync:sync,
+  onChange:function(f){listeners.push(f)},
+  syncState:function(){return syncState},
+  setPref:function(k,v){S.prefs[k]=v;S.prefs.pt=Date.now();applyPrefs();save()},
+  reset:function(){S=fresh();S.migrated=1;flush();save()},
+  today:today,
+  pct:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c||!total)return 0;var r=0;Object.keys(c.read||{}).forEach(function(k){if(c.read[k])r++});return Math.min(1,r/total)},
+  isDone:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c)return false;if(c.dt)return !!c.done;return false}
+};
+window.NBS=API;
+function applyPrefs(){
+  var p=S.prefs;
+  var th=p.theme;
+  if(th==='auto')root.removeAttribute('data-theme');else root.setAttribute('data-theme',th);
+  root.style.setProperty('--zoom',p.fs);root.style.setProperty('--lh',p.lh);root.style.setProperty('--pw',p.w+'px');
+  root.setAttribute('data-font',p.font);
+}
+API.applyPrefs=applyPrefs;applyPrefs();
+// studied time, counted while the page is visible and touched in the last minute
+var lastAct=Date.now();
+['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){lastAct=Date.now()},{passive:true})});
+setInterval(function(){
+  if(document.hidden||Date.now()-lastAct>60000||!window.__NB)return;
+  var t=today();S.days[t]=(S.days[t]||0)+15;save();
+},15000);
+document.addEventListener('visibilitychange',function(){if(document.hidden){flush();sync()}else{sync()}});
+addEventListener('pagehide',flush);
+setTimeout(sync,800);
+})();
+(function(){var b=document.getElementById('themebtn');if(!b)return;var o=['auto','light','sepia','dark'];b.addEventListener('click',function(){var t=NBS.get().prefs.theme,i=(o.indexOf(t)+1)%o.length;NBS.setPref('theme',o[i]);b.textContent='Theme: '+o[i]})})();
+(function(){
+var D=JSON.parse(document.getElementById('data').textContent);
+// map/outline toggle
+document.querySelectorAll('.seg button').forEach(function(bt){bt.addEventListener('click',function(){var v=bt.dataset.v;document.querySelectorAll('.seg button').forEach(function(x){x.setAttribute('aria-pressed',x===bt)});document.getElementById('mm-map').hidden=v!=='map';document.getElementById('mm-outline').hidden=v!=='outline'})});
+if(window.innerWidth<640){var ob=document.querySelector('.seg button[data-v="outline"]');if(ob)ob.click()}
+// lightbox
+var lb=document.getElementById('lightbox'),li=lb.querySelector('img');
+document.querySelectorAll('a.zoom').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();li.src=a.getAttribute('href');lb.hidden=false})});
+lb.addEventListener('click',function(){lb.hidden=true});document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true});
+// quiz
+var qz=document.getElementById('quiz'),score=document.getElementById('score'),right=0,answered=0;
+if(qz)D.mcq.forEach(function(m,i){var d=document.createElement('div');d.className='q';var t=document.createElement('div');t.className='qt';t.textContent=(i+1)+'. '+m.q;d.appendChild(t);var ex=document.createElement('div');ex.className='ex';ex.hidden=true;ex.textContent=m.explain;var btns=[];
+m.options.forEach(function(o,j){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent='ABCD'[j]+'. '+o;b.addEventListener('click',function(){if(d.dataset.done)return;d.dataset.done=1;answered++;if(j===m.answer){right++;b.classList.add('right')}else{b.classList.add('wrong');btns[m.answer].classList.add('right')}ex.hidden=false;score.textContent=right+' / '+answered+' correct'});btns.push(b);d.appendChild(b)});d.appendChild(ex);qz.appendChild(d)});
+// flashcards
+var fc=document.getElementById('fc');
+if(fc){var all=D.cards.map(function(c,i){return{q:c.q,a:c.a,i:i}}),deck=all.slice(),pos=0,back=false,missed={};
+function show(){if(!deck.length){fc.textContent='No cards in this deck.';document.getElementById('fccount').textContent='';return}var c=deck[pos];fc.textContent=back?c.a:c.q;fc.classList.toggle('back',back);document.getElementById('fccount').textContent='Card '+(pos+1)+' of '+deck.length+(back?' (answer)':' (question)')}
+function go(d){if(!deck.length)return;pos=(pos+d+deck.length)%deck.length;back=false;show()}
+fc.addEventListener('click',function(){back=!back;show()});fc.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();back=!back;show()}});
+document.getElementById('fcnext').onclick=function(){go(1)};document.getElementById('fcprev').onclick=function(){go(-1)};
+document.getElementById('fcmiss').onclick=function(){if(deck.length){missed[deck[pos].i]=1;go(1)}};
+document.getElementById('fcshuf').onclick=function(){for(var i=deck.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=deck[i];deck[i]=deck[j];deck[j]=t}pos=0;back=false;show()};
+document.getElementById('fconlymiss').onclick=function(){deck=all.filter(function(c){return missed[c.i]});pos=0;back=false;show()};
+document.getElementById('fcall').onclick=function(){deck=all.slice();pos=0;back=false;show()};show()}
+// side toc highlight
+var links=[].slice.call(document.querySelectorAll('.sidetoc a'));
+if('IntersectionObserver' in window&&links.length){var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[e.target.id];if(a)a.classList.add('on')}})},{rootMargin:'-70px 0px -70% 0px'});Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)})}
+})();
+(function(){
+var N=window.__NB,S=window.NBS;if(!N||!S)return;
+var root=document.documentElement,body=document.body;
+var rec=function(){return S.chap(N.id,N.ch)};
+var heads=[].slice.call(document.querySelectorAll('.page h2[id]'));
+var titles=heads.map(function(h){return h.firstChild?h.firstChild.textContent.trim():h.id});
+var ids=heads.map(function(h){return h.id});
+var seen={},manual={};
+// Done box
+var box=document.getElementById('donebox');
+if(box){box.checked=!!(rec().done);box.addEventListener('change',function(){var r=rec();r.done=box.checked?1:0;r.dt=Date.now();S.save()})}
+// progress bar
+var bar=document.createElement('div');bar.className='rbar';body.appendChild(bar);
+// per-section read buttons
+heads.forEach(function(h,i){
+  var b=document.createElement('button');b.type='button';b.className='h2read';
+  function paint(){var on=!!rec().read[h.id];b.setAttribute('aria-pressed',on);b.textContent=on?'Read ✓':'Mark read'}
+  b.addEventListener('click',function(){var r=rec();manual[h.id]=1;if(r.read[h.id])delete r.read[h.id];else r.read[h.id]=1;r.t=Date.now();S.save();paint();refresh()});
+  h.insertBefore(b,h.firstChild);paint();b._paint=paint;h._b=b;
+});
+function repaint(){heads.forEach(function(h){h._b._paint()});refresh()}
+// caption clamp
+document.querySelectorAll('figcaption').forEach(function(c){if(c.textContent.length>170){c.classList.add('clamp');c.addEventListener('click',function(){c.classList.toggle('open')})}});
+// dock
+var dock=document.createElement('div');dock.className='dock';
+dock.innerHTML='<button type="button" id="dprev" aria-label="Previous section">‹ Prev</button><button type="button" class="mid" id="dmid"></button><button type="button" id="dnext" aria-label="Next section">Next ›</button>';
+body.appendChild(dock);body.classList.add('has-dock');
+var dmid=dock.querySelector('#dmid');
+function curIdx(){var y=innerHeight*0.25,c=-1;for(var i=0;i<heads.length;i++){if(heads[i].getBoundingClientRect().top<=y)c=i;else break}return c}
+function goto(i){if(i<0||i>=heads.length)return;heads[i].scrollIntoView({behavior:'smooth',block:'start'})}
+dock.querySelector('#dprev').onclick=function(){var c=curIdx(),h=heads[c];goto(h&&h.getBoundingClientRect().top<-40?c:c-1)};
+dock.querySelector('#dnext').onclick=function(){goto(curIdx()+1)};
+function refresh(){
+  var c=curIdx(),r=rec().read,n=0;ids.forEach(function(id){if(r[id])n++});
+  dmid.innerHTML='<b>'+(c<0?'Top':(c+1)+'/'+heads.length)+'</b> · '+(c<0?'Start of chapter':esc(titles[c]))+' · '+n+' read';
+}
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+// sheets
+function sheet(html){var s=document.createElement('div');s.className='sheet';s.hidden=true;s.innerHTML='<div class="sheetin">'+html+'</div>';s.addEventListener('click',function(e){if(e.target===s)s.hidden=true});body.appendChild(s);return s}
+var cs=sheet('<h3>Sections</h3><div class="secl" id="secl"></div>');
+dmid.onclick=function(){
+  var r=rec().read,c=curIdx(),h='';
+  ids.forEach(function(id,i){h+='<a href="#'+id+'" data-i="'+i+'" class="'+(r[id]?'rd ':'')+(i===c?'cur':'')+'"><span class="tk">'+(r[id]?'✓':'')+'</span><span>'+esc(titles[i])+'</span></a>'});
+  cs.querySelector('#secl').innerHTML=h;cs.hidden=false;
+  var cur=cs.querySelector('.cur');if(cur)cur.scrollIntoView({block:'center'});
+};
+cs.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-i]');if(a){e.preventDefault();cs.hidden=true;goto(+a.dataset.i)}});
+var ps=sheet('<h3>Reading settings</h3><div id="pbody"></div>');
+function grp(key,label,opts){var p=S.get().prefs;return '<div class="srow"><label>'+label+'</label><div class="grp">'+opts.map(function(o){return '<button type="button" data-k="'+key+'" data-v="'+o[0]+'" aria-pressed="'+(String(p[key])===String(o[0]))+'">'+o[1]+'</button>'}).join('')+'</div></div>'}
+function drawPrefs(){
+  ps.querySelector('#pbody').innerHTML=
+    grp('fs','Text size',[[0.88,"A−"],[1,"A"],[1.12,"A+"],[1.25,"A++"],[1.4,"A+++"]])+
+    grp('lh','Spacing',[[1.45,'Tight'],[1.65,'Normal'],[1.85,'Roomy']])+
+    grp('w','Width',[[640,'Narrow'],[780,'Medium'],[980,'Wide']])+
+    grp('font','Font',[['serif','Serif'],['sans','Sans']])+
+    grp('theme','Theme',[['auto','Auto'],['light','Light'],['sepia','Sepia'],['dark','Dark']])+
+    '<div class="srow"><label>Extras</label><div class="grp"><button type="button" id="pfocus" aria-pressed="'+body.classList.contains('focus')+'">Focus mode</button>'+('wakeLock' in navigator?'<button type="button" id="pwake" aria-pressed="'+!!wl+'">Keep screen on</button>':'')+'</div></div>';
+}
+var wl=null;
+ps.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('button');if(!b)return;
+  if(b.dataset.k){var v=b.dataset.v;S.setPref(b.dataset.k,b.dataset.k==='font'||b.dataset.k==='theme'?v:+v);drawPrefs();return}
+  if(b.id==='pfocus'){body.classList.toggle('focus');drawPrefs();return}
+  if(b.id==='pwake'){
+    if(wl){wl.release();wl=null;drawPrefs()}else{navigator.wakeLock.request('screen').then(function(l){wl=l;l.addEventListener('release',function(){wl=null});drawPrefs()}).catch(function(){})}
+  }
+});
+function openPrefs(){drawPrefs();ps.hidden=false}
+var aa=document.getElementById('aabtn');if(aa)aa.onclick=openPrefs;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){ps.hidden=true;cs.hidden=true;body.classList.remove('focus')}});
+// focus-mode exit: tap the top edge area
+var fx=document.createElement('button');fx.type='button';fx.textContent='Exit focus';fx.className='h2read';fx.style.cssText='position:fixed;right:10px;top:10px;z-index:45;float:none;display:none';fx.onclick=function(){body.classList.remove('focus')};body.appendChild(fx);
+new MutationObserver(function(){fx.style.display=body.classList.contains('focus')?'block':'none'}).observe(body,{attributes:true,attributeFilter:['class']});
+// scroll handling
+var tick=false,saveAt=0;
+function onScroll(){
+  if(tick)return;tick=true;requestAnimationFrame(function(){
+    tick=false;
+    var doc=document.documentElement,max=doc.scrollHeight-innerHeight;
+    bar.style.width=(max>0?Math.min(100,scrollY/max*100):0)+'%';
+    var vh=innerHeight,r=rec(),ch=false;
+    heads.forEach(function(h,i){
+      var t=h.getBoundingClientRect().top;
+      if(t<vh&&t>-40)seen[h.id]=1;
+      var nt=i+1<heads.length?heads[i+1].getBoundingClientRect().top:(scrollY>=max-160?-1:1e9);
+      if(seen[h.id]&&nt<vh*0.35&&!r.read[h.id]&&!manual[h.id]){r.read[h.id]=1;ch=true;h._b._paint()}
+    });
+    if(ch){r.t=Date.now();S.save()}
+    refresh();
+    var now=Date.now();
+    if(now-saveAt>1500){saveAt=now;var c=curIdx(),rr=rec();
+      if(c>=0){var hh=heads[c].getBoundingClientRect().top;rr.pos={s:ids[c],o:Math.round(-hh)};rr.t=now}
+      S.get().last={nb:N.id,ch:N.ch,s:c>=0?ids[c]:'',st:c>=0?titles[c]:'',ts:now};S.save()}
+  })}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
+S.onChange(function(){if(box)box.checked=!!rec().done;repaint()});
+refresh();onScroll();
+// resume offer
+var p=rec().pos;
+if(!location.hash&&p&&p.s&&ids.indexOf(p.s)>0){
+  var el=document.getElementById(p.s);
+  var t=document.createElement('div');t.className='toast';t.innerHTML='<span>Resume at “'+esc(titles[ids.indexOf(p.s)])+'”?</span><button type="button" id="tgo">Resume</button><button type="button" id="tx">Dismiss</button>';
+  body.appendChild(t);
+  t.querySelector('#tgo').onclick=function(){if(el){el.scrollIntoView({block:'start'});scrollBy(0,(p.o||0))}t.remove()};
+  t.querySelector('#tx').onclick=function(){t.remove()};
+  setTimeout(function(){if(t.parentNode)t.remove()},12000);
+}
+})();
+</script></body></html>
