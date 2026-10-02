@@ -318,6 +318,8 @@ function render(){
   se.textContent=ss==='synced'?'Progress is saved to your account and follows you across devices.':(ss==='local'?'Progress is saved on this tablet. Use Backup to keep a copy or move it to another device.':'Progress is saved on this tablet. Use Backup to keep a copy or move it to another device.');
 }
 render();S.onChange(render);setTimeout(render,2500);setTimeout(render,6000);
+// self-update: when online, the live library.json replaces the list baked into this page
+try{fetch('library.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null}).then(function(j){if(j&&j.length&&JSON.stringify(j)!==JSON.stringify(LIBS)){LIBS=j;render()}}).catch(function(){})}catch(e){}
 document.getElementById('reset').onclick=function(){if(confirm('Clear all reading progress on this device and your account?')){S.reset();render()}};
 })();
 </script>
