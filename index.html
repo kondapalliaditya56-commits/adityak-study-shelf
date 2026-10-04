@@ -173,7 +173,132 @@ figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bott
 .fine{margin-top:26px;color:var(--muted);font:13.5px/1.5 var(--sans);border-top:1px solid var(--line);padding-top:14px}
 .fine b{color:var(--ink)}
 .empty{border:1.5px dashed var(--line);border-radius:16px;padding:16px;color:var(--muted);font:14.5px/1.5 var(--sans)}
+
+/* ---- Study hub: today, recall, check-in, habits, progress ---- */
+.hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:14px;margin:0 0 22px;font-family:var(--sans)}
+.hub .wide{grid-column:1/-1}
+.hnudge{grid-column:1/-1;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--saf-soft);border:1.5px solid var(--saf);border-radius:14px;padding:12px 14px;font:600 15px/1.4 var(--sans);color:var(--ink)}
+.hnudge.calm{background:var(--acc-soft);border-color:var(--acc)}
+.hcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.hh{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.hh small{display:block;font:700 11.5px var(--sans);letter-spacing:.07em;text-transform:uppercase;color:var(--acc)}
+.hh h2{margin:2px 0 0;padding:0;border:0;font:700 21px/1.25 var(--serif);color:var(--ink)}
+.hrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.hb{font:600 14px var(--sans);min-height:44px;padding:0 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.hb:focus-visible,.hi:focus-visible,.hsel:focus-visible,.hev button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.hb.pri{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+.hb.on{background:var(--acc-soft);border-color:var(--acc);color:var(--acc)}
+.hb.sm{min-height:36px;padding:0 10px;font-size:13px}
+.hb.warn{background:var(--saf-soft);border-color:var(--saf);color:var(--saf)}
+.hmut{margin:0;color:var(--muted);font:13.5px/1.5 var(--sans)}
+.hev{display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;padding:8px 0;border-top:1px solid var(--line);align-items:start}
+.hev:first-child{border-top:0}
+.hev time{font:600 13px/1.35 var(--mono);color:var(--ink)}.hev time span{color:var(--muted);font-weight:500}
+.hev b{font:600 15.5px/1.35 var(--sans);overflow-wrap:anywhere}
+.hev em{font:700 11px var(--sans);font-style:normal;letter-spacing:.06em;text-transform:uppercase;margin-left:8px;padding:2px 8px;border-radius:99px;background:var(--acc);color:var(--acc-ink)}
+.hev.live{background:var(--acc-soft);border-radius:10px;padding-inline:8px;border-top-color:transparent}
+.hev.past{opacity:.5}
+.hdue{display:flex;flex-direction:column;gap:8px}
+.hit{border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:8px;background:var(--bg)}
+.hit.over{border-color:var(--saf)}
+.hit b{font:600 15.5px/1.35 var(--sans);overflow-wrap:anywhere}
+.hit .sub2{font:13px var(--sans);color:var(--muted)}
+.pill{font:700 11px var(--sans);padding:2px 8px;border-radius:99px;letter-spacing:.04em;display:inline-block}
+.pill.H{background:var(--red-soft);color:var(--red)}.pill.M{background:var(--saf-soft);color:var(--saf)}.pill.L{background:var(--surface2);color:var(--muted)}
+.hform{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.hform .full{grid-column:1/-1}
+.hi,.hsel{font:16px var(--sans);min-height:44px;padding:0 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%;min-width:0}
+.hhab{display:flex;flex-direction:column;gap:6px}
+.hhr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;border-top:1px solid var(--line);padding-top:6px}
+.hhr:first-child{border-top:0;padding-top:0}
+.hhr button{text-align:left;min-height:44px;border:0;background:none;color:var(--ink);font:600 15px var(--sans);display:flex;gap:10px;align-items:center;cursor:pointer;padding:0}
+.hbox{width:24px;height:24px;border-radius:7px;border:2px solid var(--line);display:inline-flex;align-items:center;justify-content:center;flex:none;font-size:15px;color:var(--acc-ink)}
+.hbox.on{background:var(--acc);border-color:var(--acc)}
+.dots{display:flex;gap:4px;align-items:center}.dots i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}.dots i.on{background:var(--acc)}
+.hstreak{font:600 12.5px var(--sans);color:var(--muted);margin-left:6px}
+.wk{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;align-items:end;height:96px}
+.wk div{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:4px;font:600 11.5px var(--sans);color:var(--muted)}
+.wk i{display:block;width:100%;max-width:30px;background:var(--acc);border-radius:5px 5px 0 0;min-height:3px}
+.wk div.t i{background:var(--saf)}
+.hstat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.hstat div{background:var(--surface2);border-radius:10px;padding:8px;text-align:center}
+.hstat b{display:block;font:700 22px var(--serif);color:var(--acc)}.hstat span{font-size:12px;color:var(--muted)}
+.hsub{display:grid;grid-template-columns:minmax(0,1fr) 52px;gap:4px 10px;align-items:center;font:600 13.5px var(--sans)}
+.hsub .pb{grid-column:1/-1}
+.ftime{font:700 34px var(--mono);letter-spacing:.02em;text-align:center;color:var(--ink)}
+.mq{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--bg);display:flex;flex-direction:column;gap:6px}
+.mq .o{text-align:left;min-height:44px;padding:8px 12px;border-radius:9px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:15px/1.4 var(--sans);cursor:pointer}
+.mq .o.right{border-color:var(--good);background:var(--good-soft)}.mq .o.wrong{border-color:var(--red);background:var(--red-soft)}
+.mq .why{font:14px/1.45 var(--sans);color:var(--muted)}
+.fcard{min-height:130px;border:2px solid var(--acc);border-radius:14px;padding:18px;display:flex;align-items:center;justify-content:center;text-align:center;font:18px/1.5 var(--serif);cursor:pointer;background:var(--surface);color:var(--ink);width:100%}
+.fcard.back{background:var(--acc-soft)}
+.hhead{font:700 12px var(--sans);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:6px 0 0}
+details.hshelf summary{cursor:pointer;font:700 16px var(--sans);min-height:44px;display:flex;align-items:center}
+.hrowt{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;align-items:center;border-top:1px solid var(--line);padding:8px 0}
+.hrowt b{font:600 15px/1.35 var(--sans);overflow-wrap:anywhere}
+.hhe{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;border-top:1px solid var(--line);padding-top:8px}.hhe:first-child{border-top:0;padding-top:0}
+.hb:disabled{opacity:.4;cursor:default}
+@media (max-width:520px){.hhe{grid-template-columns:1fr}}
+@media (max-width:420px){.hform{grid-template-columns:1fr}.hev{grid-template-columns:64px minmax(0,1fr)}}
+@media (prefers-reduced-motion:no-preference){.hb{transition:background .15s,border-color .15s}}
 </style><main class="shelf"><h1>Study Shelf</h1><p class="sub">Your personal notebooks, with progress.</p>
+<section class="hub" id="hub" aria-label="Daily study hub">
+<div class="hnudge" id="h-nudge" hidden></div>
+
+<div class="hcard wide" id="h-today">
+<div class="hh"><div><small>Your calendar</small><h2 id="h-date">Today</h2></div>
+<div class="hrow"><button class="hb sm on" type="button" data-act="day" data-d="0" id="h-d0">Today</button><button class="hb sm" type="button" data-act="day" data-d="1" id="h-d1">Tomorrow</button></div></div>
+<div class="hrow"><button class="hb sm on" type="button" data-act="filter" data-f="study" id="h-fstudy">Study only</button><button class="hb sm" type="button" data-act="filter" data-f="all" id="h-fall">All events</button><button class="hb sm" type="button" data-act="refresh">Refresh</button></div>
+<div id="h-ev"><p class="hmut">Loading your calendar…</p></div>
+</div>
+
+<div class="hcard" id="h-due">
+<div class="hh"><div><small>Active recall</small><h2 id="h-duet">Due today</h2></div></div>
+<div class="hdue" id="h-duel"></div>
+<div id="h-quiz" hidden></div>
+</div>
+
+<div class="hcard" id="h-ci">
+<div class="hh"><div><small>Daily check-in</small><h2>What did you cover today?</h2></div></div>
+<form class="hform" id="h-form" autocomplete="off">
+<select class="hsel" id="h-subj" aria-label="Subject"></select>
+<select class="hsel" id="h-pri" aria-label="Priority"><option value="H">High priority</option><option value="M" selected>Medium priority</option><option value="L">Low priority</option></select>
+<input class="hi full" id="h-name" type="text" maxlength="120" placeholder="Topic, e.g. Humayun and Sher Shah Suri" aria-label="Topic covered">
+<button class="hb pri full" type="submit">Add to my recall schedule</button>
+</form>
+<div class="hrow"><button class="hb sm" type="button" data-act="nonew">Nothing new today</button></div>
+<div id="h-today-list"></div>
+</div>
+
+<div class="hcard" id="h-focus">
+<div class="hh"><div><small>Focus</small><h2>Study block</h2></div></div>
+<div class="ftime" id="h-ft" aria-live="off">25:00</div>
+<div class="hrow" id="h-fbtns"><button class="hb" type="button" data-act="focus" data-m="25">25 min</button><button class="hb" type="button" data-act="focus" data-m="50">50 min</button><button class="hb" type="button" data-act="focus" data-m="90">90 min</button></div>
+<p class="hmut" id="h-fnote">Phone away, one subject. Minutes are logged when the block ends.</p>
+</div>
+
+<div class="hcard" id="h-hab">
+<div class="hh"><div><small>Habits</small><h2>Today</h2></div><button class="hb sm" type="button" data-act="habedit" id="h-habedit">Edit habits</button></div>
+<div class="hhab" id="h-habl"></div>
+</div>
+
+<div class="hcard wide" id="h-prog">
+<div class="hh"><div><small>Progress</small><h2>This week</h2></div></div>
+<div class="hstat" id="h-stat"></div>
+<div class="wk" id="h-wk" aria-label="Study minutes per day, last 7 days"></div>
+<p class="hmut">Bars show minutes read in your notebooks plus focus blocks. Today is the amber bar.</p>
+<div id="h-subjp"></div>
+</div>
+
+<div class="hcard wide">
+<details class="hshelf" id="h-shelf"><summary>All topics and priority tags</summary>
+<div class="hrow"><select class="hsel" id="h-fs" aria-label="Filter by subject" style="max-width:240px"></select>
+<button class="hb sm" type="button" data-act="import">Add finished notebook chapters</button></div>
+<p class="hmut">Tap a priority tag to change it. H topics come first in every recall list.</p>
+<div id="h-all"></div>
+</details>
+</div>
+</section>
 <div class="stats"><div class="stat"><b id="st-today">0</b><span>minutes today</span></div><div class="stat"><b id="st-streak">0</b><span>day streak</span></div><div class="stat"><b id="st-days">0</b><span>days studied</span></div></div>
 <a class="cont" id="cont" hidden></a>
 <div class="nbs" id="nbs"></div>
@@ -325,11 +450,385 @@ document.getElementById('reset').onclick=function(){if(confirm('Clear all readin
 </script>
 <script>
 (function(){
-document.getElementById('bk').onclick=function(){NBS.flush();var b=new Blob([localStorage.getItem('nbapp:v1')||'{}'],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='study-shelf-progress-'+NBS.today()+'.json';a.click()};
-document.getElementById('rs').onchange=function(e){var f=e.target.files[0];if(!f)return;f.text().then(function(t){try{var o=JSON.parse(t);if(!o.v)throw 0;var cur=NBS.get();localStorage.setItem('nbapp:v1',t);location.reload()}catch(x){alert('That file is not a Study Shelf backup.')}})};
+document.getElementById('bk').onclick=function(){NBS.flush();var o0={};try{o0=JSON.parse(localStorage.getItem('nbapp:v1')||'{}')}catch(x){}try{o0.hub=JSON.parse(localStorage.getItem('hub:v1')||'null')}catch(x){}var b=new Blob([JSON.stringify(o0)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='study-shelf-progress-'+NBS.today()+'.json';a.click()};
+document.getElementById('rs').onchange=function(e){var f=e.target.files[0];if(!f)return;f.text().then(function(t){try{var o=JSON.parse(t);if(!o.v)throw 0;var cur=NBS.get();localStorage.setItem('nbapp:v1',t);if(o.hub&&o.hub.v)localStorage.setItem('hub:v1',JSON.stringify(o.hub));location.reload()}catch(x){alert('That file is not a Study Shelf backup.')}})};
 // extra notebooks added later: library.json lists every notebook
 fetch('library.json',{cache:'no-cache'}).then(function(r){return r.json()}).catch(function(){return null});
 if('serviceWorker' in navigator&&location.protocol.indexOf('http')===0){navigator.serviceWorker.register('sw.js').then(function(reg){
   reg.addEventListener('updatefound',function(){var w=reg.installing;if(!w)return;w.addEventListener('statechange',function(){if(w.state==='installed'&&navigator.serviceWorker.controller){var u=document.getElementById('upd');u.hidden=false;u.innerHTML='A new version of your notebooks has downloaded. <b><a href="" onclick="location.reload();return false">Reload to use it</a></b>'}})})}).catch(function(){})}
 })();
-</script></body></html>
+</script><script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function pad(n){return n<10?'0'+n:''+n}
+function key(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+function parse(k){var a=k.split('-');return new Date(+a[0],+a[1]-1,+a[2])}
+function addDays(k,n){var d=parse(k);d.setDate(d.getDate()+n);return key(d)}
+function diff(a,b){return Math.round((parse(a)-parse(b))/864e5)}
+function TODAY(){return key(new Date())}
+function fmt(d){return d.toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit'})}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+
+var INT=[1,3,7,14,30,60];
+var SUBJ=['Modern India','Polity','Geography','Economy','GS3','Sociology','Other'];
+var DEF=[['wake','Up by 3:50'],['work','Workout'],['rec','Recall session'],['asg','Assignment or PYQs'],['chk','Night check-in']];
+var KEY='hub:v1';
+var ORD={H:0,M:1,L:2};
+
+function fresh(){return{v:1,topics:{},hab:{},ci:{},fo:{},hl:{}}}
+var H;try{H=JSON.parse(lsGet(KEY))}catch(e){H=null}
+if(!H||!H.v)H=fresh();
+['topics','hab','ci','fo','hl'].forEach(function(k){if(!H[k])H[k]={}});
+if(!Object.keys(H.hl).length)DEF.forEach(function(x,i){H.hl[x[0]]={id:x[0],n:x[1],o:i,t:0}});
+function habList(){return Object.keys(H.hl).map(function(k){return H.hl[k]}).filter(function(x){return x&&!x.del}).sort(function(a,b){return a.o-b.o})}
+
+function merge(a,b){
+  var o=fresh(),i;
+  var ids={};Object.keys(a.topics||{}).concat(Object.keys(b.topics||{})).forEach(function(k){ids[k]=1});
+  Object.keys(ids).forEach(function(k){var x=(a.topics||{})[k],y=(b.topics||{})[k];o.topics[k]=!x?y:(!y?x:((y.t||0)>(x.t||0)?y:x))});
+  var ds={};Object.keys(a.hab||{}).concat(Object.keys(b.hab||{})).forEach(function(k){ds[k]=1});
+  Object.keys(ds).forEach(function(d){var x=(a.hab||{})[d]||{},y=(b.hab||{})[d]||{},ks={};
+    Object.keys(x).concat(Object.keys(y)).forEach(function(k){ks[k]=1});o.hab[d]={};
+    Object.keys(ks).forEach(function(k){var p=x[k]||0,q=y[k]||0;o.hab[d][k]=Math.abs(q)>Math.abs(p)?q:p})});
+  Object.keys(a.ci||{}).concat(Object.keys(b.ci||{})).forEach(function(k){o.ci[k]=1});
+  var hs0={};Object.keys(a.hl||{}).concat(Object.keys(b.hl||{})).forEach(function(k){hs0[k]=1});
+  Object.keys(hs0).forEach(function(k){var x=(a.hl||{})[k],y=(b.hl||{})[k];o.hl[k]=!x?y:(!y?x:((y.t||0)>(x.t||0)?y:x))});
+  var fs={};Object.keys(a.fo||{}).concat(Object.keys(b.fo||{})).forEach(function(k){fs[k]=1});
+  Object.keys(fs).forEach(function(k){o.fo[k]=Math.max((a.fo||{})[k]||0,(b.fo||{})[k]||0)});
+  return o;
+}
+
+/* ---------- save and sync ---------- */
+var saveT=null,syncT=null,busy=false,syncState='';
+function save(){lsSet(KEY,JSON.stringify(H));renderAll();clearTimeout(syncT);syncT=setTimeout(sync,3000)}
+var refP=null;
+function getRef(){
+  if(refP)return refP;
+  refP=(async function(){
+    if(!window.claude||!claude.use)return null;
+    var db=await claude.use('db'),u=await claude.use('user');
+    if(!db||!u||!u.id)return null;
+    var id=await u.id();if(!id)return null;
+    return db.doc('data/users/'+id+'/hub');
+  })().catch(function(){return null});
+  return refP;
+}
+async function sync(){
+  if(busy)return;busy=true;
+  try{
+    var ref=await getRef();if(!ref){syncState='local';return}
+    var snap=await ref.get(),rem=null;
+    if(snap.exists){try{rem=JSON.parse(snap.data().state)}catch(e){}}
+    var m=rem?merge(H,rem):H,changed=JSON.stringify(m)!==JSON.stringify(H);
+    H=m;if(changed){lsSet(KEY,JSON.stringify(H));renderAll()}
+    var out=JSON.stringify(H);
+    if(!rem||JSON.stringify(rem)!==out)await ref.set({v:1,updated:Date.now(),state:out});
+    syncState='synced';
+  }catch(e){syncState='local'}
+  finally{busy=false}
+}
+
+/* ---------- topics and spaced recall ---------- */
+function live(){return Object.keys(H.topics).map(function(k){return H.topics[k]}).filter(function(t){return t&&!t.del})}
+function addTopic(s,n,p,id,c){
+  id=id||('t'+Date.now().toString(36)+Math.random().toString(36).slice(2,5));
+  if(H.topics[id]&&!H.topics[id].del)return false;
+  c=c||TODAY();
+  H.topics[id]={id:id,s:s,n:n,p:p,c:c,r:[],st:0,nx:addDays(c,1),t:Date.now()};
+  return true;
+}
+function mark(k){var d=TODAY();(H.hab[d]=H.hab[d]||{})[k]=Date.now()}
+function dueList(){
+  var td=TODAY();
+  return live().filter(function(t){return t.nx&&t.nx<=td}).sort(function(a,b){
+    return (a.nx<b.nx?-1:a.nx>b.nx?1:0)||(ORD[a.p]-ORD[b.p])});
+}
+function recalled(id){var t=H.topics[id],td=TODAY();if(!t)return;t.r.push(td);t.st++;t.nx=t.st<INT.length?addDays(td,INT[t.st]):null;t.t=Date.now();mark('rec')}
+function shaky(id){var t=H.topics[id];if(!t)return;t.st=0;t.nx=addDays(TODAY(),1);t.t=Date.now()}
+
+/* ---------- calendar ---------- */
+var STUDY=/class|live|sociology|assignment|recall|revision|polity|geograph|econom|gs\s?\d|history|study|test|pyq|mock|quiz/i;
+var EV={},dayOff=0,studyOnly=true,calErr=null;
+function iso(d){var o=-d.getTimezoneOffset(),s=o>=0?'+':'-';o=Math.abs(o);return key(d)+'T'+pad(d.getHours())+':'+pad(d.getMinutes())+':00'+s+pad(Math.floor(o/60))+':'+pad(o%60)}
+function norm(x){
+  if(!x||x.status==='cancelled'||!x.start||!x.start.dateTime)return null;
+  return{t:x.summary||'(no title)',s:new Date(x.start.dateTime),e:new Date((x.end&&x.end.dateTime)||x.start.dateTime)};
+}
+function loadDay(off,refresh){
+  var d=new Date();d.setDate(d.getDate()+off);var k=key(d);
+  var s=new Date(d.getFullYear(),d.getMonth(),d.getDate(),0,0,0),e=new Date(d.getFullYear(),d.getMonth(),d.getDate(),23,59,59);
+  calErr=null;if(!EV[k])$('h-ev').innerHTML='<p class="hmut">Loading your calendar…</p>';
+  var p=(window.claude&&claude.use)?claude.use('mcp'):Promise.resolve(null);
+  return p.then(function(m){
+    if(!m)throw{code:'nomcp'};
+    return m.callTool('Google Calendar','list_events',{startTime:iso(s),endTime:iso(e),orderBy:'startTime',pageSize:60},refresh?{cache:{refresh:true}}:{cache:{staleTime:60000}});
+  }).then(function(r){
+    var pl=r&&r.payload;if(typeof pl==='string'){try{pl=JSON.parse(pl)}catch(x){pl=null}}
+    var list=(pl&&pl.events)||[];
+    EV[k]={list:list.map(norm).filter(Boolean).sort(function(a,b){return a.s-b.s}),at:(r.cache&&r.cache.storedAt)||Date.now()};
+  }).catch(function(err){calErr=err||{code:'unknown'}}).then(renderEv);
+}
+function calMsg(e){
+  var c=e&&e.code,m={
+    nomcp:'Your Google Calendar shows here when this page is opened from Claude. On this device, <a href="https://calendar.google.com/calendar/u/0/r/day" target="_blank" rel="noopener">open Google Calendar</a>.',
+    server_not_connected:'Google Calendar is not connected. Add it in Claude Settings, Connectors, then reload this page.',
+    needs_reauth:'Google Calendar needs to be reconnected. Open Claude Settings, Connectors, and sign in again.',
+    selection_required:'You have more than one Google Calendar connector. Choose one when Claude asks.',
+    not_in_manifest:'Calendar access is turned off for this page. Allow it from the page permissions menu, then tap Refresh.',
+    consent_required:'Calendar access was declined. Tap Refresh and choose Allow.',
+    blocked_by_policy:'Your organisation blocks calendar access from pages.'
+  };
+  if(m[c])return m[c];
+  return 'The calendar did not answer ('+esc(c||'unknown')+'). Tap Refresh to try again.';
+}
+function renderEv(){
+  var d=new Date();d.setDate(d.getDate()+dayOff);var k=key(d);
+  $('h-date').textContent=(dayOff?'Tomorrow, ':'')+d.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'short'});
+  var box=$('h-ev'),o=EV[k],h='';
+  $('h-today').querySelectorAll('.hrow').forEach(function(r){r.hidden=!!(calErr&&calErr.code==='nomcp'&&!o)});
+  if(!o){box.innerHTML=calErr?'<p class="hmut">'+calMsg(calErr)+'</p>':'<p class="hmut">Loading your calendar…</p>';return}
+  var list=o.list.filter(function(x){return !studyOnly||STUDY.test(x.t)}),hid=o.list.length-list.length,now=new Date(),nextSet=false;
+  list.forEach(function(x){
+    var lv=dayOff===0&&x.s<=now&&now<x.e,past=dayOff===0&&x.e<=now,nx=false;
+    if(dayOff===0&&!lv&&!past&&!nextSet){nx=true;nextSet=true}
+    h+='<div class="hev'+(lv?' live':'')+(past?' past':'')+'"><time>'+fmt(x.s)+'<br><span>'+fmt(x.e)+'</span></time><div><b>'+esc(x.t)+'</b>'+(lv?'<em>Now</em>':(nx?'<em>Next</em>':''))+'</div></div>';
+  });
+  if(!list.length)h='<p class="hmut">Nothing '+(studyOnly?'study-related ':'')+'on the calendar for this day.</p>';
+  if(hid)h+='<p class="hmut">'+hid+' other event'+(hid>1?'s':'')+' hidden. Tap All events to see them.</p>';
+  h+='<p class="hmut">Updated '+fmt(new Date(o.at))+(calErr?'. Latest refresh failed: '+calMsg(calErr):'')+'</p>';
+  box.innerHTML=h;
+}
+
+/* ---------- renderers ---------- */
+function stageLbl(t){return t.nx?('Recall '+(t.st+1)+' of '+INT.length):'Mastered'}
+function renderNudge(){
+  var el=$('h-nudge'),td=TODAY(),n=new Date(),mins=n.getHours()*60+n.getMinutes(),due=dueList().length;
+  var logged=!!H.ci[td]||live().some(function(t){return t.c===td});
+  var h='',cls='hnudge';
+  if(mins>=21*60+30&&!logged){h='<span>9:30 PM check-in. What did you cover today?</span><button class="hb pri" type="button" data-act="focusinput">Log it</button>'}
+  else if(due>0){cls+=' calm';h='<span>'+due+' topic'+(due>1?'s are':' is')+' due for recall today.</span><button class="hb" type="button" data-act="godue">Start recall</button>'}
+  else if(!logged){cls+=' calm';h='<span>No recalls due. Log what you cover at your 9:30 PM check-in.</span>'}
+  else{cls+=' calm';h='<span>Recalls done and today is logged. Good work.</span>'}
+  el.className=cls;el.innerHTML=h;el.hidden=false;
+}
+function renderDue(){
+  var l=dueList(),td=TODAY(),box=$('h-duel'),h='';
+  $('h-duet').textContent=l.length?(l.length+' to recall'):'Nothing due';
+  l.forEach(function(t){
+    var late=diff(td,t.nx);
+    h+='<div class="hit'+(late>0?' over':'')+'"><div><span class="pill '+t.p+'">'+t.p+'</span> <b>'+esc(t.n)+'</b></div><div class="sub2">'+esc(t.s)+' · '+stageLbl(t)+(late>0?' · '+late+' day'+(late>1?'s':'')+' overdue':'')+'</div>'+
+    '<div class="hrow"><button class="hb pri sm" type="button" data-act="ok" data-id="'+t.id+'">I recalled it</button><button class="hb warn sm" type="button" data-act="shaky" data-id="'+t.id+'">Shaky, repeat tomorrow</button>'+
+    (HAS_SAMPLE?'<button class="hb sm" type="button" data-act="quiz" data-id="'+t.id+'">Quiz me</button><button class="hb sm" type="button" data-act="cards" data-id="'+t.id+'">Flashcards</button>':'')+'</div></div>';
+  });
+  if(!l.length){
+    var nx=live().filter(function(t){return t.nx}).sort(function(a,b){return a.nx<b.nx?-1:1})[0];
+    h='<p class="hmut">'+(live().length?('You are clear. Next recall: '+(nx?esc(nx.n)+' on '+parse(nx.nx).toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'none scheduled')+'.'):'Add what you studied in the check-in. Each topic comes back after 1, 3, 7, 14, 30 and 60 days.')+'</p>';
+  }
+  box.innerHTML=h;
+}
+function renderCheckin(){
+  var td=TODAY(),l=live().filter(function(t){return t.c===td}),h='';
+  if(l.length){h='<div class="hhead">Logged today</div>';l.forEach(function(t){h+='<div class="hrowt"><div><span class="pill '+t.p+'">'+t.p+'</span> <b>'+esc(t.n)+'</b><div class="hmut">'+esc(t.s)+'</div></div></div>'})}
+  else if(H.ci[td])h='<p class="hmut">Marked as no new topics today.</p>';
+  $('h-today-list').innerHTML=h;
+}
+function hstreak(k){var d=TODAY(),n=0;function on(x){var v=(H.hab[x]||{})[k];return v>0}
+  if(!on(d))d=addDays(d,-1);while(on(d)){n++;d=addDays(d,-1)}return n}
+var habEdit=false,habArm=null;
+function renderHab(){
+  var box=$('h-habl'),td=TODAY(),h='',L=habList(),btn=$('h-habedit');
+  if(btn){btn.textContent=habEdit?'Done':'Edit habits';btn.classList.toggle('on',habEdit)}
+  if(habEdit){
+    var ae=document.activeElement;
+    if(ae&&ae.tagName==='INPUT'&&box.contains(ae))return;
+    L.forEach(function(x,i){
+      h+='<div class="hhe"><input class="hi" id="h-hn-'+x.id+'" data-hid="'+x.id+'" type="text" maxlength="40" value="'+esc(x.n)+'" aria-label="Habit name"><div class="hrow"><button class="hb sm" type="button" data-act="hup" data-id="'+x.id+'"'+(i?'':' disabled')+' aria-label="Move up">Up</button><button class="hb sm" type="button" data-act="hdn" data-id="'+x.id+'"'+(i<L.length-1?'':' disabled')+' aria-label="Move down">Down</button><button class="hb sm'+(habArm===x.id?' warn':'')+'" type="button" data-act="hrm" data-id="'+x.id+'">'+(habArm===x.id?'Tap again':'Remove')+'</button></div></div>';
+    });
+    h+='<div class="hhe"><input class="hi" id="h-hnew" type="text" maxlength="40" placeholder="New habit, e.g. Newspaper 30 min" aria-label="New habit name"><button class="hb pri" type="button" data-act="hadd">Add habit</button></div>';
+    box.innerHTML=h;return;
+  }
+  L.forEach(function(x){
+    var on=((H.hab[td]||{})[x.id]||0)>0,dots='';
+    for(var i=6;i>=0;i--){dots+='<i class="'+(((H.hab[addDays(td,-i)]||{})[x.id]||0)>0?'on':'')+'"></i>'}
+    var s=hstreak(x.id);
+    h+='<div class="hhr"><button type="button" data-act="hab" data-k="'+x.id+'" aria-pressed="'+on+'"><span class="hbox'+(on?' on':'')+'">'+(on?'\u2713':'')+'</span><span>'+esc(x.n)+(s>1?'<span class="hstreak">'+s+'-day streak</span>':'')+'</span></button><span class="dots" aria-hidden="true">'+dots+'</span></div>';
+  });
+  if(!L.length)h='<p class="hmut">No habits yet. Tap Edit habits to add your own.</p>';
+  box.innerHTML=h;
+}
+function renderProg(){
+  var td=TODAY(),days=(window.NBS&&NBS.get().days)||{},mins=[],i,tot=0,mx=60;
+  for(i=6;i>=0;i--){var k=addDays(td,-i),m=Math.round((days[k]||0)/60)+(H.fo[k]||0);mins.push([k,m]);tot+=m;if(m>mx)mx=m}
+  var wk='';
+  mins.forEach(function(x){var d=parse(x[0]);wk+='<div class="'+(x[0]===td?'t':'')+'"><span>'+x[1]+'</span><i style="height:'+Math.max(3,Math.round(x[1]/mx*60))+'px"></i><span>'+'SMTWTFS'.charAt(d.getDay())+'</span></div>'});
+  $('h-wk').innerHTML=wk;
+  var from=addDays(td,-6),added=live().filter(function(t){return t.c>=from}).length,rec=0,hs=0,hn=0;
+  live().forEach(function(t){t.r.forEach(function(r){if(r>=from)rec++})});
+  var HL=habList();for(i=0;i<7;i++){var hh=H.hab[addDays(td,-i)]||{};HL.forEach(function(x){hn++;if((hh[x.id]||0)>0)hs++})}
+  $('h-stat').innerHTML='<div><b>'+Math.round(tot/6)/10+'</b><span>hours studied</span></div><div><b>'+added+'</b><span>topics covered</span></div><div><b>'+rec+'</b><span>recalls done</span></div>';
+  var by={};live().forEach(function(t){var b=by[t.s]||(by[t.s]={n:0,st:0});b.n++;b.st+=t.nx?t.st:INT.length});
+  var h='<div class="hhead">Recall progress by subject ('+(hn?Math.round(hs/hn*100):0)+'% of habits kept this week)</div>';
+  Object.keys(by).forEach(function(s){var b=by[s],p=Math.round(b.st/(b.n*INT.length)*100);h+='<div class="hsub"><span>'+esc(s)+' · '+b.n+' topic'+(b.n>1?'s':'')+'</span><span>'+p+'%</span><div class="pb"><i style="width:'+p+'%"></i></div></div>'});
+  if(!Object.keys(by).length)h='';
+  $('h-subjp').innerHTML=h;
+}
+function renderAll_shelf(){
+  var fs=$('h-fs'),sel=fs.value||'all';
+  if(!fs.options.length||fs.dataset.n!==String(SUBJ.length)){fs.innerHTML='<option value="all">All subjects</option>'+SUBJ.map(function(s){return'<option>'+s+'</option>'}).join('');fs.dataset.n=SUBJ.length;fs.value=sel}
+  var l=live().filter(function(t){return fs.value==='all'||t.s===fs.value}).sort(function(a,b){var d=ORD[a.p]-ORD[b.p];if(d)return d;var x=a.nx||'9',y=b.nx||'9';return x<y?-1:(x>y?1:0)}),h='';
+  l.forEach(function(t){
+    h+='<div class="hrowt"><div><b>'+esc(t.n)+'</b><div class="hmut">'+esc(t.s)+' · '+stageLbl(t)+(t.nx?' · next '+parse(t.nx).toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'')+'</div></div><div class="hrow"><button class="hb sm" type="button" data-act="pri" data-id="'+t.id+'" aria-label="Priority '+t.p+', tap to change"><span class="pill '+t.p+'">'+t.p+'</span></button><button class="hb sm" type="button" data-act="del" data-id="'+t.id+'" aria-label="Remove topic">Remove</button></div></div>';
+  });
+  $('h-all').innerHTML=h||'<p class="hmut">No topics yet.</p>';
+}
+var delArm=null;
+function renderAll(){renderNudge();renderDue();renderCheckin();renderHab();renderProg();renderAll_shelf();renderEv()}
+
+/* ---------- quiz and flashcards via Claude ---------- */
+var HAS_SAMPLE=false,sampleNS=null;
+function quizPanel(h){var q=$('h-quiz');q.hidden=false;q.innerHTML=h;q.scrollIntoView({block:'nearest',behavior:'smooth'})}
+function sErr(e){var c=e&&e.code;return c==='not_granted'?'Allow Claude to write questions for this page when asked.':(c==='rate_limited'?'Too many requests. Wait a minute and try again.':'Could not make questions right now. Try again.')}
+async function genQuiz(id,mode){
+  var t=H.topics[id];if(!t||!sampleNS)return;
+  quizPanel('<p class="hmut">Writing questions on '+esc(t.n)+'…</p>');
+  var base='You are a UPSC Civil Services tutor. Subject: '+t.s+'. Topic: '+t.n+'. Use only facts you are sure of. Return JSON only. ';
+  try{
+    if(mode==='quiz'){
+      var r=await sampleNS.json(base+'Write 5 multiple-choice questions in UPSC Prelims style to test recall of this topic. Format: {"qs":[{"q":"question","opts":["a","b","c","d"],"a":0,"why":"one line"}]} where a is the index of the right option.',{modelTier:'quick',cache:false});
+      showQuiz(t,(r&&r.qs)||[]);
+    }else{
+      var r2=await sampleNS.json(base+'Write 8 short flashcards for fast recall of this topic. Format: {"cards":[{"f":"front question","b":"back answer in under 25 words"}]}',{modelTier:'quick',cache:false});
+      showCards(t,(r2&&r2.cards)||[]);
+    }
+  }catch(e){quizPanel('<p class="hmut">'+sErr(e)+'</p><button class="hb sm" type="button" data-act="closeq">Close</button>')}
+}
+function showQuiz(t,qs){
+  if(!qs.length){quizPanel('<p class="hmut">No questions came back. Try again.</p>');return}
+  var h='<div class="hhead">Quiz: '+esc(t.n)+'</div>';
+  qs.forEach(function(q,i){
+    if(!q||!q.opts)return;
+    h+='<div class="mq" data-qi="'+i+'"><b>'+(i+1)+'. '+esc(q.q)+'</b>'+q.opts.map(function(o,j){return'<button type="button" class="o" data-act="ans" data-qi="'+i+'" data-j="'+j+'">'+esc(o)+'</button>'}).join('')+'<div class="why" hidden></div></div>';
+  });
+  h+='<div class="hrow"><button class="hb sm" type="button" data-act="closeq">Close</button></div>';
+  quizPanel(h);window.__hq=qs;
+}
+var cardSet=null,cardI=0,cardBack=false;
+function showCards(t,cs){
+  cs=cs.filter(function(c){return c&&c.f&&c.b});
+  if(!cs.length){quizPanel('<p class="hmut">No cards came back. Try again.</p>');return}
+  cardSet={t:t,cs:cs};cardI=0;cardBack=false;drawCard();
+}
+function drawCard(){
+  var c=cardSet.cs[cardI];
+  quizPanel('<div class="hhead">Flashcards: '+esc(cardSet.t.n)+' · '+(cardI+1)+' of '+cardSet.cs.length+'</div><button type="button" class="fcard'+(cardBack?' back':'')+'" data-act="flip">'+esc(cardBack?c.b:c.f)+'</button><div class="hrow"><button class="hb sm" type="button" data-act="cprev">Previous</button><button class="hb sm pri" type="button" data-act="cnext">Next</button><button class="hb sm" type="button" data-act="closeq">Close</button></div><p class="hmut">Tap the card to flip it.</p>');
+}
+
+/* ---------- focus timer ---------- */
+var FT=null,FI=null,wl=null;
+function ftShow(){
+  var el=$('h-ft');
+  if(!FT){el.textContent='25:00';return}
+  var left=Math.max(0,FT.end-Date.now()),s=Math.ceil(left/1000);
+  el.textContent=pad(Math.floor(s/60))+':'+pad(s%60);
+  if(left<=0)ftDone();
+}
+function ftDone(){
+  clearInterval(FI);var m=FT.min;FT=null;try{if(wl)wl.release()}catch(e){}wl=null;
+  H.fo[TODAY()]=(H.fo[TODAY()]||0)+m;save();
+  $('h-fnote').textContent='Block finished. '+m+' minutes logged. Take a short break before the next one.';
+  $('h-fbtns').innerHTML='<button class="hb" type="button" data-act="focus" data-m="25">25 min</button><button class="hb" type="button" data-act="focus" data-m="50">50 min</button><button class="hb" type="button" data-act="focus" data-m="90">90 min</button>';
+  $('h-ft').textContent='00:00';
+}
+async function ftStart(m){
+  FT={end:Date.now()+m*60000,min:m};
+  try{if(navigator.wakeLock)wl=await navigator.wakeLock.request('screen')}catch(e){wl=null}
+  $('h-fnote').textContent='Focus on one subject. Minutes are logged when the block ends.';
+  $('h-fbtns').innerHTML='<button class="hb warn" type="button" data-act="fstop">Stop without logging</button>';
+  clearInterval(FI);FI=setInterval(ftShow,1000);ftShow();
+}
+
+/* ---------- events ---------- */
+document.addEventListener('click',function(ev){
+  var b=ev.target.closest&&ev.target.closest('[data-act]');if(!b||!$('hub').contains(b))return;
+  var a=b.dataset.act,id=b.dataset.id;
+  if(a==='day'){dayOff=+b.dataset.d;$('h-d0').classList.toggle('on',dayOff===0);$('h-d1').classList.toggle('on',dayOff===1);renderEv();loadDay(dayOff,false)}
+  else if(a==='filter'){studyOnly=b.dataset.f==='study';$('h-fstudy').classList.toggle('on',studyOnly);$('h-fall').classList.toggle('on',!studyOnly);renderEv()}
+  else if(a==='refresh'){loadDay(dayOff,true)}
+  else if(a==='ok'){recalled(id);save()}
+  else if(a==='shaky'){shaky(id);save()}
+  else if(a==='quiz'||a==='cards'){genQuiz(id,a)}
+  else if(a==='closeq'){$('h-quiz').hidden=true;$('h-quiz').innerHTML=''}
+  else if(a==='ans'){
+    var qs=window.__hq||[],q=qs[+b.dataset.qi],j=+b.dataset.j,card=b.closest('.mq');if(!q||card.dataset.done)return;
+    card.dataset.done=1;var os=card.querySelectorAll('.o');os.forEach(function(o,k){if(k===q.a)o.classList.add('right');else if(k===j)o.classList.add('wrong')});
+    var w=card.querySelector('.why');w.textContent=(j===q.a?'Correct. ':'Not quite. ')+(q.why||'');w.hidden=false;
+  }
+  else if(a==='flip'){cardBack=!cardBack;drawCard()}
+  else if(a==='cnext'){cardI=(cardI+1)%cardSet.cs.length;cardBack=false;drawCard()}
+  else if(a==='cprev'){cardI=(cardI+cardSet.cs.length-1)%cardSet.cs.length;cardBack=false;drawCard()}
+  else if(a==='hab'){var d=TODAY(),k=b.dataset.k,hh=H.hab[d]=H.hab[d]||{},on=(hh[k]||0)>0;hh[k]=(on?-1:1)*Date.now();save()}
+  else if(a==='habedit'){habEdit=!habEdit;habArm=null;renderHab()}
+  else if(a==='hup'||a==='hdn'){
+    var L=habList(),ix=L.findIndex(function(x){return x.id===id}),jx=a==='hup'?ix-1:ix+1;
+    if(ix>=0&&jx>=0&&jx<L.length){var o1=L[ix].o;L[ix].o=L[jx].o;L[jx].o=o1;L[ix].t=L[jx].t=Date.now();save()}
+  }
+  else if(a==='hrm'){
+    if(habArm!==id){habArm=id;renderHab();setTimeout(function(){if(habArm===id){habArm=null;renderHab()}},3500)}
+    else{habArm=null;var hx=H.hl[id];if(hx){hx.del=1;hx.t=Date.now();save()}}
+  }
+  else if(a==='hadd'){
+    var inp=$('h-hnew'),nm=inp.value.trim();if(!nm)return;
+    var L2=habList(),mo=L2.length?L2[L2.length-1].o+1:0,nid='h'+Date.now().toString(36);
+    H.hl[nid]={id:nid,n:nm,o:mo,t:Date.now()};inp.value='';save();
+  }
+  else if(a==='nonew'){H.ci[TODAY()]=1;mark('chk');save()}
+  else if(a==='focusinput'){$('h-name').focus();$('h-ci').scrollIntoView({behavior:'smooth',block:'center'})}
+  else if(a==='godue'){$('h-due').scrollIntoView({behavior:'smooth',block:'start'})}
+  else if(a==='focus'){ftStart(+b.dataset.m)}
+  else if(a==='fstop'){clearInterval(FI);FT=null;try{if(wl)wl.release()}catch(e){}wl=null;$('h-fnote').textContent='Stopped. Nothing was logged.';$('h-fbtns').innerHTML='<button class="hb" type="button" data-act="focus" data-m="25">25 min</button><button class="hb" type="button" data-act="focus" data-m="50">50 min</button><button class="hb" type="button" data-act="focus" data-m="90">90 min</button>';ftShow()}
+  else if(a==='pri'){var t=H.topics[id];if(t){t.p=t.p==='H'?'M':(t.p==='M'?'L':'H');t.t=Date.now();save()}}
+  else if(a==='del'){
+    if(delArm!==id){delArm=id;b.textContent='Tap again to remove';b.classList.add('warn');setTimeout(function(){if(delArm===id){delArm=null;renderAll_shelf()}},3500)}
+    else{delArm=null;var t2=H.topics[id];if(t2){t2.del=1;t2.t=Date.now();save()}}
+  }
+  else if(a==='import'){
+    var L=[];try{L=JSON.parse($('libdata').textContent)}catch(e){}
+    var n=0,st=NBS.get();
+    L.forEach(function(l){l.chapters.forEach(function(c){
+      if(c.pending||!c.n)return;
+      var rec=(st.nb[l.id]||{})[c.n],done=rec&&rec.dt?!!rec.done:false,p=NBS.pct(l.id,c.n,c.secs.length);
+      if(done||p>=.999){if(addTopic(l.id==='modern-india'?'Modern India':(/geo/i.test(l.id)?'Geography':(/eco/i.test(l.id)?'Economy':'Other')),(c.n?'Ch '+c.n+': ':'')+c.title,'M','nb-'+l.id+'-'+c.n))n++}
+    })});
+    b.textContent=n?('Added '+n+' chapter'+(n>1?'s':'')):'No new finished chapters found';save();
+  }
+});
+$('h-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=$('h-name').value.trim();if(!n)return;
+  addTopic($('h-subj').value,n,$('h-pri').value);H.ci[TODAY()]=1;mark('chk');$('h-name').value='';save();
+});
+$('h-fs').addEventListener('change',renderAll_shelf);
+$('h-habl').addEventListener('change',function(e){
+  var t=e.target,id=t.dataset&&t.dataset.hid;if(!id||!H.hl[id])return;
+  var v=t.value.trim();if(v&&v!==H.hl[id].n){H.hl[id].n=v;H.hl[id].t=Date.now();save()}else if(!v){t.value=H.hl[id].n}
+});
+$('h-habl').addEventListener('keydown',function(e){
+  if(e.key!=='Enter')return;
+  if(e.target.id==='h-hnew'){e.preventDefault();var b=document.querySelector('#h-habl [data-act="hadd"]');if(b)b.click()}
+  else if(e.target.dataset&&e.target.dataset.hid){e.preventDefault();e.target.blur()}
+});
+$('h-subj').innerHTML=SUBJ.map(function(s){return'<option>'+s+'</option>'}).join('');
+
+/* ---------- boot ---------- */
+renderAll();
+loadDay(0,false);
+if(window.NBS&&NBS.onChange)NBS.onChange(renderProg);
+setInterval(function(){renderEv();renderNudge()},60000);
+document.addEventListener('visibilitychange',function(){if(!document.hidden){renderAll();sync()}else{lsSet(KEY,JSON.stringify(H))}});
+setTimeout(sync,1200);
+(window.claude&&claude.use?claude.use('sample'):Promise.resolve(null)).then(function(s){if(s){sampleNS=s;HAS_SAMPLE=true;renderDue()}}).catch(function(){});
+})();
+</script>
+</body></html>
