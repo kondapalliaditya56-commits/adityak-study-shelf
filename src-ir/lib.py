@@ -278,7 +278,7 @@ def chapter_page(ch, prev_ch, next_ch, secs_sections, toc_idx, map_svg, map_outl
     body += pager + '<footer>' + inline(footer_text) + '</footer></main></div><div id="lightbox" hidden><img alt=""></div>'
     body += json_script(data, 'data')
     nb = {'id': NB_ID, 'ch': n, 'title': ch['title']}
-    body += '<script>window.__NB=%s;%s</script></body></html>' % (json.dumps(nb, ensure_ascii=False), JS)
+    body += '<script>window.__NB=%s;%s</script><script src="hl.js" defer></script></body></html>' % (json.dumps(nb, ensure_ascii=False), JS)
     return head('Ch %d · %s' % (n, ch['title']) if n > 0 else ch['title'], EXTRA_CSS) + body
 
 def chead(eyebrow, title, ptag, pills, lede):
