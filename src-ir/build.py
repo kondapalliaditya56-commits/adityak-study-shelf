@@ -121,6 +121,6 @@ for c, rendered in ((c0, r0), (c1, r1), (c2, r2)):
 open(os.path.join(OUT, '%ssearch.html' % BASE), 'w', encoding='utf8').write(search_page(entries))
 
 json.dump({'id': NB_ID, 'title': NB_TITLE, 'sub': 'Sarrthi IAS GS Mains Module handouts and class slides', 'base': BASE,
-           'home': BASE + 'home.html', 'search': BASE + 'search.html', 'timeline': '', 'chapters': chs},
+           'home': 'home.html', 'search': 'search.html', 'timeline': '', 'chapters': chs},
           open(os.path.join(OUT, 'ir-chapters.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
 print('built', len(entries), 'search entries;', {c['n']: len(c['secs']) for c in chs})
