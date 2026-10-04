@@ -214,7 +214,7 @@
   var fab = el('button', 'hl-ui hl-fab', '✎<b hidden>0</b>'); fab.type = 'button'; fab.title = 'My highlights'; fab.setAttribute('aria-label', 'My highlights');
   document.body.appendChild(fab);
   var panel = el('div', 'hl-ui hl-panel'); panel.hidden = true;
-  panel.innerHTML = '<div class="hl-ph"><strong>Highlights on this page</strong><button class="hl-tool" type="button" data-a="close">Close</button></div>' +
+  panel.innerHTML = '<div class="hl-ph"><strong>Highlights on this page <small style="font-weight:500;color:#777">· pen v3</small></strong><button class="hl-tool" type="button" data-a="close">Close</button></div>' +
     '<div class="hl-chips"></div><div class="hl-list"></div>' +
     '<div class="hl-foot"><button class="hl-tool" type="button" data-a="clear">Clear this page</button><button class="hl-tool" type="button" data-a="backup">Backup all</button><button class="hl-tool" type="button" data-a="restore">Restore</button><input type="file" accept="application/json" hidden></div>';
   document.body.appendChild(panel);
@@ -313,6 +313,14 @@
   var penToggle = el('button', 'hl-tool', ''); penToggle.type = 'button'; penToggle.style.cssText = 'margin:8px 12px;width:calc(100% - 24px);height:38px';
   panel.insertBefore(penToggle, panel.querySelector('.hl-chips'));
   penToggle.addEventListener('click', function () { pen.on = !pen.on; savePen(); paintBar(); if (pen.on) panel.hidden = true; });
+  var penFab = el('button', 'hl-ui hl-penfab', '<span>✏</span><em>Pen</em>'); penFab.type = 'button'; penFab.title = 'Pen highlighter on or off'; penFab.setAttribute('aria-label', 'Pen highlighter');
+  document.body.appendChild(penFab);
+  var pf = document.createElement('style');
+  pf.textContent = '.hl-penfab{position:fixed;right:68px;bottom:84px;z-index:99990;height:46px;min-width:76px;border-radius:23px;border:1px solid rgba(0,0,0,.2);background:#fff;color:#1d2a27;box-shadow:0 4px 14px rgba(0,0,0,.28);cursor:pointer;padding:0 14px;display:flex;align-items:center;gap:6px;font:700 15px system-ui}.hl-penfab span{font-size:19px}.hl-penfab em{font-style:normal}.hl-penfab[aria-pressed=true]{background:#1d2a27;color:#fff}';
+  document.head.appendChild(pf);
+  penFab.addEventListener('click', function () { pen.on = !pen.on; savePen(); paintBar(); });
+  var paintBar0 = paintBar;
+  paintBar = function () { paintBar0(); penFab.setAttribute('aria-pressed', pen.on ? 'true' : 'false'); };
   paintBar();
 
   // caret lookup under the pen tip
