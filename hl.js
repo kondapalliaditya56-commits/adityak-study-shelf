@@ -156,12 +156,13 @@
     var w = pop.offsetWidth, h = pop.offsetHeight;
     var x = Math.min(Math.max(8, rect.left + rect.width / 2 - w / 2), window.innerWidth - w - 8);
     var y = rect.top - h - 10; if (y < 8) y = rect.bottom + 10;
-    y = Math.max(8, Math.min(window.innerHeight - h - 8, y));
+    y = Math.max(56, Math.min(window.innerHeight - h - 76, y)); // keep clear of the top bar and the Prev/Next bar
     pop.style.left = x + 'px'; pop.style.top = y + 'px';
   }
   ['pointerdown', 'mousedown', 'touchstart'].forEach(function (ev) { pop.addEventListener(ev, function (e) { e.preventDefault(); }, { passive: false }); });
-  pop.addEventListener('click', function (e) {
+  function act(e) {
     var b = e.target.closest('button'); if (!b || !target) return;
+    e.preventDefault();
     if (target.id) {
       var h = H.filter(function (x) { return x.id === target.id; })[0];
       if (h) { if (b.dataset.act === 'erase') H = H.filter(function (x) { return x.id !== h.id; }); else h.c = b.dataset.c; persist(); apply(); }
@@ -170,7 +171,10 @@
       var sel = window.getSelection(); if (sel) sel.removeAllRanges();
     }
     hidePop();
-  });
+  }
+  // pointerup, because preventing touchstart (to keep the selection) suppresses the click on touch screens
+  pop.addEventListener('pointerup', act);
+  pop.addEventListener('click', function (e) { if (e.detail === 0) act(e); }); // keyboard
 
   var selT = null;
   document.addEventListener('selectionchange', function () {
@@ -193,7 +197,17 @@
     if (m && (!sel || sel.isCollapsed)) { target = { id: m.getAttribute('data-h') }; showPopAt(m.getBoundingClientRect()); return; }
     if (!e.target.closest('.hl-ui') && (!sel || sel.isCollapsed)) hidePop();
   });
-  window.addEventListener('scroll', function () { if (target && target.id) hidePop(); }, { passive: true });
+  var rp = 0;
+  window.addEventListener('scroll', function () {
+    if (!target || pop.hidden || rp) return;
+    rp = requestAnimationFrame(function () {
+      rp = 0;
+      var rc = null;
+      if (target.id) { var m = root.querySelector('mark.nbhl[data-h="' + target.id + '"]'); rc = m && m.getBoundingClientRect(); }
+      else { var sel = window.getSelection(); if (sel && sel.rangeCount && !sel.isCollapsed) { var rs = sel.getRangeAt(0).getClientRects(); rc = rs.length ? rs[0] : null; } }
+      if (rc) showPopAt(rc); else hidePop();
+    });
+  }, { passive: true });
 
   // floating button and panel
   var fab = el('button', 'hl-ui hl-fab', '✎<b hidden>0</b>'); fab.type = 'button'; fab.title = 'My highlights'; fab.setAttribute('aria-label', 'My highlights');
