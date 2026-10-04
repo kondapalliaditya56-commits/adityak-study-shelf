@@ -1,0 +1,313 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}
+.bank .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.bank .tabs button{padding:8px 14px;border:1.5px solid var(--line);border-radius:999px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.bank .tabs button[aria-pressed=true]{background:var(--acc);border-color:var(--acc);color:#fff}
+.bq,.bm{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:14px 0;background:var(--card,var(--bg))}
+.bqh{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.85em;color:var(--muted)}.bqh .yr,.bm .yr{background:var(--acc-soft,#eef);color:var(--acc);font-weight:700;padding:2px 8px;border-radius:6px}
+.bqq{white-space:pre-line}.bqh .qtl{font-weight:600;color:var(--ink)}.bqq{font-weight:600;margin:10px 0}.bn{font-weight:700}
+.bopts .opt{display:block;width:100%;text-align:left;padding:9px 12px;margin:6px 0;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.bopts .opt.right{border-color:var(--good);background:var(--good-soft)}.bopts .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.bwhy{margin-top:10px;padding-top:8px;border-top:1px dashed var(--line);color:var(--ink)}.bans{font-weight:800;color:var(--good);margin-bottom:6px}
+.bwhy p{margin:6px 0}.wl{margin:6px 0 6px 1.1em;padding:0}.wl li{margin:3px 0}.flag{font-size:.85em;color:var(--red);margin:6px 0}
+.bm summary{cursor:pointer;font-weight:600;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}.bm summary small{flex-basis:100%;color:var(--muted);font-weight:400}
+.bmb{margin-top:10px}.bmb p{margin:6px 0}.bmb .th{margin-top:10px}.bsc{font-weight:700;margin:6px 0}
+.bqgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}.bqgrid a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink)}.bqgrid a small{display:block;color:var(--muted)}
+.banklink{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0;padding:12px 14px;border:1.5px solid var(--acc);border-radius:12px}
+</style><title>Ch 7 question bank</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&amp;family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap"><style>:root{--bg:#FBFAF6;--surface:#fff;--surface2:#F3F1EA;--ink:#1F2A2A;--muted:#5D6A68;--line:#DAD6C8;--acc:#0E6B5C;--acc-ink:#fff;--acc-soft:#DDF0EA;--saf:#B85C00;--saf-soft:#FFF0DB;--red:#B3261E;--red-soft:#FDE7E4;--blue:#1F5FA8;--blue-soft:#E3EEFA;--good:#2E7D32;--good-soft:#E3F3E4;--hl:#FFE9A6;
+--c0:#0E6B5C;--c1:#B85C00;--c2:#1F5FA8;--c3:#8E3B8E;--c4:#B3261E;--c5:#5C7A1F;--c6:#8A6D00;--c7:#37607A;
+--serif:Literata,Spectral,Georgia,'Times New Roman',serif;--sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121816;--surface:#1A2320;--surface2:#212C29;--ink:#E6ECEA;--muted:#9CAAA6;--line:#34423E;--acc:#4FC3AE;--acc-ink:#0B1F1B;--acc-soft:#173A33;--saf:#F2A54E;--saf-soft:#3A2B14;--red:#F28B82;--red-soft:#3D1F1D;--blue:#7DB3F0;--blue-soft:#182B42;--good:#7FD08A;--good-soft:#1B3320;--hl:#5B4B12;--c0:#4FC3AE;--c1:#F2A54E;--c2:#7DB3F0;--c3:#D79AD7;--c4:#F28B82;--c5:#A9CF62;--c6:#E0C24D;--c7:#8DB8D4;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:17px/1.65 var(--serif);margin:0}
+a{color:var(--acc)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.25;margin:0}
+.bar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.barin{display:flex;align-items:center;gap:8px;padding:8px 16px;max-width:1200px;margin:0 auto;font:600 14px var(--sans);overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.barin::-webkit-scrollbar{display:none}
+.bar a.home,.nbtn,.themebtn{color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 10px;font:600 13px var(--sans);cursor:pointer;flex:none}
+.nbtn{padding:5px 12px;font-size:16px;line-height:1}.nbtn.off{opacity:.35}
+.bartitle{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-weight:500}.bartitle b{color:var(--acc)}
+.done{display:flex;align-items:center;gap:5px;flex:none;font:600 13px var(--sans);cursor:pointer}.done input{width:18px;height:18px;accent-color:var(--acc)}
+.layout{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px;padding:0 16px}
+.sidetoc{position:sticky;top:58px;align-self:start;max-height:calc(100vh - 70px);overflow:auto;padding:18px 0;font:14px/1.4 var(--sans)}
+.sth{font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;color:var(--muted);margin-bottom:8px}
+.sidetoc ol{list-style:none;margin:0;padding:0}.sidetoc li{margin:0}.sidetoc a{display:block;padding:5px 8px;border-left:2px solid var(--line);color:var(--ink);text-decoration:none}.sidetoc a:hover,.sidetoc a.on{border-color:var(--acc);color:var(--acc);background:var(--acc-soft)}
+.page{max-width:780px;margin:0 auto;padding:24px 16px 60px;width:100%;min-width:0}
+.home-page{max-width:900px}
+.chead{margin-bottom:22px}
+.eyebrow{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+h1{font-size:clamp(28px,5vw,40px);margin:6px 0 10px;font-weight:700}
+.lede{font-size:18px;color:var(--muted);margin:10px 0}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font:600 12px var(--sans);padding:3px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--line);color:var(--muted)}
+.pill.cls{background:var(--acc-soft);color:var(--acc);border-color:transparent}.pill.hb{background:var(--saf-soft);color:var(--saf);border-color:transparent}
+h2{font-size:clamp(22px,3.6vw,28px);margin:40px 0 12px;padding-top:14px;border-top:2px solid var(--acc);font-weight:700}
+h3{font-size:19px;margin:24px 0 8px;color:var(--acc)}
+h4{font-size:16px;margin-bottom:10px}
+.anchor{margin-left:8px;font-size:.7em;color:var(--muted);opacity:0;text-decoration:none}h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 12px}
+mark{background:var(--hl);color:inherit;padding:0 3px;border-radius:3px}
+.lst{margin:0 0 14px;padding-left:22px}.lst li{margin:5px 0}.lst li.sub{margin-left:18px;list-style:circle;color:var(--ink)}
+.gdesc{color:var(--muted);font:15px var(--sans);margin:-4px 0 12px}
+.xref{font:600 .92em var(--sans);white-space:nowrap}
+.callout{border-left:4px solid var(--acc);background:var(--acc-soft);border-radius:0 10px 10px 0;padding:10px 14px 4px;margin:14px 0}
+.callout .tag{display:inline-block;font:700 11px var(--sans);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;color:var(--acc)}
+.callout.teacher{border-color:var(--saf);background:var(--saf-soft)}.callout.teacher .tag{color:var(--saf)}
+.callout.alert{border-color:var(--red);background:var(--red-soft)}.callout.alert .tag{color:var(--red)}
+.callout.note{border-color:var(--blue);background:var(--blue-soft)}.callout.note .tag{color:var(--blue)}
+.callout.example{border-color:var(--good);background:var(--good-soft)}.callout.example .tag{color:var(--good)}
+.callout.source{background:var(--surface2);border-color:var(--line)}.callout.source .tag{color:var(--muted)}
+figure{margin:18px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure img{display:block;width:100%;height:auto;background:#fff}
+figure a.zoom{display:block;cursor:zoom-in}
+figcaption{padding:8px 12px;font:14px/1.45 var(--sans);color:var(--muted)}.figsrc{font:700 11px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--acc);margin-right:6px}
+.tblock{margin:16px 0}.tcap{font:700 14px var(--sans);margin-bottom:6px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font:15px/1.45 var(--sans);min-width:480px}
+th,td{padding:8px 11px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--acc);color:var(--acc-ink);font-weight:700}
+tbody th{background:var(--surface2);font-weight:700}tbody tr:last-child>*{border-bottom:0}tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface2) 55%,transparent)}
+.stepsblock{margin:16px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px}.stepsblock ol{margin:0;padding-left:22px}.stepsblock li{margin:4px 0}
+.flow{margin:20px 0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.chain{display:flex;flex-direction:column;align-items:stretch}
+.step{border:1.5px solid var(--acc);background:var(--acc-soft);border-radius:10px;padding:8px 12px;font:15px/1.4 var(--sans)}
+.step .sl{font-weight:700}.step .ss{color:var(--muted);font-size:14px;margin-top:2px}
+.step.warn{border-color:var(--saf);background:var(--saf-soft)}.step.bad{border-color:var(--red);background:var(--red-soft)}.step.good{border-color:var(--good);background:var(--good-soft)}
+.arr{height:20px;position:relative;flex:none}.arr:before{content:"";position:absolute;left:50%;top:0;bottom:6px;border-left:2px solid var(--muted)}.arr:after{content:"";position:absolute;left:calc(50% - 5px);bottom:0;border:5px solid transparent;border-top:7px solid var(--muted);border-bottom:0}
+.lanes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}.lane{display:flex;flex-direction:column}.lane-h{font:700 12px var(--sans);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;text-align:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:10px}.seg button{font:600 13px var(--sans);padding:6px 14px;border:0;background:var(--surface);color:var(--ink);cursor:pointer}.seg button[aria-pressed=true]{background:var(--acc);color:var(--acc-ink)}
+.mapblock h2{margin-top:10px}
+.mmframe{overflow:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:8px;-webkit-overflow-scrolling:touch}
+svg.mm{display:block;font-family:var(--sans)}
+.mm-root{fill:var(--acc)}.mm-root-t{fill:var(--acc-ink);font:700 14px var(--sans)}
+.mm-link{fill:none;stroke-width:2;opacity:.7}.mm-branch-t{font:700 13px var(--sans);fill:#fff}.mm-leaf-t{font:13px var(--sans);fill:var(--ink)}.mm-leaf-n{font:11.5px var(--sans);fill:var(--muted)}
+.mm-leaf{fill:var(--surface2);stroke-width:1.5}
+.mm-branch.c0{fill:var(--c0)}.mm-branch.c1{fill:var(--c1)}.mm-branch.c2{fill:var(--c2)}.mm-branch.c3{fill:var(--c3)}.mm-branch.c4{fill:var(--c4)}.mm-branch.c5{fill:var(--c5)}.mm-branch.c6{fill:var(--c6)}.mm-branch.c7{fill:var(--c7)}
+.mm-link.c0,.mm-leaf.c0{stroke:var(--c0)}.mm-link.c1,.mm-leaf.c1{stroke:var(--c1)}.mm-link.c2,.mm-leaf.c2{stroke:var(--c2)}.mm-link.c3,.mm-leaf.c3{stroke:var(--c3)}.mm-link.c4,.mm-leaf.c4{stroke:var(--c4)}.mm-link.c5,.mm-leaf.c5{stroke:var(--c5)}.mm-link.c6,.mm-leaf.c6{stroke:var(--c6)}.mm-link.c7,.mm-leaf.c7{stroke:var(--c7)}
+:root:not([data-theme="dark"]) .mm-branch-t{fill:#fff}
+.outline,.outline ul{list-style:none;padding-left:18px;margin:4px 0}.outline>li{padding-left:0}.outline summary{cursor:pointer;font:700 15px var(--sans)}
+.outline li.c0>details>summary{color:var(--c0)}.outline li.c1>details>summary{color:var(--c1)}.outline li.c2>details>summary{color:var(--c2)}.outline li.c3>details>summary{color:var(--c3)}.outline li.c4>details>summary{color:var(--c4)}.outline li.c5>details>summary{color:var(--c5)}.outline li.c6>details>summary{color:var(--c6)}.outline li.c7>details>summary{color:var(--c7)}
+.ol-note{color:var(--muted);font-size:.9em}
+.timeline{list-style:none;margin:10px 0;padding:0;position:relative}
+.timeline:before{content:"";position:absolute;left:94px;top:0;bottom:0;border-left:2px solid var(--line)}
+.tl{display:grid;grid-template-columns:86px 18px 1fr;gap:0 6px;margin:0 0 12px;align-items:start}
+.yr{font:700 14px var(--mono);text-align:right;color:var(--acc);padding-top:2px}
+.pin{width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--acc);margin:7px 0 0 2px;position:relative;z-index:1}
+.tl.high .pin{background:var(--saf);border-color:var(--saf)}
+.tlbody{font:16px/1.5 var(--sans);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 12px}
+.tl.high .tlbody{border-color:var(--saf)}.star{color:var(--saf);margin-left:6px}.sref{float:right;margin-left:10px;font:600 12px var(--sans);text-decoration:none}
+.lkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.link{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:15px/1.45 var(--sans)}.link p{margin:4px 0 0;color:var(--muted)}.lk-line{font-weight:700}
+.recall{font:16px/1.55 var(--sans);padding-left:24px}.recall li{margin:6px 0}
+.count{font:600 13px var(--sans);color:var(--muted);margin:8px 0}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0;font:16px/1.5 var(--sans)}
+.q .qt{font-weight:700;margin-bottom:8px}.q .opt{display:block;width:100%;text-align:left;padding:8px 12px;margin:6px 0;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.q .opt:hover{border-color:var(--acc)}.q .opt.right{border-color:var(--good);background:var(--good-soft)}.q .opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.q .ex{margin-top:8px;color:var(--muted)}
+.deck{margin:10px 0}
+.fc{min-height:150px;background:var(--surface);border:2px solid var(--acc);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:center;text-align:center;font:18px/1.5 var(--serif);cursor:pointer;user-select:none}
+.fc.back{background:var(--acc-soft)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.btn{font:600 14px var(--sans);padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn.pri{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:40px 0 20px}.pager a{display:block;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--ink);font:600 15px var(--sans)}.pager a.nx{text-align:right}.pager small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+footer{color:var(--muted);font:13px/1.5 var(--sans);border-top:1px solid var(--line);padding-top:14px;margin-top:30px}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:flex;align-items:center;justify-content:center;padding:10px;overflow:auto}#lightbox img{max-width:none;width:min(1600px,100%);height:auto;background:#fff;cursor:zoom-out}
+.part{margin:34px 0}.part h2{margin-top:0}
+.chlist{display:flex;flex-direction:column;gap:8px}
+.chcard{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;text-decoration:none;color:var(--ink)}
+a.chcard:hover{border-color:var(--acc)}.chcard.pending{opacity:.5}
+.chn{font:700 18px var(--mono);color:var(--acc);text-align:center}.cht b{font:700 16px var(--serif);display:block}.cht small{font:13px/1.4 var(--sans);color:var(--muted);display:block;margin-top:2px}
+.chb{display:flex;flex-direction:column;gap:4px;align-items:flex-end;font:600 11px var(--sans)}.chb em{font-style:normal;background:var(--acc-soft);color:var(--acc);padding:2px 8px;border-radius:99px}.chb i.tick{font-style:normal;background:var(--good);color:#fff;padding:2px 8px;border-radius:99px}
+.prog{font:600 14px var(--sans);color:var(--muted)}
+.sbox{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:17px var(--sans);margin:6px 0 14px}
+.results .hit{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0;font:15px/1.5 var(--sans)}.results .hit a{font-weight:700}.results .hit small{color:var(--muted)}
+.chips{display:flex;gap:8px;margin-bottom:8px}.chip{font:600 13px var(--sans);padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}.chip.on{background:var(--acc);color:var(--acc-ink);border-color:var(--acc)}
+@media (max-width:900px){.layout{display:block}.sidetoc{display:none}}
+@media (max-width:560px){body{font-size:16.5px}.tl{grid-template-columns:62px 16px 1fr}.timeline:before{left:70px}.yr{font-size:12px}.chcard{grid-template-columns:34px 1fr}.chb{display:none}.lanes{grid-template-columns:1fr}}
+
+code{font:.88em var(--mono);background:var(--surface2);padding:1px 5px;border-radius:4px}
+
+/* ---- reader app ---- */
+:root{--zoom:1;--lh:1.65;--pw:780px}
+:root[data-theme="sepia"]{--bg:#F4ECD8;--surface:#FBF5E6;--surface2:#EADFC4;--ink:#3B3022;--muted:#7A6A52;--line:#D8C9A6;--acc:#7A4A12;--acc-ink:#fff;--acc-soft:#EFDDB8;--saf:#A4470A;--saf-soft:#F6E2BE;--red:#9C2A1C;--red-soft:#F3D9CB;--blue:#2F5C8A;--blue-soft:#DDE6E4;--good:#3E6B2A;--good-soft:#DDE8C8;--hl:#F2D98A;color-scheme:light}
+:root[data-font="sans"] body{font-family:var(--sans)}
+:root[data-font="sans"] .notes p,:root[data-font="sans"] .notes li{font-family:var(--sans)}
+.page{zoom:var(--zoom);max-width:var(--pw)}
+.notes p,.notes li{line-height:var(--lh)}
+.rbar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--acc);z-index:40;transition:width .15s}
+.aabtn{color:var(--ink);border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:5px 12px;font:700 14px var(--serif);cursor:pointer;flex:none}
+.h2read{float:right;margin:2px 0 0 10px;font:600 12px var(--sans);border:1px solid var(--line);background:var(--surface2);color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer;min-height:30px}
+.h2read[aria-pressed="true"]{background:var(--acc-soft);color:var(--acc);border-color:var(--acc)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding:6px 10px calc(6px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:center;justify-content:center}
+.dock button{font:600 14px var(--sans);min-height:44px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;padding:0 14px;cursor:pointer}
+.dock .mid{flex:1;max-width:520px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dock .mid b{color:var(--acc)}
+body.has-dock .page{padding-bottom:110px}
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center}
+.sheet[hidden]{display:none}
+.sheetin{background:var(--surface);color:var(--ink);width:100%;max-width:560px;max-height:82vh;overflow:auto;border-radius:16px 16px 0 0;padding:16px 18px calc(18px + env(safe-area-inset-bottom,0px));font:15px/1.4 var(--sans)}
+.sheetin h3{margin:0 0 10px;font:700 17px var(--sans)}
+.srow{display:flex;align-items:center;gap:10px;margin:12px 0;flex-wrap:wrap}
+.srow label{flex:0 0 92px;color:var(--muted);font-weight:600}
+.srow .grp{display:flex;gap:6px;flex-wrap:wrap}
+.srow button{font:600 14px var(--sans);min-height:42px;min-width:48px;padding:0 12px;border:1px solid var(--line);background:var(--surface2);color:var(--ink);border-radius:10px;cursor:pointer}
+.srow button[aria-pressed="true"]{border-color:var(--acc);background:var(--acc-soft);color:var(--acc)}
+.secl a{display:flex;gap:10px;align-items:center;padding:12px 6px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;min-height:44px}
+.secl a .tk{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:13px;color:var(--acc-ink)}
+.secl a.rd .tk{background:var(--acc);border-color:var(--acc)}
+.secl a.cur{background:var(--acc-soft)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;z-index:50;background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 14px;display:flex;gap:12px;align-items:center;font:600 14px var(--sans);max-width:92vw;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.toast button{font:700 14px var(--sans);background:transparent;border:0;color:var(--bg);text-decoration:underline;cursor:pointer;min-height:36px}
+body.focus .bar{display:none}body.focus .sidetoc{display:none}
+figcaption.clamp{max-height:3.3em;overflow:hidden;position:relative;cursor:pointer}
+figcaption.clamp.open{max-height:none}
+figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bottom:0;background:var(--bg);color:var(--acc);font:700 12px var(--sans);padding-left:14px}
+.cbar{display:block;height:4px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}.cbar i{display:block;height:100%;width:0;background:var(--acc)}
+.nbcard h2{border:0;padding:0}.nbcard{border-top:1px solid var(--line)}
+</style></head><body><header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="home.html">Contents</a><span class="nbtn off">‹</span><span class="bartitle"><b>Ch 7</b> Already Autonomous States: Rajputs, Travancore, Mysore</span><span class="nbtn off">›</span><a class="home" href="search.html">Search</a><a class="home" href="timeline.html">Timeline</a><label class="done"><input type="checkbox" id="donebox" data-ch="7"><span>Done</span></label><button class="themebtn" id="themebtn" type="button" aria-label="Change theme">Theme</button></div></header><main class="page bank"><div class="chead"><div class="eyebrow">Question bank · Chapter 7</div><h1>Already Autonomous States: Rajputs, Travancore, Mysore</h1><p class="lede">1 PYQ Prelims · 2 PYQ Mains · 13 FYQ Prelims · 2 FYQ Mains. Source: Himanshu Khatri PYQ and FYQ companion.</p><div class="row"><a class="btn" href="ch07.html">Back to chapter notes</a><a class="btn" href="qbank.html">All question banks</a></div></div><div class="tabs"><button type="button" data-p="p-pp" aria-pressed="true">PYQ Prelims (1)</button><button type="button" data-p="p-pm" aria-pressed="false">PYQ Mains (2)</button><button type="button" data-p="p-fp" aria-pressed="false">FYQ Prelims (13)</button><button type="button" data-p="p-fm" aria-pressed="false">FYQ Mains (2)</button></div><div class="bsc" id="bsc">0 / 0 correct</div><section class="pane" id="p-pp"><p class="gdesc">Real UPSC Prelims questions mapped to this chapter. Tap an option; the reasoning shows why it is right and why the others are wrong.</p><article class="bq" data-ans="d" id="pp1"><div class="bqh"><span class="yr">2001</span><span class="bn">PYQ 1</span><span class="qtl">Tipu Sultan&#x27;s modern embassies</span></div><p class="bqq">Who among the following Indian rulers established embassies in foreign countries on modern lines?</p><div class="bopts"><button type="button" class="opt" data-k="a"><b>A.</b> Haider Ali</button><button type="button" class="opt" data-k="b"><b>B.</b> Mir Qasim</button><button type="button" class="opt" data-k="c"><b>C.</b> Shah Alam II</button><button type="button" class="opt" data-k="d"><b>D.</b> Tipu Sultan</button></div><div class="bwhy" hidden><div class="bans">Answer: (D)</div><p><b>Why (d) is correct:</b> Tipu82-99 set up modern embassies in France, Turkey, &amp; Egypt — alongside other administrative innovations such as a new coinage and the Mauludi Luniselar Calendar. You will find this in &#x27;What made Tipu82-99 a different kind of ruler — and why did he still lose?&#x27; (inside the ⚠ Alert block). The chapter&#x27;s &#x27;What made Tipu82-99 a different kind of ruler — and why did he still lose?&#x27; section also covers Tipu82-99&#x27;s iron-cased rocket artillery (later studied by William Congreve), his government-owned trading company (30 trading centres including Muscat, Oman), his sanad request to the Khalifa, and his French alliance — Tree of Liberty + Jacobin Club membership — which made him an ideological as well as military adversary in British eyes.</p><p><b>Why the other options are wrong:</b> </p><ul class="wl"><li>(a) Haider Ali61-82 built the modern Mysore army on a French model (with Risalas) and fought the EIC in the early Anglo-Mysore Wars, but he did not set up modern embassies in foreign countries.</li><li>(b) Mir Qasim was a Nawab of Bengal who fought the EIC at the Battle of Buxar (1764) — covered elsewhere in your notes — and did not establish foreign embassies.</li><li>(c) Shah Alam II60-06 was the Mughal Emperor whose authority was reduced after Buxar; foreign embassies were not part of his programme.</li></ul></div></article></section><section class="pane" id="p-pm" hidden><p class="gdesc">Real UPSC Mains questions with the demand of the question, a suggested intro, guiding themes and a conclusion. Tap to open.</p><details class="bm"><summary><span class="yr">2017</span><span class="bn">PYQ 1</span> <span class="qtl">Fragmented polity in mid-18th century</span><small>Mains 2017 · 10 marks · 150 words</small></summary><div class="bmb"><p>&quot;Clarify how mid-eighteenth-century India was beset with the spectre of a fragmented polity.&quot;</p><p><b>Demand of the question:</b> Show how India was a fragmented polity by the mid-eighteenth century. The verb &quot; clarify &quot; means make the case clearly with evidence — give multiple regional examples. The phrase &quot; spectre of a fragmented polity &quot; tells you the question accepts the premise as a recognised condition; your job is to show how, not to debate whether it was fragmented.</p><p><b>Suggested intro (~25 words):</b> Mid-eighteenth-century India was indeed beset by the spectre of a fragmented polity — Mughal authority had broken apart into many separate regional powers across the subcontinent.</p><p><b>Guiding themes (pick 4–5 for a 150-word answer):</b> </p><p class="th"><b>1.</b> Successor States — Bengal, Awadh, Hyderabad (see Chapter 3, Successor States).</p><p class="th"><b>2.</b> Maratha Confederacy (see Chapter 4, Rise of Marathas).</p><p class="th"><b>3.</b> Jats + Afghans (see Chapter 5, Jats and Afghans).</p><p class="th"><b>4.</b> Sikh State — Banda Bahadur08-15 → Misl Confederacy → Ranjit Singh01-39 (see Chapter 6 — &#x27;How did Banda Bahadur08-15 establish the first Sikh State — and why did it collapse?&#x27; + &#x27;What kept the Sikh State alive after Banda Bahadur08-15&#x27;s defeat?&#x27; + &#x27;How did Ranjit Singh01-39 unify the Misls and build a powerful Sikh State?&#x27; + &#x27;What were the terms of the 1809 Treaty of Amritsar with the EIC?&#x27;).</p><p class="th"><b>5.</b> Rajputs post-Aurangzeb58-07.</p><p class="th"><b>6.</b> Travancore — Marthanda Varma29-58.</p><p class="th"><b>7.</b> Mysore — Haider Ali61-82 + Tipu82-99.</p><p><b>Suggested conclusion (~20 words):</b> The fragmented polity that haunted mid-eighteenth-century India was already a settled reality — the EIC&#x27;s later expansion only used this break-up; it did not cause it.</p></div></details><details class="bm"><summary><span class="yr">2014</span><span class="bn">PYQ 2</span> <span class="qtl">Why were so many empire-shaking battles fought at Panipat?</span><small>Mains 2014 · 10 marks · 150 words</small></summary><div class="bmb"><p>&quot;The third battle of Panipat was fought in 1761. Why were so many empire-shaking battles fought at Panipat?&quot;</p><p><b>Demand of the question:</b> Explain why this one place — Panipat — kept becoming the site of empire-deciding battles. You must cover two parts: (a) the geographic reason (why this terrain), and (b) the historical pattern (multiple battles, each empire-defining). The verb &quot; why &quot; calls for causal explanation, not narrative description. Keep the 1761 anchor in mind — your answer must connect to the Third Battle of Panipat as the prompt&#x27;s reference point.</p><p><b>Suggested intro (~25 words):</b> Many empire-shaking battles were fought at Panipat because Panipat was India&#x27;s natural Delhi gateway from the northwest — and whoever won there won the throne, as the third battle of Panipat in 1761 again confirmed.</p><p><b>Guiding themes (pick 4–5 for a 150-word answer):</b> </p><p class="th"><b>1.</b> Geography — Delhi gateway (see Chapter 4, Marathas; see Chapter 5, Afghans).</p><p class="th"><b>2.</b> 1st Panipat 1526 — Babur26-30 defeats Ibrahim Lodi → birth of the Mughal Empire (see Chapter 1, Mughal Background).</p><p class="th"><b>3.</b> 2nd Panipat 1556 — Akbar56-05 vs Hemu → consolidation of Mughal rule (see Chapter 1, Mughal Background).</p><p class="th"><b>4.</b> 3rd Panipat 1761 — Ahmad Shah Abdali vs Marathas → peak-and-break of Maratha imperial expansion (see Chapter 4, Marathas; see Chapter 5, Afghans).</p><p class="th"><b>5.</b> Sikh-side resistance to Afghan invasions — Ranjit Singh01-39 vs Zaman Shah 1799 (see Chapter 6 — &#x27;How did Ranjit Singh01-39 unify the Misls and build a powerful Sikh State?&#x27;).</p><p><b>Suggested conclusion (~20 words):</b> The empire-shaking battles fought at Panipat — 1526, 1556, 1761 — happened because controlling Panipat meant controlling the Delhi throne.</p></div></details></section><section class="pane" id="p-fp" hidden><p class="gdesc">Chapter-derived practice questions (FYQ = future-year questions) in UPSC style, with reasoning.</p><article class="bq" data-ans="c" id="fp1"><div class="bqh"><span class="bn">FYQ 1</span></div><p class="bqq">With reference to Akbar56-05&#x27;s co-option of the Rajputs, consider the following statements:
+1. Around the 16th century, Rajputana had no single central power — there were roughly twenty major Rajput clans.
+2. Akbar56-05 co-opted the more powerful Rajput chiefs, who then helped him subdue the smaller ones.
+3. The chosen Rajput chiefs were brought into the Mughal system as Mansabdars; their home territories were recognised as Vatan Jagirs.
+4. Rajputs made up roughly 15% of all Mansabdars — the Hindu bloc within the Mansabdari system. Which of the statements given above are correct?</p><div class="bopts"><button type="button" class="opt" data-k="a"><b>A.</b> 2, 3 and 4 only</button><button type="button" class="opt" data-k="b"><b>B.</b> 1, 2 and 3 only</button><button type="button" class="opt" data-k="c"><b>C.</b> 1, 2, 3 and 4</button><button type="button" class="opt" data-k="d"><b>D.</b> 1, 3 and 4 only</button></div><div class="bwhy" hidden><div class="bans">Answer: (C)</div><p>(c) 1, 2, 3 and 4. All four facts are taken from the record: 16th-c Rajputana with ~20 clans + Akbar56-05&#x27;s selective co-option + the Mansabdar/Vatan-Jagir framework + the 15% Hindu bloc.</p></div></article><article class="bq" data-ans="b" id="fp2"><div class="bqh"><span class="bn">FYQ 2</span></div><p class="bqq">Which one of the following correctly describes the 1680 Rajput revolt under Aurangzeb58-07?</p><div class="bopts"><button type="button" class="opt" data-k="a"><b>A.</b> The revolt was led by all twenty major Rajput clans together against Mughal taxation.</button><button type="button" class="opt" data-k="b"><b>B.</b> Aurangzeb58-07 interfered in Marwar&#x27;s succession; Marwar and Mewar both revolted, but other Rajput chiefs refused to join — fearing Mewar&#x27;s dominance would replace Mughal dominance — &amp; the rebellion collapsed.</button><button type="button" class="opt" data-k="c"><b>C.</b> The revolt succeeded and established an independent Rajput federation under Sawai Jai Singh99-43.</button><button type="button" class="opt" data-k="d"><b>D.</b> The revolt was triggered by the Subsidiary Alliance imposed by the EIC.</button></div><div class="bwhy" hidden><div class="bans">Answer: (B)</div><p>(b) is correct. The record carries the answer: Aurangzeb58-07&#x27;s 1680 interference in Marwar&#x27;s succession + Marwar+Mewar revolt + other chiefs refusing to join (fear of Mewar dominance) + rebellion collapsing. (a), (c), (d) are factually wrong.</p></div></article><article class="bq" data-ans="c" id="fp3"><div class="bqh"><span class="bn">FYQ 3</span></div><p class="bqq">With reference to Marthanda Varma29-58 &amp; the Battle of Colachel 1741, consider the following statements:
+1. Marthanda Varma29-58 built a strong, centralised State by subjugating local chiefs across the region.
+2. He built a European-style military with modern weapons and trained soldiers.
+3. At the Battle of Colachel (1741), Marthanda Varma29-58&#x27;s army crushed the Dutch East India Company.
+4. The defeat permanently ended Dutch political and military ambitions in Kerala. Which of the statements given above are correct?</p><div class="bopts"><button type="button" class="opt" data-k="a"><b>A.</b> 2, 3 and 4 only</button><button type="button" class="opt" data-k="b"><b>B.</b> 1, 2 and 3 only</button><button type="button" class="opt" data-k="c"><b>C.</b> 1, 2, 3 and 4</button><button type="button" class="opt" data-k="d"><b>D.</b> 1, 3 and 4 only</button></div><div class="bwhy" hidden><div class="bans">Answer: (C)</div><p>(c) 1, 2, 3 and 4. All four facts are taken from the record: Marthanda Varma29-58 (1729–58) + European-style military + 1741 Battle of Colachel + the permanent end of Dutch political-military ambitions in Kerala.</p></div></article><article class="bq" data-ans="b" id="fp4"><div class="bqh"><span class="bn">FYQ 4</span></div><p class="bqq">Which one of the following correctly describes the State monopoly Travancore established on the Malabar coast?</p><div class="bopts"><button type="button" class="opt" data-k="a"><b>A.</b> The monopoly was on Dutch spice imports only and was abolished after the 1741 victory.</button><button type="button" class="opt" data-k="b"><b>B.</b> Travancore established a State monopoly over Malabar-coast trade; revenues were reinvested into the military, irrigation works, &amp; transport infrastructure — a classic example of a small State using trade income to build State capacity.</button><button type="button" class="opt" data-k="c"><b>C.</b> The monopoly was a joint venture between Travancore and the EIC under the 1805 Subsidiary Alliance.</button><button type="button" class="opt" data-k="d"><b>D.</b> The monopoly was on Portuguese pepper exports only.</button></div><div class="bwhy" hidden><div class="bans">Answer: (B)</div><p>(b) is correct. The record ◆ Takeaway carries the answer: Travancore&#x27;s State monopoly over Malabar trade + revenues reinvested into military / irrigation / transport + the State-capacity-from-trade thesis. (a), (c), (d) are factually wrong.</p></div></article><article class="bq" data-ans="c" id="fp5"><div class="bqh"><span class="bn">FYQ 5</span></div><p class="bqq">With reference to the 1805 Subsidiary Alliance &amp; 1809 Velu Thampi revolt, consider the following statements:
+1. In 1805, a mutiny broke out among the Nair troops over non-payment of salaries.
+2. Travancore sought British help and was compelled to sign a Subsidiary Alliance (1805).
+3. Velu Thampi Dalawa was the Prime Minister of Travancore.
+4. In 1809, Velu Thampi rallied the Nair troops and issued the Kundara Proclamation calling on the people to rise against British control; the revolt was suppressed and Velu Thampi took his own life. Which of the statements given above are correct?</p><div class="bopts"><button type="button" class="opt" data-k="a"><b>A.</b> 2, 3 and 4 only</button><button type="button" class="opt" data-k="b"><b>B.</b> 1, 2 and 3 only</button><button type="button" class="opt" data-k="c"><b>C.</b> 1, 2, 3 and 4</button><button type="button" class="opt" data-k="d"><b>D.</b> 1, 3 and 4 only</button></div><div class="bwhy" hidden><div class="bans">Answer: (C)</div><p>(c) 1, 2, 3 and 4. All four facts are taken from the record: 1805 Nair mutiny + Subsidiary Alliance 1805 + Velu Thampi Dalawa as PM + the 1809 Kundara Proclamation revolt + the suicide.</p></div></article><article class="bq" data-ans="b" id="fp6"><div class="bqh"><span class="bn">FYQ 6</span></div><p class="bqq">Which one of the following correctly describes the 1565 Battle of Talikota?</p><div class="bopts"><button type="button" class="opt" data-k="a"><b>A.</b> A battle between the Marathas and Tipu82-99 leading to the annexation of Mysore.</button><button type="button" class="opt" data-k="b"><b>B.</b> Also called Rakkasa-Tangadi; a coalition of Deccan Sultanates decisively defeated the Vijayanagar forces; 1565 marks the operational end of Vijayanagar as a major power, even though the dynasty lingered until 1646.</button><button type="button" class="opt" data-k="c"><b>C.</b> A naval battle between Travancore and the Dutch East India Company.</button><button type="button" class="opt" data-k="d"><b>D.</b> The battle in which Haider Ali61-82 overthrew NanjRaj.</button></div><div class="bwhy" hidden><div class="bans">Answer: (B)</div><p>(b) is correct. The record carries the answer: Battle of Talikota / Rakkasa-Tangadi 1565 + Deccan Sultanates coalition + operational end of Vijayanagar in 1565 + dynasty lingered until 1646. (a), (c), (d) are factually wrong.</p></div></article><article class="bq" data-ans="c" id="fp7"><div class="bqh"><span class="bn">FYQ 7</span></div><p class="bqq">With reference to Haider Ali61-82&#x27;s takeover of Mysore in 1761, consider the following statements:
+1. By 1761, the Wodeyars had been reduced to figureheads by a powerful and corrupt Prime Minister, NanjRaj.
+2. Haider Ali61-82 began as a junior military officer; the Wodeyars had helped pay off his family&#x27;s debts.
+3. In 1761, he overthrew NanjRaj and seized effective power — while keeping the Wodeyar as a nominal head of State.
+4. He took French assistance for military training, technology transfer, &amp; organisational reform — restructuring the army into Risalas (regiments). Which of the statements given above are correct?</p><div class="bopts"><button type="button" class="opt" data-k="a"><b>A.</b> 2, 3 and 4 only</button><button type="button" class="opt" data-k="b"><b>B.</b> 1, 2 and 3 only</button><button type="button" class="opt" data-k="c"><b>C.</b> 1, 2, 3 and 4</button><button type="button" class="opt" data-k="d"><b>D.</b> 1, 3 and 4 only</button></div><div class="bwhy" hidden><div class="bans">Answer: (C)</div><p>(c) 1, 2, 3 and 4. All four facts are taken from the record: 1761 NanjRaj reduces Wodeyars to figureheads + Haider Ali61-82 begins as junior officer + 1761 overthrow of NanjRaj + Wodeyar as nominal head + French assistance + Risala restructuring.</p></div></article><article class="bq" data-ans="b" id="fp8"><div class="bqh"><span class="bn">FYQ 8</span></div><p class="bqq">Which one of the following correctly describes the subjugation of Poligars and Deshmukhs under Haider Ali61-82?</p><div class="bopts"><button type="button" class="opt" data-k="a"><b>A.</b> Poligars were Mughal-appointed governors of Mysore districts; Deshmukhs were senior military commanders.</button><button type="button" class="opt" data-k="b"><b>B.</b> Poligars were local chieftains and landlords who controlled land, temples, &amp; their own armed men — the real rulers of the countryside since the Vijayanagar era; Deshmukhs were revenue collectors who functioned like primary zamindars; both were systematically subjugated over roughly twenty years to dismantle non-State power.</button><button type="button" class="opt" data-k="c"><b>C.</b> Poligars were French-trained infantry units; Deshmukhs were Khalisa-land tax collectors.</button><button type="button" class="opt" data-k="d"><b>D.</b> Poligars and Deshmukhs were the same office under different names in different parts of Mysore.</button></div><div class="bwhy" hidden><div class="bans">Answer: (B)</div><p>(b) is correct. The record carries the answer: Poligars = local chieftains + temples + armed men + countryside-rulers since Vijayanagar; Deshmukhs = revenue collectors functioning like primary zamindars; 20-year subjugation; non-State power systematically dismantled. (a), (c), (d) are factually wrong.</p></div></article><article class="bq" data-ans="c" id="fp9"><div class="bqh"><span class="bn">FYQ 9</span></div><p class="bqq">With reference to Military Fiscalism in Mysore, consider the following statements:
+1. Khalisa land (revenue went directly to the State treasury) was expanded.
+2. Jagirdari land (revenue assigned to nobles or commanders) was shrunk.
+3. Deshmukhs were removed as intermediaries; State officials collected taxes directly and received salaries.
+4. Detailed field surveys assessed land fairly — soil fertility, crop type, irrigation access, past production trends — preventing over-assessment.
+5. Sericulture (silk cultivation) was introduced; cash crops were promoted; old irrigation canals were repaired and new ones built. Which of the statements given above are correct?</p><div class="bopts"><button type="button" class="opt" data-k="a"><b>A.</b> 2, 3, 4 and 5 only</button><button type="button" class="opt" data-k="b"><b>B.</b> 1, 2, 3 and 4 only</button><button type="button" class="opt" data-k="c"><b>C.</b> 1, 2, 3, 4 and 5</button><button type="button" class="opt" data-k="d"><b>D.</b> 1, 3, 4 and 5 only</button></div><div class="bwhy" hidden><div class="bans">Answer: (C)</div><p>(c) 1, 2, 3, 4 and 5. All five components of Military Fiscalism are taken from the record: Khalisa expansion + Jagirdari shrinkage + Deshmukh removal as intermediaries + field surveys preventing over-assessment + sericulture + cash crops + irrigation investments.</p></div></article><article class="bq" data-ans="d" id="fp10"><div class="bqh"><span class="bn">FYQ 10</span></div><p class="bqq">Prelims 2001 — replicated for practice. Who among the following Indian rulers established embassies in foreign countries on modern lines?</p><div class="bopts"><button type="button" class="opt" data-k="a"><b>A.</b> Haider Ali61-82</button><button type="button" class="opt" data-k="b"><b>B.</b> Mir Qasim</button><button type="button" class="opt" data-k="c"><b>C.</b> Shah Alam II60-06</button><button type="button" class="opt" data-k="d"><b>D.</b> Tipu82-99</button></div><div class="bwhy" hidden><div class="bans">Answer: (D)</div><p>(d) Tipu82-99. The record carries the answer (Prelims 2001 verbatim): Tipu82-99 set up modern embassies in France, Turkey, &amp; Egypt + the Mauludi Luniselar Calendar + new coinage. (a), (b), (c) are factually wrong distractors.</p></div></article><article class="bq" data-ans="c" id="fp11"><div class="bqh"><span class="bn">FYQ 11</span></div><p class="bqq">With reference to Tipu82-99&#x27;s military and administrative innovations, consider the following statements:
+1. Tipu82-99 built a modern navy and established a government-owned trading company modelled on the EIC, with thirty trading centres including Muscat, Oman.
+2. He developed iron-cased rocket artillery — later studied by the British; William Congreve&#x27;s rockets drew directly from Tipu82-99&#x27;s designs.
+3. He set up modern embassies in France, Turkey, &amp; Egypt — alongside a new coinage and the Mauludi Luniselar Calendar.
+4. He sent a request to the Khalifa for a sanad — an official order recognising him as a ruler independent of Mughal authority. Which of the statements given above are correct?</p><div class="bopts"><button type="button" class="opt" data-k="a"><b>A.</b> 2, 3 and 4 only</button><button type="button" class="opt" data-k="b"><b>B.</b> 1, 2 and 3 only</button><button type="button" class="opt" data-k="c"><b>C.</b> 1, 2, 3 and 4</button><button type="button" class="opt" data-k="d"><b>D.</b> 1, 3 and 4 only</button></div><div class="bwhy" hidden><div class="bans">Answer: (C)</div><p>(c) 1, 2, 3 and 4. All four facts are taken from the record: modern navy + 30-centre government trading company (incl. Muscat) + iron-cased rockets (Congreve linkage) + embassies in France/Turkey/Egypt + Mauludi Calendar + Khalifa sanad request.</p></div></article><article class="bq" data-ans="c" id="fp12"><div class="bqh"><span class="bn">FYQ 12</span></div><p class="bqq">With reference to Tipu82-99&#x27;s French alliance and ideological positioning, consider the following statements:
+1. In the 1790s, Tipu82-99 sent an ambassador to France seeking military technology and a formal alliance against the British.
+2. In 1798, Napoleon attacked Egypt and the Middle East — partly to disrupt British trade in the Arabian Sea.
+3. Tipu82-99 planted a Tree of Liberty in Mysore as a symbolic gesture of friendship with revolutionary France.
+4. Tipu82-99 became a member of the Jacobin Club — the radical political organisation at the heart of the French Revolution. Which of the statements given above are correct?</p><div class="bopts"><button type="button" class="opt" data-k="a"><b>A.</b> 2, 3 and 4 only</button><button type="button" class="opt" data-k="b"><b>B.</b> 1, 2 and 3 only</button><button type="button" class="opt" data-k="c"><b>C.</b> 1, 2, 3 and 4</button><button type="button" class="opt" data-k="d"><b>D.</b> 1, 3 and 4 only</button></div><div class="bwhy" hidden><div class="bans">Answer: (C)</div><p>(c) 1, 2, 3 and 4. All four facts are taken from the record: 1790s France ambassador + 1798 Napoleon Egypt + Tree of Liberty in Mysore + Jacobin Club membership.</p></div></article><article class="bq" data-ans="b" id="fp13"><div class="bqh"><span class="bn">FYQ 13</span></div><p class="bqq">Which one of the following correctly describes the end of Mysore&#x27;s power?</p><div class="bopts"><button type="button" class="opt" data-k="a"><b>A.</b> Mysore was annexed under the Doctrine of Lapse in 1856.</button><button type="button" class="opt" data-k="b"><b>B.</b> The Fourth Anglo-Mysore War (1799) ended with the death of Tipu82-99 at Seringapatam, &amp; Mysore&#x27;s power was broken — the ambition (dominate South India + control international trade) was real, but the capacity, ultimately, was not enough.</button><button type="button" class="opt" data-k="c"><b>C.</b> Mysore was annexed via Subsidiary Alliance in 1805 alongside Travancore.</button><button type="button" class="opt" data-k="d"><b>D.</b> Mysore voluntarily merged with the Maratha Confederacy after the Third Battle of Panipat 1761.</button></div><div class="bwhy" hidden><div class="bans">Answer: (B)</div><p>(b) is correct. The record carries the answer: Fourth Anglo-Mysore War 1799 + Tipu82-99&#x27;s death at Seringapatam + Mysore&#x27;s power broken + the ambition-vs-capacity thesis (Vijayanagar 2.0 ambition; Military Fiscalism couldn&#x27;t replenish faster than warfare drained). (a), (c), (d) are factually wrong. The Advent of Europeans</p></div></article></section><section class="pane" id="p-fm" hidden><p class="gdesc">Chapter-derived Mains practice with the demand, guiding themes and a conclusion.</p><details class="bm"><summary><span class="bn">FYQ 1</span> <span class="qtl">Why did the Already Autonomous States survive longer than the Successor States? 150 words · 10 marks &quot;The Already Autonomous States (Rajputs, Travancore, Mysore) lasted longer in the 18th century than the Mughal Successor States (Bengal, Awadh, Hyderabad). Examine the reasons.&quot;</span></summary><div class="bmb"><p><b>Demand of the question:</b> Show why the three Already Autonomous States survived longer + compare with how Successor States collapsed earlier. The verb &quot;examine&quot; means lay out the reasons clearly using regional evidence.</p><p><b>Suggested intro (~25 words):</b> The Already Autonomous States survived longer than the Successor States because each carried a pre-Mughal identity, a defensible geography, and a strategic resource base of its own.</p><p><b>Guiding themes (pick 4-5 for a 150-word answer):</b> </p><p class="th"><b>1.</b> Pre-Mughal identity — Rajputs had centuries-old clan identity (see &#x27;Akbar56-05 and Rajputs&#x27; and &#x27;Rajputs vs Aurangzeb58-07 and Marathas&#x27;); Travancore was never under the Mughals (see &#x27;Travancore:&#x27;; Mysore inherited Vijayanagar legacy (see &#x27;How did Mysore go from being a minor kingdom to one of the most powerful states in 18th-century India?&#x27;.</p><p class="th"><b>2.</b> Defensible geography — Rajputana desert + Travancore Western Ghats + Mysore plateau limited Mughal/Maratha reach.</p><p class="th"><b>3.</b> Resource base — Travancore Malabar trade monopoly (see &#x27;Travancore:&#x27;; Mysore Military Fiscalism (see &#x27;How did Mysore fund this military machine?&#x27;; Rajputs in trade-route control (Marwar Delhi-Agra-Ahmedabad).</p><p class="th"><b>4.</b> State capacity — Marthanda Varma29-58 + Haider Ali61-82 built modern European-style armies (see &#x27;Travancore:&#x27; and &#x27;How did Mysore go from being a minor kingdom to one of the most powerful states in 18th-century India?&#x27;); Rajputs preserved Mansabdari but on their own terms after 1707 (see &#x27;Rajputs vs Aurangzeb58-07 and Marathas&#x27;.</p><p class="th"><b>5.</b> Slower EIC takeover — EIC used Subordinate Alliance (Subsidiary Alliance) rather than direct annexation, buying time (see &#x27;Rajputs vs Aurangzeb58-07 and Marathas&#x27; and &#x27;Travancore vs Mysore &amp; EIC&#x27;); Mysore lasted till Fourth Anglo-Mysore War 1799; Travancore till SA 1805 + Velu Thampi revolt 1809.</p><p><b>Suggested conclusion (~20 words):</b> Pre-existing identity + geography + a strategic resource base gave the Already Autonomous States the slack the Successor States never had.</p><p>Revise: &#x27;Akbar56-05 and Rajputs&#x27; and &#x27;Rajputs vs Aurangzeb58-07 and Marathas&#x27; + &#x27;Travancore:&#x27; and &#x27;Travancore vs Mysore &amp; EIC&#x27; + &#x27;How did Mysore go from being a minor kingdom to one of the most powerful states in 18th-century India?&#x27; and &#x27;How did Mysore fund this military machine?&#x27;.</p></div></details><details class="bm"><summary><span class="bn">FYQ 2</span> <span class="qtl">Compare Mysore (Haider Ali + Tipu) and Travancore (Marthanda Varma) approaches to building State capacity in the 18th century. 150 words · 10 marks &quot;Both Mysore and Travancore built strong State capacity in the 18th century, yet by different routes. Compare the two approaches.&quot;</span></summary><div class="bmb"><p><b>Demand of the question:</b> Compare — cover similarities + differences — across military, fiscal, and institutional dimensions. Conclude with the contrast in outcome.</p><p><b>Suggested intro (~25 words):</b> Mysore (Haider Ali61-82 + Tipu82-99) and Travancore (Marthanda Varma29-58) both built strong 18th-century States — but Mysore through Military Fiscalism, Travancore through trade monopoly.</p><p><b>Guiding themes (pick 4-5 for a 150-word answer):</b> </p><p class="th"><b>1.</b> Military reorganisation — Mysore French-assisted Risalas + iron-cased rocket artillery + modern navy (see &#x27;How did Mysore go from being a minor kingdom to one of the most powerful states in 18th-century India?&#x27; and &#x27;What made Tipu82-99 a different kind of ruler — and why did he still lose?&#x27;); Travancore European-style army that crushed the Dutch at the Battle of Colachel (1741) (see &#x27;Travancore:&#x27;.</p><p class="th"><b>2.</b> Revenue base — Mysore Military Fiscalism: Khalisa expansion + Jagirdari shrinkage + field surveys + sericulture + irrigation (see &#x27;How did Mysore fund this military machine?&#x27;; Travancore State monopoly on Malabar coast trade reinvested in military + irrigation + transport (see &#x27;Travancore:&#x27;.</p><p class="th"><b>3.</b> Institutional reach — Mysore Haider Ali61-82 subjugated Poligars + Deshmukhs (see &#x27;How did Mysore go from being a minor kingdom to one of the most powerful states in 18th-century India?&#x27;; Travancore Marthanda Varma29-58 subjugated local chiefs to centralise the State (see &#x27;Travancore:&#x27;.</p><p class="th"><b>4.</b> International strategy — Mysore Tipu82-99 sent embassies to France/Turkey/Egypt + alliance with revolutionary France (see &#x27;What made Tipu82-99 a different kind of ruler — and why did he still lose?&#x27;; Travancore Marthanda Varma29-58 ended Dutch ambitions at Colachel 1741 (see &#x27;Travancore:&#x27;.</p><p class="th"><b>5.</b> Outcome contrast — Mysore wars drained State faster than Military Fiscalism could replenish (see &#x27;What made Tipu82-99 a different kind of ruler — and why did he still lose?&#x27;; fell at Fourth Anglo-Mysore War 1799. Travancore signed Subsidiary Alliance 1805 + Velu Thampi revolt 1809 (see &#x27;Travancore vs Mysore &amp; EIC&#x27;.</p><p><b>Suggested conclusion (~20 words):</b> Mysore chose military fiscalism; Travancore chose trade monopoly. Both built strong States; both ultimately lost to the EIC by different routes.</p><p>Revise: &#x27;Travancore:&#x27; and &#x27;Travancore vs Mysore &amp; EIC&#x27; + &#x27;How did Mysore go from being a minor kingdom to one of the most powerful states in 18th-century India?&#x27; and &#x27;How did Mysore fund this military machine?&#x27; + &#x27;What made Tipu82-99 a different kind of ruler — and why did he still lose?&#x27;.</p></div></details></section><footer>Questions and reasoning are from the PYQ/FYQ companion book. Keep this private.</footer></main><script>window.__NB={"id": "modern-india", "ch": 7, "title": "Already Autonomous States: Rajputs, Travancore, Mysore (question bank)"};/* Shared store: reading progress, preferences, optional cross-device sync. */
+(function(){
+var KEY='nbapp:v1',root=document.documentElement;
+function today(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function fresh(){return{v:1,prefs:{fs:1,lh:1.65,w:780,font:'serif',theme:'auto',pt:0},last:null,nb:{},days:{}}}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+var S;
+try{S=JSON.parse(lsGet(KEY))}catch(e){S=null}
+if(!S||!S.v)S=fresh();
+S.prefs=Object.assign(fresh().prefs,S.prefs||{});
+// one-time import of the older done list and theme
+if(!S.migrated){
+  try{var od=JSON.parse(lsGet('nb-done')||'[]');od.forEach(function(n){var c=chap('modern-india',n);c.done=1;c.dt=1})}catch(e){}
+  var ot=lsGet('nb-theme');if(ot&&!S.prefs.pt){S.prefs.theme=ot;S.prefs.pt=1}
+  S.migrated=1;
+}
+function chap(nb,n){var b=S.nb[nb]||(S.nb[nb]={});return b[n]||(b[n]={read:{},done:0,dt:0,pos:null,t:0})}
+var listeners=[],dirty=false,saveT=null,syncT=null;
+function save(){
+  dirty=true;clearTimeout(saveT);
+  saveT=setTimeout(function(){lsSet(KEY,JSON.stringify(S));listeners.forEach(function(f){try{f()}catch(e){}});scheduleSync()},250);
+}
+function flush(){lsSet(KEY,JSON.stringify(S))}
+function merge(a,b){ // a local, b remote; returns merged
+  var o=fresh();
+  o.prefs=((b.prefs&&b.prefs.pt||0)>(a.prefs&&a.prefs.pt||0))?Object.assign({},a.prefs,b.prefs):Object.assign({},b.prefs,a.prefs);
+  o.last=(!a.last||(b.last&&b.last.ts>a.last.ts))?b.last:a.last;
+  o.migrated=1;
+  var ids={};Object.keys(a.nb||{}).concat(Object.keys(b.nb||{})).forEach(function(k){ids[k]=1});
+  Object.keys(ids).forEach(function(id){
+    o.nb[id]={};var ca=(a.nb||{})[id]||{},cb=(b.nb||{})[id]||{},ks={};
+    Object.keys(ca).concat(Object.keys(cb)).forEach(function(k){ks[k]=1});
+    Object.keys(ks).forEach(function(k){
+      var x=ca[k],y=cb[k];if(!x||!y){o.nb[id][k]=x||y;return}
+      var r=Object.assign({},x.read,y.read),done=(y.dt||0)>(x.dt||0)?y:x,pos=(y.t||0)>(x.t||0)?y.pos:x.pos;
+      o.nb[id][k]={read:r,done:done.done,dt:done.dt||0,pos:pos,t:Math.max(x.t||0,y.t||0)};
+    });
+  });
+  var dk={};Object.keys(a.days||{}).concat(Object.keys(b.days||{})).forEach(function(k){dk[k]=1});
+  Object.keys(dk).forEach(function(k){o.days[k]=Math.max((a.days||{})[k]||0,(b.days||{})[k]||0)});
+  return o;
+}
+var syncState='off';
+function scheduleSync(){clearTimeout(syncT);syncT=setTimeout(function(){sync()},4000)}
+var dbp=null;
+function getRef(){
+  if(dbp)return dbp;
+  dbp=(async function(){
+    if(!window.claude||!claude.use)return null;
+    var db=await claude.use('db'),u=await claude.use('user');
+    if(!db||!u||!u.id)return null;
+    var id=await u.id();if(!id)return null;
+    return db.doc('data/users/'+id+'/nbapp');
+  })().catch(function(){return null});
+  return dbp;
+}
+var busy=false;
+async function sync(){
+  if(busy)return;busy=true;
+  try{
+    var ref=await getRef();if(!ref){syncState='local';return}
+    var snap=await ref.get(),rem=null;
+    if(snap.exists){var d=snap.data();try{rem=JSON.parse(d.state)}catch(e){}}
+    var m=rem?merge(S,rem):S;
+    var changed=JSON.stringify(m)!==JSON.stringify(S);
+    S=m;
+    if(changed){flush();listeners.forEach(function(f){try{f()}catch(e){}})}
+    var out=JSON.stringify(S);
+    if(!rem||JSON.stringify(rem)!==out)await ref.set({v:1,updated:Date.now(),state:out});
+    syncState='synced';
+  }catch(e){syncState='local'}
+  finally{busy=false}
+}
+var API={
+  get:function(){return S},
+  chap:chap,
+  save:save,flush:flush,sync:sync,
+  onChange:function(f){listeners.push(f)},
+  syncState:function(){return syncState},
+  setPref:function(k,v){S.prefs[k]=v;S.prefs.pt=Date.now();applyPrefs();save()},
+  reset:function(){S=fresh();S.migrated=1;flush();save()},
+  today:today,
+  pct:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c||!total)return 0;var r=0;Object.keys(c.read||{}).forEach(function(k){if(c.read[k])r++});return Math.min(1,r/total)},
+  isDone:function(nb,n,total){var c=(S.nb[nb]||{})[n];if(!c)return false;if(c.dt)return !!c.done;return false}
+};
+window.NBS=API;
+function applyPrefs(){
+  var p=S.prefs;
+  var th=p.theme;
+  if(th==='auto')root.removeAttribute('data-theme');else root.setAttribute('data-theme',th);
+  root.style.setProperty('--zoom',p.fs);root.style.setProperty('--lh',p.lh);root.style.setProperty('--pw',p.w+'px');
+  root.setAttribute('data-font',p.font);
+}
+API.applyPrefs=applyPrefs;applyPrefs();
+// studied time, counted while the page is visible and touched in the last minute
+var lastAct=Date.now();
+['scroll','pointerdown','keydown','touchstart'].forEach(function(e){addEventListener(e,function(){lastAct=Date.now()},{passive:true})});
+setInterval(function(){
+  if(document.hidden||Date.now()-lastAct>60000||!window.__NB)return;
+  var t=today();S.days[t]=(S.days[t]||0)+15;save();
+},15000);
+document.addEventListener('visibilitychange',function(){if(document.hidden){flush();sync()}else{sync()}});
+addEventListener('pagehide',flush);
+setTimeout(sync,800);
+})();
+(function(){var b=document.getElementById('themebtn');if(!b)return;var o=['auto','light','sepia','dark'];b.addEventListener('click',function(){var t=NBS.get().prefs.theme,i=(o.indexOf(t)+1)%o.length;NBS.setPref('theme',o[i]);b.textContent='Theme: '+o[i]})})();
+
+(function(){
+var sc=document.getElementById('bsc'),r=0,a=0;
+document.querySelectorAll('.bq').forEach(function(q){q.querySelectorAll('.opt').forEach(function(b){b.addEventListener('click',function(){if(q.dataset.done)return;q.dataset.done=1;a++;var k=q.dataset.ans;if(b.dataset.k===k){r++;b.classList.add('right')}else{b.classList.add('wrong');var c=q.querySelector('.opt[data-k="'+k+'"]');if(c)c.classList.add('right')}q.querySelector('.bwhy').hidden=false;if(sc)sc.textContent=r+' / '+a+' correct'})})});
+var tb=document.querySelectorAll('.tabs button');
+tb.forEach(function(t){t.addEventListener('click',function(){tb.forEach(function(x){x.setAttribute('aria-pressed',x===t)});document.querySelectorAll('.pane').forEach(function(p){p.hidden=p.id!==t.dataset.p});window.scrollTo(0,0)})});
+var h=location.hash.slice(1);if(h){var e=document.getElementById(h);if(e){var p=e.closest('.pane');if(p){var b=document.querySelector('.tabs button[data-p="'+p.id+'"]');if(b)b.click()}e.scrollIntoView()}}
+})();
+</script></body></html>
