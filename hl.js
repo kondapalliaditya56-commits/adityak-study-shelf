@@ -176,10 +176,11 @@
   pop.addEventListener('pointerup', act);
   pop.addEventListener('click', function (e) { if (e.detail === 0) act(e); }); // keyboard
 
-  var selT = null;
+  var drawing = false, selT = null;
   document.addEventListener('selectionchange', function () {
     clearTimeout(selT);
     selT = setTimeout(function () {
+      if (typeof drawing !== 'undefined' && drawing) return;
       var sel = window.getSelection();
       if (!sel || sel.isCollapsed || !sel.rangeCount) { if (target && target.off) hidePop(); return; }
       var r = sel.getRangeAt(0);
@@ -276,6 +277,96 @@
     };
     rd.readAsText(f);
   });
+
+  // ---------- stylus (OnePlus Pad pen and other active pens)
+  var PENKEY = 'nbhl:pen';
+  var pen = { on: false, color: 'yellow', erase: false };
+  try { var ps = JSON.parse(localStorage.getItem(PENKEY)); if (ps) { pen.on = !!ps.on; pen.color = ps.color || 'yellow'; } } catch (e) {}
+  function savePen() { try { localStorage.setItem(PENKEY, JSON.stringify({ on: pen.on, color: pen.color })); } catch (e) {} }
+
+  var bar = el('div', 'hl-ui hl-penbar'); bar.hidden = true; bar.setAttribute('role', 'toolbar'); bar.setAttribute('aria-label', 'Pen highlighter');
+  var barHtml = '<span class="hl-penlbl">Pen</span>';
+  bar.innerHTML = barHtml;
+  COLORS.forEach(function (c) { var b = el('button', 'hl-dot', ''); b.type = 'button'; b.style.background = c.hex; b.dataset.c = c.k; b.title = c.name; b.setAttribute('aria-label', c.name + ' pen'); bar.appendChild(b); });
+  var penErase = el('button', 'hl-tool', 'Erase'); penErase.type = 'button'; penErase.dataset.p = 'erase'; bar.appendChild(penErase);
+  var penOff = el('button', 'hl-tool', 'Pen off'); penOff.type = 'button'; penOff.dataset.p = 'off'; bar.appendChild(penOff);
+  document.body.appendChild(bar);
+  var penCss = document.createElement('style');
+  penCss.textContent = '.hl-penbar{position:fixed;z-index:99996;right:10px;bottom:140px;display:flex;gap:6px;align-items:center;padding:7px 9px;background:#fff;border:1px solid rgba(0,0,0,.18);border-radius:26px;box-shadow:0 6px 22px rgba(0,0,0,.28);max-width:calc(100vw - 20px);flex-wrap:wrap}.hl-penbar[hidden]{display:none}.hl-penlbl{padding:0 4px;font-size:13px}.hl-penbar .hl-dot[aria-pressed=true]{outline:3px solid #1d2a27;outline-offset:1px}.hl-penbar .hl-tool[aria-pressed=true]{background:#1d2a27;color:#fff}.hl-fab[data-pen=on]{box-shadow:0 0 0 4px #1d2a27,0 4px 14px rgba(0,0,0,.28)}body.hl-pen-on .hl-panel{bottom:200px}';
+  document.head.appendChild(penCss);
+  function paintBar() {
+    bar.hidden = !pen.on; fab.dataset.pen = pen.on ? 'on' : 'off';
+    bar.querySelectorAll('.hl-dot').forEach(function (d) { d.setAttribute('aria-pressed', d.dataset.c === pen.color && !pen.erase ? 'true' : 'false'); });
+    penErase.setAttribute('aria-pressed', pen.erase ? 'true' : 'false');
+    var c = COLORS.filter(function (x) { return x.k === pen.color; })[0]; fab.style.background = pen.on ? c.hex : '#ffd60a';
+    document.body.classList.toggle('hl-pen-on', pen.on);
+    if (penToggle) penToggle.textContent = pen.on ? 'Pen mode: ON (tap to turn off)' : 'Turn on pen mode';
+  }
+  bar.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.c) { pen.color = b.dataset.c; pen.erase = false; }
+    else if (b.dataset.p === 'erase') pen.erase = !pen.erase;
+    else if (b.dataset.p === 'off') pen.on = false;
+    savePen(); paintBar();
+  });
+  // pen toggle inside the highlights panel
+  var penToggle = el('button', 'hl-tool', ''); penToggle.type = 'button'; penToggle.style.cssText = 'margin:8px 12px;width:calc(100% - 24px);height:38px';
+  panel.insertBefore(penToggle, panel.querySelector('.hl-chips'));
+  penToggle.addEventListener('click', function () { pen.on = !pen.on; savePen(); paintBar(); if (pen.on) panel.hidden = true; });
+  paintBar();
+
+  // caret lookup under the pen tip
+  function caretAt(x, y) {
+    var n = null, o = 0;
+    if (document.caretPositionFromPoint) { var p = document.caretPositionFromPoint(x, y); if (p) { n = p.offsetNode; o = p.offset; } }
+    else if (document.caretRangeFromPoint) { var r = document.caretRangeFromPoint(x, y); if (r) { n = r.startContainer; o = r.startOffset; } }
+    if (!n || n.nodeType !== 3 || !root.contains(n)) return null;
+    var pe = n.parentElement; if (!pe || pe.closest(SKIP)) return null;
+    return { n: n, o: o };
+  }
+  var stroke = null;
+  function penRange(a, b) {
+    var r = document.createRange();
+    var rr = document.createRange(); rr.setStart(a.n, a.o); rr.collapse(true);
+    var cmp = rr.comparePoint(b.n, b.o);
+    if (cmp < 0) { r.setStart(b.n, b.o); r.setEnd(a.n, a.o); } else { r.setStart(a.n, a.o); r.setEnd(b.n, b.o); }
+    return r;
+  }
+  function isPen(e) { return e.pointerType === 'pen'; }
+  document.addEventListener('touchstart', function (e) {
+    var t = e.touches && e.touches[0];
+    if (pen.on && t && t.touchType === 'stylus' && root.contains(e.target) && e.cancelable) e.preventDefault();
+  }, { passive: false });
+  document.addEventListener('contextmenu', function (e) { if (stroke) e.preventDefault(); });
+  document.addEventListener('pointerdown', function (e) {
+    if (!pen.on || !isPen(e) || !root.contains(e.target) || e.target.closest('.hl-ui,button,a,summary,input')) return;
+    var c = caretAt(e.clientX, e.clientY); if (!c) return;
+    stroke = { a: c, b: c, erase: pen.erase || (e.buttons & 34) > 0 || e.button === 5 };
+    drawing = true; hidePop();
+    try { e.target.setPointerCapture && e.target.setPointerCapture(e.pointerId); } catch (x) {}
+    e.preventDefault();
+  }, { passive: false });
+  document.addEventListener('pointermove', function (e) {
+    if (!stroke || !isPen(e)) return;
+    var evs = e.getCoalescedEvents ? e.getCoalescedEvents() : [e]; var last = evs[evs.length - 1] || e;
+    var c = caretAt(last.clientX, last.clientY); if (!c) return;
+    stroke.b = c;
+    var r = penRange(stroke.a, c), sel = window.getSelection();
+    sel.removeAllRanges(); sel.addRange(r);
+    e.preventDefault();
+  }, { passive: false });
+  function endStroke(e) {
+    if (!stroke) return;
+    var s = stroke; stroke = null;
+    var sel = window.getSelection();
+    var r = penRange(s.a, s.b);
+    var off = r.collapsed ? null : selectionOffsets(r);
+    if (sel) sel.removeAllRanges();
+    if (off) { if (s.erase) eraseRange(off); else addHighlight(off, pen.color); }
+    setTimeout(function () { drawing = false; hidePop(); }, 350);
+  }
+  document.addEventListener('pointerup', function (e) { if (isPen(e)) endStroke(e); });
+  document.addEventListener('pointercancel', function (e) { if (isPen(e)) endStroke(e); });
 
   updateBadge(); apply();
   window.addEventListener('load', function () { apply(); });
