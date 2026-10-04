@@ -214,7 +214,7 @@
   var fab = el('button', 'hl-ui hl-fab', '✎<b hidden>0</b>'); fab.type = 'button'; fab.title = 'My highlights'; fab.setAttribute('aria-label', 'My highlights');
   document.body.appendChild(fab);
   var panel = el('div', 'hl-ui hl-panel'); panel.hidden = true;
-  panel.innerHTML = '<div class="hl-ph"><strong>Highlights on this page <small style="font-weight:500;color:#777">· pen v3</small></strong><button class="hl-tool" type="button" data-a="close">Close</button></div>' +
+  panel.innerHTML = '<div class="hl-ph"><strong>Highlights on this page <small style="font-weight:500;color:#777">· pen v4</small></strong><button class="hl-tool" type="button" data-a="close">Close</button></div>' +
     '<div class="hl-chips"></div><div class="hl-list"></div>' +
     '<div class="hl-foot"><button class="hl-tool" type="button" data-a="clear">Clear this page</button><button class="hl-tool" type="button" data-a="backup">Backup all</button><button class="hl-tool" type="button" data-a="restore">Restore</button><input type="file" accept="application/json" hidden></div>';
   document.body.appendChild(panel);
@@ -354,6 +354,20 @@
     try { e.target.setPointerCapture && e.target.setPointerCapture(e.pointerId); } catch (x) {}
     e.preventDefault();
   }, { passive: false });
+  // While the pen hovers or touches, stop the browser turning the drag into a page scroll
+  // (that sends pointercancel after the first letter). touch-action is read at pointerdown,
+  // so it is switched on from hover and released shortly after the pen leaves.
+  var nearT = null;
+  var nearCss = document.createElement('style');
+  nearCss.textContent = 'body.hl-pen-near{touch-action:none}';
+  document.head.appendChild(nearCss);
+  function penNear(e) {
+    if (!pen.on || !isPen(e)) return;
+    document.body.classList.add('hl-pen-near');
+    clearTimeout(nearT);
+    nearT = setTimeout(function () { if (!stroke) document.body.classList.remove('hl-pen-near'); }, 1500);
+  }
+  ['pointerover', 'pointerenter', 'pointermove', 'pointerdown'].forEach(function (t) { document.addEventListener(t, penNear, true); });
   document.addEventListener('pointermove', function (e) {
     if (!stroke || !isPen(e)) return;
     var evs = e.getCoalescedEvents ? e.getCoalescedEvents() : [e]; var last = evs[evs.length - 1] || e;
@@ -375,6 +389,7 @@
   }
   document.addEventListener('pointerup', function (e) { if (isPen(e)) endStroke(e); });
   document.addEventListener('pointercancel', function (e) { if (isPen(e)) endStroke(e); });
+  document.addEventListener('pointerup', function (e) { if (isPen(e)) setTimeout(function () { if (!stroke) document.body.classList.remove('hl-pen-near'); }, 1500); });
 
   updateBadge(); apply();
   window.addEventListener('load', function () { apply(); });
