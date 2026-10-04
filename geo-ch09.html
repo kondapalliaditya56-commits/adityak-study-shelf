@@ -153,6 +153,18 @@ figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bott
 .cbar{display:block;height:4px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}.cbar i{display:block;height:100%;width:0;background:var(--acc)}
 .nbcard h2{border:0;padding:0}.nbcard{border-top:1px solid var(--line)}
 
+body{overflow-x:clip}.page{overflow-x:clip}
+
+details.qr{margin:16px 0;border:1.5px solid var(--saf);border-radius:12px;background:var(--surface);overflow:hidden}
+details.qr>summary{cursor:pointer;list-style:none;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;padding:9px 14px;background:var(--saf-soft);font:600 14px var(--sans);color:var(--ink);min-height:40px}
+details.qr>summary::-webkit-details-marker{display:none}
+details.qr>summary b{color:var(--saf);font-weight:700;letter-spacing:.02em}
+details.qr>summary span{color:var(--muted);font-weight:500}
+details.qr>summary:after{content:"Fold ▴";margin-left:auto;color:var(--muted);font-size:12px}
+details.qr:not([open])>summary:after{content:"Open ▾"}
+details.qr>.quick{padding:2px 14px 8px}
+details.qr .lens,details.qr .mn,details.qr .alert{border-radius:0 8px 8px 0}
+
 .notes ul{margin:.25em 0;padding-left:1.2em}.notes li{margin:.3em 0}
 .notes h3,.notes h4{margin-top:1.4em}
 h3.sec{font-size:19px;margin:26px 0 8px;color:var(--acc);padding:0;border:0}
