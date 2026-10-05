@@ -208,6 +208,34 @@ def links(items):
 def recall(items):
     return '<p class="gdesc">Read once, hide it, then rebuild the chapter from memory.</p><ol class="recall">' + ''.join('<li>%s</li>' % inline(x) for x in items) + '</ol>'
 
+
+# ---------------------------------------------------------------- live current-affairs cards
+def live(date, headline, why, use, hook=None, tryq=None, ans=None, src=None, flag=None, why_label='Why it matters'):
+    """One 'In the news' card. All text goes through inline(); every fact must come from the CA sources named in src."""
+    h = '<aside class="callout live"><span class="tag">In the news · %s</span><p class="lv-h">%s</p><dl class="lv">' % (inline(date), inline(headline))
+    h += '<dt>%s</dt><dd>%s</dd>' % (inline(why_label), inline(why))
+    h += '<dt>Use it in an answer</dt><dd>%s</dd>' % inline(use)
+    if hook:
+        h += '<dt>Prelims hook</dt><dd>%s</dd>' % inline(hook)
+    h += '</dl>'
+    if flag:
+        h += '<p class="lv-flag"><strong>Check:</strong> %s</p>' % inline(flag)
+    if tryq:
+        h += '<details class="lv-try"><summary>Try first: %s</summary>%s</details>' % (inline(tryq), p(ans or ''))
+    if src:
+        h += '<p class="lv-src">Source: %s</p>' % inline(src)
+    return h + '</aside>'
+
+def live_quick(date, lines, src=None):
+    h = '<aside class="callout live"><span class="tag">Quick hits · %s</span><ul class="lv-q">' % inline(date)
+    h += ''.join('<li>%s</li>' % inline(x) for x in lines) + '</ul>'
+    if src:
+        h += '<p class="lv-src">Source: %s</p>' % inline(src)
+    return h + '</aside>'
+
+def live_head(text):
+    return '<h3 class="live-h">Live in the news: %s</h3>' % inline(text)
+
 # ---------------------------------------------------------------- sections
 class Sec:
     def __init__(self, title, blocks, label=None, sid=None):

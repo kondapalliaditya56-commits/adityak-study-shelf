@@ -6,6 +6,8 @@ Writes ir-ch00.html, ir-ch01.html, ir-ch02.html, ir-home.html, ir-search.html, i
 import sys, os, json, html
 from lib import *
 import ch00, ch01, ch02
+import ca00, ca01, ca02
+CA = {1: ca01, 2: ca02}
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(HERE), 'out')
 os.makedirs(OUT, exist_ok=True)
@@ -41,6 +43,7 @@ def tail(mod, n):
             ['Day +7', 'Quick quiz; fix each miss against the Traps'],
             ['Day +21', 'Write two Mains answers from memory using the skeletons'],
             ['Day +45', 'Blank-page test (prompts below)'],
+            ['Every Sunday', 'Live radar: read the table, retell the five-headline chain from memory'],
         ]),
         h3('Blank-page prompts'),
         ul(BLANK[n]),
@@ -57,12 +60,21 @@ def tail(mod, n):
 
 
 def make_chapter(mod, n, prev_ch, next_ch, pills, lede, ptag):
-    secs = mod.build() + tail(mod, n)
+    secs = mod.build()
+    ca = CA[n]
+    for sec in secs:
+        if sec.title in ca.LIVE:
+            sec.blocks = list(sec.blocks) + ca.LIVE[sec.title]
+    missing = [t for t in ca.LIVE if t not in [x.title for x in secs]]
+    assert not missing, missing
+    secs = secs + tail(mod, n)
+    ti = [i for i, x in enumerate(secs) if x.sid == 'chapter-timeline'][0]
+    secs.insert(ti, Sec('Live radar: current affairs', ca.radar(), sid='live-radar'))
     rendered, idx = render_sections(secs)
     svg, outline = mindmap(mod.MAP[0], mod.MAP[1], 'Chapter %d map' % n)
     toc = [('chapter-map', 'Chapter map')] + idx
-    data = {'mcq': [{'q': q, 'options': o, 'answer': a, 'explain': e} for (q, o, a, e) in mod.MCQ],
-            'cards': [{'q': q, 'a': a} for (q, a) in mod.CARDS]}
+    data = {'mcq': [{'q': q, 'options': o, 'answer': a, 'explain': e} for (q, o, a, e) in list(mod.MCQ) + list(ca.MCQ)],
+            'cards': [{'q': q, 'a': a} for (q, a) in list(mod.CARDS) + list(ca.CARDS)]}
     head_html = chead('International Relations · GS-2 · Chapter %d' % n, mod.CH['title'], ptag, pills, lede)
     page = chapter_page(mod.CH, prev_ch, next_ch, rendered, toc, svg, outline, data, head_html, FOOT, 'International Relations')
     fn = '%sch%02d.html' % (BASE, n)
@@ -72,10 +84,11 @@ def make_chapter(mod, n, prev_ch, next_ch, pills, lede, ptag):
 
 def make_start(prev_ch, next_ch):
     secs = ch00.build()
+    secs.append(Sec('Live radar: current affairs', ca00.radar(), sid='live-radar'))
     rendered, idx = render_sections(secs)
     data = {'mcq': [], 'cards': []}
     lede = ('How the International Relations paper is asked, how this notebook is built, the priority and PYQ map, and which lecture feeds which chapter. '
-            'Chapters 1 and 2 are ready; more will be added as the classes finish.')
+            'Chapters 1 and 2 are ready, each with a live current-affairs layer; more will be added as the classes finish.')
     head_html = chead('International Relations · GS-2 · Start here', ch00.CH['title'], '', [('Read first', 'cls'), ('Chapters 1 and 2 built', ''), ('No handwriting in the decks', '')], lede)
     page = chapter_page(ch00.CH, None, next_ch, rendered, idx, None, None, data, head_html, FOOT, 'International Relations')
     open(os.path.join(OUT, '%sch00.html' % BASE), 'w', encoding='utf8').write(page)

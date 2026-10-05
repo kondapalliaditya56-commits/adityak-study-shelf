@@ -155,6 +155,22 @@ figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bott
 </style><style>
 .mn{display:inline-flex;gap:4px;flex-wrap:wrap;margin:2px 0 6px}.mn b{font:700 15px var(--mono);background:var(--acc);color:var(--acc-ink);border-radius:6px;padding:1px 8px}
 .callout.shortcut{border-color:var(--saf);background:var(--saf-soft)}.callout.shortcut .tag{color:var(--saf)}
+.callout.live{border-color:var(--c4);background:var(--surface2);padding-top:12px}
+.callout.live .tag{color:var(--c4)}
+.callout.live .tag::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c4);margin-right:7px;vertical-align:1px}
+@media (prefers-reduced-motion:no-preference){.callout.live .tag::before{animation:lvp 1.8s ease-in-out infinite}}
+@keyframes lvp{50%{opacity:.25}}
+.callout.live .lv-h{font:700 16px/1.35 var(--serif,Georgia,serif);margin:2px 0 8px;color:var(--ink)}
+.callout.live dl.lv{margin:0 0 8px;display:grid;grid-template-columns:max-content 1fr;gap:6px 12px;align-items:baseline}
+.callout.live dl.lv dt{font:700 10.5px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.callout.live dl.lv dd{margin:0;font:15px/1.5 var(--sans)}
+.callout.live .lv-src{font:12px var(--sans);color:var(--muted);margin:2px 0 8px}
+.callout.live details.lv-try{margin:6px 0 8px;border:1px dashed var(--line);border-radius:8px;padding:6px 10px}
+.callout.live details.lv-try summary{cursor:pointer;font:700 12px var(--sans);color:var(--c4)}
+.callout.live .lv-flag{font:13px var(--sans);color:var(--red);margin:4px 0 8px}
+.callout.live ul.lv-q{margin:2px 0 8px 18px;padding:0}.callout.live ul.lv-q li{margin:3px 0}
+@media (max-width:640px){.callout.live dl.lv{grid-template-columns:1fr;gap:1px}.callout.live dl.lv dd{margin-bottom:6px}}
+.watch-list li{margin:6px 0}
 .callout.mnemo{border-color:var(--c3);background:var(--surface2)}.callout.mnemo .tag{color:var(--c3)}
 .callout p,.callout li{font-family:var(--sans)}
 .art{font-family:var(--mono);font-size:.86em;background:var(--acc-soft);padding:0 .28em;border-radius:4px;white-space:nowrap}
