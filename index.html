@@ -454,7 +454,8 @@ document.getElementById('bk').onclick=function(){NBS.flush();var o0={};try{o0=JS
 document.getElementById('rs').onchange=function(e){var f=e.target.files[0];if(!f)return;f.text().then(function(t){try{var o=JSON.parse(t);if(!o.v)throw 0;var cur=NBS.get();localStorage.setItem('nbapp:v1',t);if(o.hub&&o.hub.v)localStorage.setItem('hub:v1',JSON.stringify(o.hub));location.reload()}catch(x){alert('That file is not a Study Shelf backup.')}})};
 // extra notebooks added later: library.json lists every notebook
 fetch('library.json',{cache:'no-cache'}).then(function(r){return r.json()}).catch(function(){return null});
-if('serviceWorker' in navigator&&location.protocol.indexOf('http')===0){navigator.serviceWorker.register('sw.js').then(function(reg){
+if('serviceWorker' in navigator&&location.protocol.indexOf('http')===0){navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(function(reg){
+  try{reg.update()}catch(e){}document.addEventListener('visibilitychange',function(){if(!document.hidden){try{reg.update()}catch(e){}}});
   reg.addEventListener('updatefound',function(){var w=reg.installing;if(!w)return;w.addEventListener('statechange',function(){if(w.state==='installed'&&navigator.serviceWorker.controller){var u=document.getElementById('upd');u.hidden=false;u.innerHTML='A new version of your notebooks has downloaded. <b><a href="" onclick="location.reload();return false">Reload to use it</a></b>'}})})}).catch(function(){})}
 })();
 </script><script>
