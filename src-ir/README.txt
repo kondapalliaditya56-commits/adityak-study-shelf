@@ -5,3 +5,5 @@ Add a chapter: write chNN.py in the same shape as ch02.py (CH, SRC, PYQ, build()
 Content rule: only facts from the handouts and slides. No outside facts.
 
 Live current-affairs layer: ca00.py (Start Here radar), ca01.py and ca02.py (cards per section, radar table, MCQs, flashcards). build.py appends each LIVE card to the section whose title matches exactly. Sources: Aug and Jul 2026 CA magazines in the UPSC Project; web items are labelled.
+
+Chapter 3 (India and its Neighbourhood): ch03.py and ch03b.py, live layer ca03.py, six maps img/ir-nb-*.jpg from the handout. Chapter 2 sections 18-21 now use the PPT-4 "India and Other Important Powers" slides.

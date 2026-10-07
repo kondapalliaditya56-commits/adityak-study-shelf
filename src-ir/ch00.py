@@ -10,7 +10,8 @@ MASTER = [
     # chapter, teacher's marking, Prelims years quoted, Mains years quoted, where to spend time
     ['**1 · Introduction to World Geopolitics and India’s Foreign Policy**', 'Slide 3 (PPT-1) puts four 2026 questions on screen; the slides’ “Core idea”, “Key lesson”, “Essence of the phase” and “Central thread: strategic autonomy” lines', 'none quoted in the material', '2026 (four questions on slide 3: IPMDA, BRICS, diaspora, BRI), 2025, 2020, 2019', '**First.** The six-phase story, ten determinants, six periods, five trade-offs'],
     ['**2 · Major Powers and Their Relationship with India**', 'Slides’ “Core idea” lines on the US, US-China, Russia-West and India’s approach; “India seeks / India avoids”; Three Mutuals', 'none quoted in the material', '2026, 2024, 2023, 2021, 2020 (two), 2019 (two), 2018, 2017', '**Second.** All ten PYQs on the handout’s last page; China, US and Russia first, EU, France, Japan, Australia afterwards'],
-    ['3 onwards', 'Pending: classes still going on', 'pending', 'pending', 'Add each chapter as the class finishes'],
+    ['**3 · India and its Neighbourhood**', 'Slides’ “Core idea” and “Conclusion” lines: Neighbourhood First; geography and interdependence; Gujral Doctrine with Neighbourhood First; one phrase per neighbour (structural rivalry, engagement without endorsement, strategic reset, Roti-Beti, B4B, calibrated engagement, location not size)', 'none quoted in the material', '2024 (Maldives), 2022 (Sri Lanka), 2015 (two: Project Mausam; India-Pakistan soft power)', '**Third.** Revise by theme (China’s footprint, rivers, first responder, delivery) using the side-by-side tables; Maldives, Sri Lanka and Pakistan first because the handout quotes PYQs on them'],
+    ['4 onwards', 'Pending: classes still going on', 'pending', 'pending', 'Add each chapter as the class finishes'],
 ]
 
 ALLPYQ = [
@@ -29,15 +30,20 @@ ALLPYQ = [
     ('2019', '10m · 150w', 'India-Japan global and strategic partnership', 'Chapter 2'),
     ('2018', '15m · 250w', 'US-Iran nuclear pact and India', 'Chapter 2 (thin notes)'),
     ('2017', '10m · 150w', 'China’s trade surplus and military power', 'Chapter 2'),
+    ('2024', '15m · 250w', 'Maldives: trade, energy flows and maritime security', 'Chapter 3'),
+    ('2022', '10m · 150w', 'India’s role in Sri Lanka’s crisis', 'Chapter 3'),
+    ('2015', '12.5m · 200w', 'Project Mausam: a strategic dimension?', 'Chapter 3 (thin notes)'),
+    ('2015', '12.5m · 200w', 'India-Pakistan: can sport and culture build goodwill?', 'Chapter 3'),
 ]
+ALLPYQ = sorted(ALLPYQ, key=lambda x: -int(x[0]))
 
 
 def build():
     secs = []
     secs.append(Sec('What this notebook is', [
-        p('This is a **private study notebook for GS-2 International Relations**, built **only** from the Sarrthi IAS GS Mains Module material you gave: the class slides (PPT-1, PPT-2, PPT-3) and the handouts (Chapter 1 and Chapter 2). Every fact, date, name and number comes from those files. No outside facts are added.'),
+        p('This is a **private study notebook for GS-2 International Relations**, built **only** from the Sarrthi IAS GS Mains Module material you gave: the class slides (PPT-1, PPT-2, PPT-3 and the two PPT-4 decks) and the handouts (Chapters 1, 2 and 3). Every fact, date, name and number comes from those files. No outside facts are added.'),
         p('Each chapter has the same shape: an **Exam lens** (priority, PYQs quoted in the material, what to prepare), the notes in the handout’s order with the slides’ stress beside the facts, a **mind map**, a **timeline**, **traps**, **connects to**, a **recall sheet**, a **revision schedule**, and a **practice** section (quiz, flashcards and Mains answer skeletons).'),
-        callout('key', 'Built so you can keep adding', 'Classes are still going on. Chapters 1 and 2 are done. When a new chapter finishes, send the handout and slides and it will be added as Chapter 3 with the same layout. This page and the Contents page will update.'),
+        callout('key', 'Built so you can keep adding', 'Classes are still going on. Chapters 1, 2 and 3 are done. When a new chapter finishes, send the handout and slides and it will be added as Chapter 4 with the same layout. This page and the Contents page will update.'),
         callout('source', 'Copyright', 'Notes are personal study notes. Copyright for the material belongs to the teacher and institute. Keep this notebook private.'),
     ], label='Notebook'))
 
@@ -82,9 +88,9 @@ def build():
     secs.append(Sec('Priority and PYQ map', [
         callout('source', 'How this table was built', 'From the material only: the handouts’ PYQ pages and the slides’ own PYQ and “core idea” markings. The material quotes **no Prelims PYQs** for IR (this is the Mains module). The Mains years are “years quoted”, not a count of distinct questions. Chapters that are not built yet show “pending”.'),
         tbl('Priority map', ['Chapter', 'Teacher’s marking', 'Prelims years quoted', 'Mains years quoted', 'Where to spend time'], MASTER),
-        tbl('All Mains PYQs quoted so far (15 questions)', ['Year', 'Marks and words', 'Topic', 'Notes in'], [list(x) for x in ALLPYQ],
+        tbl('All Mains PYQs quoted so far (19 questions)', ['Year', 'Marks and words', 'Topic', 'Notes in'], [list(x) for x in ALLPYQ],
             desc='Every question in the table is a statement or “discuss” type. Chapter pages give each one a skeleton in their Practice section.'),
-        alert('Handout alert: three gaps flagged', '**IPMDA** (2026 Q9), **AUKUS** (2021) and the **US-Iran nuclear pact** (2018) are asked in PYQs but have **thin or no notes** in the material. Their skeletons say so. Add details from your class notes.'),
+        alert('Handout alert: four gaps flagged', '**IPMDA** (2026 Q9), **AUKUS** (2021), the **US-Iran nuclear pact** (2018) and **Project Mausam** (2015) are asked in PYQs but have **thin or no notes** in the material. Their skeletons say so. Add details from your class notes.'),
     ], label='Notebook'))
 
     secs.append(Sec('Which lecture covers which chapter', [
@@ -93,10 +99,13 @@ def build():
             ['PPT-2 (23 slides)', 'Class slides: India’s foreign policy: goals, determinants, six periods, trade-offs, challenges, key ideas', 'Chapter 1, sections 8-10', 'Slides stop before the instruments section'],
             ['Handout “GS-2 IR - 12” (24 pages)', 'Chapter 1 handout', 'Chapter 1', 'The upload label “12” is the handout for Chapter 1'],
             ['PPT-3 (37 slides)', 'Class slides: major powers, US-China, Russia-West, India with China, US, Russia', 'Chapter 2, sections 1-17', 'Slides 1 and 37 carry no text'],
+            ['PPT-4 “India and Other Important Powers” (16 slides)', 'Class slides: India with the EU, France, Japan, Australia', 'Chapter 2, sections 18-21', 'Slides 1 and 16 carry no text; the EU way forward is slide 9, after France'],
+            ['PPT-4 “India’s Neighbourhood” (43 slides)', 'Class slides: overview, then eight neighbours', 'Chapter 3', 'Slides 1 and 43 carry no text; maps on slides 3, 11, 16, 37'],
+            ['Handout “GS-2 IR - 4” (27 pages)', 'Chapter 3 handout', 'Chapter 3', 'The upload label “4” is Chapter 3. Six maps and graphics'],
             ['Handout “GS-2 IR - 3” (28 pages)', 'Chapter 2 handout', 'Chapter 2', 'The upload label “3” is Chapter 2. Includes the EU, France, Japan, Australia'],
         ]),
-        callout('source', 'Handout only (no class slides yet)', '- Chapter 1, section 11: Instruments of India’s contemporary foreign policy.\n- Chapter 2, sections 18-21: the EU, France, Japan, Australia.\n- Parts of earlier tables (a few phases of India-US and India-Russia) that the handout adds beyond the slides are marked “handout only”.'),
-        callout('source', 'Missing lectures', 'No lecture is missing between PPT-1, PPT-2 and PPT-3. Later chapters are not uploaded yet: they will follow as the classes finish.'),
+        callout('source', 'Handout only (no class slides yet)', '- Chapter 1, section 11: Instruments of India’s contemporary foreign policy.\n- Parts of earlier tables (a few phases of India-US and India-Russia) that the handout adds beyond the slides are marked “handout only”.'),
+        callout('source', 'Missing lectures', 'No lecture is missing between PPT-1 and the two PPT-4 decks. Later chapters are not uploaded yet: they will follow as the classes finish.'),
     ], label='Notebook'))
 
     secs.append(Sec('Tools inside the notebook and a revision plan', [

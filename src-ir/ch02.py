@@ -6,7 +6,7 @@ CH = {'n': 2, 'title': 'Major Powers and Their Relationship with India',
       'sub': 'US, China and Russia: ambitions and instruments, their rivalries, and India with China, the US, Russia, the EU, France, Japan and Australia',
       'badge': 'High · Mains', 'slides': True}
 
-SRC = ('Class slides PPT-3 (37 slides) and handout Chapter 2, pages 1-24 '
+SRC = ('Class slides PPT-3 (37 slides), class slides “India and Other Important Powers” PPT-4 (16 slides) and handout Chapter 2, pages 1-24 '
        '(uploaded as “GS-2 International Relations - 3”)')
 
 # (year/marks/words, question, answer or trap, where covered, source)
@@ -30,7 +30,7 @@ def build():
     # ---------------------------------------------------------------- exam lens
     exam = []
     exam.append(callout('source', 'Source note',
-        '**This chapter has class slides and a handout.** ' + SRC + '. The slides are typed with **no handwriting or board ink**, so the teacher’s stress is read from the slides’ “Core idea” lines, headings and tables. Slides 1 and 37 carry no text (title and closing). The handout adds more than the slides: the full tables of ambitions and instruments, the Russia-West and US-China dimensions in detail, and **the EU, France, Japan and Australia, which have no slides yet** (labelled “Handout only”). The material quotes **no Prelims PYQs**; its PYQ page lists ten Mains questions (2017 to 2026). Years listed are “years quoted”, not a count of distinct questions.'))
+        '**This chapter has class slides and a handout.** ' + SRC + '. The slides are typed with **no handwriting or board ink**, so the teacher’s stress is read from the slides’ “Core idea” lines, headings and tables. Slides 1 and 37 of PPT-3 carry no text (title and closing). The handout adds more than the slides: the full tables of ambitions and instruments and the Russia-West and US-China dimensions in detail. **The EU, France, Japan and Australia now have their own deck** (“India and Other Important Powers”, PPT-4, slides 2-15); those sections are labelled “Class + handout”. The material quotes **no Prelims PYQs**; its PYQ page lists ten Mains questions (2017 to 2026). Years listed are “years quoted”, not a count of distinct questions.'))
     exam.append(tbl('What the teacher and handout stress', ['Signal in the material', 'Where', 'Why it matters'], [
         ['“**Core idea: Major powers shape the choices available to other countries.**” Responses: balancing, bandwagoning, strategic autonomy', 'Slide 2', 'The frame for every “why does India do X?” answer.'],
         ['“**Core idea: The US is moving towards more interest-driven and transactional global leadership.**” “US power is not only military. It is also financial, institutional and technological.”', 'Slide 7', 'Gives the US paragraph in any answer on US policy.'],
@@ -41,6 +41,10 @@ def build():
         ['India-China is “**competition + interdependence + selective cooperation**”; the **Three Mutuals** close the topic', 'Slides 17 and 23', 'A ready conclusion for any China answer.'],
         ['India-US: “**Partnership, not alliance**”; “**India seeks / India avoids**” table', 'Slides 24 and 28', 'The most reusable table in the chapter.'],
         ['India-Russia: from a **defence-and-energy anchor** into a diversified partnership', 'Slide 36', 'A ready conclusion for any Russia answer.'],
+        ['EU: “**Core idea: Trade + Technology + Climate cooperation**, while balancing market access, green transition and strategic autonomy”', 'PPT-4, slide 2', 'The three-word frame for Europe.'],
+        ['France: “**Core idea: Strategic trust + Strategic autonomy + Indo-Pacific convergence**”; from buyer-seller to co-production', 'PPT-4, slides 7-8', 'Why France is the easiest European partner.'],
+        ['Japan: “**Core idea: Strategic trust + Economic cooperation + Indo-Pacific convergence**”; convert convergence into economic, industrial and technological cooperation', 'PPT-4, slides 10 and 12', 'Names the gap: delivery.'],
+        ['Australia: India’s “**southern Indo-Pacific anchor**”; from strategic convergence to an operational partnership', 'PPT-4, slides 13 and 15', 'A ready conclusion for any Australia answer.'],
     ]))
     exam.append(tbl('PYQs quoted in the material (Mains only)', ['Year, marks, words', 'What was asked', 'Answer or trap', 'Where in this chapter', 'Source'],
         [[a, b, c, d, e] for (a, b, c, d, e) in PYQ],
@@ -416,7 +420,15 @@ def build():
 
     # ---------------------------------------------------------------- 18 EU
     secs.append(Sec('India-European Union', [
-        callout('source', 'Source note', '**Handout only (pages 18-20): no class slides yet** for the EU, France, Japan and Australia.'),
+        callout('source', 'Source note', '**Class + handout.** Class slides: “India and Other Important Powers” (PPT-4), slides 2-6 and 9; handout pages 18-20. The slides are typed and summarise the handout; the handout carries the detail.'),
+        tbl('Nature of the relationship: the key shifts (PPT-4, slide 2)', ['Strand', 'Key shift'], [
+            ['Trade', 'FTA, investment, services and supply-chain diversification'],
+            ['Technology', 'Digital governance, AI, semiconductors and economic security'],
+            ['Climate', 'CBAM, green hydrogen and clean technology'],
+            ['Strategic cooperation', 'Indo-Pacific, connectivity and maritime security'],
+            ['Regulatory cooperation', 'Market access, standards and mobility'],
+        ]),
+        teacher('Class slide stress: “Core idea” (PPT-4, slide 2)', '**Trade + Technology + Climate cooperation, while balancing market access, green transition and strategic autonomy.** Slide 9 closes: India-EU ties are moving from a trade relationship to a wider trade-technology-climate and strategic partnership.'),
         p('India-EU relations are evolving into a **trade-technology-climate partnership**. The EU is a major market and a regulatory, technology and strategic partner. Nature: steadily expanding but often **negotiation-driven**; moving from limited economic engagement to a broader strategic partnership.'),
         tbl('Evolution (handout p. 18)', ['Year', 'Key idea', 'Development'], [
             ['1960s', 'Diplomatic beginning', 'Relations with the European Economic Community'],
@@ -454,11 +466,19 @@ def build():
             ['Mobility', 'Professional mobility, research exchanges, student visas; **India-EFTA TEPA** as a supporting marker'],
         ]),
         callout('key', 'Conclusion', 'India-EU is moving from a trade-focused partnership to a broader **trade-technology-climate and strategic** partnership. Next phase: FTA implementation, climate transition, supply chains, mobility and connectivity, balancing EU regulatory power with India’s development needs and strategic autonomy.'),
-    ], label='Handout only'))
+    ], label='Class + handout'))
 
     # ---------------------------------------------------------------- 19 France
     secs.append(Sec('India-France', [
-        callout('source', 'Source note', '**Handout only (pages 19-20): no class slides yet.**'),
+        callout('source', 'Source note', '**Class + handout.** Class slides: PPT-4, slides 7-8; handout pages 19-20.'),
+        tbl('Five pillars (PPT-4, slide 7)', ['Pillar', 'Key cooperation'], [
+            ['Strategic autonomy', 'Shared support for a multipolar order'],
+            ['Indo-Pacific', 'Maritime security, Indian Ocean and freedom of navigation'],
+            ['Defence', 'Co-production, technology transfer and interoperability'],
+            ['Nuclear and space', 'Jaitapur, SMRs/AMRs and ISRO-CNES'],
+            ['Emerging technology', 'AI, cyber and critical technologies'],
+        ]),
+        teacher('Class slide stress: “Core idea” (PPT-4, slide 7)', '**Strategic trust + Strategic autonomy + Indo-Pacific convergence.** Slide 8 adds the direction of travel: buyer-seller to co-production; traditional cooperation to technology and innovation.'),
         p('Ties are guided by the **Horizon 2047 Roadmap (2023)**. In **February 2026** the relationship was elevated to a **Special Global Strategic Partnership**. Shared: a multipolar order, strategic autonomy, a rules-based Indo-Pacific. France is a **resident Indo-Pacific power** (overseas territories and military presence); cooperation on maritime security, the Indian Ocean, freedom of navigation and Indo-Pacific connectivity.'),
         tbl('Cooperation areas (handout pp. 19-20)', ['Area', 'Key points'], [
             ['Rafale', '**36 Rafale** inducted for the Air Force. **April 2025**: contract for **26 Rafale-Marine** for the Navy, with technology transfer for integrating indigenous weapons, a Rafale fuselage production facility, MRO for engines, sensors and weapons in India'],
@@ -477,11 +497,17 @@ def build():
             ('Buyer-seller ties', '→ Co-production', ''),
             ('Traditional strategic cooperation', '→ Technology and innovation', ''),
             ('Bilateral partnership', '→ Wider Indo-Pacific and global cooperation', 'good')]),
-    ], label='Handout only'))
+    ], label='Class + handout'))
 
     # ---------------------------------------------------------------- 20 Japan
     secs.append(Sec('India-Japan', [
-        callout('source', 'Source note', '**Handout only (pages 21-22): no class slides yet.**'),
+        callout('source', 'Source note', '**Class + handout.** Class slides: PPT-4, slides 10-12; handout pages 21-22.'),
+        tbl('Nature of the relationship: the key shifts (PPT-4, slide 10)', ['Strand', 'From', 'To'], [
+            ['Development cooperation', 'ODA', 'Private investment and manufacturing'],
+            ['Strategic cooperation', 'Development', 'Indo-Pacific and maritime security'],
+            ['Technology', 'Traditional sectors', 'AI, semiconductors and critical minerals'],
+        ]),
+        teacher('Class slide stress: “Core idea” (PPT-4, slide 10)', '**Strategic trust + Economic cooperation + Indo-Pacific convergence.** Slide 12 pairs each challenge with its fix: different strategic orientations (cooperate without a formal alliance); trade and investment underperformance (turn the JPY 10 trillion target into projects); infrastructure delays (land, clearances, project management); CEPA underutilisation (standards, certification, non-tariff barriers); skills gap (Japanese-language training); limited defence technology transfer (co-production in drones, cyber, electronics, surveillance).'),
         p('“We see Japan as a natural partner.” (PM Narendra Modi, quoted.) The partnership evolved from **ODA-led development cooperation** to a broader strategic and economic partnership. It is **trust-based and largely conflict-free**, but outcomes have sometimes stayed below expectations.'),
         tbl('Convergence (handout p. 21)', ['Area', 'Key points'], [
             ['Strategic and political', 'Free, open, inclusive, rules-based Indo-Pacific; **Quad, JAI, Malabar**'],
@@ -505,11 +531,18 @@ def build():
             ['People', 'Japanese-language training, skill certification, student exchanges'],
         ]),
         callout('key', 'Conclusion', 'India-Japan has grown from ODA to a broad strategic partnership. **Trade, investment, execution and technology gaps remain.** The next phase should **convert strategic convergence into deeper economic, industrial and technological cooperation.**'),
-    ], label='Handout only'))
+    ], label='Class + handout'))
 
     # ---------------------------------------------------------------- 21 Australia
     secs.append(Sec('India-Australia', [
-        callout('source', 'Source note', '**Handout only (pages 22-23): no class slides yet.**'),
+        callout('source', 'Source note', '**Class + handout.** Class slides: PPT-4, slides 13-15; handout pages 22-23.'),
+        tbl('Nature of the relationship: the key shifts (PPT-4, slide 13)', ['From', 'To'], [
+            ['Trade and education', 'Critical minerals, clean energy and supply chains'],
+            ['Defence exercises', 'Maritime and defence-industrial cooperation'],
+            ['Technology', 'Cyber, AI, quantum and space'],
+            ['Regional cooperation', 'Quad, IORA and the wider Indo-Pacific'],
+        ]),
+        teacher('Class slide stress (PPT-4, slides 13 and 15)', '**Australia acts as India’s southern Indo-Pacific anchor**, linking the Indian Ocean, the Pacific, the Quad and critical-mineral security. Slide 15 pairs challenges with fixes, and adds one the tables below only touch: **diaspora concerns: address extremism, hate crimes and social tensions**. Conclusion: from strategic convergence to an **operational partnership**.'),
         p('From a low-intensity relationship to a **high-trust Indo-Pacific partnership**. Australia is India’s **southern Indo-Pacific anchor**, linking the Indian Ocean, the Pacific, the Quad, critical-mineral security and China+1 supply-chain diversification.'),
         tbl('Convergence (handout pp. 22-23)', ['Area', 'Key points'], [
             ['Strategic and political', 'Free, open, inclusive, rules-based Indo-Pacific; **Quad, IORA, EAS, IPOI** and ASEAN-centred mechanisms'],
@@ -534,6 +567,6 @@ def build():
             ['People', 'Student mobility, visas, safety, employability, qualification recognition; research and skilling'],
         ]),
         callout('key', 'Conclusion', 'India-Australia is moving **from strategic convergence to an operational partnership**, making Australia a **key pillar of India’s Indo-Pacific strategy**; the focus is now implementation and outcomes.'),
-    ], label='Handout only'))
+    ], label='Class + handout'))
 
     return secs

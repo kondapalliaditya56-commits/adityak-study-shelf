@@ -16,6 +16,7 @@ MAP_ROWS = [
     ['25th SR talks, Modi-Xi (12 Sep), water disputes, Scarborough', 'Ch. 2 India-China, US-China'],
     ['Nord Stream, Odesa, Kurils, Europe’s missile coalition', 'Ch. 2 Russia sections'],
     ['Iceland and the EU, Ceuta, North Macedonia and Moldova visits', 'Ch. 2 India-EU'],
+    ['Farakka treaty, Mecca pact and Bangladesh, Lipulekh, Nepal flood, cross-border trains, Chabahar strike, Favara-UPI', 'Ch. 3, under each neighbour'],
     ['New Zealand, UNCITRAL, Sudan and South Sudan, Passport Index', 'Parked below until their chapters arrive'],
 ]
 

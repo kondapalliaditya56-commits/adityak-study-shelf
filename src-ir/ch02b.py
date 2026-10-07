@@ -91,7 +91,7 @@ TRAPS = [
     ('Tariff figures', '25% reciprocal + 25% Russian-oil-linked = up to 50%; the 2026 interim deal cut it to 18%. Rule: give the 25+25 split, then 18%.'),
     ('India avoids “forced abandonment of Russia”', 'India seeks closer US defence ties but avoids a forced break with Russia. Rule: use the seeks v avoids table for “partnership without alliance”.'),
     ('Russia’s trade gap', 'India exports about US$4.3 bn and imports about US$61.4 bn (2023-24); trade total US$68.7 bn is FY2024-25. Rule: quote year with each number.'),
-    ('Handout only', 'EU, France, Japan and Australia have no class slides yet. AUKUS, Pax Silica, Mythos 5 and Operation Absolute Resolve are named without explanation. Rule: do not invent details; check class notes.'),
+    ('Named, not explained', 'AUKUS, Pax Silica, Mythos 5 and Operation Absolute Resolve are named without explanation. (The EU, France, Japan and Australia now have class slides, PPT-4.) Rule: do not invent details; check class notes.'),
 ]
 
 MCQ = [
