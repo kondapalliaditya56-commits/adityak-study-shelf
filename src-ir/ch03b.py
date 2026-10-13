@@ -171,9 +171,9 @@ def build_rest(secs):
             ['Sovereignty', 'The **“India Out” campaign (2023-24)** portrayed Indian defence personnel and assets as threats to sovereignty. The Maldives **did not renew the joint hydrographic survey agreement in 2024**'],
             ['China', 'Permission for a **Chinese research vessel to dock in 2024** raised concerns over surveillance and access. India-assisted projects such as the **Uthuru Thila Falhu (UTF) Harbour** have faced suspicion about strategic use'],
             ['Trade imbalance', 'The Maldives imports a large share of essentials from India; its export base to India is narrow. The **China-Maldives FTA entered into force in January 2025**; the India-Maldives FTA is still being negotiated'],
-            ['Tourism', 'Slide 41: **tourism was affected by political rhetoric**'],
+            ['Tourism', 'Indian tourists exceeded **2 lakh a year (2021-23)**; the **January 2024 Lakshadweep controversy** triggered a boycott campaign in India: political rhetoric can hit tourism (slide 41, merged handout p. 70)'],
         ]),
-        alert('Handout alert: a garbled line', 'The handout’s fourth divergence point (“Tourism and People-to-People Ties”) is cut off in print. The slide gives the sense: tourism affected by political rhetoric. Check your class notes for the detail.'),
+        callout('source', 'Filled from the merged handout', 'The first Chapter 3 handout printed this point cut off. The merged handout (October 2026) gives it in full: Indian tourists exceeded **2 lakh a year in 2021-23**, and the **January 2024 Lakshadweep controversy** set off a boycott campaign in India.'),
         tbl('Way forward (slide 42, handout pp. 26-27)', ['Area', 'Way forward'], [
             ['Sovereignty-sensitive engagement', 'Respect Maldivian sovereignty and domestic processes. **Clearly define ownership, personnel and operating rules** for Indian-supported aircraft and security assets. Better public communication on Indian assistance'],
             ['Maritime security', 'Information sharing, vessel monitoring, search-and-rescue, disaster response, **keeping operational decisions with Maldivian authorities**. Use **MAHASAGAR** and the **Colombo Security Conclave**'],

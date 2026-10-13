@@ -5,9 +5,9 @@ Writes ir-ch00.html, ir-ch01.html, ir-ch02.html, ir-ch03.html, ir-home.html, ir-
 """
 import sys, os, json, html
 from lib import *
-import ch00, ch01, ch02, ch03
-import ca00, ca01, ca02, ca03
-CA = {1: ca01, 2: ca02, 3: ca03}
+import ch00, ch01, ch02, ch03, ch04, ch05
+import ca00, ca01, ca02, ca03, ca04, ca05
+CA = {1: ca01, 2: ca02, 3: ca03, 4: ca04, 5: ca05}
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(HERE), 'out')
 os.makedirs(OUT, exist_ok=True)
@@ -29,6 +29,13 @@ BLANK = {
         'Draw the map: mark Sir Creek, Siachen, Chabahar-Zaranj-Delaram, Kaladan (Kolkata-Sittwe-Mizoram), Palk Strait and Katchatheevu, Gelephu and Doklam.',
         'Fill a table: China’s footprint in each neighbour, and India’s counter-offer.',
         'Write a 5-line answer on “rivers as cooperation and conflict” using four neighbours.'],
+    4: ['List the top five diaspora countries with numbers, and the four segments with one interest each.',
+        'Write the seven limits of leveraging the diaspora.',
+        'Name the five evacuation operations with country and year.'],
+    5: ['Write the “present character” phrase for each of the six regions.',
+        'Draw West Asia’s three axes and India’s ties with each.',
+        'List ASEAN milestones 1992-2025 and Central Asia milestones 2012-2026.',
+        'For each region, one China comparison number from the material.']
 }
 
 
@@ -92,14 +99,14 @@ def make_start(prev_ch, next_ch):
     rendered, idx = render_sections(secs)
     data = {'mcq': [], 'cards': []}
     lede = ('How the International Relations paper is asked, how this notebook is built, the priority and PYQ map, and which lecture feeds which chapter. '
-            'Chapters 1, 2 and 3 are ready, each with a live current-affairs layer; more will be added as the classes finish.')
-    head_html = chead('International Relations · GS-2 · Start here', ch00.CH['title'], '', [('Read first', 'cls'), ('Chapters 1 to 3 built', ''), ('No handwriting in the decks', '')], lede)
+            'Chapters 1 to 5 are ready, each with a live current-affairs layer; International Organisations follows when its class slides arrive.')
+    head_html = chead('International Relations · GS-2 · Start here', ch00.CH['title'], '', [('Read first', 'cls'), ('Chapters 1 to 5 built', ''), ('No handwriting in the decks', '')], lede)
     page = chapter_page(ch00.CH, None, next_ch, rendered, idx, None, None, data, head_html, FOOT, 'International Relations')
     open(os.path.join(OUT, '%sch00.html' % BASE), 'w', encoding='utf8').write(page)
     return idx, rendered
 
 
-c0, c1, c2, c3 = ch00.CH, ch01.CH, ch02.CH, ch03.CH
+c0, c1, c2, c3, c4, c5 = ch00.CH, ch01.CH, ch02.CH, ch03.CH, ch04.CH, ch05.CH
 idx0, r0 = make_start(None, c1)
 idx1, r1 = make_chapter(ch01, 1, c0, c2,
     [('Class + handout', 'cls'), ('PPT-1 and PPT-2 · handout pp. 1-21', ''), ('7 Mains PYQs quoted · no Prelims', '')],
@@ -110,9 +117,18 @@ idx2, r2 = make_chapter(ch02, 2, c1, c3,
     'What the US, China and Russia want and how they act, how their rivalries land on India, and India’s ties with China, the US, Russia, the EU, France, Japan and Australia.',
     'High priority')
 
-idx3, r3 = make_chapter(ch03, 3, c2, None,
+idx3, r3 = make_chapter(ch03, 3, c2, c4,
     [('Class + handout', 'cls'), ('PPT-4 Neighbourhood · handout pp. 1-27', ''), ('4 Mains PYQs quoted · no Prelims', ''), ('6 maps', '')],
     'India’s neighbourhood policy and its eight neighbours one by one: Pakistan, Afghanistan, Bangladesh, Nepal, Bhutan, Myanmar, Sri Lanka and the Maldives, with a side-by-side comparison to answer theme questions.',
+    'High priority')
+
+idx4, r4 = make_chapter(ch04, 4, c3, c5,
+    [('Class + handout', 'cls'), ('PPT-6 · handout pp. 72-77', ''), ('4 Mains PYQs quoted · no Prelims', '')],
+    'Who the diaspora is and why Indians migrate, what it does for India and where that stops, the problems it faces, the gaps in India’s approach and how to fix them.',
+    'High priority')
+idx5, r5 = make_chapter(ch05, 5, c4, None,
+    [('Class + handout', 'cls'), ('PPT-7.2 and PPT-7 · handout pp. 78-100', ''), ('7 Mains PYQs quoted · no Prelims', ''), ('7 maps', '')],
+    'West Asia, ASEAN, the Indo-Pacific, Central Asia, Africa and Latin America: what India wants in each, what it has built, what holds it back, and a side-by-side comparison.',
     'High priority')
 
 chapters = []
@@ -128,14 +144,16 @@ chs = [
     dict(n=1, title=c1['title'], sub=c1['sub'], badge=c1['badge'], slides=True, pending=False, secs=secs_for(idx1, True)),
     dict(n=2, title=c2['title'], sub=c2['sub'], badge=c2['badge'], slides=True, pending=False, secs=secs_for(idx2, True)),
     dict(n=3, title=c3['title'], sub=c3['sub'], badge=c3['badge'], slides=True, pending=False, secs=secs_for(idx3, True)),
+    dict(n=4, title=c4['title'], sub=c4['sub'], badge=c4['badge'], slides=True, pending=False, secs=secs_for(idx4, True)),
+    dict(n=5, title=c5['title'], sub=c5['sub'], badge=c5['badge'], slides=True, pending=False, secs=secs_for(idx5, True)),
 ]
 
-home = home_page(chs, 'Study notebook for the GS-2 International Relations module: how the world order evolved, the major powers, India’s foreign policy and bilateral ties, and the neighbourhood. Built from your class slides and handouts only. Chapters are added as classes finish.', FOOT)
+home = home_page(chs, 'Study notebook for the GS-2 International Relations module: how the world order evolved, the major powers, India’s foreign policy and bilateral ties, the neighbourhood, the diaspora and the extended neighbourhood. Built from your class slides and handouts only. Chapters are added as classes finish.', FOOT)
 open(os.path.join(OUT, '%shome.html' % BASE), 'w', encoding='utf8').write(home)
 
 # search
 entries = []
-for c, rendered in ((c0, r0), (c1, r1), (c2, r2), (c3, r3)):
+for c, rendered in ((c0, r0), (c1, r1), (c2, r2), (c3, r3), (c4, r4), (c5, r5)):
     import re
     for i, h in enumerate(rendered):
         m = re.match(r'<h2 id="([^"]+)">(.*?)<a class="anchor"', h, re.S)
