@@ -605,7 +605,7 @@ function norm(x){
 }
 /* typical week, used when the live calendar cannot be reached (built from the calendar on 13 Oct 2026) */
 var TPL_FROM='2026-10-14',TPL_TO='2027-01-24';
-var B4T={'2026-10-14':'B4 core: Economy: National income, growth, poverty','2026-10-15':'B4 core: Economy: Money, banking, RBI','2026-10-16':'B4 core: Economy: Inflation, fiscal policy, Budget','2026-10-19':'B4 core: Economy: Taxation, GST, subsidies','2026-10-20':'B4 core: Economy: External sector','2026-10-21':'B4 core: Economy: Agriculture, food security','2026-10-22':'B4 core: Economy: Industry, infrastructure, MSME','2026-10-23':'B4 core: Economy: Survey, Budget, reports, indices'};
+var B4T={'2026-10-14':'B4 core: Economy: National income, growth, planning','2026-10-15':'B4 core: Economy: Poverty, jobs, inclusion, demography','2026-10-16':'B4 core: Economy: Money, banking, RBI','2026-10-19':'B4 core: Economy: Financial markets, fintech','2026-10-20':'B4 core: Economy: Inflation, fiscal policy, Budget','2026-10-21':'B4 core: Economy: Taxation, GST, subsidies','2026-10-22':'B4 core: Economy: External sector','2026-10-23':'B4 core: Economy: Agriculture, food security','2026-10-26':'B4 core: Economy: Industry, infrastructure, MSME','2026-10-27':'B4 core: Economy: Survey, Budget, reports, indices','2026-10-28':'B4 core: Polity: Constitution, Preamble, FRs'};
 var CAD=['','Mon national + polity','Tue economy','Wed international relations','Thu S&T + environment','Fri AP current affairs + schemes','Sat weekly compile'];
 function tplDay(k){
   if(k<TPL_FROM||k>TPL_TO)return[];
@@ -618,13 +618,27 @@ function tplDay(k){
     mk(16,30,18,30,'Sunday Test 2 (aptitude / APPSC mock Paper II / catch-up)');
   }else{
     mk(9,15,9,35,'Current affairs (9:15)',CAD[w]);
-    mk(9,35,10,25,'Aptitude (9:35)');
-    mk(10,25,12,15,B4T[k]||(w===6?'B4 core: PYQ marathon (Saturday)':'B4 core slot'));
+    var noApt=k<'2026-11-02';
+    if(!noApt)mk(9,35,10,25,'Aptitude (9:35)');
+    mk(noApt?9:10,noApt?35:25,12,15,B4T[k]||(w===6?'B4 core: PYQ marathon (Saturday)':'B4 core slot'));
     mk(12,30,15,30,'Live: GS II');
     mk(16,0,19,0,'Live: MIH class');
   }
   mk(20,0,23,0,k<='2026-10-19'?'Economy backlog class (evening)':'Sociology backlog class (evening)');
   return out}
+
+/* PYQ priority tags (H/M/L), from the Economy and other-subject PYQ analysis of 13 Oct 2026 */
+function priOf(s,t){t=String(t||'').toLowerCase();
+  if(s==='Economy'){
+    if(/bank|rbi|money|monetary|inflation|fiscal|budget|external|trade|agri|food|index|indices|report/.test(t))return'H';
+    return'M'}
+  if(s==='Polity')return/local gov|union territor|special provision/.test(t)?'M':'H';
+  if(s==='Geography')return/human|world map|population/.test(t)?'M':'H';
+  if(s==='Modern India')return/gandhi|nationalism|reform|acts|partition|1857/.test(t)?'H':'M';
+  if(s==='Sociology')return/thinker|stratif|caste|social change/.test(t)?'H':'M';
+  if(s==='Current Affairs'||s==='Other')return'';
+  return'M'}
+var PRN={H:'High',M:'Medium',L:'Low'};
 var SCC={};
 function scOf(k){if(H.sc[k])return H.sc[k];if(SCC[k])return SCC[k];var c={};tplDay(k).forEach(function(x){if(x.c)c[x.c.k]=(c[x.c.k]||0)+1});return(SCC[k]=c)}
 function doneIdx(){var m={};Object.keys(H.blk).forEach(function(k){var b=H.blk[k];if(b&&b.t>0)m[b.d+'|'+b.k]=(m[b.d+'|'+b.k]||0)+1});return m}
@@ -677,7 +691,7 @@ function panelHtml(x){
   var c=x.c,pre=c.topic?(c.topic+(c.gen?' · '+parse(key(x.s)).toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'')):'';
   return'<div class="hpanel"><div class="hmut">What did you cover? It joins your recall schedule.'+(x.d?' Plan: '+esc(short(x.d,170)):'')+'</div>'+
   '<div class="hform"><select class="hsel" id="h-bs" aria-label="Subject">'+SUBJ.map(function(s){return'<option'+(s===c.s?' selected':'')+'>'+s+'</option>'}).join('')+'</select>'+
-  '<select class="hsel" id="h-bp" aria-label="Priority"><option value="H">High priority</option><option value="M" selected>Medium priority</option><option value="L">Low priority</option></select>'+
+  '<select class="hsel" id="h-bp" aria-label="Priority">'+['H','M','L'].map(function(p){return'<option value="'+p+'"'+(p===(priOf(c.s,x.t)||'M')?' selected':'')+'>'+PRN[p]+' priority</option>'}).join('')+'</select>'+
   '<input class="hi full" id="h-bt" type="text" maxlength="120" value="'+esc(pre)+'" placeholder="Topic covered, e.g. Article 21 and writs" aria-label="Topic covered">'+
   '<button class="hb pri full" type="button" data-act="bsave" data-b="'+esc(x.key)+'">Save and add to recall</button></div>'+
   '<div class="hrow"><button class="hb sm" type="button" data-act="bnorec" data-b="'+esc(x.key)+'">Done, no recall topic</button><button class="hb sm" type="button" data-act="bcancel">Cancel</button></div></div>'}
@@ -703,7 +717,7 @@ function renderEv(){
     list.forEach(function(x){
       var isT=k===td,lv=isT&&x.s<=now&&now<x.e,past=k<td||(isT&&x.e<=now),c=x.c,bs=c?H.blk[x.key]:null,done=!!(bs&&bs.t>0);
       if(c)BI[x.key]=x;
-      h+='<div class="hev'+(lv?' live':'')+(past&&!lv?' past':'')+(done?' done':'')+'"><time>'+fmt(x.s)+'<br><span>'+fmt(x.e)+'</span></time><div class="hevb"><div><b>'+esc(x.t)+'</b>'+(lv?'<em>Now</em>':(x===nextX?'<em>Next</em>':''))+(c&&c.s!=='Other'?'<span class="pill L">'+esc(c.s)+'</span>':'')+'</div>';
+      h+='<div class="hev'+(lv?' live':'')+(past&&!lv?' past':'')+(done?' done':'')+'"><time>'+fmt(x.s)+'<br><span>'+fmt(x.e)+'</span></time><div class="hevb"><div><b>'+esc(x.t)+'</b>'+(lv?'<em>Now</em>':(x===nextX?'<em>Next</em>':''))+(c&&c.s!=='Other'?'<span class="pill L">'+esc(c.s)+'</span>':'')+(c&&c.learn&&priOf(c.s,x.t)?'<span class="pill '+priOf(c.s,x.t)+'" title="PYQ priority">'+PRN[priOf(c.s,x.t)]+'</span>':'')+'</div>';
       if(view==='day'&&x.d)h+='<div class="hmut">'+esc(short(x.d,150))+'</div>';
       if(c&&k<=td){
         h+='<div class="hrow"><button class="hb sm'+(done?' on':'')+'" type="button" data-act="bdone" data-b="'+esc(x.key)+'">'+(done?'✓ Done'+(bs.n?' · '+esc(short(bs.n,34)):''):'Mark done')+'</button></div>';
