@@ -56,8 +56,17 @@ def lens_block(s):
     body += '\n\n' + conv(s['lens']['close'])
     return callout('key', 'Exam lens', body)
 
+PLAIN = json.load(open(os.path.join(HERE, 'plain.json'), encoding='utf8'))
+
+def plain_block(i):
+    d = PLAIN[str(i)]
+    out = callout('note', 'In simple words', '\n'.join('- ' + x for x in d['simple']))
+    out += tbl(None, ['Term', 'In plain words'], [['**%s**' % a, b] for a, b in d['terms']])
+    out += callout('shortcut', 'Remember it as', d['remember'])
+    return out
+
 def section(s):
-    blocks = [lens_block(s), p(conv(s['story'])), notes_html(s['notes'])]
+    blocks = [lens_block(s), plain_block(s['id']), p(conv(s['story'])), notes_html(s['notes'])]
     return Sec(s['title'], blocks, label='Handout only · %s' % s['pages'])
 
 def first_ref_mod(ref):
