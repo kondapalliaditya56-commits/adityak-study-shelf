@@ -197,7 +197,7 @@ figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bott
 .hev b{font:600 15.5px/1.35 var(--sans);overflow-wrap:anywhere}
 .hev em{font:700 11px var(--sans);font-style:normal;letter-spacing:.06em;text-transform:uppercase;margin-left:8px;padding:2px 8px;border-radius:99px;background:var(--acc);color:var(--acc-ink)}
 .hev.live{background:var(--acc-soft);border-radius:10px;padding-inline:8px;border-top-color:transparent}
-.hev.past{opacity:.5}
+.hev.past time,.hev.past b,.hev.past .hmut{opacity:.55}
 .hdue{display:flex;flex-direction:column;gap:8px}
 .hit{border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:8px;background:var(--bg)}
 .hit.over{border-color:var(--saf)}
@@ -237,6 +237,17 @@ details.hshelf summary{cursor:pointer;font:700 16px var(--sans);min-height:44px;
 .hrowt{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;align-items:center;border-top:1px solid var(--line);padding:8px 0}
 .hrowt b{font:600 15px/1.35 var(--sans);overflow-wrap:anywhere}
 .hhe{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;border-top:1px solid var(--line);padding-top:8px}.hhe:first-child{border-top:0;padding-top:0}
+.hdh{display:flex;justify-content:space-between;gap:8px;margin-top:10px;padding:6px 10px;border-radius:10px;background:var(--surface2);font:700 13px var(--sans);color:var(--ink)}
+.hdh.t{background:var(--acc-soft);color:var(--acc)}
+.hdh span{font-weight:600;color:var(--muted)}
+.hevb{display:flex;flex-direction:column;gap:6px;min-width:0}
+.hev .pill{margin-left:8px;vertical-align:middle}
+.hev.done b{text-decoration:line-through;text-decoration-thickness:1px;opacity:.75}
+.hpanel{border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--bg);display:flex;flex-direction:column;gap:8px}
+.hsum{font-weight:600;color:var(--ink)}.hsum:empty{display:none}
+.dots i.na{opacity:.25}
+.hhr.na{opacity:.7}
+.hstreak{display:block;margin-left:0}
 .hb:disabled{opacity:.4;cursor:default}
 @media (max-width:520px){.hhe{grid-template-columns:1fr}}
 @media (max-width:420px){.hform{grid-template-columns:1fr}.hev{grid-template-columns:64px minmax(0,1fr)}}
@@ -247,8 +258,9 @@ details.hshelf summary{cursor:pointer;font:700 16px var(--sans);min-height:44px;
 
 <div class="hcard wide" id="h-today">
 <div class="hh"><div><small>Your calendar</small><h2 id="h-date">Today</h2></div>
-<div class="hrow"><button class="hb sm on" type="button" data-act="day" data-d="0" id="h-d0">Today</button><button class="hb sm" type="button" data-act="day" data-d="1" id="h-d1">Tomorrow</button></div></div>
-<div class="hrow"><button class="hb sm on" type="button" data-act="filter" data-f="study" id="h-fstudy">Study only</button><button class="hb sm" type="button" data-act="filter" data-f="all" id="h-fall">All events</button><button class="hb sm" type="button" data-act="refresh">Refresh</button></div>
+<div class="hrow"><button class="hb sm" type="button" data-act="nav" data-d="-1" aria-label="Previous">&lsaquo; Prev</button><button class="hb sm" type="button" data-act="tod">Today</button><button class="hb sm" type="button" data-act="nav" data-d="1" aria-label="Next">Next &rsaquo;</button></div></div>
+<div class="hrow"><button class="hb sm on" type="button" data-act="view" data-v="day" id="h-vday">Day</button><button class="hb sm" type="button" data-act="view" data-v="week" id="h-vweek">Week</button><button class="hb sm on" type="button" data-act="filter" data-f="study" id="h-fstudy">Study only</button><button class="hb sm" type="button" data-act="filter" data-f="all" id="h-fall">All events</button><button class="hb sm" type="button" data-act="refresh">Refresh</button></div>
+<p class="hmut hsum" id="h-sumry"></p>
 <div id="h-ev"><p class="hmut">Loading your calendar…</p></div>
 </div>
 
@@ -473,16 +485,19 @@ function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
 function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
 
 var INT=[1,3,7,14,30,60];
-var SUBJ=['Modern India','Polity','Geography','Economy','GS3','Sociology','Other'];
+var SUBJ=['Modern India','Polity','Geography','Economy','GS2','GS3','Sociology','Current Affairs','Other'];
 var DEF=[['wake','Up by 3:50'],['work','Workout'],['rec','Recall session'],['asg','Assignment or PYQs'],['chk','Night check-in']];
+/* habits that follow the calendar: done when every block of that kind on the day is marked done */
+var AUTO=[['a_A','A','Block A: backlog class'],['a_CA','CA','Current affairs'],['a_APT','APT','Aptitude'],['a_B4','B4','B4 core and PYQs'],['a_LIVE','LIVE','Live classes'],['a_EVE','EVE','Evening backlog class'],['a_TST','TST','Sunday tests and revision']];
 var KEY='hub:v1';
 var ORD={H:0,M:1,L:2};
 
-function fresh(){return{v:1,topics:{},hab:{},ci:{},fo:{},hl:{}}}
+function fresh(){return{v:1,topics:{},hab:{},ci:{},fo:{},hl:{},blk:{},sc:{}}}
 var H;try{H=JSON.parse(lsGet(KEY))}catch(e){H=null}
 if(!H||!H.v)H=fresh();
-['topics','hab','ci','fo','hl'].forEach(function(k){if(!H[k])H[k]={}});
+['topics','hab','ci','fo','hl','blk','sc'].forEach(function(k){if(!H[k])H[k]={}});
 if(!Object.keys(H.hl).length)DEF.forEach(function(x,i){H.hl[x[0]]={id:x[0],n:x[1],o:i,t:0}});
+AUTO.forEach(function(a,i){if(!H.hl[a[0]])H.hl[a[0]]={id:a[0],n:a[2],o:100+i,t:0,src:a[1]}});
 function habList(){return Object.keys(H.hl).map(function(k){return H.hl[k]}).filter(function(x){return x&&!x.del}).sort(function(a,b){return a.o-b.o})}
 
 function merge(a,b){
@@ -498,6 +513,12 @@ function merge(a,b){
   Object.keys(hs0).forEach(function(k){var x=(a.hl||{})[k],y=(b.hl||{})[k];o.hl[k]=!x?y:(!y?x:((y.t||0)>(x.t||0)?y:x))});
   var fs={};Object.keys(a.fo||{}).concat(Object.keys(b.fo||{})).forEach(function(k){fs[k]=1});
   Object.keys(fs).forEach(function(k){o.fo[k]=Math.max((a.fo||{})[k]||0,(b.fo||{})[k]||0)});
+  var bs={};Object.keys(a.blk||{}).concat(Object.keys(b.blk||{})).forEach(function(k){bs[k]=1});
+  Object.keys(bs).forEach(function(k){var x=(a.blk||{})[k],y=(b.blk||{})[k];o.blk[k]=!x?y:(!y?x:(Math.abs(y.t||0)>Math.abs(x.t||0)?y:x))});
+  var sd={};Object.keys(a.sc||{}).concat(Object.keys(b.sc||{})).forEach(function(k){sd[k]=1});
+  Object.keys(sd).forEach(function(d){var x=(a.sc||{})[d]||{},y=(b.sc||{})[d]||{},kk={};
+    Object.keys(x).concat(Object.keys(y)).forEach(function(k){kk[k]=1});o.sc[d]={};
+    Object.keys(kk).forEach(function(k){o.sc[d][k]=Math.max(x[k]||0,y[k]||0)})});
   return o;
 }
 
@@ -549,31 +570,93 @@ function dueList(){
 function recalled(id){var t=H.topics[id],td=TODAY();if(!t)return;t.r.push(td);t.st++;t.nx=t.st<INT.length?addDays(td,INT[t.st]):null;t.t=Date.now();mark('rec')}
 function shaky(id){var t=H.topics[id];if(!t)return;t.st=0;t.nx=addDays(TODAY(),1);t.t=Date.now()}
 
-/* ---------- calendar ---------- */
-var STUDY=/class|live|sociology|assignment|recall|revision|polity|geograph|econom|gs\s?\d|history|study|test|pyq|mock|quiz/i;
-var EV={},dayOff=0,studyOnly=true,calErr=null;
-function iso(d){var o=-d.getTimezoneOffset(),s=o>=0?'+':'-';o=Math.abs(o);return key(d)+'T'+pad(d.getHours())+':'+pad(d.getMinutes())+':00'+s+pad(Math.floor(o/60))+':'+pad(o%60)}
+/* ---------- calendar and study blocks ---------- */
+var STUDY=/class|live|sociology|assignment|recall|revision|polity|geograph|econom|gs\s?\d|history|study|test|pyq|mock|quiz|aptitude|current affairs|b4/i;
+var EV={},FETCHED={},view='day',anc=TODAY(),studyOnly=true,calErr=null,openBlk=null,BI={},DI={},loadKey=null,flash='',dirty=false;
+function mon(k){var w=(parse(k).getDay()+6)%7;return addDays(k,-w)}
+function subjOf(s){s=s||'';
+  if(/polity|constitution/i.test(s))return'Polity';
+  if(/geograph/i.test(s))return'Geography';
+  if(/econom/i.test(s))return'Economy';
+  if(/sociolog/i.test(s))return'Sociology';
+  if(/modern|history|mih/i.test(s))return'Modern India';
+  if(/gs\s?-?(ii|2)\b|governance/i.test(s))return'GS2';
+  if(/gs\s?-?(iii|3)\b|environment|science/i.test(s))return'GS3';
+  if(/current affairs/i.test(s))return'Current Affairs';
+  return'Other'}
+/* turns a calendar title into a study block: kind (habit group), subject, and whether it carries a topic to recall */
+function classify(x){
+  var t=x.t||'',h=x.s.getHours(),p;
+  if(/daily check-?in/i.test(t))return null;
+  if(/^live/i.test(t)){var mih=/mih|modern/i.test(t);return{k:'LIVE',s:mih?'Modern India':subjOf(t),learn:1,topic:mih?'MIH live class':t.replace(/^live:\s*/i,'')+' live class',gen:1}}
+  if(/test|mock/i.test(t))return{k:'TST',s:'Other',learn:0};
+  if(/revision|error log/i.test(t))return{k:'TST',s:'Other',learn:0};
+  if(/^b4|pyq marathon/i.test(t)){
+    if(/pyq marathon/i.test(t))return{k:'B4',s:'Other',learn:0};
+    p=t.split(':');return{k:'B4',s:p.length>1?subjOf(p[1]):'Other',learn:1,topic:p.length>2?p.slice(2).join(':').trim():''}}
+  if(/current affairs/i.test(t))return{k:'CA',s:'Current Affairs',learn:0};
+  if(/aptitude|csat/i.test(t))return{k:'APT',s:'Other',learn:0};
+  if(/backlog/i.test(t)){var s2=subjOf(t);return{k:h<12?'A':'EVE',s:s2,learn:1,topic:s2+' backlog class',gen:1}}
+  return null}
+function ann(o){o.c=classify(o);if(o.c){o.key=key(o.s)+'|'+o.c.k+'|'+pad(o.s.getHours())+pad(o.s.getMinutes());o.m=Math.max(0,Math.round((o.e-o.s)/60000))}return o}
 function norm(x){
   if(!x||x.status==='cancelled'||!x.start||!x.start.dateTime)return null;
-  return{t:x.summary||'(no title)',s:new Date(x.start.dateTime),e:new Date((x.end&&x.end.dateTime)||x.start.dateTime)};
+  return ann({t:x.summary||'(no title)',s:new Date(x.start.dateTime),e:new Date((x.end&&x.end.dateTime)||x.start.dateTime),d:x.description||''});
 }
-function loadDay(off,refresh){
-  var d=new Date();d.setDate(d.getDate()+off);var k=key(d);
-  var s=new Date(d.getFullYear(),d.getMonth(),d.getDate(),0,0,0),e=new Date(d.getFullYear(),d.getMonth(),d.getDate(),23,59,59);
-  calErr=null;if(!EV[k])$('h-ev').innerHTML='<p class="hmut">Loading your calendar…</p>';
+/* typical week, used when the live calendar cannot be reached (built from the calendar on 13 Oct 2026) */
+var TPL_FROM='2026-10-14',TPL_TO='2027-01-24';
+var B4T={'2026-10-14':'B4 core: Polity: FRs, DPSP, amendments','2026-10-15':'B4 core: Polity: Parliament + judiciary','2026-10-16':'B4 core: Polity: Federalism + bodies','2026-10-19':'B4 core: Economy: Banking + RBI'};
+var CAD=['','Mon national + polity','Tue economy','Wed international relations','Thu S&T + environment','Fri AP current affairs + schemes','Sat weekly compile'];
+function tplDay(k){
+  if(k<TPL_FROM||k>TPL_TO)return[];
+  var d=parse(k),w=d.getDay(),out=[];
+  function mk(h1,m1,h2,m2,t,desc){out.push(ann({t:t,s:new Date(d.getFullYear(),d.getMonth(),d.getDate(),h1,m1),e:new Date(d.getFullYear(),d.getMonth(),d.getDate(),h2,m2),d:desc||'',tpl:1}))}
+  mk(5,30,8,30,k<='2026-10-21'?'Block A: Polity backlog class':'Block A: Geography backlog class');
+  if(w===0){
+    mk(9,15,11,15,'Sunday Test 1 (GS sectional / full test / APPSC mock Paper I)');
+    mk(13,0,16,0,'Sunday revision + error log');
+    mk(16,30,18,30,'Sunday Test 2 (aptitude / APPSC mock Paper II / catch-up)');
+  }else{
+    mk(9,15,9,35,'Current affairs (9:15)',CAD[w]);
+    mk(9,35,10,25,'Aptitude (9:35)');
+    mk(10,25,12,15,B4T[k]||(w===6?'B4 core: PYQ marathon (Saturday)':'B4 core slot'));
+    mk(12,30,15,30,'Live: GS II');
+    mk(16,0,19,0,'Live: MIH class');
+  }
+  mk(20,0,23,0,k<='2026-10-19'?'Economy backlog class (evening)':'Sociology backlog class (evening)');
+  return out}
+var SCC={};
+function scOf(k){if(H.sc[k])return H.sc[k];if(SCC[k])return SCC[k];var c={};tplDay(k).forEach(function(x){if(x.c)c[x.c.k]=(c[x.c.k]||0)+1});return(SCC[k]=c)}
+function doneIdx(){var m={};Object.keys(H.blk).forEach(function(k){var b=H.blk[k];if(b&&b.t>0)m[b.d+'|'+b.k]=(m[b.d+'|'+b.k]||0)+1});return m}
+function blockMins(){var m={};Object.keys(H.blk).forEach(function(k){var b=H.blk[k];if(b&&b.t>0)m[b.d]=(m[b.d]||0)+(b.m||0)});return m}
+function dayData(k){var o=EV[k];return o?{list:o.list,src:'live',at:o.at}:{list:tplDay(k),src:'tpl'}}
+function recSched(k){var o=EV[k];if(!o)return;var c={};o.list.forEach(function(x){if(x.c)c[x.c.k]=(c[x.c.k]||0)+1});
+  if(JSON.stringify(H.sc[k]||{})!==JSON.stringify(c)){H.sc[k]=c;dirty=true}}
+function loadWeek(m,refresh){
+  loadKey=m;calErr=null;
   var p=(window.claude&&claude.use)?claude.use('mcp'):Promise.resolve(null);
-  return p.then(function(m){
-    if(!m)throw{code:'nomcp'};
-    return m.callTool('Google Calendar','list_events',{startTime:iso(s),endTime:iso(e),orderBy:'startTime',pageSize:60},refresh?{cache:{refresh:true}}:{cache:{staleTime:60000}});
+  if(!EV[m])renderEv();
+  return p.then(function(mc){
+    if(!mc)throw{code:'nomcp'};
+    return mc.callTool('Google Calendar','list_events',{startTime:m+'T00:00:00',endTime:addDays(m,7)+'T00:00:00',orderBy:'startTime',pageSize:250},refresh?{cache:{refresh:true}}:{cache:{staleTime:60000}});
   }).then(function(r){
     var pl=r&&r.payload;if(typeof pl==='string'){try{pl=JSON.parse(pl)}catch(x){pl=null}}
-    var list=(pl&&pl.events)||[];
-    EV[k]={list:list.map(norm).filter(Boolean).sort(function(a,b){return a.s-b.s}),at:(r.cache&&r.cache.storedAt)||Date.now()};
-  }).catch(function(err){calErr=err||{code:'unknown'}}).then(renderEv);
+    var list=((pl&&pl.events)||[]).map(norm).filter(Boolean),at=(r.cache&&r.cache.storedAt)||Date.now(),i;
+    for(i=0;i<7;i++)EV[addDays(m,i)]={list:[],at:at};
+    var m7=addDays(m,7);list.forEach(function(x){var kx=key(x.s);if(kx>=m&&kx<m7)EV[kx].list.push(x)});
+    for(i=0;i<7;i++){var k=addDays(m,i);EV[k].list.sort(function(a,b){return a.s-b.s});recSched(k)}
+    FETCHED[m]=1;
+  }).catch(function(err){calErr=err||{code:'unknown'}}).then(function(){
+    if(loadKey===m)loadKey=null;
+    if(dirty){dirty=false;lsSet(KEY,JSON.stringify(H));clearTimeout(syncT);syncT=setTimeout(sync,3000)}
+    renderAll();
+  });
 }
+function ensureLoadFresh(){var m=mon(anc);if(loadKey!==m)loadWeek(m,false)}
+function ensureLoad(){var m=mon(anc);if(!FETCHED[m]&&loadKey!==m)loadWeek(m,false)}
 function calMsg(e){
   var c=e&&e.code,m={
-    nomcp:'Your Google Calendar shows here when this page is opened from Claude. On this device, <a href="https://calendar.google.com/calendar/u/0/r/day" target="_blank" rel="noopener">open Google Calendar</a>.',
+    nomcp:'Your live Google Calendar shows when Study Shelf is opened from Claude. <a href="https://calendar.google.com/calendar/u/0/r/week" target="_blank" rel="noopener">Open Google Calendar</a>.',
     server_not_connected:'Google Calendar is not connected. Add it in Claude Settings, Connectors, then reload this page.',
     needs_reauth:'Google Calendar needs to be reconnected. Open Claude Settings, Connectors, and sign in again.',
     selection_required:'You have more than one Google Calendar connector. Choose one when Claude asks.',
@@ -584,22 +667,65 @@ function calMsg(e){
   if(m[c])return m[c];
   return 'The calendar did not answer ('+esc(c||'unknown')+'). Tap Refresh to try again.';
 }
+function short(s,n){s=String(s||'').replace(/\s+/g,' ').trim();return s.length>n?s.slice(0,n-1)+'…':s}
+function titleFor(){
+  var td=TODAY();
+  if(view==='week'){var m=mon(anc),a=parse(m),b=parse(addDays(m,6));
+    return a.toLocaleDateString('en-IN',a.getMonth()===b.getMonth()?{day:'numeric'}:{day:'numeric',month:'short'})+' to '+b.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}
+  return(anc===td?'Today, ':anc===addDays(td,1)?'Tomorrow, ':anc===addDays(td,-1)?'Yesterday, ':'')+parse(anc).toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'short'})}
+function panelHtml(x){
+  var c=x.c,pre=c.topic?(c.topic+(c.gen?' · '+parse(key(x.s)).toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'')):'';
+  return'<div class="hpanel"><div class="hmut">What did you cover? It joins your recall schedule.'+(x.d?' Plan: '+esc(short(x.d,170)):'')+'</div>'+
+  '<div class="hform"><select class="hsel" id="h-bs" aria-label="Subject">'+SUBJ.map(function(s){return'<option'+(s===c.s?' selected':'')+'>'+s+'</option>'}).join('')+'</select>'+
+  '<select class="hsel" id="h-bp" aria-label="Priority"><option value="H">High priority</option><option value="M" selected>Medium priority</option><option value="L">Low priority</option></select>'+
+  '<input class="hi full" id="h-bt" type="text" maxlength="120" value="'+esc(pre)+'" placeholder="Topic covered, e.g. Article 21 and writs" aria-label="Topic covered">'+
+  '<button class="hb pri full" type="button" data-act="bsave" data-b="'+esc(x.key)+'">Save and add to recall</button></div>'+
+  '<div class="hrow"><button class="hb sm" type="button" data-act="bnorec" data-b="'+esc(x.key)+'">Done, no recall topic</button><button class="hb sm" type="button" data-act="bcancel">Cancel</button></div></div>'}
 function renderEv(){
-  var d=new Date();d.setDate(d.getDate()+dayOff);var k=key(d);
-  $('h-date').textContent=(dayOff?'Tomorrow, ':'')+d.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'short'});
-  var box=$('h-ev'),o=EV[k],h='';
-  $('h-today').querySelectorAll('.hrow').forEach(function(r){r.hidden=!!(calErr&&calErr.code==='nomcp'&&!o)});
-  if(!o){box.innerHTML=calErr?'<p class="hmut">'+calMsg(calErr)+'</p>':'<p class="hmut">Loading your calendar…</p>';return}
-  var list=o.list.filter(function(x){return !studyOnly||STUDY.test(x.t)}),hid=o.list.length-list.length,now=new Date(),nextSet=false;
-  list.forEach(function(x){
-    var lv=dayOff===0&&x.s<=now&&now<x.e,past=dayOff===0&&x.e<=now,nx=false;
-    if(dayOff===0&&!lv&&!past&&!nextSet){nx=true;nextSet=true}
-    h+='<div class="hev'+(lv?' live':'')+(past?' past':'')+'"><time>'+fmt(x.s)+'<br><span>'+fmt(x.e)+'</span></time><div><b>'+esc(x.t)+'</b>'+(lv?'<em>Now</em>':(nx?'<em>Next</em>':''))+'</div></div>';
+  var box=$('h-ev'),ae=document.activeElement;
+  if(openBlk&&ae&&box.contains(ae)&&/INPUT|SELECT/.test(ae.tagName))return;
+  var td=TODAY(),now=new Date(),h='',tpl=false,at=0,n=0,dn=0,mn=0,hidAll=0,nextX=null;
+  DI=doneIdx();
+  $('h-date').textContent=titleFor();
+  $('h-vday').classList.toggle('on',view==='day');$('h-vweek').classList.toggle('on',view==='week');
+  $('h-fstudy').classList.toggle('on',studyOnly);$('h-fall').classList.toggle('on',!studyOnly);
+  var days=view==='week'?[0,1,2,3,4,5,6].map(function(i){return addDays(mon(anc),i)}):[anc];
+  if(anc===td){var dd0=dayData(td);dd0.list.some(function(x){if(x.s>now&&(!studyOnly||x.c||STUDY.test(x.t))){nextX=x;return true}})}
+  days.forEach(function(k){
+    var wk=mon(k);
+    if(!EV[k]&&loadKey===wk){h+=(view==='week'?'<div class="hdh"><b>'+parse(k).toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'})+'</b></div>':'')+'<p class="hmut">Loading your calendar…</p>';return}
+    var dd=dayData(k),list=dd.list.filter(function(x){return!studyOnly||x.c||STUDY.test(x.t)}),a=0,b=0;
+    if(dd.src==='tpl')tpl=true;else at=Math.max(at,dd.at||0);
+    dd.list.forEach(function(x){if(x.c){a++;var bs=H.blk[x.key];if(bs&&bs.t>0){b++;mn+=bs.m||0}}});
+    n+=a;dn+=b;hidAll+=dd.list.length-list.length;
+    if(view==='week')h+='<div class="hdh'+(k===td?' t':'')+'"><b>'+parse(k).toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short'})+'</b><span>'+(a?b+' of '+a+' blocks':'')+'</span></div>';
+    if(!list.length)h+='<p class="hmut">Nothing '+(studyOnly?'study-related ':'')+'on the calendar'+(view==='week'?'.':' for this day.')+'</p>';
+    list.forEach(function(x){
+      var isT=k===td,lv=isT&&x.s<=now&&now<x.e,past=k<td||(isT&&x.e<=now),c=x.c,bs=c?H.blk[x.key]:null,done=!!(bs&&bs.t>0);
+      if(c)BI[x.key]=x;
+      h+='<div class="hev'+(lv?' live':'')+(past&&!lv?' past':'')+(done?' done':'')+'"><time>'+fmt(x.s)+'<br><span>'+fmt(x.e)+'</span></time><div class="hevb"><div><b>'+esc(x.t)+'</b>'+(lv?'<em>Now</em>':(x===nextX?'<em>Next</em>':''))+(c&&c.s!=='Other'?'<span class="pill L">'+esc(c.s)+'</span>':'')+'</div>';
+      if(view==='day'&&x.d)h+='<div class="hmut">'+esc(short(x.d,150))+'</div>';
+      if(c&&k<=td){
+        h+='<div class="hrow"><button class="hb sm'+(done?' on':'')+'" type="button" data-act="bdone" data-b="'+esc(x.key)+'">'+(done?'✓ Done'+(bs.n?' · '+esc(short(bs.n,34)):''):'Mark done')+'</button></div>';
+        if(openBlk===x.key&&!done&&c.learn)h+=panelHtml(x);
+      }
+      h+='</div></div>';
+    });
   });
-  if(!list.length)h='<p class="hmut">Nothing '+(studyOnly?'study-related ':'')+'on the calendar for this day.</p>';
-  if(hid)h+='<p class="hmut">'+hid+' other event'+(hid>1?'s':'')+' hidden. Tap All events to see them.</p>';
-  h+='<p class="hmut">Updated '+fmt(new Date(o.at))+(calErr?'. Latest refresh failed: '+calMsg(calErr):'')+'</p>';
+  if(hidAll&&view==='day')h+='<p class="hmut">'+hidAll+' other event'+(hidAll>1?'s':'')+' hidden. Tap All events to see them.</p>';
+  if(tpl)h+='<p class="hmut">Typical week, built from your Google Calendar on 13 Oct 2026. It will not show changes made since. '+(calErr?calMsg(calErr):'')+'</p>';
+  else h+='<p class="hmut">Updated '+fmt(new Date(at))+(calErr?'. Latest refresh failed: '+calMsg(calErr):'')+'</p>';
   box.innerHTML=h;
+  var sm=n?(dn+' of '+n+' study blocks done'+(mn?' · '+(Math.round(mn/6)/10)+' h logged':'')):'';
+  $('h-sumry').textContent=(flash?flash+' ':'')+sm;
+}
+function blockDone(key,recall,name,subj,pri){
+  var x=BI[key];if(!x||!x.c)return;openBlk=null;
+  var d=key.split('|')[0],id=null,c=x.c;
+  if(recall){id='b-'+key;addTopic(subj||c.s,name,pri||'M',id,d);flash='Added to recall: '+short(name,50)+'. First recall '+parse(addDays(d,1)).toLocaleDateString('en-IN',{day:'numeric',month:'short'})+'.'}
+  else flash='';
+  H.blk[key]={d:d,k:c.k,m:x.m,t:Date.now(),tid:id,n:recall?name:''};
+  openBlk=null;save();
 }
 
 /* ---------- renderers ---------- */
@@ -635,8 +761,13 @@ function renderCheckin(){
   else if(H.ci[td])h='<p class="hmut">Marked as no new topics today.</p>';
   $('h-today-list').innerHTML=h;
 }
-function hstreak(k){var d=TODAY(),n=0;function on(x){var v=(H.hab[x]||{})[k];return v>0}
-  if(!on(d))d=addDays(d,-1);while(on(d)){n++;d=addDays(d,-1)}return n}
+function habOn(h,d){var v=(H.hab[d]||{})[h.id]||0;if(v<0)return false;if(v>0)return true;
+  if(h.src){var n=(scOf(d)||{})[h.src]||0;return n>0&&(DI[d+'|'+h.src]||0)>=n}return false}
+function habApp(h,d){if(!h.src)return true;if(((H.hab[d]||{})[h.id]||0)>0)return true;return((scOf(d)||{})[h.src]||0)>0}
+function hstreak(h){var d=TODAY(),n=0,i;
+  if(!habApp(h,d)||!habOn(h,d))d=addDays(d,-1);
+  for(i=0;i<400;i++){if(!habApp(h,d)){d=addDays(d,-1);continue}if(habOn(h,d)){n++;d=addDays(d,-1)}else break}
+  return n}
 var habEdit=false,habArm=null;
 function renderHab(){
   var box=$('h-habl'),td=TODAY(),h='',L=habList(),btn=$('h-habedit');
@@ -651,23 +782,23 @@ function renderHab(){
     box.innerHTML=h;return;
   }
   L.forEach(function(x){
-    var on=((H.hab[td]||{})[x.id]||0)>0,dots='';
-    for(var i=6;i>=0;i--){dots+='<i class="'+(((H.hab[addDays(td,-i)]||{})[x.id]||0)>0?'on':'')+'"></i>'}
-    var s=hstreak(x.id);
-    h+='<div class="hhr"><button type="button" data-act="hab" data-k="'+x.id+'" aria-pressed="'+on+'"><span class="hbox'+(on?' on':'')+'">'+(on?'\u2713':'')+'</span><span>'+esc(x.n)+(s>1?'<span class="hstreak">'+s+'-day streak</span>':'')+'</span></button><span class="dots" aria-hidden="true">'+dots+'</span></div>';
+    var on=habOn(x,td),dots='',na=!habApp(x,td),i;
+    for(i=6;i>=0;i--){var dk=addDays(td,-i);dots+='<i class="'+(habOn(x,dk)?'on':(habApp(x,dk)?'':'na'))+'"></i>'}
+    var s=hstreak(x);
+    h+='<div class="hhr'+(na?' na':'')+'"><button type="button" data-act="hab" data-k="'+x.id+'" aria-pressed="'+on+'"><span class="hbox'+(on?' on':'')+'">'+(on?'✓':'')+'</span><span>'+esc(x.n)+(x.src?'<span class="hstreak">from your schedule'+(na?', no block today':'')+'</span>':'')+(s>1?'<span class="hstreak">'+s+'-day streak</span>':'')+'</span></button><span class="dots" aria-hidden="true">'+dots+'</span></div>';
   });
   if(!L.length)h='<p class="hmut">No habits yet. Tap Edit habits to add your own.</p>';
   box.innerHTML=h;
 }
 function renderProg(){
-  var td=TODAY(),days=(window.NBS&&NBS.get().days)||{},mins=[],i,tot=0,mx=60;
-  for(i=6;i>=0;i--){var k=addDays(td,-i),m=Math.round((days[k]||0)/60)+(H.fo[k]||0);mins.push([k,m]);tot+=m;if(m>mx)mx=m}
+  var td=TODAY(),days=(window.NBS&&NBS.get().days)||{},mins=[],i,tot=0,mx=60;var BM=blockMins();
+  for(i=6;i>=0;i--){var k=addDays(td,-i),m=Math.round((days[k]||0)/60)+(H.fo[k]||0)+Math.round((BM[k]||0));mins.push([k,m]);tot+=m;if(m>mx)mx=m}
   var wk='';
   mins.forEach(function(x){var d=parse(x[0]);wk+='<div class="'+(x[0]===td?'t':'')+'"><span>'+x[1]+'</span><i style="height:'+Math.max(3,Math.round(x[1]/mx*60))+'px"></i><span>'+'SMTWTFS'.charAt(d.getDay())+'</span></div>'});
   $('h-wk').innerHTML=wk;
   var from=addDays(td,-6),added=live().filter(function(t){return t.c>=from}).length,rec=0,hs=0,hn=0;
   live().forEach(function(t){t.r.forEach(function(r){if(r>=from)rec++})});
-  var HL=habList();for(i=0;i<7;i++){var hh=H.hab[addDays(td,-i)]||{};HL.forEach(function(x){hn++;if((hh[x.id]||0)>0)hs++})}
+  var HL=habList();for(i=0;i<7;i++){var dk=addDays(td,-i);HL.forEach(function(x){if(!habApp(x,dk))return;hn++;if(habOn(x,dk))hs++})}
   $('h-stat').innerHTML='<div><b>'+Math.round(tot/6)/10+'</b><span>hours studied</span></div><div><b>'+added+'</b><span>topics covered</span></div><div><b>'+rec+'</b><span>recalls done</span></div>';
   var by={};live().forEach(function(t){var b=by[t.s]||(by[t.s]={n:0,st:0});b.n++;b.st+=t.nx?t.st:INT.length});
   var h='<div class="hhead">Recall progress by subject ('+(hn?Math.round(hs/hn*100):0)+'% of habits kept this week)</div>';
@@ -685,7 +816,7 @@ function renderAll_shelf(){
   $('h-all').innerHTML=h||'<p class="hmut">No topics yet.</p>';
 }
 var delArm=null;
-function renderAll(){renderNudge();renderDue();renderCheckin();renderHab();renderProg();renderAll_shelf();renderEv()}
+function renderAll(){DI=doneIdx();renderNudge();renderDue();renderCheckin();renderHab();renderProg();renderAll_shelf();renderEv()}
 
 /* ---------- quiz and flashcards via Claude ---------- */
 var HAS_SAMPLE=false,sampleNS=null;
@@ -754,9 +885,23 @@ async function ftStart(m){
 document.addEventListener('click',function(ev){
   var b=ev.target.closest&&ev.target.closest('[data-act]');if(!b||!$('hub').contains(b))return;
   var a=b.dataset.act,id=b.dataset.id;
-  if(a==='day'){dayOff=+b.dataset.d;$('h-d0').classList.toggle('on',dayOff===0);$('h-d1').classList.toggle('on',dayOff===1);renderEv();loadDay(dayOff,false)}
-  else if(a==='filter'){studyOnly=b.dataset.f==='study';$('h-fstudy').classList.toggle('on',studyOnly);$('h-fall').classList.toggle('on',!studyOnly);renderEv()}
-  else if(a==='refresh'){loadDay(dayOff,true)}
+  if(a==='view'){view=b.dataset.v;openBlk=null;renderEv();ensureLoad()}
+  else if(a==='nav'){anc=addDays(anc,(+b.dataset.d)*(view==='week'?7:1));openBlk=null;renderEv();ensureLoad()}
+  else if(a==='tod'){anc=TODAY();openBlk=null;renderEv();ensureLoad()}
+  else if(a==='filter'){studyOnly=b.dataset.f==='study';renderEv()}
+  else if(a==='refresh'){loadWeek(mon(anc),true)}
+  else if(a==='bdone'){
+    var bk=b.dataset.b,bx=BI[bk],bs0=H.blk[bk];if(!bx||!bx.c)return;
+    if(bs0&&bs0.t>0){bs0.t=-Date.now();flash='';if(bs0.tid){var tp=H.topics[bs0.tid];if(tp&&!tp.del&&!tp.st){tp.del=1;tp.t=Date.now()}}save()}
+    else if(bx.c.learn){openBlk=openBlk===bk?null:bk;renderEv();var bi=$('h-bt');if(bi&&openBlk)bi.focus()}
+    else blockDone(bk,false);
+  }
+  else if(a==='bsave'){
+    var nm=$('h-bt').value.trim();if(!nm){$('h-bt').focus();return}
+    blockDone(b.dataset.b,true,nm,$('h-bs').value,$('h-bp').value);
+  }
+  else if(a==='bnorec'){blockDone(b.dataset.b,false)}
+  else if(a==='bcancel'){openBlk=null;renderEv()}
   else if(a==='ok'){recalled(id);save()}
   else if(a==='shaky'){shaky(id);save()}
   else if(a==='quiz'||a==='cards'){genQuiz(id,a)}
@@ -769,7 +914,7 @@ document.addEventListener('click',function(ev){
   else if(a==='flip'){cardBack=!cardBack;drawCard()}
   else if(a==='cnext'){cardI=(cardI+1)%cardSet.cs.length;cardBack=false;drawCard()}
   else if(a==='cprev'){cardI=(cardI+cardSet.cs.length-1)%cardSet.cs.length;cardBack=false;drawCard()}
-  else if(a==='hab'){var d=TODAY(),k=b.dataset.k,hh=H.hab[d]=H.hab[d]||{},on=(hh[k]||0)>0;hh[k]=(on?-1:1)*Date.now();save()}
+  else if(a==='hab'){var d=TODAY(),k=b.dataset.k,hh=H.hab[d]=H.hab[d]||{};DI=doneIdx();var hx0=H.hl[k],on=hx0?habOn(hx0,d):(hh[k]||0)>0;hh[k]=(on?-1:1)*Date.now();save()}
   else if(a==='habedit'){habEdit=!habEdit;habArm=null;renderHab()}
   else if(a==='hup'||a==='hdn'){
     var L=habList(),ix=L.findIndex(function(x){return x.id===id}),jx=a==='hup'?ix-1:ix+1;
@@ -824,10 +969,10 @@ $('h-subj').innerHTML=SUBJ.map(function(s){return'<option>'+s+'</option>'}).join
 
 /* ---------- boot ---------- */
 renderAll();
-loadDay(0,false);
+ensureLoad();
 if(window.NBS&&NBS.onChange)NBS.onChange(renderProg);
 setInterval(function(){renderEv();renderNudge()},60000);
-document.addEventListener('visibilitychange',function(){if(!document.hidden){renderAll();sync()}else{lsSet(KEY,JSON.stringify(H))}});
+document.addEventListener('visibilitychange',function(){if(!document.hidden){renderAll();sync();ensureLoadFresh()}else{lsSet(KEY,JSON.stringify(H))}});
 setTimeout(sync,1200);
 (window.claude&&claude.use?claude.use('sample'):Promise.resolve(null)).then(function(s){if(s){sampleNS=s;HAS_SAMPLE=true;renderDue()}}).catch(function(){});
 })();
