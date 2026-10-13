@@ -7,6 +7,7 @@ import sys, os, json, html
 from lib import *
 import ch00, ch01, ch02, ch03, ch04, ch05
 import ca00, ca01, ca02, ca03, ca04, ca05
+import mains
 CA = {1: ca01, 2: ca02, 3: ca03, 4: ca04, 5: ca05}
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(HERE), 'out')
@@ -81,6 +82,9 @@ def make_chapter(mod, n, prev_ch, next_ch, pills, lede, ptag):
     secs = secs + tail(mod, n)
     ti = [i for i, x in enumerate(secs) if x.sid == 'chapter-timeline'][0]
     secs.insert(ti, Sec('Live radar: current affairs', ca.radar(), sid='live-radar'))
+    mr = mains.section(n)
+    if mr:
+        secs.insert(ti, mr)
     rendered, idx = render_sections(secs)
     svg, outline = mindmap(mod.MAP[0], mod.MAP[1], 'Chapter %d map' % n)
     toc = [('chapter-map', 'Chapter map')] + idx
