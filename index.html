@@ -252,6 +252,16 @@ details.hshelf summary{cursor:pointer;font:700 16px var(--sans);min-height:44px;
 @media (max-width:520px){.hhe{grid-template-columns:1fr}}
 @media (max-width:420px){.hform{grid-template-columns:1fr}.hev{grid-template-columns:64px minmax(0,1fr)}}
 @media (prefers-reduced-motion:no-preference){.hb{transition:background .15s,border-color .15s}}
+
+.hwg{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.hw{border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.hw.on{background:var(--surface2)}
+.hwt{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.hwt b{font:700 18px/1.2 var(--serif,Georgia,serif);overflow-wrap:anywhere}
+.hwm{font:500 14px/1.4 var(--sans)}
+.hwe{font:italic 400 13px/1.45 var(--sans);color:var(--muted)}
+.hw .hb{align-self:flex-start;margin-top:2px}
+.hwg+p,.hwg>p,.hwg>.hrow{grid-column:1/-1}
 </style><main class="shelf"><h1>Study Shelf</h1><p class="sub">Your personal notebooks, with progress.</p>
 <section class="hub" id="hub" aria-label="Daily study hub">
 <div class="hnudge" id="h-nudge" hidden></div>
@@ -262,6 +272,12 @@ details.hshelf summary{cursor:pointer;font:700 16px var(--sans);min-height:44px;
 <div class="hrow"><button class="hb sm on" type="button" data-act="view" data-v="day" id="h-vday">Day</button><button class="hb sm" type="button" data-act="view" data-v="week" id="h-vweek">Week</button><button class="hb sm on" type="button" data-act="filter" data-f="study" id="h-fstudy">Study only</button><button class="hb sm" type="button" data-act="filter" data-f="all" id="h-fall">All events</button><button class="hb sm" type="button" data-act="refresh">Refresh</button></div>
 <p class="hmut hsum" id="h-sumry"></p>
 <div id="h-ev"><p class="hmut">Loading your calendar…</p></div>
+</div>
+
+<div class="hcard wide" id="h-engc">
+<div class="hh"><div><small>English for answers</small><h2>Today's 8 words</h2></div></div>
+<p class="hmut hsum" id="h-engsum"></p>
+<div class="hwg" id="h-eng"></div>
 </div>
 
 <div class="hcard" id="h-due">
@@ -492,11 +508,12 @@ var AUTO=[['a_A','A','Block A: backlog class'],['a_CA','CA','Current affairs'],[
 var KEY='hub:v1';
 var ORD={H:0,M:1,L:2};
 
-function fresh(){return{v:1,topics:{},hab:{},ci:{},fo:{},hl:{},blk:{},sc:{}}}
+function fresh(){return{v:1,topics:{},hab:{},ci:{},fo:{},hl:{},blk:{},sc:{},en:{}}}
 var H;try{H=JSON.parse(lsGet(KEY))}catch(e){H=null}
 if(!H||!H.v)H=fresh();
-['topics','hab','ci','fo','hl','blk','sc'].forEach(function(k){if(!H[k])H[k]={}});
+['topics','hab','ci','fo','hl','blk','sc','en'].forEach(function(k){if(!H[k])H[k]={}});
 if(!Object.keys(H.hl).length)DEF.forEach(function(x,i){H.hl[x[0]]={id:x[0],n:x[1],o:i,t:0}});
+if(!H.hl.eng)H.hl.eng={id:'eng',n:'Learn the 8 English words',o:60,t:0};
 AUTO.forEach(function(a,i){if(!H.hl[a[0]])H.hl[a[0]]={id:a[0],n:a[2],o:100+i,t:0,src:a[1]}});
 function habList(){return Object.keys(H.hl).map(function(k){return H.hl[k]}).filter(function(x){return x&&!x.del}).sort(function(a,b){return a.o-b.o})}
 
@@ -519,6 +536,10 @@ function merge(a,b){
   Object.keys(sd).forEach(function(d){var x=(a.sc||{})[d]||{},y=(b.sc||{})[d]||{},kk={};
     Object.keys(x).concat(Object.keys(y)).forEach(function(k){kk[k]=1});o.sc[d]={};
     Object.keys(kk).forEach(function(k){o.sc[d][k]=Math.max(x[k]||0,y[k]||0)})});
+  var ed={};Object.keys(a.en||{}).concat(Object.keys(b.en||{})).forEach(function(k){ed[k]=1});
+  Object.keys(ed).forEach(function(d){var x=(a.en||{})[d]||{},y=(b.en||{})[d]||{},kk={};
+    Object.keys(x).concat(Object.keys(y)).forEach(function(k){kk[k]=1});o.en[d]={};
+    Object.keys(kk).forEach(function(k){var p=x[k]||0,q=y[k]||0;o.en[d][k]=Math.abs(q)>Math.abs(p)?q:p})});
   return o;
 }
 
@@ -551,6 +572,203 @@ async function sync(){
   }catch(e){syncState='local'}
   finally{busy=false}
 }
+
+/* ---------- English for answers: daily words (3 adjectives, 3 verbs, 2 keywords) ---------- */
+var EN_START='2026-10-14';
+var EN_ADJ=[
+'pragmatic|practical, focused on what works|A pragmatic approach to subsidy reform balances fiscal limits with welfare.',
+'equitable|fair in outcome, not just in rules|Equitable access to healthcare is the test of a welfare state.',
+'nascent|just beginning to emerge|India\'s nascent space-startup sector needs regulatory clarity.',
+'resilient|able to recover quickly|Resilient supply chains cushion the economy from global shocks.',
+'inclusive|covering all sections of society|Inclusive growth must reach tribal and remote districts.',
+'sustainable|able to continue without exhausting resources|Sustainable agriculture links productivity with groundwater limits.',
+'pervasive|spread through everything|Corruption becomes pervasive when accountability is weak.',
+'systemic|built into the whole system|Gender bias in hiring is systemic, not incidental.',
+'ambiguous|open to more than one meaning|The ambiguous clause invited litigation.',
+'contentious|causing disagreement|Reservation in promotions remains a contentious issue.',
+'incremental|happening in small steps|Incremental reforms avoid shocks but can delay results.',
+'transformative|bringing deep change|Digital payments proved transformative for small traders.',
+'holistic|looking at the whole, not parts|A holistic view of nutrition includes sanitation and education.',
+'robust|strong and well built|A robust grievance mechanism builds citizen trust.',
+'fragile|easily damaged|Fragile ecosystems such as the Himalayas need cautious planning.',
+'asymmetric|unequal between the two sides|Asymmetric information puts farmers at a disadvantage in markets.',
+'arbitrary|based on whim, not reason|Arbitrary detention violates Article 21.',
+'transparent|open and easy to verify|Transparent procurement reduces scope for discretion.',
+'accountable|answerable for one\'s actions|Officials must be accountable to the people they serve.',
+'prudent|careful and sensible|Prudent borrowing keeps debt within sustainable limits.',
+'imperative|absolutely necessary|Climate adaptation is imperative for coastal states.',
+'obsolete|no longer useful|Obsolete colonial laws should be repealed.',
+'tangible|real and measurable|Welfare schemes must show tangible outcomes on the ground.',
+'marginalised|pushed to the edges of society|Marginalised groups face layered exclusion.',
+'vulnerable|easily harmed|Vulnerable communities bear the worst impact of floods.',
+'comprehensive|covering everything needed|A comprehensive data-protection law needs clear enforcement.',
+'stringent|very strict|Stringent penalties alone do not ensure compliance.',
+'lax|not strict enough|Lax enforcement weakens environmental clearances.',
+'inherent|existing as a natural part|The inherent dignity of every person underlies the Constitution.',
+'dynamic|constantly changing|Federalism is a dynamic relationship, not a fixed division.',
+'coherent|logical and consistent|India needs a coherent industrial policy across states.',
+'discretionary|left to individual judgement|Discretionary powers need guidelines to prevent misuse.',
+'feasible|possible to do in practice|Is simultaneous election feasible without constitutional change?',
+'viable|able to work successfully|Small farms need viable market linkages.',
+'pivotal|of central importance|The Supreme Court played a pivotal role in expanding Article 21.',
+'salient|most noticeable and important|A salient feature of the Constitution is its mix of rigidity and flexibility.',
+'ubiquitous|found everywhere|Mobile phones are ubiquitous even in remote villages.',
+'skewed|uneven, distorted|Skewed sex ratios reflect deep social bias.',
+'indispensable|cannot be done without|Public investment is indispensable for early childhood care.',
+'unprecedented|never seen before|The pandemic caused unprecedented disruption in schooling.',
+'multifaceted|having many sides|Poverty is multifaceted: income, health and education all count.',
+'autonomous|self-governing|Autonomous institutions need insulation from political pressure.',
+'progressive|favouring reform, or rising with income|A progressive tax asks more of those who earn more.',
+'regressive|burdening the poor more|Indirect taxes can be regressive.',
+'inadequate|not enough|Inadequate allocation undermines public health.',
+'adverse|harmful|Adverse weather hit kharif output.',
+'conducive|making something likely|A conducive climate for investment needs policy stability.',
+'untenable|cannot be defended|Indefinitely withholding assent is untenable.',
+'formidable|hard to overcome|Climate finance is a formidable challenge for developing countries.',
+'plausible|seemingly reasonable|A plausible link exists between female education and falling fertility.',
+'equivocal|unclear, open to doubt|The court\'s equivocal stance left the matter unsettled.',
+'sporadic|occasional, scattered|Sporadic enforcement fails to change behaviour.',
+'symbiotic|mutually beneficial|Centre and states share a symbiotic relationship.',
+'antiquated|outdated|Antiquated procedures slow down justice.',
+'egalitarian|favouring equality|The Preamble reflects an egalitarian vision.',
+'sovereign|supreme in authority|The Preamble declares India a sovereign republic.',
+'paternalistic|treating citizens like children|A benevolent state can turn paternalistic.',
+'elusive|hard to achieve|Universal literacy remains elusive in some districts.'
+];
+var EN_VRB=[
+'mitigate|make less severe|Afforestation can mitigate urban heat.',
+'underscore|emphasise|The floods underscore the need for better drainage planning.',
+'perpetuate|make continue|Dowry perpetuates gender inequality.',
+'exacerbate|make worse|Delayed monsoons exacerbate rural distress.',
+'augment|increase|Remittances augment household income.',
+'curtail|reduce or limit|Emergency provisions can curtail civil liberties.',
+'safeguard|protect|Article 32 safeguards fundamental rights.',
+'foster|encourage the growth of|Self-help groups foster financial inclusion.',
+'bolster|strengthen|Skill training can bolster employability.',
+'undermine|weaken gradually|Unchecked pollution can undermine public health.',
+'address|deal with|Policy must address the root causes of malnutrition.',
+'facilitate|make easier|Single-window clearance can facilitate investment.',
+'streamline|simplify and speed up|Streamlining procedures lowers compliance cost.',
+'leverage|use to advantage|India can leverage its demographic dividend.',
+'engender|give rise to|Poor governance engenders public distrust.',
+'ameliorate|make better|Cash transfers ameliorate short-term hardship.',
+'alleviate|reduce suffering or a problem|MGNREGA alleviates seasonal unemployment.',
+'entrench|fix firmly in place|Caste hierarchies entrench inequality.',
+'erode|wear away slowly|Frequent adjournments erode confidence in Parliament.',
+'reconcile|bring into harmony|The court must reconcile liberty with security.',
+'uphold|confirm and maintain|The Supreme Court upheld the right to privacy.',
+'enforce|make people obey|Laws are meaningless unless states enforce them.',
+'mandate|require officially|The Act mandates a gram sabha twice a year.',
+'incentivise|encourage with rewards|Tax breaks incentivise clean energy.',
+'decentralise|move power downward|Panchayati Raj decentralises decision-making.',
+'devolve|pass power to a lower level|Funds, functions and functionaries should be devolved to local bodies.',
+'empower|give the power to act|Education empowers women to make choices.',
+'catalyse|speed up change|Public investment can catalyse private investment.',
+'channel|direct towards a purpose|Channel savings into productive use.',
+'accelerate|make faster|Reforms can accelerate structural transformation.',
+'reinforce|strengthen|Judicial review reinforces constitutional supremacy.',
+'hinder|get in the way of|Land fragmentation hinders mechanisation.',
+'impede|slow down|Red tape impedes ease of doing business.',
+'compromise|weaken, or settle by concession|Pollution compromises the right to health.',
+'advocate|publicly support|Gandhi advocated trusteeship.',
+'articulate|express clearly|The Preamble articulates the ideals of the Constitution.',
+'assert|state with confidence|States assert their autonomy on fiscal matters.',
+'contend|argue|Critics contend that the bill dilutes accountability.',
+'substantiate|support with evidence|Substantiate each claim with data.',
+'elucidate|make clear|Elucidate the role of the Finance Commission.',
+'delineate|describe precisely|The Seventh Schedule delineates Union and State powers.',
+'reiterate|say again|The Court reiterated the basic structure doctrine.',
+'corroborate|confirm with evidence|Survey data corroborates the shift to services.',
+'scrutinise|examine closely|Committees scrutinise legislation in detail.',
+'deliberate|discuss carefully|Parliament must deliberate before passing laws.',
+'regulate|control by rules|SEBI regulates the securities market.',
+'adjudicate|decide a dispute formally|Tribunals adjudicate service matters.',
+'curb|restrain|Strong laws are needed to curb hoarding.',
+'eradicate|remove completely|The goal is to eradicate extreme poverty.',
+'combat|fight against|States combat malnutrition through Poshan Abhiyaan.',
+'harness|control and put to use|India can harness solar energy at scale.',
+'optimise|make the best use of|Optimise water use through micro-irrigation.',
+'diversify|spread across varied areas|Farmers should diversify beyond paddy.',
+'consolidate|combine and strengthen|Consolidate gains in literacy before expanding.',
+'rectify|correct|Rectify gaps in the supply chain.',
+'avert|prevent|Early warning can avert disaster losses.',
+'overhaul|reform thoroughly|The criminal-justice system needs an overhaul.',
+'accommodate|make room for|Federalism must accommodate regional diversity.',
+'mobilise|bring together for action|Mobilise local resources for development.',
+'amplify|increase in strength|Social media can amplify misinformation.'
+];
+var EN_KEY=[
+'inclusive growth|growth whose benefits reach all sections, especially the poor|Link it to jobs, health and education in GS3 answers.',
+'cooperative federalism|Centre and states working together, e.g. the GST Council|Use it for fiscal and policy coordination answers.',
+'competitive federalism|states competing for investment and outcomes|Cite ease-of-doing-business rankings.',
+'basic structure|core features of the Constitution that cannot be amended (Kesavananda, 1973)|Use it in any amendment or judiciary answer.',
+'rule of law|everyone, including the state, is bound by law|Pair it with Article 14.',
+'separation of powers|legislature, executive and judiciary have distinct roles|Use it in judicial activism answers.',
+'judicial review|courts testing laws against the Constitution|Cite Articles 13, 32 and 226.',
+'constitutional morality|following the spirit of the Constitution, not just the text|Used in Navtej Johar and Sabarimala.',
+'social justice|fair distribution of opportunities and dignity|The base for reservation and welfare arguments.',
+'distributive justice|fair sharing of resources and benefits|Link to DPSPs, Articles 38 and 39.',
+'demographic dividend|growth gain from a large working-age population|Always add the need for skills and jobs.',
+'carrying capacity|the load an ecosystem can bear without damage|Use it for Himalaya and tourism answers.',
+'sustainable development|meeting present needs without harming future generations|Cite SDGs and the Brundtland idea.',
+'intergenerational equity|fairness to future generations|Use it in climate and debt answers.',
+'polluter pays principle|the polluter bears the cost of damage|Cite NGT and Indian Council for Enviro-Legal Action.',
+'precautionary principle|act to prevent harm even without full proof|Use it for GM crops and EIA debates.',
+'strategic autonomy|independent decision-making in foreign policy|The core of India\'s multi-alignment.',
+'soft power|influence through culture and values, not force|Cite yoga, diaspora, cinema and the Vaccine Maitri.',
+'multilateralism|cooperation among many countries through institutions|Link to UN reform and WTO.',
+'neighbourhood first|India\'s priority on relations with immediate neighbours|Use it in South Asia answers.',
+'fiscal consolidation|reducing deficits and debt over time|Link to FRBM and growth trade-offs.',
+'twin balance sheet problem|stressed banks and stressed corporates together|Use it for the NPA and credit slowdown.',
+'fiscal federalism|division of taxes and spending between Centre and states|Cite Finance Commission and GST.',
+'last-mile delivery|getting services to the final beneficiary|Cite DBT, Aadhaar and ASHA workers.',
+'governance deficit|gap between what citizens expect and what institutions deliver|Use it before suggesting reforms.',
+'e-governance|using digital tools to deliver public services|Cite UMANG, DigiLocker and CoWIN.',
+'citizen\'s charter|a public promise of service standards|Pair with grievance redressal and RTI.',
+'probity|honesty and strong moral principles in public life|A GS4 keyword; link to the Nolan principles.',
+'public interest|the welfare of the community as a whole|Use it to test any administrative decision.',
+'sunset clause|a provision that expires on a set date|Use it for reviewing laws and schemes.',
+'affirmative action|policies to correct historic disadvantage|Link to Articles 15(4) and 16(4).',
+'gender mainstreaming|building gender concerns into every policy|Cite gender budgeting.',
+'digital divide|gap between those with and without digital access|Use it in education and inclusion answers.',
+'food security|reliable access to enough nutritious food|Cite NFSA, PDS and the four pillars.',
+'human development|expanding people\'s capabilities, not just income|Link to the HDI and the Sen approach.',
+'social capital|trust and networks that help groups act together|Use it for self-help groups and community policing.',
+'structural transformation|shift of workers from farming to industry and services|Link it to jobless growth.',
+'ease of living|how simple daily life is for citizens|Pair it with ease of doing business.',
+'moral hazard|taking risk because someone else bears the cost|Use it in bank bailout answers.',
+'regulatory capture|a regulator serving the industry it oversees|Use it in SEBI and TRAI debates.',
+'policy paralysis|inaction caused by indecision or coalition limits|Use it for reform delays.'
+];
+function enMod(n,m){return((n%m)+m)%m}
+function enDay(d){return diff(d,EN_START)}
+function enWords(d){
+  var i=enDay(d),out=[],j,s;
+  for(j=0;j<3;j++){s=EN_ADJ[enMod(i*3+j,EN_ADJ.length)].split('|');out.push({w:s[0],p:'Adjective',m:s[1],e:s[2]})}
+  for(j=0;j<3;j++){s=EN_VRB[enMod(i*3+j,EN_VRB.length)].split('|');out.push({w:s[0],p:'Verb',m:s[1],e:s[2]})}
+  for(j=0;j<2;j++){s=EN_KEY[enMod(i*2+j,EN_KEY.length)].split('|');out.push({w:s[0],p:'Keyword',m:s[1],e:s[2]})}
+  return out}
+function enDone(d){var o=H.en[d]||{},n=0;Object.keys(o).forEach(function(k){if(o[k]>0)n++});return n}
+function enStreak(){var d=TODAY(),n=0,N=8;if(enDone(d)<N)d=addDays(d,-1);while(enDone(d)>=N&&n<400){n++;d=addDays(d,-1)}return n}
+var enYes=false;
+function enWordHtml(x,d,j){
+  var on=((H.en[d]||{})[j]||0)>0;
+  return'<div class="hw'+(on?' on':'')+'"><div class="hwt"><b>'+esc(x.w)+'</b><span class="pill '+(x.p==='Keyword'?'M':(x.p==='Verb'?'H':'L'))+'">'+x.p+'</span></div><div class="hwm">'+esc(x.m)+'</div><div class="hwe">'+esc(x.e)+'</div>'+
+  '<button class="hb sm'+(on?' on':'')+'" type="button" data-act="enw" data-d="'+d+'" data-j="'+j+'" aria-pressed="'+on+'">'+(on?'✓ Learned':'Got it')+'</button></div>'}
+function renderEng(){
+  var box=$('h-eng'),td=TODAY(),ws=enWords(td),h='',k=enDone(td),st=enStreak(),yd=addDays(td,-1);
+  if(!box)return;
+  $('h-engsum').textContent=k+' of '+ws.length+' learned today'+(st?' · '+st+' day streak':'');
+  ws.forEach(function(x,j){h+=enWordHtml(x,td,j)});
+  h+='<p class="hmut">Use at least one of these in your next answer or essay line. Words you use stay with you.</p>';
+  h+='<div class="hrow"><button class="hb sm" type="button" data-act="enyes">'+(enYes?'Hide yesterday\'s words':'Revise yesterday\'s words')+'</button></div>';
+  if(enYes){enWords(yd).forEach(function(x,j){h+=enWordHtml(x,yd,j)})}
+  box.innerHTML=h}
+function enToggle(d,j){
+  var o=(H.en[d]=H.en[d]||{}),on=(o[j]||0)>0;o[j]=on?-Date.now():Date.now();
+  var all=enDone(d)>=8,hb=(H.hab[d]=H.hab[d]||{});
+  if(all)hb.eng=Date.now();else if(hb.eng>0)hb.eng=-Date.now();
+  save()}
 
 /* ---------- topics and spaced recall ---------- */
 function live(){return Object.keys(H.topics).map(function(k){return H.topics[k]}).filter(function(t){return t&&!t.del})}
@@ -830,7 +1048,7 @@ function renderAll_shelf(){
   $('h-all').innerHTML=h||'<p class="hmut">No topics yet.</p>';
 }
 var delArm=null;
-function renderAll(){DI=doneIdx();renderNudge();renderDue();renderCheckin();renderHab();renderProg();renderAll_shelf();renderEv()}
+function renderAll(){DI=doneIdx();renderEng();renderNudge();renderDue();renderCheckin();renderHab();renderProg();renderAll_shelf();renderEv()}
 
 /* ---------- quiz and flashcards via Claude ---------- */
 var HAS_SAMPLE=false,sampleNS=null;
@@ -899,7 +1117,9 @@ async function ftStart(m){
 document.addEventListener('click',function(ev){
   var b=ev.target.closest&&ev.target.closest('[data-act]');if(!b||!$('hub').contains(b))return;
   var a=b.dataset.act,id=b.dataset.id;
-  if(a==='view'){view=b.dataset.v;openBlk=null;renderEv();ensureLoad()}
+  if(a==='enw'){enToggle(b.dataset.d,+b.dataset.j)}
+  else if(a==='enyes'){enYes=!enYes;renderEng()}
+  else if(a==='view'){view=b.dataset.v;openBlk=null;renderEv();ensureLoad()}
   else if(a==='nav'){anc=addDays(anc,(+b.dataset.d)*(view==='week'?7:1));openBlk=null;renderEv();ensureLoad()}
   else if(a==='tod'){anc=TODAY();openBlk=null;renderEv();ensureLoad()}
   else if(a==='filter'){studyOnly=b.dataset.f==='study';renderEv()}
