@@ -129,11 +129,17 @@ def flow(d):
     return svgwrap(out, y + 2, d.get('title'))
 
 def mnemonic(d):
+    if d.get('word'):
+        tiles = ''.join('<span class="tile">%s</span>' % esc(ch) if ch.isupper() else '<span class="tsep">%s</span>' % esc(ch) for ch in d['word'])
+        chips = ''.join('<span class="chip"><i>%s</i>%s</span>' % (esc(l[0]), esc(l[1])) for l in d['letters'])
+        return ('<div class="mnem mword"><div class="mlbl">%s &middot; %s</div><div class="tiles">%s</div><div class="mhook">%s</div><div class="mchips">%s</div>%s</div>'
+                % (esc(d.get('label', 'Mnemonic')), esc(d.get('title', '')), tiles, esc(d.get('hook', '')), chips,
+                   '<div class="mnote">%s</div>' % esc(d['note']) if d.get('note') else ''))
     sent = d['sentence'].split(); letters = d['letters']
     spans = ''.join('<span class="w"><b>%s</b>%s</span>' % (esc(w[0]), esc(w[1:])) for w in sent)
     chips = ''.join('<span class="chip"><i>%s</i>%s</span>' % (esc(l[0]), esc(l[1])) for l in letters)
-    return ('<div class="mnem"><div class="mlbl">Mnemonic &middot; %s</div><div class="msent">%s</div><div class="mchips">%s</div>%s</div>'
-            % (esc(d.get('title', 'Remember it as')), spans, chips, '<div class="mnote">%s</div>' % esc(d['note']) if d.get('note') else ''))
+    return ('<div class="mnem"><div class="mlbl">%s &middot; %s</div><div class="msent">%s</div><div class="mchips">%s</div>%s</div>'
+            % (esc(d.get('label', 'Mnemonic')), esc(d.get('title', 'Remember it as')), spans, chips, '<div class="mnote">%s</div>' % esc(d['note']) if d.get('note') else ''))
 
 RENDER = {'mindmap': mindmap, 'fork': fork, 'flow': flow, 'mnemonic': mnemonic}
 def render(v): return RENDER[v['type']](v)

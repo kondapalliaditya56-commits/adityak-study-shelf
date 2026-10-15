@@ -2,36 +2,38 @@
  "4": [
   {
    "type": "mnemonic",
-   "pos": "top",
    "title": "Six roles of civil services",
-   "sentence": "Nobody Can Always Ignore Public Interest",
+   "word": "I PANIC",
+   "hook": "A good civil servant never says \"I PANIC\": the six roles keep him steady under pressure.",
    "letters": [
     [
-     "N",
-     "Neutrality"
-    ],
-    [
-     "C",
-     "Commitment"
-    ],
-    [
-     "A",
-     "Anonymity"
-    ],
-    [
      "I",
-     "Instrumentality"
+     "Impersonality: do not personalise the post"
     ],
     [
      "P",
-     "Professionality"
+     "Professionality: keep upgrading skills"
+    ],
+    [
+     "A",
+     "Anonymity: the minister is the public face"
+    ],
+    [
+     "N",
+     "Neutrality: class, cultural, political"
     ],
     [
      "I",
-     "Impersonality"
+     "Instrumentality: instrument of the people"
+    ],
+    [
+     "C",
+     "Commitment: rule of law, welfare of the Daridra"
     ]
    ],
-   "note": "Handout order: N-C-A-I-P-I. The sentence is a memory aid, not from the handout."
+   "label": "Mnemonic",
+   "note": "Handout order is N-C-A-I-P-I; the letters are rearranged into a word because the roles have no sequence.",
+   "pos": "top"
   },
   {
    "type": "mindmap",
@@ -162,6 +164,44 @@
  ],
  "1": [
   {
+   "type": "mnemonic",
+   "title": "Issues in the working of UPSC",
+   "word": "UNDONE·A",
+   "hook": "UPSC's role is UNDONE by Abuse (of Article 320(3)).",
+   "letters": [
+    [
+     "U",
+     "Unequal status: no separate oath, easier removal"
+    ],
+    [
+     "N",
+     "No educational qualification prescribed for members"
+    ],
+    [
+     "D",
+     "Deviation from its advice (57 then 82 times)"
+    ],
+    [
+     "O",
+     "One-size-fits-all recruitment"
+    ],
+    [
+     "N",
+     "Negative recruitment, archaic philosophy"
+    ],
+    [
+     "E",
+     "Exam structure and duration"
+    ],
+    [
+     "A",
+     "Abuse of Art 320(3); three categories of officials"
+    ]
+   ],
+   "label": "Mnemonic",
+   "after": "Exam structure and duration"
+  },
+  {
    "type": "mindmap",
    "title": "Memory map: PSCs in India",
    "center": "Public Service Commissions (Part XIV)",
@@ -251,28 +291,41 @@
  "2": [
   {
    "type": "mnemonic",
-   "pos": "top",
-   "title": "Types of civil-service categories",
-   "sentence": "All Central State Municipal",
+   "title": "Consequences of a closed career system",
+   "word": "CORNERS",
+   "hook": "A closed career system CORNERS the officer.",
    "letters": [
     [
-     "A",
-     "All India Services"
+     "C",
+     "Conservative values"
     ],
     [
-     "C",
-     "Central Services"
+     "O",
+     "Obstacles to change"
+    ],
+    [
+     "R",
+     "Rule fetishism"
+    ],
+    [
+     "N",
+     "Non-responsive"
+    ],
+    [
+     "E",
+     "Elitist mindset"
+    ],
+    [
+     "R",
+     "Rank, not competence, decides placement"
     ],
     [
      "S",
-     "State Civil Services"
-    ],
-    [
-     "M",
-     "Municipal Services"
+     "Status quoist"
     ]
    ],
-   "note": "Memory aid: four layers of the civil service, top to local."
+   "label": "Mnemonic",
+   "after": "Conservative values"
   },
   {
    "type": "fork",
@@ -346,36 +399,38 @@
  "3": [
   {
    "type": "mnemonic",
-   "pos": "top",
-   "title": "Articles for service law",
-   "sentence": "Rules Tenure Dismissal: Sardar Fixes Equality, Tribunals",
+   "title": "Service articles in number order",
+   "word": "R R R R",
+   "hook": "309 to 312 run as four Rs: Recruit, Retain, Remove, Raise.",
    "letters": [
     [
      "309",
-     "Recruitment, conditions"
+     "Recruit: recruitment and conditions of service"
     ],
     [
      "310",
-     "Tenure (Pleasure)"
+     "Retain: tenure at the President's or Governor's pleasure"
     ],
     [
      "311",
-     "Dismissal safeguards"
+     "Remove: dismissal only with safeguards"
     ],
     [
      "312",
-     "AIS creation"
+     "Raise: Parliament can create All India Services"
     ],
     [
      "16",
-     "Equal opportunity"
+     "Equal opportunity in public employment"
     ],
     [
      "323A",
-     "Tribunals"
+     "Administrative tribunals (CAT, SATs)"
     ]
    ],
-   "note": "Memory aid: the numbers run 309, 310, 311, 312, then 16 and 323A."
+   "label": "Mnemonic",
+   "note": "Ordered by article number, so the order is kept. 16 and 323A sit outside the run.",
+   "after": "Other constitutional provisions"
   },
   {
    "type": "flow",
@@ -405,7 +460,7 @@
   },
   {
    "type": "fork",
-   "after": "Rajamannar Commission",
+   "after": "Changed circumstances",
    "title": "AIS debate: keep or disband",
    "root": {
     "t": "All India Services",
@@ -440,61 +495,49 @@
  "5": [
   {
    "type": "mnemonic",
-   "pos": "top",
-   "title": "Functions of civil services",
-   "sentence": "Four Functions: Formulate, Implement, Evaluate, Adjudicate",
+   "title": "Causes of poor performance",
+   "word": "WILD SCARE",
+   "hook": "Poor performance gives citizens a WILD SCARE.",
    "letters": [
     [
-     "F",
-     "Formulate policy"
+     "W",
+     "Wage compression"
     ],
     [
      "I",
-     "Implement policy"
+     "Interference: political"
     ],
     [
-     "E",
-     "Evaluate policy"
+     "L",
+     "Lack of people's participation"
+    ],
+    [
+     "D",
+     "Dual control over AIS"
+    ],
+    [
+     "S",
+     "Street-level bureaucracy corruption"
+    ],
+    [
+     "C",
+     "Capacity building is poor"
     ],
     [
      "A",
-     "Adjudicate"
+     "Arbitrary transfers, short tenures (DC about one year)"
+    ],
+    [
+     "R",
+     "Reluctance to use constitutional protection"
+    ],
+    [
+     "E",
+     "Evaluation of performance is poor"
     ]
    ],
-   "note": "Memory aid: FIEA. Remember the conflict of interest in Evaluate."
-  },
-  {
-   "type": "mindmap",
-   "title": "Why performance suffers",
-   "center": "Weak performance",
-   "branches": [
-    {
-     "t": "Political",
-     "c": [
-      "Interference",
-      "Dual control over AIS",
-      "Arbitrary transfers",
-      "DC tenure about one year"
-     ]
-    },
-    {
-     "t": "Internal",
-     "c": [
-      "Street-level corruption",
-      "Poor capacity building",
-      "Wage compression",
-      "Weak evaluation"
-     ]
-    },
-    {
-     "t": "Protection",
-     "c": [
-      "Constitutional shield costly to use",
-      "Little people's participation"
-     ]
-    }
-   ],
-   "pos": "top"
+   "label": "Mnemonic",
+   "after": "Political interference"
   },
   {
    "type": "mindmap",
@@ -541,28 +584,45 @@
  "6": [
   {
    "type": "mnemonic",
-   "pos": "top",
-   "title": "Weber vs development",
-   "sentence": "Change Results Clients Time: Hierarchy Rules Specialisation Roles",
+   "title": "Bureaucracy as a threat to democracy",
+   "word": "SCORPIOS",
+   "hook": "Bureaucracy as master stings like SCORPIOS.",
    "letters": [
     [
+     "S",
+     "Secrecy: an uninformed parliament"
+    ],
+    [
      "C",
-     "Change orientation"
+     "Corruption and lack of neutrality"
+    ],
+    [
+     "O",
+     "Oligarchic concentration of power"
     ],
     [
      "R",
-     "Result orientation"
+     "Representative bureaucracy absent"
     ],
     [
-     "C",
-     "Commitment, time-bound"
+     "P",
+     "Politico-administrative no-man's land"
     ],
     [
-     "C",
-     "Client orientation"
+     "I",
+     "Instrument becomes institution"
+    ],
+    [
+     "O",
+     "Oppression by the State (agencies used against rivals)"
+    ],
+    [
+     "S",
+     "Suppresses NGOs, pressure groups, local bodies"
     ]
    ],
-   "note": "Development administration's four traits against Weber's four."
+   "label": "Mnemonic",
+   "after": "Instrument becomes institution"
   },
   {
    "type": "fork",
@@ -635,25 +695,29 @@
  ],
  "7": [
   {
-   "type": "mnemonic",
-   "pos": "top",
-   "title": "8th CPC in one line",
-   "sentence": "Fitment Factor multiplies Basic Pay",
-   "letters": [
+   "type": "flow",
+   "after": "Way forward",
+   "title": "8th CPC in three steps",
+   "steps": [
     [
-     "R",
-     "Revised basic pay"
+     "1 Formula",
+     "Revised Basic Pay = Existing Basic Pay x Fitment Factor",
+     "Reference date 1 Jan 2026"
     ],
     [
-     "=",
-     "Existing pay"
+     "2 Issues",
+     "Minimum-wage model",
+     "DA merger demand",
+     "Fiscal impact; states follow"
     ],
     [
-     "×",
-     "Fitment factor"
+     "3 Way forward",
+     "Smaller regular revisions",
+     "Performance orientation",
+     "Link to inflation and fiscal capacity"
     ]
    ],
-   "note": "Formula: Revised Basic Pay = Existing Basic Pay × Fitment Factor. Reference date 1 January 2026."
+   "per_row": 3
   },
   {
    "type": "fork",
@@ -690,13 +754,25 @@
  "8": [
   {
    "type": "mnemonic",
-   "pos": "top",
    "title": "Nolan principles (1995)",
-   "sentence": "Seven Intelligent Officers Always Obey Honest Leaders",
+   "word": "HALO iOS",
+   "hook": "Nolan's seven are the civil servant's operating system: HALO + iOS.",
    "letters": [
     [
-     "S",
-     "Selflessness"
+     "H",
+     "Honesty"
+    ],
+    [
+     "A",
+     "Accountability"
+    ],
+    [
+     "L",
+     "Leadership"
+    ],
+    [
+     "O",
+     "Openness"
     ],
     [
      "I",
@@ -707,23 +783,12 @@
      "Objectivity"
     ],
     [
-     "A",
-     "Accountability"
-    ],
-    [
-     "O",
-     "Openness"
-    ],
-    [
-     "H",
-     "Honesty"
-    ],
-    [
-     "L",
-     "Leadership"
+     "S",
+     "Selflessness"
     ]
    ],
-   "note": "Memory aid: S-I-O-A-O-H-L."
+   "label": "Mnemonic",
+   "after": "Nolan principle"
   },
   {
    "type": "mindmap",
@@ -773,28 +838,59 @@
  "9": [
   {
    "type": "mnemonic",
-   "pos": "top",
-   "title": "Karmayogi at a glance",
-   "sentence": "Rules to Roles",
+   "title": "Challenges to civil service reform",
+   "word": "CRAMPS",
+   "hook": "Reforms stall when the system gets CRAMPS.",
    "letters": [
     [
-     "i",
-     "iGOT Karmayogi"
+     "C",
+     "Communication and stakeholder engagement"
     ],
     [
-     "C",
-     "Competency frameworks"
+     "R",
+     "Resistance of civil servants (security, no incentive)"
+    ],
+    [
+     "A",
+     "Alignment with context (one state's success may not travel)"
+    ],
+    [
+     "M",
+     "Management capacity: fragmented, piecemeal"
     ],
     [
      "P",
-     "Performance management"
+     "Political support and will"
     ],
     [
      "S",
-     "SPV Karmayogi Bharat"
+     "Safety nets: compensation, retraining, counselling"
     ]
    ],
-   "note": "Aim: rules-based to roles-based HR. Mission 2020, linked to Viksit Bharat 2047."
+   "label": "Mnemonic",
+   "pos": "top"
+  },
+  {
+   "type": "mnemonic",
+   "title": "Aarambh foundation course",
+   "word": "C C C",
+   "hook": "Aarambh builds three Cs.",
+   "letters": [
+    [
+     "C",
+     "Commitment"
+    ],
+    [
+     "C",
+     "Character"
+    ],
+    [
+     "C",
+     "Conduct"
+    ]
+   ],
+   "label": "Mnemonic",
+   "after": "Aarambh"
   },
   {
    "type": "fork",
@@ -831,6 +927,66 @@
   }
  ],
  "10": [
+  {
+   "type": "mnemonic",
+   "title": "Three metaphors of transparency",
+   "word": "TOP",
+   "hook": "Transparency comes from the TOP.",
+   "letters": [
+    [
+     "T",
+     "Tool of good governance"
+    ],
+    [
+     "O",
+     "Open decision-making (secrecy vs privacy)"
+    ],
+    [
+     "P",
+     "Public value (counter corruption)"
+    ]
+   ],
+   "label": "Mnemonic",
+   "after": "Public value"
+  },
+  {
+   "type": "mnemonic",
+   "title": "Objectives of transparency",
+   "word": "ACE TIPS",
+   "hook": "Transparency gives governance its ACE TIPS.",
+   "letters": [
+    [
+     "A",
+     "Accountability"
+    ],
+    [
+     "C",
+     "Combating corruption"
+    ],
+    [
+     "E",
+     "Entitlements: access to them"
+    ],
+    [
+     "T",
+     "Trust of the public"
+    ],
+    [
+     "I",
+     "Informed citizens"
+    ],
+    [
+     "P",
+     "Participation in democracy"
+    ],
+    [
+     "S",
+     "Service delivery that works"
+    ]
+   ],
+   "label": "Mnemonic",
+   "after": "Accountability; combating corruption"
+  },
   {
    "type": "mindmap",
    "title": "Transparency map",
@@ -901,24 +1057,51 @@
  "11": [
   {
    "type": "mnemonic",
-   "pos": "top",
-   "title": "Accountability asks three things",
-   "sentence": "What To-whom Through-what",
+   "title": "Components of accountability",
+   "word": "EAR",
+   "hook": "Accountability lends the citizen an EAR.",
    "letters": [
     [
-     "W",
-     "For what?"
+     "E",
+     "Enforcement (penalty)"
     ],
     [
-     "T",
-     "To whom?"
+     "A",
+     "Answerability (give an account)"
     ],
     [
-     "T",
-     "Through what?"
+     "R",
+     "Responsiveness"
     ]
    ],
-   "note": "Handout: accountable for what, to whom, through what."
+   "label": "Mnemonic",
+   "pos": "top"
+  },
+  {
+   "type": "mnemonic",
+   "title": "Dimensions of accountability",
+   "word": "CHAI",
+   "hook": "Debate accountability over CHAI.",
+   "letters": [
+    [
+     "C",
+     "Controlling political power"
+    ],
+    [
+     "H",
+     "Human"
+    ],
+    [
+     "A",
+     "Argumentative"
+    ],
+    [
+     "I",
+     "Informational"
+    ]
+   ],
+   "label": "Mnemonic",
+   "after": "Components:"
   },
   {
    "type": "mindmap",
@@ -966,7 +1149,7 @@
   },
   {
    "type": "fork",
-   "after": "Process",
+   "after": "micro-accountability",
    "title": "Horizontal, vertical, diagonal",
    "root": {
     "t": "Accountability forms",
@@ -1005,17 +1188,17 @@
  "12": [
   {
    "type": "mnemonic",
-   "pos": "top",
-   "title": "Sevottam: seven steps",
-   "sentence": "Define Standards, Develop, Perform, Monitor, Evaluate, Improve",
+   "title": "Sevottam: seven steps in order",
+   "word": "D S D P M E I",
+   "hook": "Do Something Daily; People Must Expect Improvement.",
    "letters": [
     [
      "D",
-     "Define services, clients"
+     "Define services, identify clients"
     ],
     [
      "S",
-     "Set standards, norms"
+     "Set standards and norms"
     ],
     [
      "D",
@@ -1027,7 +1210,7 @@
     ],
     [
      "M",
-     "Monitor"
+     "Monitor performance"
     ],
     [
      "E",
@@ -1038,7 +1221,47 @@
      "Improve continuously"
     ]
    ],
-   "note": "Seva + Uttam. Seven steps, in order."
+   "label": "Mnemonic",
+   "note": "A sequence, so the order is kept.",
+   "after": "Seven steps"
+  },
+  {
+   "type": "mnemonic",
+   "title": "ARC-II recommendations on charters",
+   "word": "WHO CARE",
+   "hook": "Citizens ask \"WHO CARE(s)?\" ARC-II answers with seven fixes.",
+   "letters": [
+    [
+     "W",
+     "Widest consultation"
+    ],
+    [
+     "H",
+     "Hold officers accountable (penal provisions)"
+    ],
+    [
+     "O",
+     "One size does not fit all"
+    ],
+    [
+     "C",
+     "Commit to what you can deliver"
+    ],
+    [
+     "A",
+     "Appropriate redressal"
+    ],
+    [
+     "R",
+     "Reform internal processes"
+    ],
+    [
+     "E",
+     "Evaluate periodically with end-user feedback"
+    ]
+   ],
+   "label": "Mnemonic",
+   "after": "One size does not fit all"
   },
   {
    "type": "flow",
@@ -1107,36 +1330,64 @@
  "13": [
   {
    "type": "mnemonic",
-   "pos": "top",
    "title": "RTI numbers",
-   "sentence": "16 types in 120 days; PIO in 100; 5 transfer; 10 third party; 20 years",
+   "word": "16·120·100·5·10·20",
+   "hook": "Disclose 16 items in 120 days; PIOs in 100; transfer in 5; third party 10; release after 20 years.",
    "letters": [
     [
      "16",
-     "Suo motu items"
+     "Types of suo motu information"
     ],
     [
      "120",
-     "Days to publish"
+     "Days to publish them"
     ],
     [
      "100",
-     "Days to appoint PIOs"
+     "Days to designate PIOs"
     ],
     [
      "5",
-     "Days to transfer"
+     "Days to transfer a misdirected request"
     ],
     [
      "10",
-     "Days third party"
+     "Days for third-party notice"
     ],
     [
      "20",
-     "Years to release"
+     "Years before exempt records are released"
     ]
    ],
-   "note": "Penalty: Rs 250 a day up to Rs 25,000. Information in 30 days."
+   "label": "Number card",
+   "note": "Penalty: Rs 250 a day up to Rs 25,000. Reply within 30 days.",
+   "pos": "top"
+  },
+  {
+   "type": "mnemonic",
+   "title": "Criteria for a sound RTI regime",
+   "word": "PAID",
+   "hook": "Citizens have PAID for the information (\"Humara Paisa, Humara Hisab\").",
+   "letters": [
+    [
+     "P",
+     "Penalties: Rs 250 a day up to Rs 25,000"
+    ],
+    [
+     "A",
+     "Access wide: minimal fees, free for BPL"
+    ],
+    [
+     "I",
+     "Independent appeal: CIC and SICs"
+    ],
+    [
+     "D",
+     "Disclosure maximum, exemption minimal"
+    ]
+   ],
+   "label": "Mnemonic",
+   "after": "Criteria for a sound regime"
   },
   {
    "type": "flow",
@@ -1213,28 +1464,61 @@
  "14": [
   {
    "type": "mnemonic",
-   "pos": "top",
    "title": "CIC numbers",
-   "sentence": "3 years or 65; Rs 2.5 lakh; up to 10 ICs",
+   "word": "1+10 · 3/65 · 5",
+   "hook": "One chief plus up to ten; 3 years or 65; never past 5 years in all.",
    "letters": [
     [
      "1+10",
-     "CIC + up to 10 ICs"
+     "Chief IC and up to 10 ICs"
     ],
     [
-     "3/65",
-     "Years or age, earlier"
+     "3 / 65",
+     "Years or age, whichever is earlier"
     ],
     [
      "5",
-     "Years total if elevated"
+     "Years total if an IC becomes CIC"
     ],
     [
-     "2.5L",
-     "CIC pay (IC 2.25L)"
+     "2.5 L",
+     "CIC pay a month (IC 2.25 L)"
     ]
    ],
-   "note": "RTI Rules 2019. Removal on SC inquiry."
+   "label": "Number card",
+   "note": "RTI Rules 2019. No reappointment.",
+   "pos": "top"
+  },
+  {
+   "type": "mnemonic",
+   "title": "Removal without a Supreme Court inquiry",
+   "word": "BICEP",
+   "hook": "The President can remove on BICEP grounds without an SC inquiry.",
+   "letters": [
+    [
+     "B",
+     "Bankrupt: adjudged insolvent"
+    ],
+    [
+     "I",
+     "Infirmity of body or mind"
+    ],
+    [
+     "C",
+     "Conviction involving moral turpitude"
+    ],
+    [
+     "E",
+     "Employment: paid work outside duties"
+    ],
+    [
+     "P",
+     "Prejudicial financial interest"
+    ]
+   ],
+   "label": "Mnemonic",
+   "note": "Same five for the CVC; the Lokpal list has four (no conviction).",
+   "after": "Removal"
   },
   {
    "type": "fork",
@@ -1307,40 +1591,101 @@
  "15": [
   {
    "type": "mnemonic",
-   "pos": "top",
-   "title": "Types of corruption (pairs)",
-   "sentence": "Black White Grey; Grass Meat; Coercive Collusive; Retail Policy",
+   "title": "Factors behind corruption",
+   "word": "APPLE",
+   "hook": "Corruption is the rotten APPLE; five kinds of factors rot it.",
    "letters": [
     [
-     "B",
-     "Black: intolerable to all"
+     "A",
+     "Administrative"
     ],
     [
-     "W",
-     "White: tolerated"
+     "P",
+     "Psycho-social"
     ],
     [
-     "G",
-     "Grey: society divided"
+     "P",
+     "Political"
     ],
     [
-     "G",
-     "Grass eater: won't refuse"
+     "L",
+     "Legal"
     ],
     [
-     "M",
-     "Meat eater: seeks it"
-    ],
-    [
-     "C",
-     "Coercive: official extorts"
-    ],
-    [
-     "C",
-     "Collusive: both collude"
+     "E",
+     "Economic"
     ]
    ],
-   "note": "Retail (petty) vs Policy (grand) completes the set."
+   "label": "Mnemonic",
+   "pos": "top"
+  },
+  {
+   "type": "mnemonic",
+   "title": "Psycho-social factors",
+   "word": "HORNETS",
+   "hook": "The psycho-social roots are a nest of HORNETS.",
+   "letters": [
+    [
+     "H",
+     "History: corruption has a long history"
+    ],
+    [
+     "O",
+     "Opportunity theory: cut opportunities"
+    ],
+    [
+     "R",
+     "Religious context (Protestant areas less corrupt)"
+    ],
+    [
+     "N",
+     "No popular sanction against it"
+    ],
+    [
+     "E",
+     "Evils: dowry, lavish weddings"
+    ],
+    [
+     "T",
+     "THYMOS: need for respect; low self-worth, shaming"
+    ],
+    [
+     "S",
+     "Squirrel Nuts Syndrome (close to retirement)"
+    ]
+   ],
+   "label": "Mnemonic",
+   "after": "Psycho-social"
+  },
+  {
+   "type": "mnemonic",
+   "title": "Implications of corruption",
+   "word": "SPIES",
+   "hook": "Corruption SPIES on every sphere of life.",
+   "letters": [
+    [
+     "S",
+     "Social"
+    ],
+    [
+     "P",
+     "Political and legal"
+    ],
+    [
+     "I",
+     "International"
+    ],
+    [
+     "E",
+     "Economic"
+    ],
+    [
+     "S",
+     "Security"
+    ]
+   ],
+   "label": "Mnemonic",
+   "after": "Social:"
   },
   {
    "type": "mindmap",
@@ -1414,9 +1759,9 @@
  "16": [
   {
    "type": "mnemonic",
-   "pos": "top",
    "title": "Anti-corruption toolbox",
-   "sentence": "Stick Carrot Administrative Radical International",
+   "word": "SCAR-I",
+   "hook": "Leave a SCAR on corruption, then go International.",
    "letters": [
     [
      "S",
@@ -1424,22 +1769,49 @@
     ],
     [
      "C",
-     "Carrot: pay, helplines"
+     "Carrot: pay rise with enforcement, helplines"
     ],
     [
      "A",
-     "Administrative: rotation, audit, procurement law"
+     "Administrative and technical: rotation, audit, procurement"
     ],
     [
      "R",
-     "Radical: disband, gender, amnesty"
+     "Radical: disband, gender balance, amnesty"
     ],
     [
      "I",
-     "International: FCPA, UNCAC, FATF"
+     "International: FCPA, UK Bribery Act, OECD, UNCAC, FATF"
     ]
    ],
-   "note": "Memory aid: S-C-A-R-I."
+   "label": "Mnemonic",
+   "pos": "top"
+  },
+  {
+   "type": "mnemonic",
+   "title": "Issues with social audit",
+   "word": "MOST",
+   "hook": "MOST schemes still escape social audit.",
+   "letters": [
+    [
+     "M",
+     "Mainstream policy discourse ignores it"
+    ],
+    [
+     "O",
+     "Opposition from vested interests"
+    ],
+    [
+     "S",
+     "Statutory in very few programmes (NREGA)"
+    ],
+    [
+     "T",
+     "Trained auditors are lacking"
+    ]
+   ],
+   "label": "Mnemonic",
+   "after": "Issues:"
   },
   {
    "type": "mindmap",
@@ -1512,14 +1884,13 @@
  ],
  "17": [
   {
-   "type": "mnemonic",
+   "type": "flow",
    "pos": "top",
-   "title": "CBI vs CVC dates",
-   "sentence": "1941 SPE, 1946 DSPE, 1963 CBI; 1964 CVC, 2003 Act",
-   "letters": [
+   "title": "CBI and CVC in date order",
+   "steps": [
     [
      "1941",
-     "SPE set up"
+     "Special Police Establishment"
     ],
     [
      "1946",
@@ -1534,11 +1905,15 @@
      "CVC (Santhanam)"
     ],
     [
+     "1997",
+     "Vineet Narain"
+    ],
+    [
      "2003",
-     "CVC statutory"
+     "CVC Act: statutory"
     ]
    ],
-   "note": "Vineet Narain: 1997."
+   "per_row": 3
   },
   {
    "type": "fork",
@@ -1611,32 +1986,63 @@
  "18": [
   {
    "type": "mnemonic",
-   "pos": "top",
-   "title": "Lokpal Act 2013: selection panel",
-   "sentence": "PM Speaker Opposition Judge Jurist",
+   "title": "Lokpal selection committee",
+   "word": "COPES",
+   "hook": "The selection panel COPES with corruption.",
    "letters": [
+    [
+     "C",
+     "CJI or a nominated SC judge"
+    ],
+    [
+     "O",
+     "Opposition leader (Lok Sabha)"
+    ],
     [
      "P",
      "PM (Chair)"
     ],
     [
+     "E",
+     "Eminent jurist chosen by the four"
+    ],
+    [
      "S",
-     "Lok Sabha Speaker"
-    ],
-    [
-     "O",
-     "Leader of Opposition (LS)"
-    ],
-    [
-     "J",
-     "CJI or nominated SC judge"
-    ],
-    [
-     "J",
-     "Eminent jurist"
+     "Speaker of the Lok Sabha"
     ]
    ],
-   "note": "Five-member selection committee; search committee of 7 shortlists."
+   "label": "Mnemonic",
+   "after": "Appointment"
+  },
+  {
+   "type": "mnemonic",
+   "title": "PM decisions the Lokpal cannot probe",
+   "word": "PAISE",
+   "hook": "The Lokpal cannot count the PM's PAISE.",
+   "letters": [
+    [
+     "P",
+     "Public order"
+    ],
+    [
+     "A",
+     "Atomic energy"
+    ],
+    [
+     "I",
+     "Internal security"
+    ],
+    [
+     "S",
+     "Space"
+    ],
+    [
+     "E",
+     "External security"
+    ]
+   ],
+   "label": "Mnemonic",
+   "after": "Act covers PM partially"
   },
   {
    "type": "mindmap",
@@ -1716,29 +2122,28 @@
  ],
  "19": [
   {
-   "type": "mnemonic",
-   "pos": "top",
-   "title": "Whistleblower Act 2014: who gets the complaint",
-   "sentence": "PM Chief Presiding CVC",
-   "letters": [
+   "type": "flow",
+   "after": "Anyone can be a whistleblower",
+   "title": "Where a whistleblower complaint goes",
+   "steps": [
     [
-     "P",
-     "PM: Union Ministers"
+     "Union Ministers",
+     "To the PM"
     ],
     [
-     "C",
-     "CM: State Ministers"
+     "State Ministers",
+     "To the Chief Minister"
     ],
     [
-     "P",
-     "Presiding Officer: legislators"
+     "Legislators",
+     "To the Presiding Officer"
     ],
     [
-     "C",
-     "CVC: civil servants"
+     "Civil servants",
+     "To the CVC"
     ]
    ],
-   "note": "No anonymous complaints. Frivolous complaint: up to 2 years."
+   "per_row": 4
   },
   {
    "type": "fork",

@@ -33,11 +33,26 @@ def split_semi(t):
                 parts.append(cur.strip()); cur = ''; continue
         cur += ch
     if cur.strip(): parts.append(cur.strip())
-    return parts
+    return balance(parts, '<b>', '</b>')
+
+def balance(parts, op, cl):
+    out, open_ = [], False
+    for x in parts:
+        if open_: x = op + x
+        o, c = x.count(op), x.count(cl)
+        if op == cl:
+            open_ = o % 2 == 1
+            if open_: x += cl
+        else:
+            open_ = o > c
+            if open_: x += cl
+        out.append(x)
+    return out
 
 def cap(s): 
     s = s.strip().rstrip('.')
-    return s[:1].upper() + s[1:] if s and s[0] != '<' else s
+    m = re.match(r'^((?:<[^>]+>)*)(.)(.*)$', s, re.S)
+    return m.group(1) + m.group(2).upper() + m.group(3) if m else s
 
 def bul(x, f=hx):
     """one bullet -> <li>, splitting semicolon lists into sub-bullets"""

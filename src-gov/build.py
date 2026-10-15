@@ -2,6 +2,9 @@
 """Generate the Governance notebook pages. Usage: python3 build.py OUTDIR"""
 import sys, os, json, re, html, base64
 from lib import *
+import lib
+sys.path.insert(0, os.path.join(HERE, 'book'))
+import viz
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(HERE), 'out')
 os.makedirs(os.path.join(OUT, 'img'), exist_ok=True)
@@ -65,9 +68,115 @@ def plain_block(i):
     out += callout('shortcut', 'Remember it as', d['remember'])
     return out
 
+
+
+# ---------------------------------------------------------------- book edition content (bullets, visuals, mnemonics)
+BOOK = {c['id']: c for p_ in json.load(open(os.path.join(HERE, 'book', 'bookdata.json'), encoding='utf8'))['parts'] for c in p_['chapters']}
+
+def split_semi(t):
+    parts, cur, dp = [], '', 0
+    for ch in t:
+        if ch == '(': dp += 1
+        elif ch == ')': dp = max(0, dp - 1)
+        elif ch == ';' and dp == 0:
+            parts.append(cur.strip()); cur = ''; continue
+        cur += ch
+    if cur.strip(): parts.append(cur.strip())
+    out, open_ = [], False
+    for x in parts:
+        if open_: x = '**' + x
+        open_ = x.count('**') % 2 == 1
+        if open_: x += '**'
+        out.append(x)
+    return out
+
+def capf(x):
+    x = x.strip().rstrip('.')
+    m = re.match(r'^(\**)(.)(.*)$', x, re.S)
+    return m.group(1) + m.group(2).upper() + m.group(3) if m else x
+
+def bul(md):
+    ps = split_semi(md)
+    if len(ps) < 2: return '<li>%s</li>' % inline(md)
+    m = re.match(r'^(.{2,70}?:(?:\*\*)?)\s+(.*)$', ps[0], re.S)
+    if m:
+        lab = m.group(1)
+        first = m.group(2)
+        if lab.count('**') % 2: lab += '**'; first = '**' + first
+        return '<li>%s<ul class="lst subl">%s</ul></li>' % (inline(lab), ''.join('<li>%s</li>' % inline(capf(i)) for i in [first] + ps[1:]))
+    return ''.join('<li>%s</li>' % inline(capf(i)) for i in ps)
+
+def vis_html(v):
+    return '<div class="vwrap">%s</div>' % viz.render(dict(v))
+
+def book_notes(c):
+    vis = [dict(v) for v in c.get('visuals', []) if v.get('after')]
+    out, buf = [], []
+    def flush():
+        if buf: out.append('<ul class="lst">' + ''.join(bul(conv(x)) for x in buf) + '</ul>'); buf.clear()
+    def key(it):
+        t = it if isinstance(it, str) else (it.get('h') or (it['tbl']['head'][0] if 'tbl' in it else ''))
+        return re.sub(r'<[^>]+>', '', t)
+    def after(it):
+        k = key(it)
+        for v in vis:
+            if v['after'] in k and not v.get('done'):
+                v['done'] = True; flush(); out.append(vis_html(v))
+    for it in c['notes']:
+        if isinstance(it, str):
+            buf.append(it)
+            if any(v['after'] in key(it) and not v.get('done') for v in vis): flush(); after(it)
+            continue
+        flush()
+        if 'h' in it: out.append(h3(conv(it['h'])))
+        elif 'tbl' in it:
+            t = it['tbl']
+            out.append(tbl(None, [conv(x) for x in t['head']], [[conv(cc) for cc in r] for r in t['rows']]))
+        elif 'alert' in it: out.append(alert('Handout alert', conv(it['alert'])))
+        elif 'fig' in it:
+            f = it['fig']; k_ = os.path.splitext(os.path.basename(f['img']))[0]
+            out.append(fig('img/gov-%s.jpg' % k_, f['cap'], label='Handout figure, %s' % f.get('pg', '')))
+        after(it)
+    flush()
+    for v in vis:
+        if not v.get('done'): print('WARN unplaced visual', c['id'], v.get('title'))
+    return ''.join(out)
+
+def book_top(c):
+    d = PLAIN[str(c['id'])]
+    out = callout('note', 'In simple words', '\n'.join('- ' + x for x in d['simple']))
+    out += tbl(None, ['Term', 'In plain words'], [['**%s**' % a, b] for a, b in d['terms']])
+    top = [v for v in c.get('visuals', []) if v.get('pos') == 'top']
+    if not any(v['type'] == 'mnemonic' for v in c.get('visuals', [])):
+        out += callout('shortcut', 'Remember it as', d['remember'])
+    out += ''.join(vis_html(v) for v in top)
+    return out
+
 def section(s):
-    blocks = [lens_block(s), plain_block(s['id']), p(conv(s['story'])), notes_html(s['notes'])]
+    c = BOOK[s['id']]
+    blocks = [lens_block(s), book_top(c), p(conv(s['story'])), book_notes(c)]
     return Sec(s['title'], blocks, label='Handout only · %s' % s['pages'])
+
+lib.EXTRA_CSS = lib.EXTRA_CSS.replace('</style>', """
+.lst li{margin:6px 0}.lst ul.subl{margin:4px 0 6px;padding-left:20px;list-style:none}
+.lst ul.subl>li{position:relative;padding-left:14px;margin:3px 0}
+.lst ul.subl>li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--acc)}
+.vwrap{margin:16px 0}
+.vwrap .viz{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;overflow-x:auto}
+.vwrap .viz svg{min-width:460px;display:block}
+.vwrap .vtitle{font:700 13px/1.3 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:#1F4E5F;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid #E2C98A}
+.vwrap .mnem{background:var(--acc-soft);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--ink)}
+.vwrap .mlbl{font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--saf);margin-bottom:8px}
+.vwrap .tiles{margin:4px 0 8px}
+.vwrap .tile{display:inline-block;min-width:38px;padding:6px 6px;margin:0 6px 6px 0;text-align:center;font:700 26px/1 var(--serif);color:var(--acc);background:var(--surface);border:1.5px solid var(--saf);border-radius:8px}
+.vwrap .tsep{display:inline-block;font:600 16px var(--sans);color:var(--saf);margin:0 8px 0 2px;vertical-align:middle}
+.vwrap .mhook{font:italic 600 17px/1.45 var(--serif);margin:2px 0 10px}
+.vwrap .mchips .chip{display:flex;gap:8px;align-items:baseline;font:15px/1.45 var(--sans);padding:3px 0;margin:0;background:none;border:0;border-radius:0;box-shadow:none;color:var(--ink);white-space:normal;height:auto}
+.vwrap .mchips .chip i{flex:0 0 44px;font-style:normal;font-weight:700;color:var(--saf)}
+.vwrap .msent{font:600 20px/1.4 var(--serif)}.vwrap .msent b{color:var(--saf);font-size:26px}.vwrap .msent .w{margin-right:6px}
+.vwrap .mnote{font:13px/1.4 var(--sans);color:var(--muted);margin-top:8px}
+@media (max-width:560px){.vwrap .tile{min-width:30px;font-size:21px}}
+</style>""")
 
 def first_ref_mod(ref):
     return 2 if ref.strip().startswith('M2') else 1
