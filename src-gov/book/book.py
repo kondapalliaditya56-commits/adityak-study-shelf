@@ -20,6 +20,36 @@ ALL = {c['id']: c for p in B['parts'] for c in p['chapters']}
 def md(t): return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', html.escape(t, quote=False))
 def hx(t): return re.sub(r'&(?!amp;|lt;|gt;|quot;|#)', '&amp;', t)
 
+
+def split_semi(t):
+    parts, cur, dp, tag = [], '', 0, False
+    for ch in t:
+        if ch == '<': tag = True
+        elif ch == '>': tag = False
+        if not tag:
+            if ch == '(': dp += 1
+            elif ch == ')': dp = max(0, dp - 1)
+            elif ch == ';' and dp == 0:
+                parts.append(cur.strip()); cur = ''; continue
+        cur += ch
+    if cur.strip(): parts.append(cur.strip())
+    return parts
+
+def cap(s): 
+    s = s.strip().rstrip('.')
+    return s[:1].upper() + s[1:] if s and s[0] != '<' else s
+
+def bul(x, f=hx):
+    """one bullet -> <li>, splitting semicolon lists into sub-bullets"""
+    ps = split_semi(x)
+    if len(ps) < 2: return '<li>%s</li>' % f(x)
+    m = re.match(r'^(.{2,70}?:(?:</b>)?)\s+(.*)$', ps[0], re.S)
+    if m:
+        lab, first = m.group(1), m.group(2)
+        items = [first] + ps[1:]
+        return '<li>%s<ul class="sub">%s</ul></li>' % (f(lab), ''.join('<li>%s</li>' % f(cap(i)) for i in items))
+    return ''.join('<li>%s</li>' % f(cap(i)) for i in ps)
+
 def trim_img(path):
     from PIL import Image, ImageChops
     import io
@@ -38,7 +68,7 @@ def fig(f):
 def notes_html(notes, vis=()):
     out, buf = [], []
     def flush():
-        if buf: out.append('<ul class="b">' + ''.join('<li>%s</li>' % hx(x) for x in buf) + '</ul>'); buf.clear()
+        if buf: out.append('<ul class="b">' + ''.join(bul(x) for x in buf) + '</ul>'); buf.clear()
     def key(it):
         t = it if isinstance(it, str) else (it.get('h') or (it['tbl']['head'][0] if 'tbl' in it else ''))
         return re.sub(r'<[^>]+>', '', t)
@@ -71,7 +101,7 @@ def chapter(c):
     L = c['lens']
     h += '<div class="lens"><div class="lbl">Exam lens</div><div class="two"><div><h5>Prelims hooks</h5><ul class="b">%s</ul></div><div><h5>Mains hooks</h5><ul class="b">%s</ul></div></div><p class="close">%s</p></div>' % (
         ''.join('<li>%s</li>' % hx(x) for x in L['prelims']), ''.join('<li>%s</li>' % hx(x) for x in L['mains']), hx(L['close']))
-    h += '<div class="simple"><div class="lbl">In simple words</div><ul class="b">%s</ul></div>' % ''.join('<li>%s</li>' % md(x) for x in c['simple'])
+    h += '<div class="simple"><div class="lbl">In simple words</div><ul class="b">%s</ul></div>' % ''.join(bul(x, md) for x in c['simple'])
     h += '<table class="terms"><thead><tr><th>Key term</th><th>In plain words</th></tr></thead><tbody>%s</tbody></table>' % ''.join('<tr><td><b>%s</b></td><td>%s</td></tr>' % (html.escape(a), html.escape(b)) for a, b in c['terms'])
     vis = [dict(v) for v in c.get('visuals', [])]
     h += ''.join(viz.render(v) for v in vis if v.get('pos') == 'top')
