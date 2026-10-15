@@ -1,0 +1,25 @@
+{"4":[
+ {"type":"mnemonic","pos":"top","title":"Six roles of civil services","sentence":"Nobody Can Always Ignore Public Interest",
+  "letters":[["N","Neutrality"],["C","Commitment"],["A","Anonymity"],["I","Instrumentality"],["P","Professionality"],["I","Impersonality"]],
+  "note":"Handout order: N-C-A-I-P-I. The sentence is a memory aid, not from the handout."},
+ {"type":"mindmap","pos":"top","title":"Memory map: the six roles at a glance","center":"Civil servant in a democracy",
+  "branches":[
+   {"t":"1 Neutrality","c":["Class: mostly middle class, elite capture","Cultural: language, caste, religion, region","Political: 3 confidences (people, ministers, civil servants)"]},
+   {"t":"2 Commitment","c":["Impartial rule of law, code of ethics","Settled policies, probity, transparency","Welfare of the Daridra"]},
+   {"t":"3 Anonymity","c":["Minister is the public face","Credit and major failure go to the minister","Loosening: RTI, social audits, charters"]},
+   {"t":"4 Instrumentality","c":["Instrument of the people","Risk: bureaucracy becomes an independent power structure (Weber)"]},
+   {"t":"5 Professionality","c":["Keep improving skills","Hindrances: generalists, poor training (1 in 5 trained), weak appraisal, hire-but-no-fire"]},
+   {"t":"6 Impersonality","c":["Do not personalise the post (DC, SP)","No excess personal relations with superiors, colleagues, juniors"]}]},
+ {"type":"fork","after":"Bhaskar Ghose's type","title":"Bhaskar Ghose: three ways an officer meets political pressure",
+  "root":{"t":"Officer under political pressure","c":["Which path does he take?"]},
+  "branches":[
+   {"t":"Neither Wilt nor Tilt","c":["Firm","Refuses orders that deviate from policy or law","May be transferred, keeps honesty"],"verdict":"The model officer"},
+   {"t":"Incorrigibly Corrupt","c":["Finds political godfathers early","Aligns with parties"],"verdict":"Serves patrons"},
+   {"t":"Weather Report Readers","c":["Shifts loyalty with political circumstances"],"verdict":"Follows the wind"}]},
+ {"type":"flow","after":"Conclusion in handout","title":"Civil services activism: from act to verdict",
+  "steps":[["1 Forms","Media","Calculated leaks","Courts","Whistleblowing","Grassroots","Post-retirement"],
+           ["2 Case","Dr. Lakhina, Ahmednagar, 1980s","Colour-coded files by year","The Lakhina Experiment"],
+           ["3 Issues","Violates service rules","Personalises institutional issues","Manipulation by parties and media","Erodes credibility"],
+           ["4 Verdict","Cannot be encouraged","But a sign of our times","Implement civil service and electoral reforms"]],
+  "per_row":4}
+]}

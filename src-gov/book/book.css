@@ -1,7 +1,7 @@
 @font-face{font-family:"Lora";src:local("Lora");}
 @page{size:A4;margin:24mm 72mm 23mm 18mm;background:#fff url("%%NOTES%%") no-repeat -18mm -24mm/210mm 297mm;
  @top-left{content:string(run);font:600 7.4pt Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8B8168;vertical-align:bottom;padding-bottom:4mm;border-bottom:.25pt solid #D9D0BC}
- @top-right{content:"GOVERNANCE";font:600 7.4pt Inter,sans-serif;letter-spacing:.14em;color:#B58A3C;vertical-align:bottom;padding-bottom:4mm;border-bottom:.25pt solid #D9D0BC}
+ @top-right{content:"%%RUNHEAD%%";font:600 7.4pt Inter,sans-serif;letter-spacing:.14em;color:#B58A3C;vertical-align:bottom;padding-bottom:4mm;border-bottom:.25pt solid #D9D0BC}
  @bottom-center{content:counter(page);font:500 9pt Lora,serif;color:#14283F}}
 @page cover{margin:0;background:#14283F;@top-left{content:none}@top-right{content:none}@bottom-center{content:none}}
 @page front{margin:0;background:#fff;@top-left{content:none}@top-right{content:none}@bottom-center{content:none}}
@@ -87,3 +87,30 @@ table.recall td.q{width:56%;font-weight:600;color:#14283F}
 .mcq p{margin:2mm 0 1mm;font-size:10pt}
 .mcq ol{margin:0 0 2mm;padding-left:7mm;font-size:9.8pt}
 .key{font:8.4pt Inter;color:#5A6676}
+
+/* remembrance visuals */
+.viz{margin:3mm 0 4mm;break-inside:avoid}
+.vtitle{font:700 8.2pt Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#14283F;margin-bottom:2mm;padding-bottom:1.2mm;border-bottom:.5pt solid #B58A3C}
+.mnem{background:#14283F;color:#F3E9D0;border-radius:1.2mm;padding:3.4mm 4.4mm 3mm;margin:3mm 0 3mm;break-inside:avoid}
+.mlbl{font:700 7.2pt Inter;letter-spacing:.16em;text-transform:uppercase;color:#D8B56A;margin-bottom:1.6mm}
+.msent{font:600 16pt/1.35 Lora;color:#fff}
+.msent .w{margin-right:2.4mm;display:inline-block}
+.msent b{color:#E3B958;font-size:21pt}
+.mchips{margin-top:2.4mm}
+.chip{display:inline-block;font:500 8pt Inter;background:#22405F;color:#EDE4CC;border-radius:1mm;padding:.8mm 2mm;margin:0 1.4mm 1.4mm 0}
+.chip i{font-style:normal;font-weight:700;color:#E3B958;margin-right:1.2mm}
+.mnote{font:7.4pt Inter;color:#AFC0D2;margin-top:1mm}
+/* tighter, fuller pages */
+@page{margin:20mm 70mm 19mm 18mm;background-position:-18mm -20mm}
+td,th{padding-top:1.3mm;padding-bottom:1.3mm}
+table{break-inside:auto}tr{break-inside:avoid}thead{display:table-header-group}
+figure.sq{float:right;width:50mm;margin:.5mm 0 2mm 4mm}
+figure.sq img{width:100%;box-sizing:border-box}
+figure.wide{margin:3mm 0}
+.lens .two{columns:2;column-gap:5mm}
+.lens .two>div{break-inside:avoid}
+.lens{padding:3mm 4mm;margin-bottom:3mm}
+.simple{padding:3mm 4mm}
+ul.b li{margin-bottom:1.2mm}
+h4{margin:4.2mm 0 2mm}
+.remember2{background:#14283F;color:#F3E9D0;padding:2.4mm 4mm;border-radius:1mm;margin:3mm 0;font:9.4pt/1.45 Lora}.remember2 span{font:700 7.2pt Inter;letter-spacing:.16em;text-transform:uppercase;color:#D8B56A;margin-right:2mm}

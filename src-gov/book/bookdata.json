@@ -1,0 +1,2929 @@
+{
+ "meta": {
+  "title": "GOVERNANCE",
+  "subtitle": "Civil Services, Transparency, Accountability and the Fight against Corruption",
+  "cover_top": "GS PAPER II  ·  MAINS",
+  "cover_mid": "A complete study companion built from the Sarrthi IAS GS-2 Governance Modules 1 and 2",
+  "cover_foot": "UPSC Civil Services Examination 2027  ·  Personal Study Edition",
+  "running_head": "GOVERNANCE",
+  "imprint": [
+   "<b>Personal Study Edition, 2026</b>",
+   "Prepared for the UPSC Civil Services Examination 2027, General Studies Paper II.",
+   "Source material: Sarrthi IAS GS-2 Governance Module 1 and Module 2. The facts printed here are the handouts’ own; no outside facts have been added. Copyright in the source material belongs to Sarrthi IAS and its teacher.",
+   "The wide margin on every page is left blank on purpose: use it for current affairs, related data and value-addition points."
+  ],
+  "back_matter": "Mind maps, timeline, PYQ index and drills"
+ },
+ "parts": [
+  {
+   "label": "Part I",
+   "title": "Module 1",
+   "sub": "Civil Services, Transparency, Accountability, Citizen’s Charter and RTI",
+   "chapters": [
+    {
+     "id": 1,
+     "title": "Civil Services: UPSC and SPSC",
+     "pages": "M1 p.3-4",
+     "priority": "L",
+     "pyqs": "none quoted in the material",
+     "lens": {
+      "prelims": [
+       "FPSC set up in 1926 (Lee Commission, 1924); Madras 1929 first provincial PSC; Sir Ross Barker first chairman",
+       "Article numbers 315-323 and what each covers",
+       "Seniority convention for UPSC Chairman broken in 2015",
+       "57 deviations (1950-84) vs 82 (1984-88)"
+      ],
+      "mains": [
+       "Why the UPSC does not enjoy equal status with EC, CAG and SC (no separate oath, easier removal)",
+       "Negative recruitment; two 2nd ARC models for compressing the exam cycle",
+       "From UPSC to a Central Personnel Agency"
+      ],
+      "close": "Independent on paper, advisory in practice: the Commission needs both status and a positive recruitment mission."
+     },
+     "simple": [
+      "The Public Service Commissions are the Constitution's recruiters: the **UPSC** for the Centre and an **SPSC** for each state (Part XIV, Articles 308-323).",
+      "They began under British rule. The 1919 Act provided for a Federal PSC, which came in **1926** after the Lee Commission (1924). **Madras (1929)** set up the first provincial commission. The 1935 Act created three kinds: Federal, Provincial and Joint.",
+      "The Constitution protects their independence: service conditions cannot be cut after appointment, salaries are paid directly from the Consolidated Fund, and removal follows only the route the Constitution lays down.",
+      "In practice the shield is thinner. Governments set aside the Commission's advice (57 times in 1950-84, then 82 times in 1984-88). The UPSC has no separate oath and an easier removal process than the EC, CAG or Supreme Court. Recruitment is 'negative': it screens people out instead of finding the best fit.",
+      "The reform direction in the handout: turn the UPSC into a **Central Personnel Agency** that recruits positively and runs research on civil-service management."
+     ],
+     "terms": [
+      [
+       "Negative recruitment",
+       "Eliminating the unsuitable rather than finding the most suitable."
+      ],
+      [
+       "Charged expenditure",
+       "Salaries and allowances paid directly from the Consolidated Fund of India or the State."
+      ],
+      [
+       "Central Personnel Agency",
+       "The role the handout wants the UPSC to grow into."
+      ]
+     ],
+     "remember": "Article ladder: 315 set-up, 316 appointment, 317 removal, 319 bar after office, 320 functions, 321 extension, 322 expenses, 323 reports.",
+     "notes": [
+      "Civil services are dealt with in <b>Part XIV, Articles 308 to 323</b>. Public Service Commissions: <b>UPSC</b> (Centre) and <b>SPSCs</b> (states).",
+      {
+       "h": "Historical context"
+      },
+      "<b>GoI Act 1919:</b> first provided for a <b>Federal Public Service Commission</b>. It did not make Provincial PSCs mandatory; provinces could set up their own by law. The FPSC was delayed and set up in <b>1926</b> on the recommendation of the <b>Lee Commission (1924)</b>.",
+      "<b>Madras (1929):</b> first province to set up a Provincial PSC.",
+      "<b>GoI Act 1935:</b> three types: Federal (FPSC), Provincial (PPSC), Joint (JPSC). Carried into the Constitution under <b>Article 315</b>.",
+      "<b>First Chairman:</b> Sir Ross Barker, of the FPSC, in 1926.",
+      {
+       "tbl": {
+        "head": [
+         "Article",
+         "Provision"
+        ],
+        "rows": [
+         [
+          "315",
+          "PSCs for the Union and the States"
+         ],
+         [
+          "316",
+          "Appointment and term of office of members"
+         ],
+         [
+          "317",
+          "Removal and suspension of a member"
+         ],
+         [
+          "319",
+          "Prohibition on holding certain offices after ceasing to be a member"
+         ],
+         [
+          "320",
+          "Functions of PSCs"
+         ],
+         [
+          "321",
+          "Power to extend the functions of PSCs"
+         ],
+         [
+          "322",
+          "Expenses of PSCs"
+         ],
+         [
+          "323",
+          "Reports of PSCs"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Provisions securing independence"
+      },
+      "Conditions of service cannot be reduced to a member's disadvantage after appointment.",
+      "Salaries and allowances are <b>charged expenditure</b> on the Consolidated Fund (India or the State).",
+      "Removal only on the grounds and in the manner the Constitution provides.",
+      "Post-retirement disabilities bar certain later government appointments.",
+      "<b>Convention:</b> the senior-most member is elevated as UPSC Chairman; this convention was <b>violated in 2015</b>.",
+      {
+       "h": "Issues in working"
+      },
+      "<b>Deviation from recommendations</b> without adequate reasons: <b>57 times between 1950 and 1984</b>, against <b>82 instances between 1984 and 1988</b>.",
+      "One-size-fits-all recruitment does not suit different services.",
+      "<b>Article 320(3):</b> abuse of its provisions and influence of three categories of officials: technical, managerial, political.",
+      "No specific educational qualification is prescribed for members. Institutional conflict with the CVC.",
+      "<b>Unequal status:</b> regarded as one of four important constitutional institutions (with EC, CAG, SC), yet UPSC has <b>no separate oath</b> and its <b>removal process is relatively easier</b>.",
+      "Exam structure and duration; <b>negative recruitment</b> (eliminating the unsuitable rather than finding the most suitable); archaic philosophy of recruitment.",
+      {
+       "h": "Second ARC: two models to compress the exam cycle"
+      },
+      {
+       "tbl": {
+        "head": [
+         "Model",
+         "Recommendation"
+        ],
+        "rows": [
+         [
+          "I",
+          "Prelims and Mains held together over 2-3 consecutive days. Mains papers evaluated only for those above a Prelims threshold. Personality Test follows."
+         ],
+         [
+          "II",
+          "Shortlist on Prelims rank, limited to about 2-3 times the vacancies. Mains within two months of Prelims, so Mains and Personality Test start almost together."
+         ]
+        ]
+       }
+      },
+      "<b>Weaknesses of the interview:</b> too short; desultory conversation; artificial atmosphere; element of luck; tendency to reproduce oneself; subjectivity and bias.",
+      {
+       "h": "State PSCs"
+      },
+      "Some commissions have become centres of corruption; poor quality of members; blind imitation of UPSC; may function like subsidiaries of UPSC; no formal linkage between UPSC and SPSCs.",
+      {
+       "h": "First ARC recommendations on PSCs"
+      },
+      "One SPSC member from outside the state. Members to hold a graduation degree. UPSC and SPSC Chairmen consulted in appointing SPSC members; UPSC Chairman consulted for UPSC members and successor. <b>Two-thirds of UPSC members</b> drawn from SPSC Chairpersons. Separate qualifications for official and non-official members.",
+      {
+       "h": "Role of UPSC today"
+      },
+      "Evolve into a <b>Central Personnel Agency</b>; move from negative to positive recruitment; develop the <b>psycho-social profile</b> of candidates; involve outside experts; be the principal <b>R&D body</b> in civil services management; abandon one-size-fits-all."
+     ],
+     "recall": [
+      [
+       "Constitutional part dealing with civil services",
+       "Part XIV, Articles 308 to 323."
+      ],
+      [
+       "When was the FPSC set up, and who was the first Chairman?",
+       "1926, on Lee Commission (1924) advice; Sir Ross Barker."
+      ],
+      [
+       "Two ARC models to shorten the exam cycle",
+       "I: Prelims and Mains together over 2-3 days. II: shortlist 2-3 times vacancies; Mains within two months."
+      ],
+      [
+       "Why is the UPSC not on an equal footing with EC, CAG, SC?",
+       "No separate oath; easier removal."
+      ]
+     ],
+     "traps": [
+      {
+       "k": "Prelims trap",
+       "t": "FPSC: Act year is not set-up year",
+       "d": "The 1919 Act provided for a Federal PSC; it was set up in 1926 on the Lee Commission (1924). Madras (1929) was the first provincial PSC.",
+       "r": "Rule: when asked 'set up', use the establishment date, not the Act date."
+      },
+      {
+       "k": "Concept trap",
+       "t": "UPSC is constitutional but not equal",
+       "d": "UPSC is listed among four important constitutional bodies yet has no separate oath and an easier removal process. Convention on the Chairman broken in 2015.",
+       "r": "Rule: independence is protected by pay and removal rules, not by status."
+      }
+     ],
+     "quiz": [
+      {
+       "q": "Which was the first province to set up a Provincial Public Service Commission?",
+       "o": [
+        "Bengal",
+        "Madras",
+        "Bombay",
+        "Punjab"
+       ],
+       "a": 1
+      },
+      {
+       "q": "The Federal Public Service Commission was set up in:",
+       "o": [
+        "1919, by the GoI Act 1919",
+        "1924, by the Lee Commission",
+        "1926, on the Lee Commission's recommendation",
+        "1935, by the GoI Act 1935"
+       ],
+       "a": 2
+      }
+     ],
+     "visuals": []
+    },
+    {
+     "id": 2,
+     "title": "Civil Services: Meaning and Lateral Entry",
+     "pages": "M1 p.5-7",
+     "priority": "M",
+     "pyqs": "2014",
+     "lens": {
+      "prelims": [
+       "1765 term coined; excluded groups (political executives, judiciary, defence, PSU staff)",
+       "3 AIS; Third Pay Commission renamed Class 1-4 as Group A-D",
+       "Lateral entry: 2018 (10 JS posts, 3 yrs extendable to 5), 2021 (31 posts), Aug 2024 (45 posts, cancelled 20 Aug)",
+       "Type I and Type II error argument"
+      ],
+      "mains": [
+       "Aristocratic personnel system and its consequences",
+       "Generalist vs specialist; need for domain expertise after 10-12 years of service",
+       "Lateral entry: need, issues, the 2024 reservation controversy"
+      ],
+      "close": "Lateral entry fixes a skills gap but must be built on reservation, field exposure and skilled permanent staff."
+     },
+     "simple": [
+      "'Civil Services' was a term coined by the East India Company around **1765** to separate combatant from non-combatant staff.",
+      "**Civil servants sit inside the larger circle of public servants.** Political executives, the judiciary, defence forces and PSU employees are public servants but not civil servants. Groups A and B are the management cadre; Groups C and D the staff side.",
+      "The Indian system has been closed and cadre-based: sharp grade divides, a narrow entry age band, exams that test general ability. The handout says this breeds conservative, status-quo, rule-bound officers and slows social change.",
+      "**Lateral entry** is the fix on offer: bring private-sector specialists into government. It answers Type I error (hiring the wrong person) and Type II error (rejecting the right one), but raises worries about field experience, reservation and favouritism.",
+      "The generalist-vs-specialist debate is the same story: holistic coordination on one side, techno-economic complexity on the other. The 2nd ARC wants broad orientation plus domain expertise."
+     ],
+     "terms": [
+      [
+       "Aristocratic personnel system",
+       "A closed career system with sharp grade divides and narrow entry."
+      ],
+      [
+       "Lateral entry",
+       "Inducting private-sector specialists into government departments."
+      ],
+      [
+       "Type I / Type II error",
+       "Recruiting the wrong person / rejecting the right person."
+      ]
+     ],
+     "remember": "All civil servants are public servants; not all public servants are civil servants.",
+     "notes": [
+      "The <b>East India Company</b> coined 'Civil Services' around <b>1765</b> to separate combatant from non-combatant personnel.",
+      "<b>Civil servants exclude</b> political executives, judiciary, defence forces and PSU employees. These all fall within the broader idea of <b>public servants</b>.",
+      "The State is the largest employer in India; almost <b>3% of GDP</b> is spent on civil servants.",
+      {
+       "tbl": {
+        "head": [
+         "Category",
+         "Services"
+        ],
+        "rows": [
+         [
+          "All India Services",
+          "IAS, IPS, IFoS"
+         ],
+         [
+          "Central Services",
+          "Non-technical (IRS, ICAS), technical (Indian Engineering Services), Central Health, Railway, para-defence (IDES, IDAS, IOFS), Central Secretariat Services"
+         ],
+         [
+          "State Civil Services",
+          "Recruited and administered by the state"
+         ],
+         [
+          "Municipal Services",
+          "Within municipal administration"
+         ]
+        ]
+       }
+      },
+      "Third Pay Commission suggested replacing Class 1, 2, 3, 4 with <b>Group A, B, C, D</b>.",
+      {
+       "fig": {
+        "img": "img/cls.jpg",
+        "cap": "Classification of services: Groups A and B form the management cadre; Groups C and D the staff side. All civil servants are public servants but not all public servants are civil servants.",
+        "pg": "M1 p.5",
+        "sq": false
+       }
+      },
+      {
+       "fig": {
+        "img": "img/pub.jpg",
+        "cap": "Civil servants sit inside the wider set of public servants.",
+        "pg": "M1 p.5",
+        "sq": true
+       }
+      },
+      {
+       "h": "Aristocratic personnel system (features)"
+      },
+      "Sharp divide between grades; recruitment confined to a narrow age band; exams test only general ability; may reflect class preferences; cadre-based services.",
+      {
+       "h": "Consequences of a closed career system"
+      },
+      "Conservative values; <b>status quoist</b>; non-responsive; <b>rule fetishism</b>; placement depends on rank, not competence; elitist mindset; obstacles to change.",
+      {
+       "h": "Reasons for slow pace of social change"
+      },
+      "Education (traditional religious and social complexes); conservative attitudes, especially towards women; limited social and spatial mobility; failure of the political system; <b>cadre-based civil services and aristocratic personnel system</b>; high poverty.",
+      {
+       "h": "Generalist vs specialist"
+      },
+      "Urgent need for specialisation in financial, infrastructural, social and regulatory administration <b>after 10-12 years of service</b>. Lateral entry tries to bridge the gap.",
+      {
+       "tbl": {
+        "head": [
+         "Case for generalists",
+         "Case for specialists"
+        ],
+        "rows": [
+         [
+          "Holistic policy view and inter-departmental coordination (2nd ARC: keep broad-spectrum orientation, build domain expertise)",
+          "Techno-economic complexity (AI, digital finance, climate tech, energy). NITI Aayog Three-Year Action Agenda (2017-20): policymaking is now specialised; recommended lateral entry"
+         ],
+         [
+          "Grassroots experience from field postings",
+          "Policy inertia and lack of domain depth; 2nd ARC: assign officers to domains over their careers"
+         ],
+         [
+          "Permanence and institutional memory",
+          "Evidence-based policymaking"
+         ],
+         [
+          "Political acumen and stakeholder mediation",
+          "Civil Services Exam Review Committee (2001): develop core competencies after the initial <b>8-10 years</b>"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Lateral entry"
+      },
+      "Induction of private-sector specialists into government departments; recommended since the <b>First ARC</b>.",
+      "<b>Need:</b> address <b>Type I error</b> (recruiting the wrong person) and <b>Type II error</b> (rejecting the right person); career path is largely automatic; reduce conservatism; IAS was designed for the pre-reform dominant State; some Union departments need knowledge IAS officers do not gain in state cadres.",
+      "<b>Issues:</b> lack of district and field experience; entrants may not see government as a long-term career; difficulty adapting; corporates may place their own representatives; ruling party may place favourites; <b>top-heavy administration</b> (overstaffed top, understaffed field); need to upgrade skills of permanent civil servants.",
+      {
+       "tbl": {
+        "head": [
+         "Year",
+         "Development"
+        ],
+        "rows": [
+         [
+          "2018",
+          "10 Joint Secretary posts advertised; 10 years' experience in notified fields (civil aviation, shipping, commerce, environment); age below 40; 3 years, extendable to 5"
+         ],
+         [
+          "2021",
+          "Applications for 31 posts at Joint Secretary, Director, Deputy Director level"
+         ],
+         [
+          "Aug 2024",
+          "UPSC advertised 45 posts: 10 Joint Secretaries and 35 Directors/Deputy Secretaries"
+         ],
+         [
+          "Aug 2024 controversy",
+          "No SC/ST/OBC reservation, since individually designated single posts sat outside the reservation roster"
+         ],
+         [
+          "20 Aug 2024",
+          "DoPT asked UPSC to cancel the advertisement (equity and social justice); UPSC cancelled the drive"
+         ]
+        ]
+       }
+      }
+     ],
+     "recall": [
+      [
+       "Type I and Type II error in recruitment",
+       "Type I: wrong person recruited. Type II: right person rejected."
+      ],
+      [
+       "Who coined 'Civil Services', when, and why?",
+       "The East India Company, around 1765, to separate combatant from non-combatant personnel."
+      ],
+      [
+       "Who is a public servant but not a civil servant?",
+       "Political executives, the judiciary, defence forces and PSU employees."
+      ],
+      [
+       "What did the Third Pay Commission rename?",
+       "Class 1, 2, 3, 4 became Group A, B, C, D."
+      ],
+      [
+       "Aug 2024 lateral entry advertisement",
+       "UPSC advertised 45 posts: 10 Joint Secretaries and 35 Directors/Deputy Secretaries."
+      ]
+     ],
+     "traps": [],
+     "quiz": [
+      {
+       "q": "Which Pay Commission suggested renaming Class 1, 2, 3, 4 as Group A, B, C, D?",
+       "o": [
+        "First",
+        "Second",
+        "Third",
+        "Fourth"
+       ],
+       "a": 2
+      }
+     ],
+     "visuals": []
+    },
+    {
+     "id": 3,
+     "title": "All India Services",
+     "pages": "M1 p.7-9",
+     "priority": "L",
+     "pyqs": "none quoted in the material",
+     "lens": {
+      "prelims": [
+       "9 AIS in 1909 -> 4 in 1924 -> 2 in 1947; today 3 (IAS, IPS, IFoS)",
+       "Article 312; Patel as Father of AIS; Lloyd George coined 'Steel Frame' for the ICS",
+       "25 cadres incl. 2 joint: AGMUT and Assam-Meghalaya",
+       "Entry 70 Union List; 2:1 outsider-insider ratio",
+       "Arts 309, 310, 311, 323A; T.S.R. Subramanian (2013)"
+      ],
+      "mains": [
+       "Rationale for continuing AIS vs states' concerns",
+       "Committee views: Rajamannar vs Sarkaria",
+       "Doctrine of Pleasure; 2nd ARC on Article 311"
+      ],
+      "close": "AIS bind the federation together, but authority and responsibility must be re-balanced between Centre and states."
+     },
+     "simple": [
+      "**All India Services** are recruited and trained by the Union but serve under both Centre and States. India has three today: IAS, IPS and IFoS (25 cadres, two of them joint).",
+      "They shrank over time: 9 (1909), 4 (1924), 2 (1947). Abolishing one is called **provincialisation**.",
+      "In the Constituent Assembly some doubted them, but **Sardar Patel** (Father of the AIS) argued for them as the 'Steel Frame' that holds the country together; **Article 312** gave them constitutional status.",
+      "Supporters say AIS bring the best talent, national unity and Centre-State coordination. States reply that the authority-responsibility link is broken: they have limited control over officers they must work with.",
+      "The same part of the handout gives the protections of civil servants: Articles 309, 310, 311, the Doctrine of Pleasure, and the **T.S.R. Subramanian (2013)** call for fixed tenure and Civil Services Boards."
+     ],
+     "terms": [
+      [
+       "Provincialisation",
+       "Abolishing an All India Service."
+      ],
+      [
+       "Doctrine of Pleasure",
+       "Public employment is not a private contract: termination is allowed within constitutional safeguards."
+      ],
+      [
+       "Steel Frame",
+       "Lloyd George's phrase for the Imperial Civil Service; the AIS were later called the Steel Frame of India."
+      ]
+     ],
+     "remember": "309 = recruitment, 310 = tenure, 311 = dismissal, 312 = AIS, 16 = equal opportunity, 323A = tribunals.",
+     "notes": [
+      "AIS originated under British rule. Officers are <b>recruited and trained by the Union</b> but serve under both Centre and States.",
+      "<b>1909: nine</b> AIS; <b>1924: four</b>; <b>1947: two</b>. Abolishing an AIS is called <b>provincialisation</b>. India has three today: IAS, IPS, IFoS.",
+      {
+       "h": "Constituent Assembly debate"
+      },
+      "Opposition: Nehru Committee Report (1928) not keen; regional interests feared Centre's influence; British policy had moved to reduce their number; <b>Nehru initially not in favour</b>.",
+      "Retained and given constitutional status under <b>Article 312</b> largely through <b>Sardar Patel</b> (<b>Father of All India Services</b>). Arguments: states lacked capacity to recruit; AIS the <b>Steel Frame</b> maintaining unity. <b>David Lloyd George</b> used 'Steel Frame' for the Imperial Civil Service.",
+      "<b>Article 312</b> provides for the creation of AIS. <b>25 cadres</b>, including two joint cadres: <b>AGMUT</b> (Arunachal Pradesh, Goa, Mizoram, Union Territories) and <b>Assam-Meghalaya</b>.",
+      {
+       "h": "Rationale for continuing"
+      },
+      "Best talent joins; promotes national unity; wholesome effect on federalism; Union stays in touch with ground realities; wider national outlook in states; Centre can act through AIS in emergencies; less political consideration in key postings; integrated infrastructure development; Centre-State coordination on law and order; day-to-day coordination of bureaucracies.",
+      {
+       "h": "Critique (states' concerns)"
+      },
+      "Changed circumstances: unity not threatened as at Independence; unity needs a stronger base than administration; <b>authority-responsibility mismatch</b> (states have limited control over AIS officers); demoralised state civil services (second-in-command); <b>2:1 outsider-insider ratio</b> seen as central influence; 'sons of the soil' demands; <b>federal concern: AIS is joint responsibility yet falls under Entry 70 of the Union List</b>; officers spend most of their careers in one cadre state.",
+      {
+       "tbl": {
+        "head": [
+         "Body",
+         "View on AIS"
+        ],
+        "rows": [
+         [
+          "Rajamannar Commission",
+          "Disband the AIS"
+         ],
+         [
+          "Sarkaria Commission",
+          "Disbanding is a retrograde step; strengthen AIS and reduce excessive generalism"
+         ],
+         [
+          "Sarkaria Commission",
+          "Regular Centre-State consultation; Advisory Council on AIS headed by the Cabinet Secretary"
+         ],
+         [
+          "Sarkaria Commission",
+          "Create new AIS: Indian Engineering, Medical and Health, and Education Services"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Other constitutional provisions"
+      },
+      {
+       "tbl": {
+        "head": [
+         "Article",
+         "Provision"
+        ],
+        "rows": [
+         [
+          "309",
+          "Recruitment and conditions of service of persons serving the Union or a State"
+         ],
+         [
+          "310",
+          "Tenure of office"
+         ],
+         [
+          "311",
+          "Dismissal, removal or reduction in rank of persons in civil capacities"
+         ],
+         [
+          "16",
+          "Equality of opportunity in public employment"
+         ],
+         [
+          "323A",
+          "Administrative tribunals (CAT, SATs)"
+         ]
+        ]
+       }
+      },
+      "<b>Doctrine of Pleasure:</b> public employment cannot be equated with contract-based private employment. Civil servants must be responsive to people and responsible to the government. Termination allowed subject to constitutional safeguards.",
+      "<b>2nd ARC on Art 311:</b> growing procedural protection made it hard to dismiss even those who deserved it. Recommended <b>repealing Article 311</b>, a comprehensive <b>Civil Services Law</b>, and clear definition of reasonable opportunity.",
+      "<b>Articles 309, 310, 311, 320</b> govern recruitment, tenure, protection and PSC consultation.",
+      {
+       "h": "Service rules (restrictions)"
+      },
+      "Cannot join a political party, give to political funds or contest elections; can vote but not disclose preference; limits on family's political involvement, adverse criticism of government and media interaction; annual declaration of assets and liabilities; report gifts.",
+      "<b>T.S.R. Subramanian case (2013):</b> SC recommended minimum guaranteed tenure in key positions; <b>Civil Services Boards</b> to advise on postings and transfers; avoid acting on verbal orders; enact a comprehensive Civil Services Law."
+     ],
+     "recall": [
+      [
+       "What is provincialisation of an All India Service?",
+       "Abolition of the service; states become responsible for recruiting personnel for that part of administration."
+      ],
+      [
+       "Who used 'Steel Frame', and for which service?",
+       "David Lloyd George, for the Imperial Civil Service. AIS were later called the Steel Frame of India."
+      ],
+      [
+       "Father of All India Services",
+       "Sardar Patel; AIS got constitutional status under Article 312."
+      ],
+      [
+       "Number of AIS over time",
+       "9 (1909), 4 (1924), 2 (1947), 3 today: IAS, IPS, IFoS."
+      ],
+      [
+       "Which commission asked to disband the AIS?",
+       "The Rajamannar Commission. The Sarkaria Commission called disbanding a retrograde step."
+      ],
+      [
+       "T.S.R. Subramanian case (2013): headline asks",
+       "Minimum guaranteed tenure in key posts; Civil Services Boards for postings and transfers; avoid verbal orders; a comprehensive Civil Services Law."
+      ]
+     ],
+     "traps": [
+      {
+       "k": "Prelims trap",
+       "t": "AIS counts by date",
+       "d": "Nine AIS in 1909, four in 1924, two in 1947, three today (IAS, IPS, IFoS).",
+       "r": "Rule: pin the number to its year before choosing."
+      },
+      {
+       "k": "Prelims trap",
+       "t": "Which article is which",
+       "d": "Art 312 creates AIS; 315-323 cover PSCs; 309-311 service conditions, tenure, dismissal; 323A administrative tribunals; Art 16 equality in public employment.",
+       "r": "Rule: Arts 309-311 = the servant, 315-323 = the Commission, 312 = the All India Service."
+      },
+      {
+       "k": "Prelims trap",
+       "t": "Steel Frame and Father of AIS",
+       "d": "Lloyd George used 'Steel Frame' for the Imperial Civil Service. Patel is the Father of All India Services.",
+       "r": "Rule: the phrase and the person are different people."
+      }
+     ],
+     "quiz": [
+      {
+       "q": "Which article provides for the creation of All India Services?",
+       "o": [
+        "Article 309",
+        "Article 312",
+        "Article 315",
+        "Article 323A"
+       ],
+       "a": 1
+      },
+      {
+       "q": "The number of All India Services moved from:",
+       "o": [
+        "Nine (1909), four (1924), two (1947)",
+        "Four (1909), nine (1924), two (1947)",
+        "Nine (1909), two (1924), four (1947)",
+        "Two (1909), four (1924), nine (1947)"
+       ],
+       "a": 0
+      },
+      {
+       "q": "In the T.S.R. Subramanian case (2013) the Supreme Court recommended:",
+       "o": [
+        "Abolishing the All India Services",
+        "Minimum tenure in key posts, Civil Services Boards, avoiding verbal orders",
+        "Repeal of Article 311",
+        "Direct recruitment to all Group A posts"
+       ],
+       "a": 1
+      }
+     ],
+     "visuals": []
+    },
+    {
+     "id": 4,
+     "title": "Role of Civil Services in Democracy",
+     "pages": "M1 p.9-12",
+     "priority": "M",
+     "pyqs": "2017",
+     "lens": {
+      "prelims": [
+       "Neutrality = class, cultural, political; three forms of confidence",
+       "Policy neutrality is not political neutrality",
+       "Bhaskar Ghose's three bureaucrat types",
+       "Max Weber on bureaucracy as an institution",
+       "Lakhina Experiment, Ahmednagar (colour-coding of files)"
+      ],
+      "mains": [
+       "Why neutrality is hard to secure (4Cs, multi-party pressure)",
+       "Anonymity vs social accountability tools",
+       "Factors hindering professionalism",
+       "Case for and against civil service activism"
+      ],
+      "close": "Understand politics, do not play politics: neutrality in loyalty, not in intellect."
+     },
+     "simple": [
+      "The handout expects six qualities from civil servants: **neutrality, commitment, anonymity, instrumentality, professionality, impersonality**.",
+      "**Neutrality** has three layers: class (officers are mostly middle class), cultural (language, caste, religion, region) and political. Political neutrality rests on three confidences: the people's, the ministers' and the civil servants' own.",
+      "Political neutrality is **not policy neutrality**: civil servants advise on policy intellectually, never emotionally. They must understand politics, not play politics. The 4Cs (criminalisation, casteism, communalism, corruption) make this hard.",
+      "Bhaskar Ghose's three types show the choices: **Neither Wilt nor Tilt** (firm), **Incorrigibly Corrupt** (find godfathers) and **Weather Report Readers** (shift with circumstances).",
+      "Anonymity means the minister takes credit and blame, but RTI, social audits and Citizens' Charters are loosening it. **Activism** (media, leaks, courts, whistleblowing, the Lakhina Experiment) is a sign of the times, though the handout says it cannot be encouraged."
+     ],
+     "terms": [
+      [
+       "Impersonality",
+       "Not personalising the position held; no excess personal relations that cloud objectivity."
+      ],
+      [
+       "Instrumentality",
+       "Being an instrument of the people, not an independent power structure."
+      ],
+      [
+       "Lakhina Experiment",
+       "Dr. Lakhina's colour-coded files by year in Ahmednagar, 1980s: grassroots activism."
+      ]
+     ],
+     "remember": "Wilt-Tilt = firm; Corrupt = godfathers; Weather Report = shifters.",
+     "notes": [
+      "Six roles are envisaged: <b>neutrality, commitment, anonymity, instrumentality, professionality, impersonality</b>.",
+      {
+       "fig": {
+        "img": "img/roles.jpg",
+        "cap": "The six roles envisaged for civil services: neutrality, commitment, anonymity, professionality, instrumental and impersonality roles.",
+        "pg": "M1 p.9",
+        "sq": false
+       }
+      },
+      {
+       "h": "Neutrality"
+      },
+      "<b>Class neutrality:</b> officers come mostly from the middle class, whose mindset can dominate; elite capture of state institutions (example given: National Rifle Association, USA).",
+      "<b>Cultural neutrality:</b> language, caste, religion, region and other identities.",
+      "<b>Political neutrality</b> shows through three forms of confidence:",
+      {
+       "tbl": {
+        "head": [
+         "Confidence of",
+         "Meaning"
+        ],
+        "rows": [
+         [
+          "People",
+          "Serve whichever party the people elect with diligence and commitment"
+         ],
+         [
+          "Ministers",
+          "Perform duties with commitment irrespective of the minister's ideology"
+         ],
+         [
+          "Civil servants",
+          "Postings, careers, promotions on objective merit, not political affiliation"
+         ]
+        ]
+       }
+      },
+      "<b>Policy vs political neutrality:</b> ministers may lack specialised knowledge, so civil servants advise. Political neutrality is not policy neutrality. Involvement in policy must be <b>intellectual, never emotional</b>. Civil servants <b>must understand politics, not play politics</b>.",
+      "<b>Problems:</b> a thinking person is never fully neutral; the <b>4Cs of the political environment</b>; parties may demand loyalty; no agreement on fundamentals (extreme right, extreme left, secular parties); multi-party democracy brings pressures at Centre and state.",
+      {
+       "fig": {
+        "img": "img/fourc.jpg",
+        "cap": "The 4Cs of the political environment that make neutrality difficult: Criminalization, Casteism, Communalism, Corruption.",
+        "pg": "M1 p.10",
+        "sq": true
+       }
+      },
+      {
+       "tbl": {
+        "head": [
+         "Bhaskar Ghose's type",
+         "Behaviour"
+        ],
+        "rows": [
+         [
+          "Neither Wilt nor Tilt",
+          "Firm; refuse orders deviating from policy or law; may be transferred but keep honesty"
+         ],
+         [
+          "Incorrigibly Corrupt",
+          "Find political godfathers early and align with parties"
+         ],
+         [
+          "Weather Report Readers",
+          "Shift loyalty with political circumstances"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Commitment"
+      },
+      "Impartial rule of law; code of ethics; settled policies and programmes; probity and transparency; sense of duty; welfare of <b>Daridra</b>, the poorest of the poor.",
+      {
+       "h": "Anonymity"
+      },
+      "Civil servants work behind the scenes; the minister is the public face. Credit and major failure both go to the minister. Anonymity goes hand in hand with <b>ministerial responsibility</b>; ministers must protect civil servants. The concept is changing with <b>social audits, RTI, Citizens' Charters, time-bound service delivery laws</b>.",
+      {
+       "h": "Instrumentality"
+      },
+      "Civil services are an instrument of the people, but a full-fledged bureaucracy can become an <b>independent power structure</b>, an institution with elitist values. <b>Max Weber:</b> once bureaucracy becomes an institution it is one of the hardest social structures to dismantle.",
+      {
+       "h": "Professionality"
+      },
+      "A professional keeps improving knowledge and skills. <b>Hindrances:</b> generalists in specialist services; poor training (confined to Group A and B; <b>only one in five</b> civil servants can expect formal training; mid-career training often absent); ineffective appraisal (no quantifiable targets); weak incentives ('<b>hire, but no fire</b>'); IAS dominance with limited lateral entry.",
+      {
+       "h": "Impersonality"
+      },
+      "Do not personalise the position (DC, SP). Impersonal attitude to superiors, colleagues and juniors; excessive personal relations compromise objectivity (example: overlooking a friend's corrupt behaviour).",
+      {
+       "h": "Civil services activism"
+      },
+      "A civil servant becomes a <b>crusader</b>. Forms: going to the media; calculated leaks; going to courts; <b>whistleblowing</b>; grassroots activism; post-retirement activism (NGOs, YouTube channels).",
+      "<b>Case study: Dr. Lakhina, Ahmednagar (1980s):</b> colour-coded files by year so older files could be found. Called the <b>Lakhina Experiment</b>; example of grassroots activism.",
+      "<b>Issues:</b> may violate service rules and set a bad precedent; personalises institutional issues (e.g. targeting the Chief Minister); exposes civil services to manipulation by parties and media; erodes credibility of institutions.",
+      "<b>Conclusion in handout:</b> activism cannot be encouraged, but it is a sign of our times; civil service and electoral reforms must be implemented more effectively."
+     ],
+     "recall": [
+      [
+       "Three forms of confidence in political neutrality",
+       "Confidence of people, of ministers, of civil servants."
+      ],
+      [
+       "Bhaskar Ghose's three bureaucrats",
+       "Neither Wilt nor Tilt; Incorrigibly Corrupt; Weather Report Readers."
+      ],
+      [
+       "Lakhina Experiment",
+       "Dr. Lakhina (Ahmednagar, 1980s) colour-coded files by year; grassroots activism."
+      ]
+     ],
+     "traps": [
+      {
+       "k": "Concept trap",
+       "t": "Political vs policy neutrality",
+       "d": "Political neutrality does not mean policy neutrality. Officers advise intellectually, not emotionally.",
+       "r": "Rule: understand politics, do not play politics."
+      }
+     ],
+     "quiz": [],
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "Six roles of civil services",
+       "sentence": "Nobody Can Always Ignore Public Interest",
+       "letters": [
+        [
+         "N",
+         "Neutrality"
+        ],
+        [
+         "C",
+         "Commitment"
+        ],
+        [
+         "A",
+         "Anonymity"
+        ],
+        [
+         "I",
+         "Instrumentality"
+        ],
+        [
+         "P",
+         "Professionality"
+        ],
+        [
+         "I",
+         "Impersonality"
+        ]
+       ],
+       "note": "Handout order: N-C-A-I-P-I. The sentence is a memory aid, not from the handout."
+      },
+      {
+       "type": "mindmap",
+       "pos": "top",
+       "title": "Memory map: the six roles at a glance",
+       "center": "Civil servant in a democracy",
+       "branches": [
+        {
+         "t": "1 Neutrality",
+         "c": [
+          "Class: mostly middle class, elite capture",
+          "Cultural: language, caste, religion, region",
+          "Political: 3 confidences (people, ministers, civil servants)"
+         ]
+        },
+        {
+         "t": "2 Commitment",
+         "c": [
+          "Impartial rule of law, code of ethics",
+          "Settled policies, probity, transparency",
+          "Welfare of the Daridra"
+         ]
+        },
+        {
+         "t": "3 Anonymity",
+         "c": [
+          "Minister is the public face",
+          "Credit and major failure go to the minister",
+          "Loosening: RTI, social audits, charters"
+         ]
+        },
+        {
+         "t": "4 Instrumentality",
+         "c": [
+          "Instrument of the people",
+          "Risk: bureaucracy becomes an independent power structure (Weber)"
+         ]
+        },
+        {
+         "t": "5 Professionality",
+         "c": [
+          "Keep improving skills",
+          "Hindrances: generalists, poor training (1 in 5 trained), weak appraisal, hire-but-no-fire"
+         ]
+        },
+        {
+         "t": "6 Impersonality",
+         "c": [
+          "Do not personalise the post (DC, SP)",
+          "No excess personal relations with superiors, colleagues, juniors"
+         ]
+        }
+       ]
+      },
+      {
+       "type": "fork",
+       "after": "Bhaskar Ghose's type",
+       "title": "Bhaskar Ghose: three ways an officer meets political pressure",
+       "root": {
+        "t": "Officer under political pressure",
+        "c": [
+         "Which path does he take?"
+        ]
+       },
+       "branches": [
+        {
+         "t": "Neither Wilt nor Tilt",
+         "c": [
+          "Firm",
+          "Refuses orders that deviate from policy or law",
+          "May be transferred, keeps honesty"
+         ],
+         "verdict": "The model officer"
+        },
+        {
+         "t": "Incorrigibly Corrupt",
+         "c": [
+          "Finds political godfathers early",
+          "Aligns with parties"
+         ],
+         "verdict": "Serves patrons"
+        },
+        {
+         "t": "Weather Report Readers",
+         "c": [
+          "Shifts loyalty with political circumstances"
+         ],
+         "verdict": "Follows the wind"
+        }
+       ]
+      },
+      {
+       "type": "flow",
+       "after": "Conclusion in handout",
+       "title": "Civil services activism: from act to verdict",
+       "steps": [
+        [
+         "1 Forms",
+         "Media",
+         "Calculated leaks",
+         "Courts",
+         "Whistleblowing",
+         "Grassroots",
+         "Post-retirement"
+        ],
+        [
+         "2 Case",
+         "Dr. Lakhina, Ahmednagar, 1980s",
+         "Colour-coded files by year",
+         "The Lakhina Experiment"
+        ],
+        [
+         "3 Issues",
+         "Violates service rules",
+         "Personalises institutional issues",
+         "Manipulation by parties and media",
+         "Erodes credibility"
+        ],
+        [
+         "4 Verdict",
+         "Cannot be encouraged",
+         "But a sign of our times",
+         "Implement civil service and electoral reforms"
+        ]
+       ],
+       "per_row": 4
+      }
+     ]
+    },
+    {
+     "id": 5,
+     "title": "Working and Performance of Civil Services",
+     "pages": "M1 p.12-13",
+     "priority": "L",
+     "pyqs": "none quoted in the material",
+     "lens": {
+      "prelims": [
+       "Average District Collector tenure about one year",
+       "Street-level bureaucracy defined",
+       "The 3Ms: MTV, Macintosh, McDonald's",
+       "SPVs: Solar Energy Corporation, National Skill Development Corporation"
+      ],
+      "mains": [
+       "Performance table: regulatory, rule of law, developmental, facilitation",
+       "Causes of poor performance",
+       "21st-century challenges for bureaucracy"
+      ],
+      "close": "Doer, facilitator and regulator: the bureaucracy must now play all three roles while being held to global standards."
+     },
+     "simple": [
+      "Civil services do four jobs: **formulate policy**, **implement** it, **evaluate** it, and **adjudicate** (quasi-judicial powers, e.g. Collectors in revenue courts). They also give continuity when governments change.",
+      "Evaluation has a built-in problem: officers judge programmes they themselves ran, a conflict of interest, which is why social audits matter.",
+      "Report card: relatively good at preserving the constitutional order and law and order; weaker on impartial rule of law (class bias, corruption, interference); mixed on development; shifting after 1991 from direct doer to facilitator.",
+      "Why performance suffers: political interference, dual control over AIS, arbitrary transfers and short tenures (a DC averages about a year), street-level corruption, weak training and appraisal, wage compression.",
+      "The 21st century adds globalised problems (COVID-19, terrorism, money laundering), new roles (doer, facilitator, regulator), global yardsticks, expanding rights and a global monoculture (the 3Ms)."
+     ],
+     "terms": [
+      [
+       "Street-level bureaucracy",
+       "Lower-level officials who deal directly with citizens."
+      ],
+      [
+       "3Ms of monoculture",
+       "MTV (fast music), Macintosh (fast computers), McDonald's (fast food)."
+      ]
+     ],
+     "remember": "Formulate - Implement - Evaluate - Adjudicate.",
+     "notes": [
+      {
+       "h": "Functions"
+      },
+      "<b>Policy formulation:</b> channel between grassroots and top; background facts, court judgments, laws; technical considerations; policy advice with value judgments; drafting legislation; balanced policies.",
+      "<b>Policy implementation:</b> rule-making, financial management, HR management, monitoring and supervision.",
+      "<b>Policy evaluation:</b> feedback to leadership, but a <b>conflict of interest</b> arises when officers evaluate programmes they implemented. This raises the importance of <b>social audits</b>.",
+      "<b>Administrative adjudication:</b> quasi-judicial powers (District Collectors decide certain disputes through revenue courts). <b>Continuity</b> in administration despite political change.",
+      {
+       "tbl": {
+        "head": [
+         "Function",
+         "Performance"
+        ],
+        "rows": [
+         [
+          "Regulatory",
+          "Relatively satisfactory in preserving constitutional order, democracy, secularism, unity and law and order"
+         ],
+         [
+          "Impartial rule of law",
+          "Affected by class bias, corruption, political interference"
+         ],
+         [
+          "Developmental",
+          "Mixed"
+         ],
+         [
+          "Facilitation (post-1991)",
+          "Shift from direct doer towards facilitating private sector, civil society, NGOs, local bodies; performance particularly weak"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Causes of poor performance"
+      },
+      "Political interference; <b>dual control</b> over AIS; reluctance to use constitutional protection (high personal and financial cost); <b>arbitrary transfers and short tenures</b> (average DC tenure about one year; T.S.R. Subramanian stressed tenure security); corruption in <b>street-level bureaucracy</b> (lower-level officials who deal directly with citizens); poor capacity building; <b>wage compression</b>; poor performance evaluation; lack of people's participation.",
+      {
+       "h": "Challenges of the 21st century"
+      },
+      "<b>Globalisation of domestic problems</b> (COVID-19, money laundering, terrorism, drugs) needing multilateral coordination and negotiation skills.",
+      "<b>Changing roles:</b> doer (more cost-efficient), facilitator (local bodies, NGOs), regulator (new skills for law and order).",
+      "<b>Changing accountability:</b> global yardsticks (Transparency International, HDI, SDGs, Ease of Doing Business) plus direct citizen tools (Citizens' Charters, social audits).",
+      "Continuous (not episodic) reforms; professionalism; <b>expanding horizon of rights</b> (environment, consumer, disability, LGBT, privacy); <b>global monoculture</b> (the <b>3Ms</b>: MTV fast music, Macintosh fast computers, McDonald's fast food); <b>tailor-made institutions</b> and SPVs (Solar Energy Corporation, National Skill Development Corporation); <b>crisis of State credibility</b> after LPG reforms and WTO participation.",
+      {
+       "alert": "<b>PYQ 2014 (in the handout at this point):</b> Has the cadre-based civil services organisation been the cause of slow change in India? Critically examine. The answer material is in Section 2 (aristocratic personnel system; reasons for slow social change)."
+      }
+     ],
+     "recall": [
+      [
+       "The 3Ms of global monoculture",
+       "MTV (fast music), Macintosh (fast computers), McDonald's (fast food)."
+      ],
+      [
+       "Four functions of the civil services in the handout",
+       "Policy formulation, policy implementation, policy evaluation, administrative adjudication (plus continuity in administration)."
+      ],
+      [
+       "Why does policy evaluation by civil servants raise concern?",
+       "Conflict of interest: officers evaluate programmes they implemented. Hence the weight on social audits."
+      ],
+      [
+       "Street-level bureaucracy",
+       "Lower-level officials who deal directly with citizens; corruption here is a cause of poor performance."
+      ]
+     ],
+     "traps": [],
+     "quiz": [
+      {
+       "q": "The '3Ms' of global monoculture in the handout are:",
+       "o": [
+        "MTV, Macintosh, McDonald's",
+        "Media, Market, Money",
+        "MNC, Merger, Market",
+        "Mobile, Media, Mall"
+       ],
+       "a": 0
+      }
+     ],
+     "visuals": []
+    },
+    {
+     "id": 6,
+     "title": "Bureaucracy and Development",
+     "pages": "M1 p.13-15",
+     "priority": "L",
+     "pyqs": "none quoted in the material",
+     "lens": {
+      "prelims": [
+       "Rajiv Gandhi: 16 paise of every rupee reaches the people",
+       "Weber's four characteristics; five features of development administration",
+       "Four named minister-bureaucrat conflicts (Mundhra 1957, Nanda-L.P. Singh, Hanumanthaiah-Ganguli 1973, Rajiv-Venkateswaran 1987)",
+       "Terms: Hakim culture, Babu culture, goal displacement, politico-administrative no-man's land"
+      ],
+      "mains": [
+       "How bureaucracy promotes vs threatens democracy",
+       "Why traditional bureaucracy suits development administration poorly",
+       "Paradoxes between Indian bureaucracy and development"
+      ],
+      "close": "Like fire, bureaucracy is a good servant and a bad master."
+     },
+     "simple": [
+      "Max Weber's line: democracy has a **love-hate relationship** with bureaucracy; it is like fire, invaluable as a servant and destructive as a master.",
+      "It **helps** democracy by upholding rule of law, running free and fair elections and delivering socio-economic justice. It **threatens** democracy when the instrument becomes an institution, hoards power, hides information, shuts out NGOs and local bodies, or is misused by the state (ED, CBI examples).",
+      "Power struggles create a politico-administrative **no-man's land** between policy making and implementation: Mundhra scandal (1957), Nanda vs L.P. Singh, Hanumanthaiah vs Ganguli, Rajiv Gandhi vs Venkateswaran.",
+      "Weber's bureaucracy (specialisation, hierarchy, rules, defined roles) clashes with development administration (change, results, commitment, client orientation).",
+      "Indian bureaucracy is colonial in structure and mindset (Hakim and Babu culture, red tape, secrecy). Its paradoxes: technology amid backwardness, government spending on itself (Rajiv Gandhi's 16 paise), generalists over specialists, wage compression."
+     ],
+     "terms": [
+      [
+       "Politico-administrative no-man's land",
+       "The gap left when ministers and officials struggle over power between policy making and implementation."
+      ],
+      [
+       "Hakim culture",
+       "Behaving as a master, not a servant."
+      ],
+      [
+       "Babu culture",
+       "File and rule fetishism with creative inertia."
+      ]
+     ],
+     "remember": "Weber vs Development: Hierarchy/Rules vs Change/Results/Clients.",
+     "notes": [
+      "<b>Max Weber:</b> 'Democracy has to promote what reason demands but what democratic sentiments hate.' Democracy has a love-hate relationship with bureaucracy; bureaucracy is like <b>fire</b>: invaluable as servant, destructive as master.",
+      {
+       "h": "How bureaucracy promotes democracy"
+      },
+      "Institutionalises rule of law; conducts free and fair elections; fulfils the six role expectations; balances policymaking; implements socio-economic justice.",
+      {
+       "h": "Bureaucracy as a threat"
+      },
+      "Instrument becomes institution (resists citizen-centric reform); concentrates power oligarchically; <b>secrecy</b> (an 'uninformed parliament'); suppresses NGOs, pressure groups, local bodies; no <b>representative bureaucracy</b> (mixed class, caste, religion, occupation); corruption and lack of neutrality; <b>state oppression</b> (agencies used against rivals; examples ED and CBI); power struggle creating a <b>politico-administrative no-man's land</b>.",
+      {
+       "fig": {
+        "img": "img/venn.jpg",
+        "cap": "Policy making and policy implementation overlap in a politico-administrative no man's land.",
+        "pg": "M1 p.14",
+        "sq": false
+       }
+      },
+      {
+       "tbl": {
+        "head": [
+         "Conflict",
+         "Parties"
+        ],
+        "rows": [
+         [
+          "Mundhra Scandal (1957)",
+          "LIC allegedly invested in loss-making firms of Haridas Mundhra; Finance Minister and Finance Secretary resigned"
+         ],
+         [
+          "Mid-1960s",
+          "Home Minister Gulzarilal Nanda vs Home Secretary L.P. Singh"
+         ],
+         [
+          "1973",
+          "Railway Minister K. Hanumanthaiah vs Railway Board Chairman B.C. Ganguli"
+         ],
+         [
+          "1987",
+          "PM Rajiv Gandhi vs Foreign Secretary A.P. Venkateswaran (Sri Lanka policy)"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "Weber vs development administration"
+      },
+      {
+       "fig": {
+        "img": "img/bur.jpg",
+        "cap": "Features of bureaucracy: division of labour, rule orientation, role specificity, hierarchy.",
+        "pg": "M1 p.14",
+        "sq": true
+       }
+      },
+      {
+       "tbl": {
+        "head": [
+         "Weber's bureaucracy",
+         "Development administration"
+        ],
+        "rows": [
+         [
+          "Division of labour and specialisation",
+          "Change orientation (positive change in people's conditions)"
+         ],
+         [
+          "Clear hierarchy",
+          "Result orientation (quantified, visible results)"
+         ],
+         [
+          "Rule orientation (impartiality, objectivity)",
+          "Commitment to change (time-bound programmes)"
+         ],
+         [
+          "Role specificity (accountability)",
+          "Client orientation; communication and participation"
+         ]
+        ]
+       }
+      },
+      "Bureaucracy is a form of organisation of work and can exist in private bodies too; civil service and bureaucracy are used interchangeably because the problems became pronounced in the public sector.",
+      "<b>Conflicts:</b> <b>goal displacement</b>; low adaptability (built to maintain the status quo); historical mismatch (development administration emerged after World War II); political dimension (society must be ready for development); excessive formalism, unsuitable for rural development.",
+      {
+       "h": "Features of Indian bureaucracy"
+      },
+      "<b>Structural:</b> British pattern; long hierarchies; concentration and centralisation; cadre-based; <b>instability of tenure</b> (DCs 'constantly packing and unpacking'); standard departmental structure.",
+      "<b>Behavioural:</b> colonial mindset (master, not servant); non-responsive; <b>Hakim culture</b>; <b>file and rule fetishism (Babu culture)</b> with creative inertia; corruption; red tape; secrecy.",
+      {
+       "h": "Paradoxes"
+      },
+      "Advanced technology amid backwardness; <b>government spends more on itself</b> (Rajiv Gandhi: only <b>16 paise</b> of each rupee reaches the people); archaic values; authority-responsibility mismatch; unstable tenure; poor inter-agency coordination; centralised, non-participatory administration; <b>learning disorders</b> (example: repeated dengue outbreaks in Delhi); greater importance to generalists (specialists need rehabilitation); wage compression."
+     ],
+     "recall": [
+      [
+       "Rajiv Gandhi's leakage figure",
+       "16 paise of every rupee reaches the people."
+      ]
+     ],
+     "traps": [],
+     "quiz": [],
+     "visuals": []
+    },
+    {
+     "id": 7,
+     "title": "Pay, 8th CPC and the Right to Strike",
+     "pages": "M1 p.16-17",
+     "priority": "L",
+     "pyqs": "none quoted in the material",
+     "lens": {
+      "prelims": [
+       "8th CPC reference date: 1 January 2026; Revised Basic Pay = Existing Basic x Fitment Factor",
+       "Essential Defence Services Bill 2021: 41 ordnance factories, about 84,000 workers",
+       "First ARC (1966) wanted unlawful strikes made a penal offence; ESMA mentioned"
+      ],
+      "mains": [
+       "Arguments for and against civil servants' right to strike",
+       "Fiscal and state-level impact of a pay commission",
+       "Way forward: regular revisions, performance-linked incentives"
+      ],
+      "close": "Fair pay and a no-strike norm for essential services protect both the employee and the citizen."
+     },
+     "simple": [
+      "Government pay is often lower than the private sector, balanced by job security, fringe benefits, status and public service. The handout favours **performance-linked incentives**.",
+      "The **8th Central Pay Commission** has a reference date of 1 January 2026. Its key lever is the **fitment factor**: Revised Basic Pay = Existing Basic Pay x Fitment Factor. A higher factor lifts allowances and pension liabilities.",
+      "Issues: the minimum-wage model, DA merger demand (DA is absorbed then reset), fiscal impact (less capex), pressure on states. Way forward: smaller regular revisions linked to inflation, revenue and fiscal capacity.",
+      "**Right to strike**: the Essential Defence Services Bill 2021 (ordnance factories: 41 factories, about 84,000 workers) triggered the debate. For: collective protest, last resort. Against: public interest ('a loaded gun at citizens'), model-citizen expectation.",
+      "Handout position: no strikes that seriously disrupt essential services; distinguish essential from non-essential. The Supreme Court observed that government employees have no fundamental, statutory or equitable right to strike."
+     ],
+     "terms": [
+      [
+       "Fitment factor",
+       "The multiplier on existing basic pay to get revised basic pay."
+      ],
+      [
+       "ESMA",
+       "The law under which strike misconduct can also be a disciplinary offence (as the handout notes)."
+      ]
+     ],
+     "remember": "Revised Basic Pay = Existing Basic Pay x Fitment Factor.",
+     "notes": [
+      "Bureaucrats' salaries are often lower than the private sector, but they get <b>job security, fringe benefits, higher social status</b> and the chance of public service. Balance: <b>performance-linked incentives</b>.",
+      {
+       "h": "8th Central Pay Commission"
+      },
+      "<b>8th CPC constituted; reference date 1 January 2026.</b> <b>Fitment factor</b> is the multiplier: <b>Revised Basic Pay = Existing Basic Pay x Fitment Factor</b>; higher factor raises allowances and pension liabilities.",
+      "<b>Issues:</b> minimum-wage model (earlier three consumption units; demand to include dependent parents); <b>DA merger</b> demand (but DA is absorbed then reset, so part of the rise is inflation compensation); fiscal impact (committed expenditure, less capex); pressure on states to follow.",
+      "<b>Way forward:</b> regular smaller revisions; performance orientation without hurting neutrality; workforce rationalisation; digital governance; link revisions to inflation, revenue and fiscal capacity.",
+      {
+       "h": "Right to strike"
+      },
+      "Trigger: <b>Essential Defence Services Bill, 2021</b> prohibiting strikes in essential defence services including ordnance factories (<b>41 factories, nearly 84,000 workers</b>), to ensure uninterrupted supply amid a possible two-front conflict.",
+      {
+       "tbl": {
+        "head": [
+         "In favour",
+         "Against"
+        ],
+        "rows": [
+         [
+          "Citizens may use strikes as collective protest",
+          "Public interest: strike threat is like a loaded gun pointed at citizens"
+         ],
+         [
+          "Protection against exploitation when no other remedy",
+          "Civil servants are expected to be model citizens"
+         ],
+         [
+          "A last resort when other mechanisms fail",
+          "Government is expected to treat employees fairly (preventing exploitation)"
+         ]
+        ]
+       }
+      },
+      "<b>Handout's balanced position:</b> no strikes that seriously disrupt essential public services; distinguish essential from non-essential services.",
+      "Strike misconduct can be a disciplinary offence under service rules and <b>ESMA</b>. <b>First ARC (1966)</b> opposed the right to strike and wanted unlawful strikes made a <b>penal offence</b>. The Supreme Court observed that government employees have <b>no fundamental, statutory or equitable right to strike</b>."
+     ],
+     "recall": [
+      [
+       "Fitment factor formula",
+       "Revised Basic Pay = Existing Basic Pay x Fitment Factor."
+      ]
+     ],
+     "traps": [],
+     "quiz": [],
+     "visuals": []
+    },
+    {
+     "id": 8,
+     "title": "Civil Services Reforms and Nolan Principles",
+     "pages": "M1 p.17-18",
+     "priority": "H",
+     "pyqs": "2017, 2020",
+     "lens": {
+      "prelims": [
+       "Satish Chandra Committee: separate technical exams",
+       "NIPAs (2nd ARC): IIT/AIIMS-style entry, 3-4 years' training; one-year bridge course for other graduates",
+       "360-degree appraisal used for AIS empanelment for central deputation; 2nd ARC feared victimisation",
+       "Nolan Committee (1995): seven principles",
+       "2nd ARC drafted a Civil Services Law"
+      ],
+      "mains": [
+       "Reforms in recruitment, training, appraisal",
+       "Comprehensive Civil Services Law; domainisation",
+       "Nolan Principles as an ethical foundation"
+      ],
+      "close": "Reform is continuous: recruit for competence, train for roles, appraise for results, protect for neutrality."
+     },
+     "simple": [
+      "Reform in the handout runs through **recruitment, training, appraisal and the legal framework**.",
+      "Recruitment: mainstream lateral entry, overhaul exams (Satish Chandra Committee: separate technical exams), NIPAs (2nd ARC), psycho-social profile checks and probation.",
+      "Training for all, not just Groups A and B; mid-career training; better content; link training grades to career progress.",
+      "Appraisal: link 0-10 grades to targets; 360-degree appraisal (superiors, colleagues, juniors, clients); stable tenure; domainisation; remove deadwood by premature retirement; a comprehensive Civil Services Law.",
+      "The seven **Nolan principles (1995)**: Selflessness, Integrity, Objectivity, Accountability, Openness, Honesty, Leadership."
+     ],
+     "terms": [
+      [
+       "NIPA",
+       "The 2nd ARC's proposed institutes of public administration, entered after higher secondary like IITs and AIIMS."
+      ],
+      [
+       "360-degree appraisal",
+       "Feedback from superiors, colleagues, juniors and clients."
+      ],
+      [
+       "Domainisation",
+       "Building expertise in areas such as security, infrastructure, agriculture."
+      ]
+     ],
+     "remember": "Nolan: S-I-O-A-O-H-L.",
+     "notes": [
+      {
+       "h": "Recruitment"
+      },
+      "<b>Mainstream lateral entry</b> and reduce dependence on cadre-based services. Overhaul exams: <b>Satish Chandra Committee</b> recommended separate exams for technical services.",
+      "<b>NIPAs (2nd ARC):</b> after higher secondary, aspirants compete for entry like IITs and AIIMS, with <b>3-4 years</b> of public administration training; other graduates could compete after a <b>one-year bridge course</b>.",
+      "<b>Psycho-social profile</b> assessment, possibly an <b>SSB-style</b> interview. Probation to weed out unsuitable recruits.",
+      {
+       "h": "Training"
+      },
+      "Training for all (not only Group A and B); mid-career training; fix content (often unsuited to field experience; treated as a paid holiday); link training grades to career progression; soft skills.",
+      {
+       "h": "Performance appraisal"
+      },
+      "Link <b>0-10 grades</b> to achievement of targets. <b>360-degree (multi-source) appraisal</b> uses feedback from superiors, colleagues, juniors and clients; used for AIS empanelment for central deputation; <b>2nd ARC had reservations</b> (victimisation of honest officers).",
+      "Stability of tenure; <b>domainisation</b> (security, infrastructure, agriculture); performance-linked incentives; <b>removal of deadwood</b> by premature retirement.",
+      "<b>Comprehensive Civil Services Law</b> (2nd ARC drafted a bill); transparency in transfers, postings, discipline; root out corruption; <b>rehabilitate specialists</b> who now work under generalists with inferior pay and position.",
+      {
+       "tbl": {
+        "head": [
+         "Nolan principle (1995)",
+         "Meaning"
+        ],
+        "rows": [
+         [
+          "Selflessness",
+          "Act solely in public interest; no personal gain"
+         ],
+         [
+          "Integrity",
+          "Moral uprightness; avoid conflict of interest"
+         ],
+         [
+          "Objectivity",
+          "Merit and evidence; no bias or favouritism"
+         ],
+         [
+          "Accountability",
+          "Answerable to the public and oversight bodies"
+         ],
+         [
+          "Openness",
+          "Transparent, information accessible unless legally restricted"
+         ],
+         [
+          "Honesty",
+          "Truthful in declarations and dealings"
+         ],
+         [
+          "Leadership",
+          "Exemplify and promote these principles"
+         ]
+        ]
+       }
+      },
+      {
+       "alert": "<b>PYQs printed here:</b> UPSC 2017 (250 words): CS designed for neutrality and effectiveness, now lacking; drastic reforms? UPSC 2020 (150 words): institutional quality drives economic performance; suggest CS reforms to strengthen democracy."
+      }
+     ],
+     "recall": [
+      [
+       "Seven Nolan Principles",
+       "Selflessness, integrity, objectivity, accountability, openness, honesty, leadership."
+      ]
+     ],
+     "traps": [],
+     "quiz": [],
+     "visuals": []
+    },
+    {
+     "id": 9,
+     "title": "Challenges to Reform; Mission Karmayogi; Aarambh",
+     "pages": "M1 p.19-20",
+     "priority": "M",
+     "pyqs": "2020",
+     "lens": {
+      "prelims": [
+       "NPCSCB = Mission Karmayogi, launched 2020; rules-based to roles-based",
+       "Components: iGOT Karmayogi, competency frameworks, performance management, SPV Karmayogi Bharat, Capacity Building Commission",
+       "Aarambh: Common Foundation Course; Commitment, Character, Conduct"
+      ],
+      "mains": [
+       "Six challenges to civil service reform and way forward",
+       "Mission Karmayogi: objectives, components, implementation challenges"
+      ],
+      "close": "Karmayogi turns reform from episodic exercise into a continuous learning system."
+     },
+     "simple": [
+      "Reforms stall for reasons the handout lists: weak political will, thin management capacity, civil servants' own resistance, no safety nets, poor fit with local context and weak communication.",
+      "The remedy: cross-party commitment, reform units, incentives for civil servants, safety nets, contextualising and ongoing consultation.",
+      "**Mission Karmayogi (2020)** moves HR management from **rules-based to roles-based**: five parts: iGOT Karmayogi (online training), competency frameworks, outcome-based performance management, SPV Karmayogi Bharat and the Capacity Building Commission.",
+      "Hurdles: integrating lateral entrants, shifting mindset from compliance to problem-solving, Centre-State coordination and digital reach in remote areas.",
+      "**Aarambh**: a Common Foundation Course for probationers stressing Commitment, Character and Conduct."
+     ],
+     "terms": [
+      [
+       "iGOT Karmayogi",
+       "Integrated Government Online Training: on-demand, role-specific modules."
+      ],
+      [
+       "SPV Karmayogi Bharat",
+       "A not-for-profit company for content, partnerships and implementation support."
+      ]
+     ],
+     "remember": "Karmayogi: Rules to Roles.",
+     "notes": [
+      {
+       "h": "Challenges to reform"
+      },
+      "<b>Political support and will:</b> priorities change; leaders resist reforms that reduce influence over transfers.",
+      "<b>Management capacity:</b> weak project management; <b>fragmented, piecemeal</b> efforts.",
+      "<b>Civil servants themselves:</b> resistance (job security, uncertainty); lack of incentives.",
+      "<b>Safety nets:</b> restructuring insecurity; need compensation, retraining, career counselling.",
+      "<b>Alignment with context:</b> a reform successful in one state may not suit another; institutional culture resists.",
+      "<b>Communication and stakeholder engagement</b> in design and implementation.",
+      "<b>Way forward:</b> consistent, cross-party political commitment; implementation capacity (reform units); engage civil servants with incentives; safety nets; contextualise; institutionalise consultation and feedback.",
+      {
+       "h": "Mission Karmayogi (NPCSCB), 2020"
+      },
+      "Shift from <b>rules-based to roles-based</b> HR management. <b>Objectives:</b> future-ready workforce; competency-driven specialist governance; align with <b>Viksit Bharat 2047</b>; performance-based appraisal over tenure-based promotion.",
+      {
+       "tbl": {
+        "head": [
+         "Component",
+         "What it does"
+        ],
+        "rows": [
+         [
+          "iGOT Karmayogi",
+          "Integrated Government Online Training: on-demand, role-specific modules; blended learning; AI-driven personalisation; unified across services, ministries, states"
+         ],
+         [
+          "Competency frameworks",
+          "Competency dictionaries (behavioural, functional, domain); replace one-size-fits-all"
+         ],
+         [
+          "Performance management",
+          "Outcome-based; beyond Annual Confidential Reports to real-time feedback; links to promotion, posting, recognition"
+         ],
+         [
+          "SPV: Karmayogi Bharat",
+          "Not-for-profit company; content, partnerships, implementation support"
+         ],
+         [
+          "Capacity Building Commission",
+          "Standards, alignment, monitoring, quality assurance"
+         ]
+        ]
+       }
+      },
+      "<b>Implementation challenges:</b> integrating lateral entrants (culture gap, unified frameworks); mindset shift from compliance to problem-solving; Centre-State coordination (state services have distinct needs); digital infrastructure and resources, especially in remote areas.",
+      "<b>Significance:</b> efficiency, transparency, accountability; responsive governance; rule-based, control-focused to role-based, citizen-first.",
+      "<b>Aarambh Initiative:</b> Common Foundation Course for probationers; stresses <b>Commitment, Character and Conduct</b>."
+     ],
+     "recall": [
+      [
+       "Mission Karmayogi in one line",
+       "2020 NPCSCB: rules-based to roles-based; iGOT, competency frameworks, performance management, Karmayogi Bharat, Capacity Building Commission."
+      ],
+      [
+       "Aarambh Initiative",
+       "Common Foundation Course; Commitment, Character and Conduct."
+      ]
+     ],
+     "traps": [],
+     "quiz": [],
+     "visuals": []
+    },
+    {
+     "id": 10,
+     "title": "Transparency and NDSAP",
+     "pages": "M1 p.21-23",
+     "priority": "L",
+     "pyqs": "none quoted in the material",
+     "lens": {
+      "prelims": [
+       "OECD and UNESCAP definitions; three metaphors of transparency",
+       "NDSAP 2012: DST nodal; OGD platform; negative list considers RTI Sections 8 and 9, IT Act 2000, privacy",
+       "Best practices: MGNREGA social audits (Rajasthan), Citizen Report Cards (Bengaluru), PET Uganda, EDUCO El Salvador",
+       "CIC (2013): political parties under RTI"
+      ],
+      "mains": [
+       "Objectives of transparency; transparency-accountability link",
+       "Challenges due to transparency",
+       "Transparency vs privacy; digital divide limits"
+      ],
+      "close": "Transparency is the precursor to accountability; privacy and inclusion are its limits."
+     },
+     "simple": [
+      "**Transparency** means decisions, rules and information are open and reachable by the people affected. OECD stresses comprehensible, accessible, timely; UNESCAP stresses rule-following and free access.",
+      "It acts as public value (against corruption), open decision-making and a tool of good governance. It comes before accountability, integrity and probity.",
+      "Tools: RTI, e-governance, Citizens' Charters, social audits, public expenditure tracking, Citizen Report Cards and public hearings.",
+      "Costs: administrative burden from non-serious applications, misuse, privacy and confidentiality worries, and digital exclusion.",
+      "**NDSAP 2012** shares non-sensitive government data in machine-readable form on the OGD Platform; DST is the nodal department; a negative list protects sensitive data."
+     ],
+     "terms": [
+      [
+       "NDSAP",
+       "The 2012 data-sharing policy; DST is the nodal department."
+      ],
+      [
+       "Negative list",
+       "Data that cannot be shared, guided by RTI Sections 8-9, the IT Act and privacy."
+      ]
+     ],
+     "remember": "Transparency first, then accountability.",
+     "notes": [
+      "<b>OECD:</b> an environment where objectives, frameworks, decisions and rationale are provided in a comprehensible, accessible, timely manner. <b>UNESCAP:</b> decisions and enforcement follow rules; information freely and directly accessible to those affected.",
+      "People have the right to know; criteria, processes and systems are openly known (example: eligibility, benefits and conditions under the Skill India Mission).",
+      {
+       "h": "Three metaphors"
+      },
+      "<b>Public value</b> (counter corruption); <b>open decision-making</b> (balancing secrecy and privacy); <b>tool of good governance</b> (with accountability, efficiency, effectiveness).",
+      "Other readings: Tandon (2002); Transparency International (the mechanisms and processes behind facts and figures); open government; public scrutiny.",
+      {
+       "h": "Objectives"
+      },
+      "Accountability; combating corruption (TI Global Corruption Report 2003); access to entitlements; effective service delivery; informed citizens; democratic participation; public trust.",
+      "Transparency is a <b>precursor to accountability, integrity and probity</b>. Mechanisms: RTI, e-governance, Citizens' Charters.",
+      "<b>Social accountability tools:</b> social audits (MGNREGA), public expenditure tracking, Citizen Report Cards, public hearings.",
+      "<b>E-governance</b> streamlines processes and reduces discretion but faces digital divide, privacy, cybersecurity and low literacy.",
+      "<b>Challenges due to transparency:</b> administrative burden from non-serious applications; misuse by anti-social elements; questionable authenticity; wrong interpretation; privacy and confidentiality.",
+      "<b>Key measures:</b> RTI Act 2005, NDSAP 2012, Citizens' Charters, e-governance, CPGRAMS.",
+      {
+       "tbl": {
+        "head": [
+         "Best practice",
+         "Impact"
+        ],
+        "rows": [
+         [
+          "Social audits in MGNREGA, Rajasthan model",
+          "Villagers audited works, found ghost beneficiaries and wage leakages"
+         ],
+         [
+          "Citizen Report Cards, Bengaluru",
+          "Feedback on services like electricity and water improved delivery"
+         ],
+         [
+          "Public Expenditure Tracking, Uganda",
+          "Reduced diversion of education grants"
+         ],
+         [
+          "EDUCO, El Salvador",
+          "Community participation in school management improved teacher accountability and outcomes"
+         ]
+        ]
+       }
+      },
+      {
+       "tbl": {
+        "head": [
+         "Committee / report",
+         "Recommendation"
+        ],
+        "rows": [
+         [
+          "2nd ARC, 14th Report",
+          "Mandatory proactive disclosure; e-governance with service delivery; public data portals"
+         ],
+         [
+          "Law Commission 179th and 255th",
+          "Redefine RTI exemptions; clearer guidance on public interest disclosure"
+         ],
+         [
+          "NCRWC",
+          "Replace the Official Secrets Act with more appropriate national security legislation"
+         ],
+         [
+          "CIC (2013)",
+          "Political parties come within RTI; non-compliance persists"
+         ]
+        ]
+       }
+      },
+      {
+       "h": "NDSAP 2012"
+      },
+      "Promotes sharing of non-sensitive government data in machine-readable formats; <b>Open Government Data (OGD) Platform</b>; covers data created or collected with public funds; <b>DST</b> is the nodal department. Principles: openness, flexibility, transparency, data quality, wider access.",
+      "<b>Negative list</b> (non-shareable data): consider <b>Sections 8 and 9 of RTI</b>, <b>IT Act 2000</b> and right to privacy.",
+      "<b>Transparency vs privacy:</b> RTI may clash with the Official Secrets Act, Conduct Rules and privacy; <b>Section 8(2)</b> allows disclosure when public interest outweighs protected interests; Aadhaar and DBT need strong data protection. Marginalised groups may be excluded by digital and language barriers."
+     ],
+     "recall": [
+      [
+       "OECD vs UNESCAP idea of transparency",
+       "OECD: objectives, decisions and rationale given in a comprehensible, accessible, timely way. UNESCAP: decisions follow rules; information freely and directly accessible to those affected."
+      ],
+      [
+       "Three metaphors of transparency",
+       "Public value (counter corruption); open decision-making (secrecy vs privacy); tool of good governance."
+      ],
+      [
+       "NDSAP 2012: nodal department and purpose",
+       "Department of Science and Technology; shares non-sensitive government data in machine-readable form on the OGD Platform."
+      ],
+      [
+       "Social accountability tools named",
+       "Social audits (MGNREGA), public expenditure tracking, Citizen Report Cards, public hearings."
+      ]
+     ],
+     "traps": [],
+     "quiz": [
+      {
+       "q": "Which department is the nodal department for NDSAP 2012?",
+       "o": [
+        "MeitY",
+        "Department of Science and Technology",
+        "DoPT",
+        "NITI Aayog"
+       ],
+       "a": 1
+      }
+     ],
+     "visuals": []
+    },
+    {
+     "id": 11,
+     "title": "Accountability",
+     "pages": "M1 p.24-28",
+     "priority": "M",
+     "pyqs": "2016*",
+     "lens": {
+      "prelims": [
+       "Answerability, enforcement, responsiveness",
+       "Horizontal: CAG, EC, CVC, CIC, ombudsman; vertical: citizens; diagonal: PIL",
+       "CVC: Feb 1964 on Santhanam; statutory 2003",
+       "Lokpal Act 2013 selection committee; Whistle Blowers Protection Act 2014 (no anonymous complaints)",
+       "CPGRAMS, PRAGATI; Social Audit 2.0"
+      ],
+      "mains": [
+       "Types of accountability and mechanisms",
+       "Issues in accountability; new-age challenges",
+       "Need for transparency and accountability"
+      ],
+      "close": "Move from top-down, input-focused control to bottom-up, outcome-focused answerability."
+     },
+     "simple": [
+      "**Responsibility** is the duty to do assigned work; **accountability** is answering for it, with both answerability and enforceability (penalty).",
+      "Six types: managerial (hierarchy), political (to the legislature), judicial, institutional/horizontal (CAG, CBI, CVC), professional (Bar Council, ICAI) and social (RTI, charters, social audits, Lokpal).",
+      "By direction: **horizontal** (state bodies check each other), **vertical** (citizens check the state) and **diagonal** (citizens use horizontal bodies directly, e.g. PIL).",
+      "Need arises from bigger government, delegated legislation, the politics-bureaucracy nexus and corruption. Tools range from ministerial control to New Public Management and Social Audit 2.0, CPGRAMS and PRAGATI.",
+      "New challenges: algorithmic bias, platform governance, PPPs diffusing blame. Solutions: decentralisation, bottom-up accountability and technology with human oversight."
+     ],
+     "terms": [
+      [
+       "Micro-accountability",
+       "Responsiveness to citizens receiving services (World Bank)."
+      ],
+      [
+       "Macro-accountability",
+       "Financial and economic performance (World Bank)."
+      ]
+     ],
+     "remember": "Accountable for what, to whom, through what?",
+     "notes": [
+      "<b>Responsibility</b> = obligation to carry out assigned tasks. <b>Accountability</b> = responsibility operating hierarchically; answerability for one's actions. Two aspects: <b>answerability</b> (account) and <b>enforceability</b> (penalty).",
+      "<b>Components:</b> answerability, enforcement, responsiveness. <b>Values:</b> integrity, impartiality, objectivity, empathy and compassion. <b>Dimensions:</b> controlling political power, informational, argumentative, human.",
+      "<b>Objectives:</b> control abuse; performance standards; continuous improvement; link administration and democracy; institutional introspection.",
+      {
+       "tbl": {
+        "head": [
+         "Type",
+         "Meaning"
+        ],
+        "rows": [
+         [
+          "Managerial",
+          "Within the hierarchy: superiors and subordinates"
+         ],
+         [
+          "Political",
+          "Civil servants to political executive, who answer to the legislature"
+         ],
+         [
+          "Judicial",
+          "For unconstitutional or illegal actions"
+         ],
+         [
+          "Institutional / Horizontal",
+          "Enforced by external institutions: CAG, CBI, CVC"
+         ],
+         [
+          "Professional",
+          "Codes enforced by bodies like the Bar Council or ICAI"
+         ],
+         [
+          "Social",
+          "Citizens via RTI, Citizens' Charters, social audits and Lokpal"
+         ]
+        ]
+       }
+      },
+      "<b>Accountable to:</b> hierarchy, legislature, judiciary, citizens and civil society, media. <b>Intra-organisational</b> (within) vs <b>inter/extra-organisational</b> (outside).",
+      {
+       "tbl": {
+        "head": [
+         "Form",
+         "Detail"
+        ],
+        "rows": [
+         [
+          "Horizontal",
+          "State institutions that seek explanations and impose penalties: CAG, Election Commission, CVC, CIC, ombudsman"
+         ],
+         [
+          "Vertical",
+          "Citizens and civil society: elections, lobbying, budgeting participation, Citizen Report Cards, social audits"
+         ],
+         [
+          "Diagonal",
+          "Citizens engage horizontal institutions directly: <b>PIL</b>"
+         ],
+         [
+          "Financial / fiscal",
+          "One of the oldest; scrutiny of accounts; legislature's power over the public purse. World Bank: accounting system, external audit, follow-up on findings"
+         ],
+         [
+          "Process",
+          "How agencies perform tasks; tenders, contracts"
+         ],
+         [
+          "Programme",
+          "Results and effectiveness, e.g. beneficiaries identified correctly and living standards improved"
+         ],
+         [
+          "Legal",
+          "Judicial review and court action"
+         ],
+         [
+          "Professional",
+          "Doctors, engineers: professional codes and public interest"
+         ],
+         [
+          "Moral",
+          "Beyond obedience to rules; moral government"
+         ]
+        ]
+       }
+      },
+      "<b>World Bank:</b> <b>micro-accountability</b> (responsiveness to citizens receiving services) and <b>macro-accountability</b> (financial and economic performance).",
+      "<b>Need:</b> expanding government role; delegated legislation; politics-bureaucracy nexus; corruption; limited popular participation.",
+      "<b>How to ensure:</b> traditional (ministerial control, debates, committees, media, ombudsman) and New Public Management (efficiency, outcomes, competition, value for money). Three questions: accountability for what, to whom, through what.",
+      {
+       "h": "Mechanisms"
+      },
+      "<b>CVC:</b> set up <b>Feb 1964</b> on the <b>Santhanam Committee</b>; statutory under the <b>CVC Act 2003</b>. <b>Lokpal and Lokayuktas Act 2013:</b> Selection Committee: PM, Lok Sabha Speaker, Leader of Opposition (LS), CJI or nominated SC judge, eminent jurist.",
+      "<b>Whistle Blowers Protection Act 2014:</b> mechanism for complaints on corruption or wilful misuse of power; inquiry; safeguards against victimisation; <b>anonymous complaints not entertained</b>. <b>CAG:</b> 'guardian of the public purse'; reports go to Parliament and the PAC. <b>Social audit</b>, RTI, Citizens' Charters.",
+      "<b>Modern mechanisms:</b> performance audits and outcome budgeting; <b>Social Audit 2.0</b> (digital dashboards); ethics committees; <b>data-driven vigilance cells</b>; <b>CPGRAMS and PRAGATI</b>.",
+      "<b>Issues:</b> unclear relationships; size of government; expanded state activity; secrecy; excess focus on inputs; top-down enforcement; control of bureaucratic power.",
+      "<b>New-age challenges:</b> algorithmic governance and AI bias; platform governance; decentralised social media; <b>PPPs diffusing accountability</b> (blame-shifting).",
+      "<b>Solutions:</b> decentralisation (World Bank); resilient mechanisms; compliance; <b>bottom-up</b> accountability; adapt to digitalisation; value-driven responsibility; ethical capacity building; internalise accountability beyond fear of sanction; technology with human oversight."
+     ],
+     "recall": [
+      [
+       "Three components of accountability",
+       "Answerability, enforcement, responsiveness."
+      ],
+      [
+       "Horizontal vs vertical vs diagonal accountability",
+       "Horizontal: state institutions (CAG, EC, CVC, CIC). Vertical: citizens. Diagonal: citizens engage institutions directly (PIL)."
+      ]
+     ],
+     "traps": [
+      {
+       "k": "Source discrepancy",
+       "t": "Horizontal accountability lists differ",
+       "d": "Module 1 names CAG, CBI and CVC in one table and CAG, EC, CVC, CIC, ombudsman in another.",
+       "r": "Rule: name CAG and CVC always; add the rest as asked."
+      }
+     ],
+     "quiz": [],
+     "visuals": []
+    },
+    {
+     "id": 12,
+     "title": "Citizen's Charter and Sevottam",
+     "pages": "M1 p.28-31",
+     "priority": "H",
+     "pyqs": "2024, 2018, 2013",
+     "lens": {
+      "prelims": [
+       "Launched 1991 by John Major government (UK); creates no new rights",
+       "Seven elements of an Indian charter",
+       "By end 2011: 131 central, 729 state charters; goicharters.nic.in",
+       "Sevottam: 2nd ARC, launched 2006; pilots 2009-10; IS 15700:2005 (BIS); three modules; seven steps",
+       "UK Charter Mark scheme"
+      ],
+      "mains": [
+       "Problems with the Indian programme and suggestions",
+       "ARC-II recommendations",
+       "Sevottam: significance, challenges, way forward"
+      ],
+      "close": "Commit only to what you can deliver, say who is accountable, and measure it through someone outside."
+     },
+     "simple": [
+      "A **Citizen's Charter** is an organisation's public promise on quality and time of service. It started in 1991 under the John Major government (UK). It creates **no new rights**; it enforces existing ones.",
+      "The Indian charter lists vision, services, clients, grievance machinery, what clients must bring and compensation. By 2011 there were 131 central and 729 state charters.",
+      "Problems: bureaucratic mindset, little consultation, no penalties, low awareness, jargon, same format for all. Fixes: separate charters per service, wide consultation, outside monitoring, incentives, simple language.",
+      "**Sevottam (Seva + Uttam)** is the quality framework from the 2nd ARC (2006), certified by IS 15700:2005. Three modules: charter implementation, grievance redress, service-delivery capability.",
+      "Seven steps: define services and clients; set standards; build capability; perform; monitor; evaluate impact; improve continuously."
+     ],
+     "terms": [
+      [
+       "DARPG",
+       "Department that hand-holds departments in making their first charters."
+      ],
+      [
+       "IS 15700:2005",
+       "BIS standard that certifies the Sevottam symbol."
+      ]
+     ],
+     "remember": "Charter = promise; Sevottam = quality system.",
+     "notes": [
+      "<b>Launched in 1991 by the John Major government (UK).</b> A declaration of an organisation's commitment to clients on <b>qualitative and temporal entitlements</b>. It <b>does not create new rights</b>; it seeks enforcement of existing rights and includes grievance redress.",
+      {
+       "h": "Purposes served"
+      },
+      "Clarifies expectations; makes government responsive; service orientation over master mindset; <b>people's participation</b> via consultation; <b>strengthens accountability</b> (quality standards and timelines let performers be distinguished); signals pro-active good governance; improves image and credibility; empowerment and democracy; instrument for development goals.",
+      {
+       "h": "Elements of the Indian programme"
+      },
+      "Vision and mission; details of business transacted; details of clients served; services to each client group; <b>grievance redressal machinery and how to access it</b>; expectations from clients (documents, fees); <b>compensation</b> details. Regular internal and external monitoring. By <b>2011 end: 131 central charters, 729 state charters</b>. Website <b>goicharters.nic.in</b>.",
+      {
+       "h": "Problems"
+      },
+      "Bureaucratic mindset; limited consultation (a <b>manager's charter</b>); <b>no penal provisions</b>; low awareness; standards too lax or too strict; too detailed or too brief; names and addresses of redressal functionaries missing; no incentives (UK <b>Charter Mark</b>; DARPG hired an outside agency); brochures and manuals treated as charters (DARPG now directs separate lists); needs of senior citizens and the disabled ignored; poor review and updating; inadequate devolution to street-level staff; technical jargon, no vernacular; same format for every service.",
+      {
+       "h": "Suggestions"
+      },
+      "DARPG hand-holding for first charters; awareness (credible NGOs); attitudinal change; mandatory involvement of user groups and staff; built-in monitoring, preferably by an outside agency; prioritise services; incentivise at organisation and individual level; showcase best practices; simple language; <b>5-year master plan</b> with budget.",
+      {
+       "h": "ARC-II recommendations"
+      },
+      "One size does not fit all (separate charter per unit and service); widest consultation; <b>commit to what you can deliver</b>; reform internal processes; appropriate redressal; periodic evaluation with end-user feedback; <b>hold officers accountable for results</b> (penal provisions).",
+      {
+       "h": "Sevottam (Seva + Uttam)"
+      },
+      "Conceptualised by the <b>2nd ARC</b>, <b>launched 2006</b>; piloted in ten departments (<b>2009-10</b>); <b>IS 15700:2005</b> by the Bureau of Indian Standards certifies the Sevottam symbol.",
+      {
+       "tbl": {
+        "head": [
+         "Core module",
+         "Focus"
+        ],
+        "rows": [
+         [
+          "Citizen Charter implementation",
+          "Feedback shapes service norms"
+         ],
+         [
+          "Public grievance redressal",
+          "Responsive, empathetic redress, regardless of outcome"
+         ],
+         [
+          "Service delivery capabilities",
+          "Internal processes, resources, workforce"
+         ]
+        ]
+       }
+      },
+      "<b>Seven steps:</b> define services and identify clients; set standards and norms; develop organisational capability; perform to achieve standards; monitor performance; evaluate impact; continuous improvement.",
+      "<b>Significance:</b> structured quality management (example: 2025 DARPG National Workshop in Bhopal); citizen-centric culture; sustainable reform; credible self-assessment. <b>Challenges:</b> seen as procedural compliance; fragmented adoption; weak digital integration. <b>Way forward:</b> capacity building and training; link with CPGRAMS, MyGov and dashboards; third-party audits and feedback loops."
+     ],
+     "recall": [
+      [
+       "Who launched Citizen's Charter and when?",
+       "John Major government (UK), 1991. It creates no new rights."
+      ],
+      [
+       "Sevottam: three modules",
+       "Citizen Charter implementation; public grievance redressal; service delivery capabilities."
+      ]
+     ],
+     "traps": [
+      {
+       "k": "Concept trap",
+       "t": "Citizen's Charter and rights",
+       "d": "A Charter creates no new rights; it enforces existing ones. Launched in the UK in 1991. Sevottam: 2nd ARC concept, launched 2006, IS 15700:2005, pilots 2009-10.",
+       "r": "Rule: Charter = promise; right = already existing."
+      }
+     ],
+     "quiz": [],
+     "visuals": []
+    },
+    {
+     "id": 13,
+     "title": "RTI Act 2005 and the 2019 Amendment",
+     "pages": "M1 p.31-35",
+     "priority": "M",
+     "pyqs": "2020",
+     "lens": {
+      "prelims": [
+       "Sweden first RTI (1766); USA second (1966); Shourie Group 1997; FOI Bill 2002 not notified; Tamil Nadu first state 1997",
+       "Penalty Rs 250/day up to Rs 25,000",
+       "16 types of information within 120 days; PIOs within 100 days; transfer in 5 days; third party notice 10 days; 30 days to respond",
+       "Copyright is the only absolute exemption; Act is retrospective; exempt categories released after 20 years",
+       "CIC (2013) on political parties; BCCI public authority (CIC, 2018); judiciary covered (SC, 2019)"
+      ],
+      "mains": [
+       "RTI 2019 amendment: autonomy of Information Commissions (negative and positive)",
+       "Public authority disputes: judiciary, political parties, PPP, BCCI",
+       "Rights conferred on citizens"
+      ],
+      "close": "Maximum disclosure, minimal exemption: the amendment tests whether independence survives executive control."
+     },
+     "simple": [
+      "Sweden had the first RTI law (1766), the USA second (1966). In India the right is read into **Articles 19(1)(a), 21, 39(b) and 39(c)**; cases: Rajnarain 1975, S.P. Gupta 1982.",
+      "Demand grew from advocacy and from the **MKSS** in Janawad, Rajasthan ('Humara Paisa, Humara Hisab'). Formula: Monopoly + Discretion - Transparency = Corruption.",
+      "Path: Tamil Nadu 1997 -> Freedom of Information Bill 2002 (feeble) -> RTI Act 2005 (drafted by the National Advisory Council).",
+      "Mechanics: anyone can ask, no reason needed; public authorities publish 16 types of information within 120 days and appoint PIOs within 100 days; misdirected requests transfer within 5 days.",
+      "**Section 8** lists exemptions (security, foreign relations, trade secrets, Cabinet papers and so on) but a public-interest override applies. Copyright of a person other than the State is the only absolute exemption.",
+      "**2019 Amendment**: the Centre now decides tenure and pay of information commissioners; they are statutory, not constitutional."
+     ],
+     "terms": [
+      [
+       "PIO",
+       "Public Information Officer, who receives and answers requests."
+      ],
+      [
+       "Suo motu disclosure",
+       "Information a public authority must publish on its own."
+      ],
+      [
+       "Second Schedule",
+       "Agencies outside RTI, though corruption and human-rights information must be given."
+      ]
+     ],
+     "remember": "RTI numbers: 16 types, 120 days, 100 days, 5 days, 10 days (third party), 20 years (release), Rs 250/day up to Rs 25,000.",
+     "notes": [
+      "<b>Sweden: first RTI in 1766; USA second in 1966.</b> Sweden's ombudsman: 1809; India's central ombudsman: 2013 (per this module).",
+      "<b>Constitutional locus:</b> not categorically codified; Preamble ideals support it; <b>SC read it into Art 19(1)(a), Art 21, Art 39(b) and 39(c)</b> ('data is the new oil'). Reference cases: <b>Rajnarain 1975; S.P. Gupta 1982</b>. James Madison (American statesman, 4th US President): 'popular Government, without popular information, or the means of acquiring it, is but a Prologue to a Farce or a Tragedy; or, perhaps, both'.",
+      {
+       "h": "Why demand grew"
+      },
+      "Spread of democracy; advocacy (World Bank, IMF, Transparency International, <b>NCPRI 1996</b> led by <b>Aruna Roy</b>, PUCL, ADR). <b>MKSS</b> (Mazdoor Kisan Shakti Sangathan) at <b>Janawad, Rajasthan</b>: slogan <b>'Humara Paisa, Humara Hisab'</b>.",
+      "<b>Benefits:</b> <b>Monopoly + Discretion - Transparency = Corruption</b>; corrects power asymmetry; realises other rights (e.g. Food Security entitlements); citizen participation; corrects trust deficit (information within <b>30 days</b>); better record keeping and decisions; shields civil servants from unwarranted pressure (documentary proof).",
+      {
+       "h": "RTI in India"
+      },
+      "1997 working group under <b>H.D. Shourie</b> produced the <b>Freedom of Information Bill, 2002</b> (enacted, not implemented/notified; seen as feeble). States acted first: <b>Tamil Nadu 1997</b>. The 2005 bill was prepared by the <b>National Advisory Council</b>, not bureaucrats.",
+      "<b>Criteria for a sound regime:</b> wide access (minimal fees, free for BPL); <b>penalties Rs 250 a day up to Rs 25,000</b> plus disciplinary action; independent appeal (CIC and SICs); maximum disclosure, minimal exemption.",
+      "<b>Preamble philosophy:</b> transparency, check corruption, accountability, empowerment, democracy, balanced with genuine confidentiality and efficiency.",
+      {
+       "h": "Main features"
+      },
+      "All citizens have the right; <b>broad definition of information</b> (records, memos, e-mail, opinions, advice, press releases, circulars, orders, logbooks, contracts, reports, samples, models, electronic data (to be had as diskettes, floppies, tapes, video cassettes or any other electronic mode, or as printouts, where stored in a computer or other device), private-body information held by a public authority). Right includes inspecting work, notes and certified copies, samples, and electronic formats.",
+      "<b>Public authority:</b> bodies under the Constitution, Parliament or state law, or by notification; bodies owned, controlled or <b>substantially financed</b>; NGOs substantially financed (term 'substantially' <b>not defined</b>).",
+      {
+       "tbl": {
+        "head": [
+         "Contested body",
+         "What the handout says"
+        ],
+        "rows": [
+         [
+          "President / Governors",
+          "Long-pending issue whether covered"
+         ],
+         [
+          "State federations",
+          "Substantially financed; many judgments brought them in. Law Commission: BCCI public authority; <b>CIC affirmed in 2018</b>"
+         ],
+         [
+          "PPP projects",
+          "DoPT circular 2013: make information public. DIAL: CIC (2010) held public authority; Delhi HC stayed"
+         ],
+         [
+          "Judiciary",
+          "2009 Subhash Agrawal petition on Judges' 1997 resolution; SC said apex court not covered; CIC ruled against; Delhi HC sided with CIC; <b>SC in 2019 held the judiciary by and large covered</b>"
+         ],
+         [
+          "Political parties",
+          "<b>CIC 2013:</b> recognised parties are public authorities (IT exemptions, free airtime, subsidised land). Not stayed or nullified by courts; parties still do not comply, citing sub judice"
+         ]
+        ]
+       }
+      },
+      "Handout flags problematic SC observations: the Court held that information with the RBI about scheduled commercial banks is subject to disclosure, yet in 2019 said the RBI need not disclose banks' risk-evaluation or inspection reports; RTI has created 'fear psychosis and paralysis'; civil servants' personal status, professional records, assets and liabilities and interviewers' names beyond RTI. Objections to parties' coverage: free associations, no direct tax money, no infrastructure, may be used against each other.",
+      {
+       "h": "Proactive disclosure and procedure"
+      },
+      "Catalogued, indexed, computerised records; publish <b>16 types of information within 120 days</b> and update yearly; suo motu disclosure; designate <b>PIOs within 100 days</b>; <b>transfer misdirected requests within 5 days</b>; third-party information after notice and hearing (<b>10 days</b>).",
+      {
+       "h": "Exemptions (Section 8)"
+      },
+      "Sovereignty, security, strategic, scientific, economic interests, foreign relations, incitement; court-forbidden or contempt; breach of legislative privilege; commercial confidence, trade secrets, IP (unless larger public interest); fiduciary relationship; foreign government confidences; endangering safety or identifying sources; impeding investigation; <b>Cabinet papers</b> (decisions, reasons and material to be made public after the matter is complete); personal information unrelated to public activity.",
+      "<b>Public interest override:</b> access allowed where disclosure outweighs the harm, notwithstanding the Official Secrets Act 1923. <b>Copyright of a person other than the State is the only absolute exemption.</b> Information that cannot be denied to Parliament cannot be denied to citizens.",
+      "<b>Second Schedule:</b> intelligence and security agencies are outside the Act, but <b>corruption and human rights violation</b> information must be given (human rights only with the Information Commission's approval). CBI and NIA were added by executive order.",
+      "Act overrides the OSA; <b>courts barred</b> from suits other than appeals under the Act; <b>wholly retrospective</b>; exempted information released after <b>20 years</b> (except Cabinet decisions, legislative privilege, and sovereignty, security, strategic, scientific, economic, foreign relations and incitement categories).",
+      {
+       "h": "Rights conferred"
+      },
+      "Choose the medium and the language (English, Hindi, local); help in writing; <b>no reason need be given</b>; immediate notice of transfer; assistance for disabled; <b>fees waived for BPL</b> and <b>if time limits are missed</b>; reasons for rejection, appeal period and appellate authority; complaint to CIC/SIC for no PIO/APIO access, refusal, no response in time, unreasonable fee, incomplete, misleading or false information.",
+      {
+       "h": "RTI Amendment Act, 2019"
+      },
+      {
+       "tbl": {
+        "head": [
+         "Key amendment",
+         "Effect"
+        ],
+        "rows": [
+         [
+          "Tenure and appointment",
+          "Centre decides CIC and ICs' tenure; five-year term removed"
+         ],
+         [
+          "Salary and service conditions",
+          "Centre fixes; delinked from CEC and ECs"
+         ],
+         [
+          "Status",
+          "CIC clarified as statutory, not constitutional"
+         ]
+        ]
+       }
+      },
+      "<b>Negative:</b> executive overreach; public distrust; federal dilution (SICs). <b>Positive:</b> administrative flexibility; fiscal discipline; policy alignment. <b>Reflection:</b> balances efficiency with independence but risks executive overreach; impact depends on how responsibly the government exercises the powers."
+     ],
+     "recall": [
+      [
+       "First country with RTI",
+       "Sweden, 1766 (USA second, 1966)."
+      ],
+      [
+       "RTI read into which articles?",
+       "19(1)(a), 21, 39(b), 39(c). Cases: Rajnarain 1975; S.P. Gupta 1982."
+      ],
+      [
+       "MKSS slogan and place",
+       "'Humara Paisa, Humara Hisab'; Janawad, Rajasthan."
+      ],
+      [
+       "Corruption formula in RTI section",
+       "Monopoly + Discretion - Transparency = Corruption."
+      ],
+      [
+       "Penalty for denying information",
+       "Rs 250 a day up to Rs 25,000, plus disciplinary action."
+      ],
+      [
+       "When do exempted records become releasable?",
+       "After 20 years, except Cabinet, legislative privilege and sovereignty/security-type categories."
+      ]
+     ],
+     "traps": [
+      {
+       "k": "Prelims trap",
+       "t": "RTI numbers",
+       "d": "5 days: transfer; 10 days: third-party notice; 30 days: reply; 100 days: designate PIOs; 120 days: publish 16 types; 20 years: release exempted records; Rs 250 a day up to Rs 25,000.",
+       "r": "Rule: write the unit with each number."
+      },
+      {
+       "k": "Concept trap",
+       "t": "The only absolute RTI exemption",
+       "d": "Copyright held by a person other than the State is the only absolute exemption. Sec 8(2) lets public interest override the rest; the Second Schedule agencies still owe information on corruption and human rights.",
+       "r": "Rule: 'absolute' appears only with copyright."
+      },
+      {
+       "k": "Prelims trap",
+       "t": "First country and first state",
+       "d": "Sweden 1766 (RTI) and 1809 (ombudsman); USA second (1966); Tamil Nadu first state RTI law (1997); Maharashtra first Lokayukta (1971).",
+       "r": "Rule: Sweden twice, USA second."
+      }
+     ],
+     "quiz": [
+      {
+       "q": "Under the RTI Act 2005, the only absolute exemption is:",
+       "o": [
+        "Cabinet papers",
+        "Information affecting national security",
+        "Infringement of copyright subsisting in a person other than the State",
+        "Trade secrets"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Which pairing from the RTI Act is correct?",
+       "o": [
+        "Transfer of a misdirected request: within 5 days",
+        "Notice to a third party: 30 days",
+        "Designate PIOs: within 120 days",
+        "Publish 16 types of information: within 100 days"
+       ],
+       "a": 0
+      }
+     ],
+     "visuals": []
+    },
+    {
+     "id": 14,
+     "title": "CIC, RTI Issues, Impact and 2nd ARC",
+     "pages": "M1 p.36-38",
+     "priority": "M",
+     "pyqs": "2020",
+     "lens": {
+      "prelims": [
+       "CIC + up to 10 ICs; selection: PM, LoP (LS), Union Cabinet Minister nominated by PM",
+       "Notified tenure: 3 years or age 65, no reappointment; IC-to-CIC total max 5 years",
+       "Salary: CIC Rs 2,50,000, IC Rs 2,25,000 per month",
+       "95% penalty gap (Satark Nagrik Sangathan); 2.55 lakh pendency in 26 ICs; avg disposal 1 year 11 months; 21 of 29 ICs filed no report 2019-20",
+       "2nd ARC: 1% of flagship funds; 4 regional CIC offices; 50% operating cost for 3 yrs or Rs 1 crore = substantially financed"
+      ],
+      "mains": [
+       "Issues and challenges in RTI implementation",
+       "Impact of RTI",
+       "2nd ARC recommendations: OSA repeal, classification, selection of ICs"
+      ],
+      "close": "RTI is a means; access is the end, and the gap between them is capacity, will and records."
+     },
+     "simple": [
+      "The **Central Information Commission** has one Chief Information Commissioner and up to ten Information Commissioners, appointed by the President on a committee of the PM, the Leader of Opposition and a Union Cabinet Minister.",
+      "Under the 2019 Rules: tenure 3 years or age 65, no reappointment; CIC Rs 2,50,000, IC Rs 2,25,000 a month; salary delinked from CEC/EC.",
+      "Problems: no specific budget, low awareness, penalties rarely used (not imposed in 95% of due cases), pendency (2.55 lakh in 26 ICs; average disposal 1 year 11 months), missing annual reports, vacancies.",
+      "Impact: grievance redressal, exposure of corruption and wasteful spending, a national movement behind Right to Food and Education.",
+      "2nd ARC fixes: repeal the Official Secrets Act, oath of transparency, CJI on the selection committee, regional CIC offices, 1% of flagship funds for RTI, awareness through NGOs."
+     ],
+     "terms": [
+      [
+       "Pendency",
+       "Cases or requests waiting for disposal."
+      ],
+      [
+       "Classification of secrets",
+       "Top Secret, Secret, Confidential, Restricted by damage on exposure."
+      ]
+     ],
+     "remember": "CIC term: 3 years or 65, whichever is earlier.",
+     "notes": [
+      {
+       "h": "Central Information Commission"
+      },
+      "One <b>Chief Information Commissioner</b> and up to <b>ten Information Commissioners</b>; appointed by the <b>President</b> on a committee of the <b>PM (Chair), Leader of Opposition (LS), a Union Cabinet Minister nominated by PM</b>. Eminent persons from law, science, social service, journalism, mass media, public administration. No office of profit, party link or business.",
+      "<b>Tenure (RTI Rules 2019):</b> notified by the Centre: <b>3 years or age 65</b>, whichever is earlier; <b>no reappointment</b>; an IC elevated as CIC cannot exceed <b>5 years in total</b>.",
+      "<b>Salary (Rules 2019):</b> delinked from CEC/EC parity. <b>CIC Rs 2,50,000 per month; IC Rs 2,25,000.</b>",
+      "<b>Removal:</b> proved misbehaviour or incapacity after a <b>Supreme Court inquiry</b> (if referred by the President). Without SC inquiry: insolvency, conviction involving moral turpitude, paid employment, unfitness of body or mind, prejudicial financial interest.",
+      {
+       "h": "Issues and challenges"
+      },
+      "Gap between RTI as a means and access as an end; bureaucratic mindset; <b>no specific budget</b> (2nd ARC: 1% of flagship funds); absence of political will; limited awareness (APWC study: 12% of women, 26% of men, 13% rural, 33% urban); vague terms; ICs dominated by <b>retired bureaucrats</b>.",
+      "<b>Penal provisions rarely applied:</b> Satark Nagrik Sangathan: penalty not imposed in <b>95%</b> of cases where due. No organic CIC-SIC relationship. PIO duties added without incentive; juniors appointed as PIOs; poor record keeping; <b>abuse of Schedule II</b>; IC orders not implemented (no contempt powers).",
+      "<b>Pendency:</b> an estimated <b>40-60 lakh</b> RTI requests a year; <b>2.55 lakh</b> pending in 26 ICs; vacancies; average disposal <b>1 year 11 months</b>; COVID worsened it. <b>21 of 29 ICs</b> had not submitted the 2019-20 report; AP and Telangana SICs none since 2017; Odisha since 2015-16. Waning interest of media and activists.",
+      {
+       "h": "Impact"
+      },
+      "A grievance redressal tool as well; exposed corruption, wasteful expenditure, scams, false narratives, recruitment results and marks; rural access largely through NGOs; became a national movement aiding the Right to Food and Education; more successful for <b>personally relevant</b> information than for <b>controversial public-interest</b> information.",
+      {
+       "h": "2nd ARC recommendations"
+      },
+      "<b>Repeal the Official Secrets Act</b>; replace oath of secrecy with <b>oath of transparency</b>; periodic review of the Second Schedule.",
+      {
+       "tbl": {
+        "head": [
+         "Classification",
+         "Damage on exposure"
+        ],
+        "rows": [
+         [
+          "Top Secret",
+          "Exceptionally grave"
+         ],
+         [
+          "Secret",
+          "Serious"
+         ],
+         [
+          "Confidential",
+          "Simple"
+         ],
+         [
+          "Restricted",
+          "Official use only"
+         ]
+        ]
+       }
+      },
+      "Norms set by the Ministry of Home and not public. <b>Public Records Act 1993:</b> 5-year review of Top Secret, Secret, Confidential items for declassification.",
+      "<b>Selection:</b> committee to include the <b>CJI instead of the Union Cabinet Minister</b>; at least half of ICs from non-civil-service background.",
+      "<b>Access:</b> 4 regional CIC offices; nodal PIO where more than one PIO; PIOs at least <b>Deputy Secretary or Director</b> level in the central secretariat; flexible payment (stamps, postal orders); district single-window agency; free print suo motu disclosure; independent public records office; <b>1% of flagship fund for 5 years</b>; training beyond PIOs; awareness through credible NGOs; National Coordination Committee chaired by the CIC; <b>'substantially financed' = 50% of operating costs for 3 years or at least Rs 1 crore</b>; check frivolous complaints."
+     ],
+     "recall": [
+      [
+       "CIC composition and appointing committee",
+       "One Chief Information Commissioner and up to ten ICs; committee: PM (Chair), Leader of Opposition (LS), a Union Cabinet Minister nominated by the PM."
+      ],
+      [
+       "CIC tenure and salary under RTI Rules 2019",
+       "3 years or age 65, whichever is earlier; no reappointment. CIC Rs 2,50,000 and IC Rs 2,25,000 per month."
+      ],
+      [
+       "RTI pendency figures",
+       "2.55 lakh pending in 26 ICs; average disposal 1 year 11 months; 21 of 29 ICs had not filed the 2019-20 report."
+      ],
+      [
+       "Classification of secret documents",
+       "Top Secret (exceptionally grave), Secret (serious), Confidential (simple), Restricted (official use only). Public Records Act 1993: 5-year declassification review."
+      ]
+     ],
+     "traps": [],
+     "quiz": [
+      {
+       "q": "As notified under the RTI Rules 2019, the tenure of the CIC and Information Commissioners is:",
+       "o": [
+        "5 years or age 65",
+        "3 years or age 65",
+        "4 years or age 65",
+        "5 years or age 70"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Which pairing on RTI pendency is correct as printed in the handout?",
+       "o": [
+        "2.55 lakh pending in 26 ICs; average disposal 1 year 11 months",
+        "25 lakh pending in 26 ICs; average disposal 6 months",
+        "2.55 lakh pending in 9 ICs; average disposal 3 years",
+        "40 lakh pending in the CIC alone; average disposal 2 months"
+       ],
+       "a": 0
+      }
+     ],
+     "visuals": []
+    }
+   ]
+  },
+  {
+   "label": "Part II",
+   "title": "Module 2",
+   "sub": "Corruption, Social Audit, CBI, CVC, Lokpal, Whistleblower and PCA",
+   "chapters": [
+    {
+     "id": 15,
+     "title": "The Problem of Corruption",
+     "pages": "M2 p.3-8",
+     "priority": "H",
+     "pyqs": "2016, 2019, 2014",
+     "lens": {
+      "prelims": [
+       "TI definition; Elephant Test; CPI since 1995 (0 most corrupt, 100 least)",
+       "Black, white, grey; grass-eating vs meat-eating; coercive vs collusive; retail vs policy",
+       "Legal factors: Art 311, PCA Sec 19, CrPC Sec 197, DSPE Sec 6A (Vineet Narain 1997; struck down 2014), PCA Sec 17A (2018)",
+       "2020 CPI: New Zealand, Denmark least corrupt; Somalia, South Sudan last; Bhutan 24th, USA 25th, Botswana 35th, China 78th, Pakistan 124th",
+       "Global Corruption Barometer; PETS (World Bank); Paulo Mauro: investment differential up to 12%"
+      ],
+      "mains": [
+       "Behaviour that harms public interest (non-performance of duty as corruption)",
+       "Factors behind corruption: psycho-social, economic, legal, administrative, political",
+       "Implications: social, economic, political, security, international",
+       "Why poverty is not the only cause; powerful and affluent also corrupt"
+      ],
+      "close": "Corruption is an elephant: recognised by society even when it cannot be defined, and fed by opportunity and discretion."
+     },
+     "simple": [
+      "Corruption is old: Kautilya's Arthashastra lists ways civil servants can be corrupt and how to contain it.",
+      "Defining it is hard: is a gift a bribe? Culture matters (UK school ties, US lobbying, Russia's Blat, China's Guanxi). TI: 'private abuse of public office'; the **Elephant Test**: hard to define, easy to recognise.",
+      "Types: black, white and grey; grass eating and meat eating; coercive and collusive; retail (petty) and policy (grand).",
+      "Costs: social divisions and insecurity, lower investment (Mauro: up to 12%), diverted spending, brain drain, security risks, mass unrest.",
+      "Causes: psycho-social (THYMOS, Squirrel Nuts Syndrome), economic (poor pay, licence-permit raj), legal (Article 311, PCA Sec 19, CrPC Sec 197), administrative (red tape), political (no will, money power).",
+      "Measuring it: TI's Corruption Perception Index (0 = most corrupt, 100 = least corrupt, annual since 1995), the Global Corruption Barometer and the World Bank's PETS."
+     ],
+     "terms": [
+      [
+       "Speed money",
+       "White corruption: recognised as corrupt but tolerated."
+      ],
+      [
+       "Squirrel Nuts Syndrome",
+       "Corruption by officials close to retirement."
+      ],
+      [
+       "THYMOS",
+       "Need for respect and recognition."
+      ]
+     ],
+     "remember": "Black - white - grey (society's view); grass - meat (official's role).",
+     "notes": [
+      "Corruption is as old as civilisation; <b>Kautilya's Arthashastra</b> lists ways a civil servant can be corrupt and the measures to contain it.",
+      {
+       "h": "Defining corruption: issues"
+      },
+      "<b>Is a gift a bribe?</b> Consider intent of the donor, expectation of the recipient, timing, value, the legal framework, and social acceptability.",
+      "<b>Cultural differences:</b> old school ties (UK); regulated lobbying (USA); <b>Blat</b> (Russia, from the Soviet Union); <b>Guanxi</b> (China).",
+      "<b>Public only, or private sector too?</b> Too wide a net dilutes focus; if government is incorruptible, private corruption falls. <b>Transparency International:</b> 'private abuse of public office'; the <b>Elephant Test</b>: hard to define, but society knows it when it sees it.",
+      {
+       "h": "Types"
+      },
+      {
+       "tbl": {
+        "head": [
+         "Pair",
+         "Meaning"
+        ],
+        "rows": [
+         [
+          "Black corruption",
+          "Whole society agrees it is corrupt and intolerable"
+         ],
+         [
+          "White corruption",
+          "Recognised as corrupt but tolerated (speed money)"
+         ],
+         [
+          "Grey corruption",
+          "Sections of society differ on whether it is corrupt"
+         ],
+         [
+          "Grass eating",
+          "Does not seek bribes but will not refuse one"
+         ],
+         [
+          "Meat eating",
+          "Actively seeks opportunities to benefit"
+         ],
+         [
+          "Coercive (extortive)",
+          "Citizen must bribe to get his due; official extorts"
+         ],
+         [
+          "Collusive (transactive)",
+          "Official and bribe-giver collude against public interest"
+         ],
+         [
+          "Retail (petty)",
+          "Street-level, e.g. speed money"
+         ],
+         [
+          "Policy (grand)",
+          "Crony capitalism and state capture; shaping policy for illegal benefit"
+         ]
+        ]
+       }
+      },
+      "<b>Behaviour that harms public interest:</b> lethargy; dereliction or negligence of duty; repeated carelessness; non-punctuality; subjective interpretation of public interest; favouritism and nepotism; communalism, casteism, lynching, regional bias.",
+      {
+       "h": "Implications"
+      },
+      "<b>Social:</b> vertical and horizontal divisions; insecurity (people stop reporting crime); endangers lives (building collapse, fires, false certificates); erodes social fabric.",
+      "<b>Economic:</b> reduced aid (African examples); less investment (<b>Paulo Mauro: up to 12% differential</b>); acts as an extra tax; lower revenue; diverted expenditure; poorer efficiency; distorted competition and crony capitalism; brain drain and capital flight; harder entry into international clubs (Eastern Europe and the EU); environmental damage.",
+      "<b>Political and legal:</b> raises officials' discretion; money power; <b>pork-barreling</b>; despair favours extremist politicians; mass unrest (India Against Corruption); radical tendencies (Left extremism, North-East insurgency fed by corruption and poor development).",
+      "<b>Security:</b> security forces aiding laundering, drugs, trafficking, arms; poor defence procurement quality. <b>International:</b> <b>Magnitsky Act, 2012</b> (US law, soured ties with Russia); <b>German car insurance (1990s)</b> thefts and smuggling with corrupt officials, premium spike, diplomatic row.",
+      "<b>Revisionism:</b> a minority school holding some corruption is not bad because it speeds a lethargic, low-paid bureaucracy.",
+      {
+       "h": "Factors behind corruption"
+      },
+      "<b>Psycho-social:</b> need for <b>THYMOS</b> (respect/recognition) and low self-worth; societal shaming of government employees; <b>Squirrel Nuts Syndrome</b> (close to retirement); <b>Opportunity theory</b> (reduce opportunities); religious context (Protestant areas less corrupt); long history; no popular sanction against it; social evils (dowry, lavish weddings).",
+      "<b>Economic:</b> poor pay at upper levels (raising pay alone may not dent it); consumerism; <b>licence-permit-quota raj to clearance raj</b>; MNCs' willingness and ability to bribe; business houses outbidding each other.",
+      "<b>Legal:</b> <b>Article 311</b> makes dismissal hard; <b>PCA Sec 19</b> needs appointing authority's sanction before prosecution; <b>CrPC Sec 197</b> sanction for non-corruption offences in discharge of duty. Both protect honest officers but are misused.",
+      "<b>DSPE Act Sec 6A chain:</b> a single directive required sanction for preliminary inquiry and investigation against Joint Secretary and above; <b>struck down in Vineet Narain (1997)</b>; DSPE Act amended to make it law as Sec 6A; <b>Sec 6A struck down in 2014</b> (equality); <b>PCA amended 2018, Sec 17A</b>: permission needed for preliminary inquiry for all public servants except when caught red-handed.",
+      "Also: delayed prosecution; no effective whistleblower law; inadequate autonomy of CBI and CVC.",
+      "<b>Administrative:</b> procedural complexity creates middlemen; red tape; weak internal grievance machinery; peer pressure; resistance to reform; politicised transfers and plum postings; culture of secrecy.",
+      "<b>Political:</b> absence of political will (repeated Lokpal delay); criminalisation of politics; no neutrality; low voter maturity and the <b>TINA</b> factor; money power in elections and weak disclosure norms for party funding.",
+      {
+       "h": "Measuring corruption"
+      },
+      "Official statistics (weak where prosecution is weak). <b>Perception surveys:</b> TI's <b>Corruption Perception Index</b>, annual since <b>1995</b>, <b>0 = most corrupt, 100 = least</b>; 2020 CPI (released 2021): New Zealand and Denmark least corrupt, Somalia and South Sudan last; Bhutan 24th, USA 25th, Botswana 35th, China 78th, Pakistan 124th. Critiques: based on experts and business leaders; perception, not objective; sources change; country count varies so ranks are not comparable.",
+      "<b>Experiential:</b> TI's <b>Global Corruption Barometer</b> (not annual, regional); in Asia Japan least corrupt and <b>India most corrupt among 17 countries</b>. <b>Tracking:</b> World Bank's <b>PETS</b>. <b>Content analysis</b> of media (crude)."
+     ],
+     "recall": [
+      [
+       "TI's definition and test",
+       "'Private abuse of public office'; the Elephant Test."
+      ],
+      [
+       "CPI scale and start",
+       "0 most corrupt, 100 least; annual since 1995."
+      ],
+      [
+       "Sec 6A chain",
+       "Single Directive -> struck 1997 (Vineet Narain) -> Sec 6A DSPE -> struck 2014 -> Sec 17A PCA 2018."
+      ]
+     ],
+     "traps": [
+      {
+       "k": "Prelims trap",
+       "t": "Measuring corruption",
+       "d": "CPI: 0 most corrupt, 100 least; perception-based; since 1995; ranks not comparable across years. Global Corruption Barometer is experiential and regional; PETS is a World Bank tracking survey.",
+       "r": "Rule: perception (CPI), experience (GCB), tracking (PETS)."
+      }
+     ],
+     "quiz": [
+      {
+       "q": "In Transparency International's Corruption Perception Index (since 1995), a score of:",
+       "o": [
+        "100 means most corrupt",
+        "0 means most corrupt, 100 least corrupt",
+        "It is an experiential survey",
+        "Ranks are comparable across all years"
+       ],
+       "a": 1
+      }
+     ],
+     "visuals": []
+    },
+    {
+     "id": 16,
+     "title": "Tackling Corruption and Social Audit",
+     "pages": "M2 p.8-11",
+     "priority": "M",
+     "pyqs": "2021, 2016*",
+     "lens": {
+      "prelims": [
+       "Stick/carrot/admin/radical measures with country examples (Botswana, Singapore CPIB, Hong Kong ICAC, South Africa, Georgia, Peru, Romania)",
+       "CAG covers only 25% of auditable units yearly; procurement 30% of GDP; 2012 bill lapsed",
+       "International: FCPA 1977, UK Bribery Act 2010, OECD 1997, UNCAC 2003, FATF 1989",
+       "Social audit: Meghalaya 2017 Act; AP SSAAT; Karnataka rotation after 3 cycles; Chhattisgarh wall writing; Swaraj Abhiyan 2016; MKSS jan sunwai"
+      ],
+      "mains": [
+       "Stick vs carrot measures; why fragmented agencies fail",
+       "Features, significance and issues of social audit; how to strengthen",
+       "Success stories: AP, Jharkhand, MKSS, Bengaluru CRCs, benchmarking"
+      ],
+      "close": "Make demand-side pressure real: audits only work when information flows freely."
+     },
+     "simple": [
+      "The handout calls corruption a **wicked problem**: more laws signal inefficiency, and it can only be controlled, not removed.",
+      "**Stick** measures: prosecution, stings, tighter laws, asset declaration, effective single agency (Singapore CPIB, Hong Kong ICAC). **Carrot**: pay rise with enforcement, citizen helplines. **Administrative**: job rotation, auditing, public procurement law, digitisation, CCTV.",
+      "Radical ideas: disband departments (Georgia's Traffic Police, 2004), gender balance (Peru), monetising bribes (Romania), amnesty. International: FCPA, UK Bribery Act, OECD Convention, UNCAC, FATF.",
+      "**Social audit**: scheme details are shared with beneficiaries on public platforms (Jan Sunwai, Gram Sabha) so people hold officials accountable. It needs a sound access-to-information regime.",
+      "Success stories: Andhra Pradesh SSAAT (MGNREGA), Jharkhand, Rajasthan MKSS (led to RTI Act 2005), Bengaluru Citizen Report Cards. Strengthen with a national law, trained auditors and rotating teams (Karnataka)."
+     ],
+     "terms": [
+      [
+       "Social audit",
+       "Public verification of scheme work and money with the people it is meant for."
+      ],
+      [
+       "SSAAT",
+       "Andhra Pradesh's independent social audit society."
+      ]
+     ],
+     "remember": "Stick - Carrot - Administrative - Radical - International.",
+     "notes": [
+      "<b>'Wicked problem':</b> despite PCA, Lokpal, CVC Act, corruption persists; more laws signal systemic inefficiency; it can only be controlled.",
+      {
+       "h": "Stick measures"
+      },
+      "<b>Prosecution:</b> higher conviction deters (Botswana); India's delays and lenient punishment weaken deterrence; harsh penalties (China) unsuitable without rule of law. <b>Stings and entrapment:</b> admissibility unclear; natural stings (citizen recordings) should be admissible; Sweden restrictive. <b>Tighten laws:</b> 2018 amendments diluted PCA. <b>Asset declaration</b> with lifestyle monitoring. <b>Effective agencies:</b> India is fragmented (CVC, CBI, Lokpal, ED); <b>Singapore CPIB</b> and <b>Hong Kong ICAC</b> succeed with one agency. <b>Shaming and blacklisting</b> (South Africa); <b>forfeiture of pensions</b>.",
+      {
+       "h": "Carrot measures"
+      },
+      "Substantial pay increase paired with enforcement; citizen helplines (<b>Delhi anti-corruption hotline</b>) needing whistleblower and witness protection.",
+      {
+       "h": "Administrative and technical"
+      },
+      "<b>Job rotation</b> (Kautilya); stronger auditing (<b>CAG covers 25% of auditable units yearly</b>); procurement norms and a Public Procurement Law (<b>procurement 30% of GDP</b>; <b>2012 bill lapsed</b>); digitisation; CCTV in high-risk zones.",
+      {
+       "h": "Radical approaches"
+      },
+      "<b>Disband departments</b> (<b>Georgia's Traffic Police, 2004</b>); <b>gender balance</b> (Peru); <b>monetising bribes</b> (Romania's conscription policy; controversial); <b>general amnesty</b> (50% surrender of black money; debated).",
+      {
+       "h": "International measures"
+      },
+      "<b>US Foreign Corrupt Practices Act (1977)</b>, <b>UK Bribery Act (2010)</b>; <b>OECD Anti-Bribery Convention (1997)</b>; <b>UNCAC (2003)</b>; <b>FATF (1989)</b>; Interpol IGEC; WTO inaction; global financial transparency against banking havens.",
+      "<b>Critique of the global industry:</b> West ignored corruption until the 1990s; anti-corruption became a geopolitical tool; NGO vested interests, data over impact; cultural imperialism concerns. <b>Alternatives:</b> spiritual education; <b>Integrity Recognition Certificates</b> for honest officers (must be insulated from politicisation).",
+      {
+       "h": "Social audit"
+      },
+      "Scheme details (financial and non-financial) shared with beneficiaries on a public platform (<b>Jan Sunwai</b>, public hearing, Gram Sabha), so people can hold bureaucracy and Panchayat leaders accountable. <b>Key: a sound access-to-information regime</b>.",
+      "<b>Features:</b> multi-perspective; regular; comparative (time and space); <b>strengthens the demand side</b> and indirectly targets supply-side weakness.",
+      "<b>Significance:</b> participation; benefits reach the target; social capital; identifies civil servants' HR and training needs; highlights development concerns; transparency and anti-corruption; better future programmes.",
+      "<b>Issues:</b> not in mainstream policy discourse; statutory in very few programmes (<b>NREGA</b> is one); lack of trained auditors; opposition from vested interests. <b>Symptom-cause point:</b> audit across cause-effect layers, not surface symptoms alone (e.g. plague awareness drive without fixing sanitation).",
+      {
+       "h": "Strengthening social audit"
+      },
+      "<b>Legal and institutional:</b> national law inspired by <b>Meghalaya's 2017 Act</b>; independent units like <b>Andhra Pradesh's SSAAT</b>; support CAG and PRIs.",
+      "<b>Stakeholders:</b> Gram Sabha awareness; auditor training; NGO and media; recognition for participants. <b>Digital:</b> portals; proactive disclosure; unified guidelines.",
+      "<b>Best practices:</b> <b>Chhattisgarh</b> links audits to grievance redress and uses wall writing; <b>Karnataka</b> rotates audit teams <b>after every three audit cycles</b>.",
+      {
+       "tbl": {
+        "head": [
+         "Success story",
+         "Detail"
+        ],
+        "rows": [
+         [
+          "AP MGNREGA (SSAAT)",
+          "Autonomous society; village resource persons; crores of wage misappropriation recovered; World Bank called it a global best practice"
+         ],
+         [
+          "Jharkhand SAU",
+          "MGNREGA, PDS, pensions; ghost beneficiaries, delays, ration diversion exposed; <b>SC in Swaraj Abhiyan (2016)</b> appreciated social audits"
+         ],
+         [
+          "Rajasthan MKSS",
+          "1990s jan sunwais revealed leakages; led to the <b>RTI Act 2005</b>"
+         ],
+         [
+          "Bengaluru CRCs",
+          "Civil society report cards on water, hospitals, transport; bribery fell, satisfaction rose; 2003 study"
+         ],
+         [
+          "Municipal benchmarking",
+          "Compare service costs (e.g. cost per km of road); disclosure pressures inefficient bodies"
+         ]
+        ]
+       }
+      }
+     ],
+     "recall": [
+      [
+       "Georgia, Singapore, Hong Kong examples",
+       "Georgia disbanded Traffic Police (2004); Singapore CPIB and Hong Kong ICAC as single agencies."
+      ],
+      [
+       "Karnataka's social audit feature",
+       "Audit teams rotated after every three cycles."
+      ]
+     ],
+     "traps": [],
+     "quiz": [],
+     "visuals": []
+    },
+    {
+     "id": 17,
+     "title": "CBI and CVC",
+     "pages": "M2 p.11-15",
+     "priority": "M",
+     "pyqs": "2021*",
+     "lens": {
+      "prelims": [
+       "CBI: SPE 1941; DSPE Act 1946; name 1963; four divisions; conviction rate 67% vs 30-40%; no suo motu jurisdiction",
+       "Vineet Narain 1997: CVC supervises CBI; Director's min. tenure 2 years; committee (PM, LoP, CJI); single directive struck down; DoPT policy only",
+       "CVC: 1964 executive; statutory 2003; CVC + max 2 VCs; term 4 years or 65; pay = UPSC Chair/members",
+       "PJ Thomas 2011: consensus not majority in selection committee",
+       "CVC Chair heads committee for ED Director and CBI officers SP and above"
+      ],
+      "mains": [
+       "Issues in CBI functioning and Vineet Narain directions",
+       "CVC powers, issues and suggestions",
+       "Institutional framework against corruption"
+      ],
+      "close": "Autonomy of anti-graft agencies is the weak link: independence of selection, tenure, prosecution and staff."
+     },
+     "simple": [
+      "The **CBI** began as the Special Police Establishment (1941), got statutory backing from the DSPE Act 1946 and was named CBI in 1963. Issues: political control ('caged parrot'), vacancies, sanction delays, no suo motu jurisdiction.",
+      "**Vineet Narain (1997)**: the Supreme Court gave the CVC superintendence of CBI in PCA cases, fixed the Director's tenure, set a selection committee (PM, LoP, CJI) and struck down the Single Directive.",
+      "The **CVC** was set up in 1964 on the Santhanam Committee and made statutory in 2003: one Central Vigilance Commissioner and up to two Vigilance Commissioners, 4-year term, retirement at 65, no reappointment.",
+      "**P.J. Thomas (2011)**: selection must follow the consensus of the committee, not a majority.",
+      "Fix list: independent investigation and prosecution powers, statutory sanction timelines, more staff, binding recommendations and a wider selection panel."
+     ],
+     "terms": [
+      [
+       "Single Directive",
+       "Rule requiring sanction before even a preliminary inquiry against senior officers."
+      ],
+      [
+       "Caged parrot",
+       "A former SC judge's description of the CBI's lack of independence."
+      ]
+     ],
+     "remember": "CVC: 1964 Santhanam; Act 2003; term 4 years or 65.",
+     "notes": [
+      {
+       "h": "Legal and institutional framework"
+      },
+      "Sec 203 BNS (Sec 169 IPC): civil servant illegally acquiring property; Sec 316 BNS (Sec 409 IPC): criminal breach of trust by a public servant (as printed). <b>DSPE Act 1946</b> (CBI); RPA 1951 Sec 123; <b>PCA 1988</b>; Benami Properties Act 1988; PMLA 2003; CVC Act; RTI 2005; Lokayukta Acts; Lokpal Act 2013; Whistleblower Act 2014; time-bound service delivery laws.",
+      "<b>Institutions:</b> CBI, CVC, state ACBs and vigilance wings, CAG, Lokayuktas, Lokpal, <b>ED (PMLA and FEMA)</b>, banking ombudsman, consumer courts, three-tier judiciary.",
+      {
+       "h": "Central Bureau of Investigation"
+      },
+      "<b>Special Police Establishment 1941</b>; statutory backing by <b>DSPE Act 1946</b>; named <b>CBI in 1963</b>. <b>Divisions:</b> Anti-Corruption; Special Crimes; Economic Offences; Banking and Security Frauds.",
+      "<b>Issues:</b> politicisation ('<b>caged parrot</b>', a former SC judge); about one-third posts vacant; <b>conviction rate 67%</b> vs 30-40% for other agencies, but low in high-profile cases; sanction delays (Sec 19 PCA, Sec 197 CrPC); <b>no suo motu jurisdiction</b> (cases transferred to it).",
+      {
+       "h": "Vineet Narain case, 1997"
+      },
+      "<b>CVC to superintend CBI</b> on PCA cases; minimum guaranteed tenure for the Director (<b>2 years</b> under DSPE Act; later extendable up to 5 in yearly steps by ordinance); Director chosen by a <b>committee: PM, Leader of Opposition (or largest opposition party leader), CJI</b>; <b>Single Directive struck down</b>; <b>DoPT</b> sets only overall policy, not day-to-day investigations; Director's transfer by the same committee.",
+      {
+       "h": "Central Vigilance Commission"
+      },
+      "Set up in <b>1964</b> as an executive body on the <b>K. Santhanam Committee</b> (1962); <b>statutory in 2003</b> under the CVC Act. Apex vigilance institution free of executive control; advises on planning, reviewing, reforming vigilance. <b>Central Vigilance Commissioner + not more than two Vigilance Commissioners.</b>",
+      "<b>Selection:</b> from All India or Central Services, and from CPSU officers (not more than two from the two categories, so at least one from each). Committee: <b>PM, Home Minister, Leader of Opposition</b> (government has the final say). <b>P.J. Thomas case (2011):</b> government majority made the LoP's role pointless; selection must follow <b>consensus of all members, not majority</b> (only for this appointment).",
+      "<b>Term:</b> <b>4 years</b> for CVC and VCs; retirement age <b>65</b>; no reappointment; a VC can become CVC but total stay not above 4 years; barred from UT administrator, diplomatic and other presidential-warrant posts; no office of profit. <b>Pay:</b> CVC equals UPSC Chairperson, VCs equal UPSC members; charged to the Consolidated Fund; cannot be altered to disadvantage. <b>Removal:</b> proved misbehaviour or incapacity on <b>SC reference</b>; plus insolvency, moral turpitude, private employment, infirmity, prejudicial financial interest.",
+      "<b>Functions and powers:</b> superintend CBI on corruption cases (Vineet Narain) and give directions; inquire on Central Government reference or on complaints against <b>Group A, All India Service officers and equivalent CPSU officials</b>; review DSPE investigations and pending sanction applications; tender advice; superintend vigilance in ministries; <b>powers of a civil court</b>; mandatory consultation on vigilance and disciplinary rules; CVC chairs the committee recommending the <b>ED Director</b> (and Deputy Director and above); chairs the committee recommending CBI officers of <b>SP level and above</b> (not Director). Annual report to the President, laid before Parliament.",
+      "<b>Issues:</b> dependence on a politicised CBI; no independent prosecution powers and sanction delays; non-cooperative government; poor engagement with civil society.",
+      "<b>Suggestions:</b> independent investigative and prosecution powers (2nd ARC: functional autonomy); <b>3-6 month statutory timeline</b> for sanction (TI India: over 70% of sanctions pending beyond 6 months in 2023); binding oversight over vigilance administration; manpower (<b>less than 50% of sanctioned staff</b>, over 1,500 organisations per CVC 2023 report); civil society participation (South Korea ACRC); <b>binding recommendations</b>; wider selection panel (judiciary or experts)."
+     ],
+     "recall": [
+      [
+       "CBI: origin and name",
+       "SPE 1941; DSPE Act 1946; named CBI 1963; no suo motu jurisdiction."
+      ],
+      [
+       "CVC term, age and members",
+       "4 years, retirement at 65; CVC plus not more than two Vigilance Commissioners."
+      ],
+      [
+       "P.J. Thomas case (2011)",
+       "CVC selection must be by consensus of the committee, not majority."
+      ]
+     ],
+     "traps": [
+      {
+       "k": "Prelims trap",
+       "t": "Three terms, three ages",
+       "d": "CIC: 3 years or 65 (2019 Rules). CVC: 4 years or 65. Lokpal: 5 years or 70.",
+       "r": "Rule: Lokpal is the longest; CIC changed in 2019."
+      }
+     ],
+     "quiz": [
+      {
+       "q": "Which of these was NOT part of the Vineet Narain (1997) directions?",
+       "o": [
+        "CVC to superintend the CBI on PCA cases",
+        "Minimum tenure for the CBI Director",
+        "Director chosen by a committee including the CJI",
+        "CBI to have suo motu jurisdiction"
+       ],
+       "a": 3
+      },
+      {
+       "q": "The Central Vigilance Commission was set up in 1964 on the recommendation of the:",
+       "o": [
+        "Nolan Committee",
+        "Santhanam Committee",
+        "Second ARC",
+        "Lee Commission"
+       ],
+       "a": 1
+      }
+     ],
+     "visuals": []
+    },
+    {
+     "id": 18,
+     "title": "Lokpal in India",
+     "pages": "M2 p.15-19",
+     "priority": "M",
+     "pyqs": "2013",
+     "lens": {
+      "prelims": [
+       "9-member body; 50% judicial; 50% affirmative action; age 45+; 5 years or 70; salary CJI/SC judge",
+       "Selection committee: PM, Speaker, LoP, CJI/nominee, eminent jurist; search committee of 7",
+       "PM covered partially (not public order, security, atomic energy, space; full bench two-thirds)",
+       "Removal reference signed by 100 MPs; 60 days preliminary inquiry; 7-year limitation",
+       "Maharashtra first Lokayukta (1971); Odisha 1992, Haryana 1999 abolished"
+      ],
+      "mains": [
+       "Should the PM be covered? 2nd ARC arguments and counter-arguments",
+       "Issues with Lokpal; functioning since 2019",
+       "Lokpal is not a panacea"
+      ],
+      "close": "No single body can cure a hydra: Lokpal works only inside a multi-pronged strategy."
+     },
+     "simple": [
+      "The **ombudsman** idea: Sweden 1809, UK 1967. In India the first bill came in 1968, the Act in **2013**, and the Lokpal was constituted in **2019** with Justice P.C. Ghose as Chairperson. Maharashtra had the first Lokayukta (1971).",
+      "State Lokayuktas often became 'paper tigers': recommendatory, misused, and some were abolished (Odisha 1992, Haryana 1999).",
+      "The Lokpal has nine members including the Chairperson; half judicial, half non-judicial; 50% reserved. Selection committee: PM, Lok Sabha Speaker, Leader of Opposition, CJI or nominee and an eminent jurist.",
+      "It covers PM (partly), ministers, MPs and Groups A-D, plus bodies funded above Rs 10 lakh. A preliminary inquiry runs within 60 days; a 7-year limit applies to complaints.",
+      "The PM is covered only partly: no inquiry into decisions on public order, security, atomic energy and space, and a full-bench two-thirds majority is needed.",
+      "The record is thin: complaints fell from 1,427 (2019-20) to 110 (2020-21) to 12 till August 2021-22."
+     ],
+     "terms": [
+      [
+       "Ombudsman",
+       "The office for complaints against public servants; Sweden appointed the first in 1809."
+      ],
+      [
+       "Lokayukta",
+       "The state-level counterpart; Maharashtra had the first (1971)."
+      ]
+     ],
+     "remember": "Lokpal: Act 2013, constituted 2019.",
+     "notes": [
+      "Ombudsman: <b>Sweden 1809</b>; UK <b>Parliamentary Commissioner 1967</b>; USA in some states (Hawaii, Oregon, Nebraska), not federal. <b>First ARC:</b> two-tier: <b>Lokpal</b> for Secretary-rank and above at Union and State levels; <b>Union Lokayukta</b> for lower officials; State Lokayuktas in states.",
+      "India: first bill <b>1968</b>; Act <b>2013</b>; Lokpal constituted <b>2019</b> with <b>Justice P.C. Ghose</b> as Chairperson of the nine-member body. <b>Maharashtra</b> first state Lokayukta (<b>1971</b>).",
+      {
+       "h": "State experience"
+      },
+      "Flooded with complaints; poor effectiveness; inter-state differences (qualifications, tenure, powers, suo motu, no separate agency); survival depends on state government (<b>Odisha abolished it by ordinance in 1992; Haryana in 1999</b>); recommendatory <b>'paper tigers'</b>; corruption within; misused against political opponents.",
+      {
+       "h": "Lokpal Act 2013"
+      },
+      "<b>Composition:</b> nine members including the Chairperson. <b>Chairperson:</b> a present or former CJI or SC judge, or an eminent person with <b>25 years'</b> experience in vigilance, anti-corruption, law, finance, administration, management. <b>Eight members:</b> half judicial (SC judge or High Court Chief Justice), half non-judicial (eminent, 25 years). <b>50% affirmative action:</b> SC, ST, OBC, minorities, women.",
+      "<b>Conditions:</b> not an MP, MLA, MLC; no local body membership; <b>minimum age 45</b>; not removed or dismissed from government service; no office of profit, business or profession; no party affiliation.",
+      "<b>Appointment</b> by the President on a committee: <b>PM (Chair), Lok Sabha Speaker, Leader of Opposition (LS)</b> (silent on a missing LoP), <b>CJI or nominated SC judge</b>, <b>eminent jurist</b> chosen by the four. A <b>search committee of 7</b> shortlists, with 50% reservation; the selection committee may go beyond its names.",
+      "<b>Tenure:</b> <b>5 years or age 70</b>; no reappointment, except a member elevated to Chairperson within the 5-year limit. <b>Salary:</b> Chairperson equals CJI; members equal SC judge. <b>Disabilities:</b> like the CVC plus <b>ineligible for any election for 5 years</b>.",
+      "<b>Structure:</b> Inquiry Wing (Director of Inquiry), Prosecution Wing (Director of Prosecution), Secretary.",
+      {
+       "h": "Should the Prime Minister be covered?"
+      },
+      "<b>2nd ARC opposed:</b> would cripple administration during investigation; foreign powers might exploit it; PM already covered by the PCA 1988. <b>Counter:</b> CBI works under DoPT, hence the PM, which would hamper probes; PM should lead by example (some Lokayuktas cover Chief Ministers); <b>Article 361</b> exempts only President and Governors.",
+      "<b>Act covers PM partially:</b> no inquiry into PM decisions on <b>public order, internal and external security, atomic energy, space</b>; the <b>full bench by two-thirds majority</b> must approve initiating an inquiry or investigation.",
+      {
+       "h": "Jurisdiction and functions"
+      },
+      "PM, Union Ministers, MPs, <b>Group A-D officials</b>, and bodies funded by government above <b>Rs 10 lakh a year</b>. Any individual may complain for PCA offences. Preliminary inquiry via the Inquiry Wing, CVC or agencies like CBI; explanation sought from the public servant; <b>complaints against Groups C and D referred to the CVC</b>; preliminary inquiry within <b>60 days</b>.",
+      "After the report and hearing: full investigation, departmental proceedings, close the case, or proceed against a false complainant. A bench of at least <b>3 members</b> decides on sanction. Lokpal <b>replaces the appointing authority</b> in sanctions under <b>CrPC Sec 197 and PCA Sec 19</b>. Powers of search, seizure, <b>attachment</b>, and civil court powers; superintendence over CBI for cases it refers.",
+      "<b>Removal:</b> on misbehaviour by <b>SC reference signed by at least 100 MPs</b>; President on other grounds (insolvency, private employment, infirmity, prejudicial financial interest). Annual asset declarations; annual report with a memorandum explaining rejected recommendations; <b>7-year limitation</b> for complaints.",
+      {
+       "h": "Issues"
+      },
+      "Too wide jurisdiction; convoluted appointment; PM only partly covered; 7-year limit; scope may intimidate NGOs; delays in appointment.",
+      "<b>Functioning since 2019:</b> allegations of emasculation by legislation; delayed complaint-form rules, asset disclosure rules, preliminary inquiry and investigation rules; wings not set up by 2020; <b>by Sept 2019 disposed of 1,000 of 1,065 complaints</b>; complaints fell from <b>1,427 (2019-20) to 110 (2020-21) to 12 till August 2021-22</b>.",
+      "<b>2nd ARC:</b> give Lokpal and Lokayuktas <b>constitutional status</b>; <b>Rashtriya Lok Ayukta</b> for Union Ministers, MPs and State Chief Ministers; State Lokayukta for state ministers and legislators; <b>CVC for civil servants</b>; a <b>Local Bodies Ombudsman</b>.",
+      "<b>Not a panacea:</b> hydra-headed corruption needs multi-pronged strategy; huge bureaucracy; petty complaints need departmental handling; inadequate judicial process; lacking citizen empowerment and willingness to complain."
+     ],
+     "recall": [
+      [
+       "Lokpal composition",
+       "Nine members: Chair + 8; half judicial; 50% affirmative action; minimum age 45."
+      ],
+      [
+       "Lokpal limits",
+       "Preliminary inquiry in 60 days; complaint within 7 years; Groups C and D to CVC."
+      ]
+     ],
+     "traps": [
+      {
+       "k": "Prelims trap",
+       "t": "Who sits on which committee",
+       "d": "Lokpal has the Speaker and an eminent jurist; CVC has the Home Minister; CBI Director's committee has the CJI; CIC has a Union Cabinet Minister (2nd ARC wants the CJI).",
+       "r": "Rule: PM and Leader of Opposition are in all; learn the third and fourth members."
+      },
+      {
+       "k": "Prelims trap",
+       "t": "Removal routes",
+       "d": "Lokpal removal reference to the SC needs signatures of at least 100 MPs. CIC/CVC go to the SC on the President's reference.",
+       "r": "Rule: '100 MPs' belongs only to Lokpal."
+      },
+      {
+       "k": "Source discrepancy",
+       "t": "When was the Lokpal created?",
+       "d": "Module 1 says India appointed an ombudsman in 2013 at the central level. Module 2 says the Act was passed in 2013 and the Lokpal constituted in 2019.",
+       "r": "Rule: Act 2013; Lokpal constituted 2019."
+      },
+      {
+       "k": "Source discrepancy",
+       "t": "Lokpal's reach over Groups C and D",
+       "d": "Module 2 lists Group A-D in Lokpal's jurisdiction but sends Group C and D complaints to the CVC.",
+       "r": "Rule: Lokpal covers them on paper; the CVC handles those complaints."
+      }
+     ],
+     "quiz": [
+      {
+       "q": "A reference to the Supreme Court for removal of a Lokpal member on misbehaviour must be signed by at least:",
+       "o": [
+        "50 MPs",
+        "100 MPs",
+        "One-tenth of the Lok Sabha",
+        "Two-thirds of Parliament"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Under the Lokpal Act 2013, the Prime Minister is:",
+       "o": [
+        "Fully exempt",
+        "Fully covered with no conditions",
+        "Partly covered: no inquiry into decisions on public order, security, atomic energy, space; full bench two-thirds majority to begin",
+        "Covered only after leaving office"
+       ],
+       "a": 2
+      }
+     ],
+     "visuals": []
+    },
+    {
+     "id": 19,
+     "title": "Whistleblower Protection and the PCA 1988",
+     "pages": "M2 p.19-20",
+     "priority": "H",
+     "pyqs": "2015, 2022",
+     "lens": {
+      "prelims": [
+       "Competent authority: PM (Union Ministers), CM (state ministers), Presiding Officer (legislators), CVC (civil servants)",
+       "No anonymous complaints; frivolous complaint penalised with 2-year jail",
+       "2015 amendment bill lapsed: OSA to override the Act",
+       "SEBI tipping mechanism: reward up to Rs 1 crore",
+       "PCA 2018: bribe-giving an offence; 7-day complaint defence; jail 3 to 7 years; trial in 2 years, max 4; Sec 17A extends to retired servants"
+      ],
+      "mains": [
+       "Challenges with the Whistleblower Act and measures to strengthen it",
+       "2nd ARC and Law Commission framework",
+       "Why the 2018 PCA amendment is both strengthening and diluting"
+      ],
+      "close": "A whistleblower law without anonymity protects the disclosure but not the discloser."
+     },
+     "simple": [
+      "The **Whistle Blowers Protection Act 2014** lets anyone disclose corruption or wilful misuse of power by a public body. Disclosures go to the competent authority (PM for Union Ministers, CM for state ministers, Presiding Officer for legislators, CVC for civil servants). **Anonymous complaints are not entertained**; frivolous ones can earn 2 years' jail.",
+      "Challenges: no anonymity (Satyendra Dubey), weak implementation and awareness, little protection from victimisation. Needs: wider coverage including the private sector; SEBI's tipping reward up to Rs 1 crore.",
+      "The **Prevention of Corruption Act 1988** covers every public servant: government staff, PSU employees, local body functionaries, judges, PSC members, university employees, MPs and MLAs.",
+      "The **2018 Amendment**: giving a bribe is an offence (with a 7-day complaint exemption in coercive cases); Sec 17A extends protection to retired servants; jail raised from 3 to 7 years; trial in 2 years (up to 4); commercial organisations can be prosecuted."
+     ],
+     "terms": [
+      [
+       "PIDPI",
+       "The short name the handout gives for the 2014 Whistle Blowers Protection Act."
+      ],
+      [
+       "Sec 17A",
+       "PCA 2018: permission needed for preliminary inquiry, except when caught red-handed."
+      ]
+     ],
+     "remember": "PCA 2018 cuts both ways: it penalises the bribe-giver and shields the officer.",
+     "notes": [
+      {
+       "h": "Whistleblower Protection Act, 2014 (PIDPI)"
+      },
+      "Anyone can be a whistleblower regarding any public body. Disclosure to the <b>competent authority</b>: <b>PM</b> for Union Ministers, <b>Chief Minister</b> for state ministers, <b>Presiding Officer</b> for legislators, <b>CVC</b> for civil servants. <b>No anonymous complaints.</b> CVC can issue directions for protection. <b>Frivolous complaints: 2-year jail.</b>",
+      "<b>2015 amendment bill</b> (lapsed): proposed that the <b>Official Secrets Act 1923</b> would override the Act.",
+      {
+       "h": "Challenges"
+      },
+      "<b>No anonymity</b> (murder of <b>Satyendra Dubey</b>, who reported corruption in the NHAI); weak organisational implementation and awareness; inadequate protection against victimisation; yet complaints rise (<b>2018: over 3,500 complaints to NSE-listed companies</b>).",
+      {
+       "h": "Measures needed"
+      },
+      "<b>2nd ARC:</b> stronger law covering public and private sectors. <b>Law Commission framework:</b> confidentiality and anonymity; protection against victimisation and bodily harm; coverage of corporate whistleblowers. <b>SEBI's tipping mechanism:</b> rewards up to <b>Rs 1 crore</b> for actionable information on insider trading, with confidentiality.",
+      {
+       "h": "Prevention of Corruption Act, 1988"
+      },
+      "Covers all <b>public servants</b>: anyone in government pay or service; PSU employees; local body functionaries; judges; office-bearers of government-funded cooperatives; PSC members; employees of central and state universities; <b>deemed university employees (SC, 2020)</b>; anyone performing a public duty by virtue of office, including MPs and MLAs.",
+      {
+       "h": "PCA Amendment Act, 2018"
+      },
+      "<b>Giving a bribe</b> is explicitly an offence; in <b>coercive corruption</b>, a complaint within <b>7 days</b> frees the giver from guilt. <b>Sec 17A</b> extended to <b>retired civil servants</b>. Original <b>Sec 13(1)(d)</b> (decision benefiting a commercial organisation against public interest) <b>diluted</b>. <b>Jail from 3 to 7 years.</b> Trial in <b>2 years, up to 4</b>. Provisions for prosecuting <b>commercial organisations</b> and for <b>attachment or confiscation</b> of property."
+     ],
+     "recall": [
+      [
+       "Whistleblower Act competent authorities",
+       "PM (Union Ministers), CM (State ministers), Presiding Officer (legislators), CVC (civil servants)."
+      ],
+      [
+       "PCA 2018 headline changes",
+       "Bribe-giving offence (7-day defence if coerced); jail 3 to 7 years; trial in 2 (max 4) years; Sec 17A."
+      ],
+      [
+       "SEBI tipping mechanism",
+       "Rewards up to Rs 1 crore for actionable insider-trading information, with confidentiality."
+      ]
+     ],
+     "traps": [
+      {
+       "k": "Concept trap",
+       "t": "Whistleblower and anonymity",
+       "d": "No anonymous complaints under the 2014 Act; frivolous complaint: 2-year jail; competent authority depends on who is accused.",
+       "r": "Rule: no anonymity is the first answer to 'what is wrong with the Act'."
+      },
+      {
+       "k": "Prelims trap",
+       "t": "PCA 2018 cuts both ways",
+       "d": "Bribe-giving an offence (7-day complaint defence for coercion), jail 3 to 7 years, trial 2 years (max 4), Sec 17A covers retired servants; yet Sec 13(1)(d) was diluted and Sec 17A needs permission for inquiry.",
+       "r": "Rule: strengthened punishment, weakened investigation."
+      }
+     ],
+     "quiz": [
+      {
+       "q": "Under the Whistle Blowers Protection Act, 2014:",
+       "o": [
+        "Anonymous complaints are allowed",
+        "Anonymous complaints are not entertained, and frivolous complaints attract 2-year jail",
+        "The Official Secrets Act is overridden",
+        "Only civil servants can be whistleblowers"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Which is true of the Prevention of Corruption Amendment Act, 2018?",
+       "o": [
+        "Giving a bribe is not an offence",
+        "Jail term cut from 7 to 3 years",
+        "Sec 17A requires permission for preliminary inquiry, except when caught red-handed",
+        "Retired civil servants are excluded from Sec 17A"
+       ],
+       "a": 2
+      }
+     ],
+     "visuals": []
+    }
+   ]
+  }
+ ]
+}
