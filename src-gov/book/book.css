@@ -151,3 +151,4 @@ ul.b>li{margin-bottom:.9mm}
 .partop+.chapter{margin-top:0}
 .meta,.lens{break-before:avoid}
 .endblk>.lbl{break-after:avoid}.lbl{break-after:avoid}.recall{break-before:avoid}
+.chapter{break-before:page!important;margin-top:0!important}
