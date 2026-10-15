@@ -219,7 +219,94 @@
        "a": 2
       }
      ],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mindmap",
+       "title": "Memory map: PSCs in India",
+       "center": "Public Service Commissions (Part XIV)",
+       "branches": [
+        {
+         "t": "Origin",
+         "c": [
+          "GoI Act 1919: Federal PSC",
+          "Lee Commission 1924",
+          "FPSC set up 1926, Sir Ross Barker",
+          "Madras 1929: first provincial PSC",
+          "1935: Federal, Provincial, Joint"
+         ]
+        },
+        {
+         "t": "Articles 315-323",
+         "c": [
+          "315 set-up, 316 appointment",
+          "317 removal, 319 bar after office",
+          "320 functions, 321 extension",
+          "322 expenses, 323 reports"
+         ]
+        },
+        {
+         "t": "Independence",
+         "c": [
+          "Service conditions not cut",
+          "Charged expenditure",
+          "Removal only by Constitution's method",
+          "Convention broken in 2015"
+         ]
+        },
+        {
+         "t": "Problems",
+         "c": [
+          "Deviations: 57 (1950-84) vs 82 (1984-88)",
+          "Art 320(3) abuse",
+          "No separate oath, easier removal",
+          "Negative recruitment"
+         ]
+        },
+        {
+         "t": "Reform",
+         "c": [
+          "2nd ARC: Model I and Model II",
+          "First ARC: one outside member in SPSC",
+          "Central Personnel Agency",
+          "Positive recruitment, R&D body"
+         ]
+        }
+       ],
+       "pos": "top"
+      },
+      {
+       "type": "flow",
+       "after": "Role of UPSC today",
+       "title": "UPSC story in four steps",
+       "steps": [
+        [
+         "1 Origin",
+         "1919 Act, Lee 1924",
+         "FPSC 1926",
+         "Madras PPSC 1929"
+        ],
+        [
+         "2 Safeguards",
+         "Charged expenditure",
+         "Terms not cut",
+         "Removal as per Constitution"
+        ],
+        [
+         "3 Weakness",
+         "Advice set aside 57, then 82 times",
+         "Negative recruitment",
+         "No separate oath"
+        ],
+        [
+         "4 Way out",
+         "Central Personnel Agency",
+         "Positive recruitment",
+         "R&D body"
+        ]
+       ],
+       "per_row": 4
+      }
+     ]
     },
     {
      "id": 2,
@@ -424,7 +511,101 @@
        "a": 2
       }
      ],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "Types of civil-service categories",
+       "sentence": "All Central State Municipal",
+       "letters": [
+        [
+         "A",
+         "All India Services"
+        ],
+        [
+         "C",
+         "Central Services"
+        ],
+        [
+         "S",
+         "State Civil Services"
+        ],
+        [
+         "M",
+         "Municipal Services"
+        ]
+       ],
+       "note": "Memory aid: four layers of the civil service, top to local."
+      },
+      {
+       "type": "fork",
+       "after": "Urgent need for specialisation",
+       "title": "Generalist or specialist: the two cases",
+       "root": {
+        "t": "Today's policy problems",
+        "c": [
+         "Which skill do they need?"
+        ]
+       },
+       "branches": [
+        {
+         "t": "Generalist",
+         "c": [
+          "Holistic view of policy",
+          "Coordinates departments",
+          "Grassroots field experience",
+          "Institutional memory"
+         ],
+         "verdict": "Keep breadth"
+        },
+        {
+         "t": "Specialist",
+         "c": [
+          "Techno-economic complexity",
+          "Evidence-based policy",
+          "Domain depth",
+          "NITI Aayog backs lateral entry"
+         ],
+         "verdict": "Build domains"
+        }
+       ]
+      },
+      {
+       "type": "mindmap",
+       "title": "Lateral entry at a glance",
+       "center": "Lateral entry",
+       "branches": [
+        {
+         "t": "Why",
+         "c": [
+          "Type I: wrong person recruited",
+          "Type II: right person rejected",
+          "Reduce conservatism",
+          "Specialist gap after 10-12 years"
+         ]
+        },
+        {
+         "t": "Issues",
+         "c": [
+          "No field experience",
+          "Short-term outlook",
+          "Favourites or corporate nominees",
+          "Top-heavy administration"
+         ]
+        },
+        {
+         "t": "Timeline",
+         "c": [
+          "2018: 10 JS posts",
+          "2021: 31 posts",
+          "Aug 2024: 45 posts advertised",
+          "No reservation row; advert cancelled 20 Aug"
+         ]
+        }
+       ],
+       "after": "Year"
+      }
+     ]
     },
     {
      "id": 3,
@@ -632,7 +813,100 @@
        "a": 1
       }
      ],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "Articles for service law",
+       "sentence": "Rules Tenure Dismissal: Sardar Fixes Equality, Tribunals",
+       "letters": [
+        [
+         "309",
+         "Recruitment, conditions"
+        ],
+        [
+         "310",
+         "Tenure (Pleasure)"
+        ],
+        [
+         "311",
+         "Dismissal safeguards"
+        ],
+        [
+         "312",
+         "AIS creation"
+        ],
+        [
+         "16",
+         "Equal opportunity"
+        ],
+        [
+         "323A",
+         "Tribunals"
+        ]
+       ],
+       "note": "Memory aid: the numbers run 309, 310, 311, 312, then 16 and 323A."
+      },
+      {
+       "type": "flow",
+       "after": "Article 312",
+       "title": "AIS: from British era to the Constitution",
+       "steps": [
+        [
+         "1 Shrinking",
+         "1909: nine AIS",
+         "1924: four",
+         "1947: two"
+        ],
+        [
+         "2 Debate",
+         "Nehru Committee 1928 unkeen",
+         "Regions feared Centre",
+         "Patel: Steel Frame"
+        ],
+        [
+         "3 Constitution",
+         "Art 312",
+         "Three AIS today: IAS, IPS, IFoS",
+         "25 cadres, AGMUT and Assam-Meghalaya"
+        ]
+       ],
+       "per_row": 3
+      },
+      {
+       "type": "fork",
+       "after": "Rajamannar Commission",
+       "title": "AIS debate: keep or disband",
+       "root": {
+        "t": "All India Services",
+        "c": [
+         "Centre-State balance"
+        ]
+       },
+       "branches": [
+        {
+         "t": "Keep: Sarkaria",
+         "c": [
+          "Disbanding is retrograde",
+          "Cut excess generalism",
+          "Advisory Council under Cabinet Secretary",
+          "Add engineering, health, education services"
+         ],
+         "verdict": "Unity and talent"
+        },
+        {
+         "t": "Disband: Rajamannar",
+         "c": [
+          "Authority-responsibility mismatch",
+          "Demoralised state services",
+          "2:1 outsider-insider ratio",
+          "Entry 70 of Union List"
+         ],
+         "verdict": "States' autonomy"
+        }
+       ]
+      }
+     ]
     },
     {
      "id": 4,
@@ -1079,7 +1353,107 @@
        "a": 0
       }
      ],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "Functions of civil services",
+       "sentence": "Four Functions: Formulate, Implement, Evaluate, Adjudicate",
+       "letters": [
+        [
+         "F",
+         "Formulate policy"
+        ],
+        [
+         "I",
+         "Implement policy"
+        ],
+        [
+         "E",
+         "Evaluate policy"
+        ],
+        [
+         "A",
+         "Adjudicate"
+        ]
+       ],
+       "note": "Memory aid: FIEA. Remember the conflict of interest in Evaluate."
+      },
+      {
+       "type": "mindmap",
+       "title": "Why performance suffers",
+       "center": "Weak performance",
+       "branches": [
+        {
+         "t": "Political",
+         "c": [
+          "Interference",
+          "Dual control over AIS",
+          "Arbitrary transfers",
+          "DC tenure about one year"
+         ]
+        },
+        {
+         "t": "Internal",
+         "c": [
+          "Street-level corruption",
+          "Poor capacity building",
+          "Wage compression",
+          "Weak evaluation"
+         ]
+        },
+        {
+         "t": "Protection",
+         "c": [
+          "Constitutional shield costly to use",
+          "Little people's participation"
+         ]
+        }
+       ],
+       "pos": "top"
+      },
+      {
+       "type": "mindmap",
+       "title": "21st-century challenges",
+       "center": "New challenges",
+       "branches": [
+        {
+         "t": "Global problems",
+         "c": [
+          "COVID, laundering",
+          "Terror, drugs",
+          "Multilateral negotiation skills"
+         ]
+        },
+        {
+         "t": "New roles",
+         "c": [
+          "Doer (cost-efficient)",
+          "Facilitator",
+          "Regulator"
+         ]
+        },
+        {
+         "t": "New yardsticks",
+         "c": [
+          "TI, HDI, SDGs",
+          "Ease of Doing Business",
+          "Charters, social audits"
+         ]
+        },
+        {
+         "t": "Pressures",
+         "c": [
+          "Rights widen",
+          "3Ms monoculture",
+          "Tailor-made SPVs",
+          "Crisis of State credibility"
+         ]
+        }
+       ],
+       "pos": "Challenges of the 21st century"
+      }
+     ]
     },
     {
      "id": 6,
@@ -1224,7 +1598,101 @@
      ],
      "traps": [],
      "quiz": [],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "Weber vs development",
+       "sentence": "Change Results Clients Time: Hierarchy Rules Specialisation Roles",
+       "letters": [
+        [
+         "C",
+         "Change orientation"
+        ],
+        [
+         "R",
+         "Result orientation"
+        ],
+        [
+         "C",
+         "Commitment, time-bound"
+        ],
+        [
+         "C",
+         "Client orientation"
+        ]
+       ],
+       "note": "Development administration's four traits against Weber's four."
+      },
+      {
+       "type": "fork",
+       "title": "Bureaucracy: servant or master?",
+       "root": {
+        "t": "Bureaucracy (Weber: like fire)",
+        "c": [
+         "One instrument, two outcomes"
+        ]
+       },
+       "branches": [
+        {
+         "t": "Promotes democracy",
+         "c": [
+          "Rule of law",
+          "Free, fair elections",
+          "Balanced policymaking",
+          "Socio-economic justice"
+         ],
+         "verdict": "Invaluable servant"
+        },
+        {
+         "t": "Threatens democracy",
+         "c": [
+          "Instrument turns institution",
+          "Secrecy, oligarchy",
+          "Not representative",
+          "State oppression"
+         ],
+         "verdict": "Destructive master"
+        }
+       ],
+       "pos": "top"
+      },
+      {
+       "type": "mindmap",
+       "title": "Features and paradoxes of Indian bureaucracy",
+       "center": "Indian bureaucracy",
+       "branches": [
+        {
+         "t": "Structural",
+         "c": [
+          "British pattern",
+          "Long hierarchies",
+          "Centralised, cadre-based",
+          "Unstable tenure"
+         ]
+        },
+        {
+         "t": "Behavioural",
+         "c": [
+          "Colonial mindset",
+          "Hakim culture",
+          "Babu culture, file fetish",
+          "Red tape, secrecy"
+         ]
+        },
+        {
+         "t": "Paradoxes",
+         "c": [
+          "16 paise of the rupee reaches the people",
+          "Learning disorders (dengue)",
+          "Generalists preferred",
+          "Authority without responsibility"
+         ]
+        }
+       ],
+       "after": "Paradoxes"
+      }
+     ]
     },
     {
      "id": 7,
@@ -1308,7 +1776,60 @@
      ],
      "traps": [],
      "quiz": [],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "8th CPC in one line",
+       "sentence": "Fitment Factor multiplies Basic Pay",
+       "letters": [
+        [
+         "R",
+         "Revised basic pay"
+        ],
+        [
+         "=",
+         "Existing pay"
+        ],
+        [
+         "×",
+         "Fitment factor"
+        ]
+       ],
+       "note": "Formula: Revised Basic Pay = Existing Basic Pay × Fitment Factor. Reference date 1 January 2026."
+      },
+      {
+       "type": "fork",
+       "after": "Handout's balanced position",
+       "title": "Right to strike: the two sides",
+       "root": {
+        "t": "Right to strike for civil servants",
+        "c": [
+         "Essential services at stake"
+        ]
+       },
+       "branches": [
+        {
+         "t": "In favour",
+         "c": [
+          "Collective protest",
+          "Protection from exploitation",
+          "Last resort"
+         ],
+         "verdict": "Democratic voice"
+        },
+        {
+         "t": "Against",
+         "c": [
+          "Public interest: loaded gun",
+          "Model-citizen duty",
+          "Government treats staff fairly"
+         ],
+         "verdict": "SC: no right to strike"
+        }
+       ]
+      }
+     ]
     },
     {
      "id": 8,
@@ -1420,7 +1941,89 @@
      ],
      "traps": [],
      "quiz": [],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "Nolan principles (1995)",
+       "sentence": "Seven Intelligent Officers Always Obey Honest Leaders",
+       "letters": [
+        [
+         "S",
+         "Selflessness"
+        ],
+        [
+         "I",
+         "Integrity"
+        ],
+        [
+         "O",
+         "Objectivity"
+        ],
+        [
+         "A",
+         "Accountability"
+        ],
+        [
+         "O",
+         "Openness"
+        ],
+        [
+         "H",
+         "Honesty"
+        ],
+        [
+         "L",
+         "Leadership"
+        ]
+       ],
+       "note": "Memory aid: S-I-O-A-O-H-L."
+      },
+      {
+       "type": "mindmap",
+       "title": "Reform map",
+       "center": "Civil service reform",
+       "branches": [
+        {
+         "t": "Recruitment",
+         "c": [
+          "Lateral entry",
+          "Separate technical exams (Satish Chandra)",
+          "NIPAs: 3-4 years",
+          "SSB-style profile, probation"
+         ]
+        },
+        {
+         "t": "Training",
+         "c": [
+          "All groups, mid-career",
+          "Fix content",
+          "Link to promotion",
+          "Soft skills"
+         ]
+        },
+        {
+         "t": "Appraisal",
+         "c": [
+          "0-10 grades with targets",
+          "360-degree: feedback from all sides",
+          "Domainisation",
+          "Remove deadwood"
+         ]
+        },
+        {
+         "t": "Law and ethics",
+         "c": [
+          "Civil Services Law",
+          "Transparent transfers",
+          "Rehabilitate specialists",
+          "Root out corruption"
+         ]
+        }
+       ],
+       "pos": "top"
+      }
+     ]
     },
     {
      "id": 9,
@@ -1519,7 +2122,66 @@
      ],
      "traps": [],
      "quiz": [],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "Karmayogi at a glance",
+       "sentence": "Rules to Roles",
+       "letters": [
+        [
+         "i",
+         "iGOT Karmayogi"
+        ],
+        [
+         "C",
+         "Competency frameworks"
+        ],
+        [
+         "P",
+         "Performance management"
+        ],
+        [
+         "S",
+         "SPV Karmayogi Bharat"
+        ]
+       ],
+       "note": "Aim: rules-based to roles-based HR. Mission 2020, linked to Viksit Bharat 2047."
+      },
+      {
+       "type": "fork",
+       "after": "Way forward",
+       "title": "Reform challenges and the way out",
+       "root": {
+        "t": "Civil service reform",
+        "c": [
+         "Why do reforms stall?"
+        ]
+       },
+       "branches": [
+        {
+         "t": "Challenges",
+         "c": [
+          "Shifting political will",
+          "Weak project management",
+          "Resistance, no safety nets",
+          "Context mismatch"
+         ],
+         "verdict": "Fragmented efforts"
+        },
+        {
+         "t": "Way forward",
+         "c": [
+          "Cross-party commitment",
+          "Reform units",
+          "Incentives, retraining",
+          "Consultation, feedback"
+         ],
+         "verdict": "Sustained reform"
+        }
+       ]
+      }
+     ]
     },
     {
      "id": 10,
@@ -1666,7 +2328,74 @@
        "a": 1
       }
      ],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mindmap",
+       "title": "Transparency map",
+       "center": "Transparency",
+       "branches": [
+        {
+         "t": "Meaning",
+         "c": [
+          "OECD: comprehensible, timely",
+          "UNESCAP: free flow of information",
+          "Public value, open decisions, tool"
+         ]
+        },
+        {
+         "t": "Tools",
+         "c": [
+          "RTI 2005",
+          "NDSAP 2012",
+          "Citizens' Charters",
+          "E-governance, CPGRAMS"
+         ]
+        },
+        {
+         "t": "Social accountability",
+         "c": [
+          "Social audits",
+          "Public expenditure tracking",
+          "Citizen Report Cards",
+          "Public hearings"
+         ]
+        },
+        {
+         "t": "Limits",
+         "c": [
+          "Privacy",
+          "Misuse of RTI",
+          "Official Secrets Act",
+          "Digital divide"
+         ]
+        }
+       ],
+       "pos": "top"
+      },
+      {
+       "type": "flow",
+       "after": "Negative list",
+       "title": "NDSAP 2012 in three steps",
+       "steps": [
+        [
+         "1 What",
+         "Share non-sensitive government data",
+         "Machine-readable"
+        ],
+        [
+         "2 Where",
+         "Open Government Data Platform",
+         "DST is nodal"
+        ],
+        [
+         "3 Limits",
+         "Negative list",
+         "RTI Sec 8-9, IT Act, privacy"
+        ]
+       ],
+       "per_row": 3
+      }
+     ]
     },
     {
      "id": 11,
@@ -1824,7 +2553,110 @@
       }
      ],
      "quiz": [],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "Accountability asks three things",
+       "sentence": "What To-whom Through-what",
+       "letters": [
+        [
+         "W",
+         "For what?"
+        ],
+        [
+         "T",
+         "To whom?"
+        ],
+        [
+         "T",
+         "Through what?"
+        ]
+       ],
+       "note": "Handout: accountable for what, to whom, through what."
+      },
+      {
+       "type": "mindmap",
+       "title": "Types of accountability",
+       "center": "Accountability",
+       "branches": [
+        {
+         "t": "Managerial",
+         "c": [
+          "Within the hierarchy"
+         ]
+        },
+        {
+         "t": "Political",
+         "c": [
+          "Civil servants to ministers to legislature"
+         ]
+        },
+        {
+         "t": "Judicial",
+         "c": [
+          "Unconstitutional or illegal acts"
+         ]
+        },
+        {
+         "t": "Institutional",
+         "c": [
+          "CAG, CBI, CVC"
+         ]
+        },
+        {
+         "t": "Professional",
+         "c": [
+          "Bar Council, ICAI codes"
+         ]
+        },
+        {
+         "t": "Social",
+         "c": [
+          "RTI, charters, social audits, Lokpal"
+         ]
+        }
+       ],
+       "pos": "top"
+      },
+      {
+       "type": "fork",
+       "after": "Process",
+       "title": "Horizontal, vertical, diagonal",
+       "root": {
+        "t": "Accountability forms",
+        "c": [
+         "Who holds whom?"
+        ]
+       },
+       "branches": [
+        {
+         "t": "Horizontal",
+         "c": [
+          "CAG, EC, CVC, CIC",
+          "Seek explanations, impose penalties"
+         ],
+         "verdict": "State to state"
+        },
+        {
+         "t": "Vertical",
+         "c": [
+          "Elections, lobbying",
+          "Report cards, social audits"
+         ],
+         "verdict": "Citizens to State"
+        },
+        {
+         "t": "Diagonal",
+         "c": [
+          "Citizens engage institutions directly",
+          "PIL"
+         ],
+         "verdict": "Citizens via institutions"
+        }
+       ]
+      }
+     ]
     },
     {
      "id": 12,
@@ -1935,7 +2767,108 @@
       }
      ],
      "quiz": [],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "Sevottam: seven steps",
+       "sentence": "Define Standards, Develop, Perform, Monitor, Evaluate, Improve",
+       "letters": [
+        [
+         "D",
+         "Define services, clients"
+        ],
+        [
+         "S",
+         "Set standards, norms"
+        ],
+        [
+         "D",
+         "Develop capability"
+        ],
+        [
+         "P",
+         "Perform to standards"
+        ],
+        [
+         "M",
+         "Monitor"
+        ],
+        [
+         "E",
+         "Evaluate impact"
+        ],
+        [
+         "I",
+         "Improve continuously"
+        ]
+       ],
+       "note": "Seva + Uttam. Seven steps, in order."
+      },
+      {
+       "type": "flow",
+       "after": "Elements of the Indian programme",
+       "title": "Charter to Sevottam",
+       "steps": [
+        [
+         "1 Charter",
+         "UK 1991 (Major)",
+         "Promise, no new rights"
+        ],
+        [
+         "2 India",
+         "131 central, 729 state (2011)",
+         "goicharters.nic.in"
+        ],
+        [
+         "3 Problems",
+         "No penal provisions",
+         "Manager's charter"
+        ],
+        [
+         "4 Sevottam",
+         "2nd ARC; 2006; IS 15700:2005",
+         "Charter, grievances, capability"
+        ]
+       ],
+       "per_row": 4
+      },
+      {
+       "type": "mindmap",
+       "title": "Citizen's Charter: what it holds",
+       "center": "Citizen's Charter",
+       "branches": [
+        {
+         "t": "Contents",
+         "c": [
+          "Vision and mission",
+          "Services per client group",
+          "Grievance redressal",
+          "Compensation"
+         ]
+        },
+        {
+         "t": "Problems",
+         "c": [
+          "Manager's charter",
+          "No penalties",
+          "Low awareness",
+          "One format for all"
+         ]
+        },
+        {
+         "t": "Fixes",
+         "c": [
+          "User and staff involvement",
+          "Outside monitoring",
+          "Plain language",
+          "5-year master plan"
+         ]
+        }
+       ],
+       "pos": "Suggestions"
+      }
+     ]
     },
     {
      "id": 13,
@@ -2141,7 +3074,112 @@
        "a": 0
       }
      ],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "RTI numbers",
+       "sentence": "16 types in 120 days; PIO in 100; 5 transfer; 10 third party; 20 years",
+       "letters": [
+        [
+         "16",
+         "Suo motu items"
+        ],
+        [
+         "120",
+         "Days to publish"
+        ],
+        [
+         "100",
+         "Days to appoint PIOs"
+        ],
+        [
+         "5",
+         "Days to transfer"
+        ],
+        [
+         "10",
+         "Days third party"
+        ],
+        [
+         "20",
+         "Years to release"
+        ]
+       ],
+       "note": "Penalty: Rs 250 a day up to Rs 25,000. Information in 30 days."
+      },
+      {
+       "type": "flow",
+       "after": "Proactive disclosure",
+       "title": "How an RTI request travels",
+       "steps": [
+        [
+         "1 Apply",
+         "Any citizen, no reason",
+         "Fee waived for BPL"
+        ],
+        [
+         "2 PIO",
+         "Reply in 30 days",
+         "Transfer in 5 days"
+        ],
+        [
+         "3 Complaint",
+         "To CIC or SIC",
+         "No PIO, refusal, delay, false data"
+        ],
+        [
+         "4 Penalty",
+         "Rs 250 a day",
+         "Up to Rs 25,000"
+        ]
+       ],
+       "per_row": 4
+      },
+      {
+       "type": "mindmap",
+       "title": "RTI 2005: map",
+       "center": "RTI Act 2005",
+       "branches": [
+        {
+         "t": "Background",
+         "c": [
+          "Sweden 1766; USA 1966",
+          "MKSS: Humara Paisa, Humara Hisab",
+          "NCPRI 1996",
+          "Shourie group; FOI Act 2002"
+         ]
+        },
+        {
+         "t": "Coverage",
+         "c": [
+          "Public authority",
+          "Substantially financed",
+          "Parties (CIC 2013); judiciary (SC 2019)",
+          "BCCI (CIC 2018)"
+         ]
+        },
+        {
+         "t": "Exemptions",
+         "c": [
+          "Section 8",
+          "Public interest override",
+          "Second Schedule: corruption, human rights",
+          "Copyright only absolute"
+         ]
+        },
+        {
+         "t": "2019 Amendment",
+         "c": [
+          "Centre fixes tenure",
+          "Centre fixes salary",
+          "CIC is statutory"
+         ]
+        }
+       ],
+       "pos": "Exemptions (Section 8)"
+      }
+     ]
     },
     {
      "id": 14,
@@ -2275,7 +3313,100 @@
        "a": 0
       }
      ],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "CIC numbers",
+       "sentence": "3 years or 65; Rs 2.5 lakh; up to 10 ICs",
+       "letters": [
+        [
+         "1+10",
+         "CIC + up to 10 ICs"
+        ],
+        [
+         "3/65",
+         "Years or age, earlier"
+        ],
+        [
+         "5",
+         "Years total if elevated"
+        ],
+        [
+         "2.5L",
+         "CIC pay (IC 2.25L)"
+        ]
+       ],
+       "note": "RTI Rules 2019. Removal on SC inquiry."
+      },
+      {
+       "type": "fork",
+       "after": "Removal",
+       "title": "CIC: appointment and removal",
+       "root": {
+        "t": "Central Information Commission",
+        "c": [
+         "Who selects, who removes?"
+        ]
+       },
+       "branches": [
+        {
+         "t": "Appointment",
+         "c": [
+          "President, on committee",
+          "PM (Chair)",
+          "Leader of Opposition",
+          "Cabinet Minister nominated by PM"
+         ],
+         "verdict": "2nd ARC: CJI in place of minister"
+        },
+        {
+         "t": "Removal",
+         "c": [
+          "Misbehaviour or incapacity: SC inquiry",
+          "Insolvency, moral turpitude",
+          "Paid job, unfit, financial interest"
+         ],
+         "verdict": "Last three need no SC inquiry"
+        }
+       ]
+      },
+      {
+       "type": "mindmap",
+       "title": "RTI: problems and cures",
+       "center": "RTI in practice",
+       "branches": [
+        {
+         "t": "Problems",
+         "c": [
+          "No budget",
+          "Penalty not imposed in 95% of cases",
+          "Retired bureaucrats as ICs",
+          "Schedule II abuse"
+         ]
+        },
+        {
+         "t": "Pendency",
+         "c": [
+          "40-60 lakh requests a year",
+          "2.55 lakh pending in 26 ICs",
+          "1 year 11 months to dispose",
+          "21 of 29 ICs filed no report"
+         ]
+        },
+        {
+         "t": "2nd ARC cures",
+         "c": [
+          "Repeal OSA, oath of transparency",
+          "Review Second Schedule",
+          "4 regional CIC offices",
+          "1% flagship funds for 5 years"
+         ]
+        }
+       ],
+       "pos": "top"
+      }
+     ]
     }
    ]
   },
@@ -2445,7 +3576,113 @@
        "a": 1
       }
      ],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "Types of corruption (pairs)",
+       "sentence": "Black White Grey; Grass Meat; Coercive Collusive; Retail Policy",
+       "letters": [
+        [
+         "B",
+         "Black: intolerable to all"
+        ],
+        [
+         "W",
+         "White: tolerated"
+        ],
+        [
+         "G",
+         "Grey: society divided"
+        ],
+        [
+         "G",
+         "Grass eater: won't refuse"
+        ],
+        [
+         "M",
+         "Meat eater: seeks it"
+        ],
+        [
+         "C",
+         "Coercive: official extorts"
+        ],
+        [
+         "C",
+         "Collusive: both collude"
+        ]
+       ],
+       "note": "Retail (petty) vs Policy (grand) completes the set."
+      },
+      {
+       "type": "mindmap",
+       "title": "Causes of corruption",
+       "center": "Why corruption?",
+       "branches": [
+        {
+         "t": "Psycho-social",
+         "c": [
+          "THYMOS: need for respect",
+          "Squirrel Nuts Syndrome",
+          "Opportunity theory",
+          "Social evils: dowry"
+         ]
+        },
+        {
+         "t": "Economic",
+         "c": [
+          "Poor pay",
+          "Consumerism",
+          "Clearance raj",
+          "MNC bribes"
+         ]
+        },
+        {
+         "t": "Legal",
+         "c": [
+          "Art 311",
+          "PCA Sec 19 sanction",
+          "CrPC Sec 197",
+          "Single Directive, 6A, 17A"
+         ]
+        },
+        {
+         "t": "Administrative and political",
+         "c": [
+          "Red tape, middlemen",
+          "Politicised transfers",
+          "Criminalised politics",
+          "Party funding"
+         ]
+        }
+       ],
+       "pos": "Factors behind corruption"
+      },
+      {
+       "type": "flow",
+       "after": "DSPE Act Sec 6A chain",
+       "title": "Sanction chain in four steps",
+       "steps": [
+        [
+         "1 Single Directive",
+         "Sanction for JS and above"
+        ],
+        [
+         "2 Vineet Narain",
+         "1997: struck down"
+        ],
+        [
+         "3 DSPE Sec 6A",
+         "Enacted; struck down 2014"
+        ],
+        [
+         "4 PCA Sec 17A",
+         "2018: permission, except red-handed"
+        ]
+       ],
+       "per_row": 4
+      }
+     ]
     },
     {
      "id": 16,
@@ -2564,7 +3801,105 @@
      ],
      "traps": [],
      "quiz": [],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "Anti-corruption toolbox",
+       "sentence": "Stick Carrot Administrative Radical International",
+       "letters": [
+        [
+         "S",
+         "Stick: prosecution, stings, asset declaration"
+        ],
+        [
+         "C",
+         "Carrot: pay, helplines"
+        ],
+        [
+         "A",
+         "Administrative: rotation, audit, procurement law"
+        ],
+        [
+         "R",
+         "Radical: disband, gender, amnesty"
+        ],
+        [
+         "I",
+         "International: FCPA, UNCAC, FATF"
+        ]
+       ],
+       "note": "Memory aid: S-C-A-R-I."
+      },
+      {
+       "type": "mindmap",
+       "title": "Strengthening social audit",
+       "center": "Social audit",
+       "branches": [
+        {
+         "t": "Law and institution",
+         "c": [
+          "Meghalaya 2017 Act",
+          "AP's SSAAT",
+          "Support CAG and PRIs"
+         ]
+        },
+        {
+         "t": "People",
+         "c": [
+          "Gram Sabha awareness",
+          "Auditor training",
+          "NGO and media role"
+         ]
+        },
+        {
+         "t": "Models",
+         "c": [
+          "Chhattisgarh: wall writing",
+          "Karnataka: rotate teams every 3 cycles",
+          "Jharkhand SAU",
+          "Rajasthan MKSS to RTI"
+         ]
+        }
+       ],
+       "pos": "Strengthening social audit"
+      },
+      {
+       "type": "mindmap",
+       "title": "Stick, carrot, radical: examples",
+       "center": "Corruption control",
+       "branches": [
+        {
+         "t": "Stick",
+         "c": [
+          "Botswana: high conviction",
+          "Singapore CPIB, Hong Kong ICAC",
+          "Pension forfeiture",
+          "Blacklisting"
+         ]
+        },
+        {
+         "t": "Administrative",
+         "c": [
+          "Job rotation (Kautilya)",
+          "CAG audits 25% of units",
+          "Procurement 30% of GDP",
+          "2012 bill lapsed"
+         ]
+        },
+        {
+         "t": "Radical",
+         "c": [
+          "Georgia traffic police 2004",
+          "Peru: gender balance",
+          "Romania: monetise bribes",
+          "Amnesty: 50% surrender"
+         ]
+        }
+       ],
+       "pos": "Radical approaches"
+      }
+     ]
     },
     {
      "id": 17,
@@ -2674,7 +4009,104 @@
        "a": 1
       }
      ],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "CBI vs CVC dates",
+       "sentence": "1941 SPE, 1946 DSPE, 1963 CBI; 1964 CVC, 2003 Act",
+       "letters": [
+        [
+         "1941",
+         "SPE set up"
+        ],
+        [
+         "1946",
+         "DSPE Act"
+        ],
+        [
+         "1963",
+         "Named CBI"
+        ],
+        [
+         "1964",
+         "CVC (Santhanam)"
+        ],
+        [
+         "2003",
+         "CVC statutory"
+        ]
+       ],
+       "note": "Vineet Narain: 1997."
+      },
+      {
+       "type": "fork",
+       "after": "Central Vigilance Commission",
+       "title": "CBI and CVC compared",
+       "root": {
+        "t": "Anti-corruption bodies",
+        "c": [
+         "Linked by Vineet Narain"
+        ]
+       },
+       "branches": [
+        {
+         "t": "CBI",
+         "c": [
+          "DSPE Act 1946",
+          "Investigates cases",
+          "Director chosen by PM, LoP, CJI",
+          "No suo motu jurisdiction"
+         ],
+         "verdict": "The caged parrot"
+        },
+        {
+         "t": "CVC",
+         "c": [
+          "Statutory since 2003",
+          "Superintends vigilance",
+          "CVC + up to 2 VCs: PM, HM, LoP choose",
+          "4 years or age 65"
+         ],
+         "verdict": "Apex vigilance body"
+        }
+       ]
+      },
+      {
+       "type": "mindmap",
+       "title": "Vineet Narain (1997) and CVC powers",
+       "center": "CVC",
+       "branches": [
+        {
+         "t": "Vineet Narain",
+         "c": [
+          "CVC superintends CBI on PCA cases",
+          "Director: 2-year minimum tenure",
+          "Single Directive struck down",
+          "DoPT: policy only"
+         ]
+        },
+        {
+         "t": "Powers",
+         "c": [
+          "Civil court powers",
+          "Reviews sanction applications",
+          "Chairs ED Director and CBI SP-level panels"
+         ]
+        },
+        {
+         "t": "Issues",
+         "c": [
+          "Depends on politicised CBI",
+          "Sanction delays",
+          "Under 50% staff",
+          "No prosecution powers"
+         ]
+        }
+       ],
+       "pos": "top"
+      }
+     ]
     },
     {
      "id": 18,
@@ -2808,7 +4240,112 @@
        "a": 2
       }
      ],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "Lokpal Act 2013: selection panel",
+       "sentence": "PM Speaker Opposition Judge Jurist",
+       "letters": [
+        [
+         "P",
+         "PM (Chair)"
+        ],
+        [
+         "S",
+         "Lok Sabha Speaker"
+        ],
+        [
+         "O",
+         "Leader of Opposition (LS)"
+        ],
+        [
+         "J",
+         "CJI or nominated SC judge"
+        ],
+        [
+         "J",
+         "Eminent jurist"
+        ]
+       ],
+       "note": "Five-member selection committee; search committee of 7 shortlists."
+      },
+      {
+       "type": "mindmap",
+       "title": "Lokpal at a glance",
+       "center": "Lokpal Act 2013",
+       "branches": [
+        {
+         "t": "Body",
+         "c": [
+          "9 members incl. Chair",
+          "Half judicial; 50% reserved groups",
+          "Tenure 5 years or 70",
+          "Min age 45"
+         ]
+        },
+        {
+         "t": "Jurisdiction",
+         "c": [
+          "PM (partly), Ministers, MPs",
+          "Group A-D officials",
+          "Bodies funded above Rs 10 lakh",
+          "7-year limit"
+         ]
+        },
+        {
+         "t": "Process",
+         "c": [
+          "Preliminary inquiry 60 days",
+          "Bench of 3 for sanction",
+          "Replaces appointing authority",
+          "Attachment powers"
+         ]
+        },
+        {
+         "t": "Since 2019",
+         "c": [
+          "Complaints: 1,427, 110, then 12",
+          "Rules delayed",
+          "Wings slow to set up",
+          "2nd ARC: constitutional status"
+         ]
+        }
+       ],
+       "pos": "top"
+      },
+      {
+       "type": "fork",
+       "after": "Act covers PM partially",
+       "title": "Should the Prime Minister be covered?",
+       "root": {
+        "t": "Prime Minister",
+        "c": [
+         "Covered or not?"
+        ]
+       },
+       "branches": [
+        {
+         "t": "2nd ARC: exclude",
+         "c": [
+          "Cripples administration",
+          "Foreign powers may exploit",
+          "PCA already covers PM"
+         ],
+         "verdict": "Do not cover fully"
+        },
+        {
+         "t": "Counter: include",
+         "c": [
+          "CBI sits under DoPT, so under PM",
+          "Lead by example",
+          "Art 361 shields only President, Governors"
+         ],
+         "verdict": "Act: covered, with limits"
+        }
+       ]
+      }
+     ]
     },
     {
      "id": 19,
@@ -2921,7 +4458,97 @@
        "a": 2
       }
      ],
-     "visuals": []
+     "visuals": [
+      {
+       "type": "mnemonic",
+       "pos": "top",
+       "title": "Whistleblower Act 2014: who gets the complaint",
+       "sentence": "PM Chief Presiding CVC",
+       "letters": [
+        [
+         "P",
+         "PM: Union Ministers"
+        ],
+        [
+         "C",
+         "CM: State Ministers"
+        ],
+        [
+         "P",
+         "Presiding Officer: legislators"
+        ],
+        [
+         "C",
+         "CVC: civil servants"
+        ]
+       ],
+       "note": "No anonymous complaints. Frivolous complaint: up to 2 years."
+      },
+      {
+       "type": "fork",
+       "after": "Giving a bribe",
+       "title": "PCA 2018: both sides of a bribe",
+       "root": {
+        "t": "PCA Amendment 2018",
+        "c": [
+         "Who is punished?"
+        ]
+       },
+       "branches": [
+        {
+         "t": "The giver",
+         "c": [
+          "Giving a bribe is an offence",
+          "Coercion: report within 7 days to be free of guilt"
+         ],
+         "verdict": "Penalised, with a safe harbour"
+        },
+        {
+         "t": "The officer",
+         "c": [
+          "Sec 17A also for retired officers",
+          "Sec 13(1)(d) diluted",
+          "Jail 3 to 7 years; trial in 2 years (max 4)"
+         ],
+         "verdict": "Shielded, yet punished harder"
+        }
+       ]
+      },
+      {
+       "type": "mindmap",
+       "title": "Whistleblower protection map",
+       "center": "Whistleblowing",
+       "branches": [
+        {
+         "t": "The 2014 Act",
+         "c": [
+          "Any public body",
+          "Competent authority",
+          "No anonymity",
+          "2015 bill (lapsed): OSA override"
+         ]
+        },
+        {
+         "t": "Challenges",
+         "c": [
+          "Satyendra Dubey murder",
+          "Weak awareness",
+          "Victimisation",
+          "3,500+ complaints to listed firms (2018)"
+         ]
+        },
+        {
+         "t": "Fixes",
+         "c": [
+          "2nd ARC: public and private cover",
+          "Law Commission: confidentiality",
+          "SEBI reward up to Rs 1 crore"
+         ]
+        }
+       ],
+       "pos": "top"
+      }
+     ]
     }
    ]
   }

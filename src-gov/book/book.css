@@ -3,23 +3,14 @@
  @top-left{content:string(run);font:600 7.4pt Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8B8168;vertical-align:bottom;padding-bottom:4mm;border-bottom:.25pt solid #D9D0BC}
  @top-right{content:"%%RUNHEAD%%";font:600 7.4pt Inter,sans-serif;letter-spacing:.14em;color:#B58A3C;vertical-align:bottom;padding-bottom:4mm;border-bottom:.25pt solid #D9D0BC}
  @bottom-center{content:counter(page);font:500 9pt Lora,serif;color:#14283F}}
-@page cover{margin:0;background:#14283F;@top-left{content:none}@top-right{content:none}@bottom-center{content:none}}
+@page cover{margin:0;background:#fff;@top-left{content:none}@top-right{content:none}@bottom-center{content:none}}
 @page front{margin:0;background:#fff;@top-left{content:none}@top-right{content:none}@bottom-center{content:none}}
-@page partop{margin:0;background:#14283F;@top-left{content:none}@top-right{content:none}@bottom-center{content:none}}
+@page partop{margin:0;background:#fff;@top-left{content:none}@top-right{content:none}@bottom-center{content:none}}
 html{font:10.9pt/1.52 Lora,serif;color:#1C2733;hyphens:auto;hyphenate-limit-chars:7 3 3}
 body{margin:0}
 .plain{string-set:run content()}
 h1,h2,h3,h4,h5{font-family:Lora,serif;margin:0}
 /* cover */
-.cover{page:cover;height:297mm;width:210mm;color:#F3E9D0;text-align:center;position:relative;break-after:page}
-.cover .cin{position:absolute;left:22mm;right:22mm;top:36mm;bottom:30mm;border:.5pt solid #B58A3C;padding:24mm 14mm 0}
-.cover .top{font:600 9pt Inter,sans-serif;letter-spacing:.38em;color:#B58A3C}
-.cover .rule{height:0;border-top:.6pt solid #B58A3C;width:34mm;margin:12mm auto}
-.cover h1{font:700 44pt Lora,serif;letter-spacing:.16em;color:#fff;margin:6mm 0 6mm}
-.cover .sub{font:italic 14pt/1.5 Lora,serif;color:#E9D9B0}
-.cover .mark{margin:14mm auto 0;display:block}
-.cover .mid{font:500 9.4pt/1.6 Inter,sans-serif;letter-spacing:.06em;color:#CFC7B1;margin:0 10mm}
-.cover .foot{position:absolute;bottom:12mm;left:0;right:0;font:500 8.4pt Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#B58A3C}
 /* front matter */
 .front{page:front;width:210mm;height:297mm;position:relative;break-after:page}
 .halftitle{position:absolute;top:92mm;left:30mm;right:30mm;text-align:center}
@@ -41,11 +32,6 @@ h2.plain{font:700 20pt Lora;color:#14283F;margin:0 0 7mm;padding-bottom:3mm;bord
 a.tl::after{content:leader('.') target-counter(attr(href),page);color:#5A6676;font-size:9.4pt}
 .tl.off{color:#8A93A0}.tl.off::after{content:leader('.') ' ';}
 /* part opener */
-.partop{page:partop;width:210mm;height:297mm;position:relative;color:#fff;break-before:page;break-after:page}
-.partop .pn{position:absolute;top:96mm;left:0;right:0;text-align:center;font:600 10pt Inter;letter-spacing:.45em;color:#B58A3C;text-transform:uppercase}
-.partop h1{position:absolute;top:108mm;left:0;right:0;text-align:center;font:700 34pt Lora;letter-spacing:.08em}
-.partop .rule{position:absolute;top:130mm;left:88mm;width:34mm;border-top:.6pt solid #B58A3C}
-.partop p{position:absolute;top:138mm;left:38mm;right:38mm;text-align:center;font:italic 13pt/1.55 Lora;color:#E9D9B0}
 /* chapter */
 .chapter{break-before:page}
 .opener{margin-top:3mm;display:flex;align-items:flex-end;border-bottom:1.4pt solid #14283F;padding-bottom:4mm;margin-bottom:4mm}
@@ -114,3 +100,36 @@ figure.wide{margin:3mm 0}
 ul.b li{margin-bottom:1.2mm}
 h4{margin:4.2mm 0 2mm}
 .remember2{background:#14283F;color:#F3E9D0;padding:2.4mm 4mm;border-radius:1mm;margin:3mm 0;font:9.4pt/1.45 Lora}.remember2 span{font:700 7.2pt Inter;letter-spacing:.16em;text-transform:uppercase;color:#D8B56A;margin-right:2mm}
+
+/* ===== light title pages ===== */
+.cover{page:cover;height:297mm;width:210mm;position:relative;break-after:page;text-align:center;color:#1F4E5F;overflow:hidden;
+ background:linear-gradient(180deg,#E4F2EE 0,#F4F9F4 38%,#FFF9EC 70%,#FDEBD5 100%)}
+.cover .deco{position:absolute;left:0;top:0;width:210mm;height:297mm}
+.cover .cin{position:absolute;left:20mm;right:20mm;top:30mm;bottom:26mm;border:.7pt solid #C9A24D;border-radius:3mm;padding:26mm 12mm 0;background:rgba(255,255,255,.55)}
+.cover .top{font:600 9pt Inter,sans-serif;letter-spacing:.34em;color:#B07F1E}
+.cover .rule{height:0;border-top:.8pt solid #C9A24D;width:30mm;margin:10mm auto}
+.cover h1{font:700 42pt Lora,serif;letter-spacing:.14em;color:#1F4E5F;margin:4mm 0 6mm}
+.cover .sub{font:italic 14pt/1.5 Lora,serif;color:#5B6F78}
+.cover .mark{margin:10mm auto 0;display:block}
+.cover .mid{font:500 9.4pt/1.7 Inter,sans-serif;letter-spacing:.05em;color:#5B6F78;margin:0 8mm}
+.cover .foot{position:absolute;bottom:9mm;left:0;right:0;font:600 8.2pt Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#B07F1E}
+.halftitle h1{color:#1F4E5F}
+.partop{page:partop;width:210mm;height:297mm;position:relative;break-before:page;break-after:page;overflow:hidden;color:#1F4E5F}
+.partop.p1{background:linear-gradient(160deg,#E3F3EE,#F6FBF7 55%,#FFF7E6)}
+.partop.p2{background:linear-gradient(160deg,#FCE8DA,#FFF6EC 55%,#EEF4FB)}
+.partop .deco{position:absolute;left:0;top:0;width:210mm;height:297mm}
+.partop .pn{position:absolute;top:92mm;left:0;right:0;text-align:center;font:600 10pt Inter;letter-spacing:.45em;color:#B07F1E;text-transform:uppercase}
+.partop h1{position:absolute;top:104mm;left:0;right:0;text-align:center;font:700 34pt Lora;letter-spacing:.07em;color:#1F4E5F}
+.partop .rule{position:absolute;top:128mm;left:88mm;width:34mm;border-top:.8pt solid #C9A24D}
+.partop p{position:absolute;top:136mm;left:38mm;right:38mm;text-align:center;font:italic 13pt/1.55 Lora;color:#5B6F78}
+/* soften dark blocks */
+.mnem{background:#EAF4F1!important;color:#1F3A44!important;border:.6pt solid #BCD9D2}
+.remember2{background:#EAF4F1!important;color:#1F3A44!important;border-left:2pt solid #C9A24D}
+.remember2 span{color:#B07F1E!important}
+th{background:#DCEBE7!important;color:#1F3A44!important;border-bottom:1pt solid #C9A24D}
+
+.msent{color:#1F4E5F!important}
+.msent b{color:#B07F1E!important}
+.chip{background:#fff!important;color:#1F3A44!important;border:.5pt solid #BCD9D2}
+.chip i{color:#B07F1E!important}
+.mnem .note,.mnem .mnote,.mnem small,.mnem div:last-child{color:#5B6F78!important}

@@ -95,15 +95,16 @@ def notes_svg():
     lines = ''.join('<line x1="148" x2="196" y1="%s" y2="%s" stroke="#D9D0BC" stroke-width="0.18" stroke-dasharray="0.6 0.9"/>' % (y, y) for y in [32 + 8 * i for i in range(30)])
     svg = ('<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297">'
            '<rect x="144" y="18" width="56" height="261" rx="1.2" fill="#FBF8F0" stroke="#E4DCC8" stroke-width="0.25"/>'
-           '<rect x="144" y="18" width="56" height="9" rx="1.2" fill="#14283F"/>'
-           '<text x="172" y="24" font-family="Inter, sans-serif" font-size="2.7" fill="#E9D9B0" text-anchor="middle" letter-spacing="0.35">MY NOTES</text>' + lines +
+           '<rect x="144" y="18" width="56" height="9" rx="1.2" fill="#CFE6DF"/>'
+           '<text x="172" y="24" font-family="Inter, sans-serif" font-size="2.7" fill="#1F4E5F" text-anchor="middle" letter-spacing="0.35">MY NOTES</text>' + lines +
            '<text x="172" y="284.6" font-family="Inter, sans-serif" font-size="2.05" fill="#8B8168" text-anchor="middle" letter-spacing="0.12">CURRENT AFFAIRS  ·  DATA  ·  VALUE ADDITION</text></svg>')
     return 'data:image/svg+xml;base64,' + base64.b64encode(svg.encode()).decode()
 
+DECO='<svg class="deco" viewBox="0 0 210 297"><circle cx="190" cy="22" r="46" fill="#CBE7E0" opacity=".6"/><circle cx="12" cy="40" r="26" fill="#F8DDB8" opacity=".6"/><circle cx="20" cy="282" r="48" fill="#CBE7E0" opacity=".55"/><circle cx="198" cy="270" r="30" fill="#F8DDB8" opacity=".65"/></svg>'
 def cover():
-    return ('<section class="cover"><div class="cin"><div class="top">%s</div><div class="rule"></div><h1>%s</h1><div class="sub">%s</div>'
-            '<svg class="mark" viewBox="0 0 120 80" width="46mm"><g fill="none" stroke="#B58A3C" stroke-width="1.6"><path d="M10 70h100M16 64h88M22 22h76M60 6l44 16H16z"/><path d="M28 28v34M44 28v34M60 28v34M76 28v34M92 28v34"/></g></svg>'
-            '<div class="rule"></div><div class="mid">%s</div><div class="foot">%s</div></div></section>') % (hx(M['cover_top']), hx(M['title']), hx(M['subtitle']), hx(M['cover_mid']), hx(M['cover_foot']))
+    return ('<section class="cover">%s<div class="cin"><div class="top">%s</div><div class="rule"></div><h1>%s</h1><div class="sub">%s</div>'
+            '<svg class="mark" viewBox="0 0 120 80" width="46mm"><g fill="none" stroke="#C9A24D" stroke-width="1.8"><path d="M10 70h100M16 64h88M22 22h76M60 6l44 16H16z"/><path d="M28 28v34M44 28v34M60 28v34M76 28v34M92 28v34"/></g></svg>'
+            '<div class="rule"></div><div class="mid">%s</div><div class="foot">%s</div></div></section>') % (DECO, hx(M['cover_top']), hx(M['title']), hx(M['subtitle']), hx(M['cover_mid']), hx(M['cover_foot']))
 
 def front():
     return ('<section class="front"><div class="halftitle"><h1>%s</h1><div class="s">%s</div></div><div class="imprint">%s</div></section>'
@@ -127,8 +128,15 @@ def toc(built):
             t = hx(c['title'])
             if c['id'] in built: h += '<a class="tl" href="#ch%d"><span class="n">%02d</span>%s</a>' % (c['id'], c['id'], t)
             else: h += '<div class="tl off"><span class="n">%02d</span>%s</div>' % (c['id'], t)
-    if M.get('back_matter'): h += '<div class="tpart"><span>Back matter</span> %s</div>' % hx(M['back_matter'])
+    if MODE=='full': h += '<div class="tpart"><span>Back matter</span></div><a class="tl" href="#back"><span class="n"></span>Priority and PYQ index</a>'
     return h + '</section>'
+
+def back():
+    h='<section class="back" id="back"><h2 class="plain">Priority and PYQ index</h2><p>Quick revision order. High: two or more PYQs map; Medium: one or partial; Low: none quoted in the handout.</p><table class="terms"><thead><tr><th>Ch</th><th>Chapter</th><th>Priority</th><th>Mains PYQs quoted</th></tr></thead><tbody>'
+    for p in B['parts']:
+        for c in p['chapters']:
+            h+='<tr><td>%02d</td><td>%s</td><td><span class="pri %s">%s</span></td><td>%s</td></tr>'%(c['id'],hx(c['title']),c['priority'],PRI[c['priority']],hx(c.get('pyqs','')))
+    return h+'</tbody></table></section>'
 
 def build():
     ids = SAMPLE_IDS if MODE == 'sample' and SAMPLE_IDS else list(ALL)
@@ -136,8 +144,10 @@ def build():
     for p in B['parts']:
         chs = [c for c in p['chapters'] if c['id'] in ids]
         if not chs: continue
-        body += '<section class="partop"><div class="pn">%s</div><h1>%s</h1><div class="rule"></div><p>%s</p></section>' % (hx(p['label']), hx(p['title']), hx(p['sub']))
+        pi = B['parts'].index(p)%2+1
+        body += ('<section class="partop p%d"><svg class="deco" viewBox="0 0 210 297"><circle cx="195" cy="30" r="55" fill="%s" opacity=".55"/><circle cx="10" cy="270" r="60" fill="%s" opacity=".5"/><path d="M0 210 Q105 170 210 210 V297 H0Z" fill="%s" opacity=".35"/></svg><div class="pn">%s</div><h1>%s</h1><div class="rule"></div><p>%s</p></section>') % (pi, *(('#BFE3DA','#F8DDB8','#CBE7E0') if pi==1 else ('#F9D5BD','#CFE0F3','#F8DDB8')), hx(p['label']), hx(p['title']), hx(p['sub']))
         body += ''.join(chapter(c) for c in chs)
+    if MODE=='full': body += back()
     css = CSS.replace('%%NOTES%%', notes_svg()).replace('%%RUNHEAD%%', M.get('running_head', M['title']))
     doc = '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>%s</title><style>%s</style></head><body>%s</body></html>' % (hx(M['title']), css, body)
     HTML(string=doc, base_url=BASE).write_pdf(OUT)
