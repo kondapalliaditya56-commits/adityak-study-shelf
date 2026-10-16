@@ -167,6 +167,44 @@ figcaption.clamp.open{max-height:none}
 figcaption.clamp:not(.open)::after{content:"more";position:absolute;right:0;bottom:0;background:var(--bg);color:var(--acc);font:700 12px var(--sans);padding-left:14px}
 .cbar{display:block;height:4px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}.cbar i{display:block;height:100%;width:0;background:var(--acc)}
 .nbcard h2{border:0;padding:0}.nbcard{border-top:1px solid var(--line)}
+/* ---- book edition (web) ---- */
+.bnotes .bl,.page .bl{padding-left:1.15em;margin:.5em 0}.bl li{margin:.28em 0}
+.bh{font:700 17px var(--serif);color:var(--acc);margin:1.2em 0 .3em}
+.bbox{position:relative;background:var(--surface2);border:1px solid var(--line);border-left:4px solid var(--saf,#C9A24D);border-radius:10px;padding:12px 14px 8px;margin:14px 0;display:flow-root}
+.bbox.key{border-left-color:var(--acc)}.bbox.note{border-left-color:#B58A3C}.bbox.story{border-left-color:#4F7A36}.bbox.example{border-left-color:#6A4C93}.bbox.source{border-left-color:#3F6E8F}
+.btag{display:block;font:700 11px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.bfig{margin:12px 0;display:block}.bfig img{border-radius:8px;border:1px solid var(--line);background:#fff;display:block;max-width:100%;height:auto}
+.bfig.sq{float:right;width:min(42%,260px);margin:2px 0 8px 14px}.bfig.wide{width:100%}
+.bfig figcaption{font:12px var(--sans);color:var(--muted);margin-top:4px}.bfig .pg{opacity:.75}
+.bfig.inbox{margin-top:0}
+.tw{overflow-x:auto;margin:12px 0}table.bt{border-collapse:collapse;width:100%;font:14px/1.4 var(--sans)}
+table.bt th{background:var(--acc-soft);text-align:left}table.bt th,table.bt td{border:1px solid var(--line);padding:6px 9px;vertical-align:top}
+.viz-card{background:#fff;color:#1C2733;border:1px solid var(--line);border-radius:12px;padding:12px;margin:14px 0;overflow-x:auto}
+.viz-card .viz svg{min-width:340px;max-width:640px;display:block;margin:0 auto}
+.vtitle{font:700 12px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:#14283F;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid #B58A3C}
+.mnem{background:#EAF4F1;color:#1F3A44;border:1px solid #BCD9D2;border-radius:10px;padding:12px 14px}
+.viz-card.mi,.viz-card:has(.mnem){background:#EAF4F1;border-color:#BCD9D2}
+.mlbl{font:700 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#B07F1E;margin-bottom:8px}
+.mword .tiles{margin:4px 0 8px;line-height:1}
+.mword .tile{display:inline-block;min-width:38px;padding:8px 6px;margin:0 5px 5px 0;text-align:center;font:700 28px var(--serif);color:#1F4E5F;background:#fff;border:2px solid #C9A24D;border-radius:8px}
+.mword .tsep{display:inline-block;font:600 18px var(--sans);color:#B07F1E;margin:0 6px}
+.mhook{font:italic 600 17px/1.4 var(--serif);color:#1F4E5F;margin:0 0 8px}
+.msent{font:600 22px/1.45 var(--serif);color:#1F4E5F}.msent .w{margin-right:10px;display:inline-block}.msent b{color:#B07F1E;font-size:30px}
+.mchips{margin-top:8px}.chip{display:inline-block;font:500 13px var(--sans);background:#fff;color:#1F3A44;border:1px solid #BCD9D2;border-radius:6px;padding:3px 9px;margin:0 6px 6px 0}
+.mword .chip{display:block;background:transparent;border:none;padding:2px 0;margin:0;font-size:15px}
+.chip i{font-style:normal;font-weight:700;color:#B07F1E;display:inline-block;min-width:26px}
+a.chip{text-decoration:none}
+.mnote{font:13px var(--sans);color:#5B6F78;margin-top:6px}
+.lens .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:700px){.lens .two{grid-template-columns:1fr}}
+.lens h4{margin:.4em 0;font:700 13px var(--sans);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.lens .close{font-style:italic;color:var(--acc)}
+.beats{padding-left:0;list-style:none;counter-reset:b}.beats li{counter-increment:b;position:relative;padding:8px 0 8px 40px;border-bottom:1px dashed var(--line)}
+.beats li:before{content:counter(b);position:absolute;left:0;top:8px;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;font:700 14px/28px var(--sans);text-align:center}
+.beats .so{color:var(--acc);font-weight:600;margin-top:3px}.spine{background:var(--acc-soft);padding:10px 12px;border-radius:8px}
+.remember{background:#EAF4F1;color:#1F3A44;border-radius:10px;padding:10px 14px;margin:14px 0}.remember span{font:700 11px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:#B07F1E;margin-right:6px}
+.recalltbl td{width:50%}.rshow{font:600 12px var(--sans);border:1px solid var(--line);background:var(--surface2);color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer}
+.rans{display:block;margin-top:6px}
+.pill.priH{background:#F3D9D4;color:#7A2E22}.pill.priM{background:#F6EACB;color:#7A5A12}.pill.priL{background:#E1ECDD;color:#33582A}
+.sbox{width:100%;max-width:420px;padding:10px 12px;font:16px var(--sans);border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);margin:8px 0}
 </style></head><body><header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="home.html">Contents</a><span class="nbtn off">‹</span><span class="bartitle"><b>Ch 44</b> The Quit India Movement (1942–45)</span><span class="nbtn off">›</span><a class="home" href="search.html">Search</a><a class="home" href="timeline.html">Timeline</a><label class="done"><input type="checkbox" id="donebox" data-ch="44"><span>Done</span></label><button class="themebtn" id="themebtn" type="button" aria-label="Change theme">Theme</button></div></header><main class="page bank"><div class="chead"><div class="eyebrow">Question bank · Chapter 44</div><h1>The Quit India Movement (1942–45)</h1><p class="lede">10 PYQ Prelims · 0 PYQ Mains · 15 FYQ Prelims · 2 FYQ Mains. Source: Himanshu Khatri PYQ and FYQ companion.</p><div class="row"><a class="btn" href="ch44.html">Back to chapter notes</a><a class="btn" href="qbank.html">All question banks</a></div></div><div class="tabs"><button type="button" data-p="p-pp" aria-pressed="true">PYQ Prelims (10)</button><button type="button" data-p="p-fp" aria-pressed="false">FYQ Prelims (15)</button><button type="button" data-p="p-fm" aria-pressed="false">FYQ Mains (2)</button></div><div class="bsc" id="bsc">0 / 0 correct</div><section class="pane" id="p-pp"><p class="gdesc">Real UPSC Prelims questions mapped to this chapter. Tap an option; the reasoning shows why it is right and why the others are wrong.</p><article class="bq" data-ans="c" id="pp1"><div class="bqh"><span class="yr">1998</span><span class="bn">PYQ 1</span><span class="qtl">(Prelims 1998)</span></div><p class="bqq">What is the correct sequence of the following event?
 1. the August offer.
 2. The I.N.A. trial.
