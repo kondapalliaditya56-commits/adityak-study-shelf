@@ -1,0 +1,59 @@
+{
+"13": {
+ "pages": "Handout pp. 1-13",
+ "simple": [
+  "**NABARD** began with the **CRAFICARD** committee (30 March 1979, B. Sivaraman). It was created by **Act 61 of 1981** and started on **12 July 1982**. It is now fully owned by the Government of India.",
+  "It has three kinds of functions: **financial** (refinance, RIDF, LTIF, PMAY-G), **developmental** (cooperatives, SHG-Bank Linkage, RSETIs) and **supervision** (StCBs, DCCBs, RRBs).",
+  "NABARD is the only **National Implementing Entity** in India for the **Adaptation Fund** (July 2012) and also for **NAFCC**.",
+  "An **NBFC** lends and invests like a bank but cannot take **demand deposits**, is not in the payment system and has no **DICGC** cover.",
+  "Some firms are not registered by RBI because another regulator handles them: **SEBI, IRDA, NHB, MCA** or the **State Governments**.",
+  "**Chit funds** are run under a State-administered Act. **CIS** is regulated by **SEBI**. **MLM, pyramid and Ponzi** schemes are banned by the **1978 Act**."
+ ],
+ "terms": [
+  ["CRAFICARD", "The committee that reviewed institutional credit for agriculture and rural development; it led to NABARD."],
+  ["ARDC", "Agricultural Refinance and Development Corporation; its refinance functions went to NABARD."],
+  ["SHG Bank Linkage Project", "NABARD's 1992 project linking self-help groups to banks; called the world's largest microfinance project."],
+  ["Refinance", "NABARD's support to banks and other eligible lenders so they can lend to rural borrowers."],
+  ["RIDF", "Rural Infrastructure Development Fund; a direct finance route for rural infrastructure."],
+  ["NIE", "National Implementing Entity: a national body recognised by the Adaptation Fund Board that meets its fiduciary standards."],
+  ["NAFCC", "National Adaptation Fund for Climate Change (August 2015), meeting adaptation costs of vulnerable States and UTs."],
+  ["NBFC", "A company that does loans, securities, leasing, hire-purchase, insurance or chit business, but not mainly farming, industry, trade or property."],
+  ["NOF", "Net Owned Funds; an NBFC needs Rs 2 crore (since April 1999) to be registered."],
+  ["RNBC", "Residuary Non-Banking Company; its principal business is receiving deposits under any scheme."],
+  ["Systemically important NBFC", "An NBFC with assets of Rs 500 crore or more (older RBI classification)."],
+  ["CIC", "Core Investment Company; an NBFC that holds shares and securities of group companies."],
+  ["NOFHC", "Non-Operative Financial Holding Company; the vehicle for a promoter group to set up a new bank."],
+  ["ROSCA", "Rotating Savings and Credit Association; the chit fund is its Indian version."],
+  ["CIS", "Collective Investment Scheme; money pooled for units, such as time-share in resorts. Regulated by SEBI."],
+  ["Ponzi scheme", "High-return promises paid out of new depositors' money, with no asset creation."]
+ ],
+ "remember": "NABARD looks after the village and supervises rural banks; RBI watches NBFCs and deposits; everyone else is watched by SEBI, the States or other named regulators.",
+ "traps": [
+  {"k": "Prelims trap", "t": "An NBFC is not a bank", "d": "An NBFC cannot accept demand deposits, is not part of the payment and settlement system and cannot issue cheques drawn on itself. Its depositors have no DICGC cover.", "r": "Rule: lends like a bank, but all three banking features are missing."},
+  {"k": "Prelims trap", "t": "Chit funds are not regulated by RBI", "d": "The Chit Funds Act 1982 is a Central Act administered by State Governments. A chit subscription is not a deposit. RBI's only hook is the ban on chit funds accepting deposits (2009).", "r": "Rule: chit funds = State Governments; RBI only has the deposit ban."},
+  {"k": "Prelims trap", "t": "Two climate funds, two headquarters", "d": "The Adaptation Fund has its HQ in Washington, USA, and the Green Climate Fund has its HQ in Songdo, Incheon, Republic of Korea.", "r": "Rule: Adaptation Fund = Washington; GCF = Songdo, Korea."},
+  {"k": "Concept trap", "t": "Section 35(6) is not Section 45-IA", "d": "Section 35(6) of the Banking Regulation Act 1949 lets NABARD inspect StCBs, DCCBs and RRBs. Section 45-IA of the RBI Act 1934 is the NBFC registration rule.", "r": "Rule: 35(6) = NABARD inspects rural banks; 45-IA = NBFC registration."},
+  {"k": "Handout alert", "t": "Rs 500 crore or Rs 1,000 crore", "d": "This handout makes a systemically important NBFC Rs 500 crore. Chapter 7 (scale-based regulation, 2022) puts the Base Layer at non-deposit NBFCs below Rs 1,000 crore.", "r": "Rule: use the figure that matches the wording of the question; the older NBFC-ND-SI wording means Rs 500 crore."},
+  {"k": "Handout alert", "t": "Adaptation Fund: 2007 and CoP 7", "d": "The handout says the Adaptation Fund was established in 2001 and launched in 2007 at CoP 7, Marrakech. The year and the CoP number do not obviously match.", "r": "Rule: use the wording only if an option repeats it; check the COP numbering in your notebook."}
+ ],
+ "visuals": [
+  {"type": "mnemonic", "title": "Five objectives of supervision", "word": "CARDS", "label": "Memory aid",
+   "hook": "Supervision checks the CARDS of every rural cooperative bank and RRB.",
+   "letters": [["C", "Credit: strengthen institutions to purvey rural credit"], ["A", "Acts, rules, regulations and bye-laws are followed"], ["R", "Rules and guidelines of NABARD, RBI and the Government observed"], ["D", "Depositors, present and future, are protected"], ["S", "Soundness of the banks' finances is examined"]],
+   "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+   "after": "purvey rural credit more efficiently"},
+  {"type": "flow", "title": "How NABARD came to be", "per_row": 4,
+   "steps": [["30 Mar 1979", "CRAFICARD formed (B. Sivaraman)"], ["28 Nov 1979", "Interim report: new rural DFI"], ["Act 61 of 1981", "Parliament approves NABARD"], ["12 Jul 1982", "NABARD begins; RBI and ARDC functions move"]],
+   "after": "After the share capital of the Government and RBI was revised"},
+  {"type": "fork", "title": "Bank or NBFC?", "root": {"t": "Three tests", "c": ["Demand deposits", "Payment system", "DICGC cover"]},
+   "branches": [{"t": "Bank", "c": ["Can accept demand deposits", "Part of the payment system; issues cheques", "DICGC cover available"], "verdict": "All three"},
+                {"t": "NBFC", "c": ["Cannot accept demand deposits", "Not in the payment system; no cheques", "DICGC cover not available"], "verdict": "None of the three"}],
+   "after": "Not available to NBFC depositors"},
+  {"type": "fork", "title": "Who handles which money-collecting scheme?", "root": {"t": "Schemes that collect public money", "c": ["Regulator depends on the type"]},
+   "branches": [{"t": "Chit fund", "c": ["Chit Funds Act 1982", "Administered by State Governments", "Subscription is not a deposit"], "verdict": "State Governments"},
+                {"t": "CIS", "c": ["Money pooled for units", "Complaints to SEBI and State EOW or Police"], "verdict": "SEBI"},
+                {"t": "MLM, pyramid, Ponzi", "c": ["Banned by 1978 Act", "Taking money is a cognizable offence"], "verdict": "Banned; States enforce"}],
+   "after": "only advising and assisting the Centre"}
+ ]
+}
+}

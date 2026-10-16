@@ -1,0 +1,57 @@
+{
+"9": {
+ "pages": "Handout pp. 1-18",
+ "simple": [
+  "The **money market** trades short-term (**under 1 year**) debt for working capital. The **capital market** trades equity and longer debt for fixed capital.",
+  "In **primary** markets the company issues new shares. In **secondary** markets investors trade and the company is not involved. In an **OFS** the company receives **zero**.",
+  "Strangers can trade because institutions build trust: the **exchange**, the **clearing house** (pre-funding and novation), **depositories** (NSDL, CDSL) and **brokers**.",
+  "**Alpha** is the extra return over a benchmark; **beta** is volatility against it. **Sensex** and **Nifty** are baskets, and an index is **not the economy**.",
+  "**Futures** are an obligation; **options** are a right with a loss capped at the **premium**. Funds, ETFs, depository receipts and P-Notes are other ways to invest."
+ ],
+ "terms": [
+  ["Near money", "Money market instruments: very liquid, low risk and low interest."],
+  ["Zero coupon", "No interest paid; sold at a discount and redeemed at par, as with T-bills."],
+  ["OTC", "Over The Counter: customised contracts that are not easily traded."],
+  ["Derivative", "A contract with no value of its own; it derives value from an underlying."],
+  ["Underwriter", "An investment bank that promises to buy all unsold shares."],
+  ["DRHP and RHP", "Draft prospectus with no valuation, which becomes the RHP once the price band is final."],
+  ["ASBA", "Application Supported by Blocked Amount: money is blocked, not debited."],
+  ["Green shoe option", "Over-allotment option used to stabilise the price after listing."],
+  ["Novation", "The clearing house becomes buyer to every seller and seller to every buyer."],
+  ["Demat", "Digital holding of shares, kept with a depository."],
+  ["Settlement cycle", "Time from execution to credit of shares and money; now T+1."],
+  ["Alpha", "Additional return a portfolio earns over the benchmark."],
+  ["Beta", "Volatility relative to the benchmark; 1.5 means 50% more volatile."],
+  ["NAV", "Net asset value per unit: (assets minus liabilities and expenses) divided by units."],
+  ["ETF", "Passively managed fund whose units are listed and traded live on the exchange."],
+  ["P-Notes (ODIs)", "Offshore Derivative Instruments issued by FIIs; SEBI now requires UBO disclosure."]
+ ],
+ "remember": "Short debt is the money market, long money is the capital market, and every institution in between exists to manufacture trust.",
+ "traps": [
+  {"k": "Prelims trap", "t": "T-bills versus CMBs", "d": "T-bills mature in 91, 182 or 364 days; CMBs in 7 to 15 days. Only the Centre issues both; States use Ways and Means Advances from RBI.", "r": "Rule: 91/182/364 = T-bill, 7 to 15 days = CMB, States = WMA."},
+  {"k": "Concept trap", "t": "OFS gives the company nothing", "d": "In an Offer for Sale existing owners sell to the public, a secondary market sale. In the handout's example a Rs 10,000 Cr IPO with Rs 9,000 Cr as OFS raises only Rs 1,000 Cr for the company.", "r": "Rule: IPO/FPO raises capital for the company; OFS = company gets zero."},
+  {"k": "Concept trap", "t": "Exchanges serve the primary market too", "d": "Public issues and trading both take place on NSE and BSE, a point commonly forgotten.", "r": "Rule: exchanges serve both primary and secondary markets."},
+  {"k": "Handout alert", "t": "Demat 1995 or 1996", "d": "The handout says the Depositories Act was passed in 1996 and also that SEBI required dematerialisation in 1995.", "r": "Rule: quote Depositories Act 1996 (NSDL, CDSL); mention 1995 only if the question uses it."},
+  {"k": "Prelims trap", "t": "Sensex and Nifty numbers", "d": "Sensex has 30 companies, base 100, base year 1979. Nifty has 50 companies, base 1000, base year 1995.", "r": "Rule: 30/100/1979 = Sensex; 50/1000/1995 = Nifty."},
+  {"k": "Concept trap", "t": "Futures versus options risk", "d": "Futures are a symmetrical obligation for both sides. An option is a right, so the buyer's loss is capped at the premium.", "r": "Rule: obligation and symmetrical = futures; right and capped loss = option."}
+ ],
+ "visuals": [
+  {"type": "mnemonic", "title": "Five stock market intermediaries", "word": "SHRED", "label": "Memory aid",
+   "hook": "Intermediaries SHRED the distrust between strangers who trade.",
+   "letters": [["S", "Sources of money: banks give investors their own or borrowed funds"], ["H", "House, the clearing house: pre-funding and novation"], ["R", "Registered brokers: the SEBI-registered gateway to trading"], ["E", "Exchanges (NSE, BSE): trust, convenience, price discovery"], ["D", "Depositories and DPs: NSDL and CDSL store digital assets"]],
+   "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+   "after": "Provide money to investors, own or borrowed"},
+  {"type": "flow", "title": "The IPO process in six steps", "per_row": 3,
+   "steps": [["1. Decide", "Amount and manner, with lead manager and underwriter"], ["2. Apply to SEBI", "DRHP, no valuation; later the RHP"], ["3. Reveal", "Advertise to the public"], ["4. Apply", "ASBA: money blocked, not debited"], ["5. Allot", "Cut-off price; over- or under-subscription; green shoe"], ["6. Credit", "Shares to demat; others unblocked"]],
+   "after": "Successful applicants get shares in their"},
+  {"type": "fork", "title": "Futures versus option", "root": {"t": "Land and highway", "c": ["Rs 10 L land; Rs 50 L if approved, Rs 5 L if cancelled"]},
+   "branches": [{"t": "Futures", "c": ["Agree to buy at Rs 11 L", "Approved: profit Rs 39 L", "Cancelled: loss Rs 6 L"], "verdict": "Symmetrical obligation"},
+                {"t": "Option", "c": ["Pay Rs 1 L premium for the right", "Approved: net profit Rs 38 L", "Cancelled: lose only Rs 1 L"], "verdict": "Right; loss capped at premium"}],
+   "after": "that is why derivatives are traded"},
+  {"type": "fork", "title": "IPO or OFS: who gets the money?", "root": {"t": "Public issue", "c": ["Shares offered to the public"]},
+   "branches": [{"t": "IPO / FPO", "c": ["Company issues new shares", "Primary market"], "verdict": "Company raises capital"},
+                {"t": "OFS", "c": ["Existing owners sell", "Secondary market sale"], "verdict": "Company receives zero"}],
+   "after": "the company raises only ₹1,000 Cr"}
+ ]
+}
+}

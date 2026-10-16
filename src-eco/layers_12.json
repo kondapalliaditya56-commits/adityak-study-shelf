@@ -1,0 +1,62 @@
+{
+"12": {
+ "pages": "Handout pp. 1-57",
+ "simple": [
+  "The **budget** is the yearly statement of expected receipts and spending (**Art. 112**). The **Lok Sabha** gives permission (**Art. 113**). Budgeting is **accounting for the future**.",
+  "The **asset-liability test** sorts every entry. If assets or liabilities change, it is **Capital**; if not, it is **Revenue**. Interest is revenue, principal repayment is capital, and grants to States are revenue.",
+  "**Fiscal Deficit = Total Expenditure - Non-Debt Receipts**, which is the year's **borrowing**. **Primary Deficit** removes interest. **Revenue Deficit = RE - RR**. After **WMA (1997)** the Budget Deficit is zero.",
+  "**FRBM 2003** bound the government to an FD of 3% and no Revenue Deficit. The **N.K. Singh Committee** added a **60% debt anchor** (Centre 40, States 20), escape clauses and counter-cyclical policy.",
+  "Debt stays safe when the **interest rate is below the growth rate (IR < GR)**. Keep **public debt** apart from the **debt of the nation**.",
+  "States get money through **Finance Commission devolution** and through **schemes**. Taxes are classified by burden, by method and by how the rate behaves. **Elasticity** follows the tax rate; **buoyancy** follows GDP."
+ ],
+ "terms": [
+  ["Budget Deficit (BD)", "Total Expenditure minus Total Receipts. The government's intentions exceed its capabilities."],
+  ["Monetised deficit", "The part of the deficit financed by RBI printing money against government bonds."],
+  ["WMA (1997)", "Ways and Means Advances: short-term RBI loans for temporary mismatch. The government promised not to present a BD."],
+  ["Fiscal Deficit (FD)", "Total Expenditure minus Non-Debt Receipts; equals the borrowing in the year."],
+  ["Primary Deficit (PD)", "Fiscal Deficit minus interest payments; shows the current government's own shortfall."],
+  ["Revenue Deficit (RD)", "Revenue Expenditure minus Revenue Receipts; borrowing just to run the government."],
+  ["Effective Revenue Deficit", "Revenue Deficit minus grants given for creating capital assets."],
+  ["Deficit and debt", "Deficit is a yearly flow; debt is the stock of all unpaid past deficits."],
+  ["Public Debt", "Borrowing through G-Secs and T-Bills, held in the Consolidated Fund of India."],
+  ["Other Liabilities", "Money held as banker or trustee (provident funds, NSSF, pension funds), held in the Public Account."],
+  ["Counter-cyclical policy", "Save in good times and spend in bad times; pro-cyclical policy reinforces the cycle."],
+  ["Central Sector Scheme", "Scheme run by central machinery, usually 100% funded by the Centre."],
+  ["Centrally Sponsored Scheme", "Scheme run by the State with a central grant; the State adds a matching share, usually 40%."],
+  ["Ad valorem and specific tax", "Ad valorem is a percentage of value; specific is based on a physical measure whatever the price."],
+  ["Revenue Neutral Rate (RNR)", "The GST rate that gives the government the same revenue as the old taxes."],
+  ["Tax buoyancy", "% change in tax revenue divided by % change in nominal GDP, with rates unchanged."]
+ ],
+ "remember": "The asset-liability test sorts the accounts, the deficits measure the borrowing, and rules like FRBM and IR < GR keep debt safe.",
+ "traps": [
+  {"k": "Prelims trap", "t": "PMFBY is a Central Sector scheme", "d": "The premium subsidy is shared 50:50 by Centre and State, yet PMFBY is officially a Central Sector Scheme. The Centre pays its share directly to the insurance companies, bypassing the State treasury.", "r": "Rule: 'Central Sector = always 100% Centre-funded' is false; PMFBY is the exception."},
+  {"k": "Prelims trap", "t": "Public debt versus the nation's debt", "d": "External Public Debt is the government's borrowing from foreign entities. External Debt of the Nation is larger: it adds private-sector borrowing abroad, such as ECBs and NRI deposits.", "r": "Rule: do not confuse the debt of the Sovereign with the debt of the Nation."},
+  {"k": "Concept trap", "t": "Grants to States are Revenue Expenditure", "d": "Any transfer by the Centre to a State, except a loan, is Revenue Expenditure even if the State builds a highway with it. Interest is Revenue Expenditure; repaying principal is Capital Expenditure.", "r": "Rule: ask only whether the Centre's own assets or liabilities change."},
+  {"k": "Concept trap", "t": "Elasticity is not buoyancy", "d": "Elasticity measures the response of revenue to a change in the tax rate, with GDP held constant. Buoyancy measures the response to GDP growth, with rates held constant.", "r": "Rule: rate change = elasticity; GDP growth = buoyancy (0.72 before GST, 1.22 after)."},
+  {"k": "Handout alert", "t": "Inter-State and intra-State are swapped", "d": "In the handout's narrative on indirect tax events, the labels are swapped. The handout's own table has them right.", "r": "Rule: CST = inter-State sale; sales tax or VAT = intra-State sale."},
+  {"k": "Handout alert", "t": "GST rates changed after the handout", "d": "The handout says GST 2.0 (August-September 2025) rationalised the rates, but the updated document is not in the material. Chapter 11 still lists the old five slabs.", "r": "Rule: for current rates use the latest Council notification, not this chapter."}
+ ],
+ "visuals": [
+  {"type": "mnemonic", "title": "Five heads of income", "word": "CHOPS", "label": "Memory aid",
+   "hook": "The Income Tax Act CHOPS your income into five heads.",
+   "letters": [["C", "Capital gains"], ["H", "House property"], ["O", "Other sources"], ["P", "Profession or business"], ["S", "Salaries"]],
+   "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+   "after": "five heads of income"},
+  {"type": "mnemonic", "title": "Five principles of debt management", "word": "MEDIC", "label": "Memory aid",
+   "hook": "A MEDIC keeps the nation's debt healthy.",
+   "letters": [["M", "Maturity: elongate it (10, 20 or 40 years)"], ["E", "External debt in domestic currency (Masala Bonds)"], ["D", "Domestic sources preferred over external"], ["I", "Interest rate below the growth rate (IR < GR)"], ["C", "Cost of borrowing: minimise it"]],
+   "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+   "after": "must stay below the growth rate of the economy"},
+  {"type": "fork", "title": "Debt dynamics: which side of IR and GR?", "root": {"t": "Debt ratio change", "c": ["Policy pillar (p) + snowball (i - g)"]},
+   "branches": [{"t": "A: i < g", "c": ["i = 6%, g = 10%", "Snowball melts the debt ratio", "Small primary deficit is affordable"], "verdict": "Sustainable"},
+                {"t": "B: i > g", "c": ["g = 4%, i = 7%", "Ratio rises even at zero primary deficit", "Only a primary surplus stops it"], "verdict": "Debt trap"}],
+   "after": "the nation outgrows its liabilities"},
+  {"type": "flow", "title": "How the deficits build on each other", "per_row": 4,
+   "steps": [["BD", "Zero after WMA 1997"], ["FD", "TE - NDR = borrowing"], ["PD", "FD - interest payments"], ["RD", "RE - RR"], ["ERD", "RD - grants for capital assets"]],
+   "after": "Add A to CE for Effective Capital Expenditure"},
+  {"type": "flow", "title": "Centrally Sponsored Schemes: the clean-up", "per_row": 4,
+   "steps": [["2011", "147 schemes"], ["Chaturvedi", "Pruning to 59 recommended"], ["Sub-Group of CMs", "Capped at 30"], ["Three buckets", "Core of the Core (6), Core, Optional"]],
+   "after": "withered away"}
+ ]
+}
+}

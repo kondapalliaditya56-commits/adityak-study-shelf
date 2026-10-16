@@ -1,0 +1,58 @@
+{
+"11": {
+ "pages": "Handout pp. 1-13",
+ "simple": [
+  "Taxes are levied on **events**. In the old system many events (production, sale, inter-State sale, entry) were each taxed, so tax piled on tax. This is **cascading**.",
+  "In the shirt example only **₹5.8** of the ₹32 tax was on fresh value; the rest was tax on tax or on value already taxed.",
+  "**VAT (2005)** taxed value added through **Input Tax Credit (ITC)**, which works for a tax against the **same tax** only. VAT still taxed excise, so cascading was not fully gone.",
+  "**GST** is the wider VAT: one event, the **supply** of goods or services, with **CGST + SGST** inside a State and **IGST** across States. It is **destination-based**; **customs** stays outside.",
+  "The **GST Council** (Art. 279A) decides by a **75%** majority; States carry **2/3** weight and the Centre **1/3**.",
+  "**Alcohol** for human consumption, **five petroleum products** and local **entertainment tax** are outside GST. **Exports are zero-rated**."
+ ],
+ "terms": [
+  ["Indirect tax", "Levied on A, who collects it from B; B bears the burden."],
+  ["Cascading", "Tax on tax and tax on value already taxed."],
+  ["CST (Central Sales Tax)", "Levied by the Centre on inter-State sales; the whole amount goes to the selling State."],
+  ["VAT", "A tax on value added; State sales tax became VAT in 2005."],
+  ["CENVAT / MODVAT", "The 1980s VATting of Central excise duty."],
+  ["ITC (Input Tax Credit)", "Tax paid on inputs is offset against tax on the output, same tax only."],
+  ["Destination-based", "The taxing authority is the place where goods are supplied to."],
+  ["CGST / SGST", "The Centre's and the destination State's parts of GST on a sale within a State."],
+  ["IGST", "Levied by the Centre on inter-State supplies and imports."],
+  ["Zero-rated", "Exports carry no tax and are eligible for full duty drawback."],
+  ["GST Council", "The apex policy body under Art. 279A: Union FM as chair, State ministers as members."],
+  ["Revenue Neutral Rate (RNR)", "The average GST rate that gives the government the same revenue as before."],
+  ["Anti-profiteering", "Law that makes it illegal to keep a tax cut as extra profit."],
+  ["Composition levy", "An optional turnover-based tax for small taxpayers."],
+  ["E-way bill", "The movement document for goods, for inter-State movement from 01.04.2018."],
+  ["GSTN", "The common pass-through portal company for registration, returns and payment."]
+ ],
+ "remember": "Tax on events piled up as cascading; VAT and ITC cut it; GST ends it by making the sale the only event. The Council decides by 75%, with States at 2/3.",
+ "traps": [
+  {"k": "Handout alert", "t": "Composition limit: ₹75 lakh or ₹100 lakh", "d": "The Main Features list says ₹100 lakh; the composition-levy paragraph says ₹75 lakh (₹50 lakh in a few States). The handout does not reconcile them.", "r": "Rule: if both appear, pick the one matching the wording (₹75 lakh with the composition levy); if only one is present, use it."},
+  {"k": "Handout alert", "t": "20% is not a GST slab", "d": "The 20% in the shirt example is the teacher's assumed rate. The handout's actual slabs are 0, 5, 12, 18 and 28.", "r": "Rule: never quote 20% as a slab."},
+  {"k": "Prelims trap", "t": "Alcohol is out, tobacco is in", "d": "The handout excludes alcohol for human consumption. Tobacco is inside GST, with an extra Central excise power.", "r": "Rule: outside = alcohol, five petroleum products, local entertainment tax."},
+  {"k": "Concept trap", "t": "Zero-rated is not exempt", "d": "Exports are zero-rated and eligible for full duty drawback. Exempt does not get credit or drawback.", "r": "Rule: zero-rated = credit and drawback; exempt = none."},
+  {"k": "Concept trap", "t": "ITC works for the same tax only", "d": "VAT is offset against VAT, not against excise or State taxes like entertainment, luxury and octroi. Tax is always charged on the entire value.", "r": "Rule: ITC is how a tax on value added is achieved, never across different taxes under the old system."},
+  {"k": "Prelims trap", "t": "Compensation covers GST-caused loss only", "d": "States get the shortfall from a 14% assumed growth path for five years (till 2022), but only on account of GST implementation.", "r": "Rule: not for a State's own failure or a pandemic."}
+ ],
+ "visuals": [
+  {"type": "mnemonic", "title": "Events that are taxed", "word": "PICS", "label": "Memory aid",
+   "hook": "Tax takes PICS of events: whenever something happens, a tax is levied.",
+   "letters": [["P", "Profit of a company"], ["I", "Income generated"], ["C", "Change of international boundary (customs)"], ["S", "Sale of a good or service"]],
+   "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+   "after": "profit of a company"},
+  {"type": "flow", "title": "Producer to wholesaler: three regimes", "per_row": 3,
+   "steps": [["Old regime", "Tax on all ₹320: ₹32 tax, ₹352 paid"], ["VAT 2005-2017", "Tax on ₹298, less ITC ₹22: ₹7.8 payable"], ["GST", "Every event merged into the sale; credit flows through"]],
+   "after": "GST removes it completely"},
+  {"type": "fork", "title": "Which GST applies", "root": {"t": "A supply of goods or services", "c": ["Destination-based"]},
+   "branches": [{"t": "Within a State", "c": ["CGST to the Centre", "SGST to the destination State"], "verdict": "CGST + SGST"},
+                {"t": "Across two States", "c": ["Levied by the Centre", "Art. 269A"], "verdict": "IGST"},
+                {"t": "Imports", "c": ["Basic customs duty on entry", "Then IGST"], "verdict": "BCD + IGST"}],
+   "after": "Sale across two States"},
+  {"type": "flow", "title": "Three articles of the 101st Amendment", "per_row": 3,
+   "steps": [["Art. 246A", "Concurrent power to levy GST"], ["Art. 269A", "Centre levies IGST on inter-State supplies"], ["Art. 279A", "The GST Council"]],
+   "after": "Petroleum: crude, high speed diesel"}
+ ]
+}
+}

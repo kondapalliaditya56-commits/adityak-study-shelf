@@ -1,0 +1,232 @@
+{
+ "4": {
+  "pages": "Handout pp. 1-20",
+  "simple": [
+   "The economic problem is **limited resources and unlimited wants**. The economist **advises**; the decision-maker chooses. The **PPF** is the maximum sustainable output given the **budget constraints** and the **technology**.",
+   "**Marginal cost** is the cost of one more unit. **Opportunity cost** is the next best alternative given up (the stadium versus the hospital).",
+   "A free market uses **prices and the invisible hand** but produces inequality. A command system has the **information problem** and **rent-seeking**.",
+   "Goods are classified by demand (**necessary, luxury, normal, inferior, substitute, complement, merit, demerit**), with **Giffen** and **Veblen** as exceptions. **Public goods** are non-excludable and non-rival, so the government provides them.",
+   "**Final or intermediate** depends on end-use (economic modification). **Investment** is spending on capital goods (a flow): **GCF = GFCF + change in inventory + valuables**.",
+   "Net investment = gross investment minus depreciation. **Depreciation** uses historical cost, **CFC** uses replacement cost, and **CCA** is a tax rule."
+  ],
+  "terms": [
+   [
+    "PPF",
+    "The maximum sustainable output possible for given resources and technology; normative and dynamic."
+   ],
+   [
+    "Marginal cost (MC)",
+    "The actual cost of producing one more unit."
+   ],
+   [
+    "Opportunity cost (OC)",
+    "The benefit foregone: the value of the next best alternative given up."
+   ],
+   [
+    "Invisible hand",
+    "Self-interest in a free market leads to collective well-being."
+   ],
+   [
+    "Rent-seeking",
+    "Being connected to the planner instead of serving consumers."
+   ],
+   [
+    "Normal and inferior goods",
+    "Normal: demand rises with income. Inferior: demand falls as income rises."
+   ],
+   [
+    "Substitute and complement",
+    "Substitute: positive cross-price effect. Complement: negative."
+   ],
+   [
+    "Merit and demerit goods",
+    "Merit: positive externality, under-consumed. Demerit: negative externality, over-consumed."
+   ],
+   [
+    "Giffen good",
+    "An inferior good with a huge share of a poor person's income and no substitute; price up, demand up."
+   ],
+   [
+    "Veblen good",
+    "An ultra-luxury status good; demand falls if the price falls."
+   ],
+   [
+    "Excludable and rivalrous",
+    "Can non-payers be stopped, and does my use reduce yours? Private goods are both."
+   ],
+   [
+    "Free-rider problem",
+    "Everyone expects someone else to pay, so a public good is not supplied by the market."
+   ],
+   [
+    "Intermediate and final goods",
+    "Intermediate: economic identity lost, used for resale. Final: identity retained."
+   ],
+   [
+    "Fixed and working capital",
+    "Fixed: used over more than one year. Working: used up within a production cycle."
+   ],
+   [
+    "Gross Capital Formation",
+    "GFCF + change in inventories + acquisitions less disposals of valuables."
+   ],
+   [
+    "CFC and CCA",
+    "CFC: depreciation at replacement cost (NDP, NNP). CCA: statutory tax allowance."
+   ]
+  ],
+  "remember": "Economics shows what you give up by choosing. Know the goods by their behaviour, judge final or intermediate by end-use, and keep depreciation, CFC and CCA apart.",
+  "traps": [
+   {
+    "k": "Handout alert",
+    "t": "Financial capital is not capital",
+    "d": "Money, stocks and bonds are not economic capital here, because a stock certificate cannot make a product. Buying shares or mutual funds is a transfer of financial assets, not investment.",
+    "r": "Rule: investment means spending on capital goods; capital is a stock, investment is a flow."
+   },
+   {
+    "k": "Prelims trap",
+    "t": "Final or intermediate: salt",
+    "d": "A good is final or intermediate by end-use, not by physical form. Salt for a household is final; salt for a hotel is intermediate. A second-hand phone is still final.",
+    "r": "Rule: ask whether it was economically modified and resold."
+   },
+   {
+    "k": "Concept trap",
+    "t": "Giffen versus Veblen",
+    "d": "Both show demand rising with price. Giffen: a poor person's inferior staple with no substitute. Veblen: an ultra-luxury good bought for status.",
+    "r": "Rule: Giffen is about poverty and income effect; Veblen is about status."
+   },
+   {
+    "k": "Prelims trap",
+    "t": "Depreciation, CFC and CCA",
+    "d": "Three similar terms, three owners: the accountant (historical cost), the national statistician (current replacement cost) and the tax department (statutory rate).",
+    "r": "Rule: NDP and NNP use CFC; maintenance does not stop depreciation."
+   },
+   {
+    "k": "Prelims trap",
+    "t": "Inferior good and rising income (2021 PYQ)",
+    "d": "An inferior good loses demand as income rises. A rise in the price of a substitute raises demand; a rise in the price of a complement lowers it.",
+    "r": "Rule: substitute price up means demand up; complement price up means demand down; inferior good with income up means demand down."
+   }
+  ],
+  "visuals": [
+   {
+    "type": "mnemonic",
+    "title": "The state's invisible infrastructure in a free market",
+    "word": "RIPPLE",
+    "label": "Memory aid",
+    "hook": "A free market runs on trust: a RIPPLE in any of these six spreads through every trade.",
+    "letters": [
+     [
+      "R",
+      "Regulation kept minimal (for example car safety standards)"
+     ],
+     [
+      "I",
+      "Information that is truthful"
+     ],
+     [
+      "P",
+      "Property: private property"
+     ],
+     [
+      "P",
+      "Prevention of fraud and violence"
+     ],
+     [
+      "L",
+      "Law: the rule of law"
+     ],
+     [
+      "E",
+      "Enforcement of contracts"
+     ]
+    ],
+    "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+    "after": "invisible infrastructure"
+   },
+   {
+    "type": "fork",
+    "title": "Net investment: three cases",
+    "root": {
+     "t": "Net investment",
+     "c": [
+      "= gross investment minus depreciation"
+     ]
+    },
+    "branches": [
+     {
+      "t": "Above zero",
+      "c": [
+       "More new machines than worn-out ones"
+      ],
+      "verdict": "Capacity expands"
+     },
+     {
+      "t": "Equal to zero",
+      "c": [
+       "Just enough to replace broken ones"
+      ],
+      "verdict": "Economy is stagnant"
+     },
+     {
+      "t": "Below zero",
+      "c": [
+       "Not enough to cover depreciation"
+      ],
+      "verdict": "Capital stock shrinks"
+     }
+    ],
+    "after": "Just enough to replace the broken ones"
+   },
+   {
+    "type": "fork",
+    "title": "Private goods versus public goods",
+    "root": {
+     "t": "Two questions",
+     "c": [
+      "Excludable? Rivalrous?"
+     ]
+    },
+    "branches": [
+     {
+      "t": "Private goods",
+      "c": [
+       "Excludable and rivalrous",
+       "Consumers bid through prices"
+      ],
+      "verdict": "Market provides"
+     },
+     {
+      "t": "Public goods",
+      "c": [
+       "Non-excludable and non-rival",
+       "Free-rider problem"
+      ],
+      "verdict": "Government provides"
+     }
+    ],
+    "after": "Because government resources are limited"
+   },
+   {
+    "type": "flow",
+    "title": "What makes up investment (GCF)",
+    "per_row": 3,
+    "steps": [
+     [
+      "GFCF",
+      "Machines, buildings, roads, software"
+     ],
+     [
+      "Change in inventory",
+      "Unsold or unused stock"
+     ],
+     [
+      "Valuables",
+      "Gold, diamonds, antiques as a store of value"
+     ]
+    ],
+    "after": "Acquisition of valuables"
+   }
+  ]
+ }
+}

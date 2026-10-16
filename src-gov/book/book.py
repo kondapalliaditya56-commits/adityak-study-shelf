@@ -15,6 +15,7 @@ BASE = os.path.dirname(os.path.abspath(DATA))
 B = json.load(open(DATA, encoding='utf8'))
 M = B['meta']
 PRI = {'H': 'High', 'M': 'Medium', 'L': 'Low'}
+PRI.update(M.get('pri', {}))
 ALL = {c['id']: c for p in B['parts'] for c in p['chapters']}
 
 def md(t): return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', html.escape(t, quote=False))
@@ -85,7 +86,7 @@ def notes_html(notes, vis=()):
     def flush():
         if buf: out.append('<ul class="b">' + ''.join(bul(x) for x in buf) + '</ul>'); buf.clear()
     def key(it):
-        t = it if isinstance(it, str) else (it.get('h') or (it['tbl']['head'][0] if 'tbl' in it else ''))
+        t = it if isinstance(it, str) else (it.get('h') or (it['tbl']['head'][0] if 'tbl' in it else '') or it.get('p', ''))
         return re.sub(r'<[^>]+>', '', t)
     def after(it):
         k = key(it)
@@ -99,8 +100,14 @@ def notes_html(notes, vis=()):
             continue
         flush()
         if 'h' in it: out.append('<h4>%s</h4>' % hx(it['h']))
+        elif 'p' in it: out.append('<p class="np">%s</p>' % hx(it['p']))
+        elif 'call' in it:
+            k = it['call']
+            out.append('<div class="callout %s"><span>%s</span>%s</div>' % (k.get('kind', 'note'), hx(k['tag']), ''.join('<p>%s</p>' % hx(b) for b in k['body'])))
+        elif 'viz' in it: out.append(viz.render(it['viz']))
         elif 'tbl' in it:
             t = it['tbl']
+            if t.get('cap'): out.append('<div class="tcap">%s</div>' % hx(t['cap']))
             out.append('<table><thead><tr>%s</tr></thead><tbody>%s</tbody></table>' % (''.join('<th>%s</th>' % hx(h) for h in t['head']),
                 ''.join('<tr>%s</tr>' % ''.join('<td>%s</td>' % hx(c) for c in r) for r in t['rows'])))
         elif 'alert' in it: out.append('<div class="alert"><span>Handout alert</span>%s</div>' % hx(it['alert']))
@@ -108,6 +115,30 @@ def notes_html(notes, vis=()):
         after(it)
     flush()
     return ''.join(out)
+
+def pyq_block(P):
+    if not P: return ''
+    h = '<div class="pyqblk"><div class="lbl">Past-year questions &middot; %s</div>' % hx(P['intro'])
+    h += '<p class="kwkey"><span class="kc n">solid chip</span> keyword that appears in this chapter\'s notes &nbsp; <span class="kc q">outline chip</span> keyword taken from the question</p>'
+    for g in P['groups']:
+        h += '<h4>%s <span class="gc">%s</span></h4>' % (hx(g['title']), hx(g['count']))
+        for q in g.get('prelims', []):
+            h += '<div class="pq"><div class="pqh"><span class="yr">Prelims %s</span></div>' % hx(q['year'])
+            inl = False
+            for k, t in q['blocks']:
+                if k == 's':
+                    if not inl: h += '<ol class="pqst">'; inl = True
+                    h += '<li>%s</li>' % hx(t)
+                else:
+                    if inl: h += '</ol>'; inl = False
+                    h += '<p class="pqs">%s</p>' % hx(t)
+            if inl: h += '</ol>'
+            h += '<div class="opts">%s</div><p class="pqa">Answer: <b>(%s)</b> %s</p></div>' % (''.join('<div><b>(%s)</b> %s</div>' % ('abcd'[i], hx(o)) for i, o in enumerate(q['opts'])), hx(q['ans']), hx(q['anstext']))
+        for m in g.get('mains', []):
+            h += '<div class="mq"><div class="mqh"><span class="yr">Mains %s</span><span class="mk">%s marks</span><span class="tp">%s</span></div><p class="mqt">%s</p>' % (hx(m['year']), hx(m['marks']), hx(m['topic']), hx(m['q']))
+            if m['chips']: h += '<div class="kw"><span class="kwl">Keywords</span>%s</div>' % ''.join('<span class="kc %s">%s</span>' % (c_, hx(k)) for c_, k in m['chips'])
+            h += '</div>'
+    return h + '</div>'
 
 def chapter(c):
     h = '<section class="chapter" id="ch%d">' % c['id']
@@ -123,6 +154,7 @@ def chapter(c):
     if not any(v['type'] == 'mnemonic' for v in vis) and c.get('remember'):
         h += '<div class="remember2"><span>Remember it as</span> %s</div>' % md(c['remember'])
     h += notes_html(c['notes'], [v for v in vis if v.get('after')])
+    h += pyq_block(c.get('pyq'))
     h += '<div class="endblk"><div class="lbl">End of chapter &middot; recall and drill</div>'
     if c.get('recall'):
         h += '<h4>Recall sheet: cover the right column and answer</h4><table class="recall"><tbody>%s</tbody></table>' % ''.join('<tr><td class="q">%s</td><td class="a">%s</td></tr>' % (hx(q), hx(a)) for q, a in c['recall'])
@@ -155,15 +187,19 @@ def front():
     return ('<section class="front"><div class="halftitle"><h1>%s</h1><div class="s">%s</div></div><div class="imprint">%s</div></section>'
             % (hx(M['title']), hx(M['subtitle']), ''.join('<p>%s</p>' % x for x in M['imprint'])))
 
+PYQROW = ''
 def how_to():
+    global PYQROW
+    PYQROW = ('<tr><td><b>Past-year questions</b></td><td>Every Prelims and Mains PYQ mapped to the chapter, grouped by topic. Mains questions carry keyword chips: solid = the keyword is in this chapter\'s notes, outline = taken from the question.</td></tr>' if any(c.get('pyq') for c in ALL.values()) else '')
     return ('<section class="howto"><h2 class="plain">How to use this book</h2><table class="terms"><thead><tr><th>Block</th><th>What it gives you</th></tr></thead><tbody>'
             '<tr><td><b>Exam lens</b></td><td>Priority (High, Medium, Low), the PYQs quoted for the chapter, and the Prelims and Mains hooks.</td></tr>'
             '<tr><td><b>In simple words</b></td><td>The chapter in a few plain lines, with the key terms explained.</td></tr>'
             '<tr><td><b>Memory visuals</b></td><td>A mnemonic, mind map, decision fork or flow chain that fixes the chapter in your head.</td></tr>'
             '<tr><td><b>Chapter notes</b></td><td>The complete content in source order: bullets, tables, figures.</td></tr>'
+            '%s'
             '<tr><td><b>Recall and drill</b></td><td>Cover-and-answer questions, exam traps and a short quiz to close each chapter.</td></tr>'
             '<tr><td><b>My notes column</b></td><td>The ruled panel on the right of every page is yours: current affairs, data, value additions.</td></tr></tbody></table>'
-            '<div class="legend"><span class="pri H">High</span> two or more PYQs map to the chapter &nbsp; <span class="pri M">Medium</span> one PYQ or a partial fit &nbsp; <span class="pri L">Low</span> none quoted</div></section>')
+            '<div class="legend">%s</div></section>') % (PYQROW, M.get('legend', '<span class="pri H">High</span> two or more PYQs map to the chapter &nbsp; <span class="pri M">Medium</span> one PYQ or a partial fit &nbsp; <span class="pri L">Low</span> none quoted'))
 
 def toc(built):
     h = '<section class="toc"><h2 class="plain">Contents</h2>'

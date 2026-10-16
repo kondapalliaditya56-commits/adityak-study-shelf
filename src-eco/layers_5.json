@@ -1,0 +1,57 @@
+{
+"5": {
+ "pages": "Handout pp. 1-36",
+ "simple": [
+  "National income accounting is the economy's **dashboard**. It records the **income** paid to land, labour, capital and enterprise.",
+  "In the **circular flow**, incomes (A), production (B) and expenditure (C) are equal: **A = B = C**. **Injections** (I, X, G) push money in; **leakages** (S, T, M) pull it out.",
+  "**GDP** is the total **price-tag** value of **final** goods and services **produced** inside the **economic territory** in a period. **GNP = GDP + NFIA**.",
+  "GDP is counted by **value added** so that nothing is counted twice. **Real GDP** uses base-year prices; growth is the % change in real GDP.",
+  "**Market price** = basic price + product taxes - product subsidies. **Factor cost** = basic price - production taxes + production subsidies.",
+  "GDP is a good thermometer of income but a poor judge of **well-being**, so we pair it with **HDI** and other indices."
+ ],
+ "terms": [
+  ["Income", "The reward paid to factors of production: rent, wages, interest and profit."],
+  ["Leakages", "Savings, taxes and imports; they pull money out of the flow."],
+  ["Injections", "Investment, exports and government expenditure; they pump money in."],
+  ["Dynamic equilibrium", "A, B and C keep changing but readjust towards each other: A chases C, B chases A."],
+  ["Double counting", "Counting an intermediate good and the final good that already contains it."],
+  ["Economic territory", "Where production is counted, whoever produces it; it can differ from the political map."],
+  ["NFIA", "Income earned by Indians abroad minus income earned by foreigners in India."],
+  ["Value added", "A producer's output value minus the value of the inputs it bought."],
+  ["Nominal GDP", "Output valued at current prices."],
+  ["Real GDP", "Output valued at constant base-year prices."],
+  ["Base effect", "A depressed base year makes the next year's growth look huge."],
+  ["Basic price", "What the seller wants to receive and keep: the factory gate price."],
+  ["Product taxes", "Taxes or subsidies tied to quantity, such as GST or LPG subsidy."],
+  ["Production taxes", "Lump-sum taxes or subsidies independent of volume, such as land revenue or stamp duty."],
+  ["Double deflation", "Inflation stripped separately from inputs and from outputs."],
+  ["Labour input method", "Number of workers multiplied by value added per worker, used for the unorganised sector."]
+ ],
+ "remember": "A = B = C: one loop, three views. Count only final, produced, priced output by value added, then read GDP beside HDI.",
+ "traps": [
+  {"k": "Handout alert", "t": "Letters B and C reused", "d": "In the GNP section the handout reuses B and C for output by foreigners in India and by Indians abroad, while elsewhere B and C are the production and expenditure flows.", "r": "Rule: write GNP = GDP + NFIA = GDP + (income earned by Indians abroad - income earned by foreigners in India)."},
+  {"k": "Handout alert", "t": "The HDI year", "d": "The handout says Sen and Mahbub-ul-Haq proposed the HDI to UNDP in 1980 and also says the HDR has measured it since then.", "r": "Rule: verify the year against a standard reference before quoting; the question more likely tests the three dimensions."},
+  {"k": "Prelims trap", "t": "Nominal rises, real growth does not", "d": "The 2015 PYQ pairs steadily rising real GDP growth with steadily rising GDP at market prices. Nominal GDP rises with prices; real growth does not rise steadily. Answer: 2 only.", "r": "Rule: GDP in rupees at market prices can rise just from inflation."},
+  {"k": "Concept trap", "t": "Buying land adds nothing", "d": "By the handout's own rules production matters, not the sale. A land purchase adds nothing itself; brokerage and registration services do.", "r": "Rule: second-hand sales are not counted again, only the new services around them."},
+  {"k": "Concept trap", "t": "Territory is not the political map", "d": "An Indian embassy abroad, ships and aircraft in transit and rigs in the EEZ count as India's. A foreign embassy or UN office in India does not.", "r": "Rule: ask whose enclave it is; extraterritorial bodies are excluded."},
+  {"k": "Prelims trap", "t": "Product versus production taxes", "d": "Product taxes and subsidies are per unit (GST, LPG). Production taxes and subsidies are lump sums independent of volume (land revenue, stamp duty).", "r": "Rule: BP is MP minus product taxes plus product subsidies; only then use production taxes to reach factor cost."}
+ ],
+ "visuals": [
+  {"type": "fork", "title": "Leakages and injections", "root": {"t": "Circular flow", "c": ["Growth needs injections above leakages"]},
+   "branches": [{"t": "Leakages", "c": ["Savings (S)", "Taxes (T)", "Imports (M)"], "verdict": "A, B or C shrinks"},
+                {"t": "Injections", "c": ["Investment (I)", "Exports (X)", "Government (G)"], "verdict": "A, B or C expands"}],
+   "after": "The economy grows only if injections exceed leakages"},
+  {"type": "flow", "title": "Value added in the wheat economy", "per_row": 3,
+   "steps": [["Farmers", "Value added 1,00,000"], ["Atta makers", "Value added 40,000"], ["Bread makers", "Value added 40,000"], ["Sandwich makers", "Value added 40,000"], ["GDP = GVA", "Total 2,20,000"]],
+   "after": "Final goods check: wheat 40k"},
+  {"type": "flow", "title": "Three prices, one output", "per_row": 3,
+   "steps": [["Market price", "What the buyer pays"], ["Basic price", "MP - product taxes + product subsidies"], ["Factor cost", "BP - production taxes + production subsidies"]],
+   "after": "Headline form: GDP = GVA + net product taxes"},
+  {"type": "mnemonic", "title": "Six limits of GDP", "word": "BICEPS", "label": "Memory aid",
+   "hook": "GDP flexes big BICEPS, yet muscle size is not well-being.",
+   "letters": [["B", "Black money and a large informal sector make estimates less accurate"], ["I", "Inequality is ignored: one person can hold ₹99 of ₹100"], ["C", "Composition is ignored: schools and weapons count alike"], ["E", "Externalities: a polluting factory and the inhalers both raise GDP"], ["P", "Prices can rise from inflation, higher taxes or lower subsidies"], ["S", "Services and goods with no price, like household care, are left out"]],
+   "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+   "after": "Prices can rise from inflation, higher taxes"}
+ ]
+}
+}

@@ -1,0 +1,251 @@
+{
+ "10": {
+  "pages": "Slides 232-250, handout pp. 1-47",
+  "simple": [
+   "The **Balance of Payments (BoP)** is the record of **flows** between **residents and non-residents**. Every entry is **double entry**: a credit and a debit of equal value.",
+   "**Autonomous** items (current and capital accounts) are the choices of people and firms. **Accommodative** items (**change in reserves** and **errors and omissions**) are what the **RBI** does to balance them.",
+   "**FDI** is **10% or more** of equity (an unlisted company is always FDI); **FPI** is below 10% and is **hot money**. India follows a **managed float**: the rupee is fully convertible on the current account and only partly on the capital account.",
+   "A **CAD = VI − VE**. A deficit is not evil; what matters is **how it is financed** and whether **reserves** are enough.",
+   "**Devaluation** can worsen the CAD first (the **J-curve**), and rival devaluations become **currency wars**.",
+   "The **Bretton Woods twins** are the **IMF** (BoP crisis manager, with **quota**, **SDR** and lending windows) and the **World Bank Group** (IBRD, IDA, IFC, MIGA, ICSID)."
+  ],
+  "terms": [
+   [
+    "Balance of Payments (BoP)",
+    "A ledger of all flows between residents and non-residents over a period."
+   ],
+   [
+    "IIP (International Investment Position)",
+    "The record of stocks, published along with the BoP; valuation changes show here, not in the BoP."
+   ],
+   [
+    "Autonomous items",
+    "Self-interest transactions of individuals and firms, shown above the line."
+   ],
+   [
+    "Accommodative items",
+    "Change in reserves and errors and omissions, shown below the line; the RBI balances the books."
+   ],
+   [
+    "Invisibles",
+    "Services + incomes + transfers."
+   ],
+   [
+    "ECB (External Commercial Borrowing)",
+    "Total commercial debt owed by residents to non-residents."
+   ],
+   [
+    "FDI",
+    "Foreign investment with intention of control: 10% or more of equity."
+   ],
+   [
+    "FPI",
+    "Foreign investment below 10% with no control; called hot money."
+   ],
+   [
+    "Managed float",
+    "Largely floating, but the central bank steps in to curb excessive volatility."
+   ],
+   [
+    "Convertibility",
+    "The legal ease of swapping domestic and foreign currency."
+   ],
+   [
+    "NEER / REER",
+    "Weighted average of the rupee against partner currencies; REER also adjusts for inflation differences."
+   ],
+   [
+    "Current Account Deficit (CAD)",
+    "Outgo on the current account exceeds inflow; VI − VE."
+   ],
+   [
+    "J-curve",
+    "After devaluation the CAD first worsens, then (hopefully) improves."
+   ],
+   [
+    "Quota (IMF)",
+    "A member's share, which fixes its subscription, voting power and borrowing limit."
+   ],
+   [
+    "SDR",
+    "A reserve asset and potential claim on freely usable currencies; not a currency."
+   ],
+   [
+    "RTP (Reserve Tranche Position)",
+    "The 25% foreign-currency part of the subscription, withdrawable unconditionally and counted in reserves."
+   ]
+  ],
+  "remember": "BoP is the ledger of flows; the RBI balances it with reserves. Control decides FDI (10% or more), a CAD is judged by its financing, and IMF and World Bank are the Bretton Woods twins.",
+  "traps": [
+   {
+    "k": "Handout alert",
+    "t": "10% or more, or more than 10%",
+    "d": "The slide says FDI is 'more than 10%'. The handout says '10% or more' and FPI 'less than 10%'. Only exactly 10% differs.",
+    "r": "Rule: use '10% or more = FDI'; be careful if an option says 'more than 10%'."
+   },
+   {
+    "k": "Prelims trap",
+    "t": "Rising NEER/REER means a stronger rupee",
+    "d": "RBI uses indirect quotes (the value of the rupee) and an index with base 2015-16 = 100. Above 100 means over-valued.",
+    "r": "Rule: index up = rupee stronger and less trade competitive."
+   },
+   {
+    "k": "Concept trap",
+    "t": "Dollar falls from ₹90 to ₹80",
+    "d": "This is a rupee appreciation, not a depreciation. The handout warns it may cost dearly in exams.",
+    "r": "Rule: floating system = appreciation/depreciation; fixed system = revaluation/devaluation."
+   },
+   {
+    "k": "Concept trap",
+    "t": "Devaluation does not cure the CAD at once",
+    "d": "With inelastic trade, the import bill rises to 1.5 VI and export revenue falls to 0.75 VE, so the CAD worsens first.",
+    "r": "Rule: devaluation helps only in the medium to long term (J-curve)."
+   },
+   {
+    "k": "Prelims trap",
+    "t": "SDR is not a currency",
+    "d": "You cannot buy goods with SDRs and cannot sell them back to the IMF. It is a potential claim on freely usable currencies.",
+    "r": "Rule: SDR = reserve asset, not currency and not a claim on the IMF."
+   },
+   {
+    "k": "Handout alert",
+    "t": "Tarapore I and II",
+    "d": "The slide gives the four conditions and the later recommendations without years. The handout gives 1997 and 2006.",
+    "r": "Rule: Tarapore I = 1997 (fiscal deficit, inflation, debt, NPAs); Tarapore II = 2006 (ECB, NRIs, P-Notes)."
+   }
+  ],
+  "visuals": [
+   {
+    "type": "mnemonic",
+    "title": "Current account: four parts",
+    "word": "GIST",
+    "label": "Memory aid",
+    "hook": "Get the GIST of the current account: goods, then the three invisibles.",
+    "letters": [
+     [
+      "G",
+      "Goods: merchandise, including non-monetary gold"
+     ],
+     [
+      "I",
+      "Incomes: pay of employees, interest, dividends"
+     ],
+     [
+      "S",
+      "Services: transport, travel, IT, insurance"
+     ],
+     [
+      "T",
+      "Transfers: remittances, no quid pro quo"
+     ]
+    ],
+    "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+    "after": "Services + incomes + transfers"
+   },
+   {
+    "type": "mnemonic",
+    "title": "Tarapore: conditions before full convertibility",
+    "word": "FIND",
+    "label": "Memory aid",
+    "hook": "Before opening the capital account, FIND these four things under control.",
+    "letters": [
+     [
+      "F",
+      "Fiscal deficit brought under control"
+     ],
+     [
+      "I",
+      "Inflation brought under control"
+     ],
+     [
+      "N",
+      "NPAs: gross NPAs of banks controlled"
+     ],
+     [
+      "D",
+      "Debt: government's ability to repay is shored up"
+     ]
+    ],
+    "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+    "after": "controlling gross NPAs of banks"
+   },
+   {
+    "type": "flow",
+    "title": "How a payment crosses the border",
+    "per_row": 4,
+    "steps": [
+     [
+      "1. Vehicle currency",
+      "SBI buys US dollars, the universal bridge"
+     ],
+     [
+      "2. Global banks",
+      "Dollars move from New York to the Chinese bank"
+     ],
+     [
+      "3. Nostro, Vostro, Loro",
+      "Ours, yours, theirs: one account, three views"
+     ],
+     [
+      "4. The gatekeeper",
+      "AD banks report purpose to RBI via FETERS"
+     ]
+    ],
+    "after": "RBI aggregates this into the BoP"
+   },
+   {
+    "type": "fork",
+    "title": "FDI or FPI: the control test",
+    "root": {
+     "t": "Foreign money in a listed company",
+     "c": [
+      "Unlisted company: always FDI"
+     ]
+    },
+    "branches": [
+     {
+      "t": "10% or more of equity",
+      "c": [
+       "Intention to control",
+       "Long term; money and technology"
+      ],
+      "verdict": "FDI"
+     },
+     {
+      "t": "Less than 10%",
+      "c": [
+       "No significant control",
+       "Hot money; may swing the rupee"
+      ],
+      "verdict": "FPI"
+     }
+    ],
+    "after": "Why the old test failed"
+   },
+   {
+    "type": "flow",
+    "title": "Currency war: a cascade of devaluations",
+    "per_row": 4,
+    "steps": [
+     [
+      "1. India devalues",
+      "CAD worsens first: the downward J"
+     ],
+     [
+      "2. China devalues",
+      "The yuan wipes out the advantage"
+     ],
+     [
+      "3. India again",
+      "Devalues from a deeper deficit"
+     ],
+     [
+      "4. Vietnam devalues",
+      "India drops again: cascading drops"
+     ]
+    ],
+    "after": "Result: CAD worsens perpetually"
+   }
+  ]
+ }
+}

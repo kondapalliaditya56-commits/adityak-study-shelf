@@ -1,0 +1,58 @@
+{
+"8": {
+ "pages": "Handout pp. 1-31",
+ "simple": [
+  "**Money** is anything most sellers will accept for real goods: a **generally acceptable medium of exchange (GA-MOE)**. It runs on **trust**; law only enforces acceptance.",
+  "Modern money is a **promise issued by the RBI**, backed by a promise from the government (**bonds**). The RBI earns **seigniorage** because its liabilities cost almost nothing.",
+  "**Money supply = m x M0**. The RBI makes the base (M0); banks multiply it. More cash preference (**cdr**) or more reserves (**rdr**) shrinks the multiplier.",
+  "The **cost of money** (interest rate) comes from a **vertical supply curve** meeting a downward-sloping demand curve. At **r-min** a **liquidity trap** switches policy off.",
+  "RBI uses **qualitative** tools (nudges) and **quantitative** tools (OMO, CRR, SLR, repo, reverse repo, MSF, SDF). The **corridor** is MSF (ceiling), repo, SDF (floor).",
+  "**FIT 2015** fixes the goal at **4% +/- 2%**, set by a **6-member MPC**. Loan pricing moved **PLR, Base Rate, MCLR, EBLR** to improve transmission."
+ ],
+ "terms": [
+  ["GA-MOE", "Generally acceptable medium of exchange: the definition of money."],
+  ["Double Coincidence of Wants (DCW)", "In barter you must find someone who has what you want and wants what you have."],
+  ["Legal tender", "A way of settling debt that a creditor cannot lawfully refuse; in India notes, coins and CBDC."],
+  ["Representative money", "Paper promises backed 1:1 by gold held in a vault."],
+  ["Fiat money", "Central bank promises backed by government bonds; the rupee is not a claim on gold."],
+  ["Seigniorage", "Net interest income on assets backing the currency, after printing costs."],
+  ["High-powered money (M0)", "Currency notes created by the central bank; the RBI's total liabilities."],
+  ["Narrow and broad money", "M1 and M2 are narrow; M3 and M4 are broad."],
+  ["Money multiplier (m)", "How much banks multiply M0 into total money supply: MS = m x M0."],
+  ["cdr and rdr", "Currency-deposit ratio and reserve-deposit ratio; the higher each is, the lower m."],
+  ["Velocity (v)", "How many times a unit of money changes hands in a period."],
+  ["Liquidity trap", "At r-min everyone holds cash, so more money supply does not lower rates or raise spending."],
+  ["NDTL", "Net demand and time liabilities: demand and time deposits less inter-bank deposits."],
+  ["Monetary transmission", "Whether banks pass RBI's rate decisions on to the real economy."],
+  ["Sterilisation", "Absorbing the rupees created by buying dollars; the MSS does this."],
+  ["MIBOR", "Mumbai Inter-bank Offered Rate; the standard call rate in the inter-bank market."]
+ ],
+ "remember": "Money is trust. RBI makes the base, banks multiply it, and the tools and the corridor set what it costs.",
+ "traps": [
+  {"k": "Concept trap", "t": "Trust beats law", "d": "Legal tender laws do not create value; they only enforce acceptance for settling a debt.", "r": "Rule: value comes from trust; legal tender gives enforced acceptance, not value."},
+  {"k": "Prelims trap", "t": "What money supply leaves out", "d": "Vault cash with banks, inter-bank deposits and the Government of India's deposits with RBI are not counted.", "r": "Rule: MS measures what the public holds; if an option counts vault cash or government deposits, reject it."},
+  {"k": "Concept trap", "t": "Repo versus reverse repo", "d": "In repo the RBI lends to banks; in reverse repo the RBI borrows from banks when liquidity is in surplus.", "r": "Rule: repo = RBI lends (1 to 14 days); reverse repo = RBI borrows."},
+  {"k": "Prelims trap", "t": "The floor is now the SDF", "d": "The floor was earlier the reverse repo; since April 2022 the SDF is the hard floor, set just below the repo.", "r": "Rule: ceiling MSF, benchmark repo, floor SDF."},
+  {"k": "Prelims trap", "t": "CRR limits since 2006", "d": "The RBI Amendment Act of 2006 removed the 3% floor and the 40% ceiling on CRR.", "r": "Rule: CRR can be set anywhere from 0% to 100%; CRR is cash with RBI earning nothing, SLR is gold and bonds."},
+  {"k": "Handout alert", "t": "EBLR = MCLR = BR", "d": "The handout writes all three as f(marginal cost of funds), but Base Rate and MCLR are internal while EBLR is external.", "r": "Rule: Base Rate 2010, MCLR 2016, EBLR 2019; only EBLR is linked to an outside rate."}
+ ],
+ "visuals": [
+  {"type": "mnemonic", "title": "Qualitative tools: five ways to CLAMP credit", "word": "CLAMP", "label": "Memory aid",
+   "hook": "Qualitative tools CLAMP down on lending behaviour without touching the cost of money.",
+   "letters": [["C", "Consumer credit rules: higher down payment, shorter tenure"], ["L", "LTV margins: e.g. Rs 60 loan on Rs 100 of gold, not Rs 80"], ["A", "Action, direct: penal rates or refusal of credit"], ["M", "Moral suasion: persuade banks on lending behaviour"], ["P", "PSL rationing: mandated lending to vital sectors"]],
+   "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+   "after": "penal interest rates or refusal to extend credit to violators"},
+  {"type": "fork", "title": "Liquidity trap: the two ends of the interest rate", "root": {"t": "Interest rate r", "c": ["Speculative demand depends on expected moves"]},
+   "branches": [{"t": "r-max", "c": ["No one expects a further rise", "Everyone wants to buy assets"], "verdict": "MDS is zero"},
+                {"t": "r-min", "c": ["No one expects a further fall", "Everyone wants to hold cash"], "verdict": "MDS is infinite: liquidity trap"}],
+   "after": "An increase in money supply does not lower interest rates"},
+  {"type": "fork", "title": "The policy corridor", "root": {"t": "Repo rate", "c": ["The anchor; signals stance"]},
+   "branches": [{"t": "Ceiling", "c": ["MSF rate", "Most a bank pays overnight"], "verdict": "Above the repo"},
+                {"t": "Floor", "c": ["SDF rate (2022)", "Replaced the reverse repo"], "verdict": "Just below the repo"}],
+   "after": "RBI guides the market cost of money without dictating it by decree"},
+  {"type": "flow", "title": "Loan pricing: four phases", "per_row": 4,
+   "steps": [["PLR", "After 1993; opaque, inequitable"], ["Base Rate 2010", "Declared minimum; poor transmission"], ["MCLR 2016", "Marginal cost; still internal"], ["EBLR 2019", "External: repo, T-bill, MIBOR"]],
+   "after": "Four phases of loan pricing"}
+ ]
+}
+}

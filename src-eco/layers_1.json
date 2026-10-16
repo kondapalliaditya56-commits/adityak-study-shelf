@@ -1,0 +1,61 @@
+{
+"1": {
+ "pages": "Handout pp. 2-26",
+ "simple": [
+  "**Poverty** means not having enough well-being: low income, poor health and education, poor water and sanitation, no security, no voice, no chance to improve.",
+  "We measure it to **judge progress**, not to pick beneficiaries. The tool is a **poverty line** on **consumption**, and the **headcount ratio (HCR)** is the share below it.",
+  "India's line evolved through five committees. **Tendulkar (2009) is still the official line**; Rangarajan's was not accepted. India has had **no poverty line since 2014**.",
+  "The World Bank uses **PPP** and three lines: **$3.00, $4.20 and $8.30** a day. India is 5.3%, 24% and over 80% poor at those lines.",
+  "A money line misses deprivation. **MPI = H x A** counts it directly: the National MPI has **12 indicators** and a **33% cut-off**.",
+  "HCR treats all poor alike. **PGI** shows how far below the line, and **SPG** gives extra weight to the poorest."
+ ],
+ "terms": [
+  ["Well-being", "How well a person is doing across life dimensions; poverty is its inadequacy."],
+  ["Absolute (normative) poverty", "Poor by a standard set by experts."],
+  ["Relative poverty", "Poor compared with others; it reflects inequality."],
+  ["Exclusion / inclusion error", "A deserving person left out of the list / an undeserving person put on it."],
+  ["Poverty line basket (PLB)", "Goods and services an expert thinks are needed for a life of basic dignity."],
+  ["Headcount ratio (HCR)", "Share of the population below the poverty line; an estimate, not a count."],
+  ["HCES", "NSSO's Household Consumption Expenditure Survey, the source of standard estimates."],
+  ["MMRP", "Modified mixed recall period: 7 or 30 days for frequent items, 365 days for less frequent ones."],
+  ["International Poverty Line (IPL)", "The World Bank line from the median of low-income countries' national lines: $3.00."],
+  ["PPP", "A conversion rate that equalises what money buys in different countries."],
+  ["Multidimensional poverty", "Deprivation measured directly in health, education and standard of living."],
+  ["Deprivation score", "A household's weighted share of deprivations; above 33% means poor in the National MPI."],
+  ["Headcount (H) and intensity (A)", "H: how many are poor. A: how poor the poor are. MPI = H x A."],
+  ["Poverty Gap Index (PGI)", "Average shortfall from the poverty line, a measure of depth."],
+  ["Squared Poverty Gap (SPG)", "Each gap squared, so larger gaps weigh more; a measure of severity."]
+ ],
+ "remember": "Measure to judge progress: line, then HCR, then MPI for what money misses, then PGI and SPG for how far below.",
+ "traps": [
+  {"k": "Prelims trap", "t": "Tendulkar is official, not Rangarajan", "d": "Rangarajan (2014) added a behavioural part, but his line was not accepted. Tendulkar continued as the official poverty line.", "r": "Rule: official line = Tendulkar; Rangarajan = behavioural, not accepted."},
+  {"k": "Concept trap", "t": "Beneficiaries are not the poor", "d": "Beneficiary lists are hard to revise and only grow. Counting them gives beneficiaries, not poverty, which is an estimate from a representative sample.", "r": "Rule: poverty is estimated to judge progress, never by counting beneficiaries."},
+  {"k": "Handout alert", "t": "Three numbers for about 2011-12", "d": "Tendulkar gives about 22% (2012), India's national line nearly 30% (2011-12), and the World Bank extreme line 27.1%. Each uses a different yardstick.", "r": "Rule: always name the yardstick before quoting a poverty rate."},
+  {"k": "Handout alert", "t": "$4.20 or $3.65", "d": "Section 7 gives the LMIC line as $4.20 (2021 PPP, about Rs 84) but the end summary says $3.65.", "r": "Rule: use $4.20 and check your notebook for $3.65."},
+  {"k": "Handout alert", "t": "Two MPI thresholds", "d": "The global MPI calls a household poor if deprived on 3 or more of 10 indicators. India's National MPI uses a score above 33% on 12 indicators.", "r": "Rule: 12 indicators and 33% = India; 10 indicators = global."},
+  {"k": "Handout alert", "t": "SPG is also called the Sen index", "d": "The handout calls the squared poverty gap both FGT2 and the Sen index, named after Amartya Sen.", "r": "Rule: link 'Sen index' to the SPG as the handout does, and check class notes."}
+ ],
+ "visuals": [
+  {"type": "mnemonic", "word": "VOICES", "label": "Memory aid", "title": "What poverty takes away (World Bank)",
+   "hook": "Poverty silences VOICES: each letter is something the poor are short of.",
+   "letters": [["V", "Voice: lack of say"], ["O", "Opportunity and capacity to better one's life, insufficient"], ["I", "Income low; basics for survival with dignity out of reach"], ["C", "Clean water and sanitation, poor access"], ["E", "Education and health at low levels"], ["S", "Security, physical, inadequate"]],
+   "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+   "after": "In general, poverty is the state of not having enough"},
+  {"type": "mnemonic", "sentence": "Dal Always Lifts Tired Runners", "label": "Memory aid", "title": "Poverty line committees, in order",
+   "hook": "Dal gives calories, and the first line was calorie-based. Read the committees in order.",
+   "letters": [["D", "Dandekar and Rath (1971): 2250 calories a day"], ["A", "Alagh (1979): rural and urban lines"], ["L", "Lakdawala (1993): state-specific lines"], ["T", "Tendulkar (2009): health, education, water, sanitation; still official"], ["R", "Rangarajan (2014): behavioural part; not accepted"]],
+   "note": "Memory aid for the order of the handout's table; the sentence initials follow the committee names.",
+   "after": "Counted actual spending on items like alcohol"},
+  {"type": "flow", "title": "One person, three lines, three rates", "per_row": 3,
+   "steps": [["$3.00 (IPL)", "5.3% poor, about 75 million"], ["$4.20 (LMIC)", "24% poor, close to 350 million"], ["$8.30 (UMIC)", "Over 80% poor, about 1.15 billion"]],
+   "after": "Only about one in five in China and Viet Nam"},
+  {"type": "fork", "title": "Global MPI versus India's National MPI", "root": {"t": "Multidimensional poverty", "c": ["3 dimensions in both versions"]},
+   "branches": [{"t": "Global MPI", "c": ["OPHI proposed it to UNDP", "10 indicators", "Poor if deprived on 3 or more"], "verdict": "10 indicators"},
+                {"t": "National MPI", "c": ["NITI Aayog with UNDP and OPHI", "12 indicators (added maternal health, bank account)", "Poor if score above 33%"], "verdict": "12 indicators, 33%"}],
+   "after": "Do not mix them up."},
+  {"type": "flow", "title": "How many, how far, who is furthest", "per_row": 3,
+   "steps": [["HCR", "Counts heads below the line; treats all poor alike"], ["PGI", "Average shortfall; cost of ending poverty"], ["SPG", "Squared gaps; focus on the poorest of the poor"]],
+   "after": "Helping only those near the line improves the HCR"}
+ ]
+}
+}

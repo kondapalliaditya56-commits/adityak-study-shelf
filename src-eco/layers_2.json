@@ -1,0 +1,60 @@
+{
+"2": {
+ "pages": "Handout pp. 27-35",
+ "simple": [
+  "**Inequality** is differences in attainment of well-being. It is measured mostly through **consumption expenditure**, the most objective choice.",
+  "The **Kuznets curve** is a **theory**: inequality rises, stabilises, then corrects. The **Lorenz curve** is **data-based**, and **Gini = A / (A + B)** runs from 0 to 1.",
+  "Inequality comes from **natural advantages**, from capital versus labour (**Marx**), and from the **nature** of inequality, which the **rule of law** decides.",
+  "**Growth, by design, causes inequality** because resources go where growth potential is higher.",
+  "**Trickle-down** works only if four conditions hold. **Inclusive growth** rests on **capability** and **opportunity**, so the bottom becomes a contributor with a rightful claim."
+ ],
+ "terms": [
+  ["Inequality", "Differences in the degree of attainment on aspects of well-being."],
+  ["Consumption expenditure (CE)", "The preferred, most objective base for measuring inequality."],
+  ["Kuznets curve", "A theoretical expectation: inequality rises, stabilises, then corrects as incomes rise."],
+  ["Lorenz curve (LC)", "A data-based picture of inequality from cumulative shares of income, CE or wealth."],
+  ["Line of perfect equality (OP)", "The x = y line where every group has the same share."],
+  ["Line of perfect inequality (QP)", "Runs along the x-axis, then rises vertically at the last point."],
+  ["Gini coefficient", "A / (A + B), calculated from the Lorenz curve; higher means more inequality."],
+  ["Natural advantages", "Accidents of birth or location that give some people a better chance."],
+  ["Survivorship bias", "Using only the visible information, such as the profits of surviving firms."],
+  ["Rule of law", "A collective environment of competent, fair institutions that frame, execute and adjudicate laws."],
+  ["Trickle-down", "Focus resources on high-growth sectors and let benefits reach the bottom."],
+  ["Inclusive growth", "Broad-based growth that includes the bottom as active contributors."],
+  ["Capability", "Pillar 1: skills, basic healthcare and quality education."],
+  ["Opportunity", "Pillar 2: jobs, entrepreneurship, ease of doing business and access to capital."]
+ ],
+ "remember": "Kuznets is theory, Lorenz is data, Gini is A over A plus B. Growth causes inequality; trickle-down needs four conditions, inclusive growth needs capability and opportunity.",
+ "traps": [
+  {"k": "Prelims trap", "t": "Kuznets is theory, Lorenz is data", "d": "The handout says the Kuznets curve is not a data-based curve, only a theoretical expectation. The Lorenz curve is a data-based representation.", "r": "Rule: Kuznets = theoretical inverted U; Lorenz = built from data."},
+  {"k": "Handout alert", "t": "Two Lorenz examples, two numbers", "d": "The chart labels the bottom 80% as 50%, while the written example under the sketch says the bottom 80% have 40%.", "r": "Rule: do not quote numbers from these pictures; explain the method and the two extreme lines."},
+  {"k": "Concept trap", "t": "Ginis do not simply average", "d": "State A at 0.3 and State B at 0.4 do not combine to 0.35. The Gini is not easily decomposable or additive.", "r": "Rule: never average Ginis; say the maths is complex."},
+  {"k": "Concept trap", "t": "Gini barely sees the tails", "d": "A Rs 10,000 gift between middle-class people visibly moves the Gini, but a billionaire taking Rs 10,000 from a beggar barely does.", "r": "Rule: Gini is sensitive to the middle and nearly blind to the extremes."},
+  {"k": "Concept trap", "t": "Rule of law is not just a law", "d": "It is a collective environment of institutions. The Competition Act, 2002 is only one aspect; how it is applied decides whether the rule of law exists.", "r": "Rule: law plus competent, unbiased institutions."},
+  {"k": "Concept trap", "t": "Trickle-down is not anti-poor", "d": "The handout calls it a pro-poor model. It fails when any of four conditions fails, and then inequalities become permanent.", "r": "Rule: not anti-poor, but it needs all four conditions."}
+ ],
+ "visuals": [
+  {"type": "mnemonic", "word": "SEED", "label": "Memory aid", "title": "Trickle-down: four conditions",
+   "hook": "Plant a SEED at the top; it feeds the bottom only if all four conditions hold.",
+   "letters": [["S", "Sector chosen grows"], ["E", "Efficient tax collection from that growth"], ["E", "Efficient redistribution reaching beneficiaries"], ["D", "Decides to redistribute, not reinvest in the same sector"]],
+   "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+   "after": "The chosen sector grows"},
+  {"type": "mnemonic", "word": "HATS", "label": "Memory aid", "title": "Four shortcomings of the Gini",
+   "hook": "The Gini wears four HATS that hide the real picture of society.",
+   "letters": [["H", "Hides demographic variation among subgroups"], ["A", "Adding Ginis fails: not easily decomposable"], ["T", "Tails: transfers at the extremes barely register"], ["S", "Same Gini can come from different distributions"]],
+   "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+   "after": "It throws everyone into one pot"},
+  {"type": "flow", "title": "From Lorenz curve to Gini", "per_row": 4,
+   "steps": [["1. Plot LC", "Cumulative shares of income"], ["2. Area A", "Between equality line and curve"], ["3. Area B", "Below the Lorenz curve"], ["4. Gini = A / (A + B)", "0 equality, 1 inequality"]],
+   "after": "Area between equality line and inequality line"},
+  {"type": "fork", "title": "Kuznets curve versus Lorenz curve", "root": {"t": "Picturing inequality", "c": ["Two curves, two natures"]},
+   "branches": [{"t": "Kuznets curve", "c": ["Theoretical expectation", "Rises, stabilises, corrects", "Phases A, B, C unequal"], "verdict": "Theory, not data"},
+                {"t": "Lorenz curve", "c": ["Built from income, CE or wealth", "Sort, group, cumulate shares", "OP equality, QP perfect inequality"], "verdict": "Data-based"}],
+   "after": "closer to the equality line, the more equal"},
+  {"type": "fork", "title": "Why inequality: Marx versus modern reasoning", "root": {"t": "Profit versus wages", "c": ["Firms want a larger share"]},
+   "branches": [{"t": "Marx", "c": ["Capital scarce, labour abundant", "Labour bargains poorly", "Profit share compounds over time"], "verdict": "Growing inequality is the problem"},
+                {"t": "Modern reasoning", "c": ["Marx has survivorship bias", "Key is survival and market share", "Rule of law decides the means"], "verdict": "The nature of inequality decides"}],
+   "after": "So firms see that the key to exceptional profit"}
+ ]
+}
+}

@@ -1,0 +1,62 @@
+{
+"7": {
+ "pages": "Handout pp. 1-33",
+ "simple": [
+  "Banks are **decision-taking** intermediaries, so the **RBI** regulates them so that the **bank, not the depositor**, carries lending risk. **SEBI** looks after decision-facilitating ones.",
+  "**Basel III** asks for capital against three risks. **CRAR = Capital / Risk Weighted Assets, at least 9%** (Basel 8%), plus a **2.5%** buffer. Riskier loans use up capital faster.",
+  "Overdue loans climb **SMA-0, 1, 2**, then become an **NPA** after **90 days**: sub-standard, doubtful, loss.",
+  "The **4R** cure: **Recognise** (AQR), **Recover** (RDDB, SARFAESI, IBC), **Recapitalise** (₹2.11 lakh crore bonds) and **Reform** (governance).",
+  "**Financial inclusion** moved from nationalisation to specialised banks to **Jan Dhan (2014)**. **PSL** is **40%** of ANBC, or **75%** for RRBs, co-operative banks and SFBs.",
+  "**NBFCs** lend like banks but cannot take demand deposits or issue cheques; they now sit in **four layers**."
+ ],
+ "terms": [
+  ["Decision-making intermediary", "A bank or NBFC that decides about the supplier's money and bears the risk."],
+  ["Skin in the game", "The bank must have its own money at risk, not only the depositor's."],
+  ["Tier 1 capital", "Core capital: equity, founders' money and retained profits."],
+  ["Tier 2 capital", "Supplemental capital: subordinated debt that must eventually be repaid."],
+  ["CRAR", "Capital divided by Risk Weighted Assets; RBI asks at least 9%."],
+  ["Provisioning", "Setting aside a % of a loan's value from capital against that loan's risk."],
+  ["SMA", "Special Mention Account: an overdue loan that is a red flag but not yet a bad loan."],
+  ["NPA", "A loan with principal or interest overdue for more than 90 days."],
+  ["GNPA and Net NPA", "GNPA is total NPA loans; Net NPA is GNPA minus provisioning."],
+  ["Evergreening", "Abusing restructuring to avoid recognising NPAs."],
+  ["Haircut", "The bank reduces an asset's value to free capital; the right to recover stays."],
+  ["Twin Balance Sheet Problem", "A stressed borrower's balance sheet stresses the bank, which then deepens the borrower's trouble."],
+  ["CIRP", "Corporate Insolvency Resolution Process under the IBC."],
+  ["Committee of Creditors", "The body in which financial creditors vote on sale, restructuring or liquidation."],
+  ["ANBC", "Adjusted Net Bank Credit, the base for priority sector lending targets."],
+  ["Payments bank", "Takes deposits and handles remittances but gives no loans or credit cards."]
+ ],
+ "remember": "Regulation makes banks carry risk with their own money: capital against loans, 4R against bad loans, inclusion and PSL to widen reach.",
+ "traps": [
+  {"k": "Prelims trap", "t": "SMA is not yet an NPA", "d": "SMA-0, 1 and 2 are early red flags for 1 to 90 days overdue. A loan becomes an NPA only when overdue for more than 90 days.", "r": "Rule: 90+ days = NPA; sub-standard is up to 12 months, doubtful is more than 12 months."},
+  {"k": "Prelims trap", "t": "Two different thresholds", "d": "The SARFAESI NBFC threshold is ₹100 Crore, while the SBR base layer limit is ₹1,000 Crore. The SFB ticket-size rule is worded 'majority' once and 'at least 50%' elsewhere.", "r": "Rule: SFB = 50%+ of loans under ₹25 L and 75% PSL; do not mix ₹100 Cr with ₹1,000 Cr."},
+  {"k": "Handout alert", "t": "Provisioning 3% or 4%", "d": "The farmer example uses 3% provisioning for a 20% risk, but the table row P1 (also agri, 20% risk) uses 4%. The handout never reconciles them.", "r": "Rule: use the numbers in the question; remember the method: provisioning + 9% x (risk x loan)."},
+  {"k": "Handout alert", "t": "Three NPA numbers", "d": "The text says NPAs reached 18% in PSBs, then gives a PSB GNPA peak of 14.58%. It also says 'less than 2%' while the latest figure is 2.6% (Sept 2024).", "r": "Rule: quote 14.58% (PSB peak) and 2.6% (Sept 2024) with the month; treat 18% and 'below 2%' as loose."},
+  {"k": "Handout alert", "t": "Recovery figures disagree", "d": "RDDB recovery is '~10%' in one place and '20-25%' in another. SARFAESI is '10-14%' and '25-30%'. IBC is around 45%, 40% and 31-32%.", "r": "Rule: quote the order (civil courts < DRT < SARFAESI < IBC); give a figure only if the question names its source."},
+  {"k": "Handout alert", "t": "BBB, FSIB and the licence years", "d": "The BBB strike-down is dated '2023' and '2022/2023', and FSIB is expanded in two ways. Private licences are dated 1993, differentiated licences 2013 and 2015.", "r": "Rule: write FSIB (Financial Services Institutions Bureau); 2013-14 is policy, 2015 is when licences were granted."}
+ ],
+ "visuals": [
+  {"type": "fork", "title": "Two kinds of intermediary", "root": {"t": "Intermediaries", "c": ["Collect information, build trust, charge a fee"]},
+   "branches": [{"t": "Decision-making", "c": ["Banks and NBFCs", "Intermediary bears the risk", "Aim: protect supplier's money"], "verdict": "Regulator: RBI"},
+                {"t": "Decision-facilitating", "c": ["Brokers, stock exchanges", "Decision-makers bear the risk", "Aim: truthful and transparent"], "verdict": "Regulator: SEBI"}],
+   "after": "This unit therefore has two parts"},
+  {"type": "flow", "title": "The ladder of bad loans", "per_row": 3,
+   "steps": [["SMA-0", "1 to 30 days overdue"], ["SMA-1", "More than 30 up to 60 days"], ["SMA-2", "More than 60 up to 90 days"], ["Sub-standard", "NPA up to 12 months; about 15%"], ["Doubtful", "NPA over 12 months; 25% to 100%"], ["Loss asset", "Uncollectible; 100% provision"]],
+   "after": "renegotiated terms (lower interest"},
+  {"type": "flow", "title": "The 4R strategy", "per_row": 4,
+   "steps": [["1. Recognise", "AQR from 2015; CRILC above ₹5 Cr"], ["2. Recover", "RDDB 1993, SARFAESI 2002, IBC 2016"], ["3. Recapitalise", "₹2.11 Lakh Cr bonds, Oct 2017"], ["4. Reform", "Nayak BHC idea; BBB then FSIB"]],
+   "after": "amongst the most severe banking crisis"},
+  {"type": "mnemonic", "title": "Who runs the IBC process", "word": "CUPID", "label": "Memory aid",
+   "hook": "CUPID brings debtor and creditors to the table: the five bodies in the IBC ecosystem.",
+   "letters": [["C", "CoC: supreme decision body; financial creditors vote"], ["U", "Utility: Information Utilities like NeSL hold verified debt records"], ["P", "Professionals: IP, IRP and RP run daily operations and assets"], ["I", "IBBI: regulator that licenses professionals and drafts regulations"], ["D", "DRT and NCLT: legal umpires; DRT for individuals, NCLT for corporates"]],
+   "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+   "after": "Supreme decision-making body"},
+  {"type": "mnemonic", "title": "Four pillars of financial inclusion", "word": "CLAP", "label": "Memory aid",
+   "hook": "Give financial inclusion a CLAP: four pillars that bring people in.",
+   "letters": [["C", "Cost-effective: affordability, no exorbitant loans or heavy fees"], ["L", "Literacy: capability, financial literacy for rational choices"], ["A", "Account: association, bring the citizen into the formal system"], ["P", "Products: accessibility, pensions, insurance and micro-credit easily available"]],
+   "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+   "after": "Financial literacy for rational choices"}
+ ]
+}
+}

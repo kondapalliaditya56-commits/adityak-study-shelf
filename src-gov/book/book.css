@@ -158,3 +158,26 @@ ul.b>li{margin-bottom:.9mm}
 .mword .mhook{font:italic 600 10.4pt/1.4 Lora;color:#1F4E5F;margin:0 0 2mm}
 .mword .chip{display:block;background:transparent!important;border:none!important;padding:.3mm 0;margin:0;font-size:9pt}
 .mword .chip i{display:inline-block;min-width:8mm;font-weight:700}
+
+/* ---- Economy additions: callouts, paragraphs, captions, PYQ block */
+.np{margin:1.6mm 0;font-size:10.2pt;line-height:1.5}
+.tcap{font:700 8.2pt Inter,sans-serif;color:#1F4E5F;margin:3mm 0 0;break-after:avoid}
+.callout{padding:2.6mm 4mm;margin:3mm 0;font-size:9.6pt;line-height:1.46;border-left:2.2pt solid #3F6E8F;background:#EEF3F7}
+.callout span{display:block;font:700 7.2pt Inter;letter-spacing:.14em;text-transform:uppercase;color:#1F4E5F;margin-bottom:1mm}
+.callout p{margin:0 0 1mm}
+.callout.key{background:#EAF4F1;border-color:#2F6F73}
+.callout.teacher{background:#FDF1E3;border-color:#C9791F}.callout.teacher span{color:#8A4F0A}
+.callout.alert{background:#FFF4DE;border-color:#C9791F}.callout.alert span{color:#8A4F0A}
+.pyqblk{margin:6mm 0 3mm;padding-top:3mm;border-top:.6pt solid #B58A3C}
+.pyqblk .lbl{font:700 8pt Inter;letter-spacing:.14em;text-transform:uppercase;color:#1F4E5F;margin-bottom:2mm}
+.pyqblk .gc{font:600 7.4pt Inter;letter-spacing:0;text-transform:none;color:#7A6A45;margin-left:2mm}
+.pyqblk .kwkey{font:7.6pt Inter;color:#5A6A72;margin:0 0 2mm}
+.pq,.mq{border:.5pt solid #D8D0B8;border-radius:1.4mm;padding:2mm 3mm;margin:1.8mm 0;font-size:9.2pt;line-height:1.42;break-inside:avoid;background:#FFFEFB}
+.pqh,.mqh{font:700 7.6pt Inter;color:#1F4E5F;margin-bottom:.8mm}
+.mqh .mk,.mqh .tp{font-weight:600;color:#7A6A45;margin-left:2mm}
+.pqs,.mqt{margin:.6mm 0}
+.pqst{margin:.6mm 0 .6mm 4mm;padding:0}.opts{margin:.8mm 0 .8mm 1mm;font:8.8pt/1.38 Inter,sans-serif}.opts b{color:#1F4E5F;margin-right:1mm}
+.pqa{margin:.8mm 0 0;font:8.6pt Inter;color:#1F4E5F}
+.kw{margin-top:1.2mm}.kwl{font:700 7pt Inter;letter-spacing:.1em;text-transform:uppercase;color:#7A6A45;margin-right:1.6mm}
+.kc{display:inline-block;font:600 7.4pt Inter;padding:.2mm 1.8mm;margin:0 1.2mm .8mm 0;border-radius:2mm;border:.6pt solid #2F6F73}
+.kc.n{background:#DCEBE7;color:#1F4E5F}.kc.q{background:#fff;color:#2F6F73}

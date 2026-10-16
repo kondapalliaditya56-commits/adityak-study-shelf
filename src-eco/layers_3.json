@@ -1,0 +1,222 @@
+{
+ "3": {
+  "pages": "Handout pp. 1-34",
+  "simple": [
+   "An **unemployed** person is able and willing to work, is looking, and cannot find work. **UR = UE ÷ labour force**, not ÷ population.",
+   "The **PLFS** counts in two ways. **Usual Status** uses one year (**183 days** for principal status, **30 days** for subsidiary) and the headline is **PS+SS**. **CWS** uses the last 7 days (**1 hour** of work) and usually gives a higher rate.",
+   "Types: **structural, seasonal, frictional, voluntary, disguised** (marginal product zero), **wage-rate** and **cyclical**. **Underemployment** is counted as employed.",
+   "India's UR fell from **6.0% to 3.2%** while LFPR rose to **60.1%** (2017-18 to 2023-24). But the fall came mostly from **agriculture and self-employment**.",
+   "The handout's key cause is a **mismatch of aspirations and skills**, not low growth. Growth is about 6.5%, and employment growth still beats labour-force growth.",
+   "**29 labour laws became 4 Codes.** Organised vs unorganised is about the **firm**; formal vs informal is about the **worker**. Fixed-term staff get gratuity after **1 year**."
+  ],
+  "terms": [
+   [
+    "Working Age Population (WAP)",
+    "People in the age group fit for economic activity: 15+ in PLFS, 15-64 for demographics."
+   ],
+   [
+    "Dependency Ratio",
+    "Dependents (0-14 and 65+) divided by people aged 15-64, times 100."
+   ],
+   [
+    "Labour Force (LF)",
+    "People who are working or looking for work; employed plus unemployed."
+   ],
+   [
+    "LFPR",
+    "Labour force in a group as a share of the total population of that group."
+   ],
+   [
+    "Unemployment Rate (UR)",
+    "Unemployed divided by labour force (Emp + UE); a share of the labour force."
+   ],
+   [
+    "Worker Population Ratio (WPR)",
+    "Employed persons divided by total population."
+   ],
+   [
+    "Principal Status (PS)",
+    "In the labour force for 183 days or more; employed if working for most of those days."
+   ],
+   [
+    "Subsidiary Status (SS)",
+    "A person with at least 30 days of work in the year is employed on SS."
+   ],
+   [
+    "UPSS",
+    "Usual Principal and Subsidiary Status; employed if a worker in either capacity. PS+SS is the headline rate."
+   ],
+   [
+    "Current Weekly Status (CWS)",
+    "Look at the last 7 days; one hour of work on any day counts as employed."
+   ],
+   [
+    "Disguised unemployment",
+    "Extra workers whose marginal product of labour is zero; recorded as employed."
+   ],
+   [
+    "Underemployment",
+    "Employed, but the job does not use the person's skills or hours on offer."
+   ],
+   [
+    "Natural rate (NRU)",
+    "UR with no wage-rate and no cyclical unemployment; full employment, which is not zero."
+   ],
+   [
+    "Employment elasticity",
+    "% change in employment divided by % change in output."
+   ],
+   [
+    "Gig and platform workers",
+    "Treated as independent contractors by platforms; outside the employer-employee relationship."
+   ],
+   [
+    "Fixed-term employment",
+    "Direct hiring for a set period on a written contract, with parity of wages and benefits."
+   ]
+  ],
+  "remember": "Count in the labour force first, then by usual status or the weekly status. India's UR fell, but the cause is skills against aspirations and jobs in agriculture and self-employment.",
+  "traps": [
+   {
+    "k": "Prelims trap",
+    "t": "Which working age: 15-64 or 15+",
+    "d": "The handout gives 15-64 for demographics and the dependency ratio, but 15 and above for PLFS metrics (LFPR, UR, WPR).",
+    "r": "Rule: DR uses 15-64; LFPR, UR and WPR as reported by PLFS use 15+."
+   },
+   {
+    "k": "Concept trap",
+    "t": "Underemployment is employment",
+    "d": "The word is employment, not unemployment. An underemployed or disguised worker is still recorded as employed.",
+    "r": "Rule: underemployment and disguised unemployment both sit inside 'employed' in the statistics."
+   },
+   {
+    "k": "Prelims trap",
+    "t": "US versus CWS: which rate is higher",
+    "d": "The US approach looks at a year and smooths seasonal bumps. CWS uses a short recall and captures seasonality and short-term swings.",
+    "r": "Rule: CWS is generally higher; the headline rate is UPSS (PS+SS). Order: LF test (183 days), then PS, then SS."
+   },
+   {
+    "k": "Concept trap",
+    "t": "Organised is not the same as formal",
+    "d": "Organised vs unorganised looks at the enterprise. Formal vs informal looks at the worker's contract and social security. A contract guard at a big IT park is an informal worker in an organised enterprise.",
+    "r": "Rule: ask 'about the firm or about the worker?' before choosing the box."
+   },
+   {
+    "k": "Prelims trap",
+    "t": "Gratuity: 5 years or 1 year",
+    "d": "A permanent employee needs 5 years of continuous service. A fixed-term employee becomes eligible after 1 year under the Code on Social Security, 2020.",
+    "r": "Rule: permanent 5 years, fixed-term 1 year."
+   },
+   {
+    "k": "Handout alert",
+    "t": "The 'surge' needs its caveat",
+    "d": "The handout says the surge appears as data are collected better, and the fall in UR came mostly from agriculture and self-employment.",
+    "r": "Rule: quote the surge together with its quality caveat."
+   }
+  ],
+  "visuals": [
+   {
+    "type": "mnemonic",
+    "title": "The four Labour Codes",
+    "word": "WISH",
+    "label": "Memory aid",
+    "hook": "It is the worker's WISH list: pay, protection, safety and fair dispute rules in four Codes.",
+    "letters": [
+     [
+      "W",
+      "Wages: Code on Wages, 2019"
+     ],
+     [
+      "I",
+      "Industrial Relations Code, 2020"
+     ],
+     [
+      "S",
+      "Social Security: Code on Social Security, 2020"
+     ],
+     [
+      "H",
+      "Health and safety: Occupational Safety, Health and Working Conditions Code, 2020"
+     ]
+    ],
+    "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+    "after": "gives firms somewhat more hiring and firing flexibility"
+   },
+   {
+    "type": "flow",
+    "title": "Usual status: the order of tests",
+    "per_row": 3,
+    "steps": [
+     [
+      "1. LF test",
+      "Working or seeking for 183 days or more"
+     ],
+     [
+      "2. Principal status",
+      "Employed if work for most days in the LF"
+     ],
+     [
+      "3. Subsidiary status",
+      "At least 30 days of work in the year"
+     ]
+    ],
+    "after": "first the LF test (≥ 183 days), then PS, then SS"
+   },
+   {
+    "type": "flow",
+    "title": "The wage ladder",
+    "per_row": 4,
+    "steps": [
+     [
+      "Floor wage",
+      "Centre's baseline; Code on Wages, 2019"
+     ],
+     [
+      "Minimum wage",
+      "Set mainly by states; survival"
+     ],
+     [
+      "Fair wage",
+      "Committee on Fair Wages, 1948"
+     ],
+     [
+      "Living wage",
+      "Decent life; often above the minimum"
+     ]
+    ],
+    "after": "Floor wage ≤ Minimum wage ≤ Fair wage ≤ Living wage"
+   },
+   {
+    "type": "fork",
+    "title": "India's falling UR: read both sides",
+    "root": {
+     "t": "UR 6.0% to 3.2%",
+     "c": [
+      "PLFS, 2017-18 to 2023-24"
+     ]
+    },
+    "branches": [
+     {
+      "t": "The good news",
+      "c": [
+       "LFPR 49.8% to 60.1%",
+       "WPR 46.8% to 58.2%",
+       "Female LFPR 23.3% to 41.7%"
+      ],
+      "verdict": "More people working"
+     },
+     {
+      "t": "The caution",
+      "c": [
+       "Fall came from agriculture",
+       "And from self-employment, often distress",
+       "Agriculture: 46% of workers, 18% of GDP"
+      ],
+      "verdict": "Quantity, not quality"
+     }
+    ],
+    "after": "Then it asks what is behind the numbers"
+   }
+  ]
+ }
+}

@@ -1,0 +1,58 @@
+{
+"6": {
+ "pages": "Handout pp. 1-16",
+ "simple": [
+  "**Inflation** is a general rise in the **price level**. A rise in one good's price is not inflation by itself.",
+  "Prices rise when **Aggregate Demand (AD) is bigger than Aggregate Supply (AS)**. Demand-pull pushes AD right; cost-push pushes AS left.",
+  "We track a fixed **basket** against a **base year** (index = 100). Inflation is the % change over the **same month** of last year.",
+  "India's **headline** inflation is **CPI-C** with a target of **4% ± 2%**. The new **2024 = 100** series has 12 divisions, 358 items and a food weight of 36.75%.",
+  "**Core** = headline minus food and fuel. Petrol and diesel stay **inside** core.",
+  "Borrowers gain, depositors lose, and the poor are hit hardest (**Engel's Law**). The cure is to **make money expensive**."
+ ],
+ "terms": [
+  ["Price vs prices", "One good's price is set by its own demand and supply; the price level is set by AD and AS."],
+  ["Aggregate Demand (AD)", "Total demand for all goods and services in the economy."],
+  ["Aggregate Supply (AS)", "Total supply of all goods and services that producers make together."],
+  ["Normative basket", "A fixed basket of goods and services for an average person of a target group."],
+  ["Base year / index", "The base-year basket price is set to 100; later baskets are shown against it."],
+  ["Year-on-year (Y-o-Y)", "This month against the same month of the previous year."],
+  ["Headline inflation", "Overall inflation, measured by CPI-C; the news number."],
+  ["Core inflation", "Headline minus food and fuel."],
+  ["Skewflation", "A few items rise fast while most stay stable."],
+  ["Disinflation", "The rate of inflation falls; prices still rise, only slower."],
+  ["Stagflation", "Low growth, high unemployment and high inflation together."],
+  ["Real interest rate", "Nominal interest rate minus inflation."],
+  ["Fiscal drag", "Inflation pushes people into higher tax brackets, which cools demand by itself."]
+ ],
+ "remember": "Prices rise when AD beats AS. Measure with a basket and a base year, read headline and core, and cure it by making money expensive.",
+ "traps": [
+  {"k": "Prelims trap", "t": "Petrol and diesel are inside core", "d": "Many assume petrol and diesel sit in 'Fuel and Light'. The handout puts vehicle petrol and diesel under Transport and Communication.", "r": "Rule: core = headline minus food and fuel (Fuel and Light) only; petrol and diesel come out only in super core."},
+  {"k": "Concept trap", "t": "Deflation is not disinflation", "d": "Deflation is a fall in prices. Disinflation is a fall in the rate of inflation; prices still rise, only slower.", "r": "Rule: prices fall = deflation; the rate falls = disinflation."},
+  {"k": "Concept trap", "t": "One price is not inflation", "d": "A rise in the price of one good may cause inflation but is not inflation by itself.", "r": "Rule: pick the option that says 'general rise' and 'price level'."},
+  {"k": "Prelims trap", "t": "Recession: a rule of thumb", "d": "Two consecutive quarters of falling output is a rule of thumb. The US NBER uses broader metrics to declare a recession.", "r": "Rule: treat 'two quarters' as the thumb rule, not a legal definition."},
+  {"k": "Handout alert", "t": "18% or 18.8%", "d": "The fiscal-drag table gives 18.8% for the rise in post-tax income but the text beneath says 18%.", "r": "Rule: quote about 18.8%; the point is that it is less than 20%."}
+ ],
+ "visuals": [
+  {"type": "mnemonic", "title": "Demand-pull: five ways AD shifts right", "word": "CHIPS", "label": "Memory aid",
+   "hook": "More CHIPS on the table means more to spend: AD moves right and prices follow.",
+   "letters": [["C", "Cheap credit: easy money, lower interest rates"], ["H", "Habits: less saving, more consumption"], ["I", "Income levels rising"], ["P", "Population rising"], ["S", "Spending by government goes up"]],
+   "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+   "after": "International shocks"},
+  {"type": "mnemonic", "title": "Cost-push: six ways AS shifts left", "word": "PRICED", "label": "Memory aid",
+   "hook": "Why are goods so highly PRICED? Check the six supply-side causes.",
+   "letters": [["P", "Productivity falls, new skills not adopted"], ["R", "Raw materials costly or not available"], ["I", "Investment low: poor infrastructure, R&D"], ["C", "Cost of factors: wages, interest on capital"], ["E", "Ease of Doing Business is poor"], ["D", "Disasters disrupt supply chains"]],
+   "note": "Memory aid made from the handout's own list; the letters are rearranged, so the order is free.",
+   "after": "International shocks"},
+  {"type": "flow", "title": "Seven steps to measure inflation", "per_row": 4,
+   "steps": [["1. Target group", "Whom to measure"], ["2. Basket", "Normative basket of goods"], ["3. Base year", "Weights; monthly basket"], ["4. Base prices", "Basket price, each month"], ["5. Later prices", "Same months, later years"], ["6. Inflation", "% change, same month"], ["7. Index value", "Report with % change"]],
+   "after": "Communicate the index value"},
+  {"type": "flow", "title": "Who releases which index", "per_row": 3,
+   "steps": [["CPI-R, CPI-U, CPI-C", "National Statistical Office, MoSPI"], ["CPI-AL, CPI-IW", "Labour Bureau"], ["WPI", "Office of the Economic Adviser, DPIIT"]],
+   "after": "India has no official PPI"},
+  {"type": "fork", "title": "Who gains and who loses", "root": {"t": "Inflation", "c": ["Money buys less each year"]},
+   "branches": [{"t": "Gain", "c": ["Borrowers", "Producers: most can pass the rise on"], "verdict": "Borrowers and producers"},
+                {"t": "Lose", "c": ["Lenders, unless protected", "Depositors: real return negative", "Consumers"], "verdict": "Savers and consumers"}],
+   "after": "Generally benefit"}
+ ]
+}
+}
