@@ -82,7 +82,7 @@ dict(toc='Lokpal in India', id=18, title='LOKPAL IN INDIA', part=2, icon='scale'
  pyq='Mains 2013 · Handout M2 · Lokpal',
  simple='The Lokpal is the ombudsman for central corruption cases. The Act is detailed, but the body has been slow and thinly used.',
  nodes=[
- tl(('1809', 'Sweden ombudsman'), ('1967', 'UK Parliamentary Commissioner'), ('1968', 'India\'s first bill'), ('1971', 'Maharashtra Lokayukta'), ('2013', 'Lokpal Act'), ('2019', 'Lokpal constituted: Justice P.C. Ghose')),
+ tl(('1809', 'Sweden ombudsman'), ('1967', 'UK Parliamentary Commissioner'), ('1968', 'India\'s first Lokpal Bill introduced'), ('1971', 'Maharashtra Lokayukta'), ('2013', 'Bill passed = Lokpal and Lokayuktas Act'), ('2019', 'Lokpal constituted: Justice P.C. Ghose')),
  bx('bl', '<b>First ARC:</b> two-tier: <b>Lokpal</b> (Secretary-rank and above, Union and State) and <b>Union Lokayukta</b> for lower officials; state Lokayuktas in states.'),
  t('<b>State experience</b>', 'flooded complaints; weak effect; uneven powers', 'survives at government\'s will: <b>Odisha abolished 1992, Haryana 1999</b>', 'recommendatory "paper tigers"; misused against opponents', w=22),
  sec('LOKPAL ACT 2013 ' + P('2013'), 'b'),
@@ -103,7 +103,7 @@ dict(toc='Lokpal in India', id=18, title='LOKPAL IN INDIA', part=2, icon='scale'
  t('<b>2nd ARC</b>', '<b>constitutional status</b>', '<b>Rashtriya Lok Ayukta</b> for Union ministers, MPs, CMs', 'State Lokayukta for state ministers/legislators', '<b>CVC</b> for civil servants; <b>Local Bodies Ombudsman</b>', w=22),
  bx('ye', '<b>Not a panacea:</b> hydra-headed corruption; petty cases need departmental handling; weak judicial process; citizens unwilling to complain.'),
  ],
- recall=[('First bill; Act; constituted', '1968; 2013; 2019'), ('Members; term', '9; 5 years or 70'), ('Prelim inquiry', '60 days'), ('Removal reference', 'SC, signed by 100 MPs'), ('Limit on complaints', '7 years')]),
+ recall=[('First Bill introduced; Bill passed (Act); Lokpal constituted', '1968; 2013; 2019'), ('Members; term', '9; 5 years or 70'), ('Prelim inquiry', '60 days'), ('Removal reference', 'SC, signed by 100 MPs'), ('Limit on complaints', '7 years')]),
 
 dict(toc='Whistleblower Protection and PCA 1988', id=19, title='WHISTLEBLOWERS &amp; PCA 1988', part=2, icon='bell', prio='H',
  pyq='Mains 2015 · 2022 · Handout M2 · Laws',

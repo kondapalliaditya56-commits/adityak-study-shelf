@@ -284,7 +284,7 @@ def make_start(next_ch):
     s.append(Sec('What this notebook is', [
         p('Two Sarrthi IAS GS-2 Governance modules, rebuilt as one notebook you can read on the tablet: **Chapter 1** covers Module 1 (sections 1-14, civil services to RTI) and **Chapter 2** covers Module 2 (sections 15-19, corruption to the Prevention of Corruption Act).'),
         p('Every section opens with an **Exam lens** (priority, PYQs quoted, Prelims and Mains hooks). Page references such as M1 p.5 are the printed page numbers of each module. Only facts printed in the handouts are used. **No class slides or teacher board notes were supplied**, so there is no teacher-ink forecast; priority comes from where the handouts quote PYQs.'),
-        alert('Source conflict', 'Module 1 says India appointed a central ombudsman in 2013; Module 2 says the Lokpal was constituted in 2019. The notes use “Act 2013, constituted 2019”.'),
+        alert('Bill, Act, constituted', 'Lokpal: first Bill introduced 1968; the present Bill was passed in 2013 and became the Lokpal and Lokayuktas Act, 2013; the Lokpal itself was constituted in 2019.'),
         note('Counts', '**19 Mains PYQ entries quoted (2013-2024) and no Prelims PYQ.** Priority rule: High = 2 or more PYQs map to the section; Medium = 1 PYQ or a partial fit (*); Low = none quoted.'),
     ]))
     s.append(Sec('Priority and PYQ map for all 19 sections', [tbl('Sections in handout order', ['Section', 'Pages', 'Priority', 'Mains PYQs quoted'],

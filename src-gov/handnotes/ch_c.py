@@ -52,11 +52,11 @@ dict(toc='RTI Act 2005 and the 2019 amendment', id=13, title='RTI ACT 2005 &amp;
  pyq='Mains 2020 (RTI amendments and autonomy of Information Commission) · Handout M1 pp. 31-35',
  simple='RTI turns a citizen\'s question into a legal duty on any public authority. Few exemptions, a public-interest override and penalties: the 2019 amendment moved tenure and pay of Commissioners to the Centre.',
  nodes=[
- two([tl(('1766', 'Sweden: first RTI law'), ('1966', 'USA second'))], [bx('ye', '<b>Ombudsman:</b> Sweden 1809; India\'s central ombudsman <b>2013</b> (per Module 1).')]),
+ two([tl(('1766', 'Sweden: first RTI law'), ('1966', 'USA second'))], [bx('ye', '<b>Ombudsman:</b> Sweden 1809; India\'s Lokpal Bill <b>passed 2013</b> (became an Act); Lokpal constituted 2019.')]),
  bx('pk', '<b>Constitutional locus:</b> not codified directly; Preamble supports; <b>SC read it into Art 19(1)(a), Art 21, Art 39(b), 39(c)</b>. Cases: <b>Rajnarain 1975</b>, <b>S.P. Gupta 1982</b>. Madison: popular government without information is "a Prologue to a Farce or a Tragedy".'),
  t('<b>Why demand grew</b>', 'spread of democracy; World Bank, IMF, TI advocacy', '<b>NCPRI 1996</b> (<b>Aruna Roy</b>), PUCL, ADR', '<b>MKSS</b>, Janawad, Rajasthan: "<b>Humara Paisa, Humara Hisab</b>"', w=22),
  mn('MONOPOLY', '<b>Monopoly + Discretion − Transparency = Corruption.</b> RTI: corrects power asymmetry, realises other rights (food), trust deficit (info within <b>30 days</b>), better records, shields civil servants (documentary proof).'),
- tl(('1997', 'Shourie working group; <b>Tamil Nadu</b> acts first'), ('2002', 'Freedom of Information Bill (weak, not notified)'), ('2005', 'RTI Act: drafted by <b>National Advisory Council</b>')),
+ tl(('1997', 'Shourie working group; <b>Tamil Nadu</b> acts first'), ('2002', 'FOI Bill passed (Act) but <b>never notified</b>; weak'), ('2005', 'RTI Bill drafted by <b>National Advisory Council</b>; passed as RTI Act')),
  OWN('PAID', 'A sound regime: <b>P</b>enalties (Rs 250 a day, max Rs 25,000) · <b>A</b>ccess (low fees, free for BPL) · <b>I</b>ndependent appeal (CIC, SIC) · <b>D</b>isclosure maximum, exemption minimum'),
  sec('MAIN FEATURES', 'b'),
  t('<b>Right and scope</b>', 'every citizen; wide definition of information (records, memos, e-mail, advice, orders, contracts, samples, electronic data, private-body info held by an authority)', 'includes inspection, certified copies, samples, electronic formats', '<b>public authority:</b> constitutional or statutory bodies; owned, controlled or <b>substantially financed</b> (undefined); NGOs substantially financed', w=24),
@@ -75,7 +75,7 @@ dict(toc='RTI Act 2005 and the 2019 amendment', id=13, title='RTI ACT 2005 &amp;
  two([bx('pk', '<b>Negative:</b> executive overreach · public distrust · federal dilution (SICs).')], [bx('gr', '<b>Positive:</b> flexibility · fiscal discipline · policy alignment. <b>Reflect:</b> efficiency vs independence.')]),
  bx('ca', '<span class="tag">In the news · Saarthi IAS CA, Aug 2026 (verify)</span><b>NSE and RTI:</b> SC stayed a Delhi HC order that held NSE a public authority. <b>Hook:</b> "substantially financed" is undefined (BCCI, parties, DIAL).'),
  ],
- recall=[('First RTI law', 'Sweden 1766; USA 1966'), ('Constitutional articles', '19(1)(a), 21, 39(b), 39(c)'), ('Who drafted 2005 bill', 'National Advisory Council'), ('Absolute exemption', 'copyright of a non-State person'), ('2019 Amendment effect', 'Centre fixes tenure and pay; CIC statutory')]),
+ recall=[('First RTI law', 'Sweden 1766; USA 1966'), ('Constitutional articles', '19(1)(a), 21, 39(b), 39(c)'), ('Who drafted the RTI Bill 2005', 'National Advisory Council'), ('Absolute exemption', 'copyright of a non-State person'), ('2019 Amendment effect', 'Centre fixes tenure and pay; CIC statutory')]),
 
 dict(toc='CIC, RTI issues, impact and 2nd ARC', id=14, title='CIC · RTI ISSUES · IMPACT · 2nd ARC', part=1, icon='bell', prio='M',
  pyq='Mains 2020 (RTI amendment and independence of Commission) · Handout M1 pp. 36-38',

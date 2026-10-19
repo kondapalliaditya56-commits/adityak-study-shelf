@@ -1802,7 +1802,7 @@
       {
        "h": "Right to strike"
       },
-      "Trigger: <b>Essential Defence Services Bill, 2021</b> prohibiting strikes in essential defence services including ordnance factories (<b>41 factories, nearly 84,000 workers</b>), to ensure uninterrupted supply amid a possible two-front conflict.",
+      "Trigger: <b>Essential Defence Services Bill, 2021</b> (Ordinance June 2021; passed Aug 2021 as an Act; general knowledge, verify) prohibiting strikes in essential defence services including ordnance factories (<b>41 factories, nearly 84,000 workers</b>), to ensure uninterrupted supply amid a possible two-front conflict.",
       {
        "tbl": {
         "head": [
@@ -3101,7 +3101,7 @@
      "pyqs": "2020",
      "lens": {
       "prelims": [
-       "Sweden first RTI (1766); USA second (1966); Shourie Group 1997; FOI Bill 2002 not notified; Tamil Nadu first state 1997",
+       "Sweden first RTI (1766); USA second (1966); Shourie Group 1997; FOI Bill 2002 passed (Act) but never notified; Tamil Nadu first state 1997",
        "Penalty Rs 250/day up to Rs 25,000",
        "16 types of information within 120 days; PIOs within 100 days; transfer in 5 days; third party notice 10 days; 30 days to respond",
        "Copyright is the only absolute exemption; Act is retrospective; exempt categories released after 20 years",
@@ -3117,7 +3117,7 @@
      "simple": [
       "Sweden had the first RTI law (1766), the USA second (1966). In India the right is read into **Articles 19(1)(a), 21, 39(b) and 39(c)**; cases: Rajnarain 1975, S.P. Gupta 1982.",
       "Demand grew from advocacy and from the **MKSS** in Janawad, Rajasthan ('Humara Paisa, Humara Hisab'). Formula: Monopoly + Discretion - Transparency = Corruption.",
-      "Path: Tamil Nadu 1997 -> Freedom of Information Bill 2002 (feeble) -> RTI Act 2005 (drafted by the National Advisory Council).",
+      "Path: Tamil Nadu 1997 -> Freedom of Information Bill 2002, passed but never notified (feeble) -> RTI Bill drafted by the National Advisory Council, passed as the RTI Act 2005.",
       "Mechanics: anyone can ask, no reason needed; public authorities publish 16 types of information within 120 days and appoint PIOs within 100 days; misdirected requests transfer within 5 days.",
       "**Section 8** lists exemptions (security, foreign relations, trade secrets, Cabinet papers and so on) but a public-interest override applies. Copyright of a person other than the State is the only absolute exemption.",
       "**2019 Amendment**: the Centre now decides tenure and pay of information commissioners; they are statutory, not constitutional."
@@ -3138,7 +3138,7 @@
      ],
      "remember": "RTI numbers: 16 types, 120 days, 100 days, 5 days, 10 days (third party), 20 years (release), Rs 250/day up to Rs 25,000.",
      "notes": [
-      "<b>Sweden: first RTI in 1766; USA second in 1966.</b> Sweden's ombudsman: 1809; India's central ombudsman: 2013 (per this module).",
+      "<b>Sweden: first RTI in 1766; USA second in 1966.</b> Sweden's ombudsman: 1809; India's Lokpal Bill was passed in 2013 (became an Act); Lokpal constituted 2019.",
       "<b>Constitutional locus:</b> not categorically codified; Preamble ideals support it; <b>SC read it into Art 19(1)(a), Art 21, Art 39(b) and 39(c)</b> ('data is the new oil'). Reference cases: <b>Rajnarain 1975; S.P. Gupta 1982</b>. James Madison (American statesman, 4th US President): 'popular Government, without popular information, or the means of acquiring it, is but a Prologue to a Farce or a Tragedy; or, perhaps, both'.",
       {
        "h": "Why demand grew"
@@ -3148,7 +3148,7 @@
       {
        "h": "RTI in India"
       },
-      "1997 working group under <b>H.D. Shourie</b> produced the <b>Freedom of Information Bill, 2002</b> (enacted, not implemented/notified; seen as feeble). States acted first: <b>Tamil Nadu 1997</b>. The 2005 bill was prepared by the <b>National Advisory Council</b>, not bureaucrats.",
+      "1997 working group under <b>H.D. Shourie</b> produced the <b>Freedom of Information Bill, 2002</b> (passed by Parliament, so an Act, but never notified, so never in force; seen as feeble). States acted first: <b>Tamil Nadu 1997</b>. The RTI Bill 2005 was prepared by the <b>National Advisory Council</b>, not bureaucrats, and passed as the <b>RTI Act, 2005</b>.",
       "<b>Criteria for a sound regime:</b> wide access (minimal fees, free for BPL); <b>penalties Rs 250 a day up to Rs 25,000</b> plus disciplinary action; independent appeal (CIC and SICs); maximum disclosure, minimal exemption.",
       "<b>Preamble philosophy:</b> transparency, check corruption, accountability, empowerment, democracy, balanced with genuine confidentiality and efficiency.",
       {
@@ -4505,7 +4505,7 @@
       "close": "No single body can cure a hydra: Lokpal works only inside a multi-pronged strategy."
      },
      "simple": [
-      "The **ombudsman** idea: Sweden 1809, UK 1967. In India the first bill came in 1968, the Act in **2013**, and the Lokpal was constituted in **2019** with Justice P.C. Ghose as Chairperson. Maharashtra had the first Lokayukta (1971).",
+      "The **ombudsman** idea: Sweden 1809, UK 1967. In India the first Bill was introduced in 1968; the present Lokpal Bill was passed in **2013** (becoming the Lokpal and Lokayuktas Act, 2013); the Lokpal was constituted in **2019** with Justice P.C. Ghose as Chairperson. Maharashtra had the first Lokayukta (1971).",
       "State Lokayuktas often became 'paper tigers': recommendatory, misused, and some were abolished (Odisha 1992, Haryana 1999).",
       "The Lokpal has nine members including the Chairperson; half judicial, half non-judicial; 50% reserved. Selection committee: PM, Lok Sabha Speaker, Leader of Opposition, CJI or nominee and an eminent jurist.",
       "It covers PM (partly), ministers, MPs and Groups A-D, plus bodies funded above Rs 10 lakh. A preliminary inquiry runs within 60 days; a 7-year limit applies to complaints.",
@@ -4525,7 +4525,7 @@
      "remember": "Lokpal: Act 2013, constituted 2019.",
      "notes": [
       "Ombudsman: <b>Sweden 1809</b>; UK <b>Parliamentary Commissioner 1967</b>; USA in some states (Hawaii, Oregon, Nebraska), not federal. <b>First ARC:</b> two-tier: <b>Lokpal</b> for Secretary-rank and above at Union and State levels; <b>Union Lokayukta</b> for lower officials; State Lokayuktas in states.",
-      "India: first bill <b>1968</b>; Act <b>2013</b>; Lokpal constituted <b>2019</b> with <b>Justice P.C. Ghose</b> as Chairperson of the nine-member body. <b>Maharashtra</b> first state Lokayukta (<b>1971</b>).",
+      "India: first Bill introduced <b>1968</b>; the present Lokpal Bill <b>passed in 2013</b>, becoming the Lokpal and Lokayuktas Act, 2013; Lokpal constituted <b>2019</b> with <b>Justice P.C. Ghose</b> as Chairperson of the nine-member body. <b>Maharashtra</b> first state Lokayukta (<b>1971</b>).",
       {
        "h": "State experience"
       },
@@ -4583,7 +4583,7 @@
       {
        "k": "Source discrepancy",
        "t": "When was the Lokpal created?",
-       "d": "Module 1 says India appointed an ombudsman in 2013 at the central level. Module 2 says the Act was passed in 2013 and the Lokpal constituted in 2019.",
+       "d": "First Lokpal Bill introduced 1968. The present Lokpal Bill was passed in 2013 and so became the Lokpal and Lokayuktas Act, 2013. The Lokpal (the body) was constituted only in 2019 under Justice P.C. Ghose.",
        "r": "Rule: Act 2013; Lokpal constituted 2019."
       },
       {
@@ -4763,7 +4763,7 @@
       "prelims": [
        "Competent authority: PM (Union Ministers), CM (state ministers), Presiding Officer (legislators), CVC (civil servants)",
        "No anonymous complaints; frivolous complaint penalised with 2-year jail",
-       "2015 amendment bill lapsed: OSA to override the Act",
+       "2015 amendment Bill introduced, then lapsed (never became law): OSA to override the Act",
        "SEBI tipping mechanism: reward up to Rs 1 crore",
        "PCA 2018: bribe-giving an offence; 7-day complaint defence; jail 3 to 7 years; trial in 2 years, max 4; Sec 17A extends to retired servants"
       ],
@@ -4796,7 +4796,7 @@
        "h": "Whistleblower Protection Act, 2014 (PIDPI)"
       },
       "Anyone can be a whistleblower regarding any public body. Disclosure to the <b>competent authority</b>: <b>PM</b> for Union Ministers, <b>Chief Minister</b> for state ministers, <b>Presiding Officer</b> for legislators, <b>CVC</b> for civil servants. <b>No anonymous complaints.</b> CVC can issue directions for protection. <b>Frivolous complaints: 2-year jail.</b>",
-      "<b>2015 amendment bill</b> (lapsed): proposed that the <b>Official Secrets Act 1923</b> would override the Act.",
+      "<b>2015 amendment Bill</b> (introduced, then lapsed; never became law): proposed that the <b>Official Secrets Act 1923</b> would override the Act.",
       {
        "h": "Challenges"
       },
@@ -4930,7 +4930,7 @@
           "Any public body",
           "Competent authority",
           "No anonymity",
-          "2015 bill (lapsed): OSA override"
+          "2015 Bill introduced, then lapsed: OSA override"
          ]
         },
         {
