@@ -4493,7 +4493,7 @@
       "prelims": [
        "9-member body; 50% judicial; 50% affirmative action; age 45+; 5 years or 70; salary CJI/SC judge",
        "Selection committee: PM, Speaker, LoP, CJI/nominee, eminent jurist; search committee of 7",
-       "PM covered partially (not public order, security, atomic energy, space; full bench two-thirds)",
+       "PM covered partially (not public order, security, international relations, atomic energy, space; full bench two-thirds)",
        "Removal reference signed by 100 MPs; 60 days preliminary inquiry; 7-year limitation",
        "Maharashtra first Lokayukta (1971); Odisha 1992, Haryana 1999 abolished"
       ],
@@ -4509,7 +4509,7 @@
       "State Lokayuktas often became 'paper tigers': recommendatory, misused, and some were abolished (Odisha 1992, Haryana 1999).",
       "The Lokpal has nine members including the Chairperson; half judicial, half non-judicial; 50% reserved. Selection committee: PM, Lok Sabha Speaker, Leader of Opposition, CJI or nominee and an eminent jurist.",
       "It covers PM (partly), ministers, MPs and Groups A-D, plus bodies funded above Rs 10 lakh. A preliminary inquiry runs within 60 days; a 7-year limit applies to complaints.",
-      "The PM is covered only partly: no inquiry into decisions on public order, security, atomic energy and space, and a full-bench two-thirds majority is needed.",
+      "The PM is covered only partly: no inquiry into decisions on public order, security, international relations, atomic energy and space, and a full-bench two-thirds majority is needed.",
       "The record is thin: complaints fell from 1,427 (2019-20) to 110 (2020-21) to 12 till August 2021-22."
      ],
      "terms": [
@@ -4542,7 +4542,7 @@
        "h": "Should the Prime Minister be covered?"
       },
       "<b>2nd ARC opposed:</b> would cripple administration during investigation; foreign powers might exploit it; PM already covered by the PCA 1988. <b>Counter:</b> CBI works under DoPT, hence the PM, which would hamper probes; PM should lead by example (some Lokayuktas cover Chief Ministers); <b>Article 361</b> exempts only President and Governors.",
-      "<b>Act covers PM partially:</b> no inquiry into PM decisions on <b>public order, internal and external security, atomic energy, space</b>; the <b>full bench by two-thirds majority</b> must approve initiating an inquiry or investigation.",
+      "<b>Act covers PM partially:</b> no inquiry into PM decisions on <b>public order, internal and external security, international relations, atomic energy, space</b>; the <b>full bench by two-thirds majority</b> must approve initiating an inquiry or investigation.",
       {
        "h": "Jurisdiction and functions"
       },
@@ -4609,7 +4609,7 @@
        "o": [
         "Fully exempt",
         "Fully covered with no conditions",
-        "Partly covered: no inquiry into decisions on public order, security, atomic energy, space; full bench two-thirds majority to begin",
+        "Partly covered: no inquiry into decisions on public order, security, international relations, atomic energy, space; full bench two-thirds majority to begin",
         "Covered only after leaving office"
        ],
        "a": 2
@@ -4670,7 +4670,7 @@
         ],
         [
          "E",
-         "External security"
+         "External security and international relations"
         ]
        ],
        "label": "Mnemonic",

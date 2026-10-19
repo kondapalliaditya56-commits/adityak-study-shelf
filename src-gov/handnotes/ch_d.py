@@ -93,7 +93,7 @@ dict(toc='Lokpal in India', id=18, title='LOKPAL IN INDIA', part=2, icon='scale'
  bx('pk', '<b>Pay:</b> Chairperson = CJI; member = SC judge. <b>Disabilities:</b> as CVC plus <b>no election for 5 years</b>. <b>Wings:</b> Inquiry (Director), Prosecution (Director), Secretary.'),
  sec('PRIME MINISTER: IN OR OUT?', 'r'),
  two([bx('pk', '<b>2nd ARC (against):</b> cripples administration; foreign exploit; PCA covers PM.')], [bx('gr', '<b>For:</b> CBI under DoPT/PM; set example; some Lokayuktas cover CMs; <b>Art 361</b> exempts only President and Governors.')]),
- bx('ye', '<b>Act:</b> PM covered, but not on <b>public order, internal and external security, atomic energy, space</b>; inquiry needs <b>two-thirds of full bench</b>.'),
+ bx('ye', '<b>Act:</b> PM covered, but not on <b>public order, internal and external security, international relations, atomic energy, space</b>; inquiry needs <b>two-thirds of full bench</b>.'),
  sec('JURISDICTION AND POWERS', 'g'),
  t('<b>Covers</b>', 'PM, Union Ministers, MPs, <b>Group A-D</b>, bodies funded above <b>Rs 10 lakh</b> a year', 'any individual may complain', 'Group C and D go to <b>CVC</b>', w=22),
  fl(['Preliminary inquiry (Inquiry Wing/CVC/CBI) in <b>60 days</b>', 'Hearing of public servant', 'Full investigation, departmental action, closure, or case against false complainant', 'Bench of <b>3+</b> decides sanction (replaces authority under <b>CrPC 197, PCA 19</b>)'], 'FLOW OF A COMPLAINT', 4),
