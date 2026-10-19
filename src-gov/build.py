@@ -112,23 +112,53 @@ def bul(md):
 def vis_html(v):
     return '<div class="vwrap">%s</div>' % viz.render(dict(v))
 
+# Each visual sits right after the note item it explains (index into the full notes of that chapter)
+PLACE = {
+ 1: {'Issues in the working of UPSC': 20, 'UPSC story in four steps': 44},
+ 2: {'Consequences of a closed': 21, 'Generalist or specialist': 31, 'Lateral entry at a glance': 48},
+ 3: {'Service articles': 24, 'AIS: from British': 13, 'AIS debate': 17},
+ 4: {'Six roles of civil services': 1, 'Bhaskar Ghose': 10, 'Civil services activism': 43},
+ 5: {'Causes of poor performance': 17, '21st-century challenges': 21},
+ 6: {'Bureaucracy as a threat': 16, 'Features and paradoxes': 46},
+ 7: {'8th CPC': 2, 'Right to strike': 17},
+ 8: {'Nolan principles': 26},
+ 9: {'Challenges to civil service reform': 6, 'Aarambh': 21, 'Reform challenges and the way out': 7},
+ 10: {'Three metaphors': 2, 'Objectives of transparency': 3, 'NDSAP 2012': 20},
+ 11: {'Components of accountability': 1, 'Dimensions of accountability': 7, 'Types of accountability': 29, 'Horizontal, vertical': 20},
+ 12: {'Sevottam: seven steps': 38, 'ARC-II recommendations': 33, 'Charter to Sevottam': 36, "Citizen's Charter: what it holds": 34},
+ 13: {'RTI numbers': 20, 'Criteria for a sound': 10, 'How an RTI request': 20, 'RTI 2005: map': 33},
+ 14: {'CIC numbers': 5, 'Removal without': 8, 'CIC: appointment': 8, 'RTI: problems and cures': 30},
+ 15: {'Factors behind corruption': 32, 'Psycho-social factors': 14, 'Implications of corruption': 11, 'Causes of corruption': 32, 'Sanction chain': 29},
+ 16: {'Anti-corruption toolbox': 2, 'Issues with social audit': 46, 'Strengthening social audit': 52, 'Stick, carrot, radical': 25},
+ 17: {'CBI and CVC in date order': 22, 'CBI and CVC compared': 23, 'Vineet Narain': 20},
+ 18: {'Lokpal selection committee': 23, 'PM decisions the Lokpal': 31, 'Should the Prime Minister': 28},
+ 19: {'Where a whistleblower': 2, 'PCA 2018': 17},
+}
+def _place_for(c, v):
+    for t, i in PLACE.get(c['id'], {}).items():
+        if v.get('title', '').startswith(t): return i
+    return None
+
 def book_notes(c):
-    vis = [dict(v) for v in c.get('visuals', []) if v.get('after')]
+    vis = [dict(v) for v in c.get('visuals', []) if v.get('after') or _place_for(c, v) is not None]
+    for v in vis:
+        v['at'] = _place_for(c, v)
     out, buf = [], []
     def flush():
         if buf: out.append('<ul class="lst">' + ''.join(bul(conv(x)) for x in buf) + '</ul>'); buf.clear()
     def key(it):
         t = it if isinstance(it, str) else (it.get('h') or (it['tbl']['head'][0] if 'tbl' in it else ''))
         return re.sub(r'<[^>]+>', '', t)
-    def after(it):
+    def after(it, i=None):
         k = key(it)
         for v in vis:
-            if v['after'] in k and not v.get('done'):
+            if v.get('done'): continue
+            if (v.get('at') is not None and v['at'] == i) or (v.get('at') is None and v.get('after') and v['after'] in k):
                 v['done'] = True; flush(); out.append(vis_html(v))
-    for it in c['notes']:
+    for i, it in enumerate(c['notes']):
         if isinstance(it, str):
             buf.append(it)
-            if any(v['after'] in key(it) and not v.get('done') for v in vis): flush(); after(it)
+            if any(not v.get('done') and ((v.get('at') is not None and v['at'] == i) or (v.get('at') is None and v.get('after') and v['after'] in key(it))) for v in vis): flush(); after(it, i)
             continue
         flush()
         if 'h' in it: out.append(h3(conv(it['h'])))
@@ -146,7 +176,7 @@ def book_notes(c):
         elif 'fig' in it:
             f = it['fig']; k_ = os.path.splitext(os.path.basename(f['img']))[0]
             out.append(fig('img/gov-%s.jpg' % k_, f['cap'], label='Handout figure, %s' % f.get('pg', '')))
-        after(it)
+        after(it, i)
     flush()
     rest = [v for v in vis if not v.get('done')]
     if rest:
@@ -158,7 +188,7 @@ def book_top(c):
     d = PLAIN[str(c['id'])]
     out = callout('note', 'In simple words', '\n'.join('- ' + x for x in d['simple']))
     out += tbl(None, ['Term', 'In plain words'], [['**%s**' % a, b] for a, b in d['terms']])
-    top = [v for v in c.get('visuals', []) if v.get('pos') == 'top']
+    top = [v for v in c.get('visuals', []) if v.get('pos') == 'top' and _place_for(c, v) is None]
     if not any(v['type'] == 'mnemonic' for v in c.get('visuals', [])):
         out += callout('shortcut', 'Remember it as', d['remember'])
     out += ''.join(vis_html(v) for v in top)
