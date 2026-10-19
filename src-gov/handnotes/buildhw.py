@@ -24,8 +24,11 @@ def chapter_hw_ir(ch):
         h += '<div class="keep">' + hwlib.S('Recall drill: cover and answer', 'r') + '<table>' + ''.join('<tr>' + ''.join('<td style="width:23%%">%s</td><td style="width:27%%">%s</td>' % qa for qa in ch['recall'][i:i+2]) + ('<td></td><td></td>' if len(ch['recall'][i:i+2]) == 1 else '') + '</tr>' for i in range(0, len(ch['recall']), 2)) + '</table></div>'
     return h + '</div>'
 
+import condense as _cd
+LEVEL = (150, 300, 130)
 _rhw = dsl.r_hw
 def r_hw(n):
+    if n[0] in ('tree', 'bx', 'tb', 'tl', 'two'): n = _cd.condense(n, *LEVEL)
     out = _rhw(n)
     return '<div class="keep">%s</div>' % out if n[0] in ('fl', 'hub', 'tl') else out
 dsl.r_hw = r_hw
@@ -63,7 +66,7 @@ def build(out):
     body.append(toc + '</div></div>')
     for c in chs:
         body.append(chapter_hw_ir(c))
-    html = '<html><head><style>%s</style></head><body>%s</body></html>' % (hwlib.CSS + '.keep{break-inside:avoid}.keep table{font-size:9pt}.keep td{padding:.2mm 1.4mm}', ''.join(body))
+    html = '<html><head><style>%s</style></head><body>%s</body></html>' % (hwlib.CSS + '.chap{break-before:auto;margin-top:5mm}.pyqline,.sw,.ttl{break-after:avoid}.br{orphans:3;widows:3}.br{break-inside:auto}.keep{break-inside:avoid}.keep table{font-size:9pt}.keep td{padding:.2mm 1.4mm}', ''.join(body))
     d = HTML(string=html, base_url='.').render()
     print('pages', len(d.pages))
     d.write_pdf(out)

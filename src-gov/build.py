@@ -72,6 +72,9 @@ def plain_block(i):
 
 # ---------------------------------------------------------------- book edition content (bullets, visuals, mnemonics)
 BOOK = {c['id']: c for p_ in json.load(open(os.path.join(HERE, 'book', 'bookdata.json'), encoding='utf8'))['parts'] for c in p_['chapters']}
+FULL = {int(k): v for k, v in json.load(open(os.path.join(HERE, 'book', 'fullnotes.json'), encoding='utf8')).items()}
+for _id, _c in BOOK.items():
+    if int(_id) in FULL: _c['notes'] = FULL[int(_id)]['notes']   # full detailed notes (same content as the handwritten source, uncondensed)
 
 def split_semi(t):
     parts, cur, dp = [], '', 0
@@ -133,13 +136,22 @@ def book_notes(c):
             t = it['tbl']
             out.append(tbl(None, [conv(x) for x in t['head']], [[conv(cc) for cc in r] for r in t['rows']]))
         elif 'alert' in it: out.append(alert('Handout alert', conv(it['alert'])))
+        elif 'call' in it:
+            cl = it['call']; kd = {'teacher': 'teacher', 'alert': 'alert', 'note': 'note', 'shortcut': 'shortcut', 'quote': 'note'}.get(cl['kind'], 'note')
+            out.append(callout(kd, cl['tag'], '\n\n'.join(conv(b) for b in cl['body'])))
+        elif 'ca' in it: out.append(callout('source', 'In the news (Saarthi IAS CA; verify dates)', conv(re.sub(r'<span class="tag">.*?</span>', '', it['ca']))))
+        elif 'flow' in it:
+            fw = it['flow']; out.append(flow(fw['title'], [(conv(s), '') for s in fw['steps']]))
+        elif 'timeline' in it: out.append(timeline([(conv(a), conv(b), False) for a, b in it['timeline']]))
         elif 'fig' in it:
             f = it['fig']; k_ = os.path.splitext(os.path.basename(f['img']))[0]
             out.append(fig('img/gov-%s.jpg' % k_, f['cap'], label='Handout figure, %s' % f.get('pg', '')))
         after(it)
     flush()
-    for v in vis:
-        if not v.get('done'): print('WARN unplaced visual', c['id'], v.get('title'))
+    rest = [v for v in vis if not v.get('done')]
+    if rest:
+        out.append(h3('Memory visuals for this section'))
+        out += [vis_html(v) for v in rest]
     return ''.join(out)
 
 def book_top(c):
@@ -279,17 +291,89 @@ def make_chapter(n, prev_ch, next_ch, pills, lede):
     open(os.path.join(OUT, 'gov-ch%02d.html' % n), 'w', encoding='utf8').write(page)
     return toc, rendered
 
+
+# ---------------------------------------------------------------- chapters 3 and 4: the later handouts (sections 20-29)
+CHS[3] = dict(n=3, title='Governance, E-Governance, Data Protection and Emerging Technology',
+              sub='Module 3: models of good governance, participation and local bodies, e-governance, data protection, cybersecurity, blockchain, AI, deepfakes, OTT, DPI', badge='High · Mains')
+CHS[4] = dict(n=4, title='Civil Society, NGOs, FCRA, SHGs, Pressure Groups and the CAG',
+              sub='Module 4: civil society and NGOs, FCRA and donors, self-help groups, pressure groups and lobbying, the Comptroller and Auditor General', badge='High · Mains')
+PRI_FULL = {'H': 'High', 'M': 'Medium', 'L': 'Low'}
+EXTRA_IDS = {3: range(20, 25), 4: range(25, 30)}
+SHORT = {20: 'Governance models', 21: 'Participation, local govt', 22: 'E-governance', 23: 'Data protection, cyber', 24: 'Blockchain, AI, DPI', 25: 'Civil society, NGOs', 26: 'FCRA, donors', 27: 'Self-help groups', 28: 'Pressure groups', 29: 'The CAG'}
+EXTRA_FOOT = ('Modules 3 and 4 are built from the Sarrthi IAS GS-2 handouts "Governance and E-Governance", "Civil Society, NGOs, SHG, Pressure Groups" and "Comptroller and Auditor General of India". '
+              'Only the handouts’ own facts are used; mnemonics marked “own mnemonic” are mine, the rest are the teacher’s. Items marked “verify” are current-affairs lines to check. Copyright belongs to the teacher; keep this private.')
+
+def sec_lens(meta):
+    yrs = meta['pyq'].split(' · Handout')[0].strip() or 'none quoted in the handout'
+    body = '**Priority:** %s. **Mains PYQs quoted:** %s. **Prelims PYQs quoted:** none quoted in the material.' % (PRI_FULL.get(meta['prio'], 'Medium'), conv(yrs))
+    return callout('key', 'Exam lens', body)
+
+def auto_mcq(pairs_by_ch, ch_ids):
+    allp = [(q, a) for i in ch_ids for q, a in pairs_by_ch[i]]
+    mcq = []
+    for k, (q, a) in enumerate(allp):
+        pool = []
+        for _, x in allp:
+            if x != a and x not in pool: pool.append(x)
+        off = (k * 7 + 3) % len(pool)
+        dis = [pool[(off + t * 5) % len(pool)] for t in range(len(pool))]
+        d3 = []
+        for x in dis:
+            if x not in d3: d3.append(x)
+            if len(d3) == 3: break
+        pos = k % (len(d3) + 1)
+        opts = d3[:pos] + [a] + d3[pos:]
+        mcq.append({'q': '%s: which is correct?' % conv(q), 'options': [conv(x) for x in opts], 'answer': pos, 'explain': 'From the handout: **%s** → %s.' % (conv(q), conv(a))})
+    return mcq
+
+def make_extra(n, prev_ch, next_ch, pills, lede):
+    ids = list(EXTRA_IDS[n])
+    secs = []
+    for i in ids:
+        f = FULL[i]; m = f['meta']
+        blocks = [sec_lens(m), callout('note', 'In simple words', '- ' + m['simple']), book_notes({'id': i, 'notes': f['notes'], 'visuals': []})]
+        secs.append(Sec(m['title'], blocks, label='Handout only · ' + (m['pyq'].split('Handout ')[-1] if 'Handout ' in m['pyq'] else 'Saarthi IAS')))
+    pairs = {i: FULL[i]['meta']['recall'] for i in ids}
+    cards = [(q, a) for i in ids for q, a in pairs[i]]
+    pr = ['<h3>Quick quiz</h3><div class="count" id="score">0 / 0 correct</div><div id="quiz"></div>',
+          '<h3>Flashcards</h3><p class="gdesc">Tap the card to flip.</p><div class="deck"><div class="fc" id="fc" tabindex="0" role="button" aria-label="Flashcard, press to flip"></div><div class="count" id="fccount"></div><div class="row"><button class="btn" id="fcprev" type="button">Back</button><button class="btn pri" id="fcnext" type="button">Next</button><button class="btn" id="fcmiss" type="button">Missed it</button><button class="btn" id="fcshuf" type="button">Shuffle</button><button class="btn" id="fconlymiss" type="button">Only missed</button><button class="btn" id="fcall" type="button">All cards</button></div></div>']
+    secs.append(Sec('Recall sheet', [recall(['**%s** %s' % (conv(q), conv(a)) for q, a in cards])], sid='recall'))
+    secs.append(Sec('Revise', [tbl('Spaced schedule (count from the day you finish the chapter)', ['Day', 'What to do'], REVISE)], sid='revise'))
+    secs.append(Sec('Test yourself', pr, sid='practice'))
+    rendered, idx = render_sections(secs)
+    branches = []
+    for i in ids:
+        heads = [it['h'] for it in FULL[i]['notes'] if isinstance(it, dict) and it.get('h')]
+        seen, leaves = set(), []
+        for h in heads:
+            hh = re.sub(r'<[^>]+>', ' ', h)
+            hh = re.sub(r'\s*PYQ.*$', '', hh).strip().capitalize() if hh.isupper() or 'PYQ' in hh else re.sub(r'\s+', ' ', hh).strip()
+            hh = re.sub(r'\s+', ' ', hh)
+            if len(hh) < 3: continue
+            hh = hh if len(hh) <= 26 else hh[:26].rsplit(' ', 1)[0] + '…'
+            if hh.lower() not in seen and len(leaves) < 6: seen.add(hh.lower()); leaves.append((hh, ''))
+        branches.append((SHORT[i], leaves))
+    svg, outline = mindmap('Module %d' % n, branches, 'Module %d map' % n)
+    toc = [('chapter-map', 'Chapter map')] + idx
+    head_html = chead('Governance · GS-2 · Chapter %d' % n, CHS[n]['title'], 'High priority', pills, lede)
+    data = {'mcq': auto_mcq(pairs, ids), 'cards': [{'q': q, 'a': a} for q, a in cards]}
+    page = chapter_page(CHS[n], prev_ch, next_ch, rendered, toc, svg, outline, data, head_html, EXTRA_FOOT, 'Governance')
+    open(os.path.join(OUT, 'gov-ch%02d.html' % n), 'w', encoding='utf8').write(page)
+    return toc, rendered
+
 def make_start(next_ch):
     s = []
     s.append(Sec('What this notebook is', [
-        p('Two Sarrthi IAS GS-2 Governance modules, rebuilt as one notebook you can read on the tablet: **Chapter 1** covers Module 1 (sections 1-14, civil services to RTI) and **Chapter 2** covers Module 2 (sections 15-19, corruption to the Prevention of Corruption Act).'),
+        p('Two Sarrthi IAS GS-2 Governance modules, rebuilt as one notebook you can read on the tablet: **Chapter 1** covers Module 1 (sections 1-14, civil services to RTI) and **Chapter 2** covers Module 2 (sections 15-19, corruption to the Prevention of Corruption Act). **Chapter 3** (sections 20-24: governance, e-governance, data protection, emerging technology) and **Chapter 4** (sections 25-29: civil society, FCRA, SHGs, pressure groups, CAG) come from three later handouts. All ten of those sections carry full notes, mnemonics, recall sheets, flashcards and a quick quiz.'),
         p('Every section opens with an **Exam lens** (priority, PYQs quoted, Prelims and Mains hooks). Page references such as M1 p.5 are the printed page numbers of each module. Only facts printed in the handouts are used. **No class slides or teacher board notes were supplied**, so there is no teacher-ink forecast; priority comes from where the handouts quote PYQs.'),
         alert('Bill, Act, constituted', 'Lokpal: first Bill introduced 1968; the present Bill was passed in 2013 and became the Lokpal and Lokayuktas Act, 2013; the Lokpal itself was constituted in 2019.'),
-        note('Counts', '**19 Mains PYQ entries quoted (2013-2024) and no Prelims PYQ.** Priority rule: High = 2 or more PYQs map to the section; Medium = 1 PYQ or a partial fit (*); Low = none quoted.'),
+        note('Counts', '**Modules 1 and 2: 19 Mains PYQ entries quoted (2013-2024) and no Prelims PYQ.** Priority rule: High = 2 or more PYQs map to the section; Medium = 1 PYQ or a partial fit (*); Low = none quoted.'),
     ]))
     s.append(Sec('Priority and PYQ map for all 19 sections', [tbl('Sections in handout order', ['Section', 'Pages', 'Priority', 'Mains PYQs quoted'],
         [['%d · %s' % (i, SECS[i]['title']), SECS[i]['pages'], PRI[SECS[i]['pri']],
           ', '.join('%s%s' % (PYQ[q]['yr'], '*' if PYQ[q].get('partial') else '') for q in SECS[i]['pyqs']) or 'none quoted in the material'] for i in range(1, 20)])]))
+    s.append(Sec('Priority and PYQ map for sections 20-29 (Chapters 3 and 4)', [tbl('Later handouts, in handout order', ['Section', 'Priority', 'Mains PYQs quoted (handout)'],
+        [['%d · %s' % (i, FULL[i]['meta']['title']), PRI[FULL[i]['meta']['prio']], conv(FULL[i]['meta']['pyq'].split(' · Handout')[0])] for i in range(20, 30)])]))
     s.append(Sec('All 19 Mains PYQs', [tbl('Quoted in the modules', ['Year', 'Marks', 'Question', 'Covered in'],
         [[str(q['yr']), conv(q['mk']), conv(q['q']), ', '.join(secname(i) for i in q['secs']) or 'no matching section in these modules'] for q in sorted(X['PYQS'], key=lambda q: (-q['yr'], q['id']))])]))
     s.append(Sec('Numbers to know', [recall(['**%s** %s' % (a, conv(b)) for a, b in X['RECALL']])], sid='numbers'))
@@ -299,8 +383,8 @@ def make_start(next_ch):
     rendered, idx = render_sections(s)
     svg, outline = mindmap(X['MAP']['root'], mapdata(X['MAP']['branches']), 'GS-2 Governance map')
     toc = [('chapter-map', 'Chapter map')] + idx
-    lede = 'How to use the notebook, the priority and PYQ map across all 19 sections, and the numbers and chains to keep in your head.'
-    head_html = chead('Governance · GS-2 · Start here', CH0['title'], '', [('Read first', 'cls'), ('2 chapters, 19 sections', ''), ('No class slides supplied', '')], lede)
+    lede = 'How to use the notebook, the priority and PYQ map across all 29 sections, and the numbers and chains to keep in your head.'
+    head_html = chead('Governance · GS-2 · Start here', CH0['title'], '', [('Read first', 'cls'), ('4 chapters, 29 sections', ''), ('No class slides supplied', '')], lede)
     page = chapter_page(CH0, None, next_ch, rendered, toc, svg, outline, {'mcq': [], 'cards': []}, head_html, FOOT, 'Governance')
     open(os.path.join(OUT, 'gov-ch00.html'), 'w', encoding='utf8').write(page)
     return toc, rendered
@@ -309,21 +393,29 @@ c0, c1, c2 = CH0, CHS[1], CHS[2]
 idx0, r0 = make_start(c1)
 idx1, r1 = make_chapter(1, c0, c2, [('Handout only', 'cls'), ('Module 1 · pp. 3-38', ''), ('Mains PYQs 2013-2024 · no Prelims', ''), ('6 handout figures', '')],
     'From the Public Service Commissions to the Right to Information: who the civil servants are, the six roles they play, how bureaucracy relates to democracy and development, pay and reform, and the transparency and accountability tools, ending with the RTI Act and its Commissions.')
-idx2, r2 = make_chapter(2, c1, None, [('Handout only', 'cls'), ('Module 2 · pp. 3-20', ''), ('Mains PYQs 2014-2024 · no Prelims', '')],
+idx2, r2 = make_chapter(2, c1, CHS[3], [('Handout only', 'cls'), ('Module 2 · pp. 3-20', ''), ('Mains PYQs 2014-2024 · no Prelims', '')],
     'What corruption is and how it is produced, social audit and the other checks, then the machinery: CBI, CVC, Lokpal, the Whistle Blowers Protection Act and the Prevention of Corruption Act 1988 as amended in 2018.')
+
+c3, c4 = CHS[3], CHS[4]
+idx3, r3 = make_extra(3, c2, c4, [('Handout only', 'cls'), ('Module 3 · governance and e-governance', ''), ('Mains PYQs 2013-2025 (e-governance)', ''), ('10 new sections: 20-24', '')],
+    'Models of governance and good governance, people’s participation and local self-government, e-governance with its stages, models, benefits and issues, then data protection, cybersecurity, blockchain, AI, deepfakes, OTT and digital public infrastructure.')
+idx4, r4 = make_extra(4, c3, None, [('Handout only', 'cls'), ('Module 4 · civil society, SHG, pressure groups, CAG', ''), ('Mains PYQs 2013-2026', ''), ('5 sections: 25-29', '')],
+    'Civil society and NGOs, the FCRA and donor agencies, self-help groups, pressure groups and lobbying, and the Comptroller and Auditor General: how outsiders to government shape and check it.')
 
 def sf(idx, with_map): return ([{'id': 'chapter-map', 't': 'Chapter map'}] if with_map else []) + [{'id': i, 't': t} for i, t in idx if i != 'chapter-map']
 chs = [dict(n=0, title=c0['title'], sub=c0['sub'], badge=c0['badge'], slides=False, pending=False, secs=sf(idx0, True)),
        dict(n=1, title=c1['title'], sub=c1['sub'], badge=c1['badge'], slides=False, pending=False, secs=sf(idx1, True)),
-       dict(n=2, title=c2['title'], sub=c2['sub'], badge=c2['badge'], slides=False, pending=False, secs=sf(idx2, True))]
-home = home_page(chs, 'Study notebook for the two GS-2 Governance modules: civil services, transparency, accountability, Citizen’s Charter and RTI, then corruption, social audit, CBI, CVC, Lokpal, whistleblowers and the Prevention of Corruption Act. Built from the handouts only.', FOOT)
+       dict(n=2, title=c2['title'], sub=c2['sub'], badge=c2['badge'], slides=False, pending=False, secs=sf(idx2, True)),
+       dict(n=3, title=c3['title'], sub=c3['sub'], badge=c3['badge'], slides=False, pending=False, secs=sf(idx3, True)),
+       dict(n=4, title=c4['title'], sub=c4['sub'], badge=c4['badge'], slides=False, pending=False, secs=sf(idx4, True))]
+home = home_page(chs, 'Study notebook for the GS-2 Governance modules: civil services, transparency, accountability, Citizen’s Charter and RTI; corruption, CBI, CVC, Lokpal and the PCA; governance, e-governance, data and emerging tech; civil society, NGOs, FCRA, SHGs, pressure groups and the CAG. Built from the handouts only.', FOOT + ' Modules 3 and 4 use the later Sarrthi IAS handouts on Governance and E-Governance, Civil Society, and the CAG.')
 open(os.path.join(OUT, 'gov-home.html'), 'w', encoding='utf8').write(home)
 entries = []
-for c, rendered in ((c0, r0), (c1, r1), (c2, r2)):
+for c, rendered in ((c0, r0), (c1, r1), (c2, r2), (c3, r3), (c4, r4)):
     for h in rendered:
         m = re.match(r'<h2 id="([^"]+)">(.*?)<a class="anchor"', h, re.S)
         entries.append({'c': str(c['n']), 'n': c['title'], 'id': m.group(1), 't': strip_tags(m.group(2)), 'x': strip_tags(h)})
 open(os.path.join(OUT, 'gov-search.html'), 'w', encoding='utf8').write(search_page(entries))
-json.dump({'id': NB_ID, 'title': NB_TITLE, 'sub': 'Sarrthi IAS GS-2 Governance modules: civil services, RTI, corruption, Lokpal', 'base': BASE,
+json.dump({'id': NB_ID, 'title': NB_TITLE, 'sub': 'Sarrthi IAS GS-2 Governance: civil services, RTI, corruption, Lokpal, e-governance, civil society, CAG', 'base': BASE,
            'home': 'home.html', 'search': 'search.html', 'chapters': chs}, open(os.path.join(OUT, 'gov-chapters.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
 print('built', len(entries), 'search entries;', {c['n']: len(c['secs']) for c in chs})
