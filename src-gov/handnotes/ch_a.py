@@ -6,15 +6,15 @@ OWN = lambda w, t: mn(w, t + ' <i>(own mnemonic)</i>')
 
 CHS = [
 dict(toc='Start here: how to use these notes', id=0, title='START HERE: GOVERNANCE (GS-2)', part=1, icon='book',
- simple='Two modules, 19 topics. Read once with a pen. Use the right column for your own current affairs and value additions. Before a test, cover the recall drill at the end of each chapter.',
+ simple='Four modules, 30 topics. Read once with a pen. Use the right column for your own current affairs and value additions. Before a test, cover the recall drill at the end of each chapter.',
  nodes=[
- two([bx('pk', '<b>Source and rule:</b> only the two Sarrthi IAS GS-2 Governance handouts. No class slides were supplied, so no teacher-ink forecast. <b>19 Mains PYQs (2013-2024), no Prelims PYQ.</b> Priority: <b>High</b> = 2+ PYQs, <b>Medium</b> = 1 or partial, <b>Low</b> = none quoted.')],
+ two([bx('pk', '<b>Source and rule:</b> only the Sarrthi IAS GS-2 Governance handouts (Modules 1-4). No class slides were supplied, so no teacher-ink forecast. <b>Mains PYQs only (2013-2026), no Prelims PYQ.</b> Priority: <b>High</b> = 2+ PYQs, <b>Medium</b> = 1 or partial, <b>Low</b> = none quoted.')],
      [tb(['Box', 'Means'], ['<span class="rd"><b>Pink</b></span>', 'teacher\'s point / handout flag'], ['<b>Yellow</b>', 'trap or rule for the exam hall'], ['<span class="gn"><b>Green</b></span>', 'ready conclusion'], ['<b>Blue dashed</b>', 'definition'], ['<b>Navy</b>', 'current affairs (verify dates)'])]),
  sec('PRIORITY MAP: what to read first', 'b'),
  tb(['Priority', 'Topics (handout order)'],
-    ['<span class="rd"><b>HIGH</b></span>', '<b>8</b> Reforms + Nolan (2017, 2020) · <b>12</b> Citizen\'s Charter + Sevottam (2024, 2018, 2013) · <b>15</b> Corruption (2016, 2019, 2014) · <b>19</b> Whistleblower + PCA (2015, 2022)'],
-    ['<b>MEDIUM</b>', '<b>2</b> Lateral entry (2014) · <b>4</b> Six roles (2017) · <b>9</b> Karmayogi (2020) · <b>11</b> Accountability (2016*) · <b>13-14</b> RTI + CIC (2020) · <b>16</b> Social audit (2021, 2016*) · <b>17</b> CBI + CVC (2021*) · <b>18</b> Lokpal (2013)'],
-    ['<b>LOW</b>', '<b>1</b> PSCs · <b>3</b> AIS · <b>5</b> Performance · <b>6</b> Bureaucracy · <b>7</b> Pay / 8th CPC · <b>10</b> Transparency']),
+    ['<span class="rd"><b>HIGH</b></span>', '<b>8</b> Reforms + Nolan (2017, 2020) · <b>12</b> Citizen\'s Charter + Sevottam (2024, 2018, 2013) · <b>15</b> Corruption (2016, 2019, 2014) · <b>19</b> Whistleblower + PCA (2015, 2022) · <b>22</b> E-governance (8 PYQs) · <b>25</b> Civil society + NGOs (5) · <b>26</b> FCRA + donors (3) · <b>27</b> SHGs (6) · <b>28</b> Pressure groups (6) · <b>29</b> CAG (2018, 2016)'],
+    ['<b>MEDIUM</b>', '<b>2</b> Lateral entry (2014) · <b>4</b> Six roles (2017) · <b>9</b> Karmayogi (2020) · <b>11</b> Accountability (2016*) · <b>13-14</b> RTI + CIC (2020) · <b>16</b> Social audit (2021, 2016*) · <b>17</b> CBI + CVC (2021*) · <b>18</b> Lokpal (2013) · <b>24</b> Emerging tech (2020*)'],
+    ['<b>LOW</b>', '<b>1</b> PSCs · <b>3</b> AIS · <b>5</b> Performance · <b>6</b> Bureaucracy · <b>7</b> Pay / 8th CPC · <b>10</b> Transparency · <b>20</b> Governance and good governance · <b>21</b> Participation + local government · <b>23</b> Data protection + cyber']),
  bx('ye', '<b>Lokpal: Bill → Act → body.</b> First Bill introduced <b>1968</b>; present Bill <b>passed 2013</b> = <b>Lokpal and Lokayuktas Act, 2013</b>; Lokpal <b>constituted 2019</b>. Mark with * a partial PYQ fit.'),
  sec('SIX THEMES TO TIE EVERY ANSWER TO', 'g'),
  hub('GOVERNANCE', ['Civil services: who and how', 'Reforms: Nolan, Karmayogi', 'Transparency: RTI, NDSAP', 'Accountability: types, tools', 'Charter and Sevottam', 'Corruption: CBI, CVC, Lokpal, PCA']),

@@ -32,7 +32,7 @@ dsl.r_hw = r_hw
 _hub = dsl.svg_hub
 dsl.svg_hub = lambda c, s: _hub(c, s).replace('max-width:150mm', 'max-width:118mm')
 
-PARTS = [('Module 1', 'Civil Services, Transparency, Accountability, Citizen\'s Charter, RTI', '#e0f2f1'), ('Module 2', 'Corruption, Social Audit, CBI, CVC, Lokpal, Whistleblower, PCA', '#fff3e0')]
+PARTS = [('Module 1', 'Civil Services, Transparency, Accountability, Citizen\'s Charter, RTI', '#e0f2f1'), ('Module 2', 'Corruption, Social Audit, CBI, CVC, Lokpal, Whistleblower, PCA', '#fff3e0'), ('Module 3', 'Governance, E-Governance, Data Protection, Emerging Tech', '#ede7f6'), ('Module 4', 'Civil Society, NGOs, SHGs, Pressure Groups, CAG', '#fce4ec')]
 
 ONLY = None
 def all_chapters():
@@ -48,15 +48,15 @@ def all_chapters():
 def build(out):
     chs = all_chapters()
     body = ['<div class="cov"><div class="s">UPSC CSE Mains 2027 · GS Paper II</div><h1>GOVERNANCE</h1>'
-            '<div class="s">Civil services · Transparency · Accountability · RTI · Corruption · Lokpal</div>'
+            '<div class="s">Civil services · RTI · Corruption · Lokpal · E-governance · Civil society · CAG</div>'
             '<div><span class="bx">Handwritten-style notes</span></div>'
-            '<div class="t">Built from the two Sarrthi IAS GS-2 Governance handouts.<br>'
+            '<div class="t">Built from the Sarrthi IAS GS-2 Governance handouts (Modules 1-4).<br>'
             'Bracket trees · diagrams · mnemonics · PYQ tags · current affairs<br>'
             'Right column and left binding margin are kept blank for your own use.<br><br>Personal study edition · for printing</div></div>']
     toc = '<div class="partpg" style="padding:0;break-before:page"><div class="toc"><h2>INDEX</h2>'
     cur = -1
     for c in chs:
-        pi = 0 if c['id'] <= 14 else 1
+        pi = 0 if c['id'] <= 14 else 1 if c['id'] <= 19 else 2 if c['id'] <= 24 else 3
         if pi != cur:
             cur = pi; l, t_, bg = PARTS[pi]; toc += '<div class="pt" style="background:%s">%s · %s</div>' % (bg, l, t_)
         toc += '<a href="#c%s">%s &nbsp;%s</a>' % (c['id'], c['no'], c.get('toc', c['title']))
