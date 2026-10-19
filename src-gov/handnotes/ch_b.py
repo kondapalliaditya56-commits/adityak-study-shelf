@@ -72,7 +72,7 @@ dict(toc='Challenges to reform; Karmayogi; Aarambh', id=9, title='REFORM CHALLEN
  OWN('I C P S', 'Karmayogi: <b>i</b>GOT · <b>C</b>ompetency · <b>P</b>erformance · <b>S</b>PV (+ the Commission).'),
  two([t('<b>Implementation problems</b>', 'integrating lateral entrants (culture gap)', 'compliance → problem-solving mindset', 'Centre-State coordination', 'digital infrastructure in remote areas', w=22)],
      [t('<b>Significance</b>', 'efficiency, transparency, accountability', 'responsive governance', 'control-focused → role-based, citizen-first', w=22)]),
- bx('bl', '<b>Aarambh:</b> Common Foundation Course for probationers; stresses <b>Commitment, Character, Conduct</b>.'),
+ mn('C C C', '<b>Aarambh</b> (Common Foundation Course for probationers) builds three Cs: <b>C</b>ommitment · <b>C</b>haracter · <b>C</b>onduct.'),
  bx('ca', '<span class="tag">In the news · Saarthi IAS CA, Jul 2026 (verify)</span><b>DAKSH Leadership Programme</b> (3rd batch): senior PSE executives; run by the Capacity Building Commission and SCOPE with ISB.'),
  ],
  recall=[('Mission Karmayogi shift', 'rules-based → roles-based'), ('iGOT stands for', 'Integrated Government Online Training'), ('SPV', 'Karmayogi Bharat, not-for-profit'), ('Aarambh stresses', 'Commitment, Character, Conduct'), ('Karmayogi aligns with', 'Viksit Bharat 2047')]),
