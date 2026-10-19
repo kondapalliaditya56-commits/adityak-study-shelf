@@ -21,7 +21,7 @@ def chapter_hw_ir(ch):
         else:
             h += r_hw(n); i += 1
     if ch.get('recall'):
-        h += '<div class="keep">' + hwlib.S('Recall drill: cover and answer', 'r') + '<table>' + ''.join('<tr><td style="width:55%%">%s</td><td>%s</td></tr>' % (q, a) for q, a in ch['recall']) + '</table></div>'
+        h += '<div class="keep">' + hwlib.S('Recall drill: cover and answer', 'r') + '<table>' + ''.join('<tr>' + ''.join('<td style="width:23%%">%s</td><td style="width:27%%">%s</td>' % qa for qa in ch['recall'][i:i+2]) + ('<td></td><td></td>' if len(ch['recall'][i:i+2]) == 1 else '') + '</tr>' for i in range(0, len(ch['recall']), 2)) + '</table></div>'
     return h + '</div>'
 
 _rhw = dsl.r_hw
@@ -63,7 +63,7 @@ def build(out):
     body.append(toc + '</div></div>')
     for c in chs:
         body.append(chapter_hw_ir(c))
-    html = '<html><head><style>%s</style></head><body>%s</body></html>' % (hwlib.CSS + '.keep{break-inside:avoid}', ''.join(body))
+    html = '<html><head><style>%s</style></head><body>%s</body></html>' % (hwlib.CSS + '.keep{break-inside:avoid}.keep table{font-size:9pt}.keep td{padding:.2mm 1.4mm}', ''.join(body))
     d = HTML(string=html, base_url='.').render()
     print('pages', len(d.pages))
     d.write_pdf(out)
