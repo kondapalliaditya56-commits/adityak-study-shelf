@@ -325,12 +325,14 @@ def make_chapter(n, prev_ch, next_ch, pills, lede):
 # ---------------------------------------------------------------- chapters 3 and 4: the later handouts (sections 20-29)
 CHS[3] = dict(n=3, title='Governance, E-Governance, Data Protection and Emerging Technology',
               sub='Module 3: models of good governance, participation and local bodies, e-governance, data protection, cybersecurity, blockchain, AI, deepfakes, OTT, DPI', badge='High · Mains')
+CHS[5] = dict(n=5, title='Regulatory Bodies, FSSAI and the Competition Commission',
+              sub='Module 5: why independent regulators rose, how far they are depoliticised, their people, parent ministry and accountability, inter-regulator conflicts, FSSAI, and the CCI', badge='Low · Mains (no PYQ quoted)')
 CHS[4] = dict(n=4, title='Civil Society, NGOs, FCRA, SHGs, Pressure Groups and the CAG',
               sub='Module 4: civil society and NGOs, FCRA and donors, self-help groups, pressure groups and lobbying, the Comptroller and Auditor General', badge='High · Mains')
 PRI_FULL = {'H': 'High', 'M': 'Medium', 'L': 'Low'}
-EXTRA_IDS = {3: range(20, 25), 4: range(25, 30)}
-SHORT = {20: 'Governance models', 21: 'Participation, local govt', 22: 'E-governance', 23: 'Data protection, cyber', 24: 'Blockchain, AI, DPI', 25: 'Civil society, NGOs', 26: 'FCRA, donors', 27: 'Self-help groups', 28: 'Pressure groups', 29: 'The CAG'}
-EXTRA_FOOT = ('Modules 3 and 4 are built from the Sarrthi IAS GS-2 handouts "Governance and E-Governance", "Civil Society, NGOs, SHG, Pressure Groups" and "Comptroller and Auditor General of India". '
+EXTRA_IDS = {3: range(20, 25), 4: range(25, 30), 5: range(30, 34)}
+SHORT = {20: 'Governance models', 21: 'Participation, local govt', 22: 'E-governance', 23: 'Data protection, cyber', 24: 'Blockchain, AI, DPI', 25: 'Civil society, NGOs', 26: 'FCRA, donors', 27: 'Self-help groups', 28: 'Pressure groups', 29: 'The CAG', 30: 'Why regulators rose', 31: 'People, ministry, conflicts', 32: 'FSSAI', 33: 'CCI'}
+EXTRA_FOOT = ('Modules 3 to 5 are built from the Sarrthi IAS GS-2 handouts "Governance and E-Governance", "Civil Society, NGOs, SHG, Pressure Groups", "Comptroller and Auditor General of India" and "Regulatory Bodies". '
               'Only the handouts’ own facts are used; mnemonics marked “own mnemonic” are mine, the rest are the teacher’s. Items marked “verify” are current-affairs lines to check. Copyright belongs to the teacher; keep this private.')
 
 def sec_lens(meta):
@@ -394,7 +396,7 @@ def make_extra(n, prev_ch, next_ch, pills, lede):
 def make_start(next_ch):
     s = []
     s.append(Sec('What this notebook is', [
-        p('Two Sarrthi IAS GS-2 Governance modules, rebuilt as one notebook you can read on the tablet: **Chapter 1** covers Module 1 (sections 1-14, civil services to RTI) and **Chapter 2** covers Module 2 (sections 15-19, corruption to the Prevention of Corruption Act). **Chapter 3** (sections 20-24: governance, e-governance, data protection, emerging technology) and **Chapter 4** (sections 25-29: civil society, FCRA, SHGs, pressure groups, CAG) come from three later handouts. All ten of those sections carry full notes, mnemonics, recall sheets, flashcards and a quick quiz.'),
+        p('Two Sarrthi IAS GS-2 Governance modules, rebuilt as one notebook you can read on the tablet: **Chapter 1** covers Module 1 (sections 1-14, civil services to RTI) and **Chapter 2** covers Module 2 (sections 15-19, corruption to the Prevention of Corruption Act). **Chapter 3** (sections 20-24: governance, e-governance, data protection, emerging technology) and **Chapter 4** (sections 25-29: civil society, FCRA, SHGs, pressure groups, CAG) and **Chapter 5** (sections 30-33: regulatory bodies, FSSAI, CCI) come from later handouts. All fourteen of those sections carry full notes, mnemonics, recall sheets, flashcards and a quick quiz.'),
         p('Every section opens with an **Exam lens** (priority, PYQs quoted, Prelims and Mains hooks). Page references such as M1 p.5 are the printed page numbers of each module. Only facts printed in the handouts are used. **No class slides or teacher board notes were supplied**, so there is no teacher-ink forecast; priority comes from where the handouts quote PYQs.'),
         alert('Bill, Act, constituted', 'Lokpal: first Bill introduced 1968; the present Bill was passed in 2013 and became the Lokpal and Lokayuktas Act, 2013; the Lokpal itself was constituted in 2019.'),
         note('Counts', '**Modules 1 and 2: 19 Mains PYQ entries quoted (2013-2024) and no Prelims PYQ.** Priority rule: High = 2 or more PYQs map to the section; Medium = 1 PYQ or a partial fit (*); Low = none quoted.'),
@@ -402,8 +404,8 @@ def make_start(next_ch):
     s.append(Sec('Priority and PYQ map for all 19 sections', [tbl('Sections in handout order', ['Section', 'Pages', 'Priority', 'Mains PYQs quoted'],
         [['%d · %s' % (i, SECS[i]['title']), SECS[i]['pages'], PRI[SECS[i]['pri']],
           ', '.join('%s%s' % (PYQ[q]['yr'], '*' if PYQ[q].get('partial') else '') for q in SECS[i]['pyqs']) or 'none quoted in the material'] for i in range(1, 20)])]))
-    s.append(Sec('Priority and PYQ map for sections 20-29 (Chapters 3 and 4)', [tbl('Later handouts, in handout order', ['Section', 'Priority', 'Mains PYQs quoted (handout)'],
-        [['%d · %s' % (i, FULL[i]['meta']['title']), PRI[FULL[i]['meta']['prio']], conv(FULL[i]['meta']['pyq'].split(' · Handout')[0])] for i in range(20, 30)])]))
+    s.append(Sec('Priority and PYQ map for sections 20-33 (Chapters 3 to 5)', [tbl('Later handouts, in handout order', ['Section', 'Priority', 'Mains PYQs quoted (handout)'],
+        [['%d · %s' % (i, FULL[i]['meta']['title']), PRI[FULL[i]['meta']['prio']], conv(FULL[i]['meta']['pyq'].split(' · Handout')[0])] for i in range(20, 34)])]))
     s.append(Sec('All 19 Mains PYQs', [tbl('Quoted in the modules', ['Year', 'Marks', 'Question', 'Covered in'],
         [[str(q['yr']), conv(q['mk']), conv(q['q']), ', '.join(secname(i) for i in q['secs']) or 'no matching section in these modules'] for q in sorted(X['PYQS'], key=lambda q: (-q['yr'], q['id']))])]))
     s.append(Sec('Numbers to know', [recall(['**%s** %s' % (a, conv(b)) for a, b in X['RECALL']])], sid='numbers'))
@@ -413,8 +415,8 @@ def make_start(next_ch):
     rendered, idx = render_sections(s)
     svg, outline = mindmap(X['MAP']['root'], mapdata(X['MAP']['branches']), 'GS-2 Governance map')
     toc = [('chapter-map', 'Chapter map')] + idx
-    lede = 'How to use the notebook, the priority and PYQ map across all 29 sections, and the numbers and chains to keep in your head.'
-    head_html = chead('Governance · GS-2 · Start here', CH0['title'], '', [('Read first', 'cls'), ('4 chapters, 29 sections', ''), ('No class slides supplied', '')], lede)
+    lede = 'How to use the notebook, the priority and PYQ map across all 33 sections, and the numbers and chains to keep in your head.'
+    head_html = chead('Governance · GS-2 · Start here', CH0['title'], '', [('Read first', 'cls'), ('5 chapters, 33 sections', ''), ('No class slides supplied', '')], lede)
     page = chapter_page(CH0, None, next_ch, rendered, toc, svg, outline, {'mcq': [], 'cards': []}, head_html, FOOT, 'Governance')
     open(os.path.join(OUT, 'gov-ch00.html'), 'w', encoding='utf8').write(page)
     return toc, rendered
@@ -426,22 +428,25 @@ idx1, r1 = make_chapter(1, c0, c2, [('Handout only', 'cls'), ('Module 1 · pp. 3
 idx2, r2 = make_chapter(2, c1, CHS[3], [('Handout only', 'cls'), ('Module 2 · pp. 3-20', ''), ('Mains PYQs 2014-2024 · no Prelims', '')],
     'What corruption is and how it is produced, social audit and the other checks, then the machinery: CBI, CVC, Lokpal, the Whistle Blowers Protection Act and the Prevention of Corruption Act 1988 as amended in 2018.')
 
-c3, c4 = CHS[3], CHS[4]
+c3, c4, c5 = CHS[3], CHS[4], CHS[5]
 idx3, r3 = make_extra(3, c2, c4, [('Handout only', 'cls'), ('Module 3 · governance and e-governance', ''), ('Mains PYQs 2013-2025 (e-governance)', ''), ('10 new sections: 20-24', '')],
     'Models of governance and good governance, people’s participation and local self-government, e-governance with its stages, models, benefits and issues, then data protection, cybersecurity, blockchain, AI, deepfakes, OTT and digital public infrastructure.')
-idx4, r4 = make_extra(4, c3, None, [('Handout only', 'cls'), ('Module 4 · civil society, SHG, pressure groups, CAG', ''), ('Mains PYQs 2013-2026', ''), ('5 sections: 25-29', '')],
+idx4, r4 = make_extra(4, c3, c5, [('Handout only', 'cls'), ('Module 4 · civil society, SHG, pressure groups, CAG', ''), ('Mains PYQs 2013-2026', ''), ('5 sections: 25-29', '')],
     'Civil society and NGOs, the FCRA and donor agencies, self-help groups, pressure groups and lobbying, and the Comptroller and Auditor General: how outsiders to government shape and check it.')
+idx5, r5 = make_extra(5, c4, None, [('Handout only', 'cls'), ('Module 5 · regulatory bodies', ''), ('No PYQ quoted in the handout', ''), ('4 sections: 30-33', '')],
+    'Why independent regulators rose after 1991 and how far they are free of politics, their people, parent ministry and accountability, conflicts between regulators, then two worked examples: the FSSAI and the Competition Commission of India.')
 
 def sf(idx, with_map): return ([{'id': 'chapter-map', 't': 'Chapter map'}] if with_map else []) + [{'id': i, 't': t} for i, t in idx if i != 'chapter-map']
 chs = [dict(n=0, title=c0['title'], sub=c0['sub'], badge=c0['badge'], slides=False, pending=False, secs=sf(idx0, True)),
        dict(n=1, title=c1['title'], sub=c1['sub'], badge=c1['badge'], slides=False, pending=False, secs=sf(idx1, True)),
        dict(n=2, title=c2['title'], sub=c2['sub'], badge=c2['badge'], slides=False, pending=False, secs=sf(idx2, True)),
        dict(n=3, title=c3['title'], sub=c3['sub'], badge=c3['badge'], slides=False, pending=False, secs=sf(idx3, True)),
-       dict(n=4, title=c4['title'], sub=c4['sub'], badge=c4['badge'], slides=False, pending=False, secs=sf(idx4, True))]
+       dict(n=4, title=c4['title'], sub=c4['sub'], badge=c4['badge'], slides=False, pending=False, secs=sf(idx4, True)),
+       dict(n=5, title=c5['title'], sub=c5['sub'], badge=c5['badge'], slides=False, pending=False, secs=sf(idx5, True))]
 home = home_page(chs, 'Study notebook for the GS-2 Governance modules: civil services, transparency, accountability, Citizen’s Charter and RTI; corruption, CBI, CVC, Lokpal and the PCA; governance, e-governance, data and emerging tech; civil society, NGOs, FCRA, SHGs, pressure groups and the CAG. Built from the handouts only.', FOOT + ' Modules 3 and 4 use the later Sarrthi IAS handouts on Governance and E-Governance, Civil Society, and the CAG.')
 open(os.path.join(OUT, 'gov-home.html'), 'w', encoding='utf8').write(home)
 entries = []
-for c, rendered in ((c0, r0), (c1, r1), (c2, r2), (c3, r3), (c4, r4)):
+for c, rendered in ((c0, r0), (c1, r1), (c2, r2), (c3, r3), (c4, r4), (c5, r5)):
     for h in rendered:
         m = re.match(r'<h2 id="([^"]+)">(.*?)<a class="anchor"', h, re.S)
         entries.append({'c': str(c['n']), 'n': c['title'], 'id': m.group(1), 't': strip_tags(m.group(2)), 'x': strip_tags(h)})
