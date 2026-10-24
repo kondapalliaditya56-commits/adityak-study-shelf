@@ -5,6 +5,7 @@ import re, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import ch_a, ch_b, ch_c, ch_d, ch_e, ch_f, ch_g
 ALL = [c for m in (ch_a, ch_b, ch_c, ch_d, ch_e, ch_f, ch_g) for c in m.CHS]
+import listify; listify.apply_all(ALL)
 BOOKDATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'book', 'bookdata.json')
 VISWORDS = {}
 for part in json.load(open(BOOKDATA, encoding='utf8'))['parts']:

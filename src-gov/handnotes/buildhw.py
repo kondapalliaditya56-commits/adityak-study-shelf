@@ -42,6 +42,7 @@ def all_chapters():
     chs = []
     for f in sorted(glob.glob('ch_*.py')):
         chs += importlib.import_module(f[:-3]).CHS
+    import listify; listify.apply_all(chs)
     chs.sort(key=lambda c: c['id'])
     if ONLY: chs = [c for c in chs if c['id'] in ONLY]
     for c in chs:
