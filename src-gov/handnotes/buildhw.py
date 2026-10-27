@@ -35,7 +35,7 @@ dsl.r_hw = r_hw
 _hub = dsl.svg_hub
 dsl.svg_hub = lambda c, s: _hub(c, s).replace('max-width:150mm', 'max-width:118mm')
 
-PARTS = [('Module 1', 'Civil Services, Transparency, Accountability, Citizen\'s Charter, RTI', '#e0f2f1'), ('Module 2', 'Corruption, Social Audit, CBI, CVC, Lokpal, Whistleblower, PCA', '#fff3e0'), ('Module 3', 'Governance, E-Governance, Data Protection, Emerging Tech', '#ede7f6'), ('Module 4', 'Civil Society, NGOs, SHGs, Pressure Groups, CAG', '#fce4ec'), ('Module 5', 'Regulatory Bodies, FSSAI, CCI', '#e8f5e9')]
+PARTS = [('Module 1', 'Civil Services, Transparency, Accountability, Citizen\'s Charter, RTI', '#e0f2f1'), ('Module 2', 'Corruption, Social Audit, CBI, CVC, Lokpal, Whistleblower, PCA', '#fff3e0'), ('Module 3', 'Governance, E-Governance, Data Protection, Emerging Tech', '#ede7f6'), ('Module 4', 'Civil Society, NGOs, SHGs, Pressure Groups, CAG', '#fce4ec'), ('Module 5', 'Regulatory Bodies, FSSAI, CCI', '#e8f5e9'), ('Polity 1', 'Constitution, Constitutionalism, Union and Its Territory', '#e3f2fd')]
 
 ONLY = None
 def all_chapters():
@@ -44,6 +44,7 @@ def all_chapters():
         chs += importlib.import_module(f[:-3]).CHS
     import listify; listify.apply_all(chs)
     chs.sort(key=lambda c: c['id'])
+    chs = [c for c in chs if (c['id'] >= 40) == bool(os.environ.get('POLITY'))]
     if ONLY: chs = [c for c in chs if c['id'] in ONLY]
     for c in chs:
         c['no'] = c['id']
@@ -51,16 +52,19 @@ def all_chapters():
 
 def build(out):
     chs = all_chapters()
+    COV = ('POLITY', 'Constitutionalism · Rule of law · Separation of powers · Constitutional morality · Living Constitution · Union and its territory', 'Built from the Sarrthi IAS GS-2 Polity handout: Introduction to Constitution, Union and Its Territory.') if os.environ.get('POLITY') else None
     body = ['<div class="cov"><div class="s">UPSC CSE Mains 2027 · GS Paper II</div><h1>GOVERNANCE</h1>'
             '<div class="s">Civil services · RTI · Corruption · Lokpal · E-governance · Civil society · CAG · Regulators</div>'
             '<div><span class="bx">Handwritten-style notes</span></div>'
             '<div class="t">Built from the Sarrthi IAS GS-2 Governance handouts (Modules 1-5).<br>'
             'Bracket trees · diagrams · mnemonics · PYQ tags · current affairs<br>'
             'Right column and left binding margin are kept blank for your own use.<br><br>Personal study edition · for printing</div></div>']
+    if COV:
+        body = ['<div class="cov"><div class="s">UPSC CSE Mains 2027 · GS Paper II</div><h1>%s</h1><div class="s">%s</div><div><span class="bx">Handwritten-style notes</span></div><div class="t">%s<br>Bracket trees · mnemonics · PYQ tags · current affairs<br>Right column and left binding margin are kept blank for your own use.<br><br>Personal study edition · for printing</div></div>' % COV]
     toc = '<div class="partpg" style="padding:0;break-before:page"><div class="toc"><h2>INDEX</h2>'
     cur = -1
     for c in chs:
-        pi = 0 if c['id'] <= 14 else 1 if c['id'] <= 19 else 2 if c['id'] <= 24 else 3 if c['id'] <= 29 else 4
+        pi = 0 if c['id'] <= 14 else 1 if c['id'] <= 19 else 2 if c['id'] <= 24 else 3 if c['id'] <= 29 else 4 if c['id'] < 40 else 5
         if pi != cur:
             cur = pi; l, t_, bg = PARTS[pi]; toc += '<div class="pt" style="background:%s">%s · %s</div>' % (bg, l, t_)
         toc += '<a href="#c%s">%s &nbsp;%s</a>' % (c['id'], c['no'], c.get('toc', c['title']))
@@ -68,6 +72,7 @@ def build(out):
     for c in chs:
         body.append(chapter_hw_ir(c))
     html = '<html><head><style>%s</style></head><body>%s</body></html>' % (hwlib.CSS + '.chap{break-before:auto;margin-top:5mm}.pyqline,.sw,.ttl{break-after:avoid}.br{orphans:3;widows:3}.br{break-inside:auto}.keep{break-inside:avoid}.keep table{font-size:9pt}.keep td{padding:.2mm 1.4mm}', ''.join(body))
+    if os.environ.get('POLITY'): html = html.replace('</style>', '@page{@bottom-right{content:"Polity · Handwritten Notes · " counter(page);font-family:PH;font-size:8pt;color:#888}}</style>', 1)
     d = HTML(string=html, base_url='.').render()
     print('pages', len(d.pages))
     d.write_pdf(out)
