@@ -1,0 +1,54 @@
+{
+ "subject": "governance",
+ "title": "Governance (GS-2) handwritten notes",
+ "versions": [
+  {
+   "v": 6,
+   "file": "v6.pdf",
+   "date": "2026-10-24",
+   "pages": 96,
+   "sha": "0ed504edbc84074c",
+   "note": "Summary boxes turned into bullets, new mnemonics (96 pages)"
+  },
+  {
+   "v": 5,
+   "file": "v5.pdf",
+   "date": "2026-10-23",
+   "pages": 91,
+   "sha": "fdf15a881e034b96",
+   "note": "Added Regulatory Bodies, FSSAI, CCI (91 pages)"
+  },
+  {
+   "v": 4,
+   "file": "v4.pdf",
+   "date": "2026-10-19",
+   "pages": 82,
+   "sha": "e87bfc7e6e0ea009",
+   "note": "Middle-path density (82 pages)"
+  },
+  {
+   "v": 3,
+   "file": "v3.pdf",
+   "date": "2026-10-19",
+   "pages": 101,
+   "sha": "be0cece36d682788",
+   "note": "Full content audit against handouts (101 pages, too bulky)"
+  },
+  {
+   "v": 2,
+   "file": "v2.pdf",
+   "date": "2026-10-19",
+   "pages": 64,
+   "sha": "db8a0aa0d4631166",
+   "note": "Added chapters 20-29: governance, e-governance, data protection, civil society, CAG"
+  },
+  {
+   "v": 1,
+   "file": "v1.pdf",
+   "date": "2026-10-17",
+   "pages": 39,
+   "sha": "4eaa4dee78e9950a",
+   "note": "First version: 39 pages, sections 1-19 (Modules 1-2)"
+  }
+ ]
+}

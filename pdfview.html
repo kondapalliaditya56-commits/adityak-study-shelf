@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Handwritten notes</title>
+<style>
+:root{--bg:#faf8f3;--surface:#fff;--ink:#1f2a26;--muted:#65706b;--line:#e1ddd0;--accent:#0f6b58;--page:#d9d5c8}
+@media(prefers-color-scheme:dark){:root{--bg:#161a18;--surface:#202522;--ink:#e8ece9;--muted:#9aa5a0;--line:#333a36;--accent:#4cc0a6;--page:#0e1110}}
+*{box-sizing:border-box}html,body{margin:0;height:100%}body{background:var(--page);color:var(--ink);font:15px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;display:flex;flex-direction:column}
+.bar{display:flex;gap:8px;align-items:center;padding:8px 12px;background:var(--bg);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.bar a,.bar button,.bar summary{font:600 13px system-ui;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:6px 11px;text-decoration:none;cursor:pointer}
+.bar .t{flex:1;min-width:140px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .mut{color:var(--muted);font-size:12.5px}
+.pg{min-width:84px;text-align:center}
+#wrap{flex:1;overflow:auto;padding:14px 0 60px;-webkit-overflow-scrolling:touch}
+.sheet{margin:0 auto 14px;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.25);position:relative}
+.sheet canvas{display:block;width:100%;height:100%}
+.ver{position:relative}.ver summary{list-style:none;font-weight:500;color:var(--muted);font-size:12px;padding:5px 9px}.ver summary::-webkit-details-marker{display:none}
+.ver .menu{position:absolute;right:0;top:34px;z-index:5;min-width:260px;max-width:86vw;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.ver .menu a{display:block;border:0;background:none;font-weight:500;padding:8px 10px;border-radius:8px}.ver .menu a:hover{background:var(--bg)}.ver .menu small{display:block;color:var(--muted);font-weight:400}
+.ver .menu a.cur{color:var(--accent)}
+#msg{margin:40px auto;max-width:520px;text-align:center;color:var(--muted)}
+#toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--accent);color:#fff;padding:9px 16px;border-radius:999px;font-weight:600;display:none}
+</style></head><body>
+<div class="bar"><a href="index.html" id="back">Library</a><span class="t" id="ttl">Handwritten notes</span>
+<button id="zo" aria-label="Zoom out">−</button><span class="pg mut" id="pg">…</span><button id="zi" aria-label="Zoom in">+</button><button id="fw">Fit</button>
+<a id="dl" href="#" download>Download</a>
+<details class="ver" id="ver"><summary>Earlier versions</summary><div class="menu" id="menu"></div></details></div>
+<div id="wrap"><div id="msg">Loading the latest version…</div></div><div id="toast"></div>
+<script src="vendor/pdfjs/pdf.min.js"></script>
+<script>
+(function(){
+var q=new URLSearchParams(location.search),S=(q.get('s')||'governance').replace(/[^a-z0-9-]/gi,''),WANT=q.get('v');
+var dir='notes/'+S+'/',wrap=document.getElementById('wrap'),msg=document.getElementById('msg');
+pdfjsLib.GlobalWorkerOptions.workerSrc='vendor/pdfjs/pdf.worker.min.js';
+var M=null,cur=null,doc=null,scale=null,fitW=true,sheets=[],tok=0,ratio=Math.min(window.devicePixelRatio||1,2.5);
+function fmt(d){try{return new Date(d+'T00:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}catch(e){return d}}
+function getM(){return fetch(dir+'manifest.json?t='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()})}
+function menu(){var h='';M.versions.forEach(function(v,i){h+='<a href="pdfview.html?s='+S+(i?'&v='+v.v:'')+'" class="'+(cur&&cur.v===v.v?'cur':'')+'">Version '+v.v+(i?'':' (latest)')+'<small>'+fmt(v.date)+' · '+v.pages+' pages · '+(v.note||'')+'</small></a>'});document.getElementById('menu').innerHTML=h;
+ document.getElementById('ver').style.display=M.versions.length>1?'':'none'}
+function pickVer(){if(WANT){var f=M.versions.filter(function(v){return String(v.v)===WANT})[0];if(f)return f}return M.versions[0]}
+function width(){return Math.min(wrap.clientWidth-16,1100)}
+function layout(){sheets.forEach(function(s){var w=fitW?width():s.vp1.width*scale;s.el.style.width=w+'px';s.el.style.height=(w*s.vp1.height/s.vp1.width)+'px'});render()}
+var seen={};
+function render(){var top=wrap.scrollTop,bot=top+wrap.clientHeight,myTok=tok;sheets.forEach(function(s,i){var r=s.el.offsetTop,h=s.el.offsetHeight;if(r+h<top-h||r>bot+h)return;var w=s.el.clientWidth;if(s.w===w&&s.tok===myTok)return;s.w=w;s.tok=myTok;
+ doc.getPage(i+1).then(function(p){var vp=p.getViewport({scale:(w*ratio)/p.getViewport({scale:1}).width});var c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;p.render({canvasContext:c.getContext('2d'),viewport:vp}).promise.then(function(){if(myTok!==tok)return;var o=s.el.querySelector('canvas');if(o)s.el.replaceChild(c,o);else s.el.appendChild(c)})})})}
+function curPage(){var m=wrap.scrollTop+wrap.clientHeight/3,k=0;for(var i=0;i<sheets.length;i++){if(sheets[i].el.offsetTop<=m)k=i}return k+1}
+function open(v,keepPage){cur=v;tok++;sheets=[];msg&&msg.remove();msg=null;wrap.innerHTML='<div id="msg">Loading version '+v.v+'…</div>';
+ document.getElementById('ttl').textContent=M.title+' · v'+v.v+' · '+fmt(v.date);document.title=M.title;
+ var d=document.getElementById('dl');d.href=dir+v.file;d.setAttribute('download',S+'-handwritten-notes-v'+v.v+'.pdf');menu();
+ return pdfjsLib.getDocument(dir+v.file).promise.then(function(pdf){doc=pdf;wrap.innerHTML='';var n=pdf.numPages,chain=Promise.resolve();
+  for(var i=1;i<=n;i++)(function(i){chain=chain.then(function(){return pdf.getPage(i)}).then(function(p){var vp1=p.getViewport({scale:1}),el=document.createElement('div');el.className='sheet';wrap.appendChild(el);sheets.push({el:el,vp1:vp1});if(i===1){scale=1;}})})(i);
+  return chain.then(function(){layout();if(keepPage)wrap.scrollTop=sheets[Math.min(keepPage,n)-1].el.offsetTop-8;upd()})}).catch(function(){wrap.innerHTML='<div id="msg">Could not load this PDF. Check your connection and reload.</div>'})}
+function upd(){document.getElementById('pg').textContent=sheets.length?curPage()+' / '+sheets.length:'…'}
+var t;wrap.addEventListener('scroll',function(){upd();clearTimeout(t);t=setTimeout(render,80)});
+window.addEventListener('resize',function(){tok++;layout()});
+function zoom(f){fitW=false;var w=sheets.length?sheets[0].el.clientWidth:width();scale=(w*f)/sheets[0].vp1.width;var pg=curPage();tok++;layout();wrap.scrollTop=sheets[pg-1].el.offsetTop-8}
+document.getElementById('zi').onclick=function(){zoom(1.25)};document.getElementById('zo').onclick=function(){zoom(.8)};
+document.getElementById('fw').onclick=function(){fitW=true;var pg=curPage();tok++;layout();wrap.scrollTop=sheets[pg-1].el.offsetTop-8};
+function toast(t){var e=document.getElementById('toast');e.textContent=t;e.style.display='block';setTimeout(function(){e.style.display='none'},3500)}
+// live: pick up a newer published version while the page is open
+function poll(){getM().then(function(m){var a=M.versions[0],b=m.versions[0];M=m;if(!WANT&&b.v!==a.v){toast('New version '+b.v+' published, loading it');open(b,curPage())}else menu()}).catch(function(){})}
+setInterval(poll,60000);document.addEventListener('visibilitychange',function(){if(!document.hidden)poll()});
+getM().then(function(m){M=m;open(pickVer())}).catch(function(){msg.textContent='No handwritten notes are published for this subject yet.'});
+})();
+</script></body></html>

@@ -13,6 +13,7 @@ NB_ID = 'governance'
 BASE = 'gov-'
 NB_TITLE = 'Governance (GS-2)'
 NAME = 'Governance'
+HW_NOTES = {'governance'}   # subjects whose contents page shows the handwritten-notes PDF card (notes/<id>/manifest.json)
 if os.environ.get('POL2'):
     NB_ID, BASE, NB_TITLE, NAME = 'polity-gs2', 'pg2-', 'Polity (GS-2 Mains)', 'Polity (GS-2)'
 
@@ -332,6 +333,11 @@ def home_page(chapters, intro_lede, footer):
     cnt = len([c for c in built if c['n'] > 0])
     body = '<body>' + bar + '<main class="page home-page"><div class="chead"><div class="eyebrow">Sarrthi IAS · GS Mains Modules · GS-2</div><h1>'+NAME+'</h1>'
     body += '<p class="lede">%s</p>' % inline(intro_lede)
+    if NB_ID in HW_NOTES:
+        body += ('<a class="hwcard" href="pdfview.html?s=%s" style="display:flex;align-items:center;gap:12px;margin:14px 0 4px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--surface);text-decoration:none;color:inherit;font-family:var(--sans)">'
+                 '<span style="font-size:26px" aria-hidden="true">&#9998;</span><span style="flex:1"><b style="display:block;font-size:16px">Handwritten notes (PDF)</b>'
+                 '<small id="hwmeta" style="color:var(--muted)">Opens the latest version in the PDF viewer</small></span><span style="font-weight:700;color:var(--accent)">Open &rsaquo;</span></a>'
+                 '<script>fetch("notes/%s/manifest.json",{cache:"no-store"}).then(function(r){return r.json()}).then(function(m){var v=m.versions[0],e=document.getElementById("hwmeta");if(e)e.textContent="Latest: version "+v.v+" \u00b7 "+v.pages+" pages \u00b7 "+v.date}).catch(function(){})</script>') % (NB_ID, NB_ID)
     body += '<p class="prog"><span id="progress"></span> of %d chapters marked done.</p>' % cnt
     body += '<div class="row"><a class="btn pri" href="%sch00.html">Start here</a><a class="btn" href="%sch01.html">Chapter 1</a><a class="btn" href="%ssearch.html">Search</a></div></div>' % (BASE, BASE, BASE)
     body += '<section class="part"><h2>Chapters so far</h2><div class="chlist">'
