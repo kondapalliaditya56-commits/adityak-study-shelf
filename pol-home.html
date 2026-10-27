@@ -261,4 +261,4 @@ setTimeout(sync,800);
 (function(){var b=document.getElementById('themebtn');if(!b)return;var o=['auto','light','sepia','dark'];b.addEventListener('click',function(){var t=NBS.get().prefs.theme,i=(o.indexOf(t)+1)%o.length;NBS.setPref('theme',o[i]);b.textContent='Theme: '+o[i]})})();
 
 (function(){var S=NBS;function upd(){var done=0;document.querySelectorAll('a.chcard[data-ch]').forEach(function(a){var n=+a.dataset.ch,t=+a.dataset.secs,p=S.pct('polity',n,t),rec=(S.get().nb.polity||{})[n],d=rec&&rec.dt?!!rec.done:p>=.999;var bar=a.querySelector('.cbar i');if(bar)bar.style.width=Math.round(p*100)+'%';var tk=a.querySelector('.tick');if(tk)tk.hidden=!d;if(d&&n>0)done++});var el=document.getElementById('progress');if(el)el.textContent=done}upd();S.onChange(upd);setTimeout(upd,2500)})();
-</script></body></html>
+</script><script src="sw-auto.js" defer></script></body></html>

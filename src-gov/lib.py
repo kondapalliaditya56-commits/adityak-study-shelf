@@ -267,7 +267,7 @@ def render_sections(secs, start=1, numbered=True):
 # ---------------------------------------------------------------- page assembly
 def head(title, extra_css=''):
     return ('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
-            '<title>%s</title>%s%s</head>' % (html.escape(title), CSS, extra_css))
+            '<title>%s</title>%s%s<script src="sw-auto.js" defer></script></head>' % (html.escape(title), CSS, extra_css))
 
 EXTRA_CSS = '<style>details.skel{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:8px 14px;margin:10px 0;font:15px/1.5 var(--sans)}details.skel summary{cursor:pointer}details.skel p,details.skel li{font-family:var(--sans)}.ptag.vhigh{background:var(--red-soft);color:var(--red)}</style>'
 

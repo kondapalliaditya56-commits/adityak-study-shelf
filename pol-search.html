@@ -267,4 +267,4 @@ var ws=v.split(/\s+/),out=[];D.forEach(function(d){var t=(d.t+' '+d.x).toLowerCa
 cnt.textContent=out.length+' section'+(out.length===1?'':'s');
 out.slice(0,40).forEach(function(o){var h=document.createElement('div');h.className='hit';var s=esc(o.sn);ws.forEach(function(w){s=s.replace(new RegExp('('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'),'<mark>$1</mark>')});h.innerHTML='<a href="pol-ch'+(o.d.ch<10?'0':'')+o.d.ch+'.html#'+o.d.id+'">Ch '+o.d.ch+' · '+esc(o.d.t)+'</a><br><small>'+esc(o.d.cht)+'</small><br>'+s+'…';res.appendChild(h)})}
 q.addEventListener('input',run);var p=new URLSearchParams(location.search).get('q');if(p){q.value=p;run()}})();
-</script></body></html>
+</script><script src="sw-auto.js" defer></script></body></html>
