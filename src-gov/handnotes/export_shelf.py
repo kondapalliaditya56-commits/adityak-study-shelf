@@ -3,8 +3,8 @@
 Writes ../book/fullnotes.json  {chapter_id: {'notes': [...], 'meta': {...}}}"""
 import re, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import ch_a, ch_b, ch_c, ch_d, ch_e, ch_f, ch_g
-ALL = [c for m in (ch_a, ch_b, ch_c, ch_d, ch_e, ch_f, ch_g) for c in m.CHS]
+import ch_a, ch_b, ch_c, ch_d, ch_e, ch_f, ch_g, ch_h
+ALL = [c for m in (ch_a, ch_b, ch_c, ch_d, ch_e, ch_f, ch_g) for c in m.CHS] if not os.environ.get('POLITY') else list(ch_h.CHS)
 import listify; listify.apply_all(ALL)
 BOOKDATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'book', 'bookdata.json')
 VISWORDS = {}
@@ -66,6 +66,6 @@ for ch in ALL:
         notes += items(n, cid)
     res[cid] = {'notes': notes, 'meta': {'title': nice(ch['title']), 'toc': ch.get('toc', ''), 'prio': ch.get('prio', 'M'), 'pyq': clean(ch.get('pyq', '')),
         'simple': clean(ch.get('simple', '')), 'recall': [[clean(a), clean(b)] for a, b in ch.get('recall', [])], 'part': ch.get('part')}}
-out = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'book', 'fullnotes.json')
+out = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'book', 'fullnotes_pol2.json' if os.environ.get('POLITY') else 'fullnotes.json')
 json.dump(res, open(out, 'w', encoding='utf8'), ensure_ascii=False)
 print({k: len(v['notes']) for k, v in res.items()})

@@ -12,6 +12,9 @@ SEARCH_LOGIC = open(os.path.join(HERE, 'search_logic.js'), encoding='utf8').read
 NB_ID = 'governance'
 BASE = 'gov-'
 NB_TITLE = 'Governance (GS-2)'
+NAME = 'Governance'
+if os.environ.get('POL2'):
+    NB_ID, BASE, NB_TITLE, NAME = 'polity-gs2', 'pg2-', 'Polity (GS-2 Mains)', 'Polity (GS-2)'
 
 # ---------------------------------------------------------------- inline markup
 def inline(t):
@@ -323,11 +326,11 @@ def chead(eyebrow, title, ptag, pills, lede):
 def home_page(chapters, intro_lede, footer):
     fn = lambda c: '%sch%02d.html' % (BASE, c['n'])
     bar = ('<header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="%shome.html">Contents</a>'
-           '<span class="bartitle"><b></b> Governance notebook</span><a class="home" href="%ssearch.html">Search</a>'
+           '<span class="bartitle"><b></b> '+NAME+' notebook</span><a class="home" href="%ssearch.html">Search</a>'
            '<button class="themebtn" id="themebtn" type="button" aria-label="Change theme">Theme</button></div></header>') % (BASE, BASE)
     built = [c for c in chapters if not c.get('pending')]
     cnt = len([c for c in built if c['n'] > 0])
-    body = '<body>' + bar + '<main class="page home-page"><div class="chead"><div class="eyebrow">Sarrthi IAS · GS Mains Modules · GS-2</div><h1>Governance</h1>'
+    body = '<body>' + bar + '<main class="page home-page"><div class="chead"><div class="eyebrow">Sarrthi IAS · GS Mains Modules · GS-2</div><h1>'+NAME+'</h1>'
     body += '<p class="lede">%s</p>' % inline(intro_lede)
     body += '<p class="prog"><span id="progress"></span> of %d chapters marked done.</p>' % cnt
     body += '<div class="row"><a class="btn pri" href="%sch00.html">Start here</a><a class="btn" href="%sch01.html">Chapter 1</a><a class="btn" href="%ssearch.html">Search</a></div></div>' % (BASE, BASE, BASE)
@@ -339,17 +342,17 @@ def home_page(chapters, intro_lede, footer):
     body += '<footer>%s</footer></main>' % inline(footer)
     upd = ("(function(){var S=NBS;function upd(){var done=0;document.querySelectorAll('a.chcard[data-ch]').forEach(function(a){var n=+a.dataset.ch,t=+a.dataset.secs,p=S.pct('%s',n,t),rec=(S.get().nb['%s']||{})[n],d=rec&&rec.dt?!!rec.done:p>=.999;var bar=a.querySelector('.cbar i');if(bar)bar.style.width=Math.round(p*100)+'%%';var tk=a.querySelector('.tick');if(tk)tk.hidden=!d;if(d&&n>0)done++});var el=document.getElementById('progress');if(el)el.textContent=done}upd();S.onChange(upd);setTimeout(upd,2500)})();" % (NB_ID, NB_ID))
     body += '<script>%s\n%s</script></body></html>' % (STORE_ONLY, upd)
-    return head('Governance Contents', EXTRA_CSS) + body
+    return head(NAME + ' Contents', EXTRA_CSS) + body
 
 def search_page(entries):
     bar = ('<header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="%shome.html">Contents</a>'
-           '<span class="bartitle"><b></b> Search Governance</span><button class="themebtn" id="themebtn" type="button" aria-label="Change theme">Theme</button></div></header>') % BASE
+           '<span class="bartitle"><b></b> Search '+NAME+'</span><button class="themebtn" id="themebtn" type="button" aria-label="Change theme">Theme</button></div></header>') % BASE
     body = '<body>' + bar + '<main class="page home-page"><div class="chead"><div class="eyebrow">Find anything</div><h1>Search</h1></div>'
     body += '<input class="sbox" id="q" type="search" placeholder="Type a word, e.g. Lokpal, Vineet Narain, Sevottam, Section 8" autofocus><p class="prog" id="cnt"></p><div class="results" id="res"></div></main>'
     body += json_script(entries, 'sdata')
     logic = SEARCH_LOGIC.replace("'geo-ch'", "'%sch'" % BASE).replace('Tables are images and are not searchable.', 'Tables and diagrams are included as text where possible.')
     body += '<script>%s</script><script>%s</script></body></html>' % (logic, STORE_ONLY)
-    return head('Search Governance', EXTRA_CSS) + body
+    return head('Search ' + NAME, EXTRA_CSS) + body
 
 def strip_tags(h):
     t = re.sub(r'<svg.*?</svg>', ' ', h, flags=re.S)
