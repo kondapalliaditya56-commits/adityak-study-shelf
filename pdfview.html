@@ -21,15 +21,21 @@
 #sel button{width:30px;height:30px;border-radius:50%;border:2px solid rgba(0,0,0,.18);padding:0;cursor:pointer}#sel .er{width:auto;border-radius:999px;padding:0 10px;background:var(--bg);color:var(--ink);font:600 12px system-ui;border:1px solid var(--line)}
 .hlm .menu a,.hlm .menu button{display:block;width:100%;text-align:left;border:0;background:none;font:500 14px system-ui;color:var(--ink);padding:9px 10px;border-radius:8px;cursor:pointer}.hlm .menu a:hover,.hlm .menu button:hover{background:var(--bg)}
 .hlm summary{list-style:none}.hlm summary::-webkit-details-marker{display:none}.hlm{position:relative}.hlm .menu{position:absolute;right:0;top:34px;z-index:6;min-width:230px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 6px 24px rgba(0,0,0,.25)}.hlm .menu small{display:block;color:var(--muted);padding:4px 10px}
+.ink{position:absolute;inset:0;z-index:4;pointer-events:none}.inking .ink{pointer-events:auto;touch-action:none;cursor:crosshair}.inking .tl{pointer-events:none}.inking .ink.er{cursor:cell}
+.hl svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.hl svg path{fill:none;stroke-linecap:round;stroke-linejoin:round;mix-blend-mode:multiply}
+#ink{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:21;display:none;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 12px;box-shadow:0 8px 28px rgba(0,0,0,.35);max-width:96vw;flex-wrap:wrap;justify-content:center}
+#ink button{font:600 13px system-ui;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:6px 11px;cursor:pointer}#ink button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+#ink .c{width:30px;height:30px;padding:0;border:2px solid rgba(0,0,0,.2)}#ink .c.on{outline:3px solid var(--accent);outline-offset:1px}
 #msg{margin:40px auto;max-width:520px;text-align:center;color:var(--muted)}
 #toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--accent);color:#fff;padding:9px 16px;border-radius:999px;font-weight:600;display:none}
 </style></head><body>
 <div class="bar"><a href="index.html" id="back">Library</a><span class="t" id="ttl">Handwritten notes</span>
 <button id="zo" aria-label="Zoom out">−</button><span class="pg mut" id="pg">…</span><button id="zi" aria-label="Zoom in">+</button><button id="fw">Fit</button>
 <a id="dl" href="#" download>Download</a>
+<button id="pen" aria-pressed="false">Highlighter</button>
 <details class="ver hlm" id="hlm"><summary>Highlights <span id="hln"></span></summary><div class="menu"><small>Select text, then pick a colour. Saved on this device for this version.</small><button id="hdl">Download PDF with highlights</button><button id="hex">Export highlights (backup)</button><button id="him">Import highlights</button><button id="hcl">Clear highlights in this version</button><input type="file" id="hfile" accept="application/json" hidden></div></details>
 <details class="ver" id="ver"><summary>Earlier versions</summary><div class="menu" id="menu"></div></details></div>
-<div id="wrap"><div id="msg">Loading the latest version…</div></div><div id="sel"><button data-c="#ffe14d" style="background:#ffe14d" aria-label="Yellow"></button><button data-c="#7fe38f" style="background:#7fe38f" aria-label="Green"></button><button data-c="#ff9ec8" style="background:#ff9ec8" aria-label="Pink"></button><button data-c="#8fd0ff" style="background:#8fd0ff" aria-label="Blue"></button><button class="er" id="ser">Remove</button></div><div id="toast"></div>
+<div id="wrap"><div id="msg">Loading the latest version…</div></div><div id="sel"><button data-c="#ffe14d" style="background:#ffe14d" aria-label="Yellow"></button><button data-c="#7fe38f" style="background:#7fe38f" aria-label="Green"></button><button data-c="#ff9ec8" style="background:#ff9ec8" aria-label="Pink"></button><button data-c="#8fd0ff" style="background:#8fd0ff" aria-label="Blue"></button><button class="er" id="ser">Remove</button></div><div id="ink"><button class="c on" data-c="#ffe14d" style="background:#ffe14d" aria-label="Yellow"></button><button class="c" data-c="#7fe38f" style="background:#7fe38f" aria-label="Green"></button><button class="c" data-c="#ff9ec8" style="background:#ff9ec8" aria-label="Pink"></button><button class="c" data-c="#8fd0ff" style="background:#8fd0ff" aria-label="Blue"></button><button id="isz">Size M</button><button id="ist">Straight</button><button id="ier">Eraser</button><button id="iun">Undo</button><button id="idn">Done</button></div><div id="toast"></div>
 <script src="vendor/pdfjs/pdf.min.js"></script><script src="vendor/pdflib/pdf-lib.min.js" defer></script>
 <script>
 (function(){
@@ -55,7 +61,12 @@ function loadHl(){hkey='pdfhl:'+S+':'+cur.sha;try{HL=JSON.parse(localStorage.get
 function saveHl(){try{localStorage.setItem(hkey,JSON.stringify(HL))}catch(e){toast('Could not save highlights on this device')}hcount()}
 function hcount(){document.getElementById('hln').textContent=HL.length?'('+HL.length+')':''}
 function drawHl(i){var s=sheets[i];if(!s)return;var l=s.el.querySelector('.hl');if(!l){l=document.createElement('div');l.className='hl';s.el.appendChild(l)}
- l.innerHTML=HL.filter(function(h){return h.p===i}).map(function(h){return '<i style="left:'+h.x*100+'%;top:'+h.y*100+'%;width:'+h.w*100+'%;height:'+h.h*100+'%;background:'+h.c+'"></i>'}).join('')}
+ var W=s.el.clientWidth,H=s.el.clientHeight,rs='',st='';HL.forEach(function(h){if(h.p!==i)return;
+  if(h.t==='s'){st+='<path d="'+pathD(h.pts,W,H)+'" stroke="'+h.c+'" stroke-width="'+(h.w*W)+'"/>'}
+  else rs+='<i style="left:'+h.x*100+'%;top:'+h.y*100+'%;width:'+h.w*100+'%;height:'+h.h*100+'%;background:'+h.c+'"></i>'});
+ l.innerHTML=rs+'<svg>'+st+'</svg>';
+ if(!s.el.querySelector('.ink')){var k=document.createElement('div');k.className='ink';k.setAttribute('data-i',i);s.el.appendChild(k)}}
+function pathD(pts,W,H){if(pts.length===1)return 'M'+pts[0][0]*W+' '+pts[0][1]*H+'l.01 0';return pts.map(function(q,j){return (j?'L':'M')+(q[0]*W).toFixed(1)+' '+(q[1]*H).toFixed(1)}).join('')}
 function drawAll(){for(var i=0;i<sheets.length;i++)drawHl(i)}
 var selBox=document.getElementById('sel');
 function selRects(){var sel=window.getSelection();if(!sel||sel.isCollapsed||!sel.rangeCount)return null;var rg=sel.getRangeAt(0);if(!wrap.contains(rg.commonAncestorContainer))return null;
@@ -64,20 +75,61 @@ function selRects(){var sel=window.getSelection();if(!sel||sel.isCollapsed||!sel
 function showSel(){var r=selRects();if(!r){selBox.style.display='none';return}var rg=window.getSelection().getRangeAt(0).getBoundingClientRect();selBox.style.display='flex';
  var x=Math.max(8,Math.min(innerWidth-selBox.offsetWidth-8,rg.left+rg.width/2-selBox.offsetWidth/2)),y=rg.top-selBox.offsetHeight-10;if(y<60)y=rg.bottom+10;selBox.style.left=x+'px';selBox.style.top=y+'px'}
 var st;document.addEventListener('selectionchange',function(){clearTimeout(st);st=setTimeout(showSel,250)});
-function hit(a,b){return a.p===b.p&&a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
+function hit(a,b){if(a.t==='s')return false;return a.p===b.p&&a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
 selBox.addEventListener('mousedown',function(e){e.preventDefault()});
 selBox.addEventListener('pointerdown',function(e){e.preventDefault()});
 selBox.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var r=selRects();if(!r)return;
  if(b.id==='ser'){HL=HL.filter(function(h){return !r.some(function(q){return hit(h,q)})})}
  else{r.forEach(function(q){q.c=b.getAttribute('data-c');HL.push(q)})}
  saveHl();drawAll();window.getSelection().removeAllRanges();selBox.style.display='none'});
+
+// ---- pen highlighter tool
+var inkOn=false,inkC='#ffe14d',inkW=[.011,.018,.028],inkWi=1,straight=false,eraser=false,cur2=null,scrl=null;
+var inkBar=document.getElementById('ink'),penBtn=document.getElementById('pen');
+try{inkC=localStorage.getItem('pdfhl:color')||inkC;inkWi=+(localStorage.getItem('pdfhl:size')||1)}catch(e){}
+function inkUi(){document.getElementById('isz').textContent='Size '+['S','M','L'][inkWi];document.getElementById('ist').className=straight?'on':'';document.getElementById('ier').className=eraser?'on':'';
+ Array.prototype.forEach.call(inkBar.querySelectorAll('.c'),function(b){b.className='c'+(b.getAttribute('data-c')===inkC&&!eraser?' on':'')});
+ wrap.className=inkOn?'inking':'';Array.prototype.forEach.call(document.querySelectorAll('.ink'),function(k){k.classList.toggle('er',eraser)})}
+function setInk(on){inkOn=on;inkBar.style.display=on?'flex':'none';penBtn.setAttribute('aria-pressed',on);penBtn.style.background=on?'var(--accent)':'';penBtn.style.color=on?'#fff':'';if(on){window.getSelection().removeAllRanges();selBox.style.display='none'}inkUi()}
+penBtn.onclick=function(){setInk(!inkOn)};document.getElementById('idn').onclick=function(){setInk(false)};
+inkBar.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+ if(b.classList.contains('c')){inkC=b.getAttribute('data-c');eraser=false;try{localStorage.setItem('pdfhl:color',inkC)}catch(x){}}
+ else if(b.id==='isz'){inkWi=(inkWi+1)%3;try{localStorage.setItem('pdfhl:size',inkWi)}catch(x){}}
+ else if(b.id==='ist')straight=!straight;else if(b.id==='ier')eraser=!eraser;
+ else if(b.id==='iun'){if(HL.length){HL.pop();saveHl();drawAll()}}
+ inkUi()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&inkOn)setInk(false);if((e.ctrlKey||e.metaKey)&&e.key==='z'&&inkOn){e.preventDefault();if(HL.length){HL.pop();saveHl();drawAll()}}});
+function pos(e,k){var b=k.getBoundingClientRect();return [(e.clientX-b.left)/b.width,(e.clientY-b.top)/b.height]}
+function eraseAt(i,q){var n=HL.length,r=.018;HL=HL.filter(function(h){if(h.p!==i)return true;
+ if(h.t==='s')return !h.pts.some(function(a){return Math.abs(a[0]-q[0])<r&&Math.abs(a[1]-q[1])<r*.7});
+ return !(q[0]>=h.x-r&&q[0]<=h.x+h.w+r&&q[1]>=h.y-r*.6&&q[1]<=h.y+h.h+r*.6)});if(HL.length!==n){drawHl(i);return true}return false}
+wrap.addEventListener('pointerdown',function(e){if(!inkOn)return;var k=e.target.closest&&e.target.closest('.ink');if(!k)return;
+ if(e.pointerType==='touch'){scrl={x:e.clientX,y:e.clientY};k.setPointerCapture(e.pointerId);return}
+ e.preventDefault();k.setPointerCapture(e.pointerId);var i=+k.getAttribute('data-i');
+ if(eraser){cur2={i:i,k:k,er:1,ch:false};if(eraseAt(i,pos(e,k)))cur2.ch=true;return}
+ var q=pos(e,k),sv=sheets[i].el.querySelector('.hl svg'),p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('stroke',inkC);p.setAttribute('stroke-width',inkW[inkWi]*k.clientWidth);sv.appendChild(p);
+ cur2={i:i,k:k,pts:[q],start:q,path:p,w:k.clientWidth,h:k.clientHeight}});
+wrap.addEventListener('pointermove',function(e){if(!inkOn)return;
+ if(scrl&&e.pointerType==='touch'){wrap.scrollTop-=e.clientY-scrl.y;wrap.scrollLeft-=e.clientX-scrl.x;scrl.x=e.clientX;scrl.y=e.clientY;return}
+ if(!cur2)return;var evs=e.getCoalescedEvents?e.getCoalescedEvents():[e];if(!evs.length)evs=[e];
+ evs.forEach(function(ev){var q=pos(ev,cur2.k);if(cur2.er){if(eraseAt(cur2.i,q))cur2.ch=true;return}
+  if(straight){cur2.pts=[cur2.start,[q[0],cur2.start[1]+(Math.abs(q[1]-cur2.start[1])<.02?0:q[1]-cur2.start[1])]];if(Math.abs(q[1]-cur2.start[1])<.02)cur2.pts[1][1]=cur2.start[1]}
+  else{var l=cur2.pts[cur2.pts.length-1];if(Math.abs(q[0]-l[0])+Math.abs(q[1]-l[1])>.0012)cur2.pts.push(q)}});
+ if(!cur2.er)cur2.path.setAttribute('d',pathD(cur2.pts,cur2.w,cur2.h))});
+function endInk(){scrl=null;if(!cur2)return;var c=cur2;cur2=null;
+ if(c.er){if(c.ch){saveHl()}return}
+ if(c.pts.length<2&&!straight)c.pts.push([c.pts[0][0]+.001,c.pts[0][1]]);
+ HL.push({p:c.i,t:'s',pts:c.pts.map(function(a){return [+a[0].toFixed(4),+a[1].toFixed(4)]}),w:inkW[inkWi],c:inkC});saveHl();drawHl(c.i)}
+wrap.addEventListener('pointerup',endInk);wrap.addEventListener('pointercancel',endInk);
 document.getElementById('hcl').onclick=function(){if(HL.length&&confirm('Remove all highlights in this version?')){HL=[];saveHl();drawAll()}};
 document.getElementById('hex').onclick=function(){var b=new Blob([JSON.stringify({s:S,sha:cur.sha,v:cur.v,hl:HL})],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=S+'-v'+cur.v+'-highlights.json';a.click()};
 document.getElementById('him').onclick=function(){document.getElementById('hfile').click()};
 document.getElementById('hfile').onchange=function(e){var f=e.target.files[0];if(!f)return;f.text().then(function(t){try{var o=JSON.parse(t);if(!o.hl)throw 0;HL=HL.concat(o.hl);saveHl();drawAll();toast('Imported '+o.hl.length+' highlights')}catch(x){toast('That is not a highlights file')}});e.target.value=''};
 document.getElementById('hdl').onclick=function(){if(!HL.length){toast('No highlights yet');return}if(!window.PDFLib){toast('Still loading, try again');return}
  toast('Preparing PDF…');fetch(dir+cur.file).then(function(r){return r.arrayBuffer()}).then(function(b){return PDFLib.PDFDocument.load(b)}).then(function(d){var pages=d.getPages();
-  HL.forEach(function(h){var pg=pages[h.p];if(!pg)return;var sz=pg.getSize(),c=h.c.replace('#','');pg.drawRectangle({x:h.x*sz.width,y:sz.height-(h.y+h.h)*sz.height,width:h.w*sz.width,height:h.h*sz.height,color:PDFLib.rgb(parseInt(c.slice(0,2),16)/255,parseInt(c.slice(2,4),16)/255,parseInt(c.slice(4,6),16)/255),opacity:.5,blendMode:PDFLib.BlendMode.Multiply})});return d.save()})
+  HL.forEach(function(h){var pg=pages[h.p];if(!pg)return;var sz=pg.getSize(),c=h.c.replace('#',''),col=PDFLib.rgb(parseInt(c.slice(0,2),16)/255,parseInt(c.slice(2,4),16)/255,parseInt(c.slice(4,6),16)/255);
+  if(h.t==='s'){var dd=h.pts.map(function(q,j){return (j?'L':'M')+(q[0]*sz.width).toFixed(2)+' '+(q[1]*sz.height).toFixed(2)}).join('');if(h.pts.length===1)dd+='l.01 0';pg.drawSvgPath(dd,{x:0,y:sz.height,borderColor:col,borderWidth:h.w*sz.width,borderOpacity:1,borderLineCap:PDFLib.LineCapStyle.Round,blendMode:PDFLib.BlendMode.Multiply})}
+  else pg.drawRectangle({x:h.x*sz.width,y:sz.height-(h.y+h.h)*sz.height,width:h.w*sz.width,height:h.h*sz.height,color:col,opacity:1,blendMode:PDFLib.BlendMode.Multiply})});return d.save()})
  .then(function(bytes){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}));a.download=S+'-handwritten-notes-v'+cur.v+'-highlighted.pdf';a.click()}).catch(function(){toast('Could not build the PDF')})};
 function curPage(){var m=wrap.scrollTop+wrap.clientHeight/3,k=0;for(var i=0;i<sheets.length;i++){if(sheets[i].el.offsetTop<=m)k=i}return k+1}
 function open(v,keepPage){cur=v;loadHl();tok++;sheets=[];msg&&msg.remove();msg=null;wrap.innerHTML='<div id="msg">Loading version '+v.v+'…</div>';
