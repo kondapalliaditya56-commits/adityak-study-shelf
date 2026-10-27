@@ -15,15 +15,22 @@
 .ver .menu{position:absolute;right:0;top:34px;z-index:5;min-width:260px;max-width:86vw;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 6px 24px rgba(0,0,0,.25)}
 .ver .menu a{display:block;border:0;background:none;font-weight:500;padding:8px 10px;border-radius:8px}.ver .menu a:hover{background:var(--bg)}.ver .menu small{display:block;color:var(--muted);font-weight:400}
 .ver .menu a.cur{color:var(--accent)}
+.tl{position:absolute;inset:0;overflow:hidden;line-height:1;z-index:3}.tl span,.tl br{color:transparent;position:absolute;white-space:pre;cursor:text;transform-origin:0 0}
+.tl ::selection{background:rgba(70,130,255,.35)}.hl{position:absolute;inset:0;pointer-events:none}.hl i{position:absolute;mix-blend-mode:multiply;border-radius:2px}
+#sel{position:fixed;z-index:20;display:none;gap:6px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 8px;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+#sel button{width:30px;height:30px;border-radius:50%;border:2px solid rgba(0,0,0,.18);padding:0;cursor:pointer}#sel .er{width:auto;border-radius:999px;padding:0 10px;background:var(--bg);color:var(--ink);font:600 12px system-ui;border:1px solid var(--line)}
+.hlm .menu a,.hlm .menu button{display:block;width:100%;text-align:left;border:0;background:none;font:500 14px system-ui;color:var(--ink);padding:9px 10px;border-radius:8px;cursor:pointer}.hlm .menu a:hover,.hlm .menu button:hover{background:var(--bg)}
+.hlm summary{list-style:none}.hlm summary::-webkit-details-marker{display:none}.hlm{position:relative}.hlm .menu{position:absolute;right:0;top:34px;z-index:6;min-width:230px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 6px 24px rgba(0,0,0,.25)}.hlm .menu small{display:block;color:var(--muted);padding:4px 10px}
 #msg{margin:40px auto;max-width:520px;text-align:center;color:var(--muted)}
 #toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--accent);color:#fff;padding:9px 16px;border-radius:999px;font-weight:600;display:none}
 </style></head><body>
 <div class="bar"><a href="index.html" id="back">Library</a><span class="t" id="ttl">Handwritten notes</span>
 <button id="zo" aria-label="Zoom out">−</button><span class="pg mut" id="pg">…</span><button id="zi" aria-label="Zoom in">+</button><button id="fw">Fit</button>
 <a id="dl" href="#" download>Download</a>
+<details class="ver hlm" id="hlm"><summary>Highlights <span id="hln"></span></summary><div class="menu"><small>Select text, then pick a colour. Saved on this device for this version.</small><button id="hdl">Download PDF with highlights</button><button id="hex">Export highlights (backup)</button><button id="him">Import highlights</button><button id="hcl">Clear highlights in this version</button><input type="file" id="hfile" accept="application/json" hidden></div></details>
 <details class="ver" id="ver"><summary>Earlier versions</summary><div class="menu" id="menu"></div></details></div>
-<div id="wrap"><div id="msg">Loading the latest version…</div></div><div id="toast"></div>
-<script src="vendor/pdfjs/pdf.min.js"></script>
+<div id="wrap"><div id="msg">Loading the latest version…</div></div><div id="sel"><button data-c="#ffe14d" style="background:#ffe14d" aria-label="Yellow"></button><button data-c="#7fe38f" style="background:#7fe38f" aria-label="Green"></button><button data-c="#ff9ec8" style="background:#ff9ec8" aria-label="Pink"></button><button data-c="#8fd0ff" style="background:#8fd0ff" aria-label="Blue"></button><button class="er" id="ser">Remove</button></div><div id="toast"></div>
+<script src="vendor/pdfjs/pdf.min.js"></script><script src="vendor/pdflib/pdf-lib.min.js" defer></script>
 <script>
 (function(){
 var q=new URLSearchParams(location.search),S=(q.get('s')||'governance').replace(/[^a-z0-9-]/gi,''),WANT=q.get('v');
@@ -39,9 +46,41 @@ function width(){return Math.min(wrap.clientWidth-16,1100)}
 function layout(){sheets.forEach(function(s){var w=fitW?width():s.vp1.width*scale;s.el.style.width=w+'px';s.el.style.height=(w*s.vp1.height/s.vp1.width)+'px'});render()}
 var seen={};
 function render(){var top=wrap.scrollTop,bot=top+wrap.clientHeight,myTok=tok;sheets.forEach(function(s,i){var r=s.el.offsetTop,h=s.el.offsetHeight;if(r+h<top-h||r>bot+h)return;var w=s.el.clientWidth;if(s.w===w&&s.tok===myTok)return;s.w=w;s.tok=myTok;
- doc.getPage(i+1).then(function(p){var vp=p.getViewport({scale:(w*ratio)/p.getViewport({scale:1}).width});var c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;p.render({canvasContext:c.getContext('2d'),viewport:vp}).promise.then(function(){if(myTok!==tok)return;var o=s.el.querySelector('canvas');if(o)s.el.replaceChild(c,o);else s.el.appendChild(c)})})})}
+ doc.getPage(i+1).then(function(p){var base=p.getViewport({scale:1}),vp=p.getViewport({scale:(w*ratio)/base.width}),cssvp=p.getViewport({scale:w/base.width});var c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;p.render({canvasContext:c.getContext('2d'),viewport:vp}).promise.then(function(){if(myTok!==tok)return;var o=s.el.querySelector('canvas');if(o)s.el.replaceChild(c,o);else s.el.insertBefore(c,s.el.firstChild);
+  var old=s.el.querySelector('.tl');if(old)old.remove();var tl=document.createElement('div');tl.className='tl';s.el.appendChild(tl);
+  p.getTextContent().then(function(tc){if(myTok!==tok)return;try{pdfjsLib.renderTextLayer({textContentSource:tc,container:tl,viewport:cssvp,textDivs:[]})}catch(e){}});drawHl(i)})})})}
+// ---- highlights
+var HL=[],hkey=null;
+function loadHl(){hkey='pdfhl:'+S+':'+cur.sha;try{HL=JSON.parse(localStorage.getItem(hkey)||'[]')}catch(e){HL=[]}hcount()}
+function saveHl(){try{localStorage.setItem(hkey,JSON.stringify(HL))}catch(e){toast('Could not save highlights on this device')}hcount()}
+function hcount(){document.getElementById('hln').textContent=HL.length?'('+HL.length+')':''}
+function drawHl(i){var s=sheets[i];if(!s)return;var l=s.el.querySelector('.hl');if(!l){l=document.createElement('div');l.className='hl';s.el.appendChild(l)}
+ l.innerHTML=HL.filter(function(h){return h.p===i}).map(function(h){return '<i style="left:'+h.x*100+'%;top:'+h.y*100+'%;width:'+h.w*100+'%;height:'+h.h*100+'%;background:'+h.c+'"></i>'}).join('')}
+function drawAll(){for(var i=0;i<sheets.length;i++)drawHl(i)}
+var selBox=document.getElementById('sel');
+function selRects(){var sel=window.getSelection();if(!sel||sel.isCollapsed||!sel.rangeCount)return null;var rg=sel.getRangeAt(0);if(!wrap.contains(rg.commonAncestorContainer))return null;
+ var out=[];Array.prototype.forEach.call(rg.getClientRects(),function(r){if(r.width<2||r.height<2)return;var cx=r.left+r.width/2,cy=r.top+r.height/2;
+  for(var i=0;i<sheets.length;i++){var b=sheets[i].el.getBoundingClientRect();if(cx>=b.left&&cx<=b.right&&cy>=b.top&&cy<=b.bottom){out.push({p:i,x:(r.left-b.left)/b.width,y:(r.top-b.top)/b.height,w:r.width/b.width,h:r.height/b.height});break}}});return out.length?out:null}
+function showSel(){var r=selRects();if(!r){selBox.style.display='none';return}var rg=window.getSelection().getRangeAt(0).getBoundingClientRect();selBox.style.display='flex';
+ var x=Math.max(8,Math.min(innerWidth-selBox.offsetWidth-8,rg.left+rg.width/2-selBox.offsetWidth/2)),y=rg.top-selBox.offsetHeight-10;if(y<60)y=rg.bottom+10;selBox.style.left=x+'px';selBox.style.top=y+'px'}
+var st;document.addEventListener('selectionchange',function(){clearTimeout(st);st=setTimeout(showSel,250)});
+function hit(a,b){return a.p===b.p&&a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
+selBox.addEventListener('mousedown',function(e){e.preventDefault()});
+selBox.addEventListener('pointerdown',function(e){e.preventDefault()});
+selBox.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var r=selRects();if(!r)return;
+ if(b.id==='ser'){HL=HL.filter(function(h){return !r.some(function(q){return hit(h,q)})})}
+ else{r.forEach(function(q){q.c=b.getAttribute('data-c');HL.push(q)})}
+ saveHl();drawAll();window.getSelection().removeAllRanges();selBox.style.display='none'});
+document.getElementById('hcl').onclick=function(){if(HL.length&&confirm('Remove all highlights in this version?')){HL=[];saveHl();drawAll()}};
+document.getElementById('hex').onclick=function(){var b=new Blob([JSON.stringify({s:S,sha:cur.sha,v:cur.v,hl:HL})],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=S+'-v'+cur.v+'-highlights.json';a.click()};
+document.getElementById('him').onclick=function(){document.getElementById('hfile').click()};
+document.getElementById('hfile').onchange=function(e){var f=e.target.files[0];if(!f)return;f.text().then(function(t){try{var o=JSON.parse(t);if(!o.hl)throw 0;HL=HL.concat(o.hl);saveHl();drawAll();toast('Imported '+o.hl.length+' highlights')}catch(x){toast('That is not a highlights file')}});e.target.value=''};
+document.getElementById('hdl').onclick=function(){if(!HL.length){toast('No highlights yet');return}if(!window.PDFLib){toast('Still loading, try again');return}
+ toast('Preparing PDF…');fetch(dir+cur.file).then(function(r){return r.arrayBuffer()}).then(function(b){return PDFLib.PDFDocument.load(b)}).then(function(d){var pages=d.getPages();
+  HL.forEach(function(h){var pg=pages[h.p];if(!pg)return;var sz=pg.getSize(),c=h.c.replace('#','');pg.drawRectangle({x:h.x*sz.width,y:sz.height-(h.y+h.h)*sz.height,width:h.w*sz.width,height:h.h*sz.height,color:PDFLib.rgb(parseInt(c.slice(0,2),16)/255,parseInt(c.slice(2,4),16)/255,parseInt(c.slice(4,6),16)/255),opacity:.5,blendMode:PDFLib.BlendMode.Multiply})});return d.save()})
+ .then(function(bytes){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}));a.download=S+'-handwritten-notes-v'+cur.v+'-highlighted.pdf';a.click()}).catch(function(){toast('Could not build the PDF')})};
 function curPage(){var m=wrap.scrollTop+wrap.clientHeight/3,k=0;for(var i=0;i<sheets.length;i++){if(sheets[i].el.offsetTop<=m)k=i}return k+1}
-function open(v,keepPage){cur=v;tok++;sheets=[];msg&&msg.remove();msg=null;wrap.innerHTML='<div id="msg">Loading version '+v.v+'…</div>';
+function open(v,keepPage){cur=v;loadHl();tok++;sheets=[];msg&&msg.remove();msg=null;wrap.innerHTML='<div id="msg">Loading version '+v.v+'…</div>';
  document.getElementById('ttl').textContent=M.title+' · v'+v.v+' · '+fmt(v.date);document.title=M.title;
  var d=document.getElementById('dl');d.href=dir+v.file;d.setAttribute('download',S+'-handwritten-notes-v'+v.v+'.pdf');menu();
  return pdfjsLib.getDocument(dir+v.file).promise.then(function(pdf){doc=pdf;wrap.innerHTML='';var n=pdf.numPages,chain=Promise.resolve();
