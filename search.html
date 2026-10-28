@@ -310,4 +310,4 @@ if(!out.length){res.innerHTML='<p class="gdesc">No matches. Only written chapter
 res.innerHTML=out.map(function(o){var x=esc(o.ex);words.forEach(function(w){x=x.replace(new RegExp('('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'),'<mark>$1</mark>')});var ct=DB.chapters[o.it.c];return '<div class="hit"><a href="ch'+('0'+o.it.c).slice(-2)+'.html#'+o.it.s+'">Ch '+o.it.c+' · '+esc(o.it.t)+'</a><br><small>'+esc(ct)+'</small><div>'+x+'</div></div>'}).join('')}
 q.addEventListener('input',run);
 })();
-</script><script src="sw-auto.js" defer></script></body></html>
+</script></body></html>
