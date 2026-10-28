@@ -35,7 +35,7 @@ dsl.r_hw = r_hw
 _hub = dsl.svg_hub
 dsl.svg_hub = lambda c, s: _hub(c, s).replace('max-width:150mm', 'max-width:118mm')
 
-PARTS = [('Module 1', 'Civil Services, Transparency, Accountability, Citizen\'s Charter, RTI', '#e0f2f1'), ('Module 2', 'Corruption, Social Audit, CBI, CVC, Lokpal, Whistleblower, PCA', '#fff3e0'), ('Module 3', 'Governance, E-Governance, Data Protection, Emerging Tech', '#ede7f6'), ('Module 4', 'Civil Society, NGOs, SHGs, Pressure Groups, CAG', '#fce4ec'), ('Module 5', 'Regulatory Bodies, FSSAI, CCI', '#e8f5e9'), ('Polity 1', 'Constitution, Constitutionalism, Union and Its Territory', '#e3f2fd')]
+PARTS = [('Module 1', 'Civil Services, Transparency, Accountability, Citizen\'s Charter, RTI', '#e0f2f1'), ('Module 2', 'Corruption, Social Audit, CBI, CVC, Lokpal, Whistleblower, PCA', '#fff3e0'), ('Module 3', 'Governance, E-Governance, Data Protection, Emerging Tech', '#ede7f6'), ('Module 4', 'Civil Society, NGOs, SHGs, Pressure Groups, CAG', '#fce4ec'), ('Module 5', 'Regulatory Bodies, FSSAI, CCI', '#e8f5e9'), ('Polity 1', 'Constitution, Constitutionalism, Union and Its Territory', '#e3f2fd'), ('Polity 2', 'Fundamental Rights: Art 12, Reservation, Art 19, Contempt, Media, Protest', '#fff8e1')]
 
 ONLY = None
 def all_chapters():
@@ -52,7 +52,7 @@ def all_chapters():
 
 def build(out):
     chs = all_chapters()
-    COV = ('POLITY', 'Constitutionalism · Rule of law · Separation of powers · Constitutional morality · Living Constitution · Union and its territory', 'Built from the Sarrthi IAS GS-2 Polity handout: Introduction to Constitution, Union and Its Territory.') if os.environ.get('POLITY') else None
+    COV = ('POLITY', 'Constitutionalism · Rule of law · Separation of powers · Constitutional morality · Living Constitution · Union and its territory · Fundamental Rights: Art 12 · Reservation · Art 19 · Contempt · Media · Right to protest', 'Built from the Sarrthi IAS GS-2 Polity handouts: Introduction to Constitution, Union and Its Territory; Fundamental Rights.') if os.environ.get('POLITY') else None
     body = ['<div class="cov"><div class="s">UPSC CSE Mains 2027 · GS Paper II</div><h1>GOVERNANCE</h1>'
             '<div class="s">Civil services · RTI · Corruption · Lokpal · E-governance · Civil society · CAG · Regulators</div>'
             '<div><span class="bx">Handwritten-style notes</span></div>'
@@ -64,7 +64,7 @@ def build(out):
     toc = '<div class="partpg" style="padding:0;break-before:page"><div class="toc"><h2>INDEX</h2>'
     cur = -1
     for c in chs:
-        pi = 0 if c['id'] <= 14 else 1 if c['id'] <= 19 else 2 if c['id'] <= 24 else 3 if c['id'] <= 29 else 4 if c['id'] < 40 else 5
+        pi = 0 if c['id'] <= 14 else 1 if c['id'] <= 19 else 2 if c['id'] <= 24 else 3 if c['id'] <= 29 else 4 if c['id'] < 40 else 5 if c['id'] < 49 else 6
         if pi != cur:
             cur = pi; l, t_, bg = PARTS[pi]; toc += '<div class="pt" style="background:%s">%s · %s</div>' % (bg, l, t_)
         toc += '<a href="#c%s">%s &nbsp;%s</a>' % (c['id'], c['no'], c.get('toc', c['title']))

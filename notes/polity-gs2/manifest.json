@@ -3,6 +3,22 @@
  "title": "Polity (GS-2) handwritten notes",
  "versions": [
   {
+   "v": 4,
+   "file": "v4.pdf",
+   "date": "2026-10-28",
+   "pages": 50,
+   "sha": "2c535cb467a9460e",
+   "note": "Current affairs addendum: September 2026 (14 items)"
+  },
+  {
+   "v": 3,
+   "file": "v3.pdf",
+   "date": "2026-10-28",
+   "pages": 41,
+   "sha": "371417b6b096b0df",
+   "note": "Fundamental Rights handout added (chapters 49-59)"
+  },
+  {
    "v": 2,
    "file": "v2.pdf",
    "date": "2026-10-28",

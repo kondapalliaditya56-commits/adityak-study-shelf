@@ -3,8 +3,8 @@
 Writes ../book/fullnotes.json  {chapter_id: {'notes': [...], 'meta': {...}}}"""
 import re, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import ch_a, ch_b, ch_c, ch_d, ch_e, ch_f, ch_g, ch_h
-ALL = [c for m in (ch_a, ch_b, ch_c, ch_d, ch_e, ch_f, ch_g) for c in m.CHS] if not os.environ.get('POLITY') else list(ch_h.CHS)
+import ch_a, ch_b, ch_c, ch_d, ch_e, ch_f, ch_g, ch_h, ch_i, ch_j, ch_k
+ALL = [c for m in (ch_a, ch_b, ch_c, ch_d, ch_e, ch_f, ch_g) for c in m.CHS] if not os.environ.get('POLITY') else list(ch_h.CHS) + list(ch_i.CHS) + list(ch_j.CHS) + list(ch_k.CHS)
 import listify; listify.apply_all(ALL)
 BOOKDATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'book', 'bookdata.json')
 VISWORDS = {}
