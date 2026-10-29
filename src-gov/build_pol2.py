@@ -304,11 +304,15 @@ CHS = {1: dict(n=1, title='Constitutionalism, Rule of Law, Separation of Powers 
  4: dict(n=4, title='Union and Its Territory: Small States, Second SRC, Delhi and Ladakh', sub='Linguistic reorganisation, small states, Uttar Pradesh, Second SRC, Delhi statehood, Ladakh statehood and Sixth Schedule', badge='Low · Mains (no PYQ quoted)'),
  5: dict(n=5, title='Fundamental Rights: Nature, Article 12 and Reservation', sub='Categories and nature of rights, Article 12 and BCCI, sports governance law, affirmative action, creamy layer, sub-classification, Jat, Maratha and EWS', badge='Low · Mains (no PYQ quoted)'),
  6: dict(n=6, title='Article 19, Defamation, Contempt and Limits on Speech', sub='Rights and restrictions in Article 19, defamation, contempt of court, book bans, sedition and BNS 152, obscenity, film certification, Section 66A, threats to free speech', badge='Low · Mains (no PYQ quoted)'),
- 7: dict(n=7, title='Media, Digital Regulation and the Right to Protest', sub='Press freedom, ownership and paid news, trial by media, regulation, FDI, IT Rules 2021, right to protest', badge='Low · Mains (no PYQ quoted)')}
+ 7: dict(n=7, title='Media, Digital Regulation and the Right to Protest', sub='Press freedom, ownership and paid news, trial by media, regulation, FDI, IT Rules 2021, right to protest', badge='Low · Mains (no PYQ quoted)'),
+ 8: dict(n=8, title='Article 19(1)(g), Article 20 and Article 21: Foundations, Environment', sub='Trade and online gaming, protection in conviction and self-incrimination, Golden Triangle, livelihood, health, clean environment and climate right', badge='Low · Mains (no PYQ quoted)'),
+ 9: dict(n=9, title='Article 21: Privacy, Autonomy, Right to Die and Prisoners\' Rights', sub='Privacy and DPDP, right to be forgotten, partner choice, MTP, LGBTQ+ rights, suicide and euthanasia, undertrials, custodial violence', badge='Low · Mains (no PYQ quoted)'),
+ 10: dict(n=10, title='Death Penalty, Articles 21A, 22, 23 and 24', sub='Rarest of rare and clemency, POSH, Jallikattu, education right, arrest and preventive detention, trafficking, sex work, child labour', badge='Low · Mains (no PYQ quoted)'),
+ 11: dict(n=11, title='Religion, Secularism, Minorities and the Waqf Act', sub='Articles 25-28, essential religious practices, secularism and communalism, Articles 29-30, AMU, RTE, Waqf (Amendment) Act 2025', badge='Low · Mains (no PYQ quoted)')}
 CH0 = dict(n=0, title='Start Here: GS-2 Polity (Constitution, Union and Its Territory)', sub='What this notebook is and the priority map', badge='Read first')
-EXTRA_IDS = {1: range(40, 42), 2: range(42, 44), 3: range(44, 46), 4: range(46, 49), 5: range(49, 53), 6: range(53, 57), 7: range(57, 60)}
-SHORT = {40: 'Constitutionalism, Rule of Law', 41: 'Separation, checks', 42: 'Critique, Ambedkar', 43: 'Practice, interpretation', 44: 'Constitutional morality', 45: 'Living Constitution, Art 21', 46: 'Small states, 2nd SRC', 47: 'Delhi statehood', 48: 'Ladakh', 49: 'FRs, Art 12, BCCI', 50: 'Affirmative action', 51: 'Quota plus, creamy layer', 52: 'Jat, Maratha, EWS', 53: 'Art 19, defamation', 54: 'Contempt of court', 55: 'Sedition, obscenity, 66A', 56: 'Free speech, threats', 57: 'Press, trial by media', 58: 'Media regulation, IT Rules', 59: 'Right to protest'}
-EXTRA_FOOT = ('Built from the Sarrthi IAS GS-2 Polity handouts "Introduction to Constitution, Union and Its Territory" and "Fundamental Rights". Only the handout\u2019s own facts are used; mnemonics marked \u201cown mnemonic\u201d are mine. The handout quotes no PYQs, so every section is tagged Low by the rule. Items marked \u201cverify\u201d are current-affairs lines to check. Copyright belongs to the teacher; keep this private.')
+EXTRA_IDS = {1: range(40, 42), 2: range(42, 44), 3: range(44, 46), 4: range(46, 49), 5: range(49, 53), 6: range(53, 57), 7: range(57, 60), 8: range(60, 64), 9: range(64, 68), 10: range(68, 72), 11: range(72, 76)}
+SHORT = {40: 'Constitutionalism, Rule of Law', 41: 'Separation, checks', 42: 'Critique, Ambedkar', 43: 'Practice, interpretation', 44: 'Constitutional morality', 45: 'Living Constitution, Art 21', 46: 'Small states, 2nd SRC', 47: 'Delhi statehood', 48: 'Ladakh', 49: 'FRs, Art 12, BCCI', 50: 'Affirmative action', 51: 'Quota plus, creamy layer', 52: 'Jat, Maratha, EWS', 53: 'Art 19, defamation', 54: 'Contempt of court', 55: 'Sedition, obscenity, 66A', 56: 'Free speech, threats', 57: 'Press, trial by media', 58: 'Media regulation, IT Rules', 59: 'Right to protest', 60: 'Art 19(1)(g), gaming', 61: 'Art 20', 62: 'Art 21, health', 63: 'Environment, climate', 64: 'Privacy, DPDP', 65: 'Autonomy, LGBTQ+', 66: 'Right to die', 67: 'Speedy trial, custody', 68: 'Death penalty', 69: 'POSH, 21A', 70: 'Art 22 detention', 71: 'Arts 23-24', 72: 'Arts 25-26', 73: 'Secularism', 74: 'Arts 29-30, AMU', 75: 'Waqf Act'}
+EXTRA_FOOT = ('Built from the Sarrthi IAS GS-2 Polity handouts "Introduction to Constitution, Union and Its Territory", "Fundamental Rights" and "Fundamental Rights 2". Only the handout\u2019s own facts are used; mnemonics marked \u201cown mnemonic\u201d are mine. The handout quotes no PYQs, so every section is tagged Low by the rule. Items marked \u201cverify\u201d are current-affairs lines to check. Copyright belongs to the teacher; keep this private.')
 PRI_FULL = {'H': 'High', 'M': 'Medium', 'L': 'Low'}
 def sec_lens(meta):
     yrs = meta['pyq'].split(' · Handout')[0].strip() or 'none quoted in the handout'
@@ -371,14 +375,14 @@ def make_extra(n, prev_ch, next_ch, pills, lede):
 
 def sf(idx, with_map): return ([{'id': 'chapter-map', 't': 'Chapter map'}] if with_map else []) + [{'id': i, 't': t} for i, t in idx if i != 'chapter-map']
 def make_start(next_ch):
-    s = [Sec('What this notebook is', [p('The Sarrthi IAS GS-2 Polity handout **Introduction to Constitution, Union and Its Territory**, rebuilt as a notebook: **Chapter 1** (constitutionalism, Rule of Law, separation of powers), **Chapter 2** (critique, constitutionalism in practice, interpretation), **Chapter 3** (constitutional morality, living Constitution), **Chapter 4** (Union and its territory: small states, Delhi, Ladakh). The second handout, **Fundamental Rights**, adds **Chapter 5** (nature of rights, Article 12, reservation), **Chapter 6** (Article 19, defamation, contempt, sedition, obscenity, films, Section 66A) and **Chapter 7** (media, IT Rules 2021, right to protest).'),
+    s = [Sec('What this notebook is', [p('The Sarrthi IAS GS-2 Polity handout **Introduction to Constitution, Union and Its Territory**, rebuilt as a notebook: **Chapter 1** (constitutionalism, Rule of Law, separation of powers), **Chapter 2** (critique, constitutionalism in practice, interpretation), **Chapter 3** (constitutional morality, living Constitution), **Chapter 4** (Union and its territory: small states, Delhi, Ladakh). The second handout, **Fundamental Rights**, adds **Chapter 5** (nature of rights, Article 12, reservation), **Chapter 6** (Article 19, defamation, contempt, sedition, obscenity, films, Section 66A) and **Chapter 7** (media, IT Rules 2021, right to protest). **Fundamental Rights 2** adds **Chapter 8** (Art 19(1)(g), Art 20, Art 21 foundations, environment), **Chapter 9** (privacy, autonomy, right to die, prisoners), **Chapter 10** (death penalty, Arts 21A, 22, 23, 24) and **Chapter 11** (religion, secularism, minorities, Waqf Act).'),
         p('Every section opens with an **Exam lens**. The handout quotes **no PYQs**, so by the rule (High = 2 or more, Medium = 1 or partial, Low = none quoted) each section is Low; check your PYQ priority files for topics like constitutional morality and Article 21, which are often asked. Mnemonics marked own mnemonic are mine.')]),
-        Sec('Priority map', [tbl('Sections in handout order', ['Section', 'Priority', 'Mains PYQs quoted'], [['%d \u00b7 %s' % (i, FULL[i]['meta']['title']), PRI[FULL[i]['meta']['prio']], 'none quoted in the handout'] for i in range(40, 60)])])]
+        Sec('Priority map', [tbl('Sections in handout order', ['Section', 'Priority', 'Mains PYQs quoted'], [['%d \u00b7 %s' % (i, FULL[i]['meta']['title']), PRI[FULL[i]['meta']['prio']], 'none quoted in the handout'] for i in range(40, 76)])])]
     rendered, idx = render_sections(s)
     toc = [('chapter-map', 'Chapter map')] + idx
     branches = [(CHS[k]['title'].split(',')[0][:26], [(SHORT[i], '') for i in EXTRA_IDS[k]]) for k in CHS]
     svg, outline = mindmap('Polity GS-2', branches, 'GS-2 Polity map')
-    head_html = chead('Polity \u00b7 GS-2 \u00b7 Start here', CH0['title'], '', [('Read first', 'cls'), ('7 chapters, 20 sections', '')], 'How to use the notebook and the priority map.')
+    head_html = chead('Polity \u00b7 GS-2 \u00b7 Start here', CH0['title'], '', [('Read first', 'cls'), ('11 chapters, 36 sections', '')], 'How to use the notebook and the priority map.')
     page = chapter_page(CH0, None, next_ch, rendered, toc, svg, outline, {'mcq': [], 'cards': []}, head_html, EXTRA_FOOT, 'Polity (GS-2)')
     open(os.path.join(OUT, BASE + 'ch00.html'), 'w', encoding='utf8').write(page)
     return toc, rendered
@@ -389,15 +393,19 @@ ledes = {1: 'What limits government power, how powers are separated and balanced
  4: 'Linguistic states, the small-states debate, a Second SRC, and the live cases of Delhi and Ladakh.',
  5: 'Who is the State under Article 12, the case for and against reservation, and how courts and commissions are fixing targeting.',
  6: 'The grounds on which speech can be limited, and the cases behind defamation, contempt, sedition, obscenity, films and Section 66A.',
- 7: 'What a free press does, how it fails, how it is regulated online and offline, and the right to protest.'}
+ 7: 'What a free press does, how it fails, how it is regulated online and offline, and the right to protest.',
+ 8: 'Trade rights and online gaming, protection against self-incrimination, and how Article 21 grew into a canopy including environment and climate.',
+ 9: 'Privacy and data, personal choices, the right to die with dignity, and the rights of undertrials and prisoners.',
+ 10: 'Capital punishment and clemency, education, arrest and preventive detention, and the right against exploitation.',
+ 11: 'Freedom of religion, essential religious practices, Indian secularism, minority educational rights, AMU and the Waqf Act.'}
 res = {}; prev = c0
-order = [1, 2, 3, 4, 5, 6, 7]
+order = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 for k in order:
     nxt = CHS[k + 1] if k + 1 in CHS else None
     res[k] = make_extra(k, prev, nxt, [('Handout only', 'cls'), ('GS-2 Polity', ''), ('No PYQ quoted', '')], ledes[k]); prev = CHS[k]
 chs = [dict(n=0, title=c0['title'], sub=c0['sub'], badge=c0['badge'], slides=False, pending=False, secs=sf(idx0, True))]
 for k in order: chs.append(dict(n=k, title=CHS[k]['title'], sub=CHS[k]['sub'], badge=CHS[k]['badge'], slides=False, pending=False, secs=sf(res[k][0], True)))
-home = home_page(chs, 'Study notebook for the GS-2 Polity handout: constitutionalism, Rule of Law, separation of powers, constitutional morality, the living Constitution, Union and its territory (small states, Delhi, Ladakh), and Fundamental Rights (Article 12, reservation, Article 19, contempt, media, protest). Built from the handouts only.', EXTRA_FOOT)
+home = home_page(chs, 'Study notebook for the GS-2 Polity handout: constitutionalism, Rule of Law, separation of powers, constitutional morality, the living Constitution, Union and its territory (small states, Delhi, Ladakh), and Fundamental Rights (Articles 12 to 30, Article 21 in depth, media, secularism, Waqf Act). Built from the handouts only.', EXTRA_FOOT)
 open(os.path.join(OUT, BASE + 'home.html'), 'w', encoding='utf8').write(home)
 entries = []
 for c, rendered in [(c0, r0)] + [(CHS[k], res[k][1]) for k in order]:
