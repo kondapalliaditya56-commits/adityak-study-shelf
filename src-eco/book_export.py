@@ -122,6 +122,19 @@ def priority(ch):
     pre, mn = chapter_pyqs(ch); t = len(pre) + len(mn)
     return 'H' if t >= 15 else ('M' if t >= 6 else 'L')
 
+REPO = '/home/claude/adityak-study-shelf'
+def ca_items(n):
+    cwd = os.getcwd(); os.chdir(REPO); sys.path.insert(0, os.path.join(REPO, 'tools'))
+    try:
+        import ca_integrate as ci
+        out = []
+        for code in ('sep26', 'oct26'):
+            m = ci.load_month(code)
+            for it in m['items']:
+                if 'eco' in it['nb'] and ('eco-ch%02d' % n) in it['ch']: out.append((m['label'], it))
+        return out
+    finally: os.chdir(cwd)
+
 def chapter(ch):
     L = LAYERS[str(ch.n)]
     pre, mn = chapter_pyqs(ch)
@@ -135,6 +148,14 @@ def chapter(ch):
         top.append({'type': 'mindmap', 'pos': 'top', 'title': 'Chapter map', 'center': root,
                     'branches': [{'t': b, 'c': [(l + ' (' + n + ')') if n else l for l, n in leaves]} for b, leaves in br]})
     # tail: timeline, connections, mains skeletons
+    cai = ca_items(ch.n)
+    if cai:
+        notes.append({'h': 'Current affairs'})
+        for lab, it in cai:
+            body = ['<b>' + h(lab) + ' · ' + {'P': 'Prelims', 'M': 'Mains', 'PM': 'Prelims + Mains'}[it['tag']] + '.</b> ' + h(it['ctx'])]
+            body += ['• ' + h(x) for x in it['pts']]
+            if it.get('kw'): body.append('<b>Keywords:</b> ' + h(it['kw']))
+            notes.append({'call': {'kind': 'teacher', 'tag': plain(it['t']), 'body': body}})
     if ch.timeline:
         notes.append({'h': 'Timeline and numbers'})
         notes.append({'tbl': {'head': ['When', 'What'], 'rows': [[h(a), h(b) + (' ★' if s else '')] for a, b, s in ch.timeline]}})
