@@ -3,6 +3,14 @@
  "title": "Current Affairs handwritten notes",
  "versions": [
   {
+   "v": 2,
+   "file": "v2.pdf",
+   "date": "2026-10-31",
+   "pages": 42,
+   "sha": "59b40c8d30d2b998",
+   "note": "Current affairs addendum: October 2026 (2 items)"
+  },
+  {
    "v": 1,
    "file": "v1.pdf",
    "date": "2026-10-28",
