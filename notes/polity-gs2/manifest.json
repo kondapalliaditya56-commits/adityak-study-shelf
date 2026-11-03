@@ -3,6 +3,22 @@
  "title": "Polity (GS-2) handwritten notes",
  "versions": [
   {
+   "v": 10,
+   "file": "v10.pdf",
+   "date": "2026-11-03",
+   "pages": 132,
+   "sha": "66cc3422c623fdae",
+   "note": "Current affairs addendum: September 2026 (14 items)"
+  },
+  {
+   "v": 9,
+   "file": "v9.pdf",
+   "date": "2026-11-03",
+   "pages": 123,
+   "sha": "4a14142669d2d049",
+   "note": "Added constitutional and statutory bodies, executive and legislature, centre-state relations"
+  },
+  {
    "v": 8,
    "file": "v8.pdf",
    "date": "2026-11-03",
