@@ -3,6 +3,22 @@
  "title": "Polity (GS-2) handwritten notes",
  "versions": [
   {
+   "v": 8,
+   "file": "v8.pdf",
+   "date": "2026-11-03",
+   "pages": 80,
+   "sha": "a1507d81ab7804ce",
+   "note": "Current affairs addendum: September 2026 (14 items)"
+  },
+  {
+   "v": 7,
+   "file": "v7.pdf",
+   "date": "2026-11-03",
+   "pages": 71,
+   "sha": "f26a4cc104b3fa8e",
+   "note": "DPSP, property, UCC, Fundamental Duties"
+  },
+  {
    "v": 6,
    "file": "v6.pdf",
    "date": "2026-10-29",
