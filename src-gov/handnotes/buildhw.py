@@ -28,7 +28,7 @@ import condense as _cd
 LEVEL = (150, 300, 130)
 _rhw = dsl.r_hw
 def r_hw(n):
-    if n[0] in ('tree', 'bx', 'tb', 'tl', 'two'): n = _cd.condense(n, *LEVEL)
+    if os.environ.get('CONDENSE') and n[0] in ('tree', 'bx', 'tb', 'tl', 'two'): n = _cd.condense(n, *LEVEL)  # lossy: off by default
     out = _rhw(n)
     return '<div class="keep">%s</div>' % out if n[0] in ('fl', 'hub', 'tl') else out
 dsl.r_hw = r_hw

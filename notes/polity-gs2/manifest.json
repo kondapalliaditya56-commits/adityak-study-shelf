@@ -3,6 +3,22 @@
  "title": "Polity (GS-2) handwritten notes",
  "versions": [
   {
+   "v": 14,
+   "file": "v14.pdf",
+   "date": "2026-11-05",
+   "pages": 197,
+   "sha": "1704c0bf04565b42",
+   "note": "Current affairs addendum: September 2026 (14 items)"
+  },
+  {
+   "v": 13,
+   "file": "v13.pdf",
+   "date": "2026-11-05",
+   "pages": 188,
+   "sha": "9857f696617dd26b",
+   "note": "Condenser off: full table text (NHRC eligibility incl. HC Chief Justice, ex-officio list)"
+  },
+  {
    "v": 12,
    "file": "v12.pdf",
    "date": "2026-11-05",

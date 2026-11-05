@@ -171,7 +171,7 @@ dict(toc='NHRC: composition, working, functions, role, challenges, failures, ref
     ['Selection committee', 'Prime Minister (chair); Home Minister; Speaker of Lok Sabha; Deputy Chairman of Rajya Sabha; Leader of Opposition in Lok Sabha; Leader of Opposition in Rajya Sabha'],
     ['Appointing authority', 'The <b>President of India</b>'],
     ['Eligibility: Chairperson', 'A retired Chief Justice of India or a retired Judge of the Supreme Court'],
-    ['Eligibility: Members', 'One Member who is or was a Supreme Court Judge; one who is or was a High Court Chief Justice or Judge; <b>three</b> with knowledge or experience of human rights (at least one must be a woman)'],
+    ['Eligibility: Members', 'One Member who is or was a Supreme Court Judge; one who is or was a <b>Chief Justice of a High Court</b>; <b>three</b> with knowledge or experience of human rights (at least one must be a woman)'],
     ['Ex-officio Members', 'Chairpersons of the National Commissions for SCs, STs, Women and Minorities; Chairperson of the National Commission for Backward Classes; Chairperson of the NCPCR; Chief Commissioner for Persons with Disabilities'],
     ['Term', '<b>3 years or until age 70</b>, whichever is earlier. Eligible for reappointment.'],
     ['Removal', 'By the President on grounds of misbehaviour or incapacity, <b>after an inquiry by the Supreme Court</b>'],
