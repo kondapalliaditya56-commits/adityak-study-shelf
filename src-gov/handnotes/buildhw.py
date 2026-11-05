@@ -52,6 +52,7 @@ def all_chapters():
 
 def build(out):
     chs = all_chapters()
+    import hwpics; hwpics.apply(chs)
     COV = ('POLITY', 'Constitutionalism · Rule of law · Separation of powers · Constitutional morality · Living Constitution · Union and its territory · Fundamental Rights: Art 12 · Reservation · Art 19 · Media · Art 20-22 · Art 21 · Exploitation · Religion · Secularism · Minorities · Waqf · DPSP · UCC · Fundamental Duties · Constitutional bodies · NHRC · President · Parliament · Centre-State relations', 'Built from the Sarrthi IAS GS-2 Polity handouts: Introduction to Constitution, Union and Its Territory; Fundamental Rights; Fundamental Rights 2; DPSP and Fundamental Duties; Constitutional and Statutory Bodies; Executive and Legislature; Centre State Relations.') if os.environ.get('POLITY') else None
     body = ['<div class="cov"><div class="s">UPSC CSE Mains 2027 · GS Paper II</div><h1>GOVERNANCE</h1>'
             '<div class="s">Civil services · RTI · Corruption · Lokpal · E-governance · Civil society · CAG · Regulators</div>'
@@ -73,6 +74,11 @@ def build(out):
         body.append(chapter_hw_ir(c))
     html = '<html><head><style>%s</style></head><body>%s</body></html>' % (hwlib.CSS + '.chap{break-before:auto;margin-top:5mm}.pyqline,.sw,.ttl{break-after:avoid}.br{orphans:3;widows:3}.br{break-inside:auto}.keep{break-inside:avoid}.keep table{font-size:9pt}.keep td{padding:.2mm 1.4mm}', ''.join(body))
     if os.environ.get('POLITY'): html = html.replace('</style>', '@page{@bottom-right{content:"Polity · Handwritten Notes · " counter(page);font-family:PH;font-size:8pt;color:#888}}</style>', 1)
+    import hwstyle
+    th = os.environ.get('HWFONT', 'handlee')
+    if th != 'off':
+        html = html.replace('</style>', hwstyle.css(th, os.environ.get('HWLABEL', '')) + '</style>', 1)
+        html = hwstyle.decorate(html)
     d = HTML(string=html, base_url='.').render()
     print('pages', len(d.pages))
     d.write_pdf(out)

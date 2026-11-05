@@ -3,6 +3,22 @@
  "title": "Polity (GS-2) handwritten notes",
  "versions": [
   {
+   "v": 16,
+   "file": "v16.pdf",
+   "date": "2026-11-05",
+   "pages": 217,
+   "sha": "c7f3f76d98e114b0",
+   "note": "Current affairs addendum: September 2026 (14 items)"
+  },
+  {
+   "v": 15,
+   "file": "v15.pdf",
+   "date": "2026-11-05",
+   "pages": 208,
+   "sha": "bea6f4cb7bb87378",
+   "note": "Handlee font, coloured side headings, key-fact highlights, pictograms, mini flowcharts and hubs"
+  },
+  {
    "v": 14,
    "file": "v14.pdf",
    "date": "2026-11-05",
