@@ -3,6 +3,22 @@
  "title": "Polity (GS-2) handwritten notes",
  "versions": [
   {
+   "v": 24,
+   "file": "v24.pdf",
+   "date": "2026-11-05",
+   "pages": 288,
+   "sha": "35585a8b0a596b7a",
+   "note": "Current affairs addendum: September 2026 (14 items)"
+  },
+  {
+   "v": 23,
+   "file": "v23.pdf",
+   "date": "2026-11-05",
+   "pages": 279,
+   "sha": "cd876b55df703626",
+   "note": "Added Judiciary module: chapters 108-116 (independence, Collegium, accountability, review and activism, pendency, legal aid, ADR, subordinate courts, tribunals, consumer justice)"
+  },
+  {
    "v": 22,
    "file": "v22.pdf",
    "date": "2026-11-05",
