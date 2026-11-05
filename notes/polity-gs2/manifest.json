@@ -3,6 +3,22 @@
  "title": "Polity (GS-2) handwritten notes",
  "versions": [
   {
+   "v": 12,
+   "file": "v12.pdf",
+   "date": "2026-11-05",
+   "pages": 192,
+   "sha": "cafac3fbc8a0759f",
+   "note": "Current affairs addendum: September 2026 (14 items)"
+  },
+  {
+   "v": 11,
+   "file": "v11.pdf",
+   "date": "2026-11-05",
+   "pages": 183,
+   "sha": "bef66b3af8300956",
+   "note": "Full explanatory rewrite of all Polity chapters"
+  },
+  {
    "v": 10,
    "file": "v10.pdf",
    "date": "2026-11-03",
