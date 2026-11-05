@@ -5,8 +5,8 @@ from hwlib import P, H, R
 OWN = lambda w, t: mn(w, t + ' <i>(own mnemonic)</i>')
 
 CHS = [
-dict(toc='Regulatory bodies: why, role, courts', id=30, title='REGULATORY BODIES · WHY THEY ROSE · ROLE · COURTS', part=4, icon='scale', prio='L',
- pyq='None quoted in the handout · Handout RB pp. 2-4',
+dict(toc='Regulatory bodies: why, role, courts', id=30, title='REGULATORY BODIES · WHY THEY ROSE · ROLE · COURTS', part=4, icon='scale', prio='M',
+ pyq='Mains 2015 (added outside the handout) · Handout RB pp. 2-4',
  simple='After 1991 the State stopped running most sectors and started refereeing them. Independent regulators were created to keep that refereeing away from politics. Know why they rose, how far they really are free of politics, what they added, and how courts shaped them.',
  nodes=[
  t('<b>Three main functions of the State</b>',
@@ -61,11 +61,12 @@ dict(toc='Regulatory bodies: why, role, courts', id=30, title='REGULATORY BODIES
    '<b>TRAI and TDSAT:</b> judicial intervention strengthened their <b>regulatory role</b> while subjecting decisions to <b>scrutiny</b>',
    '<b>outcome:</b> better <b>overall quality of sectoral governance</b>'),
  bx('ye', '<b>Historical data (2009-12 study):</b> effectiveness of sector regulators can be read from <b>appeals against their decisions before appellate bodies</b>. The figures reported: <b>telecom 62%</b> · <b>power 8%</b> (with interstate variations).'),
+ bx('ye', '<b>PYQs on this section</b> <i>Added from outside the handout (UPSC PYQ lists); question gist paraphrased, check exact wording in your PYQ book.</i><br><b>Mains 2015:</b> independence and autonomy of regulators in light of recent experience. Use the factors behind the rise of regulators and the role of courts above, then pair with the next chapter for people, parent ministry and accountability.')
  ],
  recall=[('Three functions of the State', 'provision of services, regulation, redistribution and welfare'), ('Why regulation grew', 'post-1991 liberalisation: competition and private players'), ('Self vs external regulation', 'from the sector vs from outside it'), ('Sector-specific vs general regulator', 'IRDA, PFRDA, TRAI, SEBI vs CCI'), ('Four limits on depoliticisation', 'political pressure, redistributive duty, limited independence, capture'), ('Power example', 'Odisha ERC 1995; ERC Act 1998; Electricity Act 2003'), ('Telecom conflict', 'TRAI vs DoT; 2G'), ('PNGRB Act', '2006; upstream outside its remit'), ('Appeals share 2009-12', 'telecom 62%, power 8%')]),
 
-dict(toc='Regulators: people, ministry, accountability', id=31, title='REGULATORS: PEOPLE · PARENT MINISTRY · ACCOUNTABILITY · CONFLICTS', part=4, icon='scale', prio='L',
- pyq='None quoted in the handout · Handout RB pp. 4-6',
+dict(toc='Regulators: people, ministry, accountability', id=31, title='REGULATORS: PEOPLE · PARENT MINISTRY · ACCOUNTABILITY · CONFLICTS', part=4, icon='scale', prio='H',
+ pyq='Mains 2015, 2014, 2013 (added outside the handout) · Handout RB pp. 4-6',
  simple='A regulator is only as independent as its members, staff, funding and links to its ministry. This chapter covers who sits on regulators, how ministry and regulator share work, how regulators are held accountable (India vs USA and UK), and where regulators fight each other.',
  nodes=[
  sec('HUMAN RESOURCE', 'b'),
@@ -121,6 +122,7 @@ dict(toc='Regulators: people, ministry, accountability', id=31, title='REGULATOR
    '<b>clear jurisdiction:</b> clear division between <b>sectoral and general regulators</b>',
    '<b>inter-regulatory consultation:</b> fewer <b>conflicting orders, uncertainty and prolonged litigation</b>',
    '<b>independent appointments:</b> combine <b>professional expertise, independence and accountability</b>'),
+ bx('ye', '<b>PYQs on this section</b> <i>Added from outside the handout (UPSC PYQ lists); question gist paraphrased, check exact wording in your PYQ book.</i><br><b>Mains 2015 (10 marks, 150 words):</b> regulatory institutions must stay independent and autonomous to reach their objectives; discuss with recent experience. <i>Skeleton:</i> why independence matters (insulate from politics, technicality, FDI and investor trust, government itself a player) → where it falls short (members from government, parent-ministry control, staff gaps) → accountability and appeals → reforms.<br><b>Mains 2014:</b> would a Rail Tariff Authority help consumers, Railways and private container operators? (use the power-sector regulator experience).<br><b>Mains 2013 (10 marks, 150 words):</b> justify merging SEBI and IRDA given overlapping products. <i>Link:</i> the conflicts and clear-jurisdiction points in this chapter.')
  ],
  recall=[('Members with government background', '90%'), ('Members from nodal or related ministry', '49%'), ('Staff shortfall in regulators', '15-30%'), ('Three qualities sought in a regulator', 'expertise, independence, ability to engage many players'), ('US independent commissions called', 'fourth, headless branch of government'), ('UK accountability tools', 'Corporate Plans, open meetings, affordable appeals, RIA, websites'), ('IRDA vs SEBI 2010', 'ULIPs'), ('FSLRC 2011 head', 'Justice B.N. Srikrishna'), ('Regulator merged into SEBI', 'Forward Markets Commission')]),
 
@@ -172,8 +174,8 @@ dict(toc='FSSAI', id=32, title='FOOD SAFETY AND STANDARDS AUTHORITY OF INDIA (FS
  ],
  recall=[('FSSAI Act', 'Food Safety and Standards Act, 2006'), ('Nodal ministry', 'Health and Family Welfare'), ('Works with', 'State Food Safety Authorities'), ('FoSCoS', 'digital licensing and compliance platform'), ('FoSTaC', 'food safety training and certification'), ('RUCO', 'Repurpose Used Cooking Oil'), ('Core challenge', 'few inspectors and labs; unorganised sector')]),
 
-dict(toc='Competition Commission of India (CCI)', id=33, title='COMPETITION COMMISSION OF INDIA (CCI)', part=4, icon='scale', prio='L',
- pyq='None quoted in the handout · Handout RB pp. 8-9 · 2023-24 developments and Meta case',
+dict(toc='Competition Commission of India (CCI)', id=33, title='COMPETITION COMMISSION OF INDIA (CCI)', part=4, icon='scale', prio='M',
+ pyq='Mains 2023, Prelims 2026 NBFC (added outside the handout) · Handout RB pp. 8-9 · 2023-24 developments and Meta case',
  simple='CCI is the general regulator of markets: it stops cartels and abuse of dominance, vets big mergers, and now watches digital platforms. Know the Act, the 2023 changes, the Meta-WhatsApp penalty and the digital-market problems.',
  nodes=[
  tl(('2002', '<b>Competition Act, 2002</b> creates the CCI'), ('2009', 'CCI <b>fully functional</b>'), ('2023', '<b>Competition (Amendment) Act, 2023</b>: deal value threshold, faster clearance, settlement and commitments, global-turnover penalties'), ('2024', 'CCI regulations on merger review, settlements, commitments and penalties · <b>Meta penalty ₹213.14 crore</b>')),
@@ -218,6 +220,7 @@ dict(toc='Competition Commission of India (CCI)', id=33, title='COMPETITION COMM
         '<b>technical capacity:</b> digital forensics, platform economics, data analytics',
         '<b>timely enforcement:</b> better investigation and appellate efficiency',
         '<b>promote fair competition:</b> protect market access for <b>MSMEs, start-ups and new entrants</b>')]),
+ bx('ye', '<b>PYQs on this section</b> <i>Added from outside the handout (UPSC PYQ lists); question gist paraphrased, check exact wording in your PYQ book.</i><br><b>Mains 2023 (10 marks, 150 words):</b> role of the Competition Commission of India in containing abuse of dominant position; refer to recent decisions. <i>Use:</i> the CCI functions and recent cases in this chapter.<br><b>Prelims 2026 (from the August 2026 current-affairs PYQ Connect):</b> statements on NBFCs: cannot accept demand deposits; all NBFCs must be RBI-registered; can issue cheques on themselves; no DICGC cover for deposit-taking NBFCs. <i>Likely key (own working, verify):</i> (a) 1 and 4.')
  ],
  recall=[('CCI Act; functional', '2002; 2009'), ('CCI nodal ministry', 'Ministry of Corporate Affairs'), ('CCI composition', 'Chairperson + not more than 6 members'), ('Appeal route', 'NCLAT, then Supreme Court'), ('Dominance vs abuse', 'dominance legal; abuse prohibited'), ('Deal value threshold 2023', '₹2,000 crore'), ('Merger clearance limit', '210 → 150 days'), ('Penalty basis added', 'global turnover'), ('Meta-WhatsApp 2024', '₹213.14 crore penalty')]),
 ]
