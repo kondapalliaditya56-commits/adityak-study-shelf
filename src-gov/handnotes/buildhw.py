@@ -79,6 +79,8 @@ def build(out):
     if th != 'off':
         html = html.replace('</style>', hwstyle.css(th, os.environ.get('HWLABEL', '')) + '</style>', 1)
         html = hwstyle.decorate(html)
+    import hwextras
+    if not os.environ.get('NOEXTRAS'): html = hwextras.apply(html, ['pol', 'pg2', 'gov'])
     d = HTML(string=html, base_url='.').render()
     print('pages', len(d.pages))
     d.write_pdf(out)

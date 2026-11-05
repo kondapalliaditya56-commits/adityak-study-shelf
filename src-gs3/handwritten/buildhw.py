@@ -50,5 +50,7 @@ def build(out):
     th=os.environ.get('HWFONT','handlee')
     if th!='off':
         html=html.replace('</style>',hwstyle.css(th)+'</style>',1); html=hwstyle.decorate(html)
+    import hwextras
+    if not os.environ.get('NOEXTRAS'): html=hwextras.apply(html,['gs3'])
     d=HTML(string=html,base_url='.').render();print('pages',len(d.pages));d.write_pdf(out)
 if __name__=='__main__': build(sys.argv[1] if len(sys.argv)>1 else 'GS3_Handwritten_Notes.pdf')

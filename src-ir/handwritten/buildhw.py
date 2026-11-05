@@ -66,6 +66,8 @@ def build(out):
     th=os.environ.get('HWFONT','handlee')
     if th!='off':
         html=html.replace('</style>',hwstyle.css(th)+'</style>',1); html=hwstyle.decorate(html)
+    import hwextras
+    if not os.environ.get('NOEXTRAS'): html=hwextras.apply(html,['ir'])
     d = HTML(string=html, base_url='.').render()
     print('pages', len(d.pages))
     d.write_pdf(out)
