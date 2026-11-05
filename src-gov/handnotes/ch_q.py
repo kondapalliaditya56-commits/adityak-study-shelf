@@ -638,7 +638,7 @@ dict(toc='National Investigation Agency: functions, process, special courts, cri
     ['International dimension', 'SAARC Convention Act, 1993; offences outside India involving Indians or Indian assets']),
  sec('HOW THE NIA WORKS (PROCESS)', 'g'),
  t('<b>Eight steps</b>',
-   '<b>1. Initial reporting:</b> local police send the FIR to the State and then to the Centre within <b>24 hours</b>.',
+   '<b>1. Initial reporting:</b> local police send the FIR to the State and then to the Centre within <b>24 hours</b>. Example: inputs registered by the <b>NCRB</b> on arms smuggling are shared with the NIA.',
    '<b>2. Central screening within 15 days:</b> the Centre decides whether it is a scheduled offence fit for the NIA. Example: the 2022 Ludhiana blast was quickly handed over.',
    '<b>3. Transfer from State:</b> once the NIA takes over, State police stop all investigation. Example: the West Bengal coal scam probe moved from CID to NIA.',
    '<b>4. Preliminary inquiry and registration:</b> the DG approves the FIR and an inquiry wing begins fact-finding.',

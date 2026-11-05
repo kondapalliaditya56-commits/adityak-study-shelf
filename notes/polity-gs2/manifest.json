@@ -3,6 +3,22 @@
  "title": "Polity (GS-2) handwritten notes",
  "versions": [
   {
+   "v": 20,
+   "file": "v20.pdf",
+   "date": "2026-11-05",
+   "pages": 218,
+   "sha": "8b05b4f5da73fdb0",
+   "note": "Current affairs addendum: September 2026 (14 items)"
+  },
+  {
+   "v": 19,
+   "file": "v19.pdf",
+   "date": "2026-11-05",
+   "pages": 209,
+   "sha": "89460e77735e326d",
+   "note": "Content audit vs handouts: Press Council composition, NCRB example added"
+  },
+  {
    "v": 18,
    "file": "v18.pdf",
    "date": "2026-11-05",

@@ -74,7 +74,7 @@ dict(toc='Media regulation, Press Council, FDI, suppression, IT Rules 2021', id=
  bx('pk', 'Critics call self-regulatory bodies <b>toothless</b>: weak enforcement powers.'),
  sec('PRESS COUNCIL OF INDIA', 'r'),
  t('<b>Composition</b>',
-   'statutory body under the <b>Press Council Act, 1978</b>; <b>Chairperson + 28 members</b>; chair traditionally a <b>retired SC judge</b>',
+   'statutory body under the <b>Press Council Act, 1978</b>; <b>Chairperson + 28 members</b>; chair traditionally a <b>retired SC judge</b>. Of the 28: <b>20</b> represent the press, <b>5</b> are nominated from Parliament, and <b>1 each</b> is nominated by the <b>Bar Council of India</b>, the <b>University Grants Commission</b> and the <b>Sahitya Akademi</b>',
    '<b>20</b> represent the press · <b>5</b> from Parliament · <b>1</b> Bar Council of India · <b>1</b> UGC · <b>1</b> Sahitya Akademi'),
  OWN('20-5-1-1-1', 'PCI 28: <b>20</b> press + <b>5</b> Parliament + one each from <b>Bar Council, UGC, Sahitya Akademi</b> (20+5+3 = 28).'),
  t('<b>Functions and limits</b>',
