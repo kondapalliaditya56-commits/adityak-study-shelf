@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import sys,os
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','..','src-gov','handnotes'))
 import sys,glob,importlib,json,os
 from weasyprint import HTML
 import hwlib
@@ -24,6 +26,7 @@ def all_chapters():
     return chs
 def build(out):
     chs=all_chapters()
+    import hwpics; hwpics.apply_to(chs, hwpics.D_GS3)
     body=['<div class="cov"><div class="s">UPSC CSE Mains 2027 · GS Paper III</div><h1>INTERNAL SECURITY</h1><div class="s">Agriculture · Disaster Management · Security</div>'
       '<div><span class="bx">Handwritten-style notes</span></div><div class="t">Built from the Sarrthi IAS MMP+ handouts, class slides and PYQ sets.<br>Bracket trees · diagrams · mnemonics · keywords · current affairs<br>Right column and left binding margin are kept blank for your own use.<br><br>Personal study edition · for printing</div></div>']
     toc='<div class="partpg" style="padding:0;break-before:page"><div class="toc"><h2>INDEX</h2>'
@@ -43,5 +46,9 @@ def build(out):
             r=list(c['raw']);r[0]=r[0].replace('<div class="pg">','<div class="pg chap" id="c%s">'%c['id'],1);body+=r
         else: body.append(chapter_hw(c))
     html='<html><head><style>%s</style></head><body>%s</body></html>'%(hwlib.CSS,''.join(body))
+    import hwstyle
+    th=os.environ.get('HWFONT','handlee')
+    if th!='off':
+        html=html.replace('</style>',hwstyle.css(th)+'</style>',1); html=hwstyle.decorate(html)
     d=HTML(string=html,base_url='.').render();print('pages',len(d.pages));d.write_pdf(out)
 if __name__=='__main__': build(sys.argv[1] if len(sys.argv)>1 else 'GS3_Handwritten_Notes.pdf')

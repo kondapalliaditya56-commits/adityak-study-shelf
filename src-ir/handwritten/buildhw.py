@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Build the IR handwritten-style print notes. Run from this folder: python3 buildhw.py OUT.pdf"""
+import sys,os
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','..','src-gov','handnotes'))
 import sys, glob, importlib
 from weasyprint import HTML
 import hwlib
@@ -44,6 +46,7 @@ def all_chapters():
 
 def build(out):
     chs = all_chapters()
+    import hwpics; hwpics.apply_to(chs, hwpics.D_IR)
     body = ['<div class="cov"><div class="s">UPSC CSE Mains 2027 · GS Paper II</div><h1>INTERNATIONAL RELATIONS</h1>'
             '<div class="s">World order · Major powers · Neighbourhood · Diaspora · Extended neighbourhood</div>'
             '<div><span class="bx">Handwritten-style notes</span></div>'
@@ -59,6 +62,10 @@ def build(out):
     for c in chs:
         body.append(chapter_hw_ir(c))
     html = '<html><head><style>%s</style></head><body>%s</body></html>' % (hwlib.CSS + '.keep{break-inside:avoid}', ''.join(body))
+    import hwstyle
+    th=os.environ.get('HWFONT','handlee')
+    if th!='off':
+        html=html.replace('</style>',hwstyle.css(th)+'</style>',1); html=hwstyle.decorate(html)
     d = HTML(string=html, base_url='.').render()
     print('pages', len(d.pages))
     d.write_pdf(out)

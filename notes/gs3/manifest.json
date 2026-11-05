@@ -3,6 +3,22 @@
  "title": "GS Paper III (Mains) handwritten notes",
  "versions": [
   {
+   "v": 4,
+   "file": "v4.pdf",
+   "date": "2026-11-05",
+   "pages": 127,
+   "sha": "6fb7641844faca52",
+   "note": "Current affairs addendum: September 2026 (32 items)"
+  },
+  {
+   "v": 3,
+   "file": "v3.pdf",
+   "date": "2026-11-05",
+   "pages": 113,
+   "sha": "e0c7e319520a4dfc",
+   "note": "Handlee style, pictograms, highlights, mini flowcharts"
+  },
+  {
    "v": 2,
    "file": "v2.pdf",
    "date": "2026-10-28",
