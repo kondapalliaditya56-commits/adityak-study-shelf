@@ -14,6 +14,7 @@ def hub(center,spokes,title=None): return ('hub',center,spokes,title)
 def tl(*items): return ('tl',list(items))        # timeline arrow [(head,body)]
 def two(a,b): return ('two',a,b)
 def sw(x): return ('sw',x)
+def stl(n,text): return ('stl',n,text)      # story-link ribbon: beat number + one line tying the section to the chapter story
 # ---- svg helpers
 COL=['#fde7ea|#c62828','#fff9c4|#b26a00','#e8f5e9|#2e7d32','#e3f2fd|#1565c0','#f3e5f5|#6a1b9a','#e0f7fa|#00838f']
 import re as _re, html as _h

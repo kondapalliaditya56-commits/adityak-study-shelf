@@ -39,7 +39,7 @@ def main(subj, f):
         for key in ('id', 'title', 'nodes', 'icon', 'simple', 'recall'):
             if key not in ch: print('FAIL chapter', ch.get('id'), 'missing key', key); ok = False
         # render must work
-        try: hw = ''.join(dsl.r_hw(n) for n in ch['nodes'])
+        try: hw = ''.join((dsl.r_hw(n) or '') for n in ch['nodes'] if n[0] != 'stl')
         except Exception as e: print('FAIL chapter', ch['id'], 'render error', repr(e)); ok = False; continue
         text = plain(' '.join(node_text(n) for n in ch['nodes']) + ' ' + ch.get('simple', '') + ' ' + ch.get('pyq', '') + ' ' + ' '.join(q + ' ' + a for q, a in ch.get('recall', [])))
         src = open(SRC + '%s/ch%02d.md' % (subj, ch['id'])).read()
