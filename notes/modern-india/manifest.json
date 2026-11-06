@@ -3,6 +3,14 @@
  "title": "Modern India handwritten revision notes",
  "versions": [
   {
+   "v": 3,
+   "file": "v3.pdf",
+   "date": "2026-11-06",
+   "pages": 475,
+   "sha": "4c27ec44ec551e82",
+   "note": "Modern India complete: handwritten notes now cover Chapters 32, 33 and 38-47 (Ghadar to Independence, Lectures 32 and 37-42), with story-first blocks"
+  },
+  {
    "v": 2,
    "file": "v2.pdf",
    "date": "2026-11-06",
