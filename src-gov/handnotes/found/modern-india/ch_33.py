@@ -62,7 +62,7 @@ dict(id=33, title='HOME RULE LEAGUE AND LUCKNOW PACT', toc='Home Rule League Mov
   fl(["Aurobindo, Apr 1907: 7 Bande Mataram articles 'Doctrine of Passive Resistance'", "First step: NC (boycott goods, schools, courts, admin roles)", "Escalation: CD (break oppressive laws, accept punishment)"], "What Passive Resistance meant", 3),
   bx('ye', "<b>Source conflict:</b> slide writes Passive Resistance = NC + CD + CW; handout only NC and CD. CW not expanded: check your notebook."),
   bx('pk', "<b>Gandhian shift:</b> MG <b>rejected the term</b> 'Passive Resistance': NC and CD are active, fearless moral forces = <b>Satyagraha</b>, never passive. <b>Board takeaway:</b> momentum built + Moderate-Extremist unity + masses restless from WWI = right time to convert educative propaganda into an <b>NCM</b>."),
-  OWN("KGT", "Prelims 1998 order: <b>K</b>omagata Maru 1914 &rarr; <b>G</b>andhi's arrival Jan 1915 &rarr; <b>T</b>ilak's League 1916").replace("(own mnemonic)", "(sentence: Kings Grew Tense)"),
+  mn("Kings Grew Tense", "Prelims 1998 order: <b>K</b>omagata Maru 1914 &rarr; <b>G</b>andhi's arrival Jan 1915 &rarr; <b>T</b>ilak's League 1916 <i>(order kept)</i>"),
   bx('gr', "<b>Prelims 1998 (answer d, 2, 3, 1):</b> Komagata Maru 1914; Gandhi's arrival Jan 1915; Tilak's League 1916. Komagata saga ended at Budge Budge before Gandhi landed. Wrong: 1-2-3, 3-2-1, 2-1-3."),
   sec("10 · IMPACT: 3 NEGATIVES, 6 GAINS", 'r'),
   stl(9, "Because educative propaganda could not become mass action, the Leagues faded, yet left a lot behind."),
