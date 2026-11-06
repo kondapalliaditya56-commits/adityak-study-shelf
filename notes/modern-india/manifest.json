@@ -3,6 +3,14 @@
  "title": "Modern India handwritten revision notes",
  "versions": [
   {
+   "v": 2,
+   "file": "v2.pdf",
+   "date": "2026-11-06",
+   "pages": 345,
+   "sha": "80c1a75ed78dad08",
+   "note": "Story-first: every chapter now opens with the textbook story (same spine, beats, links, cast) and each section has a story-link ribbon; timelines wrap, side labels fit"
+  },
+  {
    "v": 1,
    "file": "v1.pdf",
    "date": "2026-11-05",

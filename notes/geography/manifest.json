@@ -3,6 +3,14 @@
  "title": "Geography handwritten revision notes",
  "versions": [
   {
+   "v": 2,
+   "file": "v2.pdf",
+   "date": "2026-11-06",
+   "pages": 71,
+   "sha": "d55fcb9a1d7fe964",
+   "note": "Fixed side-heading labels overflowing and timeline strips running off the page"
+  },
+  {
    "v": 1,
    "file": "v1.pdf",
    "date": "2026-11-05",
