@@ -311,7 +311,7 @@ def chapter_html(ch, layer):
             if m:
                 last_num[0] = int(m.group(1))
                 end_section(); cur_sec = m.group(1); n[0] += 1
-                out.append('<div class="sec c%d">%s</div>' % (n[0] % 6 + 1, e(v)))
+                out.append('<div class="sec c%d" id="s%s-%d">%s</div>' % (n[0] % 6 + 1, ch['id'], n[0], e(v)))
                 S_ = SEC.get(cur_sec)
                 if S_:
                     out.append('<div class="und"><span class="t">🧠 Understand it first</span> %s</div>' % e(S_['plain']))
@@ -319,7 +319,7 @@ def chapter_html(ch, layer):
                 if cur_sec in getattr(layer, 'FM', {}):
                     out.append(fm_card(layer.FM[cur_sec], head='📐 Formulas of this section (boxed: look here when you recall)'))
             elif v.startswith(('Exam lens', 'Current affairs', 'Timeline', 'Connects', 'Mains answer')):
-                end_section(); out.append('<div class="sec c%d">%s</div>' % (n[0] % 6 + 1, e(v))); n[0] += 1
+                end_section(); out.append('<div class="sec c%d" id="s%s-%d">%s</div>' % (n[0] % 6 + 1, ch['id'], n[0], e(v))); n[0] += 1
             else: out.append('<div class="sh">%s</div>' % e(v))
         elif k == 'p': out.append('<p style="margin:1mm 0">%s</p>' % v)
         elif k == 'call': out.append(call(v))
@@ -361,8 +361,8 @@ def chapter_html(ch, layer):
 
 
 COVER = ('<div class="cov"><div class="s">UPSC CSE 2027 · GS Foundation</div><h1>ECONOMY</h1><div class="s">Detailed handwritten notes · concept first</div>'
-         '<div><span class="bx">SAMPLE · Chapter 6 · Inflation</span></div><div class="t">Built from the Sarrthi IAS Economy handout (Aditya Kalia) with PYQs from your sheets.<br>'
-         'Every fact of the handout is kept. New: plain-words explanations, graphs, examples, memory aids and an abbreviation column.<br>'
+         '<div><span class="bx">Complete · 13 chapters · NCERT integrated</span></div><div class="t">Built from the Sarrthi IAS Economy handout (Aditya Kalia) with PYQs from your sheets.<br>'
+         'Every fact of the handout is kept. New: plain-words explanations, NCERT boxes, formula cards, examples, memory aids, styled current affairs and an abbreviation column.<br>'
          'Right column and left binding margin are kept blank for your own use.<br><br>Personal study edition · for printing</div></div>')
 HOWTO = ('<div class="chap"><div class="ttl">HOW TO READ THESE NOTES</div><table class="howto"><tr><th>Box</th><th>What it gives you</th></tr>'
          '<tr><td><b>🧠 Understand it first</b></td><td>The idea in everyday words, before the technical notes. Read this first, then the handout notes.</td></tr>'
@@ -376,7 +376,7 @@ HOWTO = ('<div class="chap"><div class="ttl">HOW TO READ THESE NOTES</div><table
 
 
 def build(chs, out, sample=True):
-    body = [COVER, HOWTO] if sample else []
+    body = [COVER, '@@INDEX@@', HOWTO]
     allmiss = []
     for cid in chs:
         ch = BE.chapter(importlib.import_module('ch%d' % cid).c, extras=False)
@@ -387,7 +387,20 @@ def build(chs, out, sample=True):
             for a in ('NCMAP', 'NCQ', 'NCKEY', 'NCONLY'): setattr(layer, a, getattr(nm, a, None))
         except ImportError: pass
         hch, ents, miss = chapter_html(ch, layer); body.append(hch); allmiss += miss
-    css = hwlib.CSS + hwstyle.css('handlee', '') + CSS + NCCSS + FMCSS + CACSS
+    import re as _r
+    full = ''.join(body)
+    items = []
+    for m in _r.finditer(r'<div class="chap" id="(c[^"]+)"><div class="ttl">(.*?)</div>|<div class="sec c\d" id="(s[^"]+)">(.*?)</div>', full, flags=_r.S):
+        if m.group(1): items.append(('ch', m.group(1), _r.sub(r'<[^>]+>|&nbsp;', ' ', m.group(2)).strip()))
+        else: items.append(('sec', m.group(3), _r.sub(r'<[^>]+>', '', m.group(4)).strip()))
+    ix = '<div class="chap idx"><div class="ttl">INDEX</div><p class="idn">Chapters and their sections, with page numbers. In the PDF viewer, the bookmarks panel gives the same list as tap-to-jump links.</p>'
+    for k, i, t in items:
+        t = _r.sub(r'^\s*\S*\s+', '', t) if k == 'ch' and False else t
+        ix += '<a class="ix ix%s" href="#%s">%s</a>' % ({'ch':'c','sec':'s'}[k], i, t)
+    ix += '</div>'
+    body = [b if b != '@@INDEX@@' else ix for b in body]
+    IDXCSS = '.idx{page-break-after:always}.idn{font-size:.85em;opacity:.7;margin:1mm 0 3mm}a.ix{display:block;color:inherit;text-decoration:none;line-height:1.35}a.ix::after{content:leader(dotted) target-counter(attr(href),page)}a.ixc{font-weight:700;font-size:1.08em;margin-top:2.6mm}a.ixs{padding-left:6mm;font-size:.92em}.ttl{bookmark-level:1;bookmark-label:content()}.sec{bookmark-level:2;bookmark-label:content()}.idx .ttl{bookmark-level:none}.cov .s,.howto{bookmark-level:none}'
+    css = IDXCSS + hwlib.CSS + hwstyle.css('handlee', '') + CSS + NCCSS + FMCSS + CACSS
     html = '<html><head><style>%s@page{@bottom-right{content:"Economy · Detailed Handwritten Notes · " counter(page);font-family:PH;font-size:8pt;color:#888}}</style></head><body>%s</body></html>' % (css, ''.join(body))
     html = hwstyle.decorate(html)
     d = HTML(string=html, base_url=SCR + '/').render()

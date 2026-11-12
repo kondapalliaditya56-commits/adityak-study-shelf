@@ -3,6 +3,14 @@
  "title": "Economy handwritten revision notes",
  "versions": [
   {
+   "v": 4,
+   "file": "v4.pdf",
+   "date": "2026-11-13",
+   "pages": 459,
+   "sha": "ae32e7daf1ebdf53",
+   "note": "Index with page numbers and bookmarks; subtler current-affairs styling"
+  },
+  {
    "v": 3,
    "file": "v3.pdf",
    "date": "2026-11-13",
