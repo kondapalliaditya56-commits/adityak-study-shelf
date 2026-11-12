@@ -8,9 +8,10 @@ for i in range(14):
 
 OUT = 'out'
 shutil.rmtree(OUT, ignore_errors=True); os.makedirs(OUT + '/img')
-chs = [m.c for m in MODS]
+import extras_merge
+chs = [extras_merge.apply(m.c, m.c.n) if m.c.n > 0 else m.c for m in MODS]
 for f in os.listdir('img'):
-    if f.startswith('eco-'):
+    if f.startswith('eco-') or f.startswith('ncert-'):
         shutil.copy('img/' + f, OUT + '/img/' + f)
 
 def name(n): return '%sch%02d.html' % (PFX, n)
@@ -35,14 +36,14 @@ def shell(title, bar_title, body, js=''):
 cards = ''
 for c in chs:
     n = len(all_sections(c))
-    badge = 'Start here' if c.n == 0 else 'Handout only'
+    badge = 'Start here' if c.n == 0 else 'Handout + NCERT'
     cards += '<a class="chcard" href="%s" data-ch="%d" data-secs="%d"><span class="chn">%d</span><span class="cht"><b>%s</b><small>%s</small></span><span class="chb"><i class="tick" hidden>Done</i><em>%s</em></span></a>' % (name(c.n), c.n, n, c.n, esc(c.title), esc((getattr(c,'summary',None) or summ.get(c.n,''))), badge)
 ALL = {1:'Poverty',2:'Inequality',3:'Unemployment',4:'Basic Concepts of Economics',5:'National Income Accounting',6:'Inflation',7:'Banking and NBFCs',8:'Money and Monetary Policy',9:'Capital Markets',10:'External Sector and Balance of Payments',11:'GST',12:'Government Budgeting and Fiscal Policy',13:'NABARD, NBFCs, Chit Funds and Ponzi Schemes'}
 PARTS = [('Part 1 · Poverty, inequality and employment',[1,2,3]),('Part 2 · Concepts and national income',[4,5]),('Part 3 · Prices, money and finance',[6,7,8,9]),('Part 4 · External sector, GST and the budget',[10,11,12]),('Part 5 · Rural and climate finance',[13])]
 byn = {c.n:c for c in chs}
 def card(c):
     n = len(all_sections(c))
-    badge = 'Start here' if c.n == 0 else 'Handout only'
+    badge = 'Start here' if c.n == 0 else 'Handout + NCERT'
     return '<a class="chcard" href="%s" data-ch="%d" data-secs="%d"><span class="chn">%d</span><span class="cht"><b>%s</b><small>%s</small><span class="cbar"><i></i></span></span><span class="chb"><i class="tick" hidden>Done</i><em>%s</em></span></a>' % (name(c.n), c.n, n, c.n, esc(c.title), esc(getattr(c,'summary',None) or summ.get(c.n,'')), badge)
 parts_html = ''
 for ptitle, ns in PARTS:
@@ -51,7 +52,7 @@ for ptitle, ns in PARTS:
         cl += card(byn[n]) if n in byn else '<div class="chcard pending"><span class="chn">%d</span><span class="cht"><b>%s</b><small>Coming</small></span></div>' % (n, esc(ALL[n]))
     parts_html += '<section class="part"><h2>%s</h2><div class="chlist">%s</div></section>' % (esc(ptitle), cl)
 nw = len([c for c in chs if c.n > 0]); npend = 13 - nw
-home_body = '<main class="page home-page"><div class="chead"><div class="eyebrow">Sarrthi IAS · GS Foundation · Aditya Kalia</div><h1>Economy</h1><p class="lede">Your personal Economy notebook. Each chapter keeps the handout facts and adds an exam lens, tables, redrawn flows, timelines, recall sheets, quizzes and flashcards. Handout only, nothing added from outside.</p><p class="prog"><span id="progress"></span> of %d written chapters marked done.%s</p><div class="row"><a class="btn pri" href="%sch00.html">Start here</a><a class="btn" href="%ssearch.html">Search</a><a class="btn" href="%stimeline.html">Master timeline</a><a class="btn" href="%spyq.html">PYQ bank</a></div></div><section class="part"><h2>How to read</h2><div class="chlist">%s</div></section>%s</main>' % (nw, (' %d more on the way.' % npend) if npend else '', PFX, PFX, PFX, PFX, card(byn[0]), parts_html)
+home_body = '<main class="page home-page"><div class="chead"><div class="eyebrow">Sarrthi IAS · GS Foundation · Aditya Kalia</div><h1>Economy</h1><p class="lede">Your personal Economy notebook. Each chapter keeps the handout facts and adds an exam lens, tables, redrawn flows, timelines, recall sheets, quizzes and flashcards. Built from the handout, with NCERT (Class XI and XII) added inside the matching sections as peach boxes; nothing else added from outside.</p><p class="prog"><span id="progress"></span> of %d written chapters marked done.%s</p><div class="row"><a class="btn pri" href="%sch00.html">Start here</a><a class="btn" href="%ssearch.html">Search</a><a class="btn" href="%stimeline.html">Master timeline</a><a class="btn" href="%spyq.html">PYQ bank</a></div></div><section class="part"><h2>How to read</h2><div class="chlist">%s</div></section>%s</main>' % (nw, (' %d more on the way.' % npend) if npend else '', PFX, PFX, PFX, PFX, card(byn[0]), parts_html)
 home_js = r'''
 (function(){var S=NBS;function upd(){var done=0;document.querySelectorAll('a.chcard[data-ch]').forEach(function(a){var n=+a.dataset.ch,t=+a.dataset.secs,p=S.pct('economy',n,t),rec=(S.get().nb.economy||{})[n],d=rec&&rec.dt?!!rec.done:p>=.999;var bar=a.querySelector('.cbar i');if(bar)bar.style.width=Math.round(p*100)+'%';var tk=a.querySelector('.tick');if(tk)tk.hidden=!d;if(d&&n>0)done++});var el=document.getElementById('progress');if(el)el.textContent=done}upd();S.onChange(upd);setTimeout(upd,2500)})();
 '''

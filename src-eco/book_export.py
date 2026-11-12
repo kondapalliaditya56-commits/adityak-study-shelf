@@ -55,6 +55,8 @@ def sec_notes(ch, skip_lens=True):
                 t = {'head': [h(x) or ' ' for x in hd], 'rows': [[h(c) for c in r] for r in rows]}
                 if cap: t['cap'] = plain(cap)
                 out.append(({'tbl': t}, plain(cap or '') + ' ' + ' '.join(plain(x) for x in hd) + ' ' + ' '.join(plain(c) for r in rows for c in r)))
+            elif k == 'raw':
+                out.append(({'raw': it[1]}, it[2]))
             elif k == 'fig':
                 out.append(({'fig': {'img': 'img/' + it[1], 'cap': plain(it[2]), 'pg': '', 'sq': False}}, plain(it[2])))
             elif k == 'flow':
@@ -135,7 +137,9 @@ def ca_items(n):
         return out
     finally: os.chdir(cwd)
 
-def chapter(ch):
+def chapter(ch, extras=True):
+    if extras:
+        import extras_merge; ch = extras_merge.apply(ch, ch.n)
     L = LAYERS[str(ch.n)]
     pre, mn = chapter_pyqs(ch)
     notes = sec_notes(ch)
@@ -151,11 +155,11 @@ def chapter(ch):
     cai = ca_items(ch.n)
     if cai:
         notes.append({'h': 'Current affairs'})
-        for lab, it in cai:
+        for _i, (lab, it) in enumerate(cai):
             body = ['<b>' + h(lab) + ' · ' + {'P': 'Prelims', 'M': 'Mains', 'PM': 'Prelims + Mains'}[it['tag']] + '.</b> ' + h(it['ctx'])]
             body += ['• ' + h(x) for x in it['pts']]
             if it.get('kw'): body.append('<b>Keywords:</b> ' + h(it['kw']))
-            notes.append({'call': {'kind': 'teacher', 'tag': plain(it['t']), 'body': body}})
+            notes.append({'call': {'kind': 'teacher', 'tag': plain(it['t']), 'body': body, 'ca': {'it': it, 'label': lab, 'first': _i == 0}}})
     if ch.timeline:
         notes.append({'h': 'Timeline and numbers'})
         notes.append({'tbl': {'head': ['When', 'What'], 'rows': [[h(a), h(b) + (' ★' if s else '')] for a, b, s in ch.timeline]}})
@@ -195,14 +199,14 @@ def export(ids, out_dir):
             'cover_top': 'GS FOUNDATION  ·  ECONOMY', 'cover_mid': 'A study companion built from the Sarrthi IAS Economy handouts, with every Prelims and Mains PYQ from the Saarthi subject-wise sheets',
             'cover_foot': 'UPSC Civil Services Examination 2027  ·  Personal Study Edition', 'running_head': 'ECONOMY',
             'imprint': ['<b>Personal Study Edition, 2026</b>', 'Prepared for the UPSC Civil Services Examination 2027 and APPSC Group 1, General Studies Economy.',
-                        'Source material: Sarrthi IAS Economy handouts (14 chapters) and the Saarthi subject-wise Prelims and Mains PYQ sheets. The facts printed here are the source documents’ own; no outside facts have been added. Copyright in the source material belongs to Sarrthi IAS and Saarthi IAS.',
+                        'Source material: Sarrthi IAS Economy handouts (13 chapters), NCERT Class XI Indian Economic Development and Class XII Introductory Macroeconomics and Microeconomics (integrated inside the matching chapters as peach boxes), and the Saarthi subject-wise Prelims and Mains PYQ sheets. The facts printed here are the source documents’ own; no outside facts have been added. Copyright in the source material belongs to Sarrthi IAS, Saarthi IAS and NCERT.',
                         'The wide margin on every page is left blank on purpose: use it for current affairs, related data and value-addition points.'],
             'legend': '<span class="pri H">High</span> 15 or more PYQs map to the chapter &nbsp; <span class="pri M">Medium</span> 6 to 14 &nbsp; <span class="pri L">Light</span> fewer than 6',
             'back_matter': 'Priority and PYQ index', 'pri': {'L': 'Light'}}
     json.dump({'meta': meta, 'parts': parts}, open(os.path.join(out_dir, 'bookdata.json'), 'w'), ensure_ascii=False, indent=1)
     os.makedirs(os.path.join(out_dir, 'img'), exist_ok=True)
     for f in os.listdir(os.path.join(HERE, 'img')):
-        if f.startswith('eco-'): shutil.copy(os.path.join(HERE, 'img', f), os.path.join(out_dir, 'img', f))
+        if f.startswith('eco-') or f.startswith('ncert-'): shutil.copy(os.path.join(HERE, 'img', f), os.path.join(out_dir, 'img', f))
 
 if __name__ == '__main__':
     ids = [int(x) for x in sys.argv[2].split(',')] if len(sys.argv) > 2 else [6]

@@ -264,6 +264,7 @@ def _item_texts(it, is_lens):
     if k == 'table':
         _, cap, hd, rows = it
         return [BE.plain(cap or '') + ' ' + ' '.join(BE.plain(x) for x in hd) + ' ' + ' '.join(BE.plain(c) for r in rows for c in r)]
+    if k == 'raw': return [it[2]]
     if k == 'fig': return [BE.plain(it[2])]
     if k == 'flow': return [BE.plain(it[1] or '') + ' ' + ' '.join(a for a, b in it[2])]
     if k == 'lanes': return [BE.plain(hd) for hd, st in it[2]]
@@ -385,7 +386,7 @@ def chap_page(ch, prev, nxt, total_chapters):
     body += '<nav class="pager">'
     body += ('<a href="%s"><small>Previous</small>%s</a>' % (fn(prev[0]), esc(prev[1]))) if prev else '<span></span>'
     body += ('<a class="nx" href="%s"><small>Next</small>%s</a>' % (fn(nxt[0]), esc(nxt[1]))) if nxt else '<span></span>'
-    body += '</nav><footer>Personal study notes built from the Sarrthi IAS GS Foundation Economy handout (Aditya Kalia). ' + getattr(ch,'footer_note','Handout only: no class slides or teacher ink for this chapter.') + ' Copyright belongs to the teacher; keep this private.</footer></main>'
+    body += '</nav><footer>Personal study notes built from the Sarrthi IAS GS Foundation Economy handout (Aditya Kalia). ' + getattr(ch,'footer_note','Handout plus NCERT boxes; no class slides or teacher ink for this chapter.') + ' Copyright belongs to the teacher; keep this private.</footer></main>'
     layout = '<div class="layout"><aside class="sidetoc"><div class="sth">In this chapter</div><ol>%s</ol></aside>%s</div>' % (toc, body[body.find('<main'):])
     data = json.dumps({'mcq': ch.mcq, 'cards': [{'q': q, 'a': a} for q, a in ch.cards]}, ensure_ascii=False).replace('</', '<\\/')
     nb = 'window.__NB=%s;' % json.dumps({'id': NB_ID, 'ch': ch.n, 'title': ch.title})

@@ -121,3 +121,83 @@ G = {
 'PYQ': ('Previous Year Question', 'a question asked in an earlier UPSC exam'),
 }
 SKIP = {'AD-AS', 'UP', 'LEFT', 'LEVEL', 'ONE', 'PULL', 'PUSH', 'RIGHT', 'COST-PUSH', 'DEMAND-PULL', 'DOWN', 'INFLATION', 'NOT', 'RATE', 'SHARE', 'GAIN', 'LOSE', 'CHIPS', 'PRICED', 'PYQ', 'PYQs', 'A', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'OK', 'MCQ', 'MCQs', 'AM', 'PM', 'CA', 'GS', 'UPSC', 'APPSC', 'LDC', 'BP', 'ND', 'TV', 'HAL', 'DR', 'ST', 'SC'}
+
+# --- money and banking additions (Ch 8 and NCERT)
+G.update({
+'NCERT': ('National Council of Educational Research and Training', 'publisher of the school textbooks the teacher calls “very, very important”'),
+'MD': ('Money Demand', 'total demand for money = transaction + speculative'),
+'MDT': ('Money Demand for Transactions', 'money held to spend now and for emergencies; rises with P·Q'),
+'MDS': ('Money Demand for Speculation', 'money held to protect wealth when asset prices are expected to fall; falls as r rises'),
+'MS': ('Money Supply', 'total money available to the public; MS = m × M0'),
+'VT': ('Value of Transactions', 'total value of all transactions in a period'),
+'DD': ('Demand Deposits', 'bank deposits payable on demand (savings and current accounts)'),
+'TD': ('Time Deposits', 'bank deposits with a fixed maturity, e.g. fixed deposits'),
+'CC': ('Currency in Circulation (with the public)', 'notes and coins held by the public; vault cash is excluded'),
+'CU': ('Currency held by the public', 'NCERT’s term for notes plus coins with the public'),
+'PO': ('Post Office', 'post-office deposits sit outside the banking system'),
+'FD': ('Fixed Deposit', 'time deposit with a bank for a fixed term'),
+'FDs': ('Fixed Deposits', 'time deposits with a bank for a fixed term'),
+'M1-M4': ('Money measures M1 to M4', 'ladder from narrow (M1) to broad (M4) money'),
+'M1-M3': ('Money measures M1 to M3', 'ladder from narrow to broad money'),
+'NM1': ('New Monetary aggregate 1 (new narrow money)', 'currency with public + demand deposits + other deposits with RBI'),
+'NM2': ('New Monetary aggregate 2', 'NM1 + short-term time deposits (up to 1 year)'),
+'NM3': ('New Monetary aggregate 3 (new broad money)', 'NM2 + long-term time deposits + call/term funding from financial institutions'),
+'NM1-NM3': ('New Monetary aggregates 1 to 3', 'the Y.V. Reddy Committee (1998) measures based on maturity'),
+'HPM': ('High-Powered Money', 'currency issued by the central bank; the base for credit creation (also reserve money, monetary base)'),
+'GA-MOE': ('Generally Acceptable Medium of Exchange', 'the handout’s definition of money'),
+'DCW': ('Double Coincidence of Wants', 'in barter, finding someone who has what you want and wants what you have'),
+'CBDC': ('Central Bank Digital Currency', 'digital form of the rupee issued by the RBI; legal tender'),
+'CGRA': ('Currency and Gold Revaluation Account', 'RBI buffer holding unrealised gains on gold and forex'),
+'CRB': ('Contingency Reserve (Fund) of the RBI', 'buffer for unexpected losses'),
+'FCA': ('Foreign Currency Assets', 'RBI’s holdings of foreign currency assets'),
+'LRR': ('Legal Reserve Ratio', 'general name for the legal minimum reserve ratio; CRR in India'),
+'NDTL': ('Net Demand and Time Liabilities', 'demand plus time deposits less inter-bank deposits; base for CRR and SLR'),
+'LTV': ('Loan to Value', 'loan as a share of the value of the asset pledged'),
+'LTRO': ('Long Term Repo Operation', 'RBI lends to banks at repo for 1 to 3 years'),
+'TLTRO': ('Targeted Long Term Repo Operation', 'LTRO where banks must buy bonds of stressed sectors'),
+'VRRR': ('Variable Rate Reverse Repo', 'auction-based absorption of surplus liquidity'),
+'VRR': ('Variable Rate Repo', 'auction-based injection of liquidity'),
+'MSS': ('Market Stabilisation Scheme (2004)', 'special bonds whose proceeds are locked at the RBI to absorb surplus rupees'),
+'PLR': ('Prime Lending Rate', 'first benchmark lending rate, after 1993 deregulation'),
+'BR': ('Base Rate', 'minimum lending rate that replaced PLR in 2010'),
+'MIBOR': ('Mumbai Inter-bank Offered Rate', 'standard call rate in the inter-bank market'),
+'EMI': ('Equated Monthly Instalment', 'fixed monthly loan repayment'),
+'RDS': ('Retail Direct Scheme (2021)', 'individuals buy G-Secs directly from the RBI'),
+'RDG': ('Retail Direct Gilt (account)', 'account with RBI for buying G-Secs'),
+'OMOs': ('Open Market Operations', 'RBI buys or sells government securities'),
+'ATMs': ('Automated Teller Machines', 'cash dispensing machines'),
+'PV': ('Present Value', 'today’s value of a future stream of money, discounted at the market rate'),
+'NFS': ('National Financial Switch', 'inter-bank ATM network, used by NCERT as a cashless-India example'),
+'MSMEs': ('Micro, Small and Medium Enterprises', 'size-based class of businesses'),
+'COVID': ('Coronavirus Disease', 'pandemic of 2020 that froze liquidity'),
+'NPCI': ('National Payments Corporation of India', 'operator of UPI'),
+'P2M': ('Person to Merchant', 'UPI payment from a person to a shop'),
+'P2P': ('Person to Person', 'UPI payment between individuals'),
+'MDR': ('Merchant Discount Rate', 'fee a merchant pays its bank for accepting digital payments'),
+'PSS': ('Payment and Settlement Systems (Act, 2007)', 'law under which NPCI set the MDR'),
+'FCNR': ('Foreign Currency Non-Resident (Bank) account', 'NRI deposit in foreign currency'),
+'ECBs': ('External Commercial Borrowings', 'loans raised abroad by Indian firms'),
+'OFCBs': ('Overseas Foreign Currency Borrowings', 'foreign-currency borrowings raised overseas'),
+'IOCL': ('Indian Oil Corporation Ltd', 'public-sector oil marketer'),
+'BPCL': ('Bharat Petroleum Corporation Ltd', 'public-sector oil marketer'),
+'HPCL': ('Hindustan Petroleum Corporation Ltd', 'public-sector oil marketer'),
+'USD-INR': ('US dollar to Indian rupee', 'exchange-rate pair'),
+'J&K': ('Jammu and Kashmir', ''),
+'BHIM': ('Bharat Interface for Money', 'UPI-based payment app'),
+'NFTs': ('Non-Fungible Tokens', 'unique digital assets'),
+'SWIFT': ('Society for Worldwide Interbank Financial Telecommunication', 'global bank messaging network'),
+'USA': ('United States of America', ''),
+})
+SKIP |= {'AND', 'MONETARY', 'MONEY', 'POLICY', 'CLAMP', 'SUM', 'M0'}
+G['NSC'] = ('National Savings Certificate', 'long-term post-office saving product; not redeemable before maturity')
+SKIP |= {'FORMULA', 'SHEET'}
+
+# per-chapter additions: hand/gloss_N.py defines G_N (dict like G) and optionally SKIP_N (set)
+import glob as _g, importlib.util as _iu, os as _os
+for _f in sorted(_g.glob(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'gloss_*.py'))):
+    _sp = _iu.spec_from_file_location('gl_x', _f); _m = _iu.module_from_spec(_sp); _sp.loader.exec_module(_m)
+    for _k, _v in vars(_m).items():
+        if _k.startswith('G_') and isinstance(_v, dict): G.update(_v)
+        if _k.startswith('SKIP_') and isinstance(_v, set): SKIP |= _v
+G['FEMA'] = ('Foreign Exchange Management Act', '1999 law governing foreign-exchange transactions in India')
+G['SDRs'] = ('Special Drawing Rights', 'IMF’s reserve asset; plural of SDR')

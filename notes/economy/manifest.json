@@ -3,6 +3,14 @@
  "title": "Economy handwritten revision notes",
  "versions": [
   {
+   "v": 3,
+   "file": "v3.pdf",
+   "date": "2026-11-13",
+   "pages": 460,
+   "sha": "42678ff12d338dbd",
+   "note": "Complete rebuild: NCERT integrated at each topic, plain-words layers, formula cards, styled current affairs, formula sheets"
+  },
+  {
    "v": 2,
    "file": "v2.pdf",
    "date": "2026-11-06",

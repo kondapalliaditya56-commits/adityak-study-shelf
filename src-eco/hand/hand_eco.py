@@ -78,7 +78,13 @@ def li_list(items):
 
 
 def call(c):
-    k = c['kind']; body = ''.join('<p>%s</p>' % b for b in c['body'])
+    k = c['kind']
+    if c.get('ca'):
+        import ca_style
+        return ca_style.card(c['ca']['it'], c['ca']['label'], 'hand', False)
+    if c['tag'].strip().lower().startswith('formula'):
+        return '<div class="fmrow"><div class="fm w"><div class="fn">Formula</div><div class="ff">%s</div></div></div>' % ' '.join(c['body'])
+    body = ''.join('<p>%s</p>' % b for b in c['body'])
     ic = {'alert': '⚠ ', 'key': '⭐ ', 'teacher': '✎ ', 'note': 'ⓘ ', 'quote': ''}.get(k, '')
     return '<div class="cb %s"><span class="t">%s%s</span>%s</div>' % (k, ic, c['tag'], body)
 
@@ -115,7 +121,7 @@ def viz(v):
     t = v['type']
     if t == 'mnemonic': return mnemonic(v)
     if t == 'flow':
-        steps = ['%s: %s' % (a, b) if b else a for a, b in v['steps']]
+        steps = ['%s: %s' % (a, b) if b else a for a, b in [(list(x) + ['', ''])[:2] for x in v['steps']]]
         return '<div class="gbox"><div class="gtitle">%s</div>%s</div>' % (e(v.get('title', '')), dsl.svg_flow(steps, v.get('per_row', 4)).replace('max-width:150mm', 'max-width:118mm'))
     if t == 'fork':
         h = '<div class="cb note"><span class="t">%s</span> ' % e(v['title'])
@@ -201,8 +207,62 @@ def gloss_box(ents):
 
 
 # ---------------- chapter ----------------
+NCCSS = '''
+.nc{border:2px solid #c77b30;background:#FDF1E3;border-radius:5px;padding:1mm 2.6mm 1.2mm;margin:1.8mm 0;color:#4a2a08}
+.nc .nt{font-family:KB;color:#a8551a;font-size:10.4pt;display:block;border-bottom:1.4px dashed #c77b30;margin-bottom:.8mm}
+.nc .li:before{color:#a8551a}
+.nc .df{border:1.6px solid #c62828;background:#fde7ea;color:#6a0000;border-radius:3px;padding:.5mm 2mm;margin:1mm 0}
+.nc .df b.k{font-family:KB;color:#c62828}
+.ncmap td,.ncq td{font-size:9pt}
+'''
+import re as _re, sys as _sys
+_sys.path.insert(0, '/home/claude/adityak-study-shelf/tools')
+import ca_style as _cs
+CACSS = _re.sub(r'</?style>', '', _cs.STYLE % {'lab': 'KB,Handlee,cursive'})
+FMCSS = '''
+.fmrow{display:flex;flex-wrap:wrap;gap:2.2mm;margin:1.6mm 0}
+.fm{flex:1 1 45%;border:2.6px solid #0d47a1;background:#fffde7;box-shadow:1.2mm 1.2mm 0 #0d47a1;border-radius:2px;padding:.4mm 2.4mm 1mm;break-inside:avoid;margin-bottom:.6mm}
+.fm.w{flex:1 1 100%}
+.fm .fn{font-family:KB;font-size:8.4pt;color:#0d47a1;letter-spacing:.4px;text-transform:uppercase}
+.fm .ff{font-family:CB;font-size:15pt;color:#111;line-height:1.25}
+.fm .fx{font-size:8.6pt;color:#555;line-height:1.1}
+.fm.ncf{border-color:#a8551a;box-shadow:1.2mm 1.2mm 0 #a8551a;background:#fff}
+.fm.ncf .fn{color:#a8551a}
+.fmh{font-family:KB;font-size:10pt;color:#0d47a1;margin:1.6mm 0 0;break-after:avoid}
+.nc .nw{background:#fff;border-left:4px solid #00897b;padding:.6mm 2mm;margin:.8mm 0;color:#004d40}
+.nc .nl2{background:#fff;border-left:4px solid #6a1b9a;padding:.6mm 2mm;margin:.8mm 0;color:#4a148c;font-size:9.6pt}
+.nc .nh2{font-family:KB;color:#a8551a;font-size:10pt;margin:1.6mm 0 .4mm;border-bottom:1.2px solid #e0b88a;break-after:avoid}
+.nc table{background:#fff}
+.keyc{display:inline-block;border:1.4px solid #a8551a;background:#fff;border-radius:10px;padding:0 2.2mm;margin:.6mm .6mm 0 0;font-size:9pt}
+.fsh td.fa{font-family:CB;font-size:13pt}
+'''
+def fm_card(items, ncert=False, head=None):
+    h = ('<div class="fmh">%s</div>' % head) if head else ''
+    h += '<div class="fmrow">'
+    for it in items:
+        name, f, note = it[0], it[1], it[2]; wide = len(it) > 3 and it[3] == 'wide'
+        h += '<div class="fm%s%s"><div class="fn">%s</div><div class="ff">%s</div>%s</div>' % (' w' if wide else '', ' ncf' if ncert else '', name, f, ('<div class="fx">%s</div>' % note) if note else '')
+    return h + '</div>'
+
+
+def nc_box(src, b):
+    h = '<div class="nc"><span class="nt">📘 From %s · %s</span>' % (e(src if src.startswith('NCERT') else 'NCERT · ' + src), e(b['ref']))
+    if b.get('why'): h += '<div class="nw"><b>In plain words:</b> %s</div>' % b['why']
+    if b.get('link'): h += '<div class="nl2"><b>Link to the handout:</b> %s</div>' % b['link']
+    for k in b.get('blocks', []):
+        if k.get('h'): h += '<div class="nh2">%s</div>' % k['h']
+        if k.get('pts'): h += li_list(k['pts'])
+        if k.get('fm'): h += fm_card(k['fm'], ncert=True)
+        if k.get('tbl'): h += table(k['tbl'])
+        if k.get('fig'): h += '<div class="fig"><img src="%s"><div class="fc">%s</div></div>' % k['fig']
+    for d in b.get('d', []):
+        h += '<div class="df"><b class="k">NCERT differs:</b> %s <i>(handout/teacher wins in class)</i></div>' % d
+    return h + '</div>'
+
+
 def chapter_html(ch, layer):
     SEC, TOP = layer.SEC, layer.TOP
+    NCX = getattr(layer, 'NCX', {}); NCSRC = getattr(layer, 'NCSRC', '')
     n = [0]
     h = '<div class="chap" id="c%s"><div class="ttl">%s&nbsp;%s&nbsp;%s</div>' % (ch['id'], hwlib.ICON['coin'], e(ch['title'].split(':')[0].upper()), hwlib.ICON['coin'])
     pr = {'H': 'High priority', 'M': 'Medium priority', 'L': 'Light priority'}[ch['priority']]
@@ -217,6 +277,8 @@ def chapter_html(ch, layer):
     h += '<div class="row"><div class="cb note"><span class="t">Prelims hooks</span>%s</div><div class="cb note"><span class="t">Mains hooks</span>%s</div></div>' % (li_list([e(x) for x in L['prelims']]), li_list([e(x) for x in L['mains']]))
     first_viz = [x for x in ch['visuals'] if x.get('type') == 'mindmap']
     if first_viz: h += mindmap_tree(first_viz[0])
+    if getattr(layer, 'NCMAP', None):
+        h += '<div class="nc"><span class="nt">📘 Read NCERT first: where each NCERT part fits this chapter (peach boxes in the sections)</span>' + table({'head': ['NCERT part', 'Handout section', 'What it adds'], 'rows': [[e(a), e(b), e(c)] for a, b, c in layer.NCMAP]}).replace('<table>', '<table class="ncmap">') + '</div>'
 
     notes = ch['notes']; buf = []; cur = None
     def flush():
@@ -227,10 +289,12 @@ def chapter_html(ch, layer):
     def endul():
         nonlocal lis
         if lis: out.append(li_list(lis)); lis = []
-    cur_sec = None
+    cur_sec = None; last_num = [0]
     def end_section():
         nonlocal cur_sec
         endul()
+        if cur_sec and cur_sec in NCX:
+            for b in NCX[cur_sec]: out.append(nc_box(NCSRC, b))
         if cur_sec and cur_sec in SEC and SEC[cur_sec].get('hook'):
             out.append('<div class="hk">⭐ Remember: %s</div>' % e(SEC[cur_sec]['hook']))
         for mn in (SEC.get(cur_sec, {}).get('mn', []) if cur_sec else []):
@@ -243,13 +307,17 @@ def chapter_html(ch, layer):
         endul()
         if k == 'h':
             m = re.match(r'^(\d+) · (.*)', v)
+            if m and int(m.group(1)) != last_num[0] + 1: m = None
             if m:
+                last_num[0] = int(m.group(1))
                 end_section(); cur_sec = m.group(1); n[0] += 1
                 out.append('<div class="sec c%d">%s</div>' % (n[0] % 6 + 1, e(v)))
                 S_ = SEC.get(cur_sec)
                 if S_:
                     out.append('<div class="und"><span class="t">🧠 Understand it first</span> %s</div>' % e(S_['plain']))
                     out.append('<div class="eg"><span class="t">✏ Example</span> %s</div>' % e(S_['eg']))
+                if cur_sec in getattr(layer, 'FM', {}):
+                    out.append(fm_card(layer.FM[cur_sec], head='📐 Formulas of this section (boxed: look here when you recall)'))
             elif v.startswith(('Exam lens', 'Current affairs', 'Timeline', 'Connects', 'Mains answer')):
                 end_section(); out.append('<div class="sec c%d">%s</div>' % (n[0] % 6 + 1, e(v))); n[0] += 1
             else: out.append('<div class="sh">%s</div>' % e(v))
@@ -260,11 +328,27 @@ def chapter_html(ch, layer):
         elif k == 'viz': out.append(viz(v))
     end_section()
     h += ''.join(out)
+    for b in NCX.get('end', []): h += nc_box(NCSRC, b)
+    if getattr(layer, 'NCONLY', None):
+        h += '<div class="nc"><span class="nt">📘 NCERT parts with no matching handout section (read them from NCERT)</span>' + li_list(['<b>%s</b>: %s' % (e(a), e(b)) for a, b in layer.NCONLY]) + '</div>'
     # numbers card
     if getattr(layer, 'NUMBERS', None):
         h += '<div class="num"><span class="nh">🔢 Number card: figures to hold</span><br>' + ''.join('<span class="nl"><b>%s</b> %s</span>' % (e(a), e(b)) for a, b in layer.NUMBERS) + '</div>'
     if getattr(layer, 'DRAW', None):
         h += '<div class="cb teacher"><span class="t">✏ Blank-page drill: draw these from memory, then check</span>' + li_list([e(x) for x in layer.DRAW]) + '</div>'
+    if getattr(layer, 'FM', None):
+        rows = []
+        for sec in layer.FM:
+            for it in layer.FM[sec]: rows.append('<tr><td>Sec %s</td><td>%s</td><td class="fa">%s</td><td>handout</td></tr>' % (sec, it[0], it[1]))
+        for sec in NCX:
+            for b in NCX[sec]:
+                for k in b.get('blocks', []):
+                    for it in k.get('fm', []): rows.append('<tr><td>Sec %s</td><td>%s</td><td class="fa">%s</td><td>NCERT</td></tr>' % (sec, it[0], it[1]))
+        h += '<div class="cb note fsh"><span class="t">📐 FORMULA SHEET: cover the third column, say the formula, then check</span><table><tr><th>Where</th><th>Name</th><th>Formula</th><th>Source</th></tr>' + ''.join(rows) + '</table></div>'
+    if getattr(layer, 'NCKEY', None):
+        h += '<div class="nc"><span class="nt">📘 NCERT key concepts (the chapter’s own list): tick each when you can define it</span>' + ''.join('<span class="keyc">☐ %s</span>' % e(x) for x in layer.NCKEY) + '</div>'
+    if getattr(layer, 'NCQ', None):
+        h += '<div class="nc"><span class="nt">📘 NCERT’s own end-of-chapter questions: can you answer each from these notes?</span>' + table({'head': ['NCERT question', 'Answer lives in'], 'rows': [[e(a), e(b)] for a, b in layer.NCQ]}).replace('<table>', '<table class="ncq">') + '</div>'
     h += pyq_block(ch['pyq']) if ch.get('pyq') else ''
     h += traps(ch['traps']) if ch.get('traps') else ''
     h += recall(ch['recall']) if ch.get('recall') else ''
@@ -295,10 +379,15 @@ def build(chs, out, sample=True):
     body = [COVER, HOWTO] if sample else []
     allmiss = []
     for cid in chs:
-        ch = BE.chapter(importlib.import_module('ch%d' % cid).c)
+        ch = BE.chapter(importlib.import_module('ch%d' % cid).c, extras=False)
         layer = importlib.import_module('layer%d' % cid)
+        try:
+            nm = importlib.import_module('ncert%d' % cid)
+            layer.NCX = nm.NC; layer.NCSRC = nm.SRC
+            for a in ('NCMAP', 'NCQ', 'NCKEY', 'NCONLY'): setattr(layer, a, getattr(nm, a, None))
+        except ImportError: pass
         hch, ents, miss = chapter_html(ch, layer); body.append(hch); allmiss += miss
-    css = hwlib.CSS + hwstyle.css('handlee', '') + CSS
+    css = hwlib.CSS + hwstyle.css('handlee', '') + CSS + NCCSS + FMCSS + CACSS
     html = '<html><head><style>%s@page{@bottom-right{content:"Economy · Detailed Handwritten Notes · " counter(page);font-family:PH;font-size:8pt;color:#888}}</style></head><body>%s</body></html>' % (css, ''.join(body))
     html = hwstyle.decorate(html)
     d = HTML(string=html, base_url=SCR + '/').render()

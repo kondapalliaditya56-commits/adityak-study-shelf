@@ -54,14 +54,8 @@ def item_html(it, chtitle):
     tg = TAGN[it['tag']]
     o = ['<h2 id="%s">%s · %s<a class="anchor" href="#%s" aria-label="Link to this section">#</a></h2>' % (slug(it['id']), e(it['id']), e(it['t']), slug(it['id']))]
     o.append('<div class="pills"><span class="ptag %s">%s</span><span class="pill">%s</span></div>' % (tg[1], tg[0], e(it['sub'])))
-    o.append('<p>%s</p>' % e(it['ctx']))
-    if it['pts']: o.append('<ul class="lst">%s</ul>' % ''.join('<li>%s</li>' % rich(p) for p in it['pts']))
-    if it['pro']: o.append('<aside class="callout shortcut"><span class="tag">Prelims fodder</span><ul class="lst">%s</ul></aside>' % ''.join('<li>%s</li>' % rich(p) for p in it['pro']))
-    if it['mains'] or it['kw']:
-        li = ''.join('<li>%s</li>' % rich(p) for p in it['mains'])
-        if it['kw'] and not any(x.startswith('Keywords') for x in it['mains']): li += '<li><strong>Keywords:</strong> %s</li>' % e(it['kw'])
-        o.append('<aside class="callout note"><span class="tag">Mains fodder</span><ul class="lst">%s</ul></aside>' % li)
-    if it['pyq']: o.append('<aside class="callout"><span class="tag">PYQ connect</span><p>%s</p></aside>' % e(it['pyq']))
+    import ca_style
+    o.append(ca_style.card(it, None, 'shelf', True, True, header=False))
     if chtitle: o.append('<p class="gdesc">Read with: %s</p>' % chtitle)
     return ''.join(o)
 

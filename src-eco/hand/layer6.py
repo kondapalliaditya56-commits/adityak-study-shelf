@@ -19,7 +19,7 @@ SEC = {
    hook='ONE price up ≠ inflation. Inflation = the whole basket (price level) up.'),
  '2': dict(
    plain='AD is everybody’s shopping list added up, in rupees. AS is everything farms and factories can put on the shelves. When the shopping list is longer than the shelves, shops raise prices; when shelves overflow, prices ease. The price level sits where the two meet.',
-   eg='Think of a school canteen. 100 students want samosas (AD) but the kitchen makes only 60 (AS). The canteen raises the price. Same idea for a whole economy.',
+   eg='Think of a school canteen. 100 students want samosas (AD) but the kitchen makes only 60 (AS). The canteen raises the price. Same idea for a whole economy (practice picture, not from the handout).',
    hook='AD chases AS. AD > AS → prices rise. Two ways: AD up, or AS down.',
    graphs=['adas_equilibrium']),
  '3': dict(
@@ -81,6 +81,33 @@ SEC = {
    plain='We cannot find the exact cause quickly, and fixing roads, ports and the business climate takes years. So the cure must work whatever the cause: cut AD. AD is spending, and spending needs money. If money becomes expensive (higher interest rate), savers save more and borrowers borrow less, so AD falls and prices cool.',
    eg='Handout: a loan of ₹1 lakh at 8%. Raise the rate to 10%: those with money save it for the higher interest, those without cannot afford to borrow. Both cut demand.',
    hook='Dearer money ⇒ less spending ⇒ AD falls ⇒ prices cool. (Who does it and how: Chapter 8.)'),
+}
+
+FM = {
+ '2': [('Price rule', 'AD &gt; AS ⇒ price level ↑', 'either AD rises or AS falls (handout key rule)'),
+       ('Link to price level', 'AD: price ↑ ⇒ demand ↓ · AS: price ↑ ⇒ supply ↑', 'AD inversely, AS positively related to the price level')],
+ '3': [('Demand-pull', 'AD shifts right: AD0 → AD1', 'price ↑ and output ↑ (Y0 → Y1)'),
+       ('Cost-push', 'AS shifts left: AS0 → AS1', 'price ↑ and output ↓')],
+ '4': [('Inflation (Y-o-Y)', 'Inflation % = (basket price this month − basket price same month last year) ÷ basket price same month last year × 100', 'handout: % change in the basket price over the same month of last year', 'wide')],
+ '5': [('Index', 'Index = (100 ÷ base-year basket price) × current basket price', 'base year = 100'),
+       ('Handout numbers', '(100 ÷ 10,000) × 15,000 = 150 · (100 ÷ 10,000) × 16,500 = 165', 'March 2015 base ₹10,000; March 2025; March 2026'),
+       ('Inflation from the baskets', '(16,500 − 15,000) ÷ 15,000 × 100 = 10%', 'March 2026 over March 2025'),
+       ('Reading an index', 'index of 165 ⇒ prices 65% above the base year', 'index − 100 = % above the base')],
+ '7': [('Core inflation', 'Core = Headline − food − fuel (Fuel and Light)', 'petrol and diesel stay inside core'),
+       ('Super core', 'Super core = Headline − food − fuel − petrol − diesel − precious metals', 'handout: truest picture of underlying demand', 'wide'),
+       ('Recession rule', 'output falls for 2 consecutive quarters', 'a rule of thumb (NBER looks at broader data)'),
+       ('Hyperinflation (Cagan)', 'more than 50% per month', 'no consensus on the line between high and hyper')],
+ '8': [('Stagflation', 'Stagflation = stagnation (low growth, high unemployment) + high inflation', 'both adverse at once'),
+       ('Phillips Curve', 'inflation ↑ ⇔ unemployment ↓ (inverse)', 'A.W. Phillips, UK 1861-1957')],
+ '9': [('Real interest rate', 'RIR = NIR − Inflation', 'handout: 10% − 7% = 3%'),
+       ('Floating rate (banks)', 'NIR = RIR + Inflation', 'RIR fixed, NIR moves with inflation'),
+       ('Keeping your worth', 'extra needed = inflation %', 'with 10% inflation ₹110 buys what ₹100 bought last year')],
+ '10': [('Engel’s Law', 'income ↑ ⇒ % of income spent on food ↓', 'even if rupees spent on food rise')],
+ '11': [('Tax at ₹9 L', '₹50,000 + ₹60,000 = ₹1.1 L', '10% on first 5 L; 15% on next 4 L (hypothetical slabs)'),
+        ('Tax at ₹10.8 L', '₹50,000 + ₹75,000 + ₹16,000 = ₹1.41 L', '20% on the last 80k'),
+        ('Disposable income', 'income − tax: 9 − 1.1 = ₹7.9 L; 10.8 − 1.41 = ₹9.39 L', 'handout table'),
+        ('Fiscal drag', 'income +20% ⇒ tax +28.2%, post-tax income +18.8%', 'no new law; AD falls; prices cool')],
+ '12': [('Cure logic', 'cost of money ↑ ⇒ spending ↓ ⇒ AD ↓ ⇒ prices cool', 'handout: loan of ₹1 lakh at 8% → 10%')],
 }
 
 NUMBERS = [('4% ± 2%', 'inflation target band'), ('2014', 'Urjit Patel Committee: CPI-C as headline'), ('2015', 'CPI-C adopted as the anchor'), ('2024 = 100', 'new CPI base (Feb 2026)'),

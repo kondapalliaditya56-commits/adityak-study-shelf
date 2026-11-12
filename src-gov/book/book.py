@@ -101,6 +101,10 @@ def notes_html(notes, vis=()):
         flush()
         if 'h' in it: out.append('<h4>%s</h4>' % hx(it['h']))
         elif 'p' in it: out.append('<p class="np">%s</p>' % hx(it['p']))
+        elif 'raw' in it: out.append(it['raw'])
+        elif 'call' in it and it['call'].get('ca'):
+            import sys as _s, os as _o; _s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.abspath(__file__)), '..', '..', 'tools')); import ca_style
+            c = it['call']['ca']; out.append(ca_style.card(c['it'], c['label'], 'book', c.get('first', False)))
         elif 'call' in it:
             k = it['call']
             out.append('<div class="callout %s"><span>%s</span>%s</div>' % (k.get('kind', 'note'), hx(k['tag']), ''.join('<p>%s</p>' % hx(b) for b in k['body'])))
