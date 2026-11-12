@@ -87,8 +87,6 @@ NUMBERS = [('4% ± 2%', 'inflation target band'), ('2014', 'Urjit Patel Committe
            ('12', 'divisions in the 2024 CPI'), ('358', 'items (was 299)'), ('36.75%', 'food weight (was 45.86%)'), ('28.32%', 'old “Miscellaneous” weight'),
            ('165', 'index = prices 65% above base'), ('2 quarters', 'recession rule of thumb'), ('50% a month', 'Cagan’s hyperinflation mark'), ('1861-1957', 'Phillips’s UK data'),
            ('~30% / 25%', 'Great Depression: US GDP fall, unemployment'), ('10 − 7 = 3', 'real interest example'), ('+20% → +28.2%', 'income vs tax (fiscal drag)')]
-DRAW = ['AD-AS cross; shift AD right, then AS left; label P0, P1, Y0, Y1 each time.',
-        'Phillips Curve with one stagflation point off the curve.',
-        'The three price paths: inflation, disinflation, deflation.',
-        'The ladder: headline, core, super core, with what each drops.',
-        'Write the seven measurement steps, then the sentence “To Buy Bread, Begin Looking Intently Inside”.']
+DRAW = ['Redraw the handout’s AD-AS sketches (equilibrium; AD shifting right; AS shifting left) from the figures in section 2, then label P0, P1, Y0, Y1.',
+        'Write the seven measurement steps and the sentence “To Buy Bread, Begin Looking Intently Inside”.',
+        'Write headline, core and super core, and what each leaves out.']

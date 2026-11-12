@@ -209,8 +209,7 @@ def chapter_html(ch, layer):
     h += '<div class="pyqline">%s %s · PYQs mapped: Prelims %s · Mains %s</div>' % (hwlib.P(pr), '', e(ch['prelims_pyqs']), e(ch['pyqs']))
     h += hwlib.SW(' '.join(ch['simple'][:1]).replace('**', ''))
     # 60-second route
-    steps = ['%s: %s' % (a, b) for a, b in TOP['sixty']]
-    h += '<div class="gbox"><div class="gtitle">The whole chapter in 60 seconds</div>%s</div>' % dsl.svg_flow(steps, 3).replace('max-width:150mm', 'max-width:118mm')
+    h += '<div class="cb key"><span class="t">The whole chapter in 60 seconds</span>' + li_list(['<b>%s</b>: %s' % (e(a), e(b)) for a, b in TOP['sixty']]) + '</div>'
     h += '<div class="und"><span class="t">🧠 In simple words</span>' + li_list([re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', s) for s in ch['simple']]) + '</div>'
     h += '<div class="sh">Words you need first</div>' + table({'head': ['Word', 'Meaning'], 'rows': [['<b>%s</b>' % e(a), e(b)] for a, b in TOP['words']]})
     h += '<div class="cb key"><span class="t">⭐ One line to carry:</span> %s</div>' % e(ch['remember'])
@@ -250,7 +249,6 @@ def chapter_html(ch, layer):
                 S_ = SEC.get(cur_sec)
                 if S_:
                     out.append('<div class="und"><span class="t">🧠 Understand it first</span> %s</div>' % e(S_['plain']))
-                    for g in S_.get('graphs', []): out.append(graph(g))
                     out.append('<div class="eg"><span class="t">✏ Example</span> %s</div>' % e(S_['eg']))
             elif v.startswith(('Exam lens', 'Current affairs', 'Timeline', 'Connects', 'Mains answer')):
                 end_section(); out.append('<div class="sec c%d">%s</div>' % (n[0] % 6 + 1, e(v))); n[0] += 1
