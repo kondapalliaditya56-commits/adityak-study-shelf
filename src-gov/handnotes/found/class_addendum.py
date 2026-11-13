@@ -16,6 +16,9 @@ CSS_SITE = """.bk-cn{margin:28px 0 8px;border-top:3px solid var(--acc);padding-t
 .bk-cn .cn-call .tag{display:block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
 .bk-cn table{border-collapse:collapse;width:100%;font-size:.92em}.bk-cn th,.bk-cn td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}.bk-cn th{background:var(--acc-soft)}"""
 KIND = {'pk': ('Teacher stressed', ''), 'ye': ('Trap / check', 'ye'), 'bl': ('Definition', 'bl'), 'gr': ('Answer frame', 'gr'), 'ca': ('In the news', 'ca')}
+def tree_html(n):
+    kids = ''.join('<li>%s</li>' % (tree_html(x) if isinstance(x, tuple) else x) for x in n[2])
+    return '<b>%s</b>' % n[1] + ('<ul>%s</ul>' % kids if kids else '')
 def items_html(nodes):
     out = []; ul = []
     def flush():
@@ -23,6 +26,10 @@ def items_html(nodes):
         if ul: out.append('<ul>' + ''.join('<li>%s</li>' % x for x in ul) + '</ul>'); ul = []
     for n in nodes:
         if n[0] in ('sw', 'stl'): continue
+        if n[0] == 'two':
+            flush(); out.append(items_html(list(n[1]) + list(n[2]))); continue
+        if n[0] == 'tree':
+            ul.append(tree_html(n)); continue
         if n[0] == 'bx': 
             flush(); lab, cls = KIND.get(n[1], ('Note', ''))
             out.append('<div class="cn-call %s"><span class="tag">%s</span>%s</div>' % (cls, lab, n[2])); continue
