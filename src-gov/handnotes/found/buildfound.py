@@ -117,6 +117,7 @@ def chapter_html(ch):
 _rhw = dsl.r_hw
 def r_hw(n):
     if n[0] == 'stl': return '<div class="stl"><b>\U0001F4D6 Story link \u00b7 beat %s:</b> %s</div>' % (n[1], n[2])
+    if n[0] == 'raw': return n[1]
     out = _rhw(n)
     return '<div class="keep">%s</div>' % out if n[0] in ('fl', 'hub', 'tl') else out
 dsl.r_hw = r_hw
@@ -138,6 +139,10 @@ def build(subj, out, only=None):
     cfg = SUBJ[subj]; chs = load(subj, only)
     _STORY['d'] = load_story(subj)
     import listify; listify.apply(chs)
+    DETAIL = os.path.exists(os.path.join(HERE, subj, 'detail.py')) and not os.environ.get('NODETAIL')
+    if DETAIL:
+        sys.path.insert(0, os.path.join(HERE, subj)); import detail, detail_data
+        detail.attach(chs, detail_data.MAP, detail_data.UND, detail_data.GL, detail_data.IGNORE)
     cov = ('<div class="cov"><div class="s">UPSC CSE 2027 · GS Foundation</div><h1>%s</h1><div class="s">%s</div><div><span class="bx">Handwritten revision notes</span></div>'
            '<div class="t">%s<br>Bracket trees · diagrams · mnemonics · PYQ tags · current affairs<br>Right column and left binding margin are kept blank for your own use.<br><br>Personal study edition · for printing</div></div>') % (cfg['title'], cfg['sub'], cfg['cap'])
     toc = '<div class="partpg" style="padding:0;break-before:page"><div class="toc"><h2>INDEX</h2>'
@@ -146,11 +151,11 @@ def build(subj, out, only=None):
         pt = c.get('part_name')
         if pt and pt != cur: cur = pt; toc += '<div class="pt" style="background:%s">%s</div>' % (c.get('part_bg', '#e3f2fd'), pt)
         toc += '<a href="#c%s">%s &nbsp;%s</a>' % (c['id'], c['id'], c.get('toc', c['title']))
-    mm = mindmaps(subj) if not only else None
+    mm = mindmaps(subj) if not only and not DETAIL else None
     if mm: toc += mm[0]
     toc += '</div></div>'
     body = [cov, toc] + [chapter_html(c) for c in chs] + ([mm[1]] if mm else [])
-    html = '<html><head><style>%s</style></head><body>%s</body></html>' % (hwlib.CSS + STORY_CSS + FIX_CSS + '.mmp{break-inside:avoid;text-align:center;margin-bottom:4mm}.mmp[id]{break-before:page}.mmh{font-family:PH;font-size:11pt;color:#b26a00;text-align:left;border-bottom:1.5px solid #b26a00;margin-bottom:2mm}.mmp img{max-width:100%;max-height:238mm;object-fit:contain}' + '.chap{break-before:auto;margin-top:5mm}.pyqline,.sw,.ttl{break-after:avoid}.br{orphans:3;widows:3}.br{break-inside:auto}.keep{break-inside:avoid}.keep table{font-size:9pt}.keep td{padding:.2mm 1.4mm}.pyq{font-size:7.6pt}', ''.join(body))
+    html = '<html><head><style>%s</style></head><body>%s</body></html>' % (hwlib.CSS + STORY_CSS + FIX_CSS + (detail.CSS if DETAIL else '') + '.mmp{break-inside:avoid;text-align:center;margin-bottom:4mm}.mmp[id]{break-before:page}.mmh{font-family:PH;font-size:11pt;color:#b26a00;text-align:left;border-bottom:1.5px solid #b26a00;margin-bottom:2mm}.mmp img{max-width:100%;max-height:238mm;object-fit:contain}' + '.chap{break-before:auto;margin-top:5mm}.pyqline,.sw,.ttl{break-after:avoid}.br{orphans:3;widows:3}.br{break-inside:auto}.keep{break-inside:avoid}.keep table{font-size:9pt}.keep td{padding:.2mm 1.4mm}.pyq{font-size:7.6pt}', ''.join(body))
     html = html.replace('</style>', '@page{@bottom-right{content:"%s · Handwritten Notes · " counter(page);font-family:PH;font-size:8pt;color:#888}}</style>' % cfg['title'].title(), 1)
     html = html.replace('</style>', hwstyle.css('handlee', '') + '</style>', 1)
     html = hwstyle.decorate(html)
