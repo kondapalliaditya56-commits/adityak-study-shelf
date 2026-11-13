@@ -58,6 +58,13 @@ home_js = r'''
 '''
 # add progress bars to cards
 open(OUT + '/%shome.html' % PFX, 'w').write(shell('Economy notebook', '<b></b> Economy notebook', home_body, home_js))
+_p = OUT + '/' + PFX + 'home.html'
+_s = open(_p).read()
+_c = '<a class="hwcard" href="pdfview.html?s=economy" style="display:flex;align-items:center;gap:12px;margin:14px 0 4px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--surface);text-decoration:none;color:inherit;font-family:var(--sans)"><span style="font-size:26px" aria-hidden="true">&#9998;</span><span style="flex:1"><b style="display:block;font-size:16px">Handwritten notes (PDF)</b><small id="hwmeta" style="color:var(--muted)">Opens the latest version in the PDF viewer</small></span><span style="font-weight:700;color:var(--accent)">Open &rsaquo;</span></a><script>fetch("notes/economy/manifest.json",{cache:"no-store"}).then(function(r){return r.json()}).then(function(m){var v=m.versions[0],e=document.getElementById("hwmeta");if(e)e.textContent="Latest: version "+v.v+" \\u00b7 "+v.pages+" pages \\u00b7 "+v.date}).catch(function(){})</script><a class="hwcard" href="pdfview.html?s=economy-textbook" style="display:flex;align-items:center;gap:12px;margin:14px 0 4px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--surface);text-decoration:none;color:inherit;font-family:var(--sans)"><span style="font-size:26px" aria-hidden="true">&#9998;</span><span style="flex:1"><b style="display:block;font-size:16px">Textbook (PDF)</b><small id="tbmeta" style="color:var(--muted)">Personal Study Edition with the same NCERT and formula content</small></span><span style="font-weight:700;color:var(--accent)">Open &rsaquo;</span></a><script>fetch("notes/economy-textbook/manifest.json",{cache:"no-store"}).then(function(r){return r.json()}).then(function(m){var v=m.versions[0],e=document.getElementById("tbmeta");if(e)e.textContent="Latest: version "+v.v+" \\u00b7 "+v.pages+" pages \\u00b7 "+v.date}).catch(function(){})</script>'
+if 'class="hwcard"' not in _s:
+    _s = _s.replace('<p class="prog">', _c + '<p class="prog">', 1)
+    open(_p, 'w').write(_s)
+
 
 # ---- search
 idx = []

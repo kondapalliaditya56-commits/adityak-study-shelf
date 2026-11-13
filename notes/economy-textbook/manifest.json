@@ -1,0 +1,14 @@
+{
+ "subject": "economy-textbook",
+ "title": "Economy textbook (Personal Study Edition)",
+ "versions": [
+  {
+   "v": 1,
+   "file": "v1.pdf",
+   "date": "2026-11-13",
+   "pages": 766,
+   "sha": "4ae88f90ee9a55cb",
+   "note": "NCERT integrated, formula cards, styled current affairs, abbreviation columns"
+  }
+ ]
+}
