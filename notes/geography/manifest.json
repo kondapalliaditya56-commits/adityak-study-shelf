@@ -3,6 +3,22 @@
  "title": "Geography handwritten revision notes",
  "versions": [
   {
+   "v": 4,
+   "file": "v4.pdf",
+   "date": "2026-11-13",
+   "pages": 183,
+   "sha": "90768aa6b123ee77",
+   "note": "v4: mind-map chapters 7-12 added (131 teacher mind maps) and 10 handout facts the audit found missing (time-zone PYQ table, NH numbering, magnetic reversal, tsunami, deep-ocean temperature and others)"
+  },
+  {
+   "v": 3,
+   "file": "v3.pdf",
+   "date": "2026-11-13",
+   "pages": 181,
+   "sha": "b6b9fde56b126833",
+   "note": "v3: adds the 131 teacher mind-map pages (Chapters 7-12: Geomorphology, Climatology, Oceanography, Indian, Human, Economic Geography), same order as the Shelf and textbook"
+  },
+  {
    "v": 2,
    "file": "v2.pdf",
    "date": "2026-11-06",

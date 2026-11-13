@@ -122,6 +122,18 @@ def r_hw(n):
 dsl.r_hw = r_hw
 _hub = dsl.svg_hub
 dsl.svg_hub = lambda c, s: _hub(c, s).replace('max-width:150mm', 'max-width:118mm')
+def mindmaps(subj):
+    """Teacher's mind-map pages (image-only chapters on the Shelf, e.g. Geography 7-12): one map per page, same order as the Shelf."""
+    p = os.path.join(HERE, subj, 'mm', 'meta.json')
+    if not os.path.exists(p): return None
+    meta = _json.load(open(p)); toc = '<div class="pt" style="background:#fff3e0">Mind maps (from the handout)</div>'; body = ''
+    for cid in sorted(meta, key=int):
+        m = meta[cid]; toc += '<a href="#c%s">%s &nbsp;Mind maps · %s (%d maps)</a>' % (cid, cid, m['title'], len(m['pages']))
+        for k, (f, h, w, hh) in enumerate(m['pages']):
+            body += ('<div class="mmp"%s><div class="mmh">%s%s · %s</div><img src="%s"></div>'
+                     % (' id="c%s"' % cid if k == 0 else '', 'Ch %s · Mind maps · ' % cid, m['title'], h, 'file://' + os.path.join(HERE, subj, 'mm', f)))
+    return toc, body
+
 def build(subj, out, only=None):
     cfg = SUBJ[subj]; chs = load(subj, only)
     _STORY['d'] = load_story(subj)
@@ -134,9 +146,11 @@ def build(subj, out, only=None):
         pt = c.get('part_name')
         if pt and pt != cur: cur = pt; toc += '<div class="pt" style="background:%s">%s</div>' % (c.get('part_bg', '#e3f2fd'), pt)
         toc += '<a href="#c%s">%s &nbsp;%s</a>' % (c['id'], c['id'], c.get('toc', c['title']))
+    mm = mindmaps(subj) if not only else None
+    if mm: toc += mm[0]
     toc += '</div></div>'
-    body = [cov, toc] + [chapter_html(c) for c in chs]
-    html = '<html><head><style>%s</style></head><body>%s</body></html>' % (hwlib.CSS + STORY_CSS + FIX_CSS + '.chap{break-before:auto;margin-top:5mm}.pyqline,.sw,.ttl{break-after:avoid}.br{orphans:3;widows:3}.br{break-inside:auto}.keep{break-inside:avoid}.keep table{font-size:9pt}.keep td{padding:.2mm 1.4mm}.pyq{font-size:7.6pt}', ''.join(body))
+    body = [cov, toc] + [chapter_html(c) for c in chs] + ([mm[1]] if mm else [])
+    html = '<html><head><style>%s</style></head><body>%s</body></html>' % (hwlib.CSS + STORY_CSS + FIX_CSS + '.mmp{break-inside:avoid;text-align:center;margin-bottom:4mm}.mmp[id]{break-before:page}.mmh{font-family:PH;font-size:11pt;color:#b26a00;text-align:left;border-bottom:1.5px solid #b26a00;margin-bottom:2mm}.mmp img{max-width:100%;max-height:238mm;object-fit:contain}' + '.chap{break-before:auto;margin-top:5mm}.pyqline,.sw,.ttl{break-after:avoid}.br{orphans:3;widows:3}.br{break-inside:auto}.keep{break-inside:avoid}.keep table{font-size:9pt}.keep td{padding:.2mm 1.4mm}.pyq{font-size:7.6pt}', ''.join(body))
     html = html.replace('</style>', '@page{@bottom-right{content:"%s · Handwritten Notes · " counter(page);font-family:PH;font-size:8pt;color:#888}}</style>' % cfg['title'].title(), 1)
     html = html.replace('</style>', hwstyle.css('handlee', '') + '</style>', 1)
     html = hwstyle.decorate(html)
