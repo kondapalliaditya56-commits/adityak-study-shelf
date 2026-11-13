@@ -43,10 +43,14 @@ def items_html(nodes):
                 out.append('<div class="tablewrap"><table><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (
                     ''.join('<th>%s</th>' % h for h in t['head']), ''.join('<tr>%s</tr>' % ''.join('<td>%s</td>' % c for c in r) for r in t['rows'])))
     flush(); return ''.join(out)
+def recall_html(ch):
+    q = ch.get('cn_recall') or []
+    if not q: return ''
+    return '<h3>Quick recall from the class</h3><div class="tablewrap"><table><thead><tr><th>Question</th><th>Answer</th></tr></thead><tbody>' + ''.join('<tr><td>%s</td><td>%s</td></tr>' % (x, y) for x, y in q) + '</tbody></table></div>'
 def chapter_fragment(ch):
     blocks = ch.get('cn_blocks') or []
     if not blocks: return None
-    body = ''.join(items_html(b['nodes']) for b in blocks)
+    body = ''.join(items_html(b['nodes']) for b in blocks) + recall_html(ch)
     return ('<!--cn--><section id="class-additions" class="bk-cn"><h2>From the class<a class="anchor" href="#class-additions">#</a></h2>'
             '<div class="cn-sub">Taught in class, not in the handout: latest Supreme Court cases, comparisons with other constitutions, the teacher\'s examples and answer frames. Where class and handout differ, the box says so.</div>'
             + body + '</section><!--/cn-->')
@@ -83,7 +87,7 @@ def build_pdf(outdir, ends):
     for ch in bf.load('polity'):
         fr = chapter_fragment(ch)
         if not fr: continue
-        body = ''.join(items_html(b['nodes']) for b in ch['cn_blocks'])
+        body = ''.join(items_html(b['nodes']) for b in ch['cn_blocks']) + recall_html(ch)
         pgn = ends.get(ch['id'], '')
         doc = ('<html><head><meta charset="utf-8"><style>%s :root{--pg:"%s"}</style></head><body><div class="panel">MY NOTES</div><h1>Chapter %d · %s: from the class</h1>'
                '<div class="cn-sub">Taught in class, not in the handout: latest Supreme Court cases, comparisons with other constitutions, the teacher\'s examples and answer frames. Where class and handout differ, the box says so.</div>%s</body></html>'

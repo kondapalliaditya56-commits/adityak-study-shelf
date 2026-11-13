@@ -25,7 +25,7 @@ def apply_cn(subj, chs):
         for cid, blocks in m.ADD.items(): adds.setdefault(cid, []).extend(blocks)
         for cid, qa in getattr(m, 'RECALL', {}).items(): rec.setdefault(cid, []).extend(qa)
     for ch in chs:
-        if rec.get(ch['id']): ch['recall'] = list(ch.get('recall') or []) + rec[ch['id']]
+        if rec.get(ch['id']): ch['recall'] = list(ch.get('recall') or []) + rec[ch['id']]; ch['cn_recall'] = list(rec[ch['id']])
         for blk in adds.get(ch['id'], []):
             nodes = ch['nodes']; kw = (blk.get('after') or '').lower(); pos = len(nodes)
             if kw:
