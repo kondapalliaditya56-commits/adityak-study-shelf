@@ -32,7 +32,7 @@ def apply_cn(subj, chs):
                 for i, n in enumerate(nodes):
                     if n[0] == 'sec' and kw in re.sub(r'<[^>]+>', '', n[1]).lower():
                         pos = i + 1
-                        while pos < len(nodes) and nodes[pos][0] != 'sec': pos += 1
+                        while pos < len(nodes) and (nodes[pos][0] != 'sec' or re.sub(r'<[^>]+>', '', nodes[pos][1]).startswith('CLASS')): pos += 1
                         break
             ch['nodes'] = nodes[:pos] + list(blk['nodes']) + nodes[pos:]
             ch.setdefault('cn_blocks', []).append(blk)
