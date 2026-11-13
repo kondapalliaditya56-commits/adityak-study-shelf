@@ -3,6 +3,14 @@
  "title": "Modern India handwritten revision notes",
  "versions": [
   {
+   "v": 4,
+   "file": "v4.pdf",
+   "date": "2026-11-13",
+   "pages": 478,
+   "sha": "a2ad3c6c61ce84a1",
+   "note": "All 47 chapters re-checked against the handout and class slides: corrected reign-year codes, mnemonic labels (teacher's vs own), missing PYQ answers and omitted handout rows"
+  },
+  {
    "v": 3,
    "file": "v3.pdf",
    "date": "2026-11-06",
