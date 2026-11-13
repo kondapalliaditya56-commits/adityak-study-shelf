@@ -12,9 +12,7 @@ ADD = {
     sec('CLASS · HC set-up, strength, age', 'r'),
     tb(['Article (class bare-act list)', 'Subject'],
        ['<b>214</b>', 'a High Court for each State'],
-       ['<b>230</b>', 'extends HC jurisdiction to a UT <i>(not in handout; general knowledge, verify)</i>'],
-       ['<b>231</b>', 'common HC for two or more States / State + UT'],
-       ['<b>241(1)</b>', 'Parliament may constitute a HC for a UT <i>(not in handout; general knowledge, verify)</i>']),
+       ['<b>231</b>', 'common HC for two or more States / State + UT']),
     bx('bl', '<b>Delhi HC 1966</b>; before that Delhi came under the <b>Punjab and Haryana HC</b>. J&amp;K and Ladakh share one HC.'),
     tb(['Strength fixed by', 'How'],
        ['<b>High Court</b> (Arts 215, 216 in class note)', '<b>executive order</b> of Govt of India is enough'],
@@ -28,7 +26,7 @@ ADD = {
     sec('CLASS · HC jurisdiction: extras', 'r'),
     bx('pk', '<b>Original (class list):</b> electoral disputes · <b>contempt matters</b> · FR cases (Art 226) · <b>admiralty</b> (maritime law, law of the seas) · revenue. New against the notes: <b>contempt</b> and <b>admiralty</b>. Bombay, Calcutta, Madras + Delhi: original civil jurisdiction in higher-value cases.'),
     t('<b>Appellate (most of HC work)</b>', '<b>1st appeal</b> (from district and sub-courts): on <b>law or fact</b>', '<b>2nd appeal</b>: only <b>question of law</b>, not fact', 'state tribunals: HC appellate jurisdiction after <b>L. Chandra Kumar (1997)</b>', w=22),
-    bx('bl', '<b>Supervisory Art 227</b>; class also notes <b>Arts 228, 229</b> (228: constitutional-question cases withdrawn to HC; 229: HC officers and expenses; general knowledge, verify). <b>Sheriff</b> = nominal position only (class).'),
+    bx('bl', '<b>Supervisory Art 227</b>; <b>Sheriff</b> = nominal position only (class).'),
   ]),
   # ------------------------------------------------------------ subordinate courts, tribunals
   dict(after='SUBORDINATE COURTS AND TRIBUNALS', nodes=[
@@ -128,7 +126,7 @@ ADD = {
        ['RS rejected / 6 months idle', 'only amendments that <b>necessarily</b> caused the delay'],
        ['Passed with amendments the first House rejected', 'those amendments + the <b>disagreed provisions</b> may be amended again'],
        ['Chairman of RS', '<b>never</b> presides; no joint sitting for Constitution Amendment Bills']),
-    bx('ye', '<b>Class vs handout (joint sitting years):</b> class gives Dowry Prohibition <b>1961</b>, Banking Service Commission <b>1978</b>, POTA <b>2002</b>; handout gives 1960, 1977, 2002 (the Bill years; sittings were 1961, 1978: general knowledge, verify).'),
+    bx('ye', '<b>Class vs handout (joint sitting years):</b> class gives Dowry Prohibition <b>1961</b>, Banking Service Commission <b>1978</b>, POTA <b>2002</b>; handout gives 1960, 1977, 2002 (probably Bill year vs sitting year: verify).'),
     t('<b>MONEY BILLS: Art 110 (Union) · Art 199 (State Assembly)</b>', '<b>Clause 1 Criteria:</b> (a) tax changes (b) borrowing (c) Consolidated / Contingency Fund custody (d) appropriation (e) charged expenditure (f) public accounts, audit (g) incidental matters', '<b>Clause 2 Exclusions:</b> only fines or penalties, licence/service fees, local-body taxes', '<b>Clause 3 Decider:</b> LS Speaker, final', '<b>Clause 4 Proof:</b> Speaker\'s signed certificate when moved', w=26),
     bx('ye', '<b>Class vs handout:</b> class reads decider = 110(3), certificate = 110(4); handout cites 110(3) for the certificate (check). Money Bill: only Art 110, only LS, President\'s recommendation, RS no power.'),
     tb(['Financial Bill', 'Class example'], ['<b>Class 1</b> (Art 117(1)): Art 110 matters + more; LS only, President\'s recommendation; RS ordinary-bill-like power', '<b>Central Road Fund Bill</b> (road cess + road works)'], ['<b>Class 2</b>: expenditure from Consolidated Fund; either House; recommendation needed at <b>2nd reading</b>, not at introduction', '<b>Supreme Court (Number of Judges) Act 1956</b>: more judges, higher salary bill']),

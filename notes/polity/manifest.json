@@ -3,6 +3,14 @@
  "title": "Polity handwritten revision notes",
  "versions": [
   {
+   "v": 3,
+   "file": "v3.pdf",
+   "date": "2026-11-13",
+   "pages": 483,
+   "sha": "130a2e7f270591da",
+   "note": "v3: class-note additions from lectures 1-46 (latest SC cases, comparisons with other constitutions, teacher's examples and answer frames) placed at their topics"
+  },
+  {
    "v": 2,
    "file": "v2.pdf",
    "date": "2026-11-06",
