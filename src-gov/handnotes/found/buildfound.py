@@ -2,7 +2,7 @@
 """Handwritten-style revision notes for a foundation subject.
 Usage (from anywhere): python3 buildfound.py SUBJECT OUT.pdf [id,id,...]
 SUBJECT = polity | economy | geography | modern-india ; chapters live in found/<SUBJECT>/ch_*.py (each defines CHS)."""
-import sys, os, glob, importlib.util, re
+import re, sys, os, glob, importlib.util, re
 HERE = os.path.dirname(os.path.abspath(__file__)); HN = os.path.dirname(HERE)
 os.chdir(HN); sys.path.insert(0, HN)
 from weasyprint import HTML
@@ -14,12 +14,36 @@ SUBJ = {
  'geography': dict(title='GEOGRAPHY', sub='Geomorphology · Climatology · Oceanography · Indian geography · Human geography · Economic geography', cap='Built from the Sarrthi IAS GS Foundation Geography handouts (pictures and the mind-map pages are in the textbook edition).', pre='geo', ca=[], gl=False),
  'modern-india': dict(title='MODERN INDIAN HISTORY', sub='Eighteenth-century India · British conquest · Revolt of 1857 · Reforms · Moderates and Extremists · Gandhian era · Constitutional developments', cap='Built from the Sarrthi IAS handout and Himanshu Khatri class slides. Reign-year codes are kept exactly as taught.', pre='mi', ca=['mi'], gl=False),
 }
+
+def apply_cn(subj, chs):
+    """Class-note additions: found/<subj>/cn/cn_*.py define ADD = {chapter_id: [dict(after='section title keyword', nodes=[...]), ...]}.
+    Each block goes at the end of the section whose title contains `after` (else before the recall drill = end of nodes)."""
+    adds = {}; rec = {}
+    for f in sorted(glob.glob(os.path.join(HERE, subj, 'cn', 'cn_*.py'))):
+        spec = importlib.util.spec_from_file_location('cn_' + os.path.basename(f)[:-3], f)
+        m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+        for cid, blocks in m.ADD.items(): adds.setdefault(cid, []).extend(blocks)
+        for cid, qa in getattr(m, 'RECALL', {}).items(): rec.setdefault(cid, []).extend(qa)
+    for ch in chs:
+        if rec.get(ch['id']): ch['recall'] = list(ch.get('recall') or []) + rec[ch['id']]
+        for blk in adds.get(ch['id'], []):
+            nodes = ch['nodes']; kw = (blk.get('after') or '').lower(); pos = len(nodes)
+            if kw:
+                for i, n in enumerate(nodes):
+                    if n[0] == 'sec' and kw in re.sub(r'<[^>]+>', '', n[1]).lower():
+                        pos = i + 1
+                        while pos < len(nodes) and nodes[pos][0] != 'sec': pos += 1
+                        break
+            ch['nodes'] = nodes[:pos] + list(blk['nodes']) + nodes[pos:]
+            ch.setdefault('cn_blocks', []).append(blk)
+
 def load(subj, only=None):
     chs = []
     for f in sorted(glob.glob(os.path.join(HERE, subj, 'ch_*.py'))):
         spec = importlib.util.spec_from_file_location('m_' + os.path.basename(f)[:-3], f)
         m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); chs += m.CHS
     chs.sort(key=lambda c: c['id'])
+    apply_cn(subj, chs)
     if only: chs = [c for c in chs if c['id'] in only]
     return chs
 
