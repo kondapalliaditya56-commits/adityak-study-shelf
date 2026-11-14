@@ -44,6 +44,8 @@ EXTRA = {
       '<b>Body (variation):</b> latitude (subtropical high), evaporation versus rain, river water, sea ice, currents, inland seas (Great Salt Lake 220, Dead Sea 240, Lake Van 330).',
       '<b>Body (effects):</b> density → thermohaline circulation; stratification (halocline); nutrients, habitats and productivity.',
       '<b>Close:</b> melting-ice fresh water is now altering salinity and circulation.']}}],
+ 8: [{'h': 'How a dead zone forms (memory aid)'}],
+ 10: [{'h': 'UNCLOS belts (memory aid)'}],
  9: [{'call': {'kind': 'note', 'tag': 'Connects to', 'body': [
       'Trenches, guyots, hotspots → <b>Geomorphology</b>. Coriolis, trade winds, westerlies, cyclones, El Niño → <b>Climatology</b> and Indian climate.',
       'Resources, ports, fisheries → <b>Economic Geography</b>. Palk Strait, Chilika, Gulf of Kutch, Cape Comorin → <b>Indian Geography</b>.']}}],
@@ -72,8 +74,8 @@ VISUALS = [
  {'type': 'fork', 'after': 'Types of currents', 'title': 'Two sides of an ocean', 'root': {'t': 'Ocean basin currents', 'c': ['Wind + Coriolis + continents']}, 'branches': [
    {'t': 'West = Warm & Wild', 'c': ['Gulf Stream, Kuroshio, Brazil, East Australian, Agulhas', 'warm, narrow, fast, strong'], 'verdict': 'Western boundary currents'},
    {'t': 'East = cold & Easygoing', 'c': ['Canary, Benguela, California, Peru, West Australian', 'cold, broad, slow, upwelling'], 'verdict': 'Eastern boundary currents'}]},
- {'type': 'flow', 'after': 'Dead zones', 'title': 'How a dead zone forms', 'per_row': 3, 'steps': [['Nutrient run-off', 'nitrogen and phosphorus'], ['Algal bloom', 'rapid algae growth'], ['Algae die and sink', 'decompose on the bottom'], ['Bacteria use oxygen', 'oxygen falls'], ['Dead zone', 'hypoxic water']]},
- {'type': 'flow', 'after': 'Law Of Sea', 'title': 'UNCLOS belts, coast outward', 'per_row': 4, 'steps': [['Territorial sea', '12 nm (22.2 km)'], ['Contiguous zone', '24 nm (44.4 km): customs, fiscal, immigration, sanitary laws'], ['EEZ', '200 nm (370.4 km): sovereign rights over resources'], ['High seas', 'beyond: navigation, overflight, fishing, research']]},
+ {'type': 'flow', 'after': 'How a dead zone forms (memory aid)', 'title': 'How a dead zone forms', 'per_row': 3, 'steps': [['Nutrient run-off', 'nitrogen and phosphorus'], ['Algal bloom', 'rapid algae growth'], ['Algae die and sink', 'decompose on the bottom'], ['Bacteria use oxygen', 'oxygen falls'], ['Dead zone', 'hypoxic water']]},
+ {'type': 'flow', 'after': 'UNCLOS belts (memory aid)', 'title': 'UNCLOS belts, coast outward', 'per_row': 4, 'steps': [['Territorial sea', '12 nm (22.2 km)'], ['Contiguous zone', '24 nm (44.4 km): customs, fiscal, immigration, sanitary laws'], ['EEZ', '200 nm (370.4 km): sovereign rights over resources'], ['High seas', 'beyond: navigation, overflight, fishing, research']]},
 ]
 RECALL = [[html.unescape(q), html.unescape(a)] for q, a in [
  ('Average ocean depth; shelf and slope gradient?', '3,800 m; 1-2° / 3-6°'), ('Trench depth; example?', '&gt; 6,000 m; Mariana'), ('Mean temperature equator vs 45°?', '26.7 °C / 12.7 °C'),
