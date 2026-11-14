@@ -159,3 +159,7 @@ def attach(chs, maps, und, GL={}, IGNORE=()):
             rows = ''.join('<div class="ge"><b>%s</b> = <u>%s</u>%s</div>' % (a, GL[a][0], (' — ' + GL[a][1]) if GL[a][1] else '') for a in sorted(have, key=str.lower))
             out.append(('raw', '<div class="glo2"><div class="gh">\U0001F524 ABBREVIATION COLUMN <i>(full forms as the handout gives them where it does; the one-line meanings are plain-language aids, verify)</i></div><div class="gc">%s</div></div>' % rows))
         ch['nodes'] = out
+
+import detail2 as _d2
+attach = _d2.attach
+CSS += _d2.CSS

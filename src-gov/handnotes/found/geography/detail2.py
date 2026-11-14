@@ -1,0 +1,172 @@
+# -*- coding: utf-8 -*-
+"""v6: pictures sit at the node they belong to; every handout point the revision map does not carry is added under 'More points' with its own pictures in place."""
+import re, html as H, sys
+sys.path.insert(0, '..')
+import cover, detail as D
+STATS = {}
+CSS = (".pics{display:block!important}.pics:after{content:'';display:block;clear:both}.pic{display:inline-block!important;vertical-align:top;width:47%!important;max-width:47%!important;margin:0 1% 2mm 0}.pic.w,.pic.t{display:block!important;width:100%!important;max-width:100%!important}.pic.s{width:30%!important;max-width:30%!important}.xt{border-left:1.6mm solid #ef6c00;padding-left:2.4mm;margin:1.4mm 0 2mm;background:#fffaf2}.xt .xh{font-family:KB;font-size:9.8pt;color:#e65100;margin:.6mm 0}"
+       ".xt .h4{font-family:KB;font-size:10.4pt;color:#1565c0;margin:1.4mm 0 .3mm;break-after:avoid}.xt .h4:before{content:'\\25B8  '}"
+       ".xt ul{margin:.2mm 0 .6mm;padding-left:5mm}.xt li{margin:.3mm 0}.xt ul ul{list-style:circle}.xt ul ul ul{list-style:square}.xt p{margin:.5mm 0}"
+       ".xt .red{color:#c62828}.xt .grn{color:#2e7d32}.xt mark{background:#fff176}.xt table{font-size:9.4pt}")
+def _figs(frag_blocks):
+    """-> [(caption, heading+label text, html, order)] from a topic's blocks"""
+    out = []; hd = ''; lab = ''
+    for kind, d, t, h in frag_blocks:
+        if kind == 'h': hd = re.sub(r'^\d+\s*·\s*', '', t).rstrip(':# '); lab = ''
+        elif kind in ('li', 'p'):
+            l = t.strip().rstrip(': ')
+            if kind == 'li' and 2 < len(l) < 48 and re.search(r'<b>', h) and not re.match(r'(Q\.|Answer|Ans|Explanation|Which|Select|Statement)', l): lab = l
+        elif kind == 'fig':
+            m = re.search(r'class="([^"]*)" style="--w:([\d.]+)px"><img[^>]*src="([^"]+)"', h)
+            if not m: continue
+            cls, w, src = m.group(1), float(m.group(2)), m.group(3)
+            cap = hd.title() if hd.isupper() else hd
+            if lab and lab.lower() not in cap.lower(): cap = (cap + ' · ' if cap else '') + lab
+            k = 'pic t w' if 'tbl' in cls else ('pic w' if w > 345 else ('pic s' if w < 190 else 'pic'))
+            out.append((cap, hd + ' ' + lab, '<div class="%s"><img src="%s"><div class="cp">%s</div></div>' % (k, src, H.escape(cap)), len(out)))
+    return out
+def _nodetext(nd):
+    return ' '.join(re.sub(r'<[^>]+>', ' ', x) if isinstance(x, str) else ' '.join(re.sub(r'<[^>]+>', ' ', str(y)) for y in x) if isinstance(x, (list, tuple)) else str(x) for x in nd[1:])
+def _ul(items):
+    """items: [(depth, html)] -> nested ul"""
+    out = []; cur = -1
+    for d, h in items:
+        d = min(d, cur + 1) if cur >= 0 else 0
+        while cur < d: out.append('<ul>'); cur += 1
+        while cur > d: out.append('</li></ul>'); cur -= 1
+        out.append('</li>' if out and out[-1].startswith('<li') or (out and out[-1].endswith('</li>') is False and out[-1] not in ('<ul>',) and False) else '')
+        out.append('<li>%s' % h)
+    while cur >= 0: out.append('</li></ul>'); cur -= 1
+    return ''.join(out).replace('</li></li>', '</li>')
+def extras(blocks, have, placed):
+    """HTML of everything in this topic's blocks that the map does not carry; figures not placed at a node are shown in place."""
+    out = []; pend = None; items = []; nfig = 0
+    def flush_items():
+        nonlocal items
+        if items: out.append(_ul(items)); items = []
+    def emit_head():
+        nonlocal pend
+        if pend: flush_items(); out.append('<div class="h4">%s</div>' % pend); pend = None
+    miss = 0
+    own = []
+    for i, (kind, d, t, h) in enumerate(blocks):
+        if kind not in ('li', 'p', 'tbl'): own.append(False); continue
+        has_kids = kind == 'li' and i + 1 < len(blocks) and blocks[i + 1][0] == 'li' and blocks[i + 1][1] > d
+        unc = not cover.covered(t, have)
+        own.append(unc and (not has_kids or len(cover.toks(t)) >= 4))
+    emit = list(own)
+    for i in range(len(blocks) - 1, -1, -1):  # a label is shown when something under it is shown
+        kind, d = blocks[i][0], blocks[i][1]
+        if kind == 'li':
+            j = i + 1
+            while j < len(blocks) and blocks[j][0] == 'li' and blocks[j][1] > d:
+                if emit[j]: emit[i] = True
+                j += 1
+    for i, (kind, d, t, h) in enumerate(blocks):
+        if kind == 'h': pend = h if t else None; continue
+        if kind == 'fig': continue
+        if emit[i]:
+            miss += 1; emit_head()
+            if kind == 'li': items.append((d, h))
+            elif kind == 'p': flush_items(); out.append('<p>%s</p>' % h)
+            else: flush_items(); out.append(h)
+    flush_items()
+    return ''.join(out), miss
+def attach(chs, maps, und, GL={}, IGNORE=()):
+    for ch in chs:
+        n = ch['id']
+        if n not in maps: continue
+        if not D.WORDS: D._words(maps)
+        m = D._main(n)
+        heads = [(x.start(), x.group(2), D._txt(re.sub(r'<a class="anchor".*?</a>', '', x.group(3), flags=re.S))) for x in re.finditer(r'<(h2|h3|h4)[^>]*\sid="([^"]+)"[^>]*>(.*?)</\1>', m, re.S)]
+        segs = {}; order = []; pyq_ids = []
+        for k, (pos, i, ttl) in enumerate(heads):
+            segs[i] = m[pos:heads[k + 1][0] if k + 1 < len(heads) else len(m)]; order.append(i)
+            if D.ISPYQ.match(ttl): pyq_ids.append(i)
+        body = [i for i in order if i not in ('exam-lens', 'recall', 'traps') and i not in pyq_ids]
+        secs = [x for x in ch['nodes'] if x[0] == 'sec']
+        mp = maps[n]; assert len(mp) == len(secs), ('map length', n, len(mp), len(secs))
+        pts = []
+        for k, a in enumerate(mp):
+            if not a: continue
+            sid, _, kw = a.partition('@'); off = 0
+            if kw:
+                off = segs[sid].find(kw); assert off > 0, ('keyword', n, a)
+            pts.append((body.index(sid), off, k))
+        assert pts == sorted(pts), ('map order', n)
+        def cut(a, b):
+            (i0, o0), (i1, o1) = a, b; s = ''
+            for j in range(i0, min(i1, len(body) - 1) + 1):
+                seg = segs[body[j]]; lo = o0 if j == i0 else 0; hi = o1 if j == i1 else len(seg)
+                if j == i1 and o1 == 0: break
+                s += seg[lo:hi]
+            return s
+        rng = {}
+        for j, (bi, off, k) in enumerate(pts):
+            nxt = (pts[j + 1][0], pts[j + 1][1]) if j + 1 < len(pts) else (len(body), 0)
+            rng[k] = cut((bi, off), nxt)
+        # split nodes into groups by sec
+        groups = []; tail = []; cur = None; cur_pyq = False; k = -1
+        for nd in ch['nodes']:
+            if nd[0] == 'sec':
+                k += 1; cur_pyq = bool(re.search(r'PYQ BANK|MISSED PYQ', re.sub(r'<[^>]+>', '', nd[1]), re.I))
+                if cur_pyq: tail.append(('bx', 'bl', '<b>%s</b>' % re.sub(r'<[^>]+>', '', nd[1]))); cur = None; continue
+                cur = {'k': k, 'sec': nd, 'nodes': []}; groups.append(cur)
+            elif cur_pyq: tail.append(nd)
+            elif nd[0] == 'bx' and D.PYQBX.match(nd[2]): tail.append(nd)
+            elif cur is not None: cur['nodes'].append(nd)
+            else: groups.append({'k': -1, 'sec': None, 'nodes': [nd]})
+        out = []; st = dict(blocks=0, miss=0, figs=0, placed=0)
+        for g in groups:
+            if g['sec'] is None: out += g['nodes']; continue
+            k = g['k']; out.append(g['sec'])
+            if k in und.get(n, {}): out.append(('raw', '<div class="und"><b>Understand it first:</b> %s</div>' % und[n][k]))
+            nodes = g['nodes']
+            if k not in rng: out += nodes; continue
+            bl = cover.blocks(rng[k])
+            have = set(cover.stems(' '.join(_nodetext(x) for x in nodes))) | cover.stems(und.get(n, {}).get(k, ''))
+            figs = _figs(bl); st['figs'] += len(figs)
+            ntoks = [(cover.stems(_nodetext(x)) if x[0] not in ('sec', 'stl') else set()) for x in nodes]
+            put = {}; left = []
+            for cap, ctx, html, i in figs:
+                ct = set(cover.toks(ctx)); best = None; bs = 0
+                for j, nt in enumerate(ntoks):
+                    if not nt or not ct: continue
+                    sc = len(ct & nt) / len(ct)
+                    if sc > bs + 1e-9: bs, best = sc, j
+                if best is not None and bs >= 0.4: put.setdefault(best, []).append(html)
+                else: left.append((cap, ctx, html, i))
+            for j, nd in enumerate(nodes):
+                out.append(nd)
+                if j in put: out.append(('raw', '<div class="pics">%s</div>' % ''.join(put[j])))
+            st['placed'] += sum(len(v) for v in put.values())
+            # more points + leftover figures, in handout order
+            html, miss = extras(bl, have, None)
+            st['blocks'] += sum(1 for b in bl if b[0] in ('li', 'p', 'tbl')); st['miss'] += miss
+            if left:
+                html += '<div class="h4">Pictures of this topic</div><div class="pics">%s</div>' % ''.join(x[2] for x in left)
+            if html: out.append(('raw', '<div class="xt"><div class="xh">➕ More points from the handout on this topic</div><div class="hd">%s</div></div>' % D._conv(html)))
+        STATS[n] = st
+        print('ch%d: handout blocks %d, added as more points %d, pictures %d (at their node %d, rest in the topic flow)' % (n, st['blocks'], st['miss'], st['figs'], st['placed']))
+        if ch.get('recall'):
+            rc = ch['recall']; ch['recall'] = None
+            out.append(('sec', 'RECALL DRILL: COVER AND ANSWER', 'r'))
+            out.append(('raw', '<table>' + ''.join('<tr>' + ''.join('<td style="width:23%%">%s</td><td style="width:27%%">%s</td>' % qa for qa in rc[i:i + 2]) + ('<td></td><td></td>' if len(rc[i:i + 2]) == 1 else '') + '</tr>' for i in range(0, len(rc), 2)) + '</table>'))
+        out.append(('sec', 'PYQs OF THIS CHAPTER', 'r'))
+        if 'exam-lens' in segs: out.append(('raw', '<div class="hd pq">%s</div>' % D._conv(re.sub(r'^<h2.*?</h2>', '', segs['exam-lens'], flags=re.S))))
+        if tail:
+            out.append(('raw', '<div class="ph">★ PYQ answers in one line (asked year and the key)</div>')); out += tail
+        if pyq_ids:
+            out.append(('raw', '<div class="ph">✍ The PYQs as printed in the handout, with answers</div>'))
+            out.append(('raw', '<div class="hd pq">%s</div>' % D._conv(''.join(re.sub(r'^<(h2|h3|h4)[^>]*>.*?</\1>', '', segs[i], count=1, flags=re.S) for i in pyq_ids))))
+        txt = D._txt(re.sub(r'src="data:[^"]*"', '', m)) + ' ' + D._txt(' '.join(str(x) for x in out if x[0] != 'raw'))
+        found = sorted(set(re.findall(r'(?<![A-Za-z])(?:[A-Z][a-z]?[A-Z][A-Za-z0-9\-]*|[A-Z]{2,})(?![A-Za-z])', D._txt(re.sub(r'src="data:[^"]*"', '', ' '.join(str(x) for x in out))).replace('\\u', ' '))))
+        have2 = [a for a in found if a in GL]
+        for a in GL:
+            if a not in have2 and not a.isupper() and re.search(r'(?<![A-Za-z])%s(?![A-Za-z])' % re.escape(a), txt): have2.append(a)
+        un = [a for a in found if a not in GL and a not in IGNORE and not (a.isupper() and a.lower() in D.WORDS)]
+        if un: print('UNEXPANDED ABBREVIATIONS ch%d:' % n, ' '.join(un))
+        if have2:
+            rows = ''.join('<div class="ge"><b>%s</b> = <u>%s</u>%s</div>' % (a, GL[a][0], (' — ' + GL[a][1]) if GL[a][1] else '') for a in sorted(have2, key=str.lower))
+            out.append(('raw', '<div class="glo2"><div class="gh">\U0001F524 ABBREVIATION COLUMN <i>(full forms as the handout gives them where it does; the one-line meanings are plain-language aids, verify)</i></div><div class="gc">%s</div></div>' % rows))
+        ch['nodes'] = out

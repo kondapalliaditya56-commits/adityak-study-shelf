@@ -3,6 +3,14 @@
  "title": "Geography handwritten revision notes",
  "versions": [
   {
+   "v": 6,
+   "file": "v6.pdf",
+   "date": "2026-11-14",
+   "pages": 241,
+   "sha": "071b024d01f983e8",
+   "note": "v6: rebuilt on the full handout. Pictures now sit beside the point they illustrate; every handout point missing from the revision map is added under 'More points from the handout' in the same topic; page gaps removed; PYQs at chapter end, abbreviation column, understand-first boxes kept."
+  },
+  {
    "v": 5,
    "file": "v5.pdf",
    "date": "2026-11-14",

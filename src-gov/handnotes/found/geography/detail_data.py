@@ -191,3 +191,7 @@ import re as _re
 class _Ig(set):
     def __contains__(self, a): return set.__contains__(self, a) or bool(_re.match(r'(NH|NW)-?\d+$|IRS-1A$|TiO2$|ISRO-DMSP$|[A-Z]+-[a-z]|[A-Z][a-z]+[A-Z]|.*-(Kerala|Andhra|Parker)$', a)) or (a.isupper() and len(a) > 6)
 IGNORE = _Ig(IGNORE | {'DCS', 'KLS', 'YMO', 'GM', 'QNS', 'PYQS', 'KAMINI', 'GMR', 'GVK', 'THAR', 'BARAK', 'MALTHUS', 'NW-1'})
+
+GL['SSTs']=('sea surface temperatures','plural of SST')
+GL['DFCs']=('dedicated freight corridors','rail lines kept only for goods trains')
+IGNORE=_Ig(set(IGNORE)|{'SPOUTS'})
