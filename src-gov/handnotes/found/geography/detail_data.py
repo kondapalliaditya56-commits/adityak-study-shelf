@@ -194,4 +194,4 @@ IGNORE = _Ig(IGNORE | {'DCS', 'KLS', 'YMO', 'GM', 'QNS', 'PYQS', 'KAMINI', 'GMR'
 
 GL['SSTs']=('sea surface temperatures','plural of SST')
 GL['DFCs']=('dedicated freight corridors','rail lines kept only for goods trains')
-IGNORE=_Ig(set(IGNORE)|{'SPOUTS'})
+IGNORE=_Ig(set(IGNORE)|{'SPOUTS','CARD'})

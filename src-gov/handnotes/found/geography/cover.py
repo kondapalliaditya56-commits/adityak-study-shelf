@@ -13,12 +13,15 @@ def blocks(frag):
     frag = re.sub(r'<a class="anchor"[^>]*>.*?</a>', '', frag, flags=re.S)
     soup = BeautifulSoup('<div id="root">%s</div>' % frag, 'lxml'); root = soup.find(id='root'); out = []
     def lis(ul, d):
-        for li in ul.find_all('li', recursive=False):
-            sub = [c for c in li.children if getattr(c, 'name', None) in ('ul', 'ol')]
-            own = ''.join(str(c) for c in li.children if getattr(c, 'name', None) not in ('ul', 'ol'))
-            t = BeautifulSoup(own, 'lxml').get_text(' ', strip=True)
-            out.append(('li', d, t, own))
-            for s in sub: lis(s, d + 1)
+        for c in ul.children:
+            if isinstance(c, NavigableString): continue
+            if c.name == 'li':
+                sub = [x for x in c.children if getattr(x, 'name', None) in ('ul', 'ol')]
+                own = ''.join(str(x) for x in c.children if getattr(x, 'name', None) not in ('ul', 'ol'))
+                t = BeautifulSoup(own, 'lxml').get_text(' ', strip=True)
+                out.append(('li', d, t, own))
+                for x in sub: lis(x, d + 1)
+            elif c.name in ('ul', 'ol'): lis(c, d + 1)
     def walk(el):
         for c in el.children:
             if isinstance(c, NavigableString): continue

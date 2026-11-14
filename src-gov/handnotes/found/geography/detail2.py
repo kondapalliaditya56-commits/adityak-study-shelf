@@ -72,6 +72,33 @@ def extras(blocks, have, placed):
             else: flush_items(); out.append(h)
     flush_items()
     return ''.join(out), miss
+import importlib, os
+OPENERS = {}
+sys.path.insert(0, os.path.join(D.ROOT, 'src-geo')); sys.path.insert(0, os.path.join(D.ROOT, 'src-gov', 'book'))
+try:
+    OPENERS[3] = importlib.import_module('chap.ch3')
+except Exception as e: print('no opener', e)
+def _b(t): return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', H.escape(t, quote=False))
+OCSS = (".ob{border:2px solid #2e7d32;background:#f1f8e9;border-radius:3px;padding:1.2mm 2.8mm;margin:1.6mm 0;break-inside:avoid}.ob .oh{font-family:KB;color:#2e7d32;font-size:11pt;margin-bottom:.6mm}"
+        ".ob.p{border-color:#6a1b9a;background:#f8f0fb}.ob.p .oh{color:#6a1b9a}.ob.b{border-color:#1565c0;background:#e8f1fb}.ob.b .oh{color:#1565c0}.ob.r{border-color:#c62828;background:#fdecea}.ob.r .oh{color:#c62828}"
+        ".ob ul{margin:.3mm 0;padding-left:5mm}.ob li{margin:.4mm 0}.ob table{font-size:9.6pt}.two2{display:flex;gap:3mm}.two2>div{flex:1}"
+        ".nums{display:flex;flex-wrap:wrap;gap:1.6mm}.nums span{border:1.6px solid #1565c0;border-radius:5px;padding:.4mm 2mm;background:#fff}.nums b{color:#c62828}.nums i{font-size:9pt;color:#555}")
+def _opening(n):
+    S = OPENERS[n]; import viz
+    o = []
+    o.append(('raw', '<div class="ob"><div class="oh">The chapter in 60 seconds</div><ul>%s</ul></div>' % ''.join('<li>%s</li>' % _b(x) for x in S.SIMPLE)))
+    o.append(('raw', '<div class="ob b"><div class="oh">Words you need first</div><table><tr><th>Word</th><th>Meaning</th></tr>%s</table></div>' % ''.join('<tr><td><b>%s</b></td><td>%s</td></tr>' % (H.escape(a), H.escape(b)) for a, b in S.TERMS)))
+    o.append(('raw', '<div class="ob p"><div class="oh">One line to carry</div>%s</div>' % H.escape(S.REMEMBER)))
+    L = S.LENS
+    o.append(('raw', '<div class="ob p"><div class="oh">What the exam asks</div><div class="two2"><div><b>Prelims hooks</b><ul>%s</ul></div><div><b>Mains hooks</b><ul>%s</ul></div></div><i>%s</i></div>' % (''.join('<li>%s</li>' % H.escape(x) for x in L['prelims']), ''.join('<li>%s</li>' % H.escape(x) for x in L['mains']), H.escape(L['close']))))
+    o.append(('raw', '<div class="ob b"><div class="oh">Chapter map</div>%s</div>' % viz.render(S.VISUALS[0])))
+    return o
+def _closing(n):
+    S = OPENERS[n]; o = [('sec', 'NUMBER CARD, TRAPS AND SELF-TEST', 'r')]
+    o.append(('raw', '<div class="ob"><div class="oh">Number card</div><div class="nums">%s</div></div>' % ''.join('<span><b>%s</b> <i>%s</i></span>' % (H.escape(a), H.escape(b)) for a, b in S.NUMBERS)))
+    o.append(('raw', ''.join('<div class="ob r"><div class="oh">%s: %s</div>%s <i>%s</i></div>' % (H.escape(t['k']), H.escape(t['t']), H.escape(t['d']), H.escape(t['r'])) for t in S.TRAPS)))
+    o.append(('raw', '<div class="ob b"><div class="oh">Self-test (answers at the end of the box)</div>%s<p><b>Answers:</b> %s</p></div>' % (''.join('<p><b>Q%d.</b> %s<br>%s</p>' % (i + 1, H.escape(q['q']), ' &nbsp; '.join('(%s) %s' % ('abcd'[j], H.escape(x)) for j, x in enumerate(q['o']))) for i, q in enumerate(S.QUIZ)), ', '.join('Q%d %s' % (i + 1, 'abcd'[q['a']]) for i, q in enumerate(S.QUIZ)))))
+    return o
 def attach(chs, maps, und, GL={}, IGNORE=()):
     for ch in chs:
         n = ch['id']
@@ -147,6 +174,8 @@ def attach(chs, maps, und, GL={}, IGNORE=()):
                 html += '<div class="h4">Pictures of this topic</div><div class="pics">%s</div>' % ''.join(x[2] for x in left)
             if html: out.append(('raw', '<div class="xt"><div class="xh">➕ More points from the handout on this topic</div><div class="hd">%s</div></div>' % D._conv(html)))
         STATS[n] = st
+        if n in OPENERS:
+            out = _opening(n) + out
         print('ch%d: handout blocks %d, added as more points %d, pictures %d (at their node %d, rest in the topic flow)' % (n, st['blocks'], st['miss'], st['figs'], st['placed']))
         if ch.get('recall'):
             rc = ch['recall']; ch['recall'] = None
@@ -159,6 +188,7 @@ def attach(chs, maps, und, GL={}, IGNORE=()):
         if pyq_ids:
             out.append(('raw', '<div class="ph">✍ The PYQs as printed in the handout, with answers</div>'))
             out.append(('raw', '<div class="hd pq">%s</div>' % D._conv(''.join(re.sub(r'^<(h2|h3|h4)[^>]*>.*?</\1>', '', segs[i], count=1, flags=re.S) for i in pyq_ids))))
+        if n in OPENERS: out += _closing(n)
         txt = D._txt(re.sub(r'src="data:[^"]*"', '', m)) + ' ' + D._txt(' '.join(str(x) for x in out if x[0] != 'raw'))
         found = sorted(set(re.findall(r'(?<![A-Za-z])(?:[A-Z][a-z]?[A-Z][A-Za-z0-9\-]*|[A-Z]{2,})(?![A-Za-z])', D._txt(re.sub(r'src="data:[^"]*"', '', ' '.join(str(x) for x in out))).replace('\\u', ' '))))
         have2 = [a for a in found if a in GL]
@@ -170,3 +200,4 @@ def attach(chs, maps, und, GL={}, IGNORE=()):
             rows = ''.join('<div class="ge"><b>%s</b> = <u>%s</u>%s</div>' % (a, GL[a][0], (' — ' + GL[a][1]) if GL[a][1] else '') for a in sorted(have2, key=str.lower))
             out.append(('raw', '<div class="glo2"><div class="gh">\U0001F524 ABBREVIATION COLUMN <i>(full forms as the handout gives them where it does; the one-line meanings are plain-language aids, verify)</i></div><div class="gc">%s</div></div>' % rows))
         ch['nodes'] = out
+CSS += OCSS
