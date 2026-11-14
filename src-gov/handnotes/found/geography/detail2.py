@@ -270,3 +270,6 @@ CSS += (".sub,.sub.b,.sub.r,.sub.g{background:#e8f1fb!important;color:#1f3a5a!im
         ".sub .pyq{background:#fff!important;color:#6b4e00!important;border:1px solid #d9b95a!important}"
         ".mh{background:#fdf1dc!important;color:#5a3b12!important;border:1.2px solid #d8b27a!important;box-shadow:none!important;text-shadow:none!important}"
         ".mh *{color:#5a3b12!important;text-shadow:none!important}")
+CSS += (".sub,.sub.b,.sub.r,.sub.g{background:#fff!important;border:2px solid currentColor!important;border-radius:3px!important;box-shadow:1.2mm 1.2mm 0 currentColor!important;letter-spacing:.5px}"
+        ".sub.b{color:#1565c0!important}.sub.r{color:#c62828!important}.sub.g{color:#2e7d32!important}.sub{color:#1565c0!important}"
+        ".sub .pyq{background:#fff3c4!important;color:#6a1b00!important;border:1px solid #ffd54f!important}")
