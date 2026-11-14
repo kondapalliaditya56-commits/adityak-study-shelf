@@ -3,6 +3,14 @@
  "title": "Geography handwritten revision notes",
  "versions": [
   {
+   "v": 5,
+   "file": "v5.pdf",
+   "date": "2026-11-14",
+   "pages": 233,
+   "sha": "1f22ea9aa144c6d8",
+   "note": "v5: rewritten as revision-cum-understanding notes. Each topic: Understand it first, simplified bracket trees and tables, then the handout's own pictures and maps at that topic. PYQs moved to the end of each chapter. Abbreviation column added. Separate mind-map chapters removed."
+  },
+  {
    "v": 4,
    "file": "v4.pdf",
    "date": "2026-11-13",
