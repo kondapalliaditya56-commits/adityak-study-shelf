@@ -23,7 +23,7 @@ def _figs(frag_blocks):
             cap = hd.title() if hd.isupper() else hd
             if lab and lab.lower() not in cap.lower(): cap = (cap + ' · ' if cap else '') + lab
             k = 'pic t w' if 'tbl' in cls else ('pic w' if w > 345 else ('pic s' if w < 190 else 'pic'))
-            out.append((cap, hd + ' ' + lab, '<div class="%s"><img src="%s"><div class="cp">%s</div></div>' % (k, src, H.escape(cap)), len(out)))
+            out.append((cap, hd + ' ' + lab, '<div class="%s"><img src="%s"><div class="cp">%s</div></div>' % (k, src, H.escape(cap)), len(out), (w, src, H.escape(cap), 'tbl' in cls, hd)))
     return out
 def _nodetext(nd):
     return ' '.join(re.sub(r'<[^>]+>', ' ', x) if isinstance(x, str) else ' '.join(re.sub(r'<[^>]+>', ' ', str(y)) for y in x) if isinstance(x, (list, tuple)) else str(x) for x in nd[1:])
@@ -39,39 +39,64 @@ def _ul(items):
     while cur >= 0: out.append('</li></ul>'); cur -= 1
     return ''.join(out).replace('</li></li>', '</li>')
 def extras(blocks, have, placed):
-    """HTML of everything in this topic's blocks that the map does not carry; figures not placed at a node are shown in place."""
-    out = []; pend = None; items = []; nfig = 0
-    def flush_items():
-        nonlocal items
-        if items: out.append(_ul(items)); items = []
-    def emit_head():
-        nonlocal pend
-        if pend: flush_items(); out.append('<div class="h4">%s</div>' % pend); pend = None
-    miss = 0
-    own = []
+    """-> (groups, miss): groups = [{'head': heading text, 'items': [(depth, html)], 'raw': [html tables]}] of everything the map does not carry"""
+    miss = 0; own = []
     for i, (kind, d, t, h) in enumerate(blocks):
         if kind not in ('li', 'p', 'tbl'): own.append(False); continue
         has_kids = kind == 'li' and i + 1 < len(blocks) and blocks[i + 1][0] == 'li' and blocks[i + 1][1] > d
         unc = not cover.covered(t, have)
         own.append(unc and (not has_kids or len(cover.toks(t)) >= 4))
     emit = list(own)
-    for i in range(len(blocks) - 1, -1, -1):  # a label is shown when something under it is shown
+    for i in range(len(blocks) - 1, -1, -1):
         kind, d = blocks[i][0], blocks[i][1]
         if kind == 'li':
             j = i + 1
             while j < len(blocks) and blocks[j][0] == 'li' and blocks[j][1] > d:
                 if emit[j]: emit[i] = True
                 j += 1
+    # buckets keyed by (main heading, sub heading); main = h2/h3, sub = h4
+    buckets = []; cur = None; main = ''; sub = None; key = None
+    def clean_h(x):
+        x = re.sub(r'^\d+\s*·\s*', '', D._txt(x)).strip(': #'); return x.title() if x.isupper() else x
     for i, (kind, d, t, h) in enumerate(blocks):
-        if kind == 'h': pend = h if t else None; continue
-        if kind == 'fig': continue
-        if emit[i]:
-            miss += 1; emit_head()
-            if kind == 'li': items.append((d, h))
-            elif kind == 'p': flush_items(); out.append('<p>%s</p>' % h)
-            else: flush_items(); out.append(h)
-    flush_items()
-    return ''.join(out), miss
+        if kind == 'h':
+            if d <= 3: main = clean_h(h); sub = None
+            else: sub = clean_h(h)
+            continue
+        if kind == 'fig' or not emit[i]: continue
+        miss += 1
+        if (main, sub) != key:
+            key = (main, sub); cur = {'main': main, 'sub': sub, 'items': [], 'raw': []}; buckets.append(cur)
+        if kind == 'li': cur['items'].append((d, re.sub(r'\s+', ' ', h).strip()))
+        elif kind == 'p': cur['items'].append((0, re.sub(r'\s+', ' ', h).strip()))
+        else: cur['raw'].append(h)
+    return buckets, miss
+def _flat(items):
+    """[(depth, html)] -> flat arrow bullets (sub-points get a dash); never a nested side-box"""
+    out = []
+    for d, h in items:
+        out.append(h if d == 0 else ('\u2013 ' if d == 1 else '\u00b7 ') + h)
+    return out
+def _trees(items, main):
+    """top-level points of a main heading: a short label with sub-points -> one side-box; plain points -> plain arrow list"""
+    res = []; plain = []; i = 0
+    def fl():
+        nonlocal plain
+        if plain: res.append(('plain', plain)); plain = []
+    while i < len(items):
+        d, h = items[i]; j = i + 1
+        while j < len(items) and items[j][0] > d: j += 1
+        ch = items[i + 1:j]; lab = re.sub(r'<[^>]+>', '', h).strip()
+        if ch and len(lab) <= 64:
+            fl(); res.append(('tree', h.rstrip(': '), _flat([(dd - d - 1, hh) for dd, hh in ch])))
+        else:
+            plain.append(h); plain += _flat([(dd - d, hh) for dd, hh in ch])
+        i = j
+    fl(); return res
+def _float(p):
+    w, src, cap, tbl, hd = p
+    mm = max(28.0, min(62.0, w * 0.2646 * 0.8))
+    return '<div class="sw fp" style="float:right;width:%.0fmm"><img src="%s"><div class="cp">%s</div></div>' % (mm, src, cap)
 import importlib, os
 OPENERS = {}
 sys.path.insert(0, os.path.join(D.ROOT, 'src-geo')); sys.path.insert(0, os.path.join(D.ROOT, 'src-gov', 'book'))
@@ -154,25 +179,48 @@ def attach(chs, maps, und, GL={}, IGNORE=()):
             have = set(cover.stems(' '.join(_nodetext(x) for x in nodes))) | cover.stems(und.get(n, {}).get(k, ''))
             figs = _figs(bl); st['figs'] += len(figs)
             ntoks = [(cover.stems(_nodetext(x)) if x[0] not in ('sec', 'stl') else set()) for x in nodes]
-            put = {}; left = []
-            for cap, ctx, html, i in figs:
+            bks, miss = extras(bl, have, None)
+            st['blocks'] += sum(1 for b_ in bl if b_[0] in ('li', 'p', 'tbl')); st['miss'] += miss
+            xn = []; lastm = None  # ordered nodes: dict(kind, main, sub, ...)
+            for bk in bks:
+                if bk['main'] and bk['main'] != lastm:
+                    xn.append({'k': 'mh', 'main': bk['main'], 'sub': None}); lastm = bk['main']
+                if bk['sub']: xn.append({'k': 'tree', 'main': bk['main'], 'sub': bk['sub'], 'label': bk['sub'], 'kids': _flat(bk['items']), 'fl': []})
+                else:
+                    for kd in _trees(bk['items'], bk['main']):
+                        if kd[0] == 'plain': xn.append({'k': 'plain', 'main': bk['main'], 'sub': None, 'kids': kd[1], 'fl': []})
+                        else: xn.append({'k': 'tree', 'main': bk['main'], 'sub': None, 'label': kd[1], 'kids': kd[2], 'fl': []})
+                for r in bk['raw']: xn.append({'k': 'raw', 'main': bk['main'], 'sub': None, 'html': r})
+            floats = {}; blocks_after = {}; left = []
+            def tk(x): return set(cover.toks(x or ''))
+            for cap, ctx, html, i, meta in figs:
+                w, src, capt, istbl, hd = meta
+                small = (w <= 345 and not istbl)
                 ct = set(cover.toks(ctx)); best = None; bs = 0
                 for j, nt in enumerate(ntoks):
                     if not nt or not ct: continue
                     sc = len(ct & nt) / len(ct)
                     if sc > bs + 1e-9: bs, best = sc, j
-                if best is not None and bs >= 0.4: put.setdefault(best, []).append(html)
-                else: left.append((cap, ctx, html, i))
+                if best is not None and bs >= 0.4:
+                    if small and nodes[best][0] == 'tree': floats.setdefault(best, []).append(_float(meta))
+                    else: blocks_after.setdefault(best, []).append(html)
+                    st['placed'] += 1; continue
+                hk = tk(hd); done = False
+                if small and hk:
+                    cand = [x for x in xn if x['k'] in ('tree', 'plain') and x['sub'] and len(hk & tk(x['sub'])) / max(len(hk), len(tk(x['sub'])) or 1) >= 0.7]
+                    cand = cand or [x for x in xn if x['k'] in ('tree', 'plain') and x['main'] and len(hk & tk(x['main'])) / max(len(hk), len(tk(x['main'])) or 1) >= 0.7]
+                    if cand: cand[0]['fl'].append(_float(meta)); done = True; st['placed'] += 1
+                if not done: left.append(html)
             for j, nd in enumerate(nodes):
+                if j in floats and nd[0] == 'tree': nd = ('tree', nd[1], floats[j] + list(nd[2]), nd[3], nd[4])
                 out.append(nd)
-                if j in put: out.append(('raw', '<div class="pics">%s</div>' % ''.join(put[j])))
-            st['placed'] += sum(len(v) for v in put.values())
-            # more points + leftover figures, in handout order
-            html, miss = extras(bl, have, None)
-            st['blocks'] += sum(1 for b in bl if b[0] in ('li', 'p', 'tbl')); st['miss'] += miss
-            if left:
-                html += '<div class="h4">Pictures of this topic</div><div class="pics">%s</div>' % ''.join(x[2] for x in left)
-            if html: out.append(('raw', '<div class="xt"><div class="xh">➕ More points from the handout on this topic</div><div class="hd">%s</div></div>' % D._conv(html)))
+                if j in blocks_after: out.append(('raw', '<div class="pics">%s</div>' % ''.join(blocks_after[j])))
+            for x in xn:
+                if x['k'] == 'mh': out.append(('raw', '<div class="mh">%s</div>' % H.escape(x['main'])))
+                elif x['k'] == 'tree': out.append(('tree', x['label'], x['fl'] + x['kids'], None, 24))
+                elif x['k'] == 'plain': out.append(('raw', '<div class="pl">%s%s</div>' % (''.join(x['fl']), ''.join('<div class="kid">%s</div>' % y for y in x['kids']))))
+                else: out.append(('raw', '<div class="hd">%s</div>' % D._conv(x['html'])))
+            if left: out.append(('raw', '<div class="pics">%s</div>' % ''.join(left)))
         STATS[n] = st
         if n in OPENERS:
             out = _opening(n) + out
@@ -201,3 +249,9 @@ def attach(chs, maps, und, GL={}, IGNORE=()):
             out.append(('raw', '<div class="glo2"><div class="gh">\U0001F524 ABBREVIATION COLUMN <i>(full forms as the handout gives them where it does; the one-line meanings are plain-language aids, verify)</i></div><div class="gc">%s</div></div>' % rows))
         ch['nodes'] = out
 CSS += OCSS
+
+CSS += (".sw.fp{background:none!important;border:0!important;padding:0!important;margin:0 0 1.4mm 3mm!important;font-size:8pt;color:#555;text-align:center;break-inside:avoid}"
+        ".sw.fp img{width:100%;border:1px solid #bbb;border-radius:2px}.sw.fp .cp{line-height:1.1}.kids:after{content:'';display:block;clear:both}")
+
+CSS += (".mh{font-family:CB;font-size:12.6pt;color:#1565c0;border-bottom:2px solid #1565c0;margin:2.6mm 0 1.2mm;break-after:avoid}"
+        ".pl{margin:.6mm 0 1.4mm 1mm}.pl:after{content:'';display:block;clear:both}.pl .kid{margin:.7mm 0}.pl .kid:before{content:'\\2192  ';color:#999}")
