@@ -195,3 +195,20 @@ IGNORE = _Ig(IGNORE | {'DCS', 'KLS', 'YMO', 'GM', 'QNS', 'PYQS', 'KAMINI', 'GMR'
 GL['SSTs']=('sea surface temperatures','plural of SST')
 GL['DFCs']=('dedicated freight corridors','rail lines kept only for goods trains')
 IGNORE=_Ig(set(IGNORE)|{'SPOUTS','CARD'})
+GL.update({'BG':('Broad Gauge','rail track width 1,676 mm; the most widely used in India'),
+ 'MG':('Meter Gauge','narrower rail track, 1,000 mm'),
+ 'CIL':('Coal India Limited','the coal company; the handout mentions its plant at Singrauli'),
+ 'EDFC':('Eastern Dedicated Freight Corridor','freight line Ludhiana (Punjab) to Dankuni (near Kolkata)'),
+ 'WDFC':('Western Dedicated Freight Corridor','freight line Dadri (UP) to JNPT'),
+ 'FBRs':('Fast Breeder Reactors','plutonium-fuelled reactors (Kalpakkam)'),
+ 'PHWRs':('Pressurized Heavy Water Reactors','natural-uranium-fuelled reactors'),
+ 'KAMINI':('Kalpakkam Mini reactor','experimental thorium (U233) reactor at Kalpakkam'),
+ 'KAMINI-Kalpakkam':('Kalpakkam Mini reactor','experimental thorium (U233) reactor at Kalpakkam'),
+ 'FTAs':('Free Trade Agreements','pacts that let firms of one country set up plants in the other'),
+ 'HYVs':('High-Yielding Varieties','seeds introduced with fertilizers and irrigation in the Green Revolution'),
+ 'MDRs':('Major District Roads','roads connecting rural areas to the district'),
+ 'MORTH':('Ministry of Road Transport and Highways','oversees the roads programme'),
+ 'MRI':('Magnetic Resonance Imaging','medical imaging that uses rare-earth contrast agents'),
+ 'PPPs':('Public-Private Partnerships','private firms invest in port infrastructure'),
+ 'SPVs':('Special Purpose Vehicles','autonomous bodies formed to build and run metro rail'),
+ 'TVs':('Televisions','electronics that use rare earth elements')})
