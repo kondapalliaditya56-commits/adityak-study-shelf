@@ -266,3 +266,7 @@ CSS += (".sub .pic{display:inline-block!important;width:7.6mm;overflow:hidden;wh
 CSS += (".sub i.pic{width:7.6mm!important;max-width:7.6mm!important;flex:none!important;text-align:left!important;display:inline-block!important}")
 CSS += (".sub,.sub.b,.sub.r,.sub.g{background:linear-gradient(100deg,#4a148c,#ad1457 60%,#ff7043)!important;color:#fff!important;border:2px solid #2b0f3a!important;border-radius:2mm!important;box-shadow:1.2mm 1.2mm 0 #2b0f3a!important;letter-spacing:1px;text-shadow:0 1px 0 rgba(0,0,0,.35)}"
         ".sub .pyq{background:#fff3c4!important;color:#6a1b00!important;border-color:#ffd54f!important;text-shadow:none}")
+CSS += (".sub,.sub.b,.sub.r,.sub.g{background:#e8f1fb!important;color:#1f3a5a!important;border:1.4px solid #7f9fc4!important;border-left:5mm solid #9db8d8!important;border-radius:1.5mm!important;box-shadow:none!important;text-shadow:none!important;letter-spacing:.6px}"
+        ".sub .pyq{background:#fff!important;color:#6b4e00!important;border:1px solid #d9b95a!important}"
+        ".mh{background:#fdf1dc!important;color:#5a3b12!important;border:1.2px solid #d8b27a!important;box-shadow:none!important;text-shadow:none!important}"
+        ".mh *{color:#5a3b12!important;text-shadow:none!important}")
