@@ -255,3 +255,6 @@ CSS += (".sw.fp{background:none!important;border:0!important;padding:0!important
 
 CSS += (".mh{font-family:CB;font-size:12.6pt;color:#1565c0;border-bottom:2px solid #1565c0;margin:2.6mm 0 1.2mm;break-after:avoid}"
         ".pl{margin:.6mm 0 1.4mm 1mm}.pl:after{content:'';display:block;clear:both}.pl .kid{margin:.7mm 0}.pl .kid:before{content:'\\2192  ';color:#999}")
+CSS += (".sub{display:block!important;max-width:none!important;width:auto;margin-right:1.6mm!important}"
+        ".mh{display:block;background:linear-gradient(90deg,#dbeafe 0%,#f4f9ff 70%,#fff 100%);border:2px solid #1565c0;border-radius:3px;padding:.5mm 3mm .7mm 0;font-family:CB;font-size:13.4pt;color:#0d47a1;box-shadow:1.1mm 1.1mm 0 #1565c0;margin:3.2mm 1.6mm 2.2mm 0!important;border-bottom:2px solid #1565c0!important;break-after:avoid;letter-spacing:.4px}"
+        ".mh:before{content:'\\25C6';display:inline-block;background:#1565c0;color:#fff;padding:.5mm 2.6mm;margin:-.5mm 3mm -.7mm 0;font-size:11pt}")
