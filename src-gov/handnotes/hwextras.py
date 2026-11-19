@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 """Post-processing for handwritten notes: (1) brief current-affairs boxes in the right-hand column at matching chapters,
 (2) glossary box at the bottom of each chapter (abbreviations, schemes, organisations). Never alters existing text."""
 import re, os, sys, html as H, math, collections
@@ -17,7 +18,7 @@ def ca_items(prefixes, months=('sep26',)):
     import ca_integrate as ci
     out = []
     for m in months:
-        try: out += [i for i in ci.load_month(m)['items'] if set(i['nb']) & set(prefixes)]
+        try: out += [i for i in ci.load_month(m)['items'] if (i['id'] in ('1.3', '1.4.6', '4.2', '9.2') if os.environ.get('SJ') else set(i['nb']) & set(prefixes))]
         except Exception as ex: print('CA load fail', m, ex)
     return out
 CSS = ('.camg{float:right;width:37mm;margin:0 -40.5mm 1.5mm 0;border:1.4px solid #0d47a1;border-radius:3px;background:#f3f8ff;color:#0d2a5c;'

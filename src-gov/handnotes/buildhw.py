@@ -35,7 +35,7 @@ dsl.r_hw = r_hw
 _hub = dsl.svg_hub
 dsl.svg_hub = lambda c, s: _hub(c, s).replace('max-width:150mm', 'max-width:118mm')
 
-PARTS = [('Module 1', 'Civil Services, Transparency, Accountability, Citizen\'s Charter, RTI', '#e0f2f1'), ('Module 2', 'Corruption, Social Audit, CBI, CVC, Lokpal, Whistleblower, PCA', '#fff3e0'), ('Module 3', 'Governance, E-Governance, Data Protection, Emerging Tech', '#ede7f6'), ('Module 4', 'Civil Society, NGOs, SHGs, Pressure Groups, CAG', '#fce4ec'), ('Module 5', 'Regulatory Bodies, FSSAI, CCI', '#e8f5e9'), ('Polity 1', 'Constitution, Constitutionalism, Union and Its Territory', '#e3f2fd'), ('Polity 2', 'Fundamental Rights: Art 12, Reservation, Art 19, Contempt, Media, Protest', '#fff8e1'), ('Polity 3', 'Fundamental Rights 2: Arts 19(1)(g) to 30, Article 21 in depth, Secularism, Waqf Act', '#e8f5e9'), ('Polity 4', 'DPSP, Article 39(b) and property, Uniform Civil Code, Fundamental Duties', '#fce4ec'), ('Polity 5', 'NCSC, NCST, NCBC, NHRC, NCW, NCPCR, Minorities, NIA', '#e0f7fa'), ('Polity 6', 'President, Ordinance, Parliamentary system, Council of Ministers, Speaker, Privileges, Parliament', '#f3e5f5'), ('Polity 7', 'Centre-State Relations: federalism, legislative, administrative, Governor, fiscal, inter-State', '#fff3e0'), ('Polity 8', 'Judiciary: independence, Collegium, accountability, review and activism, pendency, legal aid, ADR, subordinate courts, tribunals, consumer justice', '#e8eaf6')]
+PARTS = [('Module 1', 'Civil Services, Transparency, Accountability, Citizen\'s Charter, RTI', '#e0f2f1'), ('Module 2', 'Corruption, Social Audit, CBI, CVC, Lokpal, Whistleblower, PCA', '#fff3e0'), ('Module 3', 'Governance, E-Governance, Data Protection, Emerging Tech', '#ede7f6'), ('Module 4', 'Civil Society, NGOs, SHGs, Pressure Groups, CAG', '#fce4ec'), ('Module 5', 'Regulatory Bodies, FSSAI, CCI', '#e8f5e9'), ('Polity 1', 'Constitution, Constitutionalism, Union and Its Territory', '#e3f2fd'), ('Polity 2', 'Fundamental Rights: Art 12, Reservation, Art 19, Contempt, Media, Protest', '#fff8e1'), ('Polity 3', 'Fundamental Rights 2: Arts 19(1)(g) to 30, Article 21 in depth, Secularism, Waqf Act', '#e8f5e9'), ('Polity 4', 'DPSP, Article 39(b) and property, Uniform Civil Code, Fundamental Duties', '#fce4ec'), ('Polity 5', 'NCSC, NCST, NCBC, NHRC, NCW, NCPCR, Minorities, NIA', '#e0f7fa'), ('Polity 6', 'President, Ordinance, Parliamentary system, Council of Ministers, Speaker, Privileges, Parliament', '#f3e5f5'), ('Polity 7', 'Centre-State Relations: federalism, legislative, administrative, Governor, fiscal, inter-State', '#fff3e0'), ('Polity 8', 'Judiciary: independence, Collegium, accountability, review and activism, pendency, legal aid, ADR, subordinate courts, tribunals, consumer justice', '#e8eaf6'), ('Polity 9', 'Local Self-Government: Panchayats, Part IX, PESA, Gram Sabha, municipalities, finances, ARC and Finance Commission recommendations', '#e0f2f1'), ('Polity 10', 'Elections: ECI, RPA 1950 and 1951, criminalisation, electoral reforms, finance, emerging challenges, voting behaviour', '#fff3e0'), ('Polity 11', 'Anti-defection, Cooperatives and Citizenship', '#f3e5f5'), ('Social Justice 1', 'Vulnerable sections: welfare design, women, children, youth, elderly, disability, SC, ST, DNT and PVTG, OBC, minorities, LGBTQIA+', '#e0f2f1'), ('Social Justice 2', 'Health: structure, marketisation, primary care, schemes, maternal and geriatric health, mental health, WASH, NCDs, digital health, AYUSH', '#fce4ec')]
 
 ONLY = None
 def all_chapters():
@@ -44,7 +44,7 @@ def all_chapters():
         chs += importlib.import_module(f[:-3]).CHS
     import listify; listify.apply_all(chs)
     chs.sort(key=lambda c: c['id'])
-    chs = [c for c in chs if (c['id'] >= 40) == bool(os.environ.get('POLITY'))]
+    chs = [c for c in chs if (c['id'] >= 200) == bool(os.environ.get('SJ')) and (bool(os.environ.get('SJ')) or (c['id'] >= 40) == bool(os.environ.get('POLITY')))]
     if ONLY: chs = [c for c in chs if c['id'] in ONLY]
     for c in chs:
         c['no'] = c['id']
@@ -53,19 +53,21 @@ def all_chapters():
 def build(out):
     chs = all_chapters()
     import hwpics; hwpics.apply(chs)
-    COV = ('POLITY', 'Constitutionalism · Rule of law · Separation of powers · Constitutional morality · Living Constitution · Union and its territory · Fundamental Rights: Art 12 · Reservation · Art 19 · Media · Art 20-22 · Art 21 · Exploitation · Religion · Secularism · Minorities · Waqf · DPSP · UCC · Fundamental Duties · Constitutional bodies · NHRC · President · Parliament · Centre-State relations · Judiciary', 'Built from the Sarrthi IAS GS-2 Polity handouts: Introduction to Constitution, Union and Its Territory; Fundamental Rights; Fundamental Rights 2; DPSP and Fundamental Duties; Constitutional and Statutory Bodies; Executive and Legislature; Centre State Relations; Judiciary.') if os.environ.get('POLITY') else None
+    COV = ('POLITY', 'Constitutionalism · Rule of law · Separation of powers · Constitutional morality · Living Constitution · Union and its territory · Fundamental Rights: Art 12 · Reservation · Art 19 · Media · Art 20-22 · Art 21 · Exploitation · Religion · Secularism · Minorities · Waqf · DPSP · UCC · Fundamental Duties · Constitutional bodies · NHRC · President · Parliament · Centre-State relations · Judiciary', 'Built from the Sarrthi IAS GS-2 Polity handouts: Introduction to Constitution, Union and Its Territory; Fundamental Rights; Fundamental Rights 2; DPSP and Fundamental Duties; Constitutional and Statutory Bodies; Executive and Legislature; Centre State Relations; Judiciary; Local Self-Government; Elections; Anti-Defection, Cooperatives and Citizenship.') if os.environ.get('POLITY') else None
     body = ['<div class="cov"><div class="s">UPSC CSE Mains 2027 · GS Paper II</div><h1>GOVERNANCE</h1>'
             '<div class="s">Civil services · RTI · Corruption · Lokpal · E-governance · Civil society · CAG · Regulators</div>'
             '<div><span class="bx">Handwritten-style notes</span></div>'
             '<div class="t">Built from the Sarrthi IAS GS-2 Governance handouts (Modules 1-5).<br>'
             'Bracket trees · diagrams · mnemonics · PYQ tags · current affairs<br>'
             'Right column and left binding margin are kept blank for your own use.<br><br>Personal study edition · for printing</div></div>']
+    if os.environ.get('SJ'):
+        COV = ('SOCIAL JUSTICE', 'Welfare design · Women · Children · Youth · Elderly · Disability · SC · ST · DNT and PVTG · OBC · Minorities · LGBTQIA+ · Health', 'Built from the Sarrthi IAS GS-2 Social Justice handouts: Vulnerable Sections (welfare schemes) and Health.')
     if COV:
         body = ['<div class="cov"><div class="s">UPSC CSE Mains 2027 · GS Paper II</div><h1>%s</h1><div class="s">%s</div><div><span class="bx">Handwritten-style notes</span></div><div class="t">%s<br>Bracket trees · mnemonics · PYQ tags · current affairs<br>Right column and left binding margin are kept blank for your own use.<br><br>Personal study edition · for printing</div></div>' % COV]
     toc = '<div class="partpg" style="padding:0;break-before:page"><div class="toc"><h2>INDEX</h2>'
     cur = -1
     for c in chs:
-        pi = 0 if c['id'] <= 14 else 1 if c['id'] <= 19 else 2 if c['id'] <= 24 else 3 if c['id'] <= 29 else 4 if c['id'] < 40 else 5 if c['id'] < 49 else 6 if c['id'] < 60 else 7 if c['id'] < 76 else 8 if c['id'] < 80 else 9 if c['id'] < 88 else 10 if c['id'] < 99 else 11 if c['id'] < 108 else 12
+        pi = (16 if c['id'] < 217 else 17) if c['id'] >= 200 else 0 if c['id'] <= 14 else 1 if c['id'] <= 19 else 2 if c['id'] <= 24 else 3 if c['id'] <= 29 else 4 if c['id'] < 40 else 5 if c['id'] < 49 else 6 if c['id'] < 60 else 7 if c['id'] < 76 else 8 if c['id'] < 80 else 9 if c['id'] < 88 else 10 if c['id'] < 99 else 11 if c['id'] < 108 else 12 if c['id'] < 117 else 13 if c['id'] < 125 else 14 if c['id'] < 140 else 15
         if pi != cur:
             cur = pi; l, t_, bg = PARTS[pi]; toc += '<div class="pt" style="background:%s">%s · %s</div>' % (bg, l, t_)
         toc += '<a href="#c%s">%s &nbsp;%s</a>' % (c['id'], c['no'], c.get('toc', c['title']))
@@ -73,7 +75,8 @@ def build(out):
     for c in chs:
         body.append(chapter_hw_ir(c))
     html = '<html><head><style>%s</style></head><body>%s</body></html>' % (hwlib.CSS + '.chap{break-before:auto;margin-top:5mm}.pyqline,.sw,.ttl{break-after:avoid}.br{orphans:3;widows:3}.br{break-inside:auto}.keep{break-inside:avoid}.keep table{font-size:9pt}.keep td{padding:.2mm 1.4mm}', ''.join(body))
-    if os.environ.get('POLITY'): html = html.replace('</style>', '@page{@bottom-right{content:"Polity · Handwritten Notes · " counter(page);font-family:PH;font-size:8pt;color:#888}}</style>', 1)
+    if os.environ.get('SJ'): html = html.replace('</style>', '@page{@bottom-right{content:"Social Justice · Handwritten Notes · " counter(page);font-family:PH;font-size:8pt;color:#888}}</style>', 1)
+    elif os.environ.get('POLITY'): html = html.replace('</style>', '@page{@bottom-right{content:"Polity · Handwritten Notes · " counter(page);font-family:PH;font-size:8pt;color:#888}}</style>', 1)
     import hwstyle
     th = os.environ.get('HWFONT', 'handlee')
     if th != 'off':

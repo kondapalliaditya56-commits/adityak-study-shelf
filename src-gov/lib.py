@@ -13,8 +13,10 @@ NB_ID = 'governance'
 BASE = 'gov-'
 NB_TITLE = 'Governance (GS-2)'
 NAME = 'Governance'
-HW_NOTES = {'governance', 'polity-gs2'}   # subjects whose contents page shows the handwritten-notes PDF card (notes/<id>/manifest.json)
-if os.environ.get('POL2'):
+HW_NOTES = {'governance', 'polity-gs2', 'social-justice-gs2'}   # subjects whose contents page shows the handwritten-notes PDF card (notes/<id>/manifest.json)
+if os.environ.get('SJ2'):
+    NB_ID, BASE, NB_TITLE, NAME = 'social-justice-gs2', 'sj-', 'Social Justice (GS-2 Mains)', 'Social Justice (GS-2)'
+elif os.environ.get('POL2'):
     NB_ID, BASE, NB_TITLE, NAME = 'polity-gs2', 'pg2-', 'Polity (GS-2 Mains)', 'Polity (GS-2)'
 
 # ---------------------------------------------------------------- inline markup

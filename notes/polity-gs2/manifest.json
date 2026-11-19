@@ -3,6 +3,14 @@
  "title": "Polity (GS-2) handwritten notes",
  "versions": [
   {
+   "v": 25,
+   "file": "v25.pdf",
+   "date": "2026-11-19",
+   "pages": 387,
+   "sha": "26b738b01c6718b3",
+   "note": "Added Local Self-Government (117-124), Elections (125-137), Anti-Defection, Cooperatives and Citizenship (140-146)"
+  },
+  {
    "v": 24,
    "file": "v24.pdf",
    "date": "2026-11-05",

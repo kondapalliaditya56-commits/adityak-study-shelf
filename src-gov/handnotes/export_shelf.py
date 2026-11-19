@@ -3,8 +3,8 @@
 Writes ../book/fullnotes.json  {chapter_id: {'notes': [...], 'meta': {...}}}"""
 import re, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import ch_a, ch_b, ch_c, ch_d, ch_e, ch_f, ch_g, ch_h, ch_i, ch_j, ch_k, ch_l, ch_m, ch_n, ch_o, ch_p, ch_q, ch_r, ch_s, ch_t, ch_u, ch_v, ch_w
-ALL = [c for m in (ch_a, ch_b, ch_c, ch_d, ch_e, ch_f, ch_g) for c in m.CHS] if not os.environ.get('POLITY') else list(ch_h.CHS) + list(ch_i.CHS) + list(ch_j.CHS) + list(ch_k.CHS) + list(ch_l.CHS) + list(ch_m.CHS) + list(ch_n.CHS) + list(ch_o.CHS) + list(ch_p.CHS) + list(ch_q.CHS) + list(ch_r.CHS) + list(ch_s.CHS) + list(ch_t.CHS) + list(ch_u.CHS) + list(ch_v.CHS) + list(ch_w.CHS)
+import ch_a, ch_b, ch_c, ch_d, ch_e, ch_f, ch_g, ch_h, ch_i, ch_j, ch_k, ch_l, ch_m, ch_n, ch_o, ch_p, ch_q, ch_r, ch_s, ch_t, ch_u, ch_v, ch_w, ch_x, ch_y, ch_z, ch_za, ch_zb, ch_zc, ch_zd, ch_ze, ch_zf, ch_sj1, ch_sj2, ch_sj3, ch_sj4, ch_sj5, ch_sj6
+ALL = [c for m in (ch_sj1, ch_sj2, ch_sj3, ch_sj4, ch_sj5, ch_sj6) for c in m.CHS] if os.environ.get('SJ') else [c for m in (ch_a, ch_b, ch_c, ch_d, ch_e, ch_f, ch_g) for c in m.CHS] if not os.environ.get('POLITY') else list(ch_h.CHS) + list(ch_i.CHS) + list(ch_j.CHS) + list(ch_k.CHS) + list(ch_l.CHS) + list(ch_m.CHS) + list(ch_n.CHS) + list(ch_o.CHS) + list(ch_p.CHS) + list(ch_q.CHS) + list(ch_r.CHS) + list(ch_s.CHS) + list(ch_t.CHS) + list(ch_u.CHS) + list(ch_v.CHS) + list(ch_w.CHS) + list(ch_x.CHS) + list(ch_y.CHS) + list(ch_z.CHS) + list(ch_za.CHS) + list(ch_zb.CHS) + list(ch_zc.CHS) + list(ch_zd.CHS) + list(ch_ze.CHS) + list(ch_zf.CHS)
 import listify; listify.apply_all(ALL)
 BOOKDATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'book', 'bookdata.json')
 VISWORDS = {}
@@ -66,6 +66,6 @@ for ch in ALL:
         notes += items(n, cid)
     res[cid] = {'notes': notes, 'meta': {'title': nice(ch['title']), 'toc': ch.get('toc', ''), 'prio': ch.get('prio', 'M'), 'pyq': clean(ch.get('pyq', '')),
         'simple': clean(ch.get('simple', '')), 'recall': [[clean(a), clean(b)] for a, b in ch.get('recall', [])], 'part': ch.get('part')}}
-out = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'book', 'fullnotes_pol2.json' if os.environ.get('POLITY') else 'fullnotes.json')
+out = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'book', 'fullnotes_sj.json' if os.environ.get('SJ') else 'fullnotes_pol2.json' if os.environ.get('POLITY') else 'fullnotes.json')
 json.dump(res, open(out, 'w', encoding='utf8'), ensure_ascii=False)
 print({k: len(v['notes']) for k, v in res.items()})
