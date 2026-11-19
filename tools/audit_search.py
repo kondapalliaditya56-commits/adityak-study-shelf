@@ -17,10 +17,22 @@ def check(page, target, n):
     if i is None: bad += 1; print(page, 'MISSING FILE', target) if bad < 40 else 0
     elif a and a not in i: bad += 1; print(page, 'MISSING ANCHOR', target) if bad < 40 else 0
 tot = {}
-# prefix pages: (page, data id, prefix, chapter key)
-for page, sid, pre, ck in [('pol-search.html','idx','pol-ch','ch'),('eco-search.html','idx','eco-ch','ch'),
-        ('geo-search.html','sdata','geo-ch','c'),('gov-search.html','sdata','gov-ch','c'),('gs3-search.html','sdata','gs3-ch','c'),
-        ('ir-search.html','sdata','ir-ch','c'),('pg2-search.html','sdata','pg2-ch','c'),('soc-search.html','sdata','soc-ch','c'),('soc2-search.html','sdata','soc2-ch','c')]:
+# prefix pages: discovered from the file names (x-search.html -> x-ch01.html)
+import glob
+PAGES = []
+for f in sorted(glob.glob('*-search.html')):
+    pre = f[:-len('-search.html')]
+    if pre == 'ca': continue
+    src = open(f, encoding='utf-8').read()
+    m = re.search(r'id="(sdata|idx)"', src)
+    if not m: continue
+    D0 = data(f, m.group(1))
+    ck = 'ch' if 'ch' in D0[0] else 'c'; tk = 'cht' if 'cht' in D0[0] else 'n'
+    PAGES.append((f, m.group(1), pre + '-ch', ck, tk))
+    used = set(re.findall(r"""<a href=\\?["']?([a-z0-9]+)-ch['"]""", src)) | set(re.findall(r"""href="([a-z0-9]+)-ch'\+""", src))
+    if used and used != {pre}:
+        bad += 1; print(f, 'LINKS TO WRONG NOTEBOOK PREFIX', used, 'expected', pre)
+for page, sid, pre, ck, tk in PAGES:
     D = data(page, sid); tot[page] = len(D)
     for d in D:
         if d.get('href'): check(page, d['href'], 1); continue
@@ -35,9 +47,7 @@ def norm(t): return re.sub(r'[^a-z0-9]+', '', re.sub(r'<[^>]+>', '', t).lower())
 def h1(f):
     s = open(f, encoding='utf-8').read(); m = re.search(r'<h1[^>]*>(.*?)</h1>', s, re.S); return norm(m.group(1)) if m else ''
 mm = 0
-for page, sid, pre, ck, tk in [('pol-search.html','idx','pol-ch','ch','cht'),('eco-search.html','idx','eco-ch','ch','cht'),
-        ('geo-search.html','sdata','geo-ch','c','n'),('gov-search.html','sdata','gov-ch','c','n'),('gs3-search.html','sdata','gs3-ch','c','n'),
-        ('ir-search.html','sdata','ir-ch','c','n'),('pg2-search.html','sdata','pg2-ch','c','n'),('soc-search.html','sdata','soc-ch','c','n'),('soc2-search.html','sdata','soc2-ch','c','n')]:
+for page, sid, pre, ck, tk in PAGES:
     seen = {}
     for d in data(page, sid):
         if d.get('href') or not d.get(ck): continue

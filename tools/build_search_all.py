@@ -21,6 +21,8 @@ NB = [  # id, title, file prefix, search page, data id, chapter key, chapter-tit
  ('governance', 'Governance', 'gov-ch', 'gov-search.html', 'sdata', 'c', 'n'),
  ('international-relations', 'International Relations', 'ir-ch', 'ir-search.html', 'sdata', 'c', 'n'),
  ('gs3', 'GS3', 'gs3-ch', 'gs3-search.html', 'sdata', 'c', 'n'),
+ ('social-justice-gs2', 'Social Justice GS-2', 'sj-ch', 'sj-search.html', 'sdata', 'c', 'n'),
+ ('world-mapping', 'World Mapping', 'wm-ch', 'wm-search.html', 'sdata', 'c', 'n'),
  ('current-affairs', 'Current Affairs', '', None, None, None, None)]
 out = {'nb': [[n[0], n[1], n[2]] for n in NB], 'r': []}
 for i, (nid, title, pre, page, sid, ck, tk) in enumerate(NB):
