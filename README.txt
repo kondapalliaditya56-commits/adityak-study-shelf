@@ -17,3 +17,6 @@ READ ALOUD
 readaloud.js adds a speaker button (bottom left) to every notebook page. Tap it to hear the page
 from where you are; select text and tap Listen to hear only that. After generating new pages,
 run: python3 tools/add_readaloud.py
+
+SEARCH CHECK
+python3 tools/audit_search.py checks that every search result opens an existing page and section.
