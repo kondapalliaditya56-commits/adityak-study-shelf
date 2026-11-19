@@ -27,6 +27,8 @@ def apply_cn(subj, chs):
     for ch in chs:
         if rec.get(ch['id']): ch['recall'] = list(ch.get('recall') or []) + rec[ch['id']]; ch['cn_recall'] = list(rec[ch['id']])
         for blk in adds.get(ch['id'], []):
+            ch.setdefault('cn_all', []).append(blk)
+            if blk.get('only') == 'tb': continue
             nodes = ch['nodes']; kw = (blk.get('after') or '').lower(); pos = len(nodes)
             if kw:
                 for i, n in enumerate(nodes):

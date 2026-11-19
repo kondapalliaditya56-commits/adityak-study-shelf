@@ -3,6 +3,14 @@
  "title": "Polity handwritten revision notes",
  "versions": [
   {
+   "v": 4,
+   "file": "v4.pdf",
+   "date": "2026-11-19",
+   "pages": 510,
+   "sha": "b654725018bbddac",
+   "note": "v4: daily article cards synced in: Supreme Court cases, amendments and mnemonics from the 113 article cards that the notes lacked (CARD blocks per chapter); one 'five routes into the State List' mnemonic (R N S I P) everywhere"
+  },
+  {
    "v": 3,
    "file": "v3.pdf",
    "date": "2026-11-13",

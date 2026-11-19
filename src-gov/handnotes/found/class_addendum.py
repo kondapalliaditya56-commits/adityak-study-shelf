@@ -2,7 +2,7 @@
 """Class-note additions as textbook material, from the same cn/ DSL source as the handwritten notes.
 python3 class_addendum.py html   -> writes <shelf>/pol-chNN.html 'From the class' section (idempotent)
 python3 class_addendum.py pdf OUTDIR -> writes OUTDIR/cnNN.html + cnNN.pdf (A4, margin panel) for splicing into the textbook PDF"""
-import sys, os, re, html as H
+import sys, os, re, glob, html as H
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.argv_saved = sys.argv[:]
 import buildfound as bf
 from dsl import r_book
@@ -15,7 +15,7 @@ CSS_SITE = """.bk-cn{margin:28px 0 8px;border-top:3px solid var(--acc);padding-t
 .bk-cn .cn-call.gr{border-color:var(--good);background:var(--good-soft)}.bk-cn .cn-call.ca{border-color:var(--c7);background:var(--surface2)}
 .bk-cn .cn-call .tag{display:block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
 .bk-cn table{border-collapse:collapse;width:100%;font-size:.92em}.bk-cn th,.bk-cn td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}.bk-cn th{background:var(--acc-soft)}"""
-KIND = {'pk': ('Teacher stressed', ''), 'ye': ('Trap / check', 'ye'), 'bl': ('Definition', 'bl'), 'gr': ('Answer frame', 'gr'), 'ca': ('In the news', 'ca')}
+KIND = {'pk': ('Teacher stressed', ''), 'ye': ('Trap / check', 'ye'), 'bl': ('Note', 'bl'), 'gr': ('Answer frame', 'gr'), 'ca': ('In the news', 'ca')}
 def tree_html(n):
     kids = ''.join('<li>%s</li>' % (tree_html(x) if isinstance(x, tuple) else x) for x in n[2])
     return '<b>%s</b>' % n[1] + ('<ul>%s</ul>' % kids if kids else '')
@@ -39,7 +39,7 @@ def items_html(nodes):
             if isinstance(it, str): ul.append(it)
             elif 'h' in it:
                 flush(); t = re.sub(r'<[^>]+>', '', it['h'])
-                t = re.sub(r'^CLASS\s*·\s*', '', t)
+                t = re.sub(r'^(CLASS|CARD)\s*·\s*', '', t)
                 out.append('<h3>%s</h3>' % t if it.get('sec') else '<p><b>%s</b></p>' % t)
             elif 'call' in it:
                 flush(); c = it['call']; out.append('<div class="cn-call"><span class="tag">%s</span>%s</div>' % (c['tag'], ' '.join(c['body'])))
@@ -54,13 +54,27 @@ def recall_html(ch):
     q = ch.get('cn_recall') or []
     if not q: return ''
     return '<h3>Quick recall from the class</h3><div class="tablewrap"><table><thead><tr><th>Question</th><th>Answer</th></tr></thead><tbody>' + ''.join('<tr><td>%s</td><td>%s</td></tr>' % (x, y) for x, y in q) + '</tbody></table></div>'
+def _split(ch):
+    bl = [b for b in (ch.get('cn_all') or []) if b.get('only') != 'hw']
+    isc = lambda b: re.sub(r'<[^>]+>', '', b['nodes'][0][1]).startswith('CARD') if b['nodes'] and b['nodes'][0][0] == 'sec' else False
+    return [b for b in bl if not isc(b)], [b for b in bl if isc(b)]
+SUB_CLASS = 'Taught in class, not in the handout: latest Supreme Court cases, comparisons with other constitutions, the teacher\'s examples and answer frames. Where class and handout differ, the box says so.'
+SUB_CARD = 'From the daily article cards on the Study Shelf: Supreme Court cases, amendments and facts the handout lacks, and the mnemonics used on the cards, so the cards, this book and the handwritten notes match.'
+def body_html(ch):
+    cls, card = _split(ch); out = ''
+    if cls: out += ''.join(items_html(b['nodes']) for b in cls) + recall_html(ch)
+    return cls, card, out
 def chapter_fragment(ch):
-    blocks = ch.get('cn_blocks') or []
-    if not blocks: return None
-    body = ''.join(items_html(b['nodes']) for b in blocks) + recall_html(ch)
-    return ('<!--cn--><section id="class-additions" class="bk-cn"><h2>From the class<a class="anchor" href="#class-additions">#</a></h2>'
-            '<div class="cn-sub">Taught in class, not in the handout: latest Supreme Court cases, comparisons with other constitutions, the teacher\'s examples and answer frames. Where class and handout differ, the box says so.</div>'
-            + body + '</section><!--/cn-->')
+    cls, card = _split(ch)
+    if not cls and not card: return None
+    h = '<!--cn-->'
+    if cls:
+        h += ('<section id="class-additions" class="bk-cn"><h2>From the class<a class="anchor" href="#class-additions">#</a></h2><div class="cn-sub">' + SUB_CLASS + '</div>'
+              + ''.join(items_html(b['nodes']) for b in cls) + recall_html(ch) + '</section>')
+    if card:
+        h += ('<section id="card-additions" class="bk-cn"><h2>From the daily article cards<a class="anchor" href="#card-additions">#</a></h2><div class="cn-sub">' + SUB_CARD + '</div>'
+              + ''.join(items_html(b['nodes']) for b in card) + '</section>')
+    return h + '<!--/cn-->'
 def inject_site():
     chs = bf.load('polity'); n = 0
     for ch in chs:
@@ -91,14 +105,14 @@ table{border-collapse:collapse;width:100%;font-size:8.8pt;margin:2mm 0;break-ins
 def build_pdf(outdir, ends):
     from weasyprint import HTML
     os.makedirs(outdir, exist_ok=True)
+    for f in glob.glob(os.path.join(outdir, 'cn*.pdf')): os.remove(f)
     for ch in bf.load('polity'):
-        fr = chapter_fragment(ch)
-        if not fr: continue
-        body = ''.join(items_html(b['nodes']) for b in ch['cn_blocks']) + recall_html(ch)
-        pgn = ends.get(ch['id'], '')
-        doc = ('<html><head><meta charset="utf-8"><style>%s :root{--pg:"%s"}</style></head><body><div class="panel">MY NOTES</div><h1>Chapter %d · %s: from the class</h1>'
-               '<div class="cn-sub">Taught in class, not in the handout: latest Supreme Court cases, comparisons with other constitutions, the teacher\'s examples and answer frames. Where class and handout differ, the box says so.</div>%s</body></html>'
-               % (PDF_CSS, pgn, ch['id'], H.escape(ch['title'].title()), body))
+        cls, card = _split(ch)
+        if not cls and not card: continue
+        body = ''
+        if cls: body += '<h1>Chapter %d · %s: from the class</h1><div class="cn-sub">%s</div>' % (ch['id'], H.escape(ch['title'].title()), SUB_CLASS) + ''.join(items_html(b['nodes']) for b in cls) + recall_html(ch)
+        if card: body += '<h1%s>Chapter %d · %s: from the daily article cards</h1><div class="cn-sub">%s</div>' % (' style="break-before:page"' if cls else '', ch['id'], H.escape(ch['title'].title()), SUB_CARD) + ''.join(items_html(b['nodes']) for b in card)
+        doc = '<html><head><meta charset="utf-8"><style>%s :root{--pg:"%s"}</style></head><body><div class="panel">MY NOTES</div>%s</body></html>' % (PDF_CSS, ends.get(ch['id'], ''), body)
         open(os.path.join(outdir, 'cn%02d.html' % ch['id']), 'w').write(doc)
         HTML(string=doc).write_pdf(os.path.join(outdir, 'cn%02d.pdf' % ch['id']))
 if __name__ == '__main__':
