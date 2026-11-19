@@ -46,8 +46,8 @@ def all_chapters():
     chs.sort(key=lambda c: c['id'])
     chs = [c for c in chs if (c['id'] >= 200) == bool(os.environ.get('SJ')) and (bool(os.environ.get('SJ')) or (c['id'] >= 40) == bool(os.environ.get('POLITY')))]
     if ONLY: chs = [c for c in chs if c['id'] in ONLY]
-    for c in chs:
-        c['no'] = c['id']
+    for k, c in enumerate(chs):
+        c['no'] = (k + 1) if (os.environ.get('SJ') or os.environ.get('POLITY')) and not ONLY else c['id']
     return chs
 
 def build(out):
