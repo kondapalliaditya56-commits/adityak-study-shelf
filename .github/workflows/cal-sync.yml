@@ -1,0 +1,33 @@
+name: Sync Google Calendar
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cal-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install icalendar recurring-ical-events
+      - name: Fetch calendar
+        env:
+          CAL_ICS_URL: ${{ secrets.CAL_ICS_URL }}
+        run: |
+          if [ -z "$CAL_ICS_URL" ]; then echo "Add the CAL_ICS_URL secret (see README)"; exit 1; fi
+          python3 tools/cal_sync.py
+      - name: Publish if changed
+        run: |
+          if [ -n "$(git status --porcelain calendar.json)" ]; then
+            git config user.name "study-shelf-bot"; git config user.email "bot@users.noreply.github.com"
+            git add calendar.json
+            git commit -m "Sync Google Calendar"
+            git pull --rebase -q && git push
+          fi

@@ -7,3 +7,8 @@ Study Shelf (installable offline app)
    iPad Safari: Share > Add to Home Screen.
 3. Open it once while online. After that it works without internet, including every image.
 When new chapters or notebooks are added, upload the new folder over the old one. The app shows a 'Reload to use it' note when the update has downloaded. Your progress stays on the tablet; use Backup on the shelf to keep a copy.
+
+CALENDAR SYNC
+calendar.json is refreshed every ~15 minutes by .github/workflows/cal-sync.yml from the
+private iCal address of Google Calendar (repo secret CAL_ICS_URL). Study Shelf reads it
+when the live connector is not available (laptop, phone, installed app).

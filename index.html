@@ -513,7 +513,7 @@ var INT=[1,3,7,14,30,60];
 var SUBJ=['Modern India','Polity','Geography','Economy','GS2','GS3','Sociology','Current Affairs','Other'];
 var DEF=[['wake','Up by 3:50'],['work','Workout'],['rec','Recall session'],['asg','Assignment or PYQs'],['chk','Night check-in']];
 /* habits that follow the calendar: done when every block of that kind on the day is marked done */
-var AUTO=[['a_A','A','Block A: backlog class'],['a_CA','CA','Current affairs'],['a_APT','APT','Aptitude'],['a_B4','B4','B4 core and PYQs'],['a_LIVE','LIVE','Live classes'],['a_EVE','EVE','Evening backlog class'],['a_TST','TST','Sunday tests and revision']];
+var AUTO=[['a_A','A','Block A: core self-study'],['a_CA','CA','Current affairs'],['a_APT','APT','Aptitude'],['a_B4','B4','B4 core and PYQs'],['a_LIVE','LIVE','Live classes'],['a_EVE','EVE','Backlog and Sociology classes'],['a_TST','TST','Sunday tests and revision']];
 var KEY='hub:v1';
 var ORD={H:0,M:1,L:2};
 
@@ -524,7 +524,7 @@ if(!H||!H.v)H=fresh();
 if(!Object.keys(H.hl).length)DEF.forEach(function(x,i){H.hl[x[0]]={id:x[0],n:x[1],o:i,t:0}});
 if(!H.hl.art)H.hl.art={id:'art',n:'Learn the 5 Constitution articles',o:61,t:0};
 if(!H.hl.eng)H.hl.eng={id:'eng',n:'Learn the 8 English words',o:60,t:0};
-AUTO.forEach(function(a,i){if(!H.hl[a[0]])H.hl[a[0]]={id:a[0],n:a[2],o:100+i,t:0,src:a[1]}});
+AUTO.forEach(function(a,i){if(!H.hl[a[0]])H.hl[a[0]]={id:a[0],n:a[2],o:100+i,t:0,src:a[1]};else if(a[0]==='a_A'||a[0]==='a_EVE')H.hl[a[0]].n=a[2]});
 function habList(){return Object.keys(H.hl).map(function(k){return H.hl[k]}).filter(function(x){return x&&!x.del}).sort(function(a,b){return a.o-b.o})}
 
 function merge(a,b){
@@ -858,9 +858,12 @@ function classify(x){
   if(/^b4|pyq marathon/i.test(t)){
     if(/pyq marathon/i.test(t))return{k:'B4',s:'Other',learn:0};
     p=t.split(':');return{k:'B4',s:p.length>1?subjOf(p[1]):'Other',learn:1,topic:p.length>2?p.slice(2).join(':').trim():''}}
+  if(/^block a/i.test(t))return{k:'A',s:'Other',learn:1,topic:'Block A core self-study',gen:1};
+  if(/speed drills/i.test(t))return{k:'APT',s:'Other',learn:0};
   if(/current affairs/i.test(t))return{k:'CA',s:'Current Affairs',learn:0};
   if(/aptitude|csat/i.test(t))return{k:'APT',s:'Other',learn:0};
   if(/backlog/i.test(t)){var s2=subjOf(t);return{k:h<12?'A':'EVE',s:s2,learn:1,topic:s2+' backlog class',gen:1}}
+  if(/sociolog/i.test(t)&&/class/i.test(t))return{k:'EVE',s:'Sociology',learn:1,topic:'Sociology class',gen:1};
   return null}
 function ann(o){o.c=classify(o);if(o.c){o.key=key(o.s)+'|'+o.c.k+'|'+pad(o.s.getHours())+pad(o.s.getMinutes());o.m=Math.max(0,Math.round((o.e-o.s)/60000))}return o}
 function norm(x){
@@ -910,6 +913,10 @@ function blockMins(){var m={};Object.keys(H.blk).forEach(function(k){var b=H.blk
 function dayData(k){var o=EV[k];return o?{list:o.list,src:'live',at:o.at}:{list:tplDay(k),src:'tpl'}}
 function recSched(k){var o=EV[k];if(!o)return;var c={};o.list.forEach(function(x){if(x.c)c[x.c.k]=(c[x.c.k]||0)+1});
   if(JSON.stringify(H.sc[k]||{})!==JSON.stringify(c)){H.sc[k]=c;dirty=true}}
+/* calendar.json: refreshed from Google Calendar automatically by a scheduled GitHub job, so the app shows the current schedule outside Claude too */
+function feedGet(refresh){
+  return fetch('calendar.json?'+(refresh?Date.now():Math.floor(Date.now()/300000)),{cache:'no-cache'}).then(function(r){if(!r.ok)throw{code:'nofeed'};return r.json()});
+}
 function loadWeek(m,refresh){
   loadKey=m;calErr=null;
   var p=(window.claude&&claude.use)?claude.use('mcp'):Promise.resolve(null);
@@ -917,6 +924,12 @@ function loadWeek(m,refresh){
   return p.then(function(mc){
     if(!mc)throw{code:'nomcp'};
     return mc.callTool('Google Calendar','list_events',{startTime:m+'T00:00:00',endTime:addDays(m,7)+'T00:00:00',orderBy:'startTime',pageSize:250},refresh?{cache:{refresh:true}}:{cache:{staleTime:60000}});
+  }).catch(function(err){
+    return feedGet(refresh).then(function(f){
+      if(m>f.to||addDays(m,6)<f.from)throw err;
+      var ev=(f.events||[]).filter(function(x){var k=String(x.s).slice(0,10);return k>=m&&k<addDays(m,7)}).map(function(x){return{id:x.s,status:'confirmed',summary:x.t,description:x.d,start:{dateTime:x.s},end:{dateTime:x.e}}});
+      return{payload:{events:ev},cache:{storedAt:Date.parse(f.updated)||Date.now()},feed:1};
+    },function(){throw err});
   }).then(function(r){
     var pl=r&&r.payload;if(typeof pl==='string'){try{pl=JSON.parse(pl)}catch(x){pl=null}}
     var list=((pl&&pl.events)||[]).map(norm).filter(Boolean),at=(r.cache&&r.cache.storedAt)||Date.now(),i;
@@ -991,7 +1004,7 @@ function renderEv(){
     });
   });
   if(hidAll&&view==='day')h+='<p class="hmut">'+hidAll+' other event'+(hidAll>1?'s':'')+' hidden. Tap All events to see them.</p>';
-  if(tpl)h+='<p class="hmut">Typical week, built from your Google Calendar on 13 Oct 2026. It will not show changes made since. '+(calErr?calMsg(calErr):'')+'</p>';
+  if(tpl)h+='<p class="hmut">The synced calendar does not cover this week yet, so this is the old typical week from 13 Oct 2026. '+(calErr?calMsg(calErr):'')+'</p>';
   else h+='<p class="hmut">Updated '+fmt(new Date(at))+(calErr?'. Latest refresh failed: '+calMsg(calErr):'')+'</p>';
   box.innerHTML=h;
   var sm=n?(dn+' of '+n+' study blocks done'+(mn?' · '+(Math.round(mn/6)/10)+' h logged':'')):'';
