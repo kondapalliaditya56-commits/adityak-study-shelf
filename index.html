@@ -328,6 +328,11 @@ details.hshelf summary{cursor:pointer;font:700 16px var(--sans);min-height:44px;
 .dres mark{background:var(--hl);color:inherit;padding:0 2px;border-radius:3px}
 .dnb{display:inline-block;font:700 11px var(--sans);padding:2px 8px;border-radius:99px;background:var(--acc-soft);color:var(--acc);margin-right:6px}
 .dmnw{display:flex;gap:6px;flex-wrap:wrap}.dmnw span{min-width:42px;height:46px;padding:0 8px;border-radius:10px;background:var(--acc);color:var(--acc-ink);font:700 22px var(--serif);display:flex;align-items:center;justify-content:center}
+.dmn-h{font:700 17px/1.35 var(--serif)}.dmnw i{width:10px}
+.dmn-c{list-style:none;margin:0;padding:0;display:grid;gap:6px}.dmn-c li{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:10px;background:var(--surface2,rgba(0,0,0,.04));font:15px/1.45 var(--sans)}
+.dmn-c li b{flex:none;width:26px;height:26px;border-radius:7px;background:var(--acc);color:var(--acc-ink);display:flex;align-items:center;justify-content:center;font:700 15px var(--serif)}
+.dmn-c.cov li span{filter:blur(7px);cursor:pointer;user-select:none}.dmn-c.cov li.on span{filter:none}
+.dmn-n{font:italic 13px/1.45 var(--sans);color:var(--muted)}
 .dmn-t{font:16px/1.55 var(--sans)}.dmn-l{font:700 12px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 #h-nudge{display:none!important}
 .dshelf .stats{margin:0}
@@ -1519,10 +1524,20 @@ clr.onclick=function(){q.value='';run();q.focus()};
 document.addEventListener('keydown',function(e){if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName||'')&&!e.metaKey&&!e.ctrlKey){e.preventDefault();window.ssTab&&window.ssTab('books');setTimeout(function(){q.focus()},60)}});
 /* ---- mnemonic of the day ---- */
 var MN=null,mi=0;
+var mnHide=false;
 function mnShow(){var b=$('d-mnbody');if(!MN||!MN.length){b.innerHTML='<p class="hmut">Mnemonics will appear here once online.</p>';return}
-  var m=MN[((mi%MN.length)+MN.length)%MN.length];
-  b.innerHTML=(m.w?'<div class="dmnw" aria-label="Mnemonic letters">'+m.w.split('').map(function(c){return'<span>'+esc(c)+'</span>'}).join('')+'</div>':'')+'<div class="dmn-l">'+esc(m.s)+' · '+esc(m.l)+'</div>'+(m.t?'<div class="dmn-t">'+esc(m.t)+'</div>':'')+'<div class="hrow"><a class="hb sm" href="'+esc(m.u)+'">All '+esc(m.s)+' mnemonics</a></div>'}
-$('d-mnnext').onclick=function(){mi++;mnShow()};
+  var m=MN[((mi%MN.length)+MN.length)%MN.length],ws=(m.w||'').replace(/\s+/g,'');
+  var chips=(m.c||[]).map(function(c){return'<li><b>'+esc(c[0])+'</b><span>'+esc(c[1])+'</span></li>'}).join('');
+  b.innerHTML='<div class="dmn-l">'+esc(m.s)+' · '+esc(m.k==='Number card'?'Number card':'Mnemonic')+(m.o?' · our own memory aid':'')+'</div>'+
+    '<div class="dmn-h">'+esc(m.l)+'</div>'+
+    (ws?'<div class="dmnw" aria-label="Mnemonic letters">'+Array.from(m.w).map(function(c){return c===' '?'<i></i>':'<span>'+esc(c)+'</span>'}).join('')+'</div>':'')+
+    (m.t?'<div class="dmn-t">'+esc(m.t)+'</div>':'')+
+    (chips?'<ul class="dmn-c'+(mnHide?' cov':'')+'" id="d-mnc">'+chips+'</ul>':'')+
+    (m.n?'<div class="dmn-n">'+esc(m.n)+'</div>':'')+
+    '<div class="hrow">'+(chips?'<button class="hb sm" type="button" id="d-mnt">'+(mnHide?'Show meanings':'Test me')+'</button>':'')+'<a class="hb sm" href="'+esc(m.u)+'">Open this one</a><a class="hb sm" href="'+esc(m.u.split('#')[0])+'">All '+esc(m.s)+' mnemonics</a></div>';
+  var t=$('d-mnt');if(t)t.onclick=function(){mnHide=!mnHide;mnShow()};
+  var cv=$('d-mnc');if(cv&&mnHide)cv.onclick=function(e){var li=e.target.closest('li');if(li)li.classList.toggle('on')}}
+$('d-mnnext').onclick=function(){mi++;mnHide=false;mnShow()};
 fetch('mnemonics.json').then(function(r){return r.ok?r.json():null}).then(function(j){MN=j;var d=new Date(),k=Math.floor((Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())-Date.UTC(2026,9,1))/864e5);mi=k;mnShow()}).catch(function(){mnShow()});
 })();
 </script></body></html>
