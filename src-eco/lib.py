@@ -322,7 +322,7 @@ def chap_page(ch, prev, nxt, total_chapters):
     def fn(n):
         return '%sch%02d.html' % (PFX, n)
     toc = ''.join('<li><a href="#%s">%s</a></li>' % (s['id'], md(s['title'])) for s in all_sections(ch))
-    bar = '<header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="%shome.html">Contents</a>' % PFX
+    bar = '<header class="bar"><div class="barin"><a class="home" href="index.html#books">Library</a><a class="home" href="%shome.html">Contents</a>' % PFX
     if prev is not None:
         bar += '<a class="nbtn" href="%s" title="%s" aria-label="Previous chapter">‹</a>' % (fn(prev[0]), esc(prev[1]))
     else:

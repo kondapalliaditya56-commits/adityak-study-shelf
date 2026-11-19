@@ -281,7 +281,7 @@ def chapter_page(ch, prev_ch, next_ch, secs_sections, toc_idx, map_svg, map_outl
     """ch: dict(n,title) ; prev/next: dict(n,title) or None"""
     n = ch['n']
     fn = lambda c: '%sch%02d.html' % (BASE, c['n'])
-    bar = '<header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="%shome.html">Contents</a>' % BASE
+    bar = '<header class="bar"><div class="barin"><a class="home" href="index.html#books">Library</a><a class="home" href="%shome.html">Contents</a>' % BASE
     if prev_ch:
         bar += '<a class="nbtn" href="%s" title="%s" aria-label="Previous chapter">‹</a>' % (fn(prev_ch), html.escape(prev_ch['title'], quote=True))
     else:
@@ -328,7 +328,7 @@ def chead(eyebrow, title, ptag, pills, lede):
 
 def home_page(chapters, intro_lede, footer):
     fn = lambda c: '%sch%02d.html' % (BASE, c['n'])
-    bar = ('<header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="%shome.html">Contents</a>'
+    bar = ('<header class="bar"><div class="barin"><a class="home" href="index.html#books">Library</a><a class="home" href="%shome.html">Contents</a>'
            '<span class="bartitle"><b></b> '+NAME+' notebook</span><a class="home" href="%ssearch.html">Search</a>'
            '<button class="themebtn" id="themebtn" type="button" aria-label="Change theme">Theme</button></div></header>') % (BASE, BASE)
     built = [c for c in chapters if not c.get('pending')]
@@ -353,7 +353,7 @@ def home_page(chapters, intro_lede, footer):
     return head(NAME + ' Contents', EXTRA_CSS) + body
 
 def search_page(entries):
-    bar = ('<header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="%shome.html">Contents</a>'
+    bar = ('<header class="bar"><div class="barin"><a class="home" href="index.html#books">Library</a><a class="home" href="%shome.html">Contents</a>'
            '<span class="bartitle"><b></b> Search '+NAME+'</span><button class="themebtn" id="themebtn" type="button" aria-label="Change theme">Theme</button></div></header>') % BASE
     body = '<body>' + bar + '<main class="page home-page"><div class="chead"><div class="eyebrow">Find anything</div><h1>Search</h1></div>'
     body += '<input class="sbox" id="q" type="search" placeholder="Type a word, e.g. Lokpal, Vineet Narain, Sevottam, Section 8" autofocus><p class="prog" id="cnt"></p><div class="results" id="res"></div></main>'

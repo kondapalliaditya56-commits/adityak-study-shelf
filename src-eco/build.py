@@ -29,7 +29,7 @@ summ = {
 
 CSS = STYLE
 def shell(title, bar_title, body, js=''):
-    bar = '<header class="bar"><div class="barin"><a class="home" href="index.html">Library</a><a class="home" href="%shome.html">Contents</a><span class="bartitle">%s</span><a class="home" href="%ssearch.html">Search</a><a class="home" href="%stimeline.html">Timeline</a><button class="themebtn" id="themebtn" type="button" aria-label="Change theme">Theme</button></div></header>' % (PFX, bar_title, PFX, PFX)
+    bar = '<header class="bar"><div class="barin"><a class="home" href="index.html#books">Library</a><a class="home" href="%shome.html">Contents</a><span class="bartitle">%s</span><a class="home" href="%ssearch.html">Search</a><a class="home" href="%stimeline.html">Timeline</a><button class="themebtn" id="themebtn" type="button" aria-label="Change theme">Theme</button></div></header>' % (PFX, bar_title, PFX, PFX)
     return HEAD.replace('@@T@@', esc(title)) + '<body>' + bar + body + '<script>' + STORE_JS + js + '</script><script src="hl.js" defer></script></body></html>'
 
 # ---- home
