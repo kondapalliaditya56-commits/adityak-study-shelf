@@ -114,9 +114,10 @@ for(const j of jobs){const pg=await ctx.newPage();await pg.goto(j.url,{waitUntil
  await pg.emulateMedia({media:'print'});
  if(j.kind==='chapter'){await pg.addStyleTag({content:`@page{size:A4;margin:16mm 14mm 16mm 24mm}
 header.bar,.dock,.rbar,.sheet,.toast,button,aside.sidetoc,nav.pager,footer,#practice,section:has(> #practice),.banklink,.themebtn,#lightbox,details.glance,.cabox .btn{display:none!important}
-  .layout{display:block!important} main.page{max-width:none!important;width:120mm!important;margin:0!important;padding:0!important;overflow-wrap:anywhere}
-  table{font-size:8.2pt} .bfig img{max-height:68mm;max-width:100%;object-fit:contain} img{max-width:100%} pre,code{white-space:pre-wrap}
+  .layout{display:block!important} main.page{max-width:none!important;width:120mm!important;margin:0!important;padding:0!important;overflow-wrap:break-word}
+  table{font-size:8.2pt} table.bt th,table.bt td{overflow-wrap:break-word;word-break:normal;hyphens:manual} table.yr th:first-child,table.yr td:first-child{white-space:nowrap;min-width:13mm} .bfig img{max-height:68mm;max-width:100%;object-fit:contain} img{max-width:100%} pre,code{white-space:pre-wrap}
   body{font-size:10pt;background:#fff!important} .chead{break-before:page}`});
+  await pg.evaluate(()=>{document.querySelectorAll('table').forEach(t=>{const h=t.querySelector('th');if(h&&/^(year|date|period)/i.test(h.textContent.trim()))t.classList.add('yr')})});
   await pg.pdf({path:j.out,format:'A4',printBackground:true,preferCSSPageSize:true});}
  else {await pg.pdf({path:j.out,format:'A4',printBackground:true,preferCSSPageSize:true});}
  await pg.close();}
@@ -136,10 +137,10 @@ def prep_site():
             os.symlink(os.path.join(REPO, f), os.path.join(SITE, f))
     for f in os.listdir(REPO + '/img'):
         im = Image.open(os.path.join(REPO, 'img', f))
-        if im.width > 820: im = im.resize((820, int(im.height * 820 / im.width)))
+        if im.width > 720: im = im.resize((720, int(im.height * 720 / im.width)))
         im = im.convert('RGB')
         if f.endswith('.png'): im.save(os.path.join(SITE, 'img', f), 'PNG', optimize=True)
-        else: im.save(os.path.join(SITE, 'img', f), 'JPEG', quality=58, optimize=True)
+        else: im.save(os.path.join(SITE, 'img', f), 'JPEG', quality=50, optimize=True)
 
 
 def main():
