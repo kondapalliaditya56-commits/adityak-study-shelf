@@ -25,3 +25,6 @@ HOME SCREEN
 index.html has five tabs (Today, Recall, Learn, Notebooks, Progress; links like index.html#books work).
 search-all.json (search across all notebooks) and mnemonics.json (mnemonic of the day) are built by
 python3 tools/build_search_all.py and python3 tools/build_mnemonics.py. Re-run both after notebooks change.
+
+READ ALOUD VOICES
+The speaker button ranks the voices on the device and picks the most natural Indian English one (Edge: Neerja or Prabhat; iPhone and iPad: Rishi or Veena Enhanced; Android: Google English India). Change it in the panel. Tips are under 'More natural voices'.

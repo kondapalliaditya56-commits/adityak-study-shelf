@@ -1,5 +1,5 @@
 /* Study Shelf read aloud: tap the speaker to listen to the chapter from where you are,
-   or select some text and tap "Listen" to hear only that. Uses the voices on your device. */
+   or select some text and tap "Listen" to hear only that. Picks the most natural Indian English voice your device has; you can change it in the panel. */
 (function () {
   'use strict';
   if (window.__RA || !('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') return;
@@ -28,6 +28,7 @@
     '.ra-b{width:40px;height:40px;border-radius:50%;border:1px solid var(--line,#dad6c8);background:var(--surface2,#f3f1ea);color:var(--ink,#1f2a2a);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}' +
     '.ra-b svg{width:18px;height:18px;fill:currentColor}.ra-b.main{background:var(--acc,#0E6B5C);color:#fff;border-color:transparent}' +
     '.ra-sel{flex:1;min-width:0;height:36px;border-radius:10px;border:1px solid var(--line,#dad6c8);background:var(--surface,#fff);color:var(--ink,#1f2a2a);font:13px system-ui,sans-serif;padding:0 6px}' +
+    '.ra-help{margin-top:8px;padding:8px 10px;border-radius:10px;background:var(--surface2,#f3f1ea);font-size:12.5px;line-height:1.45;max-height:42vh;overflow:auto}.ra-help[hidden]{display:none}.ra-help b{display:block;margin-top:6px}.ra-help b:first-child{margin-top:0}.ra-lnk{border:0;background:none;color:var(--acc,#0E6B5C);font:600 12.5px system-ui,sans-serif;padding:4px 0;cursor:pointer;text-decoration:underline}' +
     '::highlight(ra-cur){background-color:rgba(255,196,0,.5);color:inherit}' +
     '.ra-cur{background:rgba(255,196,0,.45)!important;border-radius:4px}' +
     '@media print{.ra-fab,.ra-pill,.ra-panel{display:none!important}}';
@@ -53,33 +54,79 @@
     '<button type="button" class="ra-b main" data-a="tog" aria-label="Pause or play">' + I.pause + '</button>' +
     '<button type="button" class="ra-b" data-a="next" aria-label="Next paragraph">' + I.next + '</button>' +
     '<button type="button" class="ra-b" data-a="stop" aria-label="Stop and close">' + I.stop + '</button></div>' +
-    '<div class="ra-row"><select class="ra-sel" id="ra-rate" aria-label="Speed"></select><select class="ra-sel" id="ra-voice" aria-label="Voice"></select></div>';
+    '<div class="ra-row"><select class="ra-sel" id="ra-rate" aria-label="Speed"></select><select class="ra-sel" id="ra-voice" aria-label="Voice"></select></div>' +
+    '<div class="ra-row"><span class="ra-st" id="ra-vn" style="font-weight:500;font-size:12px;opacity:.75"></span><button type="button" class="ra-lnk" data-a="help">More natural voices</button></div>' +
+    '<div class="ra-help" id="ra-help" hidden></div>';
   var pill = document.createElement('button');
   pill.type = 'button'; pill.className = 'ra-pill ra-ui'; pill.innerHTML = I.spk + '<span>Listen</span>'; pill.hidden = true; pill.style.display = 'none';
   document.body.appendChild(fab); document.body.appendChild(panel); document.body.appendChild(pill);
   var elSt = panel.querySelector('#ra-st'), elRate = panel.querySelector('#ra-rate'), elVoice = panel.querySelector('#ra-voice'), btnTog = panel.querySelector('[data-a="tog"]');
   elRate.innerHTML = RATES.map(function (r) { return '<option value="' + r + '"' + (r === S.rate ? ' selected' : '') + '>' + r + 'x speed</option>'; }).join('');
 
-  function fillVoices() {
-    var vs = synth.getVoices() || [], en = vs.filter(function (v) { return /^en/i.test(v.lang); });
-    var list = en.length ? en : vs;
-    elVoice.innerHTML = '<option value="">Default voice</option>' + list.map(function (v) { return '<option value="' + v.voiceURI.replace(/"/g, '&quot;') + '"' + (v.voiceURI === S.voice ? ' selected' : '') + '>' + v.name.replace(/</g, '&lt;') + ' (' + v.lang + ')</option>'; }).join('');
+  /* rank voices: Indian English first, then neural / natural / online ones, old robotic engines last */
+  function vscore(v) {
+    var n = v.name || '', l = (v.lang || '').replace('_', '-'), sc = 0;
+    if (/^en-IN$/i.test(l)) sc += 100; else if (/^en-(GB|AU|ZA|SG|NZ|IE)/i.test(l)) sc += 30; else if (/^en/i.test(l)) sc += 15; else return -1;
+    if (/india/i.test(n) && !/^en-IN$/i.test(l)) sc += 40;
+    if (/natural|neural|wavenet|studio|premium|enhanced|multilingual/i.test(n)) sc += 60;
+    if (/online/i.test(n)) sc += 25;
+    if (/neerja|prabhat|swara|kajal|aditi|kalpana|rishi|veena|isha|tara|lekha/i.test(n)) sc += 20;
+    if (v.localService === false) sc += 8;
+    if (/espeak|festival|compact|hemant|ravi\b|heera|\bsam\b|novelty|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|kathy|organ|princess|ralph|trinoids|whisper|zarvox|albert|fred|superstar/i.test(n)) sc -= 80;
+    return sc;
   }
-  fillVoices();
-  if (synth.addEventListener) synth.addEventListener('voiceschanged', fillVoices); else synth.onvoiceschanged = fillVoices;
+  function isNat(v) { return /natural|neural|wavenet|studio|premium|enhanced|multilingual/i.test(v.name) || (/online/i.test(v.name)); }
+  function ranked() {
+    return (synth.getVoices() || []).map(function (v) { return { v: v, s: vscore(v) }; }).filter(function (x) { return x.s >= 0; })
+      .sort(function (a, b) { return b.s - a.s; }).map(function (x) { return x.v; });
+  }
+  function short(v) { return v.name.replace(/^Microsoft\s+/, '').replace(/\s+-\s+English.*$/, '').replace(/^Google\s+/, 'Google '); }
+  function opt(v, star) {
+    return '<option value="' + v.voiceURI.replace(/"/g, '&quot;') + '"' + (v.voiceURI === S.voice ? ' selected' : '') + '>' + (star ? '★ ' : '') +
+      short(v).replace(/</g, '&lt;') + (isNat(v) ? ' · natural' : '') + ' (' + (v.lang || '').replace('_', '-') + ')</option>';
+  }
+  function fillVoices() {
+    var all = ranked(), ind = all.filter(function (v) { return /^en[-_]IN$/i.test(v.lang); }), rest = all.filter(function (v) { return ind.indexOf(v) < 0; });
+    var best = all[0];
+    elVoice.innerHTML = '<option value="">Auto: best Indian English voice' + (best ? ' (' + short(best).replace(/</g, '&lt;') + ')' : '') + '</option>' +
+      (ind.length ? '<optgroup label="Indian English">' + ind.map(function (v, i) { return opt(v, i === 0); }).join('') + '</optgroup>' : '') +
+      (rest.length ? '<optgroup label="Other English voices">' + rest.map(function (v) { return opt(v, false); }).join('') + '</optgroup>' : '');
+    showVoiceName();
+  }
   function pickVoice() {
     var vs = synth.getVoices() || [], v = null;
     if (S.voice) v = vs.filter(function (x) { return x.voiceURI === S.voice; })[0];
-    return v || vs.filter(function (x) { return /en[-_]IN/i.test(x.lang); })[0] || vs.filter(function (x) { return /^en/i.test(x.lang); })[0] || null;
+    return v || ranked()[0] || null;
   }
+  function showVoiceName() {
+    var v = pickVoice(), el = panel.querySelector('#ra-vn'); if (!el) return;
+    el.textContent = v ? 'Voice: ' + short(v) + (/^en[-_]IN$/i.test(v.lang) ? '' : ' · no Indian English voice found') : '';
+  }
+  fillVoices();
+  if (synth.addEventListener) synth.addEventListener('voiceschanged', fillVoices); else synth.onvoiceschanged = fillVoices;
+
+  var ua = navigator.userAgent || '', isIOS = /iPad|iPhone|iPod/.test(ua) || (/Mac/.test(ua) && navigator.maxTouchPoints > 1), isAnd = /Android/.test(ua), isEdge = /Edg\//.test(ua);
+  var HELP = '<b>Best on a laptop or tablet: Microsoft Edge</b>Open Study Shelf in Edge. It adds "Neerja" and "Prabhat" (natural, Indian English) to the voice list. They need internet and sound close to a real person.' +
+    '<b>Android</b>Settings, then Text-to-speech output, Google Speech Services, Install voice data, English (India). Pick the high quality voices, then reopen the page.' +
+    '<b>iPhone / iPad</b>Settings, Accessibility, Spoken Content, Voices, English, India. Download "Rishi" or "Veena" in the Enhanced or Premium version, then reopen the page.' +
+    '<b>Windows (Chrome)</b>Chrome only shows the older offline voices. Use Edge for the natural ones.';
+  var elHelp = panel.querySelector('#ra-help');
+  elHelp.innerHTML = (isEdge ? '<b>You are in Edge</b>Choose a voice marked "natural" from the list above. If none shows, check your internet and reopen the page.' : '') + HELP;
 
   /* ---------- text model ---------- */
   var visCache;
   function shown(el) { if (!visCache.has(el)) visCache.set(el, el.getClientRects().length > 0); return visCache.get(el); }
+  var SPELL = /\b(UPSC|APPSC|PYQs?|GS|CSE|IAS|IPS|IFS|RBI|GDP|GNP|GST|FDI|FII|OBCs?|EWS|NRC|CAA|CBI|NIA|WTO|IMF|BJP|INC|NDA|UPA|DPSP|PIL|RTI|CAG|ECI|NHRC|MSP|PDS|SDGs?|CPI|WPI|IIP|FRBM|NPAs?|NBFCs?|SEZs?|PMLA|SC|ST|NCERT|CCLA)\b/g;
+  function spell(m) { var pl = /^(PYQ|OBC|SDG|NPA|NBFC|SEZ)s$/.test(m), base = pl ? m.slice(0, -1) : m; return base.split('').join(' ') + (pl ? "'s" : ''); }
   function clean(t) {
     return t.replace(/[\u{1F000}-\u{1FFFF}\u{2600}-\u{27BF}️]/gu, ' ')
-      .replace(/\bArt\.\s*(?=\d)/g, 'Article ').replace(/\bvs\.?(?=\s)/gi, 'versus')
+      .replace(/\bArt\.?\s*(?=\d)/g, 'Article ').replace(/\bSec\.?\s*(?=\d)/g, 'Section ').replace(/\bCh\.?\s*(?=\d)/g, 'Chapter ')
+      .replace(/\bvs\.?(?=\s)/gi, 'versus')
       .replace(/\be\.g\./gi, 'for example').replace(/\bi\.e\./gi, 'that is').replace(/\betc\./gi, 'etcetera')
+      .replace(/₹\s?([\d,]+(?:\.\d+)?)/g, '$1 rupees').replace(/\bRs\.?\s?(?=\d)/g, 'rupees ').replace(/(\d)\s?%/g, '$1 percent')
+      .replace(/\bCr\b\.?/g, 'crore')
+      .replace(/(\d{1,4})\s?[-–]\s?(\d{1,4})(?![-–\d])/g, function (m, a, b, off, str) { return /[-–\d]/.test(str.charAt(off - 1)) ? m : a + ' to ' + b; })
+      .replace(SPELL, spell)
       .replace(/[→⇒➜➔]/g, ', ').replace(/&/g, ' and ').replace(/[|•▪◆■]/g, ', ').replace(/\s[–—]\s/g, ', ')
       .replace(/\s+/g, ' ').trim();
   }
@@ -149,9 +196,11 @@
     var my = ++tok; synth.cancel();
     if (ii >= items.length) { finish(); return; }
     var it = items[ii]; hi(it); setUi();
-    var u = new SpeechSynthesisUtterance(it.ch[ci]); u.rate = S.rate;
-    var v = pickVoice(); if (v) { u.voice = v; u.lang = v.lang; } else u.lang = 'en-IN';
-    var done = function () { if (my !== tok || state !== 'playing') return; ci++; if (ci >= it.ch.length) { ii++; ci = 0; } speak(); };
+    var v = pickVoice(), lim = v && /online|natural|neural/i.test(v.name) ? 320 : 200, txt = it.ch[ci], k = ci + 1;
+    while (k < it.ch.length && txt.length + 1 + it.ch[k].length <= lim) { txt += ' ' + it.ch[k]; k++; }
+    var u = new SpeechSynthesisUtterance(txt); u.rate = S.rate;
+    if (v) { u.voice = v; u.lang = v.lang; } else u.lang = 'en-IN';
+    var done = function () { if (my !== tok || state !== 'playing') return; ci = k; if (ci >= it.ch.length) { ii++; ci = 0; } speak(); };
     u.onend = done;
     u.onerror = function (ev) { if (my !== tok) return; if (ev && (ev.error === 'interrupted' || ev.error === 'canceled')) return; done(); };
     setTimeout(function () { if (my === tok && state === 'playing') synth.speak(u); }, 30);
@@ -223,10 +272,11 @@
   panel.addEventListener('click', function (e) {
     var b = e.target.closest('[data-a]'); if (!b) return; var a = b.getAttribute('data-a');
     if (a === 'tog') { if (state === 'playing') pause(); else if (state === 'paused') resume(); }
+    else if (a === 'help') { elHelp.hidden = !elHelp.hidden; b.textContent = elHelp.hidden ? 'More natural voices' : 'Hide tips'; }
     else if (a === 'prev') jump(-1); else if (a === 'next') jump(1); else if (a === 'stop') stop();
   });
   elRate.addEventListener('change', function () { S.rate = parseFloat(elRate.value) || 1; persist(); if (state === 'playing') speak(); });
-  elVoice.addEventListener('change', function () { S.voice = elVoice.value; persist(); if (state === 'playing') speak(); });
+  elVoice.addEventListener('change', function () { S.voice = elVoice.value; persist(); showVoiceName(); if (state === 'playing') speak(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && state !== 'idle') stop(); });
   window.addEventListener('pagehide', function () { try { synth.cancel(); } catch (e) {} });
 })();
