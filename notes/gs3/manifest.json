@@ -3,6 +3,14 @@
  "title": "GS Paper III (Mains) handwritten notes",
  "versions": [
   {
+   "v": 7,
+   "file": "v7.pdf",
+   "date": "2026-11-20",
+   "pages": 380,
+   "sha": "3551ff9b618f2d0e",
+   "note": "Economy added as Part A (8 chapters, new handwritten format with plates, mnemonics and PYQs at topics, detailed page-numbered index and master mnemonic sheet); Agriculture, DM, Internal Security follow as Part B in the previous format"
+  },
+  {
    "v": 6,
    "file": "v6.pdf",
    "date": "2026-11-05",
