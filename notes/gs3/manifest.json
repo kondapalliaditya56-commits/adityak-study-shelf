@@ -1,7 +1,15 @@
 {
  "subject": "gs3",
- "title": "GS Paper III: Agriculture, DM and Internal Security (handwritten notes)",
+ "title": "Agriculture, DM & Internal Security: handwritten notes",
  "versions": [
+  {
+   "v": 13,
+   "file": "v13.pdf",
+   "date": "2026-11-20",
+   "pages": 345,
+   "sha": "9db92cabce060dec",
+   "note": "Short forms made topic-correct (CDS = Chief of Defence Staff etc.); ~100 wrong meanings fixed"
+  },
   {
    "v": 12,
    "file": "v12.pdf",
