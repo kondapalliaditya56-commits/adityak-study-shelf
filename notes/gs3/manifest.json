@@ -1,7 +1,15 @@
 {
  "subject": "gs3",
- "title": "GS Paper III (Mains) handwritten notes",
+ "title": "GS Paper III: Agriculture, DM and Internal Security (handwritten notes)",
  "versions": [
+  {
+   "v": 9,
+   "file": "v9.pdf",
+   "date": "2026-11-20",
+   "pages": 361,
+   "sha": "f34073f00f0497e5",
+   "note": "Agriculture, DM and Internal Security as their own book: teacher's handwritten slides typed out topic by topic (page cited at every heading), no photo dump, contents in the same style as other subjects, master mnemonic sheet last. Economy moved to its own book."
+  },
   {
    "v": 8,
    "file": "v8.pdf",
