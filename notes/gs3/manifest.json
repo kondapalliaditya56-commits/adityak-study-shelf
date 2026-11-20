@@ -3,6 +3,14 @@
  "title": "GS Paper III (Mains) handwritten notes",
  "versions": [
   {
+   "v": 8,
+   "file": "v8.pdf",
+   "date": "2026-11-20",
+   "pages": 376,
+   "sha": "2a438509abf776ed",
+   "note": "New layout: cover, main index, detailed index before each Economy chapter, master mnemonic sheet at the end; Agriculture, DM, Internal Security follow in previous format"
+  },
+  {
    "v": 7,
    "file": "v7.pdf",
    "date": "2026-11-20",
