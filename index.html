@@ -332,6 +332,8 @@ details.hshelf summary{cursor:pointer;font:700 16px var(--sans);min-height:44px;
 .dmn-c{list-style:none;margin:0;padding:0;display:grid;gap:6px}.dmn-c li{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:10px;background:var(--surface2,rgba(0,0,0,.04));font:15px/1.45 var(--sans)}
 .dmn-c li b{flex:none;width:26px;height:26px;border-radius:7px;background:var(--acc);color:var(--acc-ink);display:flex;align-items:center;justify-content:center;font:700 15px var(--serif)}
 .dmn-c.cov li span{filter:blur(7px);cursor:pointer;user-select:none}.dmn-c.cov li.on span{filter:none}
+.dmn-src{display:block;text-decoration:none;color:inherit;padding:10px 12px;border-radius:12px;border:1px solid var(--line,rgba(0,0,0,.15));background:var(--surface,transparent)}
+.dmn-src small{display:block;font:700 11px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.dmn-src b{display:block;font:600 15px/1.35 var(--sans)}.dmn-src span{display:block;font:14px/1.4 var(--sans);color:var(--muted)}.dmn-src em{display:block;margin-top:2px;font:700 13px var(--sans);font-style:normal;color:var(--acc)}
 .dmn-n{font:italic 13px/1.45 var(--sans);color:var(--muted)}
 .dmn-t{font:16px/1.55 var(--sans)}.dmn-l{font:700 12px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 #h-nudge{display:none!important}
@@ -1534,6 +1536,7 @@ function mnShow(){var b=$('d-mnbody');if(!MN||!MN.length){b.innerHTML='<p class=
     (m.t?'<div class="dmn-t">'+esc(m.t)+'</div>':'')+
     (chips?'<ul class="dmn-c'+(mnHide?' cov':'')+'" id="d-mnc">'+chips+'</ul>':'')+
     (m.n?'<div class="dmn-n">'+esc(m.n)+'</div>':'')+
+    (m.cf?'<a class="dmn-src" href="'+esc(m.cf+(m.ci?'#'+m.ci:''))+'"><small>'+(m.q?'Taught in':'Closest chapter')+'</small><b>'+(m.ch?'Chapter '+esc(m.ch)+': ':'')+esc(m.ct||'')+'</b>'+(m.cs?'<span>Topic: '+esc(m.cs.replace(/^\d+\s*·\s*/,''))+'</span>':'')+'<em>Open the topic</em></a>':'')+
     '<div class="hrow">'+(chips?'<button class="hb sm" type="button" id="d-mnt">'+(mnHide?'Show meanings':'Test me')+'</button>':'')+'<a class="hb sm" href="'+esc(m.u)+'">Open this one</a><a class="hb sm" href="'+esc(m.u.split('#')[0])+'">All '+esc(m.s)+' mnemonics</a></div>';
   var t=$('d-mnt');if(t)t.onclick=function(){mnHide=!mnHide;mnShow()};
   var cv=$('d-mnc');if(cv&&mnHide)cv.onclick=function(e){var li=e.target.closest('li');if(li)li.classList.toggle('on')}}
